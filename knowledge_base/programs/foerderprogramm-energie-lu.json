@@ -1,4 +1,5 @@
 {
+  "schema_version": "2.0",
   "id": "foerderprogramm-energie-lu",
   "name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
   "short_name": "Gebäudeprogramm LU",
@@ -106,7 +107,22 @@
       "id": "waermedaemmung",
       "name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
       "description": "Beitrag pro Quadratmeter gedämmter Bauteilfläche an bestehenden, beheizten Gebäuden.",
+      "keywords": [
+        "Gebäudeprogramm",
+        "Gebäudehülle",
+        "Dämmung",
+        "Sanierung"
+      ],
       "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Förderprogramm Energie 2026, solange Budget vorhanden.",
+        "source": {
+          "source_id": "foerderbedingungen",
+          "locator": "Ziff. 2.2"
+        }
+      },
       "recipient": {
         "type": "gesuchsteller",
         "note": "Eigentümerschaft des Gebäudes"
@@ -124,11 +140,12 @@
         "employees_min": null,
         "employees_max": null,
         "company_age_years_max": null,
-        "requires_partner": "keiner",
         "project_types": [
           "gebaeudesanierung",
           "energieeffizienz"
-        ]
+        ],
+        "required_partners": [],
+        "sectors": []
       },
       "eligible_items": [
         {
@@ -266,7 +283,8 @@
         "source": {
           "source_id": "foerderbedingungen",
           "locator": "Ziff. 3, Förderbeitrag"
-        }
+        },
+        "note": null
       },
       "timing": {
         "deadline": {
@@ -378,7 +396,21 @@
       "id": "luft-wasser-waermepumpe-bis-70kw",
       "name": "Luft/Wasser-Wärmepumpe bis 70 kW",
       "description": "Beitrag an eine neue Luft/Wasser-Wärmepumpe, die eine Öl-, Gas- oder Elektroheizung in einem bestehenden Gebäude ersetzt.",
+      "keywords": [
+        "Wärmepumpe",
+        "Heizungsersatz",
+        "Gebäudeprogramm"
+      ],
       "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Förderprogramm Energie 2026, solange Budget vorhanden.",
+        "source": {
+          "source_id": "foerderbedingungen",
+          "locator": "Ziff. 2.2"
+        }
+      },
       "recipient": {
         "type": "gesuchsteller",
         "note": "Eigentümerschaft des Gebäudes"
@@ -396,11 +428,12 @@
         "employees_min": null,
         "employees_max": null,
         "company_age_years_max": null,
-        "requires_partner": "keiner",
         "project_types": [
           "heizungsersatz",
           "erneuerbare_energie"
-        ]
+        ],
+        "required_partners": [],
+        "sectors": []
       },
       "eligible_items": [],
       "exclusions": [
@@ -548,7 +581,8 @@
         "source": {
           "source_id": "foerderbedingungen",
           "locator": "Ziff. 7, Förderbeiträge"
-        }
+        },
+        "note": null
       },
       "timing": {
         "deadline": {

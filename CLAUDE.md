@@ -46,7 +46,7 @@ Around it: eval set (fictional test projects), anonymised query log
 Agent steps:
 1. **Profile** (LLM): free text → structured project profile. Every field tagged `angegeben` (in the user's words), `annahme` (inferred) or `fehlt`.
 2. **Questions** (LLM + code): pick at most 3 questions whose answer changes a fit level. Questions come from `criteria[].question` in the knowledge base. Skip the screen if nothing would change.
-3. **Pre-filter** (code only): drop instruments with wrong canton, applicant type or project type using `instrument.filter`.
+3. **Pre-filter** (code only): only instruments with `availability.status = aktiv` can match. Drop instruments with wrong canton, applicant type, project type, sector or missing required partner using `instrument.filter`.
 4. **Matching** (LLM, one call per instrument, in parallel): check every criterion → `erfuellt` ✓ / `annahme` ~ / `unbekannt` ? / `nicht_erfuellt` ✗, each with a one-line reason and the profile evidence. **Rule: no evidence, no ✓.** If the LLM can't point to profile data, the state is `unbekannt`.
 5. **Scoring** (code only, deterministic): any ✗ on a `muss` criterion → "passt nicht". Mostly ✓ → "passt gut". ✗ that a lever could fix, or many ? → "passt mit Anpassung / Infos fehlen".
 6. **Plan** (code + LLM): code sorts by deadline and urgency and applies combination rules. LLM writes gap hints (only from `levers`) and next-step texts.
@@ -67,7 +67,10 @@ knowledge_base/
 ```
 - One file per **program**, containing an `instruments` list. Matching runs per instrument.
 - Program level: provider, level, scope, entitlement, budget, general_criteria, general_exclusions, combination_rules, application, contacts, legal_basis, sources, meta.
-- Instrument level: filter (for code pre-filter), eligible_items, exclusions, criteria, funding, timing, documents, obligations, levers, links.
+- Instrument level: keywords, availability, filter (for code pre-filter), eligible_items, exclusions, criteria, funding, timing, documents, obligations, levers, links.
+- **Schema v2 is frozen** (`schema_version: "2.0"`). Change it only if 3 or more programs need the same new field.
+- `filter.required_partners`: empty = no partner needed; otherwise e.g. `forschungspartner`, `umsetzungspartner`, `mehrere_betriebe`. `filter.sectors`: empty = open to all sectors; filled only if the source restricts it.
+- `availability.status`: `aktiv`, `geplant`, `runde_geschlossen`, `eingestellt`. The pre-filter only matches `aktiv`.
 - Criterion `kind`: `muss` (knock-out), `soll` (advantage or case-by-case), `bewertung` (quality criterion in competitive selection, e.g. Innosuisse).
 - `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` are the only allowed "what would make it fit" suggestions.
 - Unknown values are `null`, never guessed. `meta.open_questions` lists unresolved points.

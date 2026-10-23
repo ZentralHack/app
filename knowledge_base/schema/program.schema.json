@@ -2,69 +2,226 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "program.schema.json",
   "title": "Foerderprogramm",
-  "description": "Ein Förderprogramm mit einem oder mehreren Instrumenten. Matching läuft pro Instrument. Unbekannte Werte sind null, nie geraten.",
+  "description": "Schema v2. Ein Förderprogramm mit einem oder mehreren Instrumenten. Matching läuft pro Instrument. Unbekannte Werte sind null, nie geraten.",
   "type": "object",
-  "required": ["id", "name", "provider", "level", "scope", "purpose", "entitlement", "instruments", "sources", "meta"],
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "provider",
+    "level",
+    "scope",
+    "purpose",
+    "entitlement",
+    "instruments",
+    "sources",
+    "meta"
+  ],
   "additionalProperties": false,
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-    "name": { "type": "string" },
-    "short_name": { "type": ["string", "null"] },
+    "schema_version": {
+      "const": "2.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "provider": {
       "type": "object",
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "unit": { "type": ["string", "null"] },
-        "url": { "type": ["string", "null"] }
+        "name": {
+          "type": "string"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
-    "level": { "enum": ["bund", "kanton", "region", "gemeinde", "stiftung", "privat"] },
+    "level": {
+      "enum": [
+        "bund",
+        "kanton",
+        "region",
+        "gemeinde",
+        "stiftung",
+        "privat",
+        "international"
+      ]
+    },
     "scope": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "cantons": { "type": "array", "items": { "type": "string" } },
-        "municipalities": { "type": "array", "items": { "type": "string" } },
-        "note": { "type": ["string", "null"] }
+        "cantons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "municipalities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
-    "purpose": { "type": "string" },
+    "purpose": {
+      "type": "string"
+    },
     "entitlement": {
       "type": "object",
-      "required": ["type"],
+      "required": [
+        "type"
+      ],
       "additionalProperties": false,
       "properties": {
-        "type": { "enum": ["rechtsanspruch_im_budget", "kein_rechtsanspruch", "wettbewerb"] },
-        "note": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "type": {
+          "enum": [
+            "rechtsanspruch_im_budget",
+            "kein_rechtsanspruch",
+            "wettbewerb"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "budget": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "additionalProperties": false,
       "properties": {
-        "annual_chf": { "type": ["number", "null"] },
-        "year": { "type": ["integer", "null"] },
-        "oversubscription": { "enum": ["anteilige_kuerzung", "bis_budget_ausgeschoepft", "auswahl", "unbekannt"] },
-        "note": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "annual_chf": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "oversubscription": {
+          "enum": [
+            "anteilige_kuerzung",
+            "bis_budget_ausgeschoepft",
+            "auswahl",
+            "unbekannt"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
-    "general_criteria": { "type": "array", "items": { "$ref": "#/$defs/criterion" } },
-    "general_exclusions": { "type": "array", "items": { "$ref": "#/$defs/textWithSource" } },
-    "instruments": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/instrument" } },
-    "combination_rules": { "type": "array", "items": { "$ref": "#/$defs/combinationRule" } },
+    "general_criteria": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/criterion"
+      }
+    },
+    "general_exclusions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/textWithSource"
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/instrument"
+      }
+    },
+    "combination_rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/combinationRule"
+      }
+    },
     "application": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "additionalProperties": false,
       "properties": {
-        "channel": { "enum": ["online_portal", "email", "post", "mixed", "other"] },
-        "url": { "type": ["string", "null"] },
-        "steps": { "type": "array", "items": { "type": "string" } },
-        "note": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "channel": {
+          "enum": [
+            "online_portal",
+            "email",
+            "post",
+            "mixed",
+            "other"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "contacts": {
@@ -73,11 +230,33 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string" },
-          "role": { "type": ["string", "null"] },
-          "email": { "type": ["string", "null"] },
-          "phone": { "type": ["string", "null"] },
-          "url": { "type": ["string", "null"] }
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
@@ -85,200 +264,655 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["title"],
+        "required": [
+          "title"
+        ],
         "additionalProperties": false,
         "properties": {
-          "title": { "type": "string" },
-          "ref": { "type": ["string", "null"] },
-          "url": { "type": ["string", "null"] }
+          "title": {
+            "type": "string"
+          },
+          "ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
-    "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source" } },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
     "meta": {
       "type": "object",
-      "required": ["last_verified", "status"],
+      "required": [
+        "last_verified",
+        "status"
+      ],
       "additionalProperties": false,
       "properties": {
-        "last_verified": { "type": "string", "format": "date" },
-        "verified_by": { "type": ["string", "null"] },
-        "status": { "enum": ["draft", "verified"] },
-        "open_questions": { "type": "array", "items": { "type": "string" } }
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "verified_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "verified"
+          ]
+        },
+        "open_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     }
   },
   "$defs": {
     "sourceRef": {
       "type": "object",
-      "required": ["source_id"],
+      "required": [
+        "source_id"
+      ],
       "additionalProperties": false,
       "properties": {
-        "source_id": { "type": "string" },
-        "locator": { "type": ["string", "null"], "description": "Randnummer, Ziffer, Artikel oder Seite, z. B. 'N 20' oder 'Ziff. 3.7'" }
+        "source_id": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Randnummer, Ziffer, Artikel oder Seite, z. B. 'N 20' oder 'Ziff. 3.7'"
+        }
       }
     },
     "source": {
       "type": "object",
-      "required": ["id", "title", "type", "url", "checked"],
+      "required": [
+        "id",
+        "title",
+        "type",
+        "url",
+        "checked"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string" },
-        "title": { "type": "string" },
-        "type": { "enum": ["handbuch", "verordnung", "gesetz", "merkblatt", "webseite", "faq", "formular", "praesentation"] },
-        "url": { "type": "string" },
-        "version": { "type": ["string", "null"] },
-        "published": { "type": ["string", "null"], "format": "date" },
-        "checked": { "type": "string", "format": "date" },
-        "local_path": { "type": ["string", "null"] }
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "handbuch",
+            "verordnung",
+            "gesetz",
+            "merkblatt",
+            "webseite",
+            "faq",
+            "formular",
+            "praesentation",
+            "reglement",
+            "ausschreibung"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "checked": {
+          "type": "string",
+          "format": "date"
+        },
+        "local_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "textWithSource": {
       "type": "object",
-      "required": ["text"],
+      "required": [
+        "text"
+      ],
       "additionalProperties": false,
       "properties": {
-        "text": { "type": "string" },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "text": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "criterion": {
       "type": "object",
-      "required": ["id", "text", "kind", "about"],
+      "required": [
+        "id",
+        "text",
+        "kind",
+        "about"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-        "text": { "type": "string" },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "text": {
+          "type": "string"
+        },
         "kind": {
-          "enum": ["muss", "soll", "bewertung"],
+          "enum": [
+            "muss",
+            "soll",
+            "bewertung"
+          ],
           "description": "muss = Ausschlusskriterium; soll = Vorteil oder Einzelfallentscheid; bewertung = Qualitätskriterium in kompetitiver Auswahl"
         },
-        "about": { "enum": ["unternehmen", "vorhaben", "kosten", "zeit", "partner", "ort", "dokumente", "objekt"] },
-        "applies_if": { "type": ["string", "null"], "description": "Bedingung, falls das Kriterium nur manchmal gilt, z. B. 'nur bei Auftragsforschung'" },
-        "profile_fields": { "type": "array", "items": { "type": "string" }, "description": "Felder im Projektprofil, die dieses Kriterium beantworten" },
+        "about": {
+          "enum": [
+            "unternehmen",
+            "vorhaben",
+            "kosten",
+            "zeit",
+            "partner",
+            "ort",
+            "dokumente",
+            "objekt"
+          ]
+        },
+        "applies_if": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Bedingung, falls das Kriterium nur manchmal gilt, z. B. 'nur bei Auftragsforschung'"
+        },
+        "profile_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Felder im Projektprofil, die dieses Kriterium beantworten"
+        },
         "question": {
-          "type": ["object", "null"],
+          "type": [
+            "object",
+            "null"
+          ],
           "additionalProperties": false,
           "properties": {
-            "text": { "type": "string" },
-            "options": { "type": "array", "items": { "type": "string" } }
+            "text": {
+              "type": "string"
+            },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         },
-        "evidence": { "type": "array", "items": { "type": "string" } },
-        "source": { "$ref": "#/$defs/sourceRef" },
-        "notes": { "type": ["string", "null"] }
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "eligibleItem": {
       "type": "object",
-      "required": ["id", "name"],
+      "required": [
+        "id",
+        "name"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string" },
-        "name": { "type": "string" },
-        "definition": { "type": ["string", "null"] },
-        "examples_positive": { "type": "array", "items": { "type": "string" } },
-        "examples_negative": { "type": "array", "items": { "type": "string" } },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "definition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "examples_positive": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "examples_negative": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "document": {
       "type": "object",
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "condition": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "name": {
+          "type": "string"
+        },
+        "condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "lever": {
       "type": "object",
-      "required": ["text", "affects_criteria"],
+      "required": [
+        "text",
+        "affects_criteria"
+      ],
       "additionalProperties": false,
       "properties": {
-        "text": { "type": "string" },
-        "affects_criteria": { "type": "array", "items": { "type": "string" } },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "text": {
+          "type": "string"
+        },
+        "affects_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "combinationRule": {
       "type": "object",
-      "required": ["with", "type", "text"],
+      "required": [
+        "with",
+        "type",
+        "text"
+      ],
       "additionalProperties": false,
       "properties": {
-        "with": { "type": "string", "description": "Programm-ID, 'programm-id:instrument-id' oder '*' für alle" },
-        "type": { "enum": ["abzug", "ausgeschlossen", "erlaubt", "bedingt"] },
-        "text": { "type": "string" },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "with": {
+          "type": "string",
+          "description": "Programm-ID, 'programm-id:instrument-id' oder '*' für alle"
+        },
+        "type": {
+          "enum": [
+            "abzug",
+            "ausgeschlossen",
+            "erlaubt",
+            "bedingt",
+            "voraussetzung",
+            "empfohlen_vorher"
+          ],
+          "description": "voraussetzung = das andere Programm muss vorher genutzt werden; empfohlen_vorher = sinnvoller vorheriger Schritt (z. B. Beratung vor Gesuch)"
+        },
+        "text": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     },
     "instrument": {
       "type": "object",
-      "required": ["id", "name", "instrument_type", "recipient", "filter", "criteria", "funding", "timing"],
+      "required": [
+        "id",
+        "name",
+        "instrument_type",
+        "availability",
+        "recipient",
+        "filter",
+        "criteria",
+        "funding",
+        "timing"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-        "name": { "type": "string" },
-        "description": { "type": ["string", "null"] },
-        "instrument_type": { "enum": ["beitrag", "steuergutschrift", "gutschrift", "darlehen", "buergschaft", "beratung", "coaching", "stipendium", "sonstiges"] },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Kurznamen und Synonyme, z. B. 'Innocheck', 'LIB'"
+        },
+        "instrument_type": {
+          "enum": [
+            "beitrag",
+            "steuergutschrift",
+            "gutschrift",
+            "darlehen",
+            "buergschaft",
+            "beratung",
+            "coaching",
+            "stipendium",
+            "sonstiges",
+            "versicherung",
+            "preis"
+          ]
+        },
+        "availability": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false,
+          "description": "Ob das Instrument heute beantragt werden kann. Der Vorfilter zeigt nur 'aktiv' als Treffer.",
+          "properties": {
+            "status": {
+              "enum": [
+                "aktiv",
+                "geplant",
+                "runde_geschlossen",
+                "eingestellt"
+              ],
+              "description": "aktiv = jetzt beantragbar; geplant = angekündigt, noch nicht in Kraft; runde_geschlossen = Ausschreibungsrunde vorbei; eingestellt = gibt es nicht mehr"
+            },
+            "next_round": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/sourceRef"
+            }
+          }
+        },
         "recipient": {
           "type": "object",
-          "required": ["type"],
+          "required": [
+            "type"
+          ],
           "additionalProperties": false,
           "properties": {
-            "type": { "enum": ["gesuchsteller", "forschungspartner", "dienstleister"] },
-            "note": { "type": ["string", "null"] }
+            "type": {
+              "enum": [
+                "gesuchsteller",
+                "forschungspartner",
+                "dienstleister"
+              ]
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
           }
         },
         "filter": {
           "type": "object",
           "description": "Harte, maschinenlesbare Merkmale für den Vorfilter im Code",
-          "required": ["applicant_types", "project_types"],
+          "required": [
+            "applicant_types",
+            "project_types",
+            "sectors",
+            "required_partners"
+          ],
           "additionalProperties": false,
           "properties": {
             "applicant_types": {
               "type": "array",
-              "items": { "enum": ["unternehmen", "startup", "kmu", "grossunternehmen", "eigentuemer", "gemeinde", "verein_stiftung", "forschungsinstitution", "privatperson"] }
+              "items": {
+                "enum": [
+                  "unternehmen",
+                  "startup",
+                  "kmu",
+                  "grossunternehmen",
+                  "eigentuemer",
+                  "gemeinde",
+                  "verein_stiftung",
+                  "forschungsinstitution",
+                  "privatperson"
+                ]
+              }
             },
-            "employees_min": { "type": ["integer", "null"] },
-            "employees_max": { "type": ["integer", "null"] },
-            "company_age_years_max": { "type": ["integer", "null"] },
-            "requires_partner": { "enum": ["keiner", "forschungspartner", "umsetzungspartner"] },
+            "employees_min": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "employees_max": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "company_age_years_max": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
             "project_types": {
               "type": "array",
               "items": {
                 "enum": [
-                  "forschung", "entwicklung", "prototyp", "machbarkeitsstudie", "prozessinnovation", "organisationsinnovation",
-                  "klinische_studie", "gebaeudesanierung", "heizungsersatz", "erneuerbare_energie", "energieeffizienz",
-                  "e_mobilitaet", "nachhaltiges_bauen", "export", "tourismus", "gruendung", "wachstum",
-                  "regionalentwicklung", "digitalisierung", "weiterbildung", "finanzierung", "kultur", "soziales"
+                  "forschung",
+                  "entwicklung",
+                  "prototyp",
+                  "machbarkeitsstudie",
+                  "prozessinnovation",
+                  "organisationsinnovation",
+                  "klinische_studie",
+                  "gebaeudesanierung",
+                  "heizungsersatz",
+                  "erneuerbare_energie",
+                  "energieeffizienz",
+                  "e_mobilitaet",
+                  "nachhaltiges_bauen",
+                  "export",
+                  "tourismus",
+                  "gruendung",
+                  "wachstum",
+                  "regionalentwicklung",
+                  "digitalisierung",
+                  "weiterbildung",
+                  "finanzierung",
+                  "kultur",
+                  "soziales",
+                  "gesundheit",
+                  "nachfolge",
+                  "investition",
+                  "klimaschutz"
+                ]
+              }
+            },
+            "required_partners": {
+              "type": "array",
+              "description": "Leer = kein Partner nötig",
+              "items": {
+                "enum": [
+                  "forschungspartner",
+                  "umsetzungspartner",
+                  "internationaler_partner",
+                  "mehrere_betriebe",
+                  "gemeinde"
+                ]
+              }
+            },
+            "sectors": {
+              "type": "array",
+              "description": "Leer = branchenoffen. Nur füllen, wenn die Quelle die Branche einschränkt.",
+              "items": {
+                "enum": [
+                  "industrie",
+                  "gewerbe",
+                  "handel",
+                  "gastronomie",
+                  "hotellerie",
+                  "tourismus",
+                  "landwirtschaft",
+                  "bau",
+                  "dienstleistung",
+                  "ict",
+                  "gesundheit",
+                  "energie",
+                  "kultur",
+                  "bildung"
                 ]
               }
             }
           }
         },
-        "eligible_items": { "type": "array", "items": { "$ref": "#/$defs/eligibleItem" } },
-        "exclusions": { "type": "array", "items": { "$ref": "#/$defs/textWithSource" } },
-        "criteria": { "type": "array", "items": { "$ref": "#/$defs/criterion" } },
+        "eligible_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/eligibleItem"
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/textWithSource"
+          }
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/criterion"
+          }
+        },
         "funding": {
           "type": "object",
-          "required": ["model", "summary"],
+          "required": [
+            "model",
+            "summary"
+          ],
           "additionalProperties": false,
           "properties": {
-            "model": { "enum": ["prozent_kosten", "pauschal", "pro_einheit", "gestaffelt", "gutschrift", "kostenbeteiligung", "individuell"] },
-            "summary": { "type": "string" },
+            "model": {
+              "enum": [
+                "prozent_kosten",
+                "pauschal",
+                "pro_einheit",
+                "gestaffelt",
+                "gutschrift",
+                "kostenbeteiligung",
+                "individuell"
+              ]
+            },
+            "summary": {
+              "type": "string"
+            },
             "cost_categories": {
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["id", "name"],
+                "required": [
+                  "id",
+                  "name"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "id": { "type": "string" },
-                  "name": { "type": "string" },
-                  "rate_pct": { "type": ["number", "null"] },
-                  "definition": { "type": ["string", "null"] },
-                  "source": { "$ref": "#/$defs/sourceRef" }
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "rate_pct": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "definition": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "source": {
+                    "$ref": "#/$defs/sourceRef"
+                  }
                 }
               }
             },
@@ -286,86 +920,270 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["unit"],
+                "required": [
+                  "unit"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "unit": { "type": "string" },
-                  "condition": { "type": ["string", "null"] },
-                  "base_chf": { "type": ["number", "null"] },
-                  "amount_chf": { "type": ["number", "null"] }
+                  "unit": {
+                    "type": "string"
+                  },
+                  "condition": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "base_chf": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "amount_chf": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
                 }
               }
             },
-            "max_share_of_costs_pct": { "type": ["number", "null"] },
-            "min_amount_chf": { "type": ["number", "null"] },
-            "max_amount_chf": { "type": ["number", "null"] },
+            "max_share_of_costs_pct": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "min_amount_chf": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "max_amount_chf": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
             "cofinancing": {
-              "type": ["object", "null"],
+              "type": [
+                "object",
+                "null"
+              ],
               "additionalProperties": false,
               "properties": {
-                "required": { "type": "boolean" },
-                "rule": { "type": ["string", "null"] }
+                "required": {
+                  "type": "boolean"
+                },
+                "rule": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
               }
             },
-            "deductions": { "type": "array", "items": { "$ref": "#/$defs/textWithSource" } },
-            "payout_forms": { "type": "array", "items": { "type": "string" } },
-            "calculation_basis": { "type": ["string", "null"] },
-            "example": { "type": ["string", "null"] },
-            "source": { "$ref": "#/$defs/sourceRef" }
+            "deductions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/textWithSource"
+              }
+            },
+            "payout_forms": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "calculation_basis": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "example": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/sourceRef"
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Zins, Gebühren, Laufzeit, Sicherheiten oder anderes, das nicht in die Felder passt"
+            }
           }
         },
         "timing": {
           "type": "object",
-          "required": ["deadline"],
+          "required": [
+            "deadline"
+          ],
           "additionalProperties": false,
           "properties": {
             "deadline": {
               "type": "object",
-              "required": ["type"],
+              "required": [
+                "type"
+              ],
               "additionalProperties": false,
               "properties": {
-                "type": { "enum": ["fester_termin_jaehrlich", "fester_termin", "laufend", "vor_projektstart", "nach_abschluss", "ausschreibung", "unbekannt"] },
-                "rule": { "type": ["string", "null"] },
-                "next_dates": { "type": "array", "items": { "type": "string", "format": "date" } },
-                "relative": {
-                  "type": ["object", "null"],
-                  "additionalProperties": false,
-                  "properties": {
-                    "event": { "enum": ["projektstart", "baubeginn", "installationsbeginn", "inbetriebnahme", "publikation", "gruendung"] },
-                    "direction": { "enum": ["vor", "nach"] },
-                    "offset_days": { "type": ["integer", "null"] }
+                "type": {
+                  "enum": [
+                    "fester_termin_jaehrlich",
+                    "fester_termin",
+                    "laufend",
+                    "vor_projektstart",
+                    "nach_abschluss",
+                    "ausschreibung",
+                    "unbekannt"
+                  ]
+                },
+                "rule": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "next_dates": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "date"
                   }
                 },
-                "source": { "$ref": "#/$defs/sourceRef" }
+                "relative": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "event": {
+                      "enum": [
+                        "projektstart",
+                        "baubeginn",
+                        "installationsbeginn",
+                        "inbetriebnahme",
+                        "publikation",
+                        "gruendung"
+                      ]
+                    },
+                    "direction": {
+                      "enum": [
+                        "vor",
+                        "nach"
+                      ]
+                    },
+                    "offset_days": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    }
+                  }
+                },
+                "source": {
+                  "$ref": "#/$defs/sourceRef"
+                }
               }
             },
-            "assessment_period": { "type": ["string", "null"] },
-            "decision_time": { "type": ["string", "null"] },
-            "max_duration_months": { "type": ["integer", "null"] },
-            "repeat_limit": { "type": ["string", "null"] },
-            "note": { "type": ["string", "null"] }
+            "assessment_period": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "decision_time": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "max_duration_months": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "repeat_limit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
           }
         },
         "documents": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "application": { "type": "array", "items": { "$ref": "#/$defs/document" } },
-            "completion": { "type": "array", "items": { "$ref": "#/$defs/document" } }
+            "application": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/document"
+              }
+            },
+            "completion": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/document"
+              }
+            }
           }
         },
-        "obligations": { "type": "array", "items": { "$ref": "#/$defs/textWithSource" } },
-        "levers": { "type": "array", "items": { "$ref": "#/$defs/lever" } },
+        "obligations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/textWithSource"
+          }
+        },
+        "levers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lever"
+          }
+        },
         "links": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "info": { "type": ["string", "null"] },
-            "apply": { "type": ["string", "null"] },
-            "form": { "type": ["string", "null"] }
+            "info": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "apply": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "form": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
           }
         },
-        "source": { "$ref": "#/$defs/sourceRef" }
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
       }
     }
   }
