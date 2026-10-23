@@ -146,24 +146,27 @@
           "x-core-fields": {
             "standort_kanton": "Kantonskürzel, z. B. 'LU'",
             "standort_gemeinde": "Gemeindename",
-            "applicant_type": "Array aus applicant_types der Wissensbasis",
-            "art_des_vorhabens": "Array aus project_types der Wissensbasis",
+            "applicant_type": "Array aus filter.applicant_types der Wissensbasis",
+            "art_des_vorhabens": "Array aus filter.project_types der Wissensbasis",
+            "branche": "Array aus filter.sectors der Wissensbasis",
+            "partner": "Array aus filter.required_partners der Wissensbasis, die beteiligt sind; [] = keine Partner",
             "vorhaben_beschreibung": "Kurzbeschreibung des Vorhabens",
             "taetigkeit": "Was das Unternehmen tut",
             "rechtsform": "z. B. 'AG', 'GmbH', 'Einzelunternehmen', 'Verein', 'Gemeinde'",
-            "handelsregister": "Kanton des Handelsregistereintrags oder boolean",
-            "raeumlichkeiten": "Eigene Räumlichkeiten im Kanton (boolean)",
+            "handelsregister": "Kanton des Handelsregistereintrags",
+            "raeumlichkeiten": "Eigene oder gemietete Räumlichkeiten im Kanton (boolean)",
             "mitarbeitende": "Anzahl Mitarbeitende (integer)",
-            "gruendungsjahr": "Gründungsjahr (integer)",
+            "unternehmensalter": "Alter des Unternehmens in Jahren (integer)",
+            "umsatz": "Jahresumsatz in CHF (number)",
             "geschaeftsjahr": "Abschlussdatum des Geschäftsjahres, z. B. '31.12.'",
             "revisionsart": "'ordentlich', 'eingeschraenkt', 'opting_out' oder 'keine'",
             "nachhaltigkeitsbericht": "Nachhaltigkeitsnachweis vorhanden (boolean)",
             "budget": "Projektbudget in CHF (number)",
             "laufzeit": "Projektdauer in Monaten (integer)",
             "projektstart": "Geplanter Start, ISO-Datum oder Monat 'YYYY-MM'",
-            "partner": "Forschungs- oder Umsetzungspartner (Text) oder null",
             "baujahr": "Baujahr des Gebäudes (integer)",
-            "bestehende_heizung": "Art der bestehenden Heizung"
+            "bestehende_heizung": "Art der bestehenden Heizung",
+            "eigentum_gebaeude": "Gesuchsteller besitzt das Gebäude (boolean)"
           }
         }
       }
@@ -419,8 +422,10 @@
         "scope": {
           "enum": [
             "programm",
-            "instrument"
-          ]
+            "instrument",
+            "filter"
+          ],
+          "description": "filter = aus filter.required_partners erzeugtes Pflichtpartner-Kriterium"
         },
         "text": {
           "type": "string"
@@ -485,7 +490,7 @@
             "string",
             "null"
           ],
-          "description": "Text eines Hebels aus levers[], der eines der Kriterien betrifft"
+          "description": "Text eines Hebels aus levers[], der eines der Kriterien betrifft, oder bei fehlendem Pflichtpartner der feste Text zu filter.required_partners"
         },
         "hint": {
           "type": [
@@ -687,7 +692,9 @@
         "program_name",
         "instrument_name",
         "reason",
-        "rule"
+        "rule",
+        "availability_status",
+        "next_round"
       ],
       "additionalProperties": false,
       "properties": {
@@ -708,12 +715,32 @@
         },
         "rule": {
           "enum": [
+            "verfuegbarkeit",
             "kanton",
             "gesuchsteller",
             "vorhaben",
+            "branche",
             "mitarbeitende",
             "unternehmensalter"
           ]
+        },
+        "availability_status": {
+          "enum": [
+            "aktiv",
+            "geplant",
+            "runde_geschlossen",
+            "eingestellt",
+            null
+          ],
+          "description": "nur bei rule 'verfuegbarkeit'"
+        },
+        "next_round": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "nächste Runde laut availability.next_round, sonst null"
         }
       }
     },

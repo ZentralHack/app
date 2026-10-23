@@ -124,7 +124,7 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 - `fields`: map of profile field name to `ProfileField`. Field names are the ones used in `criteria[].profile_fields` of the knowledge base; the core list with value types is in `x-core-fields` in the schema.
 - `ProfileField`: `value`, `status` (`angegeben` = stated by the user, `annahme` = inferred, `fehlt` = missing), `origin` (`text`, `formular`, `rueckfrage`, `korrektur`), `quote` (the user's words for `origin: text`), `note`.
 - `value` is `null` exactly when `status` is `fehlt`.
-- `applicant_type` and `art_des_vorhabens` hold arrays of the knowledge base enums (`filter.applicant_types`, `filter.project_types`), so the pre-filter can compare directly.
+- `applicant_type`, `art_des_vorhabens`, `branche` and `partner` hold arrays of the knowledge base enums (`filter.applicant_types`, `filter.project_types`, `filter.sectors`, `filter.required_partners`), so the pre-filter can compare directly.
 
 ### QuestionSet
 - At most 3 `Question`s. Each has the `profile_field` it fills, German `text`, `why` ("Warum wir fragen"), button `options`, and `affects`: the criteria whose state can change.
@@ -132,7 +132,7 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 
 ### RunResult
 - `matches`: one `InstrumentMatch` per instrument that passed the pre-filter.
-- `rejected`: instruments dropped by the pre-filter, with German `reason` and the `rule` that applied.
+- `rejected`: instruments dropped by the pre-filter, with German `reason` and the `rule` that applied: `verfuegbarkeit`, `kanton`, `gesuchsteller`, `vorhaben`, `branche`, `mitarbeitende`, `unternehmensalter` (see [architecture.md](architecture.md#step-3-pre-filter-pure-code)). For `verfuegbarkeit`, `availability_status` and `next_round` are set, so the UI can show "Runde geschlossen, nächste Runde ab ...". Missing required partners are not a reject reason; they appear as a criterion with `scope: filter` and a gap of type `anpassung`.
 - `plan`: `FundingPlan`, `null` while running.
 - `disclaimer`: always "Orientierungshilfe, keine verbindliche Beurteilung".
 - `today`: the reference date for all deadline logic.
@@ -141,7 +141,7 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 - Display data copied from the knowledge base: names, provider, level, purpose, `funding_summary`, `deadline` (`type`, `rule`, `next_date`), `links`, `source_checked`.
 - `status`: `ausstehend`, `laeuft`, `fertig`, `fehler`.
 - `fit`: `passt_gut`, `passt_mit_anpassung`, `passt_nicht`; `null` until scored or on `fehler`. `rank` is 1-based within all fitting instruments.
-- `criteria`: one `CriterionResult` per criterion (program-wide ones with `scope: programm`).
+- `criteria`: one `CriterionResult` per criterion (program-wide ones with `scope: programm`, required-partner checks generated from `filter.required_partners` with `scope: filter`).
 - `gaps`: what is missing or what would make it fit (see below).
 
 ### CriterionResult

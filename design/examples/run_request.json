@@ -79,12 +79,21 @@
         "quote": "18 Mitarbeitenden",
         "note": null
       },
-      "gruendungsjahr": {
+      "unternehmensalter": {
         "value": null,
         "status": "fehlt",
         "origin": null,
         "quote": null,
         "note": null
+      },
+      "branche": {
+        "value": [
+          "industrie"
+        ],
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Qualitätskontrolle in der Industrie",
+        "note": "Entwicklung für Industriekunden."
       },
       "revisionsart": {
         "value": null,
@@ -126,7 +135,7 @@
         "status": "fehlt",
         "origin": null,
         "quote": null,
-        "note": null
+        "note": "Kein Partner erwähnt."
       }
     }
   },

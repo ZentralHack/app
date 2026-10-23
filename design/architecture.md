@@ -133,6 +133,7 @@ The pre-filter runs before the questions step as well, so questions are only ask
 
 ### Step 1: Profile
 - Extracts the fields named in `criteria[].profile_fields` across the knowledge base (company location, size, legal form, project type, budget, timing, partners, and so on).
+- The fields the pre-filter needs are mapped to knowledge base enums: `applicant_type` to `filter.applicant_types`, `art_des_vorhabens` to `filter.project_types`, `branche` to `filter.sectors`, `partner` to `filter.required_partners`.
 - Each field has a `value`, a `status` (`angegeben`, `annahme`, `fehlt`) and, for `angegeben`, the quote from the user text.
 - If the text is too vague to say what the money is for, the step returns `needs_clarification` with one question instead of a profile.
 
@@ -142,13 +143,21 @@ The pre-filter runs before the questions step as well, so questions are only ask
 - The LLM only rewrites the top 3 into one short, plain question each and writes the "Warum wir fragen" line. If no question can change a fit level, the set is empty and the screen is skipped.
 
 ### Step 3: Pre-filter (pure code)
-Drops instruments using `instrument.filter` and `program.scope`:
-- canton not in `scope.cantons` (empty list means all of Switzerland),
-- applicant type not in `applicant_types`,
-- project type not in `project_types`,
-- employee count or company age outside the limits.
+Drops instruments using `instrument.availability`, `instrument.filter` and `program.scope`. Rules run in this order, the first match gives the reject reason (`Rejected.rule`):
 
-A filter only drops on a known profile value. If the value is `fehlt`, the instrument stays in. Every drop carries a German reason, shown under "passt nicht".
+| Rule | Drops when |
+|---|---|
+| `verfuegbarkeit` | `availability.status` is not `aktiv`. The reject carries the status and `next_round`, so the UI can say "nächste Runde ab ...". |
+| `kanton` | profile canton not in `scope.cantons` (empty list means all of Switzerland) |
+| `gesuchsteller` | no profile applicant type in `applicant_types` |
+| `vorhaben` | no profile project type in `project_types` |
+| `branche` | `sectors` is not empty and no profile sector is in it (empty means open to all sectors) |
+| `mitarbeitende` | employee count outside `employees_min` / `employees_max` |
+| `unternehmensalter` | company age above `company_age_years_max` |
+
+All rules except `verfuegbarkeit` only drop on a known profile value. If the value is `fehlt`, the instrument stays in. Every drop carries a German reason, shown under "passt nicht".
+
+**Required partners never drop an instrument.** A missing partner is something the user can change, and the brief's own example (Innosuisse with a research partner) depends on showing it. Instead, code adds one `muss` criterion per entry in `filter.required_partners` (scope `filter`, e.g. "Ein Forschungspartner ist beteiligt.", source = the instrument's source) to the matching input. If it is not met, scoring treats it as fixable: fit `passt_mit_anpassung`, gap `anpassung` with the fixed text for that partner type (e.g. "Forschungspartner beiziehen"). These texts are defined once in code, one per enum value.
 
 ### Step 4: Matching (one LLM call per instrument, in parallel)
 - Input: the profile and one instrument with its criteria, exclusions and the program's `general_criteria`.
@@ -160,7 +169,7 @@ A filter only drops on a known profile value. If the value is `fehlt`, the instr
 ### Step 5: Scoring (pure code)
 For each instrument:
 1. A `muss` criterion `nicht_erfuellt`, with no lever in `levers` that affects it: **passt nicht**.
-2. A `muss` criterion `nicht_erfuellt` that a lever affects: **passt mit Anpassung**, with gap type `anpassung`.
+2. A `muss` criterion `nicht_erfuellt` that a lever affects, or a required-partner criterion (scope `filter`) not met: **passt mit Anpassung**, with gap type `anpassung`.
 3. No `muss` failure, but two or more `muss` criteria `unbekannt`: **passt mit Anpassung**, with gap type `infos_fehlen`.
 4. Otherwise: **passt gut**.
 

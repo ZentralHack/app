@@ -40,7 +40,9 @@
           "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
           "instrument_name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
           "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
-          "rule": "vorhaben"
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
         },
         {
           "program_id": "foerderprogramm-energie-lu",
@@ -48,7 +50,9 @@
           "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
           "instrument_name": "Luft/Wasser-Wärmepumpe bis 70 kW",
           "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
-          "rule": "vorhaben"
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
         }
       ]
     }

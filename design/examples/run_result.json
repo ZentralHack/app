@@ -85,12 +85,21 @@
         "quote": "18 Mitarbeitenden",
         "note": null
       },
-      "gruendungsjahr": {
+      "unternehmensalter": {
         "value": null,
         "status": "fehlt",
         "origin": null,
         "quote": null,
         "note": null
+      },
+      "branche": {
+        "value": [
+          "industrie"
+        ],
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Qualitätskontrolle in der Industrie",
+        "note": "Entwicklung für Industriekunden."
       },
       "revisionsart": {
         "value": "ordentlich",
@@ -132,7 +141,7 @@
         "status": "fehlt",
         "origin": null,
         "quote": null,
-        "note": null
+        "note": "Kein Partner erwähnt."
       }
     }
   },
@@ -423,7 +432,9 @@
       "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
       "instrument_name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
       "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
-      "rule": "vorhaben"
+      "rule": "vorhaben",
+      "availability_status": null,
+      "next_round": null
     },
     {
       "program_id": "foerderprogramm-energie-lu",
@@ -431,7 +442,9 @@
       "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
       "instrument_name": "Luft/Wasser-Wärmepumpe bis 70 kW",
       "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
-      "rule": "vorhaben"
+      "rule": "vorhaben",
+      "availability_status": null,
+      "next_round": null
     }
   ],
   "plan": {
