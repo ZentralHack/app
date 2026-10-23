@@ -1,0 +1,54 @@
+{
+  "id": "keine-innovation",
+  "title": "Bäckerei ersetzt Backofen und Kassensystem",
+  "category": "standard",
+  "input": {
+    "text": "Unsere Bäckerei in Sursee mit 25 Mitarbeitenden möchte einen neuen Backofen kaufen und ein neues Kassensystem einführen. Wir kaufen beides fertig beim Hersteller. Kosten rund CHF 150'000.",
+    "gemeinde": "Sursee",
+    "mitarbeitende": 25,
+    "budget_chf": 150000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "mitarbeitende": 25,
+      "budget": 150000
+    },
+    "programs": [
+      {
+        "program_id": "buergschaft-kmu",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": "Finanzierung der Investition."
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Blosse Anschaffung bestehender Lösungen ist keine förderberechtigte Innovation (Handbuch N 69)."
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": "Keine Innovation."
+      }
+    ],
+    "behaviour": [
+      "Empfiehlt keine Innovationsprogramme.",
+      "Erklärt beim LIB, warum der Kauf fertiger Lösungen nicht genügt.",
+      "Nennt Finanzierungsmöglichkeiten oder Ansprechstellen, falls nichts passt."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

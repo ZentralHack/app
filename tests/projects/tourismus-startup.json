@@ -1,0 +1,82 @@
+{
+  "id": "tourismus-startup",
+  "title": "Neues Erlebnisangebot eines Tourismus-Startups",
+  "category": "standard",
+  "input": {
+    "text": "Wir sind ein Startup mit 3 Personen im Entlebuch, gegründet 2025. Wir wollen buchbare Erlebnisangebote mit lokalen Bauernhöfen und Gastronomen entwickeln und dafür eine eigene Buchungsplattform aufbauen. Budget CHF 120'000 für die ersten 12 Monate.",
+    "gemeinde": "Entlebuch",
+    "mitarbeitende": 3,
+    "budget_chf": 120000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "art_des_vorhabens": [
+        "tourismus",
+        "gruendung"
+      ],
+      "mitarbeitende": 3,
+      "gruendungsjahr": 2025
+    },
+    "programs": [
+      {
+        "program_id": "innotour",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "startup-luzern",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "nrp-luzern",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": "Regionale Kooperation im ländlichen Raum."
+      },
+      {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "fit": [
+          "passt_nicht",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": "Neu gegründete Unternehmen erst zwei Jahre nach Abschluss des ersten Geschäftsjahres (Handbuch N 42)."
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": "Kein Gebäude- oder Energievorhaben."
+      }
+    ],
+    "behaviour": [
+      "Erklärt beim LIB die Wartefrist für neu gegründete Unternehmen mit Quelle.",
+      "Unterscheidet zwischen Tourismus- und Startup-Förderung."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

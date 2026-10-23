@@ -1,0 +1,80 @@
+{
+  "id": "gemeinde-gewerbehaus",
+  "title": "Gemeinde baut ein altes Schulhaus zum Gewerbehaus um",
+  "category": "standard",
+  "input": {
+    "text": "Wir sind eine Landgemeinde im Kanton Luzern mit rund 4'000 Einwohnern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen. Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
+    "gemeinde": null,
+    "mitarbeitende": null,
+    "budget_chf": null
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "applicant_type": [
+        "gemeinde"
+      ],
+      "baujahr": 1962,
+      "art_des_vorhabens": [
+        "regionalentwicklung",
+        "gebaeudesanierung",
+        "heizungsersatz"
+      ]
+    },
+    "programs": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "nrp-luzern",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Regionale Wirtschaftsentwicklung."
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Gemeinden sind keine berechtigten Gesuchsteller."
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": "Kein Innovationsprojekt eines Unternehmens."
+      }
+    ],
+    "behaviour": [
+      "Erkennt die Gemeinde als Gesuchstellerin.",
+      "Zeigt Energie- und Regionalförderung gemeinsam im Fahrplan."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

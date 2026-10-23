@@ -1,0 +1,77 @@
+{
+  "id": "sensor-prototyp",
+  "title": "Sensor-Prototyp für industrielle Qualitätskontrolle",
+  "category": "standard",
+  "input": {
+    "text": "Wir sind ein KMU aus Emmen mit 18 Mitarbeitenden. Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen. Budget rund CHF 400'000. Einen Forschungspartner haben wir noch nicht.",
+    "gemeinde": "Emmen",
+    "mitarbeitende": 18,
+    "budget_chf": 400000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "art_des_vorhabens": [
+        "entwicklung",
+        "prototyp"
+      ],
+      "mitarbeitende": 18,
+      "budget": 400000
+    },
+    "programs": [
+      {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Beispiel aus dem Challenge-Brief."
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "fit": [
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Brief: insbesondere bei Zusammenarbeit mit einem Forschungspartner. Hinweis 'Forschungspartner beiziehen' nur, wenn ein Hebel in der Wissensbasis steht."
+      },
+      {
+        "program_id": "innovationsberatung-zentralschweiz",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": "Kein Gebäude- oder Energievorhaben."
+      },
+      {
+        "program_id": "innotour",
+        "instrument_id": null,
+        "reason": "Kein Tourismusvorhaben."
+      }
+    ],
+    "behaviour": [
+      "Zeigt LIB und Innosuisse als Treffer.",
+      "Begründet jedes Kriterium mit Quelle und Randnummer.",
+      "Nennt fehlende Angaben, z. B. Revisionsart und Nachhaltigkeitsnachweis."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Fiktives Unternehmen. Laufendes Beispiel aus CLAUDE.md (Sensora AG)."
+  }
+}

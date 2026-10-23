@@ -1,0 +1,61 @@
+{
+  "id": "ausserhalb-luzern",
+  "title": "Sensor-Prototyp eines Unternehmens aus dem Kanton Aargau",
+  "category": "edge_case",
+  "input": {
+    "text": "Wir sind ein KMU aus Aarau mit 30 Mitarbeitenden und entwickeln einen neuartigen Drucksensor. Wir wollen zusammen mit einer Fachhochschule einen Prototyp bauen. Budget CHF 500'000.",
+    "gemeinde": "Aarau",
+    "mitarbeitende": 30,
+    "budget_chf": 500000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "AG",
+      "art_des_vorhabens": [
+        "entwicklung",
+        "prototyp"
+      ],
+      "mitarbeitende": 30
+    },
+    "programs": [
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Nationales Programm, Forschungspartner vorhanden."
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "reason": "Kein Sitz und keine Präsenz im Kanton Luzern."
+      },
+      {
+        "program_id": "nrp-luzern",
+        "instrument_id": null,
+        "reason": "Nur für Vorhaben im Kanton Luzern."
+      },
+      {
+        "program_id": "startup-luzern",
+        "instrument_id": null,
+        "reason": "Nur für Unternehmen im Kanton Luzern."
+      }
+    ],
+    "behaviour": [
+      "Lehnt kantonale Luzerner Programme mit dem Grund 'Kanton' ab.",
+      "Zeigt nationale Programme weiterhin an."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

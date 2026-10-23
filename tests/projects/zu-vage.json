@@ -1,0 +1,28 @@
+{
+  "id": "zu-vage",
+  "title": "Zu vage Eingabe",
+  "category": "edge_case",
+  "input": {
+    "text": "Wir brauchen Geld für unser Unternehmen.",
+    "gemeinde": null,
+    "mitarbeitende": null,
+    "budget_chf": null
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": true,
+    "profile": {},
+    "programs": [],
+    "rejected": [],
+    "behaviour": [
+      "Gibt needs_clarification zurück.",
+      "Fragt, wofür das Geld eingesetzt werden soll.",
+      "Startet keine Prüfung."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

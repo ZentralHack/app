@@ -1,0 +1,84 @@
+{
+  "id": "pv-schreinerei",
+  "title": "Dachsanierung und Photovoltaik bei einer Schreinerei",
+  "category": "standard",
+  "input": {
+    "text": "Unsere Schreinerei in Ruswil hat 12 Mitarbeitende. Wir wollen nächstes Jahr das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren. Das Gebäude ist von 1985 und gehört uns. Kosten insgesamt etwa CHF 250'000.",
+    "gemeinde": "Ruswil",
+    "mitarbeitende": 12,
+    "budget_chf": 250000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "art_des_vorhabens": [
+        "gebaeudesanierung",
+        "erneuerbare_energie",
+        "energieeffizienz"
+      ],
+      "mitarbeitende": 12,
+      "baujahr": 1985
+    },
+    "programs": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Dachdämmung. Gesuch vor Baubeginn."
+      },
+      {
+        "program_id": "pronovo",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Nur falls das Luzerner Energieprogramm PV für Unternehmen nicht fördert (Researcher B prüft)."
+      },
+      {
+        "program_id": "buergschaft-kmu",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": "Finanzierung der Investition."
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Keine Forschungs- oder Entwicklungstätigkeit."
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": "Keine Innovation."
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
+        "reason": "Keine Heizung ersetzt."
+      }
+    ],
+    "behaviour": [
+      "Fahrplan stellt das Gesuch für die Dämmung vor Baubeginn in die Phase 'Jetzt' oder 'Vor Projektstart'.",
+      "Fragt nach fehlenden Gebäudeangaben, falls die Wissensbasis sie verlangt.",
+      "Zeigt keine Innovationsprogramme als Treffer."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}

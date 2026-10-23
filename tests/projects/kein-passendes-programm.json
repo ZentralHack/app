@@ -1,0 +1,43 @@
+{
+  "id": "kein-passendes-programm",
+  "title": "Firmenanlass ohne passendes Programm",
+  "category": "edge_case",
+  "input": {
+    "text": "Unser Treuhandbüro in Kriens mit 8 Mitarbeitenden möchte für das 20-Jahr-Jubiläum einen Firmenausflug und ein Fest für Kunden organisieren. Kosten etwa CHF 30'000.",
+    "gemeinde": "Kriens",
+    "mitarbeitende": 8,
+    "budget_chf": 30000
+  },
+  "answers": {},
+  "expected": {
+    "needs_clarification": false,
+    "profile": {
+      "standort_kanton": "LU",
+      "mitarbeitende": 8,
+      "budget": 30000
+    },
+    "programs": [],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Keine Forschungs- oder Entwicklungstätigkeit."
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": "Keine Innovation."
+      }
+    ],
+    "behaviour": [
+      "Sagt klar, dass kein Programm passt.",
+      "Zeigt die nächstliegenden Programme mit Ablehnungsgrund.",
+      "Nennt eine Ansprechstelle aus der Wissensbasis."
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": null
+  }
+}
