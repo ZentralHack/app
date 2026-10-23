@@ -1,0 +1,1703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contract.schema.json",
+  "title": "Fördermittel-Agent API contract",
+  "description": "All request, response and event shapes. Referenced by name: contract.schema.json#/$defs/<Name>.",
+  "$defs": {
+    "InstrumentRef": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "instrument_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": "string"
+        }
+      }
+    },
+    "CriterionRef": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "instrument_id",
+        "criterion_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "criterion_id": {
+          "type": "string"
+        }
+      }
+    },
+    "SourceLink": {
+      "type": "object",
+      "required": [
+        "title",
+        "url",
+        "locator"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ProfileField": {
+      "type": "object",
+      "required": [
+        "value",
+        "status",
+        "origin",
+        "quote",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean",
+            "array",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "angegeben",
+            "annahme",
+            "fehlt"
+          ]
+        },
+        "origin": {
+          "enum": [
+            "text",
+            "formular",
+            "rueckfrage",
+            "korrektur",
+            null
+          ]
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "description": "value is null if and only if status is 'fehlt'. quote is required for origin 'text'."
+    },
+    "ProjectProfile": {
+      "type": "object",
+      "required": [
+        "input_text",
+        "summary",
+        "fields"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "input_text": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Ein Satz auf Deutsch, was gefördert werden soll"
+        },
+        "fields": {
+          "type": "object",
+          "description": "Profilfelder nach Namen. Kernfelder siehe Liste; weitere Namen aus criteria[].profile_fields sind erlaubt.",
+          "propertyNames": {
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/ProfileField"
+          },
+          "x-core-fields": {
+            "standort_kanton": "Kantonskürzel, z. B. 'LU'",
+            "standort_gemeinde": "Gemeindename",
+            "applicant_type": "Array aus applicant_types der Wissensbasis",
+            "art_des_vorhabens": "Array aus project_types der Wissensbasis",
+            "vorhaben_beschreibung": "Kurzbeschreibung des Vorhabens",
+            "taetigkeit": "Was das Unternehmen tut",
+            "rechtsform": "z. B. 'AG', 'GmbH', 'Einzelunternehmen', 'Verein', 'Gemeinde'",
+            "handelsregister": "Kanton des Handelsregistereintrags oder boolean",
+            "raeumlichkeiten": "Eigene Räumlichkeiten im Kanton (boolean)",
+            "mitarbeitende": "Anzahl Mitarbeitende (integer)",
+            "gruendungsjahr": "Gründungsjahr (integer)",
+            "geschaeftsjahr": "Abschlussdatum des Geschäftsjahres, z. B. '31.12.'",
+            "revisionsart": "'ordentlich', 'eingeschraenkt', 'opting_out' oder 'keine'",
+            "nachhaltigkeitsbericht": "Nachhaltigkeitsnachweis vorhanden (boolean)",
+            "budget": "Projektbudget in CHF (number)",
+            "laufzeit": "Projektdauer in Monaten (integer)",
+            "projektstart": "Geplanter Start, ISO-Datum oder Monat 'YYYY-MM'",
+            "partner": "Forschungs- oder Umsetzungspartner (Text) oder null",
+            "baujahr": "Baujahr des Gebäudes (integer)",
+            "bestehende_heizung": "Art der bestehenden Heizung"
+          }
+        }
+      }
+    },
+    "ProfileRequest": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000
+        },
+        "gemeinde": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mitarbeitende": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "budget_chf": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "Clarification": {
+      "type": "object",
+      "required": [
+        "question",
+        "options"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ProfileResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "profile",
+        "clarification"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "needs_clarification"
+          ]
+        },
+        "profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProjectProfile"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clarification": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Clarification"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Question": {
+      "type": "object",
+      "required": [
+        "id",
+        "profile_field",
+        "text",
+        "why",
+        "options",
+        "affects"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "profile_field": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string",
+          "description": "Text für 'Warum wir fragen'"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2
+        },
+        "affects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CriterionRef"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "QuestionsRequest": {
+      "type": "object",
+      "required": [
+        "profile"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/ProjectProfile"
+        }
+      }
+    },
+    "QuestionSet": {
+      "type": "object",
+      "required": [
+        "questions",
+        "skip_reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Question"
+          },
+          "maxItems": 3
+        },
+        "skip_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Answer": {
+      "type": "object",
+      "required": [
+        "question_id",
+        "profile_field",
+        "answer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "question_id": {
+          "type": "string"
+        },
+        "profile_field": {
+          "type": "string"
+        },
+        "answer": {
+          "type": "string"
+        }
+      }
+    },
+    "RunRequest": {
+      "type": "object",
+      "required": [
+        "profile",
+        "answers"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/ProjectProfile"
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Answer"
+          }
+        }
+      }
+    },
+    "RunCreated": {
+      "type": "object",
+      "required": [
+        "run_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        }
+      }
+    },
+    "RetryRequest": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "instrument_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": "string"
+        }
+      }
+    },
+    "CriterionResult": {
+      "type": "object",
+      "required": [
+        "criterion_id",
+        "scope",
+        "text",
+        "kind",
+        "state",
+        "reason",
+        "evidence",
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "criterion_id": {
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "programm",
+            "instrument"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "muss",
+            "soll",
+            "bewertung"
+          ]
+        },
+        "state": {
+          "enum": [
+            "erfuellt",
+            "annahme",
+            "unbekannt",
+            "nicht_erfuellt",
+            "nicht_anwendbar"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Namen der Profilfelder, auf die sich der Zustand stützt"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceLink"
+        }
+      }
+    },
+    "Gap": {
+      "type": "object",
+      "required": [
+        "type",
+        "criterion_ids",
+        "lever",
+        "hint",
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "anpassung",
+            "infos_fehlen"
+          ]
+        },
+        "criterion_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "lever": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Text eines Hebels aus levers[], der eines der Kriterien betrifft"
+        },
+        "hint": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Vom LLM formulierter Hinweis (Schritt 6), sonst null"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceLink"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Deadline": {
+      "type": "object",
+      "required": [
+        "type",
+        "rule",
+        "next_date"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "fester_termin_jaehrlich",
+            "fester_termin",
+            "laufend",
+            "vor_projektstart",
+            "nach_abschluss",
+            "ausschreibung",
+            "unbekannt"
+          ]
+        },
+        "rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "InstrumentMatch": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "instrument_id",
+        "program_name",
+        "instrument_name",
+        "provider",
+        "level",
+        "purpose",
+        "instrument_type",
+        "funding_summary",
+        "deadline",
+        "links",
+        "source_checked",
+        "status",
+        "fit",
+        "rank",
+        "criteria",
+        "gaps",
+        "error"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": "string"
+        },
+        "program_name": {
+          "type": "string"
+        },
+        "instrument_name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "level": {
+          "enum": [
+            "bund",
+            "kanton",
+            "region",
+            "gemeinde",
+            "stiftung",
+            "privat"
+          ]
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "instrument_type": {
+          "type": "string"
+        },
+        "funding_summary": {
+          "type": "string"
+        },
+        "deadline": {
+          "$ref": "#/$defs/Deadline"
+        },
+        "links": {
+          "type": "object",
+          "required": [
+            "info",
+            "apply",
+            "form"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "info": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "apply": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "form": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "source_checked": {
+          "type": "string",
+          "format": "date",
+          "description": "meta.last_verified des Programms"
+        },
+        "status": {
+          "enum": [
+            "ausstehend",
+            "laeuft",
+            "fertig",
+            "fehler"
+          ]
+        },
+        "fit": {
+          "enum": [
+            "passt_gut",
+            "passt_mit_anpassung",
+            "passt_nicht",
+            null
+          ]
+        },
+        "rank": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CriterionResult"
+          }
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Gap"
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Rejected": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "instrument_id",
+        "program_name",
+        "instrument_name",
+        "reason",
+        "rule"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": "string"
+        },
+        "program_name": {
+          "type": "string"
+        },
+        "instrument_name": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "rule": {
+          "enum": [
+            "kanton",
+            "gesuchsteller",
+            "vorhaben",
+            "mitarbeitende",
+            "unternehmensalter"
+          ]
+        }
+      }
+    },
+    "TimelineEntry": {
+      "type": "object",
+      "required": [
+        "phase",
+        "program_id",
+        "instrument_id",
+        "title",
+        "date",
+        "date_rule",
+        "action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "phase": {
+          "enum": [
+            "jetzt",
+            "vor_projektstart",
+            "gesuch"
+          ]
+        },
+        "program_id": {
+          "type": "string"
+        },
+        "instrument_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action": {
+          "type": "string"
+        }
+      }
+    },
+    "CombinationWarning": {
+      "type": "object",
+      "required": [
+        "type",
+        "items",
+        "text",
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "ausgeschlossen",
+            "abzug",
+            "bedingt"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InstrumentRef"
+          },
+          "minItems": 1
+        },
+        "text": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceLink"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "NextStep": {
+      "type": "object",
+      "required": [
+        "text",
+        "program_id",
+        "instrument_id",
+        "link",
+        "due"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "program_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instrument_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "FundingPlan": {
+      "type": "object",
+      "required": [
+        "timeline",
+        "warnings",
+        "next_steps",
+        "contacts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "timeline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TimelineEntry"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CombinationWarning"
+          }
+        },
+        "next_steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NextStep"
+          }
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "role",
+              "email",
+              "phone",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "email": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "phone": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "RunResult": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "status",
+        "created_at",
+        "completed_at",
+        "today",
+        "disclaimer",
+        "profile",
+        "matches",
+        "rejected",
+        "plan",
+        "error"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "laeuft",
+            "fertig",
+            "fehler"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "today": {
+          "type": "string",
+          "format": "date",
+          "description": "Stichtag für alle Fristberechnungen"
+        },
+        "disclaimer": {
+          "const": "Orientierungshilfe, keine verbindliche Beurteilung"
+        },
+        "profile": {
+          "$ref": "#/$defs/ProjectProfile"
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InstrumentMatch"
+          }
+        },
+        "rejected": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Rejected"
+          }
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FundingPlan"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "RunStartedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "run_started"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "programs",
+            "instruments"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "programs": {
+              "type": "integer"
+            },
+            "instruments": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "StepStartedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "step_started"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "step"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "step": {
+              "enum": [
+                "vorfilter",
+                "pruefung",
+                "bewertung",
+                "fahrplan"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "StepCompletedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "step_completed"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "step",
+            "duration_ms"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "step": {
+              "enum": [
+                "vorfilter",
+                "pruefung",
+                "bewertung",
+                "fahrplan"
+              ]
+            },
+            "duration_ms": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "PrefilterResultEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "prefilter_result"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "kept",
+            "rejected"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kept": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/InstrumentRef"
+              }
+            },
+            "rejected": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Rejected"
+              }
+            }
+          }
+        }
+      }
+    },
+    "InstrumentStartedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "instrument_started"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "program_id",
+            "instrument_id",
+            "program_name",
+            "instrument_name"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "program_id": {
+              "type": "string"
+            },
+            "instrument_id": {
+              "type": "string"
+            },
+            "program_name": {
+              "type": "string"
+            },
+            "instrument_name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "InstrumentCompletedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "instrument_completed"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "program_id",
+            "instrument_id",
+            "fit",
+            "badges",
+            "duration_ms"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "program_id": {
+              "type": "string"
+            },
+            "instrument_id": {
+              "type": "string"
+            },
+            "fit": {
+              "enum": [
+                "passt_gut",
+                "passt_mit_anpassung",
+                "passt_nicht"
+              ]
+            },
+            "badges": {
+              "type": "object",
+              "required": [
+                "erfuellt",
+                "annahme",
+                "unbekannt",
+                "nicht_erfuellt"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "erfuellt": {
+                  "type": "integer"
+                },
+                "annahme": {
+                  "type": "integer"
+                },
+                "unbekannt": {
+                  "type": "integer"
+                },
+                "nicht_erfuellt": {
+                  "type": "integer"
+                }
+              }
+            },
+            "duration_ms": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "InstrumentFailedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "instrument_failed"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "program_id",
+            "instrument_id",
+            "error",
+            "retryable"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "program_id": {
+              "type": "string"
+            },
+            "instrument_id": {
+              "type": "string"
+            },
+            "error": {
+              "type": "string"
+            },
+            "retryable": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "PlanReadyEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "plan_ready"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "timeline_entries",
+            "warnings"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "timeline_entries": {
+              "type": "integer"
+            },
+            "warnings": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "RunCompletedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "run_completed"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "duration_ms",
+            "fits"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "duration_ms": {
+              "type": "integer"
+            },
+            "fits": {
+              "type": "object",
+              "required": [
+                "passt_gut",
+                "passt_mit_anpassung",
+                "passt_nicht"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "passt_gut": {
+                  "type": "integer"
+                },
+                "passt_mit_anpassung": {
+                  "type": "integer"
+                },
+                "passt_nicht": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "RunFailedEvent": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "seq",
+        "ts",
+        "type",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "const": "run_failed"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutscher Text für das Live-Panel"
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "error"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "error": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "TraceEvent": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/RunStartedEvent"
+        },
+        {
+          "$ref": "#/$defs/StepStartedEvent"
+        },
+        {
+          "$ref": "#/$defs/StepCompletedEvent"
+        },
+        {
+          "$ref": "#/$defs/PrefilterResultEvent"
+        },
+        {
+          "$ref": "#/$defs/InstrumentStartedEvent"
+        },
+        {
+          "$ref": "#/$defs/InstrumentCompletedEvent"
+        },
+        {
+          "$ref": "#/$defs/InstrumentFailedEvent"
+        },
+        {
+          "$ref": "#/$defs/PlanReadyEvent"
+        },
+        {
+          "$ref": "#/$defs/RunCompletedEvent"
+        },
+        {
+          "$ref": "#/$defs/RunFailedEvent"
+        }
+      ]
+    },
+    "Health": {
+      "type": "object",
+      "required": [
+        "status",
+        "llm_available",
+        "programs_loaded",
+        "programs_invalid"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "eingeschraenkt"
+          ]
+        },
+        "llm_available": {
+          "type": "boolean"
+        },
+        "programs_loaded": {
+          "type": "integer"
+        },
+        "programs_invalid": {
+          "type": "integer"
+        }
+      }
+    },
+    "ProgramSummary": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "level",
+        "valid",
+        "instruments",
+        "last_verified",
+        "status",
+        "errors"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "instruments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "last_verified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "verified",
+            null
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ApiError": {
+      "type": "object",
+      "required": [
+        "code",
+        "message"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deutsche Fehlermeldung für die UI"
+        }
+      }
+    }
+  }
+}

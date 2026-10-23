@@ -1,0 +1,486 @@
+{
+  "run_id": "run_8f3a2c",
+  "status": "fertig",
+  "created_at": "2026-10-23T21:40:00Z",
+  "completed_at": "2026-10-23T21:40:21Z",
+  "today": "2026-10-23",
+  "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
+  "profile": {
+    "input_text": "Wir sind die Sensora AG aus Emmen mit 18 Mitarbeitenden. Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen. Budget rund CHF 400'000.",
+    "summary": "Entwicklung und Test eines Prototyps für einen neuartigen optischen Sensor zur industriellen Qualitätskontrolle.",
+    "fields": {
+      "standort_kanton": {
+        "value": "LU",
+        "status": "annahme",
+        "origin": "text",
+        "quote": "aus Emmen",
+        "note": "Emmen liegt im Kanton Luzern."
+      },
+      "standort_gemeinde": {
+        "value": "Emmen",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "aus Emmen",
+        "note": null
+      },
+      "applicant_type": {
+        "value": [
+          "unternehmen",
+          "kmu"
+        ],
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Sensora AG ... 18 Mitarbeitenden",
+        "note": null
+      },
+      "art_des_vorhabens": {
+        "value": [
+          "entwicklung",
+          "prototyp"
+        ],
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "einen Prototyp bauen und bei Pilotkunden testen",
+        "note": null
+      },
+      "vorhaben_beschreibung": {
+        "value": "Neuartiger optischer Sensor für die industrielle Qualitätskontrolle, Bau und Test eines Prototyps",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "neuartigen optischen Sensor für die Qualitätskontrolle",
+        "note": null
+      },
+      "taetigkeit": {
+        "value": "Entwicklung von Sensoren",
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Wir entwickeln einen neuartigen optischen Sensor",
+        "note": null
+      },
+      "rechtsform": {
+        "value": "AG",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "Sensora AG",
+        "note": null
+      },
+      "handelsregister": {
+        "value": "LU",
+        "status": "annahme",
+        "origin": null,
+        "quote": null,
+        "note": "Abgeleitet aus Rechtsform AG und Sitz in Emmen."
+      },
+      "raeumlichkeiten": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "mitarbeitende": {
+        "value": 18,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "18 Mitarbeitenden",
+        "note": null
+      },
+      "gruendungsjahr": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "revisionsart": {
+        "value": "ordentlich",
+        "status": "angegeben",
+        "origin": "rueckfrage",
+        "quote": "Ordentliche Revision",
+        "note": null
+      },
+      "nachhaltigkeitsbericht": {
+        "value": null,
+        "status": "fehlt",
+        "origin": "rueckfrage",
+        "quote": null,
+        "note": "Antwort: Weiss nicht"
+      },
+      "budget": {
+        "value": 400000,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "Budget rund CHF 400'000",
+        "note": null
+      },
+      "laufzeit": {
+        "value": 18,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "in den nächsten 18 Monaten",
+        "note": null
+      },
+      "projektstart": {
+        "value": "in Zukunft",
+        "status": "angegeben",
+        "origin": "rueckfrage",
+        "quote": "Fallen erst an",
+        "note": null
+      },
+      "partner": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      }
+    }
+  },
+  "matches": [
+    {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag",
+      "program_name": "Luzerner Innovationsbeitrag",
+      "instrument_name": "Luzerner Innovationsbeitrag",
+      "provider": "Kanton Luzern",
+      "level": "kanton",
+      "purpose": "Förderbeiträge für Tätigkeiten und Massnahmen im Bereich Forschung, Entwicklung und Innovation von Luzerner Unternehmen aller Branchen, inkl. Dienstleistungssektor und Startups.",
+      "instrument_type": "beitrag",
+      "funding_summary": "30% der Personal-, 20% der Investitions-, 10% der Auftragsforschungs- und 10% der sonstigen Aufwendungen für förderberechtigte Tätigkeiten. Höchstens 50% der Aufwendungen.",
+      "deadline": {
+        "type": "fester_termin_jaehrlich",
+        "rule": "31. Januar des Beitragsjahres, 23:59 Uhr, keine Fristverlängerung. Beitragsjahre 2026 und 2027: beide bis 31. Januar 2027.",
+        "next_date": "2027-01-31"
+      },
+      "links": {
+        "info": "https://standortfoerderung.lu.ch/LIB",
+        "apply": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+        "form": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a"
+      },
+      "source_checked": "2026-10-23",
+      "status": "fertig",
+      "fit": "passt_mit_anpassung",
+      "rank": 1,
+      "criteria": [
+        {
+          "criterion_id": "unternehmerisch_taetig",
+          "scope": "programm",
+          "text": "Das Unternehmen ist unternehmerisch tätig, d. h. erbringt mit eigenem oder beauftragtem Personal Leistungen am Markt (oder beabsichtigt dies, z. B. Startups). Rechtsform egal.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "Die AG entwickelt Sensoren mit eigenem Personal.",
+          "evidence": [
+            "rechtsform",
+            "taetigkeit"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 13"
+          }
+        },
+        {
+          "criterion_id": "hr_luzern",
+          "scope": "programm",
+          "text": "Eintrag im Handelsregister des Kantons Luzern (Sitz oder Zweigniederlassung), spätestens am Tag der Gesuchseinreichung.",
+          "kind": "muss",
+          "state": "annahme",
+          "reason": "Sitz in Emmen, Eintrag im Luzerner Handelsregister angenommen.",
+          "evidence": [
+            "standort_kanton",
+            "handelsregister"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 20"
+          }
+        },
+        {
+          "criterion_id": "praesenz_raeume",
+          "scope": "programm",
+          "text": "Eigene Räumlichkeiten im Kanton Luzern, dauerhaft verfügbar während des gesamten Bemessungsjahres. Eine c/o- oder Domiziladresse genügt nicht.",
+          "kind": "muss",
+          "state": "unbekannt",
+          "reason": "Keine Angabe zu eigenen Räumlichkeiten im Kanton Luzern.",
+          "evidence": [],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 21-23"
+          }
+        },
+        {
+          "criterion_id": "praesenz_personal",
+          "scope": "programm",
+          "text": "Eigenes vertragliches oder faktisches (ausgeliehenes, weisungsgebundenes) Personal im Kanton Luzern während des gesamten Bemessungsjahres.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "18 Mitarbeitende am Standort Emmen.",
+          "evidence": [
+            "mitarbeitende",
+            "standort_gemeinde"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 24-25"
+          }
+        },
+        {
+          "criterion_id": "revision",
+          "scope": "programm",
+          "text": "Ordentlich geprüfte Jahresrechnung (Einzelabschluss) für das Bemessungsjahr. Alternativ Prüfbericht nach SA-CH (PS-CH 700 oder ISA-CH 700). Eine Review nach PS 910 reicht nicht.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "Ordentliche Revision gemäss Antwort auf Rückfrage.",
+          "evidence": [
+            "revisionsart"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 14-15"
+          }
+        },
+        {
+          "criterion_id": "nachhaltigkeit",
+          "scope": "programm",
+          "text": "Nachweis über nachhaltiges Wirtschaften: Bericht nach Art. 964b OR (auch auf Gruppenstufe) oder kompakte Übersicht von 2 bis 3 Seiten.",
+          "kind": "muss",
+          "state": "unbekannt",
+          "reason": "Unklar, ob ein Nachhaltigkeitsnachweis vorhanden ist.",
+          "evidence": [],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 16-18"
+          }
+        },
+        {
+          "criterion_id": "keine_ausstaende",
+          "scope": "programm",
+          "text": "Keine fälligen, unbezahlten Forderungen von Behörden und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren.",
+          "kind": "soll",
+          "state": "unbekannt",
+          "reason": "Keine Angaben zu offenen Forderungen von Behörden.",
+          "evidence": [],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 26-29"
+          }
+        },
+        {
+          "criterion_id": "fei_taetigkeit",
+          "scope": "instrument",
+          "text": "Das Vorhaben umfasst förderberechtigte Tätigkeiten: Grundlagen- oder industrielle Forschung, experimentelle Entwicklung, wesentliche Organisations- oder Prozessinnovation oder klinische Studien.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "Bau und Test eines Prototyps ist experimentelle Entwicklung.",
+          "evidence": [
+            "vorhaben_beschreibung",
+            "art_des_vorhabens"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 51-72"
+          }
+        },
+        {
+          "criterion_id": "neuartig",
+          "scope": "instrument",
+          "text": "Die Tätigkeit ist schöpferisch und für das Unternehmen neuartig. Die blosse Anwendung bestehender Lösungen genügt nicht.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "Der Sensor wird als neuartig beschrieben und selbst entwickelt.",
+          "evidence": [
+            "vorhaben_beschreibung"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 64, N 69"
+          }
+        },
+        {
+          "criterion_id": "systematisch",
+          "scope": "instrument",
+          "text": "Zielgerichtetes, systematisches Vorgehen, z. B. mit Budget, Zeitplan und Dokumentation.",
+          "kind": "muss",
+          "state": "erfuellt",
+          "reason": "Budget und Laufzeit sind festgelegt.",
+          "evidence": [
+            "budget",
+            "laufzeit"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 66"
+          }
+        },
+        {
+          "criterion_id": "ausfuehrung_luzern",
+          "scope": "instrument",
+          "text": "Die Tätigkeiten werden mit eigenem Personal in eigenen Räumlichkeiten im Kanton Luzern ausgeführt.",
+          "kind": "muss",
+          "state": "annahme",
+          "reason": "Entwicklung mit eigenem Personal in Emmen angenommen.",
+          "evidence": [
+            "standort_gemeinde",
+            "mitarbeitende"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 75"
+          }
+        },
+        {
+          "criterion_id": "auftragsforschung_steuerung",
+          "scope": "instrument",
+          "text": "Bei ausgelagerter Forschung trägt das Unternehmen Risiken und Finanzierung und hat mindestens eine Person, die den Auftrag instruiert, überwacht und steuert.",
+          "kind": "muss",
+          "state": "nicht_anwendbar",
+          "reason": "Keine Auftragsforschung erwähnt.",
+          "evidence": [],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 76-81"
+          }
+        },
+        {
+          "criterion_id": "kosten_selbst_getragen",
+          "scope": "instrument",
+          "text": "Die Aufwendungen werden vom Unternehmen wirtschaftlich selbst getragen und nicht weiterverrechnet.",
+          "kind": "muss",
+          "state": "annahme",
+          "reason": "Die Sensora AG finanziert die Entwicklung selbst, keine Weiterverrechnung erwähnt.",
+          "evidence": [
+            "budget"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 88"
+          }
+        },
+        {
+          "criterion_id": "kosten_bemessungsjahr",
+          "scope": "instrument",
+          "text": "Die Aufwendungen sind in der Jahresrechnung des Bemessungsjahres erfasst: dem Geschäftsjahr, das zwei Kalenderjahre vor dem Beitragsjahr endet.",
+          "kind": "muss",
+          "state": "annahme",
+          "reason": "Die Kosten fallen erst an und zählen im Geschäftsjahr, in dem sie anfallen.",
+          "evidence": [
+            "projektstart"
+          ],
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 35-39"
+          }
+        }
+      ],
+      "gaps": [
+        {
+          "type": "infos_fehlen",
+          "criterion_ids": [
+            "nachhaltigkeit"
+          ],
+          "lever": "Kompakte Nachhaltigkeitsübersicht (2-3 Seiten) erstellen",
+          "hint": "Klären Sie, ob ein Nachhaltigkeitsnachweis vorliegt. Falls nicht, genügt eine kompakte Übersicht von 2 bis 3 Seiten.",
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 17"
+          }
+        },
+        {
+          "type": "infos_fehlen",
+          "criterion_ids": [
+            "praesenz_raeume"
+          ],
+          "lever": null,
+          "hint": "Bestätigen Sie, dass Sie eigene oder gemietete Räumlichkeiten im Kanton Luzern haben.",
+          "source": {
+            "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+            "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+            "locator": "N 21-23"
+          }
+        }
+      ],
+      "error": null
+    }
+  ],
+  "rejected": [
+    {
+      "program_id": "foerderprogramm-energie-lu",
+      "instrument_id": "waermedaemmung",
+      "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
+      "instrument_name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+      "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+      "rule": "vorhaben"
+    },
+    {
+      "program_id": "foerderprogramm-energie-lu",
+      "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
+      "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
+      "instrument_name": "Luft/Wasser-Wärmepumpe bis 70 kW",
+      "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+      "rule": "vorhaben"
+    }
+  ],
+  "plan": {
+    "timeline": [
+      {
+        "phase": "vor_projektstart",
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "title": "F&E-Kosten ab Projektstart erfassen",
+        "date": null,
+        "date_rule": "vor Projektstart",
+        "action": "Zeiterfassung oder eigene Kostenstelle für das F&E-Personal einführen"
+      },
+      {
+        "phase": "gesuch",
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "title": "Gesuch Luzerner Innovationsbeitrag",
+        "date": null,
+        "date_rule": "31. Januar des Beitragsjahres, 23:59 Uhr, keine Fristverlängerung. Beitragsjahre 2026 und 2027: beide bis 31. Januar 2027.",
+        "action": "Gesuch für das Beitragsjahr stellen, dessen Bemessungsjahr die Projektkosten enthält."
+      }
+    ],
+    "warnings": [],
+    "next_steps": [
+      {
+        "text": "Revisionsbericht und Nachhaltigkeitsnachweis bereitlegen.",
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "link": "https://standortfoerderung.lu.ch/LIB",
+        "due": null
+      },
+      {
+        "text": "Kosten mit dem Musterformular grob berechnen.",
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "link": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a",
+        "due": null
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Dienststelle Raum und Wirtschaft (rawi)",
+        "role": "Fragen zum LIB",
+        "email": "innovationsbeitrag@lu.ch",
+        "phone": "+41 41 228 51 83",
+        "url": "https://standortfoerderung.lu.ch/LIB"
+      }
+    ]
+  },
+  "error": null
+}

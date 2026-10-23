@@ -1,0 +1,135 @@
+{
+  "status": "ok",
+  "profile": {
+    "input_text": "Wir sind die Sensora AG aus Emmen mit 18 Mitarbeitenden. Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen. Budget rund CHF 400'000.",
+    "summary": "Entwicklung und Test eines Prototyps für einen neuartigen optischen Sensor zur industriellen Qualitätskontrolle.",
+    "fields": {
+      "standort_kanton": {
+        "value": "LU",
+        "status": "annahme",
+        "origin": "text",
+        "quote": "aus Emmen",
+        "note": "Emmen liegt im Kanton Luzern."
+      },
+      "standort_gemeinde": {
+        "value": "Emmen",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "aus Emmen",
+        "note": null
+      },
+      "applicant_type": {
+        "value": [
+          "unternehmen",
+          "kmu"
+        ],
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Sensora AG ... 18 Mitarbeitenden",
+        "note": null
+      },
+      "art_des_vorhabens": {
+        "value": [
+          "entwicklung",
+          "prototyp"
+        ],
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "einen Prototyp bauen und bei Pilotkunden testen",
+        "note": null
+      },
+      "vorhaben_beschreibung": {
+        "value": "Neuartiger optischer Sensor für die industrielle Qualitätskontrolle, Bau und Test eines Prototyps",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "neuartigen optischen Sensor für die Qualitätskontrolle",
+        "note": null
+      },
+      "taetigkeit": {
+        "value": "Entwicklung von Sensoren",
+        "status": "annahme",
+        "origin": "text",
+        "quote": "Wir entwickeln einen neuartigen optischen Sensor",
+        "note": null
+      },
+      "rechtsform": {
+        "value": "AG",
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "Sensora AG",
+        "note": null
+      },
+      "handelsregister": {
+        "value": "LU",
+        "status": "annahme",
+        "origin": null,
+        "quote": null,
+        "note": "Abgeleitet aus Rechtsform AG und Sitz in Emmen."
+      },
+      "raeumlichkeiten": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "mitarbeitende": {
+        "value": 18,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "18 Mitarbeitenden",
+        "note": null
+      },
+      "gruendungsjahr": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "revisionsart": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "nachhaltigkeitsbericht": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "budget": {
+        "value": 400000,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "Budget rund CHF 400'000",
+        "note": null
+      },
+      "laufzeit": {
+        "value": 18,
+        "status": "angegeben",
+        "origin": "text",
+        "quote": "in den nächsten 18 Monaten",
+        "note": null
+      },
+      "projektstart": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      },
+      "partner": {
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
+        "note": null
+      }
+    }
+  },
+  "clarification": null
+}

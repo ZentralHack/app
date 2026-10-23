@@ -1,0 +1,188 @@
+[
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 1,
+    "ts": "2026-10-23T21:40:00Z",
+    "type": "run_started",
+    "message": "Analyse gestartet: 2 Programme, 3 Instrumente.",
+    "data": {
+      "programs": 2,
+      "instruments": 3
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 2,
+    "ts": "2026-10-23T21:40:00Z",
+    "type": "step_started",
+    "message": "Vorfilter läuft.",
+    "data": {
+      "step": "vorfilter"
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 3,
+    "ts": "2026-10-23T21:40:00Z",
+    "type": "prefilter_result",
+    "message": "1 Instrument bleibt, 2 passen nicht zum Vorhaben.",
+    "data": {
+      "kept": [
+        {
+          "program_id": "lib",
+          "instrument_id": "lib-beitrag"
+        }
+      ],
+      "rejected": [
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "waermedaemmung",
+          "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
+          "instrument_name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben"
+        },
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
+          "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
+          "instrument_name": "Luft/Wasser-Wärmepumpe bis 70 kW",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben"
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 4,
+    "ts": "2026-10-23T21:40:00Z",
+    "type": "step_completed",
+    "message": "Vorfilter fertig.",
+    "data": {
+      "step": "vorfilter",
+      "duration_ms": 12
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 5,
+    "ts": "2026-10-23T21:40:00Z",
+    "type": "step_started",
+    "message": "Kriterien werden geprüft.",
+    "data": {
+      "step": "pruefung"
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 6,
+    "ts": "2026-10-23T21:40:01Z",
+    "type": "instrument_started",
+    "message": "Prüfe Luzerner Innovationsbeitrag.",
+    "data": {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag",
+      "program_name": "Luzerner Innovationsbeitrag",
+      "instrument_name": "Luzerner Innovationsbeitrag"
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 7,
+    "ts": "2026-10-23T21:40:15Z",
+    "type": "instrument_completed",
+    "message": "Luzerner Innovationsbeitrag: passt mit Anpassung.",
+    "data": {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag",
+      "fit": "passt_mit_anpassung",
+      "badges": {
+        "erfuellt": 6,
+        "annahme": 4,
+        "unbekannt": 3,
+        "nicht_erfuellt": 0
+      },
+      "duration_ms": 14200
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 8,
+    "ts": "2026-10-23T21:40:15Z",
+    "type": "step_completed",
+    "message": "Prüfung fertig.",
+    "data": {
+      "step": "pruefung",
+      "duration_ms": 14300
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 9,
+    "ts": "2026-10-23T21:40:15Z",
+    "type": "step_started",
+    "message": "Bewertung läuft.",
+    "data": {
+      "step": "bewertung"
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 10,
+    "ts": "2026-10-23T21:40:15Z",
+    "type": "step_completed",
+    "message": "Bewertung fertig.",
+    "data": {
+      "step": "bewertung",
+      "duration_ms": 3
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 11,
+    "ts": "2026-10-23T21:40:15Z",
+    "type": "step_started",
+    "message": "Förderfahrplan wird erstellt.",
+    "data": {
+      "step": "fahrplan"
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 12,
+    "ts": "2026-10-23T21:40:21Z",
+    "type": "plan_ready",
+    "message": "Fahrplan mit 2 Schritten erstellt.",
+    "data": {
+      "timeline_entries": 2,
+      "warnings": 0
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 13,
+    "ts": "2026-10-23T21:40:21Z",
+    "type": "step_completed",
+    "message": "Fahrplan fertig.",
+    "data": {
+      "step": "fahrplan",
+      "duration_ms": 5800
+    }
+  },
+  {
+    "run_id": "run_8f3a2c",
+    "seq": 14,
+    "ts": "2026-10-23T21:40:21Z",
+    "type": "run_completed",
+    "message": "Analyse abgeschlossen.",
+    "data": {
+      "duration_ms": 21100,
+      "fits": {
+        "passt_gut": 0,
+        "passt_mit_anpassung": 1,
+        "passt_nicht": 2
+      }
+    }
+  }
+]

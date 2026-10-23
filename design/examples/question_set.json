@@ -1,0 +1,60 @@
+{
+  "questions": [
+    {
+      "id": "q_revision",
+      "profile_field": "revisionsart",
+      "text": "Welche Revision hat Ihr Unternehmen?",
+      "why": "Der Luzerner Innovationsbeitrag setzt eine geprüfte Jahresrechnung voraus.",
+      "options": [
+        "Ordentliche Revision",
+        "Eingeschränkte Revision",
+        "Keine (Opting-out)",
+        "Weiss nicht"
+      ],
+      "affects": [
+        {
+          "program_id": "lib",
+          "instrument_id": null,
+          "criterion_id": "revision"
+        }
+      ]
+    },
+    {
+      "id": "q_nachhaltigkeit",
+      "profile_field": "nachhaltigkeitsbericht",
+      "text": "Hat Ihr Unternehmen einen Nachhaltigkeitsbericht oder eine Übersicht zu Nachhaltigkeitsthemen?",
+      "why": "Für den Luzerner Innovationsbeitrag braucht es einen Nachweis über nachhaltiges Wirtschaften.",
+      "options": [
+        "Ja",
+        "Nein",
+        "Weiss nicht"
+      ],
+      "affects": [
+        {
+          "program_id": "lib",
+          "instrument_id": null,
+          "criterion_id": "nachhaltigkeit"
+        }
+      ]
+    },
+    {
+      "id": "q_kosten_bemessungsjahr",
+      "profile_field": "projektstart",
+      "text": "Sind die Projektkosten bereits angefallen, oder fallen sie erst an?",
+      "why": "Davon hängt ab, für welches Jahr ein Gesuch möglich ist.",
+      "options": [
+        "Bereits angefallen",
+        "Laufend",
+        "Fallen erst an"
+      ],
+      "affects": [
+        {
+          "program_id": "lib",
+          "instrument_id": "lib-beitrag",
+          "criterion_id": "kosten_bemessungsjahr"
+        }
+      ]
+    }
+  ],
+  "skip_reason": null
+}
