@@ -1,0 +1,398 @@
+{
+  "id": "lib",
+  "name": "Luzerner Innovationsbeitrag",
+  "short_name": "LIB",
+  "provider": {
+    "name": "Kanton Luzern",
+    "unit": "Bau-, Umwelt- und Wirtschaftsdepartement, Dienststelle Raum und Wirtschaft (rawi)",
+    "url": "https://standortfoerderung.lu.ch/LIB"
+  },
+  "level": "kanton",
+  "scope": {
+    "cantons": ["LU"],
+    "municipalities": [],
+    "note": "Unternehmen mit Eintrag im Luzerner Handelsregister und tatsächlicher wirtschaftlicher Präsenz im Kanton Luzern"
+  },
+  "purpose": "Förderbeiträge für Tätigkeiten und Massnahmen im Bereich Forschung, Entwicklung und Innovation von Luzerner Unternehmen aller Branchen, inkl. Dienstleistungssektor und Startups.",
+  "entitlement": {
+    "type": "rechtsanspruch_im_budget",
+    "note": "Anspruchssubvention: Bei erfüllten Voraussetzungen besteht ein Rechtsanspruch im Rahmen der verfügbaren Mittel.",
+    "source": { "source_id": "handbuch", "locator": "N 163" }
+  },
+  "budget": {
+    "annual_chf": 110000000,
+    "year": 2026,
+    "oversubscription": "anteilige_kuerzung",
+    "note": "Betrag aus dem Rechenbeispiel im Handbuch. Übersteigen die Gesuche die Mittel, werden alle Gesuche prozentual gleich gekürzt. Nicht beanspruchte Mittel werden aufs Folgejahr übertragen.",
+    "source": { "source_id": "handbuch", "locator": "N 144-145" }
+  },
+  "general_criteria": [
+    {
+      "id": "unternehmerisch_taetig",
+      "text": "Das Unternehmen ist unternehmerisch tätig, d. h. erbringt mit eigenem oder beauftragtem Personal Leistungen am Markt (oder beabsichtigt dies, z. B. Startups). Rechtsform egal.",
+      "kind": "muss",
+      "about": "unternehmen",
+      "applies_if": null,
+      "profile_fields": ["rechtsform", "taetigkeit"],
+      "question": null,
+      "evidence": [],
+      "source": { "source_id": "handbuch", "locator": "N 13" },
+      "notes": "Ein steuerbarer Gewinn ist keine Voraussetzung (N 25)."
+    },
+    {
+      "id": "hr_luzern",
+      "text": "Eintrag im Handelsregister des Kantons Luzern (Sitz oder Zweigniederlassung), spätestens am Tag der Gesuchseinreichung.",
+      "kind": "muss",
+      "about": "ort",
+      "applies_if": null,
+      "profile_fields": ["standort_kanton", "handelsregister"],
+      "question": { "text": "Ist Ihr Unternehmen im Handelsregister des Kantons Luzern eingetragen?", "options": ["Ja", "Nein", "Weiss nicht"] },
+      "evidence": ["UID-Nummer"],
+      "source": { "source_id": "handbuch", "locator": "N 20" },
+      "notes": "Eine blosse steuerliche Betriebsstätte ohne Zweigniederlassung genügt nicht."
+    },
+    {
+      "id": "praesenz_raeume",
+      "text": "Eigene Räumlichkeiten im Kanton Luzern, dauerhaft verfügbar während des gesamten Bemessungsjahres. Eine c/o- oder Domiziladresse genügt nicht.",
+      "kind": "muss",
+      "about": "ort",
+      "applies_if": null,
+      "profile_fields": ["standort_kanton", "raeumlichkeiten"],
+      "question": { "text": "Hat Ihr Unternehmen eigene oder gemietete Räumlichkeiten im Kanton Luzern?", "options": ["Ja", "Nein, nur Domiziladresse", "Weiss nicht"] },
+      "evidence": [],
+      "source": { "source_id": "handbuch", "locator": "N 21-23" },
+      "notes": "Shared Working Spaces zählen nur bei dauerhafter Verfügbarkeit."
+    },
+    {
+      "id": "praesenz_personal",
+      "text": "Eigenes vertragliches oder faktisches (ausgeliehenes, weisungsgebundenes) Personal im Kanton Luzern während des gesamten Bemessungsjahres.",
+      "kind": "muss",
+      "about": "unternehmen",
+      "applies_if": null,
+      "profile_fields": ["mitarbeitende"],
+      "question": null,
+      "evidence": ["Anzahl Vollzeitäquivalente (FTE)"],
+      "source": { "source_id": "handbuch", "locator": "N 24-25" },
+      "notes": "Eine Treuhandgesellschaft, die nur Administration erledigt, gilt nicht als Personal."
+    },
+    {
+      "id": "revision",
+      "text": "Ordentlich geprüfte Jahresrechnung (Einzelabschluss) für das Bemessungsjahr. Alternativ Prüfbericht nach SA-CH (PS-CH 700 oder ISA-CH 700). Eine Review nach PS 910 reicht nicht.",
+      "kind": "muss",
+      "about": "unternehmen",
+      "applies_if": null,
+      "profile_fields": ["revisionsart"],
+      "question": { "text": "Welche Revision hat Ihr Unternehmen?", "options": ["Ordentliche Revision", "Eingeschränkte Revision", "Keine (Opting-out)", "Weiss nicht"] },
+      "evidence": ["Revisionsstellenbericht bzw. Prüfbericht SA-CH"],
+      "source": { "source_id": "handbuch", "locator": "N 14-15" },
+      "notes": "Relevant ist die Einzelgesellschaft, nicht der Konzernabschluss."
+    },
+    {
+      "id": "nachhaltigkeit",
+      "text": "Nachweis über nachhaltiges Wirtschaften: Bericht nach Art. 964b OR (auch auf Gruppenstufe) oder kompakte Übersicht von 2 bis 3 Seiten.",
+      "kind": "muss",
+      "about": "dokumente",
+      "applies_if": null,
+      "profile_fields": ["nachhaltigkeitsbericht"],
+      "question": { "text": "Hat Ihr Unternehmen einen Nachhaltigkeitsbericht oder eine Übersicht zu Nachhaltigkeitsthemen?", "options": ["Ja", "Nein", "Weiss nicht"] },
+      "evidence": ["Nachhaltigkeitsbericht oder Übersicht 2-3 Seiten"],
+      "source": { "source_id": "handbuch", "locator": "N 16-18" },
+      "notes": "Die Übersicht deckt z. B. Energie, Emissionen, Reduktionsziele, Arbeitssicherheit, faire Entlöhnung, Korruptionsbekämpfung und Lieferkette ab. Keine Prüfung durch Revisionsstelle nötig."
+    },
+    {
+      "id": "keine_ausstaende",
+      "text": "Keine fälligen, unbezahlten Forderungen von Behörden und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren.",
+      "kind": "soll",
+      "about": "unternehmen",
+      "applies_if": null,
+      "profile_fields": [],
+      "question": null,
+      "evidence": [],
+      "source": { "source_id": "handbuch", "locator": "N 26-29" },
+      "notes": "Kein automatischer Ausschluss. rawi entscheidet im Einzelfall und kann die Auszahlung aufschieben."
+    }
+  ],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "lib-beitrag",
+      "name": "Luzerner Innovationsbeitrag",
+      "description": "Jährlicher Förderbeitrag auf Basis der F&E- und Innovationsaufwendungen eines vergangenen Geschäftsjahres.",
+      "instrument_type": "beitrag",
+      "recipient": { "type": "gesuchsteller", "note": "Nicht übertragbar auf andere Unternehmen (N 159)." },
+      "filter": {
+        "applicant_types": ["unternehmen", "startup", "kmu", "grossunternehmen"],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "requires_partner": "keiner",
+        "project_types": ["forschung", "entwicklung", "prototyp", "machbarkeitsstudie", "prozessinnovation", "organisationsinnovation", "klinische_studie"]
+      },
+      "eligible_items": [
+        {
+          "id": "grundlagenforschung",
+          "name": "Grundlagenforschung",
+          "definition": "Experimentelle oder theoretische Arbeiten zum Erwerb von Grundlagenwissen ohne erkennbare direkte kommerzielle Anwendung.",
+          "examples_positive": ["Forschung zu Eigenschaften allgemeiner Algorithmen für grosse Echtzeitdatenmengen"],
+          "examples_negative": [],
+          "source": { "source_id": "handbuch", "locator": "N 63" }
+        },
+        {
+          "id": "industrielle_forschung",
+          "name": "Industrielle Forschung",
+          "definition": "Planmässiges Forschen zur Gewinnung neuer Kenntnisse mit dem Ziel neuer oder verbesserter Produkte, Dienstleistungen oder Verfahren, auch digital.",
+          "examples_positive": ["Entwicklung neuer KI-Methoden", "Bau eines Prototyps in Laborumgebung"],
+          "examples_negative": [],
+          "source": { "source_id": "handbuch", "locator": "N 63" }
+        },
+        {
+          "id": "experimentelle_entwicklung",
+          "name": "Experimentelle Entwicklung",
+          "definition": "Kreative Kombination vorhandener Kenntnisse zur Entwicklung marktfähiger neuer oder verbesserter Produkte, Dienstleistungen oder Verfahren.",
+          "examples_positive": ["Erprobung und Validierung einer KI-Software zur Immobilienbewertung", "Bau und Betrieb einer Versuchsanlage"],
+          "examples_negative": ["Programmierung einer Website", "Blosse Fehlerbehebung nach Kundenfeedback"],
+          "source": { "source_id": "handbuch", "locator": "N 63-65" }
+        },
+        {
+          "id": "organisationsinnovation",
+          "name": "Wesentliche Organisationsinnovation",
+          "definition": "Neue Organisationsmethoden durch vom Unternehmen selbst entwickelte neue oder innovative Technologien.",
+          "examples_positive": ["Eigenentwickelte KI-Software für kosteneffizienteren Einkauf von Logistikkapazitäten"],
+          "examples_negative": ["Einkauf einer bestehenden KI-Lösung", "Änderung der Managementstrategie"],
+          "source": { "source_id": "handbuch", "locator": "N 69" }
+        },
+        {
+          "id": "prozessinnovation",
+          "name": "Wesentliche Prozessinnovation",
+          "definition": "Neue oder verbesserte, selbst experimentell entwickelte Methoden oder Technologien für Produktion oder Leistungserbringung am Markt. Nicht für interne Administrativprozesse.",
+          "examples_positive": ["Eigene Software reduziert Rohstoffverschleiss in der Produktion um 50%", "Robotik mit KI-gestützter Qualitätskontrolle ersetzt manuelle Montage"],
+          "examples_negative": ["Nutzung eines bestehenden KI-Tools durch Mitarbeitende", "Kapazitätsausbau mit ähnlichen Anlagen"],
+          "source": { "source_id": "handbuch", "locator": "N 69" }
+        },
+        {
+          "id": "klinische_studie",
+          "name": "Klinische Studie",
+          "definition": "Vorklinische Studien sowie Phase I bis III; Phase IV nur bei weitergehendem wissenschaftlichem Fortschritt.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": { "source_id": "handbuch", "locator": "N 70-72" }
+        },
+        {
+          "id": "machbarkeitsstudie",
+          "name": "Durchführbarkeitsstudie als Vorarbeit",
+          "definition": "Bewertung des Potenzials, der Ressourcen und der Erfolgsaussichten eines F&E-Vorhabens.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": { "source_id": "handbuch", "locator": "N 67" }
+        },
+        {
+          "id": "management_unterstuetzung",
+          "name": "Management- und Unterstützungsaufgaben",
+          "definition": "Planung, Steuerung, Kontrolle sowie unmittelbare und mittelbare Unterstützung, sofern einer förderberechtigten Tätigkeit zugehörig.",
+          "examples_positive": ["Koordination von F&E-Teams", "Patentanmeldung", "Rekrutierung von Forschenden"],
+          "examples_negative": ["Unterstützungsaufgaben ohne Bezug zu einer förderberechtigten Tätigkeit"],
+          "source": { "source_id": "handbuch", "locator": "N 73-74" }
+        }
+      ],
+      "exclusions": [
+        { "text": "Personalausbildung (blosse Wissensvermittlung)", "source": { "source_id": "handbuch", "locator": "N 65" } },
+        { "text": "Marketing, Markteinführung, Verkauf und Unternehmenskommunikation", "source": { "source_id": "handbuch", "locator": "N 65" } },
+        { "text": "Blosse Nutzung, Einkauf oder Standardkonfiguration bestehender Software oder KI-Tools", "source": { "source_id": "handbuch", "locator": "N 69" } },
+        { "text": "Blosse Investitionen ohne Neuartigkeit, z. B. Installation einer PV-Anlage", "source": { "source_id": "handbuch", "locator": "N 68" } },
+        { "text": "Tätigkeiten ausserhalb des Kantons Luzern, ausser als Auftragsforschung", "source": { "source_id": "handbuch", "locator": "N 75" } }
+      ],
+      "criteria": [
+        {
+          "id": "fei_taetigkeit",
+          "text": "Das Vorhaben umfasst förderberechtigte Tätigkeiten: Grundlagen- oder industrielle Forschung, experimentelle Entwicklung, wesentliche Organisations- oder Prozessinnovation oder klinische Studien.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": ["vorhaben_beschreibung", "art_des_vorhabens"],
+          "question": null,
+          "evidence": ["Beschreibung pro Tätigkeit nach Ziel, Inhalt, Methode und Neuheit"],
+          "source": { "source_id": "handbuch", "locator": "N 51-72" },
+          "notes": null
+        },
+        {
+          "id": "neuartig",
+          "text": "Die Tätigkeit ist schöpferisch und für das Unternehmen neuartig. Die blosse Anwendung bestehender Lösungen genügt nicht.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": ["vorhaben_beschreibung"],
+          "question": { "text": "Entwickeln Sie die Lösung selbst, oder setzen Sie eine bestehende Lösung ein?", "options": ["Eigenentwicklung", "Bestehende Lösung anpassen", "Bestehende Lösung einsetzen", "Weiss nicht"] },
+          "evidence": [],
+          "source": { "source_id": "handbuch", "locator": "N 64, N 69" },
+          "notes": null
+        },
+        {
+          "id": "systematisch",
+          "text": "Zielgerichtetes, systematisches Vorgehen, z. B. mit Budget, Zeitplan und Dokumentation.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": ["budget", "laufzeit"],
+          "question": null,
+          "evidence": [],
+          "source": { "source_id": "handbuch", "locator": "N 66" },
+          "notes": "Ein kommerzieller Erfolg ist nicht erforderlich."
+        },
+        {
+          "id": "ausfuehrung_luzern",
+          "text": "Die Tätigkeiten werden mit eigenem Personal in eigenen Räumlichkeiten im Kanton Luzern ausgeführt.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": "nicht bei Auftragsforschung",
+          "profile_fields": ["standort_kanton"],
+          "question": null,
+          "evidence": [],
+          "source": { "source_id": "handbuch", "locator": "N 75" },
+          "notes": null
+        },
+        {
+          "id": "auftragsforschung_steuerung",
+          "text": "Bei ausgelagerter Forschung trägt das Unternehmen Risiken und Finanzierung und hat mindestens eine Person, die den Auftrag instruiert, überwacht und steuert.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": "nur bei Auftragsforschung",
+          "profile_fields": ["partner"],
+          "question": null,
+          "evidence": ["Forschungsverträge", "Rechnungen"],
+          "source": { "source_id": "handbuch", "locator": "N 76-81" },
+          "notes": "Managementaufgaben können nicht ausgelagert werden."
+        },
+        {
+          "id": "kosten_selbst_getragen",
+          "text": "Die Aufwendungen werden vom Unternehmen wirtschaftlich selbst getragen und nicht weiterverrechnet.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": { "source_id": "handbuch", "locator": "N 88" },
+          "notes": null
+        },
+        {
+          "id": "kosten_bemessungsjahr",
+          "text": "Die Aufwendungen sind in der Jahresrechnung des Bemessungsjahres erfasst: dem Geschäftsjahr, das zwei Kalenderjahre vor dem Beitragsjahr endet.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": ["projektstart", "geschaeftsjahr"],
+          "question": { "text": "Sind die Projektkosten bereits angefallen, oder fallen sie erst an?", "options": ["Bereits angefallen", "Laufend", "Fallen erst an"] },
+          "evidence": [],
+          "source": { "source_id": "handbuch", "locator": "N 35-39" },
+          "notes": "Kosten aus dem Geschäftsjahr 2027 werden im Beitragsjahr 2029 geltend gemacht (Frist 31.01.2029)."
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "30% der Personal-, 20% der Investitions-, 10% der Auftragsforschungs- und 10% der sonstigen Aufwendungen für förderberechtigte Tätigkeiten. Höchstens 50% der Aufwendungen.",
+        "cost_categories": [
+          { "id": "personal", "name": "Personalaufwendungen", "rate_pct": 30, "definition": "Löhne, Boni, Sozialleistungen und Personalnebenkosten für F&E-Personal inkl. Management- und Unterstützungsaufgaben; bei Teilzeit-Einsatz anteilig nach Zeitschlüssel.", "source": { "source_id": "handbuch", "locator": "N 94-99" } },
+          { "id": "investition", "name": "Investitionsaufwendungen", "rate_pct": 20, "definition": "Planmässige Abschreibungen auf Sachanlagen, die unmittelbar für förderberechtigte Tätigkeiten eingesetzt werden, inkl. Miete und Leasing. Keine Patente, Lizenzen, Goodwill.", "source": { "source_id": "handbuch", "locator": "N 100-105" } },
+          { "id": "auftragsforschung", "name": "Auftragsforschungsaufwendungen", "rate_pct": 10, "definition": "An Dritte ausgelagerte förderberechtigte Tätigkeiten, auch an Hochschulen.", "source": { "source_id": "handbuch", "locator": "N 106-107" } },
+          { "id": "sonstige", "name": "Sonstige Aufwendungen", "rate_pct": 10, "definition": "Klinische Studien, nicht aktiviertes Verbrauchsmaterial, externe Patent- und Rechtsanwälte. Keine Lizenzgebühren, Finanzierungskosten oder direkten Steuern.", "source": { "source_id": "handbuch", "locator": "N 108-113" } }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": { "required": false, "rule": null },
+        "deductions": [
+          { "text": "Steuerersparnis aus Patentbox oder F&E-Zusatzabzug, sofern dieselbe Tätigkeit und dasselbe Bemessungsjahr betroffen sind", "source": { "source_id": "handbuch", "locator": "N 137-141" } },
+          { "text": "Andere Finanzhilfen jeglicher Art (In- und Ausland) für dieselben Tätigkeiten und dasselbe Bemessungsjahr", "source": { "source_id": "handbuch", "locator": "N 142-143" } },
+          { "text": "Anteilige Kürzung aller Gesuche, falls die Mittel nicht ausreichen", "source": { "source_id": "handbuch", "locator": "N 144" } }
+        ],
+        "payout_forms": ["Direkte Auszahlung", "Erstattungsfähige Steuergutschrift (Restbetrag nach 4 Jahren ausbezahlt)", "Nicht erstattungsfähige Steuergutschrift"],
+        "calculation_basis": "Jahresrechnung nach OR (Einzelabschluss) des Geschäftsjahres, das im Kalenderjahr zwei Jahre vor dem Beitragsjahr endet.",
+        "example": "Personal CHF 150'000 × 30% + Investitionen CHF 100'000 × 20% = Bruttobetrag CHF 65'000",
+        "source": { "source_id": "handbuch", "locator": "N 126-135" }
+      },
+      "timing": {
+        "deadline": {
+          "type": "fester_termin_jaehrlich",
+          "rule": "31. Januar des Beitragsjahres, 23:59 Uhr, keine Fristverlängerung. Beitragsjahre 2026 und 2027: beide bis 31. Januar 2027.",
+          "next_dates": ["2027-01-31", "2028-01-31"],
+          "relative": null,
+          "source": { "source_id": "handbuch", "locator": "N 33-38, N 165" }
+        },
+        "assessment_period": "Geschäftsjahr N-2. Beitragsjahr 2026: GJ 2024. 2027: GJ 2025. 2028: GJ 2026.",
+        "decision_time": "Verfügung in der Regel im Herbst des Beitragsjahres",
+        "max_duration_months": null,
+        "repeat_limit": "Ein Gesuch pro Unternehmen (Rechtsträger) und Beitragsjahr, keine Gruppengesuche",
+        "note": "Neu gegründete Unternehmen können erstmals zwei Jahre nach Abschluss ihres ersten Geschäftsjahres ein Gesuch stellen (N 42)."
+      },
+      "documents": {
+        "application": [
+          { "name": "Online-Gesuchsformular", "condition": null, "source": { "source_id": "handbuch", "locator": "N 164" } },
+          { "name": "Berechnungsformular, ein Arbeitsblatt pro Tätigkeit (Bezeichnung, Beschreibung, Kategorie, Begründung Neuartigkeit, Management- und Unterstützungsaufgaben, Aufwendungen)", "condition": null, "source": { "source_id": "handbuch", "locator": "N 83-85, N 116" } },
+          { "name": "Ordentlich geprüfter Einzelabschluss mit Revisionsstellenbericht oder Prüfbericht SA-CH", "condition": null, "source": { "source_id": "handbuch", "locator": "N 32" } },
+          { "name": "Nachweis über nachhaltiges Wirtschaften", "condition": null, "source": { "source_id": "handbuch", "locator": "N 32" } },
+          { "name": "ERP-Auszüge zu den Personalaufwendungen, ggf. Zeitschlüssel", "condition": "bei Personalaufwendungen", "source": { "source_id": "handbuch", "locator": "N 119" } },
+          { "name": "Anlagespiegel mit planmässigen Abschreibungen", "condition": "bei Investitionsaufwendungen", "source": { "source_id": "handbuch", "locator": "N 120" } },
+          { "name": "Verträge und Rechnungen zur Auftragsforschung", "condition": "bei Auftragsforschung", "source": { "source_id": "handbuch", "locator": "N 121" } },
+          { "name": "IBAN eines Schweizer Bankkontos", "condition": null, "source": { "source_id": "handbuch", "locator": "N 161" } }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        { "text": "Bis zur Verfügung Meldepflicht bei wesentlichen Änderungen, neuen Finanzhilfen, Ausständen oder Konkursverfahren", "source": { "source_id": "handbuch", "locator": "N 170" } },
+        { "text": "Widerruf und Rückforderung mit Zins bei unrichtigen Angaben; bereits Fahrlässigkeit ist strafbar", "source": { "source_id": "handbuch", "locator": "N 174-175" } }
+      ],
+      "levers": [
+        { "text": "Kompakte Nachhaltigkeitsübersicht (2-3 Seiten) erstellen", "affects_criteria": ["nachhaltigkeit"], "source": { "source_id": "handbuch", "locator": "N 17" } },
+        { "text": "Prüfbericht nach SA-CH (PS-CH 700) für das Bemessungsjahr erstellen lassen, falls keine ordentliche Revision besteht", "affects_criteria": ["revision"], "source": { "source_id": "handbuch", "locator": "N 14" } },
+        { "text": "Lösung selbst weiterentwickeln statt eine bestehende Software nur einzusetzen", "affects_criteria": ["neuartig"], "source": { "source_id": "handbuch", "locator": "N 69" } },
+        { "text": "Arbeiten ausserhalb Luzerns als Auftragsforschung vergeben und intern steuern", "affects_criteria": ["ausfuehrung_luzern", "auftragsforschung_steuerung"], "source": { "source_id": "handbuch", "locator": "N 76-80" } },
+        { "text": "Zeiterfassung oder eigene Kostenstelle für das F&E-Personal einführen", "affects_criteria": ["kosten_bemessungsjahr"], "source": { "source_id": "handbuch", "locator": "N 96-97" } }
+      ],
+      "links": {
+        "info": "https://standortfoerderung.lu.ch/LIB",
+        "apply": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+        "form": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a"
+      },
+      "source": { "source_id": "handbuch", "locator": null }
+    }
+  ],
+  "combination_rules": [
+    { "with": "*", "type": "abzug", "text": "Andere Finanzhilfen für dieselben Tätigkeiten und dasselbe Bemessungsjahr werden vom LIB abgezogen.", "source": { "source_id": "handbuch", "locator": "N 142" } },
+    { "with": "steuerliche-innovationsfoerderung-lu", "type": "abzug", "text": "Die Steuerersparnis aus Patentbox und F&E-Zusatzabzug wird abgezogen, wenn dieselbe Tätigkeit und dasselbe Bemessungsjahr betroffen sind.", "source": { "source_id": "handbuch", "locator": "N 137-141" } }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+    "steps": [
+      "Gesuchsformular online ausfüllen",
+      "Berechnungsformular ausfüllen, ein Arbeitsblatt pro Tätigkeit",
+      "Unterlagen hochladen",
+      "Eingangsbestätigung per E-Mail",
+      "Prüfung durch rawi, ggf. Nachfrist für fehlende Unterlagen",
+      "Verfügung im Herbst des Beitragsjahres",
+      "Einsprache innert 30 Tagen möglich"
+    ],
+    "note": "Gesuche per Post oder E-Mail werden nicht akzeptiert.",
+    "source": { "source_id": "handbuch", "locator": "N 164-173" }
+  },
+  "contacts": [
+    { "name": "Dienststelle Raum und Wirtschaft (rawi)", "role": "Fragen zum LIB", "email": "innovationsbeitrag@lu.ch", "phone": "+41 41 228 51 83", "url": "https://standortfoerderung.lu.ch/LIB" }
+  ],
+  "legal_basis": [
+    { "title": "Gesetz über die Standortförderung und die Regionalpolitik (StaReG)", "ref": "SRL 900, § 16a-16g", "url": "https://srl.lu.ch/app/de/texts_of_law/900" },
+    { "title": "Verordnung zum Gesetz über die Standortförderung und die Regionalpolitik (StaReV)", "ref": "SRL 900a, § 8-13", "url": "https://srl.lu.ch/app/de/texts_of_law/900a" }
+  ],
+  "sources": [
+    { "id": "handbuch", "title": "Handbuch Luzerner Innovationsbeitrag (LIB)", "type": "handbuch", "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0", "version": "1.0", "published": "2026-10-01", "checked": "2026-10-23", "local_path": "sources/lib/Handbuch_LIB_2026_10_01.pdf" },
+    { "id": "webseite", "title": "Luzerner Innovationsbeitrag (LIB), Webseite Kanton Luzern", "type": "webseite", "url": "https://standortfoerderung.lu.ch/LIB", "version": null, "published": null, "checked": "2026-10-23", "local_path": null }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Die FAQ der Webseite sagt, F&E-Abzug und LIB können nicht gleichzeitig genutzt werden. Das Handbuch (N 136-141) beschreibt stattdessen einen Abzug der Steuerersparnis. Beim Kanton klären."
+    ]
+  }
+}

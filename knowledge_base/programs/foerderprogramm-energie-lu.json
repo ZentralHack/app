@@ -1,0 +1,693 @@
+{
+  "id": "foerderprogramm-energie-lu",
+  "name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
+  "short_name": "Gebäudeprogramm LU",
+  "provider": {
+    "name": "Kanton Luzern",
+    "unit": "Bau-, Umwelt- und Wirtschaftsdepartement, Dienststelle Umwelt und Energie (uwe)",
+    "url": "https://uwe.lu.ch"
+  },
+  "level": "kanton",
+  "scope": {
+    "cantons": [
+      "LU"
+    ],
+    "municipalities": [],
+    "note": "Das Gebäude muss auf Kantonsgebiet stehen."
+  },
+  "purpose": "Beiträge an energetische Massnahmen an bestehenden Gebäuden, insbesondere Wärmedämmung und Ersatz fossiler oder elektrischer Heizungen durch erneuerbare Systeme.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Beiträge werden gewährt, solange das jährliche Förderbudget nicht ausgeschöpft ist.",
+    "source": {
+      "source_id": "foerderbedingungen",
+      "locator": "Ziff. 2.2"
+    }
+  },
+  "budget": {
+    "annual_chf": null,
+    "year": 2026,
+    "oversubscription": "bis_budget_ausgeschoepft",
+    "note": null,
+    "source": {
+      "source_id": "foerderbedingungen",
+      "locator": "Ziff. 2.2"
+    }
+  },
+  "general_criteria": [
+    {
+      "id": "gebaeude_luzern",
+      "text": "Das Gebäude steht im Kanton Luzern.",
+      "kind": "muss",
+      "about": "objekt",
+      "applies_if": null,
+      "profile_fields": [
+        "standort_kanton"
+      ],
+      "question": null,
+      "evidence": [],
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 2.1"
+      },
+      "notes": null
+    },
+    {
+      "id": "max_halbe_investition",
+      "text": "Der Förderbeitrag darf 50% der Gesamtinvestition nicht überschreiten.",
+      "kind": "muss",
+      "about": "kosten",
+      "applies_if": null,
+      "profile_fields": [
+        "budget"
+      ],
+      "question": null,
+      "evidence": [],
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 2.2"
+      },
+      "notes": null
+    },
+    {
+      "id": "nicht_co2_befreit",
+      "text": "Das Unternehmen bzw. der Standort ist nicht von der CO2-Abgabe befreit (z. B. durch Zielvereinbarung mit dem Bund).",
+      "kind": "muss",
+      "about": "unternehmen",
+      "applies_if": "nur bei Unternehmen",
+      "profile_fields": [],
+      "question": {
+        "text": "Ist Ihr Unternehmen von der CO2-Abgabe befreit?",
+        "options": [
+          "Ja",
+          "Nein",
+          "Weiss nicht"
+        ]
+      },
+      "evidence": [],
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 2.7"
+      },
+      "notes": null
+    }
+  ],
+  "general_exclusions": [
+    {
+      "text": "Öffentliche Bauten und Anlagen des Bundes sowie des Kantons, sofern direkt über Kredite des Kantons gesteuert",
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 2.13-2.14"
+      }
+    }
+  ],
+  "instruments": [
+    {
+      "id": "waermedaemmung",
+      "name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+      "description": "Beitrag pro Quadratmeter gedämmter Bauteilfläche an bestehenden, beheizten Gebäuden.",
+      "instrument_type": "beitrag",
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft des Gebäudes"
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "requires_partner": "keiner",
+        "project_types": [
+          "gebaeudesanierung",
+          "energieeffizienz"
+        ]
+      },
+      "eligible_items": [
+        {
+          "id": "daemmung_bauteile",
+          "name": "Dämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+          "definition": "Bauteile, die an im Ausgangszustand beheizte Räume grenzen",
+          "examples_positive": [
+            "Dachdämmung über beheiztem Dachgeschoss"
+          ],
+          "examples_negative": [
+            "Fenster",
+            "Kellerdecke gegen unbeheizten Keller",
+            "Dämmung zur Einsparung von Prozessenergie, z. B. Kühlräume"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.5, 3.16"
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Neue Anbauten oder Aufstockungen",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.6"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "baubewilligung_vor_2000",
+          "text": "Die Baubewilligung für das Gebäude wurde vor dem Jahr 2000 erteilt.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "baujahr"
+          ],
+          "question": {
+            "text": "Wurde das Gebäude vor 2000 bewilligt?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.3"
+          },
+          "notes": null
+        },
+        {
+          "id": "vor_baubeginn",
+          "text": "Das Gesuch wird vor Baubeginn eingereicht.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": {
+            "text": "Haben die Bauarbeiten bereits begonnen?",
+            "options": [
+              "Ja",
+              "Nein"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.2"
+          },
+          "notes": "Baubeginn nach Gesuch, aber vor Förderzusage erfolgt auf eigenes Risiko."
+        },
+        {
+          "id": "u_wert",
+          "text": "U-Wert nach Sanierung höchstens 0.20 W/m2K (gegen Aussenklima oder bis 2 m im Erdreich), Verbesserung mindestens 0.07 W/m2K.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "U-Wert-Berechnung Ist und Soll"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.7-3.9"
+          },
+          "notes": null
+        },
+        {
+          "id": "geak_plus",
+          "text": "Ab einem Förderbeitrag von CHF 10'000 liegt ein aktueller GEAK Plus vor.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": "ab CHF 10'000 Förderbeitrag",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "GEAK Plus"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.11"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "CHF 60 pro m2 gedämmtes Bauteil, mindestens CHF 3'000 und höchstens CHF 100'000 pro Gesuch.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "m2 gedämmtes Bauteil",
+            "condition": null,
+            "base_chf": null,
+            "amount_chf": 60
+          }
+        ],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": 3000,
+        "max_amount_chf": 100000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Direkte Auszahlung"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "foerderbedingungen",
+          "locator": "Ziff. 3, Förderbeitrag"
+        }
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch zwingend vor Baubeginn einreichen",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": "Neues Gesuch für dasselbe Gebäude erst nach Abschluss des laufenden Gesuchs",
+        "note": "Abschlussunterlagen vor Fristende einreichen."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Unterschriebenes Gesuchsformular aus dem Gesuchsportal",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 3, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "Situationsplan, aktuelle Fotos, Offerten, Flächenberechnung",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 3, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "U-Wert-Berechnungen Ist- und Soll-Zustand",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 3, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "GEAK Plus",
+            "condition": "ab CHF 10'000 Förderbeitrag",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 3, Gesuchsbeilagen"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Unterschriebenes Abschlussformular, Rechnungskopien, Fotos",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 3, Beilagen beim Abschluss"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Zugang für Ausführungskontrollen gewähren",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 2.11"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Gesuch vor Baubeginn einreichen",
+          "affects_criteria": [
+            "vor_baubeginn"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 3.2"
+          }
+        },
+        {
+          "text": "Mindestens 90% der Hauptflächen dämmen, um zusätzlich den Gesamtsanierungsbonus zu erhalten",
+          "affects_criteria": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 16.6"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://uwe.lu.ch",
+        "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
+        "form": null
+      },
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 3"
+      }
+    },
+    {
+      "id": "luft-wasser-waermepumpe-bis-70kw",
+      "name": "Luft/Wasser-Wärmepumpe bis 70 kW",
+      "description": "Beitrag an eine neue Luft/Wasser-Wärmepumpe, die eine Öl-, Gas- oder Elektroheizung in einem bestehenden Gebäude ersetzt.",
+      "instrument_type": "beitrag",
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft des Gebäudes"
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "requires_partner": "keiner",
+        "project_types": [
+          "heizungsersatz",
+          "erneuerbare_energie"
+        ]
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Wärmepumpen in Neubauten, inkl. Ersatzneubauten",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.2"
+          }
+        },
+        {
+          "text": "Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.3"
+          }
+        },
+        {
+          "text": "Ersatz einer bestehenden Wärmepumpe",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.1"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ersetzt_fossil_elektro",
+          "text": "Die Wärmepumpe ersetzt eine Öl-, Erdgas- oder Elektroheizung.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "bestehende_heizung"
+          ],
+          "question": {
+            "text": "Welche Heizung wird ersetzt?",
+            "options": [
+              "Öl",
+              "Gas",
+              "Elektro",
+              "Wärmepumpe",
+              "Holz",
+              "Keine bestehende Heizung"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.1"
+          },
+          "notes": null
+        },
+        {
+          "id": "bestehendes_gebaeude",
+          "text": "Installation in einem bestehenden Gebäude.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.2"
+          },
+          "notes": null
+        },
+        {
+          "id": "raumwaerme",
+          "text": "Nur Raumwärme und Warmwasser, keine Prozesswärme.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.3"
+          },
+          "notes": null
+        },
+        {
+          "id": "vor_installationsbeginn",
+          "text": "Gesuch vor Installationsbeginn eingereicht.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.11"
+          },
+          "notes": null
+        },
+        {
+          "id": "wpsm_guetesiegel",
+          "text": "Bis 15 kW Wärmepumpensystemmodul (WPSM) mit Anlagenzertifikat, darüber Leistungsgarantie EnergieSchweiz und FWS-Gütesiegel.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.9-7.10"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gestaffelt",
+        "summary": "Bis 15 kW: CHF 4'000 pauschal. Ab 15 kW: CHF 2'500 plus CHF 100 pro kW thermisch. Bemessen mit höchstens 50 W pro m2 Energiebezugsfläche.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Anlage",
+            "condition": "bis 15 kW",
+            "base_chf": 4000,
+            "amount_chf": null
+          },
+          {
+            "unit": "kW thermisch",
+            "condition": "ab 15 kW",
+            "base_chf": 2500,
+            "amount_chf": 100
+          }
+        ],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Direkte Auszahlung"
+        ],
+        "calculation_basis": "Thermische Nennleistung, begrenzt auf 50 Wth pro m2 Energiebezugsfläche",
+        "example": "Gebäude mit 200 m2 EBF und 15 kW Wärmepumpe: Bemessung auf 10 kW begrenzt",
+        "source": {
+          "source_id": "foerderbedingungen",
+          "locator": "Ziff. 7, Förderbeiträge"
+        }
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Installationsbeginn einreichen",
+          "next_dates": [],
+          "relative": {
+            "event": "installationsbeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.11"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Unterschriebenes Gesuchsformular, Projektbeschrieb mit Offerte und Fotos der alten Heizung",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 7, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "Nachweis WPSM",
+            "condition": "bis 15 kW",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 7, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "FWS-Gütesiegel und Leistungsgarantie EnergieSchweiz",
+            "condition": "ab 15 kW",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 7, Gesuchsbeilagen"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Abschlussformular, Rechnungen, Inbetriebnahmeprotokoll, Fotos",
+            "condition": null,
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "Ziff. 7, Beilagen beim Abschluss"
+            }
+          }
+        ]
+      },
+      "obligations": [],
+      "levers": [
+        {
+          "text": "Gesuch vor Installationsbeginn einreichen",
+          "affects_criteria": [
+            "vor_installationsbeginn"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Ziff. 7.11"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://uwe.lu.ch",
+        "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
+        "form": null
+      },
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 7"
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "foerderprogramm-energie-lu:minergie-gesamtsanierung",
+      "type": "ausgeschlossen",
+      "text": "Minergie-Gesamtsanierung ist nicht mit Beiträgen an Gebäudehülle oder Haustechnik kombinierbar.",
+      "source": {
+        "source_id": "foerderbedingungen",
+        "locator": "Ziff. 15.6"
+      }
+    }
+  ],
+  "application": {
+    "channel": "mixed",
+    "url": "https://portal.dasgebaeudeprogramm.ch/lu",
+    "steps": [
+      "Gesuch im Online-Portal erfassen",
+      "Generiertes PDF unterschreiben und per Post einreichen",
+      "Förderzusage abwarten",
+      "Massnahme umsetzen",
+      "Abschlussunterlagen einreichen"
+    ],
+    "note": "Als Eingabedatum gilt der Poststempel. Unvollständige Gesuche gelten als nicht eingereicht.",
+    "source": {
+      "source_id": "foerderbedingungen",
+      "locator": "Ziff. 1, 2.5, 2.9"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Energieberatung Kanton Luzern",
+      "role": "Allgemeine Fragen und Gesuchsstatus",
+      "email": "energie@umweltberatung-luzern.ch",
+      "phone": "+41 41 412 32 32",
+      "url": null
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "foerderbedingungen",
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge und erforderliche Gesuchsbeilagen",
+      "type": "merkblatt",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf",
+      "version": "1.2",
+      "published": "2026-04-22",
+      "checked": "2026-10-23",
+      "local_path": "sources/foerderprogramm-energie-lu/Foerderbedingungen_Foerderbeitraege.pdf"
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Nur 2 von 22 Massnahmen erfasst. Weitere bei Bedarf ergänzen (z. B. Sole/Wasser-Wärmepumpe, Wärmenetz-Anschluss, Gesamtsanierungsbonus)."
+    ]
+  }
+}
