@@ -27,10 +27,10 @@ Rules:
 Jury: Innovation 25%, technical quality (code, architecture) 25%, problem solving 20%, pitch 15%, business potential 15%. The jury tests the agent live on a realistic project: relevance of programs, traceability, completeness, quality of next steps.
 Deliverables: working prototype, README, 3-minute pitch with 5 slides. Example project from the brief: a Luzern KMU builds a novel sensor for industrial quality control and wants to build and test a prototype. Expected hits: Luzerner Innovationsbeitrag (LIB), Innosuisse (especially with a research partner).
 
-## How we stand out
+## Key features
 1. **Förderfahrplan instead of a list**: sequence programs on a timeline, show what to do now, what later, what collides.
 2. **"So wird es passend"**: for near-matches, say what change would unlock the program (e.g. add a research partner). Only from levers stored in the knowledge base, never invented.
-3. **Canton insights** (pitch slide): anonymised aggregate of queries shows the canton what companies try to fund and which programs nobody finds.
+3. **Canton insights**: anonymised aggregate of queries shows the canton what companies try to fund and which programs nobody finds.
 Polish: visible ✓ ~ ? ✗ badges per criterion, live trace panel of the agent working, rejected programs shown with reasons.
 
 ## Architecture
@@ -88,11 +88,10 @@ Running example: fictional Sensora AG, Emmen, 18 employees, optical sensor proto
 
 Edge cases that must work: too vague input (ask what the money is for), company outside Luzern (cantonal programs rejected with reason, national ones still shown), no fitting program (say so, show closest rejects, name who to ask).
 
-## Build priorities (~16 working hours)
-- **Must** (first 8–10 h): Screen 1, 4, 5. Matching on 10–12 programs with badges. Scoring in code.
-- **Should** (next 4–5 h): Screens 2 and 3, gap hints, Förderfahrplan with combination warning. Optional: discovery step that searches official sites for programs not in the knowledge base, shown as "nicht verifiziert".
+## Build priorities
+- **Must**: Screen 1, 4, 5. Matching on 10–12 programs with badges. Scoring in code.
+- **Should**: Screens 2 and 3, gap hints, Förderfahrplan with combination warning. Optional: discovery step that searches official sites for programs not in the knowledge base, shown as "nicht verifiziert".
 - **If time**: PDF export, follow-up chat, canton insights page, second language.
-- Feature freeze 3 h before deadline. Then test set, README, pitch practice, backup demo video.
 
 ## Team
 - Research (2): build knowledge base files, verify every field against sources, write test projects with expected answers.
