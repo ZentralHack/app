@@ -2,6 +2,8 @@
 
 Zentral Hack 2026, HSLU Rotkreuz, 23.–24. Oktober 2026. Challenge "Der KI-Fördermittel-Agent für Luzerner Unternehmen" (Kanton Luzern, Kategorie AI Agentic). Team: 4 Personen, 2 Devs (Philipp, Jasper), 2 Research. Read this file fully before working.
 
+Session start: read `../docs/STATUS.md` (private docs repo, cloned next to this repo) for current progress.
+
 ## The challenge
 Build a working prototype of an AI agent that takes a concrete company project ("Vorhaben"), finds matching funding programs relevant to companies in Kanton Luzern (cantonal, regional, national), and explains them clearly.
 
