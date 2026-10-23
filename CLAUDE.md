@@ -94,10 +94,10 @@ Edge cases that must work: too vague input (ask what the money is for), company 
 
 ## Team
 - Research (2): build knowledge base files, verify every field against sources, write test projects with expected answers.
-- Devs (2, Philipp and Jasper): agent backend and frontend. Split and interface contract to be fixed in `docs/`.
+- Devs (2, Philipp and Jasper): agent backend and frontend. Architecture in `design/architecture.md`, dev split and API contract in `design/api_contract.md`.
 
 ## Key sources
-- Challenge brief: `docs/challenge_brief.pdf`
+- Challenge brief: kept in the team's private docs repo (cloned next to this repo as `../docs`), not in this repo.
 - LIB page: https://standortfoerderung.lu.ch/LIB
 - LIB Handbuch v1.0 (01.10.2026): `knowledge_base/sources/lib/Handbuch_LIB_2026_10_01.pdf`
 - LIB sample calculation form: https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a
@@ -112,6 +112,7 @@ python -c "import json,glob,jsonschema;s=json.load(open('knowledge_base/schema/p
 ```
 
 ## Working conventions
+- This repo may be shown to the jury. No internal strategy, team notes or private material here. The private docs repo is never copied from and never referenced by code, tests or build scripts.
 - Never commit API keys. Use `.env`, which is gitignored.
 - Validate every program file against the schema before committing.
 - Code is written with AI assistance; keep it clean and readable since code quality is scored.
