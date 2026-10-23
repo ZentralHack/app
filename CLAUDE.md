@@ -75,6 +75,28 @@ knowledge_base/
 - `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` are the only allowed "what would make it fit" suggestions.
 - Unknown values are `null`, never guessed. `meta.open_questions` lists unresolved points.
 - Examples: `lib.json` (LIB, from the Handbuch), `foerderprogramm-energie-lu.json` (2 of 22 measures).
+
+### Program ids (canonical)
+Use exactly these ids for file names, `id`, `combination_rules[].with` and test projects. New programs get an id here first.
+
+| id | Program | Status |
+|---|---|---|
+| `lib` | Luzerner Innovationsbeitrag | done |
+| `foerderprogramm-energie-lu` | Förderprogramm Energie Kanton Luzern | done (2 of 22 measures) |
+| `innosuisse` | Innosuisse, Schweizerische Agentur für Innovationsförderung | planned |
+| `nrp-luzern` | Neue Regionalpolitik (NRP), Umsetzung Kanton Luzern | planned |
+| `startup-luzern` | Startup-Förderung der Standortförderung Kanton Luzern | planned |
+| `itz` | InnovationsTransfer Zentralschweiz (ITZ) | planned |
+| `bg-mitte` | Bürgschaftsgenossenschaft Mitte (BG Mitte) | planned |
+| `serv` | Schweizerische Exportrisikoversicherung (SERV) | planned |
+| `s-ge` | Switzerland Global Enterprise (S-GE) | planned |
+| `innotour` | Innotour (SECO) | planned |
+| `pronovo` | Pronovo, Einmalvergütung für Photovoltaikanlagen | planned, only if the LU energy program does not cover PV for companies |
+| `klimastiftung-schweiz` | Klimastiftung Schweiz | candidate |
+| `gemeinde-<name>` | One offer of a Luzern Gemeinde, e.g. `gemeinde-emmen` | candidate |
+| `steuerliche-innovationsfoerderung-lu` | Patentbox and R&D super-deduction, Kanton Luzern | reserved: referenced in `lib.json`, no file planned |
+
+Instrument ids are chosen per file (kebab-case, unique within the program).
 - Known open question: LIB FAQ says the R&D tax deduction and LIB can't be combined; Handbuch N 136–141 says the tax saving is deducted. Ask the canton.
 
 Key LIB facts: 30% personnel, 20% investment (depreciation), 10% contract research, 10% other costs, max 50%. Assessed on the financial year two years before the claim year. Deadline 31 January of the claim year; claim years 2026 and 2027 both due 31.01.2027. Requires Luzern Handelsregister, premises and staff in LU, properly audited accounts (ordentliche Revision or SA-CH report), sustainability proof. Mere use of existing software or AI tools does not qualify.
