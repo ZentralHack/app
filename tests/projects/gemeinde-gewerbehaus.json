@@ -26,7 +26,7 @@
     "programs": [
       {
         "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
+        "instrument_id": "waermepumpe",
         "fit": [
           "passt_gut",
           "passt_mit_anpassung"

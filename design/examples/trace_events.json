@@ -4,10 +4,10 @@
     "seq": 1,
     "ts": "2026-10-23T21:40:00Z",
     "type": "run_started",
-    "message": "Analyse gestartet: 2 Programme, 3 Instrumente.",
+    "message": "Analyse gestartet: 2 Programme, 7 Instrumente.",
     "data": {
       "programs": 2,
-      "instruments": 3
+      "instruments": 7
     }
   },
   {
@@ -25,7 +25,7 @@
     "seq": 3,
     "ts": "2026-10-23T21:40:00Z",
     "type": "prefilter_result",
-    "message": "1 Instrument bleibt, 2 passen nicht zum Vorhaben.",
+    "message": "1 Instrument bleibt, 6 passen nicht zum Vorhaben.",
     "data": {
       "kept": [
         {
@@ -37,8 +37,8 @@
         {
           "program_id": "foerderprogramm-energie-lu",
           "instrument_id": "waermedaemmung",
-          "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
-          "instrument_name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Wärmedämmung Gebäudehülle mit Bonus Gebäudehülleneffizienz",
           "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
           "rule": "vorhaben",
           "availability_status": null,
@@ -46,9 +46,49 @@
         },
         {
           "program_id": "foerderprogramm-energie-lu",
-          "instrument_id": "luft-wasser-waermepumpe-bis-70kw",
-          "program_name": "Förderprogramm Energie Kanton Luzern (Gebäudeprogramm)",
-          "instrument_name": "Luft/Wasser-Wärmepumpe bis 70 kW",
+          "instrument_id": "waermepumpe",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
+        },
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "holzfeuerung",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Holzfeuerungen",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
+        },
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "waermenetz-anschluss",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Anschluss an ein Wärmenetz",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
+        },
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "bonus-ersatz-elektroheizung",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+          "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
+          "rule": "vorhaben",
+          "availability_status": null,
+          "next_round": null
+        },
+        {
+          "program_id": "foerderprogramm-energie-lu",
+          "instrument_id": "ladeinfrastruktur",
+          "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+          "instrument_name": "Ladeinfrastruktur in Mehrparteiengebäuden und bidirektionale Ladestationen",
           "reason": "Das Programm fördert Gebäude- und Energiemassnahmen, nicht die Entwicklung eines Produkts.",
           "rule": "vorhaben",
           "availability_status": null,
@@ -185,7 +225,7 @@
       "fits": {
         "passt_gut": 0,
         "passt_mit_anpassung": 1,
-        "passt_nicht": 2
+        "passt_nicht": 6
       }
     }
   }

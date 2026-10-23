@@ -176,7 +176,7 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 | `profile_response.json` | `ProfileResponse` |
 | `question_set.json` | `QuestionSet` (3 questions taken from the LIB criteria) |
 | `run_request.json` | `RunRequest` with answers |
-| `run_result.json` | `RunResult`: LIB `passt_mit_anpassung`, two energy measures rejected by the pre-filter |
+| `run_result.json` | `RunResult`: LIB `passt_mit_anpassung`, all energy program instruments rejected by the pre-filter |
 | `trace_events.json` | `TraceEvent[]` for the same run |
 
 The example only uses programs that are already in the knowledge base. It is a fixture for development, not a statement about the eligibility of any real company.

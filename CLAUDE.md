@@ -74,7 +74,7 @@ knowledge_base/
 - Criterion `kind`: `muss` (knock-out), `soll` (advantage or case-by-case), `bewertung` (quality criterion in competitive selection, e.g. Innosuisse).
 - `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` and `filter.required_partners` are the only allowed "what would make it fit" suggestions.
 - Unknown values are `null`, never guessed. `meta.open_questions` lists unresolved points.
-- Examples: `lib.json` (LIB, from the Handbuch), `foerderprogramm-energie-lu.json` (2 of 22 measures).
+- Examples: `lib.json` (LIB, from the Handbuch), `foerderprogramm-energie-lu.json` (6 instruments).
 
 ### Program ids (canonical)
 Use exactly these ids for file names, `id`, `combination_rules[].with` and test projects. New programs get an id here first.
@@ -82,7 +82,7 @@ Use exactly these ids for file names, `id`, `combination_rules[].with` and test 
 | id | Program | Status |
 |---|---|---|
 | `lib` | Luzerner Innovationsbeitrag | done |
-| `foerderprogramm-energie-lu` | Förderprogramm Energie Kanton Luzern | done (2 of 22 measures) |
+| `foerderprogramm-energie-lu` | Förderprogramm Energie Kanton Luzern | done (6 instruments) |
 | `innosuisse` | Innosuisse, Schweizerische Agentur für Innovationsförderung | planned |
 | `nrp-luzern` | Neue Regionalpolitik (NRP), Umsetzung Kanton Luzern | planned |
 | `startup-luzern` | Startup-Förderung der Standortförderung Kanton Luzern | planned |
