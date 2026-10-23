@@ -721,7 +721,8 @@
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Nur 2 von 22 Massnahmen erfasst. Weitere bei Bedarf ergänzen (z. B. Sole/Wasser-Wärmepumpe, Wärmenetz-Anschluss, Gesamtsanierungsbonus)."
+      "Nur 2 von 22 Massnahmen erfasst. Weitere bei Bedarf ergänzen (z. B. Sole/Wasser-Wärmepumpe, Wärmenetz-Anschluss, Gesamtsanierungsbonus).",
+      "Verwaiste Referenz: combination_rules verweist auf foerderprogramm-energie-lu:minergie-gesamtsanierung, dieses Instrument ist nicht erfasst. Der Fahrplan ignoriert die Regel, bis das Instrument ergänzt ist."
     ]
   }
 }
