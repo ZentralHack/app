@@ -177,7 +177,7 @@ Within a level, instruments are ranked by: share of `muss` criteria `erfuellt` (
 
 ### Step 6: Plan
 - Code places each instrument that fits on a timeline: **Jetzt** (deadline within 8 weeks, or `vor_projektstart` and the project starts soon), **Vor Projektstart**, **Gesuch** (fixed yearly dates), using `timing.deadline` and today's date.
-- Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`).
+- Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`). Rules whose `with` target (program or `program:instrument`) does not exist in the knowledge base are ignored and logged, never shown.
 - The LLM writes the gap hints, using only the `levers` of that instrument, and short next-step texts per instrument. It gets the computed dates; it never computes dates itself.
 
 ### Optional modules

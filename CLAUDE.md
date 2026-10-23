@@ -2,7 +2,7 @@
 
 Zentral Hack 2026, HSLU Rotkreuz, 23.–24. Oktober 2026. Challenge "Der KI-Fördermittel-Agent für Luzerner Unternehmen" (Kanton Luzern, Kategorie AI Agentic). Team: 4 Personen, 2 Devs (Philipp, Jasper), 2 Research. Read this file fully before working.
 
-Session start: read `../docs/STATUS.md` (private docs repo, cloned next to this repo) for current progress.
+Session start: read `../docs/STATUS.md` for current progress.
 
 ## The challenge
 Build a working prototype of an AI agent that takes a concrete company project ("Vorhaben"), finds matching funding programs relevant to companies in Kanton Luzern (cantonal, regional, national), and explains them clearly.
@@ -29,7 +29,7 @@ Deliverables: working prototype, README, 3-minute pitch with 5 slides. Example p
 
 ## Key features
 1. **Förderfahrplan instead of a list**: sequence programs on a timeline, show what to do now, what later, what collides.
-2. **"So wird es passend"**: for near-matches, say what change would unlock the program (e.g. add a research partner). Only from levers stored in the knowledge base, never invented.
+2. **"So wird es passend"**: for near-matches, say what change would unlock the program (e.g. add a research partner). Only from `levers` and `filter.required_partners` in the knowledge base, never invented.
 3. **Canton insights**: anonymised aggregate of queries shows the canton what companies try to fund and which programs nobody finds.
 Polish: visible ✓ ~ ? ✗ badges per criterion, live trace panel of the agent working, rejected programs shown with reasons.
 
@@ -46,10 +46,10 @@ Around it: eval set (fictional test projects), anonymised query log
 Agent steps:
 1. **Profile** (LLM): free text → structured project profile. Every field tagged `angegeben` (in the user's words), `annahme` (inferred) or `fehlt`.
 2. **Questions** (LLM + code): pick at most 3 questions whose answer changes a fit level. Questions come from `criteria[].question` in the knowledge base. Skip the screen if nothing would change.
-3. **Pre-filter** (code only): only instruments with `availability.status = aktiv` can match. Drop instruments with wrong canton, applicant type, project type, sector or missing required partner using `instrument.filter`.
+3. **Pre-filter** (code only): drops instruments using `availability`, `scope` and `filter`. Reject reasons, checked in this order: `verfuegbarkeit` (status not `aktiv`), `kanton`, `gesuchsteller`, `vorhaben`, `branche` (only if `sectors` is not empty), `mitarbeitende`, `unternehmensalter`. Except for `verfuegbarkeit`, only a known profile value drops; a missing value keeps the instrument. **A missing required partner is never a reject:** each entry in `filter.required_partners` becomes a `muss` criterion (scope `filter`) that is fixable and feeds the "So wird es passend" lever (e.g. "Forschungspartner beiziehen").
 4. **Matching** (LLM, one call per instrument, in parallel): check every criterion → `erfuellt` ✓ / `annahme` ~ / `unbekannt` ? / `nicht_erfuellt` ✗, each with a one-line reason and the profile evidence. **Rule: no evidence, no ✓.** If the LLM can't point to profile data, the state is `unbekannt`.
-5. **Scoring** (code only, deterministic): any ✗ on a `muss` criterion → "passt nicht". Mostly ✓ → "passt gut". ✗ that a lever could fix, or many ? → "passt mit Anpassung / Infos fehlen".
-6. **Plan** (code + LLM): code sorts by deadline and urgency and applies combination rules. LLM writes gap hints (only from `levers`) and next-step texts.
+5. **Scoring** (code only, deterministic): any ✗ on a `muss` criterion → "passt nicht", unless a lever or a missing required partner explains it → "passt mit Anpassung". Many ? → "passt mit Anpassung / Infos fehlen". Otherwise "passt gut".
+6. **Plan** (code + LLM): code sorts by deadline and urgency and applies combination rules, ignoring rules whose target program or instrument does not exist. LLM writes gap hints (only from `levers` and `required_partners`) and next-step texts.
 
 Principles:
 - The LLM never does math or deadline logic. Code does.
@@ -72,7 +72,7 @@ knowledge_base/
 - `filter.required_partners`: empty = no partner needed; otherwise e.g. `forschungspartner`, `umsetzungspartner`, `mehrere_betriebe`. `filter.sectors`: empty = open to all sectors; filled only if the source restricts it.
 - `availability.status`: `aktiv`, `geplant`, `runde_geschlossen`, `eingestellt`. The pre-filter only matches `aktiv`.
 - Criterion `kind`: `muss` (knock-out), `soll` (advantage or case-by-case), `bewertung` (quality criterion in competitive selection, e.g. Innosuisse).
-- `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` are the only allowed "what would make it fit" suggestions.
+- `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` and `filter.required_partners` are the only allowed "what would make it fit" suggestions.
 - Unknown values are `null`, never guessed. `meta.open_questions` lists unresolved points.
 - Examples: `lib.json` (LIB, from the Handbuch), `foerderprogramm-energie-lu.json` (2 of 22 measures).
 
@@ -123,7 +123,6 @@ Edge cases that must work: too vague input (ask what the money is for), company 
 - Devs (2, Philipp and Jasper): agent backend and frontend. Architecture in `design/architecture.md`, dev split and API contract in `design/api_contract.md`.
 
 ## Key sources
-- Challenge brief: kept in the team's private docs repo (cloned next to this repo as `../docs`), not in this repo.
 - LIB page: https://standortfoerderung.lu.ch/LIB
 - LIB Handbuch v1.0 (01.10.2026): `knowledge_base/sources/lib/Handbuch_LIB_2026_10_01.pdf`
 - LIB sample calculation form: https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a
@@ -138,7 +137,7 @@ python -c "import json,glob,jsonschema;s=json.load(open('knowledge_base/schema/p
 ```
 
 ## Working conventions
-- This repo may be shown to the jury. No internal strategy, team notes or private material here. The private docs repo is never copied from and never referenced by code, tests or build scripts.
+- This repo may be shown to the jury. No internal strategy, team notes or private material here. Code, tests and build scripts never reference anything outside this repo.
 - Never commit API keys. Use `.env`, which is gitignored.
 - Validate every program file against the schema before committing.
 - Code is written with AI assistance; keep it clean and readable since code quality is scored.
