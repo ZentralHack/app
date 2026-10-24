@@ -5,6 +5,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date
 
+from app.agent.prefilter import RULES
 from app.agent.scoring import Fit
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.loader import ANY_PROGRAM, KnowledgeBase
@@ -21,6 +22,10 @@ from app.models.program import CombinationRule, Program
 
 FITTING: frozenset[Fit] = frozenset({"passt_gut", "passt_mit_anpassung"})
 WARNING_TYPES = frozenset({"ausgeschlossen", "abzug", "bedingt"})
+# When nothing fits: contacts of at most this many programs, the closest ones first.
+CLOSEST_PROGRAMS = 3
+# Among rejected programs of the same rule, cantonal offices are the best first contact.
+LEVEL_ORDER = ("kanton", "region", "gemeinde", "bund", "stiftung", "privat", "international")
 
 EVENT_LABELS = {
     "projektstart": "vor Projektstart",
@@ -175,25 +180,40 @@ def _targets(
 
 
 def _warnings(fitting: list[FlatInstrument]) -> list[CombinationWarning]:
+    """One warning per rule between fitting instruments, every instrument listed once.
+    Rules against any other program (`with: "*"`) name only the owner's instruments, and
+    those of the same type within one program are merged into one note."""
     warnings: list[CombinationWarning] = []
     for program in _unique_programs(f.program for f in fitting):
         owners = [f for f in fitting if f.program.id == program.id]
+        general: dict[str, list[CombinationRule]] = {}
         for rule in program.combination_rules:
             if rule.type not in WARNING_TYPES:
                 continue
             targets = {t.key: t for owner in owners for t in _targets(rule, owner, fitting)}
-            involved = {f.key: f for f in owners} | targets
-            if not targets or len(involved) < 2:
+            if not targets:
                 continue
-            warnings.append(
-                CombinationWarning(
-                    type=rule.type,
-                    items=[f.ref for f in involved.values()],
-                    text=rule.text,
-                    source=owners[0].source_link(rule.source) if rule.source else None,
-                )
-            )
+            if rule.with_ == ANY_PROGRAM:
+                general.setdefault(rule.type, []).append(rule)
+            else:
+                involved = {f.key: f for f in owners} | targets
+                warnings.append(_warning(rule.type, list(involved.values()), [rule], owners[0]))
+        warnings += [
+            _warning(rule_type, owners, rules, owners[0]) for rule_type, rules in general.items()
+        ]
     return warnings
+
+
+def _warning(
+    rule_type: str, items: list[FlatInstrument], rules: list[CombinationRule], owner: FlatInstrument
+) -> CombinationWarning:
+    source = rules[0].source
+    return CombinationWarning(
+        type=rule_type,
+        items=list({f.key: f.ref for f in items}.values()),
+        text=" ".join(rule.text for rule in rules),
+        source=owner.source_link(source) if source else None,
+    )
 
 
 def _next_step(entry: TimelineEntry, item: FlatInstrument) -> NextStep:
@@ -210,13 +230,26 @@ def _next_step(entry: TimelineEntry, item: FlatInstrument) -> NextStep:
 def _contact_programs(
     items: list[PlanItem], fitting: list[PlanItem], rejected: list[Rejected], kb: KnowledgeBase
 ) -> list[Program]:
-    """Contacts of the fitting programs; if nothing fits, of every program looked at."""
+    """Contacts of the fitting programs. If nothing fits, of the closest programs: those checked
+    in detail first, then rejects by how far they got through the pre-filter (a later rule
+    means more rules passed), cantonal offices first."""
     if fitting:
         return _unique_programs(p.item.program for p in fitting)
+    rule_position = {rule: position for position, (rule, _) in enumerate(RULES)}
+    closest_rejects = sorted(
+        rejected,
+        key=lambda r: (-rule_position[r.rule], _level_position(kb.get(r.program_id))),
+    )
     looked_at = [p.item.program for p in items] + [
-        program for r in rejected if (program := kb.get(r.program_id))
+        program for r in closest_rejects if (program := kb.get(r.program_id))
     ]
-    return _unique_programs(looked_at)
+    return _unique_programs(looked_at)[:CLOSEST_PROGRAMS]
+
+
+def _level_position(program: Program | None) -> int:
+    if program is None or program.level not in LEVEL_ORDER:
+        return len(LEVEL_ORDER)
+    return LEVEL_ORDER.index(program.level)
 
 
 def _unique_programs(programs: Iterable[Program]) -> list[Program]:

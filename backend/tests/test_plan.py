@@ -2,11 +2,12 @@ from datetime import date
 
 from app.agent.plan import PlanItem, build_plan
 from app.agent.prefilter import prefilter
+from app.config import KNOWLEDGE_BASE_DIR
 from app.knowledge_base.flat import FlatInstrument
-from app.knowledge_base.loader import KnowledgeBase
+from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
 from app.models.contract import Gap, InstrumentRef
 from app.models.program import CombinationRule
-from tests.factories import treuhand_profile
+from tests.factories import field, treuhand_profile
 
 
 def _instrument(kb: KnowledgeBase, key: str) -> FlatInstrument:
@@ -77,10 +78,8 @@ def test_lib_deducts_other_funding(kb: KnowledgeBase):
     plan = build_plan([_item(kb, LIB), _item(kb, PUMP)], [], kb)
     (warning,) = plan.warnings
     assert warning.type == "abzug"
-    assert warning.items == [
-        InstrumentRef(program_id="lib", instrument_id="lib-beitrag"),
-        InstrumentRef(program_id="foerderprogramm-energie-lu", instrument_id="waermepumpe"),
-    ]
+    # A rule against any other program names only its owner; the text says "andere Finanzhilfen".
+    assert warning.items == [InstrumentRef(program_id="lib", instrument_id="lib-beitrag")]
     assert warning.source.locator == "N 142"
 
 
@@ -127,3 +126,38 @@ def test_recommended_step_goes_to_now(kb: KnowledgeBase):
 def test_dead_target_is_ignored(kb: KnowledgeBase):
     lib = _with_rule(_item(kb, LIB), "ausgeschlossen", "innosuisse")
     assert build_plan([lib, _item(kb, PUMP)], [], kb).warnings == []
+
+
+def test_general_rules_of_one_type_are_merged(kb: KnowledgeBase):
+    lib = _item(kb, LIB)
+    rules = [
+        CombinationRule.model_validate({"with": "*", "type": "abzug", "text": text})
+        for text in ("Erste Regel.", "Zweite Regel.")
+    ]
+    program = lib.item.program.model_copy(update={"combination_rules": rules})
+    merged = PlanItem(FlatInstrument(program, lib.item.instrument), "passt_gut", [], None)
+    (warning,) = build_plan([merged, _item(kb, PUMP)], [], kb).warnings
+    assert warning.text == "Erste Regel. Zweite Regel."
+    assert warning.items == [InstrumentRef(program_id="lib", instrument_id="lib-beitrag")]
+
+
+def test_warning_lists_each_instrument_once(kb: KnowledgeBase):
+    for warning in build_plan([_item(kb, PUMP), _item(kb, GRID), _item(kb, LIB)], [], kb).warnings:
+        keys = [(i.program_id, i.instrument_id) for i in warning.items]
+        assert len(keys) == len(set(keys))
+
+
+def test_nothing_fits_names_only_the_closest_programs():
+    full = load_knowledge_base(KNOWLEDGE_BASE_DIR)
+    profile = treuhand_profile()
+    nothing = profile.model_copy(
+        update={"fields": profile.fields | {"art_des_vorhabens": field([], "angegeben")}}
+    )
+    rejected = prefilter(nothing, full.instruments()).rejected
+    assert len(rejected) == len(list(full.instruments()))
+    plan = build_plan([], rejected, full)
+    names = {c.name for c in plan.contacts}
+    programs = {p.id for p in full.programs if names & {c.name for c in p.contacts}}
+    assert 1 <= len(programs) <= 3
+    # Rejected only by `vorhaben`: cantonal offices first.
+    assert all(full.get(p).level == "kanton" for p in programs)
