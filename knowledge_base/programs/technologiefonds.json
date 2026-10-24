@@ -12,25 +12,25 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Unternehmen mit Sitz in der Schweiz."
+    "note": "Darlehensnehmerin und Darlehensgeberin mit Sitz in der Schweiz."
   },
-  "purpose": "Der Technologiefonds verbürgt Darlehen an innovative Schweizer Unternehmen, deren Produkte oder Verfahren Treibhausgasemissionen reduzieren, Energie effizient nutzen oder erneuerbare Energien fördern.",
+  "purpose": "Der Technologiefonds verbürgt Darlehen an innovative Schweizer Unternehmen. Gefördert werden Technologien zur Reduktion von Treibhausgasemissionen, zur effizienten Nutzung elektrischer Energie, zur Förderung erneuerbarer Energien und zur Schonung natürlicher Ressourcen.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Ein Bürgschaftskomitee entscheidet nach Vorselektion und Due Diligence.",
+    "note": "Es besteht kein Rechtsanspruch. Das Bürgschaftskomitee beurteilt die Gesuche, das BAFU entscheidet über die Zusicherung.",
     "source": {
-      "source_id": "vorgehen",
-      "locator": "Antrag an das Bürgschaftskomitee"
+      "source_id": "finanzierungsrichtlinie",
+      "locator": "Ziff. 1.3 Abs. 1; Ziff. 5 Abs. 4-5"
     }
   },
   "budget": {
     "annual_chf": null,
     "year": null,
-    "oversubscription": "auswahl",
-    "note": "Laut Webseite stehen CHF 500 Mio. für Bürgschaften zur Verfügung (Gesamtvolumen, kein Jahresbudget).",
+    "oversubscription": "unbekannt",
+    "note": "Die Summe der Bürgschaften darf höchstens CHF 750 Mio. betragen (Gesamtrahmen, kein Jahresbudget). Die Webseite nennt noch CHF 500 Mio. Dem Fonds fliessen jährlich höchstens CHF 25 Mio. aus der CO2-Abgabe zu (CO2-Gesetz Art. 35 Abs. 1).",
     "source": {
-      "source_id": "vorteile",
-      "locator": null
+      "source_id": "co2_vo",
+      "locator": "Art. 118 Abs. 3"
     }
   },
   "general_criteria": [],
@@ -53,12 +53,12 @@
         "note": "Bewerbung online über den Vorab-Check.",
         "source": {
           "source_id": "vorgehen",
-          "locator": "Vorselektion"
+          "locator": "Vorgehen; Vorselektion nach Online-Gesuchformular"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Das Unternehmen erhält ein verbürgtes Darlehen von einer Schweizer Bank oder einem anderen geeigneten Schweizer Darlehensgeber."
+        "note": "Das Unternehmen erhält ein Darlehen von einer Schweizer Bank oder einer anderen geeigneten Schweizer Darlehensgeberin. Die Bürgschaft selbst erhält die Darlehensgeberin."
       },
       "filter": {
         "applicant_types": [
@@ -84,7 +84,7 @@
         {
           "id": "innovation",
           "name": "Innovation mit Klimanutzen",
-          "definition": "Neuartiges Verfahren, Produkt oder Software oder Weiterentwicklung von Anlage(teilen) und Verfahrens(schritten), die CO2-Emissionen direkt oder indirekt einspart.",
+          "definition": "Neuartiges Verfahren, Produkt oder Software oder Weiterentwicklung von Anlage(teilen) und Verfahrens(schritten) mit nachweisbarem Umweltnutzen.",
           "examples_positive": [],
           "examples_negative": [
             "Beratung",
@@ -93,7 +93,7 @@
           ],
           "source": {
             "source_id": "zielgruppe",
-            "locator": null
+            "locator": "Innovation als Voraussetzung"
           }
         }
       ],
@@ -102,7 +102,21 @@
           "text": "Tätigkeiten wie Beratung, Aus- und Weiterbildung und Information",
           "source": {
             "source_id": "zielgruppe",
-            "locator": null
+            "locator": "Innovation als Voraussetzung"
+          }
+        },
+        {
+          "text": "Kontokorrentkredite und Kautionslimiten werden nicht verbürgt.",
+          "source": {
+            "source_id": "buergschaftsrichtlinie",
+            "locator": "Ziff. 4 Abs. 1"
+          }
+        },
+        {
+          "text": "Vorhaben, die gegen Gesetze verstossen oder den klima- und energiepolitischen Zielen des Bundes entgegenwirken.",
+          "source": {
+            "source_id": "finanzierungsrichtlinie",
+            "locator": "Ziff. 1.3 Abs. 3"
           }
         }
       ],
@@ -126,14 +140,14 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "buergschaften",
-            "locator": "Zielgruppe"
+            "source_id": "co2_vo",
+            "locator": "Art. 114 Abs. 2"
           },
-          "notes": null
+          "notes": "Eine Schweizer Tochtergesellschaft einer internationalen Gruppe ist zulässig (Webseite Zielgruppe, Darlehensgeberinnen aus der Schweiz)."
         },
         {
           "id": "co2_einsparung",
-          "text": "Die Innovation spart CO2-Emissionen direkt oder indirekt ein, mit Nachweis.",
+          "text": "Die Innovation leistet einen nachweisbaren Beitrag zu einem Förderbereich: Verminderung der Treibhausgasemissionen, erneuerbare Energien, effiziente Nutzung elektrischer Energie oder sparsamer Umgang mit natürlichen Ressourcen.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -141,42 +155,50 @@
             "vorhaben_beschreibung"
           ],
           "question": {
-            "text": "Reduziert Ihr Produkt oder Verfahren Treibhausgasemissionen?",
+            "text": "Reduziert Ihr Produkt oder Verfahren Treibhausgase, fördert es erneuerbare Energien, spart es Strom oder schont es natürliche Ressourcen?",
             "options": [
-              "Ja",
+              "Ja, mit Nachweis",
+              "Ja, aber noch ohne Nachweis",
               "Nein",
               "Weiss nicht"
             ]
           },
           "evidence": [
-            "Nachweis des Umweltnutzens"
+            "Quantifizierung der CO2-Einsparung bzw. Ressourcenschonung (strukturierte Frageliste in der Vorselektion)"
           ],
           "source": {
-            "source_id": "zielgruppe",
-            "locator": "Umweltnutzen"
+            "source_id": "finanzierungsrichtlinie",
+            "locator": "Ziff. 2.1 Abs. 1"
           },
-          "notes": null
+          "notes": "Webseite Zielgruppe, Umweltnutzen nachweisbar: «kann aufzeigen, dass die Innovation direkt oder indirekt CO2-Emissionen einspart»."
         },
         {
           "id": "innovatives_produkt",
-          "text": "Innovatives Produkt oder Verfahren mit guten Marktchancen.",
+          "text": "Das Produkt oder Verfahren ist innovativ (Neu- oder Weiterentwicklung von Anlagen und Verfahren) und hat gute Marktchancen.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
+          "question": {
+            "text": "Ist Ihr Produkt oder Verfahren eine Neu- oder Weiterentwicklung mit guten Chancen, sich am Markt durchzusetzen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "buergschaften",
-            "locator": "Zielgruppe"
+            "source_id": "finanzierungsrichtlinie",
+            "locator": "Ziff. 2.1 Abs. 2-3; Art. 114 Abs. 1 Bst. a CO2-Verordnung"
           },
           "notes": null
         },
         {
           "id": "marktreif_umsatz",
-          "text": "Das Unternehmen ist marktreif und erzielt bereits Umsätze von mindestens CHF 100'000.",
+          "text": "Die Technologie ist marktreif und hat bereits Umsätze von mindestens CHF 100'000 generiert (Vermarktungsphase).",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -184,55 +206,72 @@
             "umsatz"
           ],
           "question": {
-            "text": "Erzielt Ihr Unternehmen bereits Umsätze von mindestens CHF 100'000?",
+            "text": "Hat Ihr Produkt bereits mindestens CHF 100'000 Umsatz bei Kunden generiert?",
             "options": [
-              "Ja",
-              "Nein",
+              "Ja, mindestens CHF 100'000",
+              "Weniger als CHF 100'000",
+              "Noch kein Umsatz",
               "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
             "source_id": "zielgruppe",
-            "locator": null
+            "locator": "Vorhaben in der Vermarktungsphase"
           },
-          "notes": null
+          "notes": "Auch im Vorab-Check (Frage 4/9) und im Flyer (Wichtigste Bedingungen) genannt. Die Finanzierungs- und Verbürgungsrichtlinie (Ziff. 2.1 Abs. 3) verlangt im Minimum einen marktfähigen Prototyp; Umsätze gelten dort als Hinweis."
         },
         {
           "id": "positives_eigenkapital",
-          "text": "Nicht überschuldet, nicht zahlungsunfähig, positives Eigenkapital. Rangrücktritte beheben keine Überschuldung.",
+          "text": "Das Unternehmen ist nicht überschuldet und nicht zahlungsunfähig. Das Eigenkapital ist positiv. Rangrücktritte beheben keine Überschuldung.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
-          "evidence": [],
+          "question": {
+            "text": "Ist das Eigenkapital Ihres Unternehmens positiv, ohne Überschuldung und ohne drohende Zahlungsunfähigkeit?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Letzte Jahresrechnung oder aktueller Zwischenabschluss"
+          ],
           "source": {
             "source_id": "zielgruppe",
-            "locator": "Kreditwürdigkeit"
+            "locator": "Vorhaben in der Vermarktungsphase"
           },
-          "notes": null
+          "notes": "Bürgschaftsrichtlinie Ziff. 3 Abs. 4: Unternehmen mit gefährdeter Solvenz erhalten keine Bürgschaft."
         },
         {
           "id": "kreditwuerdigkeit",
-          "text": "Kreditwürdigkeit, die sich auch auf die im Business Plan plausibel dargelegte zukünftige Ertragslage stützen kann.",
+          "text": "Das Unternehmen kann seine Kreditwürdigkeit glaubhaft darlegen. Sie kann sich auch auf die zukünftige Ertragslage stützen, wenn der Business Plan dies plausibel darlegt.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Ist Ihr Unternehmen kreditwürdig, heute oder gemäss einem plausiblen Business Plan?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
             "Business Plan"
           ],
           "source": {
-            "source_id": "zielgruppe",
-            "locator": "Kreditwürdigkeit"
+            "source_id": "co2_vo",
+            "locator": "Art. 114 Abs. 1 Bst. b"
           },
-          "notes": null
+          "notes": "Webseite Zielgruppe, Vorhaben in der Vermarktungsphase: «Die geforderte Kreditwürdigkeit kann sich auch auf die zukünftige Ertragslage beziehen»."
         },
         {
           "id": "eigenfinanzierung_40",
-          "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert (neues Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel, vorhandene liquide Mittel).",
+          "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert: neu eingebrachtes Eigenkapital, Fremdkapital wie Aktionärsdarlehen, nicht zweckgebundene Drittmittel oder zum Bewerbungszeitpunkt vorhandene flüssige Mittel.",
           "kind": "muss",
           "about": "kosten",
           "applies_if": null,
@@ -247,34 +286,91 @@
               "Weiss nicht"
             ]
           },
-          "evidence": [],
+          "evidence": [
+            "Nachweis der anderen Mittel gemäss Merkblatt «Andere Mittel»"
+          ],
           "source": {
             "source_id": "konditionen",
-            "locator": "Anteil"
+            "locator": "Mindestens 40% andere Mittel"
           },
-          "notes": "Bereits getätigte Investitionen in Sachanlagen sowie F&E zählen nicht."
+          "notes": "Bereits getätigte Investitionen in Sachanlagen oder F&E zählen nicht. Laut Merkblatt «Andere Mittel» zählen auch nicht: zukünftige Umsätze, Factoring, vor dem Stichtag investierte eigene Mittel. Flüssige Mittel und Innosuisse-Beiträge nach Absprache."
         },
         {
           "id": "wertschoepfung_schweiz",
           "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
-          "kind": "soll",
+          "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [
             "taetigkeit"
           ],
-          "question": null,
+          "question": {
+            "text": "Findet ein angemessener Teil der Wertschöpfung in der Schweiz statt?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "zielgruppe",
-            "locator": "Grösse"
+            "source_id": "finanzierungsrichtlinie",
+            "locator": "Ziff. 2.3 Abs. 1"
           },
-          "notes": null
+          "notes": "Webseite Zielgruppe formuliert als «soll»; die Richtlinie setzt es voraus. Auch im Vorab-Check (Frage 8/9)."
+        },
+        {
+          "id": "darlehen_nur_mit_buergschaft",
+          "text": "Ohne Bürgschaft gibt es kein Darlehen oder nur zu einem höheren Zins. Die Darlehensgeberin bestätigt dies.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Würde Ihre Bank das Darlehen ohne Bürgschaft nicht oder nur zu einem höheren Zins gewähren?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Bestätigung der Darlehensgeberin",
+            "Schriftliche Bestätigung der Gesuchstellerin (Due Diligence)"
+          ],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": "Bürgschaft als wesentlicher Erfolgsfaktor"
+          },
+          "notes": "Bürgschaftsrichtlinie Ziff. 3 Abs. 1: antragsberechtigt nur, wer ohne Bürgschaft kein oder nur ein Darlehen zu wirtschaftlich untragbaren Konditionen erhielte."
+        },
+        {
+          "id": "darlehensgeberin_schweiz",
+          "text": "Die Darlehensgeberin ist eine Bank nach Bankengesetz oder eine andere geeignete Darlehensgeberin mit Sitz in der Schweiz.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Hat die vorgesehene Darlehensgeberin (Bank oder anderer Geldgeber) ihren Sitz in der Schweiz?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Noch keine Darlehensgeberin",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "co2_vo",
+            "locator": "Art. 114 Abs. 2"
+          },
+          "notes": "Andere geeignete Darlehensgeberinnen sind z. B. Mezzanin-Anbieter, Venture Debt oder Business Angels (Webseite Konditionen)."
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "Bürgschaft für ein Darlehen bis CHF 3 Mio. für höchstens 10 Jahre, mindestens 40% Eigenfinanzierung.",
+        "summary": "Solidarbürgschaft bis höchstens CHF 3 Mio. (Darlehen plus Zinsen) für höchstens 10 Jahre. Bürgschaft deckt bis 60% des Vorhabens, mindestens 40% andere Mittel.",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": 60,
@@ -288,55 +384,79 @@
         "payout_forms": [
           "Solidarbürgschaft gegenüber dem Darlehensgeber"
         ],
-        "calculation_basis": "Verbürgt werden Darlehen und Zinsen.",
+        "calculation_basis": "Die Bürgschaft kann das Darlehen ganz oder teilweise sowie die Zinsen absichern. Höchstbetrag für Darlehen plus fällige Zinsen CHF 3 Mio.",
         "example": null,
         "source": {
           "source_id": "konditionen",
-          "locator": null
+          "locator": "Konditionen"
         },
-        "note": "Prüfgebühr CHF 1'000 nach erfolgreicher Vorselektion und CHF 2'000 nach Zusage. Jährliche Bürgschaftsgebühr 0.9% der Bürgschaftssumme. Darlehen und Zinsen innert Laufzeit zurückführen, in der Regel mindestens 20% des Darlehens innert der halben Laufzeit tilgen. Darlehensgeber: Schweizer Banken oder andere geeignete Schweizer Darlehensgeber (z. B. Mezzanine, Venture Debt, Business Angels). max_share_of_costs_pct 60 abgeleitet aus der 40%-Eigenfinanzierung."
+        "note": "Prüfgebühr CHF 1'000 nach erfolgreicher Vorselektion und CHF 2'000 nach Zusage; die Vorselektion selbst ist kostenlos. Jährliche Bürgschaftsgebühr 0.9% der Bürgschaftssumme, im Voraus (gemäss CO2-Verordnung Art. 117 Abs. 5 höchstens 0.9%). Darlehen und Zinsen innert Laufzeit zurückführen, in der Regel mindestens 20% innert der halben Laufzeit. Untergrenze des Darlehens in der Regel CHF 50'000 (Bürgschaftsrichtlinie Ziff. 5). In begründeten Fällen können Sicherheiten verlangt werden (CO2-Verordnung Art. 115 Abs. 4). Bürgschaft bis 60%: Flyer «Bürgschaft ≤60%» und Finanzierungs- und Verbürgungsrichtlinie Ziff. 3 Abs. 4 («in der Regel»)."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Online-Bewerbung jederzeit über den Vorab-Check.",
+          "rule": "Abgeleitet aus Webseite Vorgehen: keine Eingabefrist genannt, Bewerbung online über den Vorab-Check. Das Bürgschaftskomitee tagt in der Regel mindestens siebenmal jährlich (Bürgschaftsrichtlinie Ziff. 8 Abs. 3).",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "vorgehen",
-            "locator": null
+            "locator": "Vorgehen"
           }
         },
         "assessment_period": null,
-        "decision_time": "Von Einreichung bis Annahme durch das Bürgschaftskomitee normalerweise mindestens drei Monate",
+        "decision_time": "Von der Einreichung bis zur Annahme durch das Bürgschaftskomitee normalerweise mindestens drei Monate.",
         "max_duration_months": 120,
         "repeat_limit": null,
-        "note": null
+        "note": "Höchstlaufzeit der Bürgschaft 10 Jahre (CO2-Gesetz Art. 35 Abs. 4), ab Abschluss des Bürgschaftsvertrages (Bürgschaftsrichtlinie Ziff. 2 Abs. 3). Nach der Zusicherung muss der Darlehensvertrag innert 3 Monaten geschlossen werden, sonst fällt sie dahin (Bürgschaftsrichtlinie Ziff. 8 Abs. 6)."
       },
       "documents": {
         "application": [
           {
-            "name": "Online-Gesuchsformular",
+            "name": "Online-Gesuchformular, rechtsgültig unterzeichnet gemäss Handelsregister",
             "condition": null,
             "source": {
-              "source_id": "vorgehen",
-              "locator": "Vorselektion"
+              "source_id": "pruefprozess",
+              "locator": "Seite 2, Vorselektion Ziff. 1"
             }
           },
           {
-            "name": "Investorenpräsentation",
+            "name": "Investorenpräsentation (Technologie, Marktpotenzial, Management, grobe Finanzplanung 3-5 Jahre)",
             "condition": null,
             "source": {
-              "source_id": "vorgehen",
-              "locator": "Vorselektion"
+              "source_id": "pruefprozess",
+              "locator": "Seite 2, Vorselektion Ziff. 2"
             }
           },
           {
-            "name": "Weitere Unterlagen für die Due Diligence gemäss Liste Prüfprozess Details",
+            "name": "Letzte Jahresrechnung oder aktueller Zwischenabschluss oder aktuelle Saldobilanz",
+            "condition": null,
+            "source": {
+              "source_id": "pruefprozess",
+              "locator": "Seite 2, Vorselektion Ziff. 3"
+            }
+          },
+          {
+            "name": "Separater Business Plan",
+            "condition": "nur falls vorhanden",
+            "source": {
+              "source_id": "pruefprozess",
+              "locator": "Seite 2, Vorselektion Ziff. 4"
+            }
+          },
+          {
+            "name": "Unterlagen Due Diligence light (u. a. Jahresrechnungen der letzten drei Jahre, Cap Table, Business- und Finanzplan 5 Jahre, Aufstellung öffentlicher Finanzhilfen)",
             "condition": "nach positiver Vorselektion",
             "source": {
-              "source_id": "vorgehen",
-              "locator": "Due Diligence"
+              "source_id": "pruefprozess",
+              "locator": "Seite 2, Due Diligence light"
+            }
+          },
+          {
+            "name": "Unterlagen Due Diligence (u. a. Bestätigung, dass ohne Bürgschaft kein Darlehen möglich ist, Statuten, Handelsregisterauszug und Betreibungsauskunft nicht älter als 1 Monat)",
+            "condition": "nach Due Diligence light",
+            "source": {
+              "source_id": "pruefprozess",
+              "locator": "Seite 3, Due Diligence"
             }
           }
         ],
@@ -344,10 +464,31 @@
       },
       "obligations": [
         {
-          "text": "Nach Auszahlung quartalsweise Berichterstattung an die Geschäftsstelle und einmal jährlich mündlich.",
+          "text": "Quartalsweise schriftliche Berichterstattung an die Geschäftsstelle und einmal jährlich mündlich über den Fortschritt.",
           "source": {
             "source_id": "vorgehen",
-            "locator": "Berichterstattung"
+            "locator": "Antrag an das Bürgschaftskomitee"
+          }
+        },
+        {
+          "text": "Buchhaltung ordnungsgemäss führen, Jahresrechnung mindestens eingeschränkt prüfen lassen. Ab Bürgschaftssumme CHF 1 Mio. kann eine ordentliche Revision verlangt werden.",
+          "source": {
+            "source_id": "buergschaftsrichtlinie",
+            "locator": "Ziff. 9 Abs. 3"
+          }
+        },
+        {
+          "text": "Änderungen, die sich auf die Bürgschaft auswirken könnten, unverzüglich melden.",
+          "source": {
+            "source_id": "co2_vo",
+            "locator": "Art. 116 Abs. 1"
+          }
+        },
+        {
+          "text": "Das Darlehen nur für das im Gesuch beschriebene Vorhaben verwenden.",
+          "source": {
+            "source_id": "buergschaftsrichtlinie",
+            "locator": "Ziff. 12 Abs. 3"
           }
         }
       ],
@@ -359,7 +500,7 @@
       },
       "source": {
         "source_id": "buergschaften",
-        "locator": null
+        "locator": "Bürgschaften"
       }
     }
   ],
@@ -369,15 +510,17 @@
     "url": "https://www.technologiefonds.ch/vorab-check",
     "steps": [
       "5-Minuten-Vorab-Check online",
-      "Online-Gesuchsformular und Investorenpräsentation einreichen (Vorselektion)",
-      "Due Diligence durch die Geschäftsstelle: Technologie, Bonität, rechtliche und finanzielle Aspekte",
-      "Entscheid des Bürgschaftskomitees, danach Darlehensvertrag finalisieren",
-      "Berichterstattung nach Auszahlung"
+      "Online-Gesuchformular, Investorenpräsentation und letzte Jahresrechnung einreichen (Vorselektion, kostenlos)",
+      "Due Diligence light nach Bezahlung der Prüfgebühr CHF 1'000",
+      "Due Diligence durch die Geschäftsstelle mit Besuch am Firmensitz",
+      "Antrag an das Bürgschaftskomitee; Entscheid durch das BAFU auf Empfehlung des Komitees",
+      "Darlehensvertrag innert drei Monaten finalisieren, Gebühr CHF 2'000 und erste Bürgschaftsgebühr bezahlen; BAFU stellt die Bürgschaft aus",
+      "Berichterstattung während der Laufzeit"
     ],
     "note": "Unterlagen auf Deutsch, Französisch und Italienisch verfügbar.",
     "source": {
-      "source_id": "vorgehen",
-      "locator": null
+      "source_id": "pruefprozess",
+      "locator": "Seite 1, Prüfprozess eines Gesuchs"
     }
   },
   "contacts": [
@@ -391,9 +534,14 @@
   ],
   "legal_basis": [
     {
-      "title": "CO2-Gesetz vom 23. Dezember 2011",
-      "ref": null,
-      "url": null
+      "title": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz) vom 23. Dezember 2011",
+      "ref": "SR 641.71, Art. 35",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2012/855/de#art_35"
+    },
+    {
+      "title": "Verordnung über die Reduktion der CO2-Emissionen (CO2-Verordnung) vom 30. November 2012",
+      "ref": "SR 641.711, Art. 114-118",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2012/856/de#chap_9/sec_2"
     }
   ],
   "sources": [
@@ -404,7 +552,7 @@
       "url": "https://www.technologiefonds.ch/buergschaften",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -414,7 +562,7 @@
       "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -424,7 +572,7 @@
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -434,7 +582,7 @@
       "url": "https://www.technologiefonds.ch/buergschaften/vorgehen",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -444,7 +592,7 @@
       "url": "https://www.technologiefonds.ch/buergschaften/vorteile",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -454,20 +602,102 @@
       "url": "https://www.technologiefonds.ch/organisation",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "pruefprozess",
+      "title": "Prüfprozess Details, Technologiefonds",
+      "type": "merkblatt",
+      "url": "https://www.technologiefonds.ch/fileadmin/user_upload/files/DE_Pr%C3%BCfprozess_Details_2026_04_15.pdf",
+      "version": "Version 04.2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "andere_mittel",
+      "title": "Definition der 40% «anderen Mittel», Technologiefonds",
+      "type": "merkblatt",
+      "url": "https://www.technologiefonds.ch/fileadmin/user_upload/files/DE_Technologiefonds_Andere_Mittel_2026_ohne_Logos1.pdf",
+      "version": "2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "flyer",
+      "title": "Flyer Technologiefonds",
+      "type": "merkblatt",
+      "url": "https://www.technologiefonds.ch/fileadmin/user_upload/files/DE_Technologiefonds_Flyer_2026_ohne_Logos1.pdf",
+      "version": "2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "vorab_check",
+      "title": "Vorab-Check, Technologiefonds",
+      "type": "formular",
+      "url": "https://www.technologiefonds.ch/vorab-check",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "finanzierungsrichtlinie",
+      "title": "Finanzierungs- und Verbürgungsrichtlinie Technologiefonds (BAFU)",
+      "type": "reglement",
+      "url": "https://www.technologiefonds.ch/fileadmin/user_upload/files/DE_2026_Finanzierungs-_und_Verb%C3%BCrgungsrichtlinie_Technologiefonds_Unterschrift_StA-sig.pdf",
+      "version": "geändert am 01.01.2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "buergschaftsrichtlinie",
+      "title": "Bürgschaftsrichtlinie Technologiefonds (BAFU)",
+      "type": "reglement",
+      "url": "https://www.technologiefonds.ch/fileadmin/user_upload/files/DE_2026_B%C3%BCrgschaftsrichtlinie_Technologiefonds_zur_Unterschrift_StA-sig.pdf",
+      "version": "geändert am 01.01.2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "co2_gesetz",
+      "title": "CO2-Gesetz, SR 641.71",
+      "type": "gesetz",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2012/855/de#art_35",
+      "version": "Stand am 1. Januar 2025",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "co2_vo",
+      "title": "CO2-Verordnung, SR 641.711",
+      "type": "verordnung",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2012/856/de#chap_9/sec_2",
+      "version": "Stand am 1. Januar 2026",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Artikel im CO2-Gesetz nicht genannt. Die Webseite verweist auf das CO2-Gesetz vom 23. Dezember 2011, prüfen ob die aktuelle Fassung gilt.",
-      "Liste Prüfprozess Details (PDF) nicht gesichtet, daher Unterlagen der Due Diligence unvollständig.",
-      "Kombination mit anderen Förderungen (z. B. Innosuisse) in den Quellen nicht geregelt.",
-      "max_share_of_costs_pct 60 ist aus der Pflicht zu 40% Eigenfinanzierung abgeleitet, nicht wörtlich genannt.",
-      "Quellen nicht lokal abgelegt."
+      "budget: Webseite (Konditionen, Vorteile) nennt CHF 500 Mio., CO2-Verordnung Art. 118 Abs. 3 und Bürgschaftsrichtlinie Ziff. 2 Abs. 1 nennen CHF 750 Mio. Bei der Geschäftsstelle bestätigen.",
+      "criteria.marktreif_umsatz: Webseite und Vorab-Check verlangen CHF 100'000 Umsatz, die Richtlinie nur einen marktfähigen Prototyp. Prüfen, ob die Umsatzschwelle zwingend ist.",
+      "criteria.wertschoepfung_schweiz: auf muss gesetzt gestützt auf Richtlinie Ziff. 2.3 («setzt voraus»); Webseite sagt «soll». Bestätigen.",
+      "timing.deadline: «laufend» ist abgeleitet (keine Frist genannt). Bestätigen.",
+      "combination_rules: Kombination mit anderen Förderungen (z. B. Innosuisse) nicht geregelt. Innosuisse-Beiträge zählen laut Merkblatt «Andere Mittel» nur nach Absprache an die 40%.",
+      "legal_basis: Auf Fedlex ist eine Fassung der CO2-Verordnung ab 1. Januar 2027 registriert, Text noch nicht abrufbar. Art. 114-118 danach erneut prüfen.",
+      "sources: Quellen nicht lokal abgelegt."
     ]
   }
 }
