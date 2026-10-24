@@ -728,7 +728,7 @@
       ],
       "funding": {
         "model": "pro_einheit",
-        "summary": "Erhöhter einmaliger Beitrag pro kW für Anlagen ohne Eigenverbrauch bis 149.99 kW. Betrag im Pronovo-Tarifrechner berechnen.",
+        "summary": "Erhöhter einmaliger Beitrag pro kW für Anlagen ohne Eigenverbrauch bis 149.99 kW, bis zu 60% der Investitionskosten von Referenzanlagen (FAQ Pronovo). Betrag im Pronovo-Tarifrechner berechnen.",
         "cost_categories": [],
         "units": [
           {
@@ -738,7 +738,7 @@
             "amount_chf": null
           }
         ],
-        "max_share_of_costs_pct": null,
+        "max_share_of_costs_pct": 60,
         "min_amount_chf": null,
         "max_amount_chf": null,
         "cofinancing": null,
