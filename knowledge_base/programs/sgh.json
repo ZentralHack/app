@@ -12,15 +12,15 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Nur im gesetzlichen Förderperimeter. Basel-Stadt, Genf und Solothurn werden laut Webseite nicht finanziert."
+    "note": "Nur im gesetzlichen Fördergebiet (Fremdenverkehrsgebiete und Badekurorte, Anhang der Verordnung). Der ganze Kanton Luzern gehört dazu. Basel-Stadt, Genf und Solothurn werden laut SGH nicht finanziert."
   },
-  "purpose": "Die SGH setzt für den Bund die Förderung der Beherbergungswirtschaft um und finanziert Investitionen, Käufe und Neubauten von Hotels mit Darlehen.",
+  "purpose": "Der Bund fördert über die SGH Kredite für die Beherbergungswirtschaft. Die SGH finanziert mit Darlehen Erwerb, Neubau, Ersatzneubau und Erneuerung von Beherbergungsbetrieben.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Prüfung und Entscheid durch die SGH.",
+    "note": "Es besteht kein Anspruch auf ein Darlehen. Die SGH prüft das Gesuch und entscheidet.",
     "source": {
-      "source_id": "anfrage",
-      "locator": null
+      "source_id": "vfb",
+      "locator": "Art. 4 Abs. 2"
     }
   },
   "budget": null,
@@ -30,7 +30,7 @@
     {
       "id": "darlehen",
       "name": "Darlehen für Beherbergungsbetriebe",
-      "description": "Nachrangige Darlehen der SGH, die Finanzierungslücken zwischen Eigenkapital und Bankfinanzierung schliessen, auch über die Belehnungsgrenze der Banken hinaus.",
+      "description": "Darlehen der SGH für Beherbergungsbetriebe. Sie schliessen Lücken zwischen Eigenkapital, Bankfinanzierung und weiteren Finanzierungsquellen, auch über die Belehnungsgrenze der Banken hinaus. Sie ergänzen eine vorrangige Sockelfinanzierung.",
       "keywords": [
         "SGH",
         "Hotelkredit",
@@ -45,12 +45,12 @@
         "note": null,
         "source": {
           "source_id": "unterstuetzung",
-          "locator": null
+          "locator": "Wie wir vorgehen"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Beherbergungsbetrieb (Eigentümer- oder Mietbetrieb)"
+        "note": "Beherbergungsbetrieb (Eigentümer-, Miet- oder Pachtbetrieb)"
       },
       "filter": {
         "applicant_types": [
@@ -75,14 +75,31 @@
         {
           "id": "investitionen",
           "name": "Investitionen, Käufe und Neubauten",
-          "definition": "Hotels, strukturierte Beherbergungsbetriebe sowie Grundstücke und Bauten.",
+          "definition": "Hotels, strukturierte Beherbergungsbetriebe und Grundstücke, Bauten, Räumlichkeiten, Installationen und Einrichtungen, die zu Hotels oder strukturierten Beherbergungsbetrieben gehören.",
           "examples_positive": [],
           "examples_negative": [
             "Liquiditätsfinanzierungen"
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Neubau, Kauf, Umbau"
+            "locator": "Was kann die SGH finanzieren? / Finanziert die SGH auch Liquidität?"
+          }
+        },
+        {
+          "id": "zwecke",
+          "name": "Zwecke laut Gesetz",
+          "definition": "Darlehen für die im Gesetz genannten Zwecke.",
+          "examples_positive": [
+            "Erneuerung eines bestehenden Beherbergungsbetriebes oder Ersatz durch einen Neubau",
+            "Neubaukosten von Beherbergungsbetrieben",
+            "Erneuerung oder Bau von Personalunterkünften und Arbeitsstätten",
+            "Erleichterung des Erwerbs von Beherbergungsbetrieben",
+            "Renovationen zum Abbau baulicher Hindernisse für Behinderte"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "bg",
+            "locator": "Art. 4 Abs. 1"
           }
         }
       ],
@@ -91,14 +108,14 @@
           "text": "Reine Gastronomiebetriebe",
           "source": {
             "source_id": "loesungen",
-            "locator": "Ausschlüsse"
+            "locator": "FAQ: Können Gastronomiebetriebe ein Darlehen bei der SGH beantragen?"
           }
         },
         {
           "text": "Liquiditätsfinanzierungen",
           "source": {
             "source_id": "faq",
-            "locator": "Nicht finanziert"
+            "locator": "Finanziert die SGH auch Liquidität?"
           }
         }
       ],
@@ -116,37 +133,68 @@
             "text": "Wie viele Zimmer bzw. Betten hat Ihr Betrieb?",
             "options": [
               "Weniger als 15 Zimmer und weniger als 30 Betten",
-              "15 Zimmer oder 30 Betten oder mehr",
+              "Mindestens 15 Zimmer oder mindestens 30 Betten",
               "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
             "source_id": "unterstuetzung",
-            "locator": "Betriebe"
+            "locator": "Voraussetzungen für ein SGH-Darlehen"
           },
-          "notes": null
+          "notes": "Auch FAQ: «finanziert nur definierte Beherbergungsbetriebe, welche mindestens 15 Zimmer bzw. 30 Betten haben». Die Verordnung (Art. 1 Abs. 2 lit. d) sagt «in der Regel»."
         },
         {
           "id": "hotelmaessige_leistungen",
-          "text": "Rezeption, Restaurations- oder Frühstücksservice und tägliche Zimmerreinigung.",
+          "text": "Der Betrieb verfügt über Rezeption, Restaurationsservice/Frühstück und die Möglichkeit einer täglichen Zimmerreinigung.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
           "profile_fields": [
             "taetigkeit"
           ],
-          "question": null,
+          "question": {
+            "text": "Bietet Ihr Betrieb Rezeption, Restaurationsservice oder Frühstück und die Möglichkeit einer täglichen Zimmerreinigung?",
+            "options": [
+              "Ja, alles davon",
+              "Nein, nicht alles davon",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "loesungen",
-            "locator": "Voraussetzungen"
+            "locator": "FAQ: In welchen Fällen finanziert die SGH nicht mit?"
           },
-          "notes": null
+          "notes": "Gleicher Text in der FAQ und auf «Ihre Anfrage». «Unsere Unterstützung» nennt als Voraussetzung «Erbringung von hotelmässigen Leistungen»."
+        },
+        {
+          "id": "kurzzeitbeherbergung",
+          "text": "Der Betrieb bietet professionelle und kurzzeitige Beherbergung an.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "taetigkeit"
+          ],
+          "question": {
+            "text": "Beherbergt Ihr Betrieb professionell Gäste für kurze Aufenthalte (Hotelbetrieb)?",
+            "options": [
+              "Ja",
+              "Nein, z. B. Langzeitvermietung oder Zweitwohnungen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "unterstuetzung",
+            "locator": "Voraussetzungen für ein SGH-Darlehen"
+          },
+          "notes": "Verordnung Art. 1 Abs. 2 lit. a: «auf die professionelle und kurzzeitige Beherbergung von Gästen ausgerichtet»."
         },
         {
           "id": "foerderperimeter",
-          "text": "Der Betrieb liegt im gesetzlichen Förderperimeter gemäss Verordnung über die Förderung der Beherbergungswirtschaft.",
+          "text": "Der Betrieb liegt im Finanzierungsgebiet gemäss Verordnung über die Förderung der Beherbergungswirtschaft.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -158,13 +206,13 @@
           "evidence": [],
           "source": {
             "source_id": "unterstuetzung",
-            "locator": "Fördergebiet"
+            "locator": "Voraussetzungen für ein SGH-Darlehen / Finanzierungsgebiete"
           },
-          "notes": "Ob und welche Luzerner Gemeinden finanzierbar sind, nennen die Quellen nicht."
+          "notes": "Kanton Luzern: ganzer Kanton finanzierbar (SGH, Finanzierungsgebiete; Verordnung Anhang Ziff. 1). Nicht finanziert: Basel-Stadt, Genf, Solothurn. In AG, BE, BL, FR, SH, SZ, VD, ZG, ZH nur einzelne Gemeinden."
         },
         {
           "id": "wirtschaftlich_nachhaltig",
-          "text": "Wirtschaftlich nachhaltig aufgestellter Betrieb.",
+          "text": "Der Betrieb ist wirtschaftlich nachhaltig aufgestellt.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -173,66 +221,74 @@
           ],
           "question": null,
           "evidence": [
-            "Abschlüsse der letzten 3 Jahre",
-            "Budget für mindestens 3 Jahre"
+            "Geschäftsabschlüsse der letzten 3 Jahre",
+            "Budget / Planzahlen (mind. 3 Jahre)"
           ],
           "source": {
             "source_id": "unterstuetzung",
-            "locator": "Betriebe"
+            "locator": "Voraussetzungen für ein SGH-Darlehen"
           },
-          "notes": null
+          "notes": "Gesetz Art. 6 lit. b: Darlehen nur, sofern «die erwarteten Erträge ausreichen, um sämtliche Betriebskosten zu tragen und die laufenden Erneuerungen des Betriebes zu finanzieren». Abgeleitet aus «Ihre Anfrage», Unterlagenliste: Belege."
         },
         {
           "id": "sockelfinanzierung_bank",
-          "text": "Das Darlehen ist nur zusammen mit einer vorrangigen Bankfinanzierung möglich.",
-          "kind": "muss",
+          "text": "Das Darlehen ergänzt im Grundsatz eine vorrangige Sockelfinanzierung. Diese muss nicht zwingend bei einer Bank sein.",
+          "kind": "soll",
           "about": "partner",
           "applies_if": null,
           "profile_fields": [
             "partner"
           ],
           "question": {
-            "text": "Haben Sie eine Bank, die den vorrangigen Teil finanziert?",
+            "text": "Haben Sie für das Vorhaben eine vorrangige Finanzierung, zum Beispiel durch eine Bank?",
             "options": [
-              "Ja",
+              "Ja, Zusage liegt vor",
+              "In Abklärung",
               "Nein",
               "Weiss nicht"
             ]
           },
           "evidence": [
-            "Schriftliche Finanzierungszusage einer Bank"
+            "Zusage Bankfinanzierung"
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Darlehenshöhe"
+            "locator": "Finanziert die SGH auch Darlehen ohne Mitwirkung der Bank?"
           },
-          "notes": null
+          "notes": "FAQ: «Im Grundsatz finanzieren wir ergänzend zu einer Sockelfinanzierung, die nicht zwingend bei einer Bank sein muss.» FAQ Darlehenshöhe: «in Verbindung mit einer vorrangigen Sockelfinanzierung». Verordnung Art. 4 Abs. 1: «subsidiär zu privaten Kapitalgebern»."
         },
         {
           "id": "eigenmittel",
-          "text": "Ein gewisser Eigenmittelanteil. Das Projekt darf nicht vollständig fremdfinanziert sein.",
+          "text": "Ein gewisser Eigenmittelanteil. Das Projekt darf nicht ausschliesslich fremdfinanziert sein.",
           "kind": "soll",
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [
             "budget"
           ],
-          "question": null,
+          "question": {
+            "text": "Bringen Sie eigene Mittel in das Vorhaben ein?",
+            "options": [
+              "Ja",
+              "Nein, alles fremdfinanziert",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "loesungen",
-            "locator": "Eigenmittel"
+            "locator": "FAQ: Wie hoch müssen die vom Gesuchsteller eingesetzten Eigenmittel sein?"
           },
-          "notes": "Kein fixer Prozentsatz."
+          "notes": "Kein fixer Prozentsatz. Die SGH beurteilt die Eigenmittel im Kontext der Gesamtsituation."
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "Darlehen bis maximal CHF 6 Mio., Rückzahlung in der Regel 15, höchstens 20 Jahre.",
+        "summary": "Darlehen in der Regel CHF 100'000 bis 6 Mio. Rückzahlung in der Regel 15, höchstens 20 Jahre. Zinsen ab 1,00 % (Stand 01.04.2025).",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": null,
-        "min_amount_chf": null,
+        "min_amount_chf": 100000,
         "max_amount_chf": 6000000,
         "cofinancing": null,
         "deductions": [],
@@ -242,30 +298,30 @@
           "Festzinsdarlehen",
           "Variables Darlehen"
         ],
-        "calculation_basis": "Höhe nach Unternehmenswert und Tragbarkeit aller finanziellen Verpflichtungen.",
+        "calculation_basis": "Für die Darlehensgrösse ermittelt die SGH den Unternehmenswert und die Tragbarkeit aller finanziellen Verpflichtungen (Unsere Unterstützung). Höchstens 40 % des Ertragswerts (Verordnung Art. 6 Abs. 1).",
         "example": null,
         "source": {
-          "source_id": "faq",
-          "locator": "Darlehenshöhe"
+          "source_id": "vfb",
+          "locator": "Art. 6 Abs. 1"
         },
-        "note": "Zinssätze gemäss PDF Zinskonditionen (Stand 01.04.2025), nicht gesichtet. Bearbeitungsgebühr 1% des Darlehens, mindestens CHF 500, höchstens CHF 5'000. Sicherheiten: Eigentümerbetrieb Grundpfand, Mietbetrieb z. B. Wertschriftendepot, Versicherungspolicen oder Solidarbürgschaften."
+        "note": "Betrag: Verordnung Art. 6: in der Regel CHF 100'000 bis 6 Mio., ausnahmsweise mehr (z. B. Lead-Betriebe, innovative Projekte) oder über 40 % des Ertragswerts (periphere Regionen). FAQ: «darf ein Darlehen maximal CHF 6'000.000.00 betragen». Zinsen laut Zinskonditionen SGH per 01.04.2025, indikativ: Startdarlehen 5 Jahre 1,50 %, 10 Jahre 1,75 %. Impulsdarlehen 5 Jahre 1,00 %, 10 Jahre 1,25 %. Festzinsdarlehen je nach Kundenrating, 3 Jahre 1,35–2,10 % bis 10 Jahre 1,75–2,50 %. Variable Darlehen 2,50–3,50 %. Impulsdarlehen für Investitionen in Produktivität und Kosteneffizienz, Saisonverlängerung, regionale Wertschöpfungskette oder energetische Nachhaltigkeit (Unsere Lösungen). Bearbeitungsgebühr 1 % des Darlehensbetrags, mind. CHF 500, max. CHF 5'000 (Unsere Lösungen). Sicherheiten (FAQ): Eigentümerbetrieb grundpfandgesichert; Mietbetrieb alternative Sicherheiten wie Wertschriftendepot, Versicherungspolicen oder Solidarbürgschaften."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": null,
+          "rule": "Abgeleitet aus SGH, Ihre Anfrage, «Der Gesuchsablauf»: Die Quelle nennt keine Eingabefrist.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "anfrage",
-            "locator": null
+            "locator": "Der Gesuchsablauf"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": 240,
         "repeat_limit": null,
-        "note": "Ablauf: Gesuch, Erstprüfung, Objektbesichtigung, Detailprüfung, Entscheid."
+        "note": "Ablauf: Gesuch, Erstprüfung, Objektbesichtigung, Detailprüfung, Entscheid. Rückzahlung höchstens 20 Jahre, grundsätzlich 15 Jahre (FAQ: Wie lange ist die Rückzahlungsdauer der SGH?)."
       },
       "documents": {
         "application": [
@@ -274,62 +330,123 @@
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
             }
           },
           {
-            "name": "Angaben zum Investitionsprojekt und geplanter Finanzierungsstruktur",
+            "name": "Angaben zum Investitionsvorhaben und geplanter Finanzierungsstruktur",
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
             }
           },
           {
-            "name": "Schriftliche Finanzierungszusage einer Bank",
+            "name": "Zusage Bankfinanzierung",
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
             }
           },
           {
-            "name": "Angaben zu bestehenden Fremdfinanzierungen",
+            "name": "Angaben zu bestehenden Fremdfinanzierungen (Höhe, Amortisation)",
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
             }
           },
           {
-            "name": "Abschlüsse der letzten 3 Jahre und Budget für mindestens 3 Jahre",
+            "name": "Geschäftsabschlüsse der letzten 3 Jahre",
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
             }
           },
           {
-            "name": "Gebäudeversicherungspolice, aktueller Betreibungsauszug, Lebenslauf",
+            "name": "Budget / Planzahlen (mind. 3 Jahre)",
             "condition": null,
             "source": {
               "source_id": "anfrage",
-              "locator": "Unterlagen"
+              "locator": "Diese Unterlagen benötigen wir"
+            }
+          },
+          {
+            "name": "Gebäudeversicherungspolice",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Diese Unterlagen benötigen wir"
+            }
+          },
+          {
+            "name": "Betreibungsregisterauszug (aktuell)",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Diese Unterlagen benötigen wir"
+            }
+          },
+          {
+            "name": "Lebenslauf der antragsstellenden Person",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Diese Unterlagen benötigen wir"
+            }
+          },
+          {
+            "name": "Weitere Unterlagen nach Bedarf",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Diese Unterlagen benötigen wir"
             }
           }
         ],
         "completion": []
       },
-      "obligations": [],
+      "obligations": [
+        {
+          "text": "Vereinbarten Zins und vertraglich vereinbarte Amortisationen zahlen.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Welche Pflichten habe ich als Finanzierungskunde bei der SGH?"
+          }
+        },
+        {
+          "text": "Jährlichen Geschäftsabschluss einreichen.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Welche Pflichten habe ich als Finanzierungskunde bei der SGH?"
+          }
+        },
+        {
+          "text": "Alle fünf Jahre einen Ausweis der Gebäudeversicherung einreichen.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Welche Pflichten habe ich als Finanzierungskunde bei der SGH?"
+          }
+        },
+        {
+          "text": "Kontrollen und Einsicht in die Bücher ermöglichen; geordnete Buchführung.",
+          "source": {
+            "source_id": "bg",
+            "locator": "Art. 9 Abs. 2"
+          }
+        }
+      ],
       "levers": [
         {
-          "text": "Mehrere Banken für die vorrangige Finanzierung anfragen",
+          "text": "Verschiedene Banken für die erstrangige Finanzierung anschreiben",
           "affects_criteria": [
             "sockelfinanzierung_bank"
           ],
           "source": {
             "source_id": "loesungen",
-            "locator": "Bank"
+            "locator": "FAQ: Haben wir Vorgaben, bei welchen Banken eine Finanzierung gemacht werden muss?"
           }
         }
       ],
@@ -340,7 +457,7 @@
       },
       "source": {
         "source_id": "unterstuetzung",
-        "locator": null
+        "locator": "Wie wir vorgehen"
       }
     }
   ],
@@ -358,13 +475,13 @@
     "note": null,
     "source": {
       "source_id": "anfrage",
-      "locator": null
+      "locator": "Der Gesuchsablauf"
     }
   },
   "contacts": [
     {
       "name": "Schweizerische Gesellschaft für Hotelkredit",
-      "role": "Uetlibergstrasse 134b, 8027 Zürich",
+      "role": "Postfach, Uetlibergstrasse 134b, 8027 Zürich",
       "email": "info@sgh.ch",
       "phone": "+41 44 209 16 16",
       "url": "https://sgh.ch/kontakt"
@@ -374,7 +491,12 @@
     {
       "title": "Bundesgesetz über die Förderung der Beherbergungswirtschaft",
       "ref": "SR 935.12",
-      "url": "https://sgh.ch/unternehmen/dokumente-und-medien/gesetzliche-grundlagen"
+      "url": "https://www.fedlex.admin.ch/eli/cc/2003/642/de"
+    },
+    {
+      "title": "Verordnung über die Förderung der Beherbergungswirtschaft",
+      "ref": "SR 935.121",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2015/125/de"
     }
   ],
   "sources": [
@@ -385,7 +507,7 @@
       "url": "https://sgh.ch/finanzierung/unsere-unterstuetzung",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -395,7 +517,7 @@
       "url": "https://sgh.ch/finanzierung/unsere-loesungen",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -405,7 +527,7 @@
       "url": "https://sgh.ch/finanzierung/ihre-anfrage",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -415,20 +537,55 @@
       "url": "https://sgh.ch/haeufige-fragen/fragen-zur-finanzierung",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "vfb",
+      "title": "Verordnung über die Förderung der Beherbergungswirtschaft (SR 935.121)",
+      "type": "verordnung",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/125/20240701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-125-20240701-de-pdf-a-5.pdf",
+      "version": "Stand am 1. Juli 2024",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "bg",
+      "title": "Bundesgesetz über die Förderung der Beherbergungswirtschaft (SR 935.12)",
+      "type": "gesetz",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/642/20130101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-642-20130101-de-pdf-a.pdf",
+      "version": "Stand am 1. Januar 2013",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "zinsen",
+      "title": "Zinskonditionen SGH (per 01.04.2025)",
+      "type": "merkblatt",
+      "url": "https://sgh.ch/media/pages/finanzierung/unsere-loesungen/3af3e7b394-1748440129/sgh_zinskonditionen_01.04.25.pdf",
+      "version": "01.04.2025",
+      "published": "2025-04-01",
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "WICHTIG: Ob Luzerner Gemeinden im Förderperimeter liegen, nennen die Quellen nicht. Verordnung bzw. SGH-Karte prüfen.",
       "Nicht erfasst: SGH-Beratung (Unterseite nicht im Detail gesichtet).",
-      "Zinssätze nicht erfasst (PDF Zinskonditionen nicht gelesen).",
-      "Umbauten: Laut FAQ werden Investitionen, Käufe und Neubauten finanziert, Umbau wird nicht ausdrücklich genannt.",
-      "Quellen nicht lokal abgelegt."
+      "Quellen nicht lokal abgelegt.",
+      "timing.deadline: Keine Quelle nennt eine Eingabefrist. «laufend» ist abgeleitet. Bei der SGH bestätigen.",
+      "sockelfinanzierung_bank: FAQ sagt «Im Grundsatz», Sockelfinanzierung nicht zwingend bei einer Bank. Darum soll statt muss. Bestätigen.",
+      "min_15_zimmer: SGH-Webseite nennt es als Voraussetzung, die Verordnung sagt «in der Regel». Ausnahmen bei der SGH klären.",
+      "funding: FAQ nennt CHF 6 Mio. als Maximum, Verordnung Art. 6 erlaubt ausnahmsweise mehr. 100'000 und 6 Mio. als Regelwerte erfasst.",
+      "funding.note: Zinssätze Stand 01.04.2025, indikativ. Vor Nutzung auf neuere Version prüfen.",
+      "wirtschaftlich_nachhaltig.evidence: aus der Unterlagenliste abgeleitet. Bestätigen.",
+      "contacts: Die Seite Finanzierungsgebiete nennt persönliche Ansprechpersonen pro Region. Nicht übernommen (Person, Zuordnung zu Luzern nur aus der Reihenfolge der Liste gelesen). Allgemeiner Kontakt info@sgh.ch.",
+      "Verordnung auf sgh.ch ist Stand 1. Juni 2021. Erfasst ist die Fassung auf fedlex, Stand 1. Juli 2024."
     ]
   }
 }
