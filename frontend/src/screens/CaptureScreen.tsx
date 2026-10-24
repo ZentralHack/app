@@ -2,6 +2,9 @@ import { ComboBox, Description, FieldError, Input, InputGroup, Label, ListBox, T
 import { useState } from "react";
 import type { Clarification } from "../api/contract";
 import { Page } from "../components/layout/Page";
+
+/** The backend accepts at most this many characters (ProfileRequest.text). */
+const MAX_TEXT = 5000;
 import { PageHeader } from "../components/layout/PageHeader";
 import { Alert } from "../components/ui/Alert";
 import { Button } from "../components/ui/Button";
@@ -97,10 +100,10 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
             </TextField>
         </div>
 
-        <TextField isRequired value={draft.text} onChange={text => set({ text })} isInvalid={errors.text}>
+        <TextField isRequired value={draft.text} onChange={text => set({ text })} isInvalid={errors.text} maxLength={MAX_TEXT}>
           <Label>{t.capture.label}</Label>
           <TextArea rows={5} placeholder="Wir sind ein KMU aus … und möchten …" />
-          {errors.text ? <FieldError>{length === 0 ? t.missing.required : t.capture.tooShort}</FieldError> : <Description>{t.capture.note}</Description>}
+          {errors.text ? <FieldError>{length === 0 ? t.missing.required : t.capture.tooShort}</FieldError> : <Description>{length > MAX_TEXT - 500 ? t.capture.limit(length, MAX_TEXT) : t.capture.note}</Description>}
         </TextField>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

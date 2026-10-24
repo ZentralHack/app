@@ -40,6 +40,7 @@ export const t = {
     label: "Ihr Vorhaben",
     note: "Bitte nur fiktive oder anonymisierte Angaben.",
     tooShort: "Bitte beschreiben Sie Ihr Vorhaben etwas genauer.",
+    limit: (n: number, max: number) => `${n} von höchstens ${max} Zeichen.`,
     gemeinde: "Gemeinde",
     persons: "Personen",
     budget: "Projektbudget in CHF",

@@ -6,6 +6,8 @@ Ein KI-Agent, der zu einem konkreten Vorhaben eines Luzerner Unternehmens passen
 ![Kategorie AI Agentic](https://img.shields.io/badge/Kategorie-AI%20Agentic-8250df)
 ![Status Prototyp](https://img.shields.io/badge/Status-Prototyp-d97706)
 
+**Live-Version:** _folgt_ (URL hier eintragen)
+
 > **Orientierungshilfe, keine verbindliche Beurteilung.**
 > Der Agent beurteilt die Förderberechtigung nicht verbindlich und ersetzt weder die Prüfung durch die Förderstelle noch eine Beratung. Alle Unternehmensdaten in diesem Repo sind fiktiv.
 
@@ -97,39 +99,59 @@ flowchart LR
 
 ## Getestet
 
-[`tests/projects/`](tests/projects/) enthält 8 fiktive Vorhaben mit erwarteten Förderangeboten und Einstufungen: fünf Standardfälle (u. a. das Sensor-Beispiel aus der Challenge) und drei Grenzfälle (zu vage, ausserhalb Luzern, kein passendes Förderangebot). Jedes Projekt beantwortet die Rückfragen.
+[`tests/projects/`](tests/projects/) enthält 17 fiktive Vorhaben mit erwarteten Förderangeboten und Einstufungen, darunter das Sensor-Beispiel aus der Challenge und Grenzfälle (zu vage, ausserhalb Luzern, kein passendes Förderangebot, Mundart, kurze und unordentliche Eingabe).
 
-Stand 24.10.2026, je 3 Läufe pro Projekt mit den echten Modellen (`uv run python -m eval.run_eval`):
+Stand 24.10.2026 für die ersten 8 Projekte, je 3 Läufe mit den echten Modellen (`uv run python -m eval.run_eval`):
 - 7 von 8 Projekten erfüllen ihre Erwartungen in allen 3 Läufen. Beim Tourismus-Startup weicht das Ergebnis ab, unter anderem weil das Budget unter der Mindestsumme von Innotour liegt.
 - Eine Analyse dauert im Median 36 Sekunden (höchstens 50) und kostet rund USD 0.13 an Modellkosten.
 - Backend: über 200 automatische Tests ohne API-Schlüssel, `ruff` sauber. Jede API-Antwort und jedes Live-Event wird gegen den Contract geprüft.
 
-## Starten unter Windows
+## Starten
 
 Voraussetzungen: [uv](https://docs.astral.sh/uv/) (installiert Python 3.13 selbst) und Node 20 oder neuer.
 
-**1. Backend** (PowerShell, Ordner `backend`):
+**1. Backend** (Ordner `backend`), Windows PowerShell:
 ```powershell
 uv sync
 Copy-Item ..\.env.example .env     # OPENAI_API_KEY, MODEL_EXTRACT, MODEL_REASON eintragen; die Datei wird nie committet
+uv run uvicorn app.main:app --port 8000
+```
+macOS und Linux:
+```bash
+uv sync
+cp ../.env.example .env            # OPENAI_API_KEY, MODEL_EXTRACT, MODEL_REASON eintragen
 uv run uvicorn app.main:app --port 8000
 ```
 Ohne Schlüssel laufen Wissensbasis, Rückfragen und Tests; die KI-Schritte antworten mit einer Fehlermeldung.
 
 **Demo ohne Netz:** Die Testprojekte in [`backend/demo/`](backend/demo/) sind als echte Läufe gespeichert. Wer genau ihren Vorhabenstext eingibt, sieht sie mit realistischen Pausen abgespielt:
 ```powershell
-$env:DEMO_REPLAY = "true"; uv run uvicorn app.main:app --port 8000
+$env:DEMO_REPLAY = "true"; uv run uvicorn app.main:app --port 8000     # macOS/Linux: DEMO_REPLAY=true uv run uvicorn app.main:app --port 8000
 ```
 
-**2. Frontend** (zweites Terminal, Ordner `frontend`):
-```powershell
+**2. Frontend** (zweites Terminal, Ordner `frontend`, gleich auf allen Systemen):
+```bash
 npm install
 npm run dev        # http://localhost:5173
 ```
 Vite leitet `/api` an `http://127.0.0.1:8000` weiter.
 
+**Umgebungsvariablen** (`backend/.env`, Vorlage [`.env.example`](.env.example), ohne echte Schlüssel):
+
+| Variable | Bedeutung |
+|---|---|
+| `OPENAI_API_KEY` | Schlüssel für das Sprachmodell (Pflicht für Profil, Prüfung, Fahrplan-Texte, Chat) |
+| `MODEL_EXTRACT`, `MODEL_REASON` | Modell-IDs: klein für das Profil, grösser für Prüfung, Texte und Chat |
+| `MAX_CONCURRENCY`, `LLM_TIMEOUT_S` | parallele Prüfungen (Standard 4) und Zeitlimit pro Aufruf (Standard 30 s) |
+| `DEMO_REPLAY`, `DEMO_TODAY` | gespeicherte Läufe abspielen; Stichtag für alle Fristen festlegen |
+| `CORS_ORIGINS` | erlaubte Frontend-Adressen, wenn nicht über den Vite-Proxy |
+| `CHAT_LOG` | Pfad des anonymen Fragen-Logs (Standard `backend/logs/chat_questions.jsonl`) |
+| `DEV_PERSIST_RUNS`, `DEV_RUNS_FILE` | nur Entwicklung: fertige Läufe über Neustarts behalten (Standard aus, Datei `~/.fundpilot/runs.json`) |
+
+Im Frontend schaltet `VITE_DEV_TOOLS=true` in `frontend/.env.local` ein Entwicklermenü ein; ohne die Variable ist es nicht im Build.
+
 **Prüfen:**
-```powershell
+```bash
 uv run pytest                      # Backend-Tests, ohne Schlüssel
 uv run ruff check .
 uv run python -m eval.run_eval     # alle Testprojekte gegen die echten Modelle
@@ -163,14 +185,17 @@ tests/projects/    fiktive Testprojekte mit Erwartungen
 - **Auswahl, nicht vollständig.** 37 Förderangebote aus 21 Programmen, nicht alle Angebote in der Schweiz. Förderangebote ausserhalb der Wissensbasis findet der Agent nicht.
 - **Datenstand.** Die Programmdaten wurden am 23. und 24.10.2026 aus öffentlichen Quellen erfasst und sind noch nicht alle von Hand gegen die Quelle verifiziert. Programme ändern sich.
 - **Keine Beträge.** Der Agent rechnet keine Förderbeträge aus; er zeigt die Regel aus der Quelle.
+- **Nicht von den Programmanbietern geprüft.** Die Wissensbasis stammt aus öffentlichen Quellen; keine Förderstelle hat sie bestätigt.
 - **LLM-Schwankungen.** Dasselbe Vorhaben kann in einzelnen Kriterien unterschiedlich eingestuft werden; der Eval misst das (siehe oben).
-- **Nicht umgesetzt:** Folge-Chat zu den Quellen, Einblicke für den Kanton, Mehrsprachigkeit, Gesuchseinreichung.
+- **Nur im Speicher.** Analysen leben im Arbeitsspeicher des Backends; nach einem Neustart sind sie weg.
+- **Kein Login.** Keine Konten, keine gespeicherten Vorhaben; wer den Link zu einer Analyse hat, sieht sie, solange das Backend läuft.
+- **Nicht umgesetzt:** Einblicke für den Kanton, Mehrsprachigkeit (Eingaben auf Englisch werden verstanden, die Ausgabe ist Deutsch), Gesuchseinreichung.
 
 ## Datenschutz und Quellen
 
 - Nur fiktive Unternehmensdaten. Es werden keine realen Firmen gesucht oder abgefragt.
 - Nur öffentliche Programminformationen. Jede Quelle ist mit URL und Prüfdatum in der Programmdatei erfasst.
-- Eingaben werden nur für die Analyse an das Sprachmodell geschickt (ohne Speicherung beim Anbieter, `store=false`) und im Prototyp nicht dauerhaft gespeichert.
+- Eingaben werden nur für die Analyse an das Sprachmodell geschickt (ohne Speicherung beim Anbieter, `store=false`) und im Prototyp nicht dauerhaft gespeichert. Ausnahme: Fragen im Rückfrage-Chat werden ohne Profil und ohne Personendaten in eine lokale Log-Datei geschrieben (Grundlage für die Einblicke für den Kanton).
 - API-Schlüssel gehören in `backend/.env` (siehe `.env.example`) und nie ins Repo.
 
 ## Team
