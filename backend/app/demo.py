@@ -2,7 +2,8 @@
 are played back with realistic delays, so the pitch works without API or network.
 
 A demo case is found by its input text. Answers and profile corrections do not change a
-replayed result; anything that is not a demo case runs live as usual.
+replayed result; anything that is not a demo case runs live as usual. The profile is handed
+out as it was before the answers, so the Rückfragen screen shows the same questions.
 """
 
 import asyncio
@@ -19,7 +20,8 @@ from pydantic import ValidationError
 
 from app.agent.orchestrator import BADGE_STATES, FIT_LABELS
 from app.agent.text import squash
-from app.models.contract import RunResult
+from app.knowledge_base.questions import RUECKFRAGE
+from app.models.contract import ProfileField, ProjectProfile, RunResult
 from app.trace import RunRecorder
 
 log = logging.getLogger(__name__)
@@ -49,6 +51,19 @@ def load_demo_cases(directory: Path) -> DemoCases:
         cases[squash(result.profile.input_text)] = result
     log.info("%d Demo-Fälle geladen", len(cases))
     return DemoCases(cases)
+
+
+def profile_before_answers(profile: ProjectProfile) -> ProjectProfile:
+    """The stored profile without what the Rückfragen added: answered profile fields go back to
+    `fehlt`, answers to criterion questions (`rueckfrage_*`) are dropped."""
+    missing = ProfileField(value=None, status="fehlt", origin=None, quote=None, note=None)
+    fields = {}
+    for name, value in profile.fields.items():
+        if value.origin != "rueckfrage":
+            fields[name] = value
+        elif not name.startswith(RUECKFRAGE):
+            fields[name] = missing
+    return profile.model_copy(update={"fields": fields})
 
 
 async def replay(

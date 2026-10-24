@@ -7,9 +7,10 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from app.config import REPO_DIR, Settings
-from app.demo import load_demo_cases
+from app.demo import load_demo_cases, profile_before_answers
 from app.knowledge_base.loader import KnowledgeBase
 from app.main import create_app
+from app.models.contract import ProjectProfile
 from tests.contract_check import assert_contract
 from tests.test_runs_api import _events, _post, _wait
 
@@ -30,7 +31,8 @@ def test_replay_without_llm(kb: KnowledgeBase, tmp_path: Path, monkeypatch):
         text = stored["profile"]["input_text"]
         profile = _post(client, "/api/profile", {"text": text})
         assert_contract("ProfileResponse", profile)
-        assert profile["profile"] == stored["profile"]
+        before = profile_before_answers(ProjectProfile.model_validate(stored["profile"]))
+        assert profile["profile"] == before.model_dump(mode="json")
 
         body = {"profile": profile["profile"], "answers": []}
         run_id = _post(client, "/api/runs", body, 202)["run_id"]
@@ -47,3 +49,18 @@ def test_replay_without_llm(kb: KnowledgeBase, tmp_path: Path, monkeypatch):
     assert events[0]["type"] == "run_started"
     assert events[-1]["type"] == "run_completed"
     assert "instrument_completed" in [e["type"] for e in events]
+
+
+def test_profile_before_answers():
+    stored = json.loads(EXAMPLE.read_text(encoding="utf-8"))["profile"]
+    profile = ProjectProfile.model_validate(stored)
+    answered = [n for n, f in profile.fields.items() if f.origin == "rueckfrage"]
+    assert answered, "the example run answers at least one question"
+    before = profile_before_answers(profile)
+    for name in answered:
+        if name.startswith("rueckfrage_"):
+            assert name not in before.fields
+        else:
+            assert before.fields[name].status == "fehlt"
+    untouched = {n: f for n, f in profile.fields.items() if f.origin != "rueckfrage"}
+    assert {n: before.fields[n] for n in untouched} == untouched
