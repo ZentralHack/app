@@ -246,7 +246,7 @@
           "notes": "Bürgschaftsrichtlinie Ziff. 3 Abs. 4: Unternehmen mit gefährdeter Solvenz erhalten keine Bürgschaft."
         },
         {
-          "id": "kreditwuerdigkeit",
+          "id": "kreditwuerdigkeit_glaubhaft",
           "text": "Das Unternehmen kann seine Kreditwürdigkeit glaubhaft darlegen. Sie kann sich auch auf die zukünftige Ertragslage stützen, wenn der Business Plan dies plausibel darlegt.",
           "kind": "muss",
           "about": "unternehmen",
@@ -296,7 +296,7 @@
           "notes": "Bereits getätigte Investitionen in Sachanlagen oder F&E zählen nicht. Laut Merkblatt «Andere Mittel» zählen auch nicht: zukünftige Umsätze, Factoring, vor dem Stichtag investierte eigene Mittel. Flüssige Mittel und Innosuisse-Beiträge nach Absprache."
         },
         {
-          "id": "wertschoepfung_schweiz",
+          "id": "wertschoepfung_schweiz_angemessen",
           "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
           "kind": "muss",
           "about": "unternehmen",
@@ -693,7 +693,7 @@
     "open_questions": [
       "budget: Webseite (Konditionen, Vorteile) nennt CHF 500 Mio., CO2-Verordnung Art. 118 Abs. 3 und Bürgschaftsrichtlinie Ziff. 2 Abs. 1 nennen CHF 750 Mio. Bei der Geschäftsstelle bestätigen.",
       "criteria.marktreif_umsatz: Webseite und Vorab-Check verlangen CHF 100'000 Umsatz, die Richtlinie nur einen marktfähigen Prototyp. Prüfen, ob die Umsatzschwelle zwingend ist.",
-      "criteria.wertschoepfung_schweiz: auf muss gesetzt gestützt auf Richtlinie Ziff. 2.3 («setzt voraus»); Webseite sagt «soll». Bestätigen.",
+      "criteria.wertschoepfung_schweiz_angemessen: auf muss gesetzt gestützt auf Richtlinie Ziff. 2.3 («setzt voraus»); Webseite sagt «soll». Bestätigen.",
       "timing.deadline: «laufend» ist abgeleitet (keine Frist genannt). Bestätigen.",
       "combination_rules: Kombination mit anderen Förderungen (z. B. Innosuisse) nicht geregelt. Innosuisse-Beiträge zählen laut Merkblatt «Andere Mittel» nur nach Absprache an die 40%.",
       "legal_basis: Auf Fedlex ist eine Fassung der CO2-Verordnung ab 1. Januar 2027 registriert, Text noch nicht abrufbar. Art. 114-118 danach erneut prüfen.",
