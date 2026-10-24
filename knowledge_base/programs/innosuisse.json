@@ -17,10 +17,10 @@
   "purpose": "Innosuisse fördert wissenschaftsbasierte Innovation von KMU, Start-ups und anderen Schweizer Organisationen mit Projektbeiträgen, Gutschriften für Vorstudien, Mentoring und Coaching.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Gesuche werden von Expertinnen und Experten beurteilt, der Innovationsrat entscheidet. Eine ausdrückliche Aussage zum Rechtsanspruch liegt in den Quellen nicht vor.",
+    "note": "Abgeleitet aus Vollzugsbestimmungen Innovationsprojekte, Art. 3 Abs. 4 Bst. a: «Es werden diejenigen Gesuche gutgeheissen, welche als förderwürdig beurteilt werden und im Rahmen des zur Verfügung stehenden Budgets gefördert werden können; sofern die förderwürdigen Gesuche die verfügbaren Mittel übersteigen, werden die besten Gesuche gutgeheissen». Eine ausdrückliche Aussage zum Rechtsanspruch fehlt.",
     "source": {
-      "source_id": "ip_up",
-      "locator": "Abschnitt 2, Evaluation und Entscheid"
+      "source_id": "vollzug_ip",
+      "locator": "Art. 3 Abs. 4 Bst. a"
     }
   },
   "budget": null,
@@ -30,7 +30,7 @@
     {
       "id": "innovationsprojekt-umsetzungspartner",
       "name": "Innovationsprojekte mit Umsetzungspartner",
-      "description": "Wissenschaftsbasierte Innovationsprojekte, die ein Unternehmen oder eine Organisation zusammen mit einem Schweizer Forschungspartner durchführt. Innosuisse finanziert den Forschungspartner, das Unternehmen trägt seine eigenen Projektkosten.",
+      "description": "Wissenschaftsbasierte Innovationsprojekte, die ein Unternehmen oder eine Organisation zusammen mit einem Schweizer Forschungspartner durchführt. Das Unternehmen trägt 40 bis 60% der Gesamtprojektkosten selbst.",
       "keywords": [
         "Innovationsprojekt",
         "Innosuisse-Projekt",
@@ -44,12 +44,12 @@
         "note": "Gesuche laufend im Eingabeportal, Behandlung an Sitzungen des Innovationsrates. Sitzungstermine bis Ende 2027 publiziert.",
         "source": {
           "source_id": "ip_up",
-          "locator": "Abschnitt 1, Wann reichen Sie Ihr Gesuch ein?"
+          "locator": "1. Gesuch einreichen, Wann reichen Sie Ihr Gesuch ein? (Sitzungstermine)"
         }
       },
       "recipient": {
         "type": "forschungspartner",
-        "note": "Innosuisse finanziert die Kosten des Forschungspartners (inkl. Overhead). Das Unternehmen erhält kein Geld, sondern trägt 40 bis 60% der Projektkosten selbst."
+        "note": "Abgeleitet aus FAQ, Budget und Kosten des Forschungspartners: «Bei Gesuchen für Beiträge an Innovationsprojekte von Forschungspartnern mit oder ohne Umsetzungspartner gibt es keine finanzielle Grenze» und «Innosuisse entrichtet sämtlichen beitragsberechtigten Forschungspartnern Overheadbeiträge». Der Umsetzungspartner muss bereit sein, «40-60 % der Gesamtprojektkosten selbst zu tragen». Das Unternehmen erhält also kein Geld von Innosuisse. Gestützt auch auf Vollzugsbestimmungen Innovationsprojekte Art. 5 Abs. 1 (Auszahlung an die beitragsverwaltende Stelle) und Art. 13 Abs. 1 (diese muss ein Forschungspartner sein)."
       },
       "filter": {
         "applicant_types": [
@@ -97,7 +97,7 @@
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Innovationsprojekte mit Umsetzungspartner, Anrechenbare Kosten"
+            "locator": "Schweizer Projekte, Budget und Kosten des Forschungspartners: «Welche weiteren Projektkosten sind neben den Personalkosten anrechenbar?», «Welche Kosten sind für Drittleistungen anrechenbar?», «Gehören Bonuszahlungen ... zum Lohn?», Abgrenzung Grundausstattung"
           }
         }
       ],
@@ -132,7 +132,7 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, Umsetzungspartner"
           },
           "notes": null
         },
@@ -156,7 +156,7 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, Umsetzungspartner"
           },
           "notes": null
         },
@@ -169,11 +169,18 @@
           "profile_fields": [
             "partner"
           ],
-          "question": null,
+          "question": {
+            "text": "Sind Ihr Unternehmen und der Forschungspartner finanziell und personell unabhängig voneinander?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Voraussetzungen (Art. 12 Vollzugsbestimmungen)"
+            "locator": "1. Gesuch einreichen, Voraussetzungen (vgl. Art. 12 Vollzugsbestimmungen)"
           },
           "notes": null
         },
@@ -197,9 +204,9 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, Umsetzungspartner"
           },
-          "notes": null
+          "notes": "FAQ: «In bestimmten Fällen ist eine geringere oder höhere Beteiligung der Umsetzungspartner möglich» (Art. 19 Abs. 2bis und 2ter FIFG)."
         },
         {
           "id": "barbeitrag_5",
@@ -221,9 +228,9 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, Umsetzungspartner"
           },
-          "notes": "Der Barbeitrag ist Teil der Eigenleistung (FAQ, Beteiligung der Umsetzungspartner)."
+          "notes": "Der Barbeitrag ist Teil der Eigenleistung (FAQ, Beteiligung und Kosten des Umsetzungspartners)."
         },
         {
           "id": "innovationsgehalt",
@@ -238,7 +245,7 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 2, Kriterien"
+            "locator": "2. Evaluation und Entscheid, Kriterien für die Evaluation Ihres Gesuchs"
           },
           "notes": null
         },
@@ -255,7 +262,7 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 2, Kriterien"
+            "locator": "2. Evaluation und Entscheid, Kriterien für die Evaluation Ihres Gesuchs"
           },
           "notes": null
         },
@@ -273,14 +280,14 @@
           "evidence": [],
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 2, Kriterien"
+            "locator": "2. Evaluation und Entscheid, Kriterien für die Evaluation Ihres Gesuchs"
           },
           "notes": "Weiteres Kriterium laut Quelle: Beitrag zur nachhaltigen Entwicklung."
         }
       ],
       "funding": {
         "model": "kostenbeteiligung",
-        "summary": "Innosuisse bezahlt die Kosten des Forschungspartners plus Overhead. Das Unternehmen trägt 40 bis 60% der Gesamtprojektkosten, davon mindestens 5% bar an den Forschungspartner.",
+        "summary": "Förderbudget: Personal- und Sachkosten des Forschungspartners plus Overheadbeitrag. Das Unternehmen trägt 40 bis 60% der direkten Gesamtprojektkosten, davon mindestens 5% bar an den Forschungspartner.",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": null,
@@ -295,37 +302,37 @@
             "text": "Beteiligt sich das Unternehmen unbegründet weniger als vereinbart, kann Innosuisse den Beitrag kürzen und Zahlungen zurückfordern.",
             "source": {
               "source_id": "faq",
-              "locator": "Auswirkungen geringerer Eigenbeteiligung"
+              "locator": "Projektreporting: «Welche Auswirkungen hat eine geringere Eigenbeteiligung (< 40-60%) der Umsetzungspartner auf den ausbezahlten Betrag?»"
             }
           }
         ],
         "payout_forms": [
-          "Zahlung in Tranchen an den Forschungspartner"
+          "Zahlung in Tranchen an die beitragsverwaltende Stelle (ein Forschungspartner)"
         ],
         "calculation_basis": "Projektbudget im Subventionsvertrag. Effektive Kosten gemäss Schlussabrechnung bestimmen Schlusstranche oder Rückforderung.",
         "example": null,
         "source": {
           "source_id": "faq",
-          "locator": "Innovationsprojekte mit Umsetzungspartner"
+          "locator": "Schweizer Projekte, Budget und Kosten des Forschungspartners; Beteiligung und Kosten des Umsetzungspartners"
         },
-        "note": "Keine finanzielle Obergrenze für Forschungspartner, sofern Kosten-Nutzen stimmt. Overhead: Prozentsatz des Projektbudgets, jährlich von Innosuisse festgelegt (Höchstgrenze 2021 bis 2024: 15%). Beiträge sind nicht mehrwertsteuerpflichtig."
+        "note": "Keine finanzielle Obergrenze, sofern sinnvoll und Kosten-Nutzen stimmt (FAQ). Overhead: Prozentsatz des Projektbudgets, von Innosuisse jährlich festgelegt (Höchstgrenze 2021 bis 2024: 15%, FAQ). Beiträge sind nicht mehrwertsteuerpflichtig (FAQ). Tranchen und Zahlungsempfänger: Vollzugsbestimmungen Art. 5 und Art. 13 Abs. 1."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe.",
+          "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe. next_dates bleibt leer: publiziert sind Sitzungsdaten, keine Einreichfristen.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 1, Sitzungstermine"
+            "locator": "1. Gesuch einreichen, Wann reichen Sie Ihr Gesuch ein? (Sitzungstermine)"
           }
         },
         "assessment_period": null,
         "decision_time": "In der Regel sechs bis acht Wochen",
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": "Sitzungen Innovationsrat (Jahresplanung, Verschiebung vorbehalten). Energy & Environment: 30.10.26, 27.11.26, 22.01.27, 12.03.27, 23.04.27, 21.05.27. Engineering: 25.11.26, 27.01.27, 11.03.27, 14.04.27, 19.05.27. ICT: 18.11.26, 03.02.27, 10.03.27, 21.04.27, 19.05.27. Life Sciences: 23.11.26, 27.01.27, 17.03.27, 21.04.27, 27.05.27. Social Sciences & Business Management: 25.11.26, 04.02.27, 11.03.27, 22.04.27, 27.05.27. Projektdauer meist 6 bis 36 Monate, keine feste Obergrenze (FAQ)."
+        "note": "Sitzungen Innovationsrat ab 24.10.2026 (Jahresplanung, Verschiebung vorbehalten). Energy & Environment: 30.10.26, 27.11.26, 22.01.27, 12.03.27, 23.04.27, 21.05.27, 09.07.27, 17.09.27, 29.10.27, 03.12.27. Engineering: 25.11.26, 27.01.27, 11.03.27, 14.04.27, 19.05.27, 30.06.27, 08.09.27, 27.10.27, 24.11.27. ICT: 18.11.26, 03.02.27, 10.03.27, 21.04.27, 19.05.27, 07.07.27, 08.09.27, 27.10.27, 24.11.27. Life Sciences: 23.11.26, 27.01.27, 17.03.27, 21.04.27, 27.05.27, 07.07.27, 22.09.27, 27.10.27, 01.12.27. Social Sciences & Business Management: 25.11.26, 04.02.27, 11.03.27, 22.04.27, 27.05.27, 01.07.27, 09.09.27, 28.10.27, 02.12.27. Projektdauer in der Regel 6 bis 36 Monate, keine Beschränkung (FAQ)."
       },
       "documents": {
         "application": [
@@ -334,7 +341,7 @@
             "condition": null,
             "source": {
               "source_id": "ip_up",
-              "locator": "Abschnitt 1, Inhalt Ihres Gesuchs"
+              "locator": "1. Gesuch einreichen, Inhalt Ihres Gesuchs"
             }
           },
           {
@@ -342,7 +349,7 @@
             "condition": null,
             "source": {
               "source_id": "ip_up",
-              "locator": "Abschnitt 1, Inhalt Ihres Gesuchs"
+              "locator": "1. Gesuch einreichen, Inhalt Ihres Gesuchs"
             }
           }
         ],
@@ -352,7 +359,15 @@
             "condition": null,
             "source": {
               "source_id": "ip_up",
-              "locator": "Abschnitt 3, Vertrag über das geistige Eigentum"
+              "locator": "3. Verträge abschliessen und Projekt starten, Vertrag über das geistige Eigentum und die Nutzungsrechte"
+            }
+          },
+          {
+            "name": "Wissenschaftlicher Schlussbericht und finanzielle Berichte, spätestens ein Monat nach Projektabschluss",
+            "condition": null,
+            "source": {
+              "source_id": "ip_up",
+              "locator": "5. Projekt abschliessen"
             }
           }
         ]
@@ -362,21 +377,21 @@
           "text": "Subventionsvertrag vor Projektstart abschliessen. Projektstart innert drei Monaten nach Inkrafttreten des Vertrags, Startdatum an innoprojects@innosuisse.ch melden.",
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 3"
+            "locator": "3. Verträge abschliessen und Projekt starten"
           }
         },
         {
           "text": "Regelung zu geistigem Eigentum und Nutzungsrechten spätestens drei Monate nach Projektstart.",
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 3"
+            "locator": "3. Verträge abschliessen und Projekt starten, Vertrag über das geistige Eigentum und die Nutzungsrechte"
           }
         },
         {
           "text": "Berichte während des Projekts im Eingabeportal einreichen.",
           "source": {
             "source_id": "ip_up",
-            "locator": "Abschnitt 4"
+            "locator": "4. Projektreporting"
           }
         }
       ],
@@ -389,17 +404,7 @@
           ],
           "source": {
             "source_id": "mentoring",
-            "locator": "Erfahren Sie mehr über das Angebot"
-          }
-        },
-        {
-          "text": "Regeln zum geistigen Eigentum schon bei der Ausarbeitung des Gesuchs grundsätzlich vereinbaren",
-          "affects_criteria": [
-            "partner_unabhaengig"
-          ],
-          "source": {
-            "source_id": "ip_up",
-            "locator": "Abschnitt 3, Hinweis"
+            "locator": "Erfahren Sie mehr über das Angebot; Schritt 2: Projektinitiierung oder -überarbeitung"
           }
         }
       ],
@@ -409,8 +414,8 @@
         "form": "https://www.innosuisse.admin.ch/dam/de/sd-web/l6ulpxzSOif4/Checkliste%20(Innovationsprojekte).pdf"
       },
       "source": {
-        "source_id": "ip_up",
-        "locator": null
+        "source_id": "faq",
+        "locator": "Schweizer Projekte: «Gibt es eine finanzielle Obergrenze für Innovationprojekte?» und «Welche Forschungspartner erhalten Overheadbeiträge?»"
       }
     },
     {
@@ -429,7 +434,7 @@
         "note": "Projekte können laufend eingereicht werden, es gibt keine Ausschreibungen.",
         "source": {
           "source_id": "sip",
-          "locator": "Einreichung und Fristen"
+          "locator": "1. Gesuch einreichen, Ihr Gesuch einreichen"
         }
       },
       "recipient": {
@@ -458,21 +463,21 @@
           "text": "Nicht kommerziell tätige Vereine und Stiftungen sowie Einheiten der öffentlichen Verwaltung",
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           }
         },
         {
           "text": "Projekte, für die bereits eine laufende Förderung besteht",
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           }
         },
         {
           "text": "Start-ups auf der Sanktionsliste des SECO",
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           }
         }
       ],
@@ -499,7 +504,7 @@
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -526,7 +531,7 @@
           ],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -542,15 +547,16 @@
           "question": {
             "text": "Wann wurde Ihr Start-up gegründet?",
             "options": [
-              "Vor weniger als 5 Jahren",
-              "Vor 5 bis 10 Jahren",
-              "Vor mehr als 10 Jahren"
+              "Vor höchstens 5 Jahren",
+              "Vor mehr als 5 bis 10 Jahren",
+              "Vor mehr als 10 Jahren",
+              "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": "In begründeten Ausnahmefällen bis 10 Jahre."
         },
@@ -563,11 +569,18 @@
           "profile_fields": [
             "mitarbeitende"
           ],
-          "question": null,
+          "question": {
+            "text": "Wie viele Vollzeitäquivalente (VZÄ) hat Ihr Start-up?",
+            "options": [
+              "Weniger als 50",
+              "50 oder mehr",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -591,7 +604,7 @@
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -615,7 +628,7 @@
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -632,7 +645,24 @@
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
+          },
+          "notes": null
+        },
+        {
+          "id": "rasche_markteinfuehrung",
+          "text": "Das Start-up kann nachvollziehbar darlegen, dass das Projekt eine anschliessende rasche Umsetzung auf dem Markt vorbereitet.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "1. Gesuch einreichen, Voraussetzungen, um ein Gesuch einzureichen"
           },
           "notes": null
         },
@@ -649,7 +679,7 @@
           "evidence": [],
           "source": {
             "source_id": "sip",
-            "locator": "Evaluation, Kriterien"
+            "locator": "2. Evaluation, Kriterien für die Beurteilung Ihres Gesuchs"
           },
           "notes": null
         }
@@ -665,7 +695,7 @@
             "definition": "Projektbezogene Personalkosten (mit Stundenrapporten), Material- und Fremdleistungskosten. Details im Dokument Anrechenbare Sachkosten.",
             "source": {
               "source_id": "sip",
-              "locator": "Förderhöhe und Projektkosten"
+              "locator": "5. Projektreporting, b) Bericht zu den Projektkosten"
             }
           }
         ],
@@ -683,26 +713,26 @@
         "example": null,
         "source": {
           "source_id": "sip",
-          "locator": "Förderhöhe und Projektkosten"
+          "locator": "1. Gesuch einreichen, Welche Innovationsprojekte werden gefördert?"
         },
         "note": null
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Gesuch mindestens acht Wochen vor einer Sitzung des Innovationsrats einreichen. Fristgerechte Einreichung garantiert keine Behandlung an der nächsten Sitzung.",
+          "rule": "Gesuch mindestens acht Wochen vor einer Sitzung des Innovationsrats einreichen. Fristgerechte Einreichung garantiert keine Behandlung an der nächsten Sitzung. next_dates bleibt leer: publiziert sind Sitzungsdaten, keine Einreichfristen.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "sip",
-            "locator": "Einreichung und Fristen"
+            "locator": "1. Gesuch einreichen, Wann reichen Sie Ihr Gesuch ein? (Sitzungs- und Pitch-Daten)"
           }
         },
         "assessment_period": null,
         "decision_time": "Mitteilung innert acht Wochen nach der Sitzung, Gesamtprozess rund 16 Wochen",
-        "max_duration_months": null,
+        "max_duration_months": 36,
         "repeat_limit": null,
-        "note": "Nach der Evaluation durch drei Expertinnen oder Experten folgt ein Pitch vor einer Jury."
+        "note": "Nach der Evaluation durch drei Expertinnen oder Experten folgt ein Pitch vor einer Jury. Höchstdauer 36 Monate, in begründeten Fällen verlängerbar (Vollzugsbestimmungen Innovationsprojekte Art. 24 Abs. 2). Sitzungen ab 24.10.2026, in Klammern Pitch (Jahresplanung, Verschiebung vorbehalten): Energy & Environment: 27.11.26 (11.12.26), 12.03.27 (25.03.27), 21.05.27 (11.06.27), 17.09.27 (01.10.27), 03.12.27 (10.12.27). Engineering: 25.11.26 (09.12.26), 11.03.27 (24.03.27), 19.05.27 (02.06.27), 08.09.27 (22.09.27), 24.11.27 (08.12.27). ICT: 25.11.26 (09.12.26), 17.03.27 (31.03.27), 26.05.27 (09.06.27), 15.09.27 (29.09.27), 01.12.27 (15.12.27). Life Sciences: 19.11.26 (03.12.26), 11.03.27 (31.03.27), 25.05.27 (09.06.27), 15.09.27 (06.10.27), 24.11.27 (13.12.27). Social Sciences & Business Management: 25.11.26 (03.12.26), 11.03.27 (25.03.27), 27.05.27 (10.06.27), 09.09.27 (23.09.27), 02.12.27 (09.12.27)."
       },
       "documents": {
         "application": [
@@ -711,7 +741,7 @@
             "condition": null,
             "source": {
               "source_id": "sip",
-              "locator": "Einreichung und Fristen"
+              "locator": "1. Gesuch einreichen, Was beinhaltet Ihr Gesuch?"
             }
           },
           {
@@ -719,7 +749,7 @@
             "condition": null,
             "source": {
               "source_id": "sip",
-              "locator": "Einreichung und Fristen"
+              "locator": "1. Gesuch einreichen, Was beinhaltet Ihr Gesuch?"
             }
           }
         ],
@@ -729,7 +759,7 @@
             "condition": null,
             "source": {
               "source_id": "sip",
-              "locator": "Förderhöhe und Projektkosten"
+              "locator": "5. Projektreporting, b) Bericht zu den Projektkosten"
             }
           },
           {
@@ -737,7 +767,7 @@
             "condition": null,
             "source": {
               "source_id": "sip",
-              "locator": "Förderhöhe und Projektkosten"
+              "locator": "5. Projektreporting, b) Bericht zu den Projektkosten"
             }
           },
           {
@@ -745,7 +775,7 @@
             "condition": null,
             "source": {
               "source_id": "sip",
-              "locator": "Förderhöhe und Projektkosten"
+              "locator": "5. Projektreporting, b) Bericht zu den Projektkosten"
             }
           }
         ]
@@ -755,28 +785,28 @@
           "text": "Subventionsvertrag vor Projektstart unterzeichnen, Startdatum an innoprojects@innosuisse.ch melden.",
           "source": {
             "source_id": "sip",
-            "locator": "Verträge und Projektstart"
+            "locator": "4. Verträge abschliessen und Projekt starten"
           }
         },
         {
           "text": "Wesentliche Änderungen (Schlüsselpersonen, Projektplan, Aktionariat, Überschuldung, Wegzug aus der Schweiz) vorab schriftlich beantragen.",
           "source": {
             "source_id": "sip",
-            "locator": "Projektreporting"
+            "locator": "5. Projektreporting, Änderungen in Ihrem Innovationsprojekt beantragen"
           }
         },
         {
           "text": "Extended Project Review mit Status Report, Kostenbericht und Update zu den Unternehmensfinanzen.",
           "source": {
             "source_id": "sip",
-            "locator": "Projektreporting"
+            "locator": "5. Projektreporting, Extended Project review"
           }
         },
         {
           "text": "Monatlicher Zeitnachweis pro Mitarbeitendem.",
           "source": {
             "source_id": "sip",
-            "locator": "Projektreporting"
+            "locator": "5. Projektreporting, Zeitnachweis"
           }
         }
       ],
@@ -784,7 +814,7 @@
       "links": {
         "info": "https://www.innosuisse.admin.ch/de/start-up-innovationsprojekte",
         "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
-        "form": null
+        "form": "https://www.innosuisse.admin.ch/dam/de/sd-web/l6ulpxzSOif4/Checkliste%20(Innovationsprojekte).pdf"
       },
       "source": {
         "source_id": "sip",
@@ -808,7 +838,7 @@
         "note": "Eingabe jederzeit möglich.",
         "source": {
           "source_id": "scheck",
-          "locator": "1. Gesuch einreichen"
+          "locator": "1. Gesuch einreichen, Gesuch einreichen"
         }
       },
       "recipient": {
@@ -843,7 +873,7 @@
           "examples_negative": [],
           "source": {
             "source_id": "scheck",
-            "locator": "Was finanziert der Innovationsscheck"
+            "locator": "1. Gesuch einreichen, Was finanziert der Innovationsscheck"
           }
         }
       ],
@@ -852,7 +882,7 @@
           "text": "Projekte, die gegen die wissenschaftliche Integrität verstossen",
           "source": {
             "source_id": "scheck",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen"
           }
         }
       ],
@@ -877,7 +907,7 @@
           "evidence": [],
           "source": {
             "source_id": "scheck",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen"
           },
           "notes": null
         },
@@ -904,7 +934,7 @@
           ],
           "source": {
             "source_id": "scheck",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen"
           },
           "notes": null
         },
@@ -928,7 +958,7 @@
           "evidence": [],
           "source": {
             "source_id": "scheck",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen"
           },
           "notes": null
         },
@@ -950,7 +980,7 @@
           "evidence": [],
           "source": {
             "source_id": "scheck",
-            "locator": "Voraussetzungen"
+            "locator": "1. Gesuch einreichen, Voraussetzungen"
           },
           "notes": null
         },
@@ -967,7 +997,7 @@
           "evidence": [],
           "source": {
             "source_id": "scheck",
-            "locator": "2. Evaluation, Kriterien"
+            "locator": "2. Evaluation und Entscheid, Kriterien für die Beurteilung Ihres Gesuchs"
           },
           "notes": null
         }
@@ -992,9 +1022,9 @@
         "example": null,
         "source": {
           "source_id": "scheck",
-          "locator": "Was finanziert der Innovationsscheck"
+          "locator": "1. Gesuch einreichen, Was finanziert der Innovationsscheck"
         },
-        "note": null
+        "note": "Auszahlung: 4. Schlussberichte einreichen, Projektabschluss. Kein Overhead: FAQ, Innovationsscheck, Abschluss."
       },
       "timing": {
         "deadline": {
@@ -1004,14 +1034,14 @@
           "relative": null,
           "source": {
             "source_id": "scheck",
-            "locator": "Gesuch einreichen"
+            "locator": "1. Gesuch einreichen, Gesuch einreichen"
           }
         },
         "assessment_period": null,
         "decision_time": "In der Regel vier bis sechs Wochen",
         "max_duration_months": 6,
         "repeat_limit": "Höchstens ein Innovationsscheck in zwei Jahren",
-        "note": "Einmalige Verlängerung um sechs Monate über innocheque@innosuisse.ch möglich (FAQ)."
+        "note": "Einmalige Fristverlängerung um sechs Monate per E-Mail an innocheque@innosuisse.ch, mit Begründung (FAQ, Innovationsscheck, «Kann ich die Projektdauer verlängern?»)."
       },
       "documents": {
         "application": [
@@ -1020,7 +1050,7 @@
             "condition": null,
             "source": {
               "source_id": "scheck",
-              "locator": "Was beinhaltet Ihr Gesuch"
+              "locator": "1. Gesuch einreichen, Was beinhaltet Ihr Gesuch"
             }
           },
           {
@@ -1028,7 +1058,7 @@
             "condition": null,
             "source": {
               "source_id": "scheck",
-              "locator": "Was beinhaltet Ihr Gesuch"
+              "locator": "1. Gesuch einreichen, Was beinhaltet Ihr Gesuch"
             }
           }
         ],
@@ -1038,7 +1068,7 @@
             "condition": null,
             "source": {
               "source_id": "scheck",
-              "locator": "4. Schlussberichte"
+              "locator": "4. Schlussberichte einreichen und Innovationsscheck einlösen"
             }
           },
           {
@@ -1046,7 +1076,7 @@
             "condition": null,
             "source": {
               "source_id": "scheck",
-              "locator": "4. Schlussberichte"
+              "locator": "4. Schlussberichte einreichen und Innovationsscheck einlösen"
             }
           }
         ]
@@ -1056,14 +1086,14 @@
           "text": "Vertrag mit dem Forschungspartner selbst regeln, Innosuisse stellt keine Vorlage.",
           "source": {
             "source_id": "scheck",
-            "locator": "3. Vertrag abschliessen"
+            "locator": "3. Vertrag abschliessen und Vorstudie durchführen"
           }
         },
         {
           "text": "Vorstudie innert sechs Monaten abschliessen.",
           "source": {
             "source_id": "scheck",
-            "locator": "3. Vertrag abschliessen"
+            "locator": "3. Vertrag abschliessen und Vorstudie durchführen"
           }
         }
       ],
@@ -1105,7 +1135,7 @@
         "note": "Beantragung im Eingabeportal.",
         "source": {
           "source_id": "mentoring",
-          "locator": "Gesuch um Unterstützung"
+          "locator": "Gesuch um Unterstützung durch eine Mentorin oder einen Mentor"
         }
       },
       "recipient": {
@@ -1155,7 +1185,7 @@
           "evidence": [],
           "source": {
             "source_id": "mentoring",
-            "locator": "Bedingungen"
+            "locator": "Bedingungen für den Erhalt einer Gutschrift"
           },
           "notes": null
         },
@@ -1169,7 +1199,7 @@
             "mitarbeitende"
           ],
           "question": {
-            "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
+            "text": "Wie viele Vollzeitbeschäftigte hat Ihr Unternehmen?",
             "options": [
               "Weniger als 250",
               "250 oder mehr",
@@ -1179,7 +1209,7 @@
           "evidence": [],
           "source": {
             "source_id": "mentoring",
-            "locator": "Bedingungen"
+            "locator": "Bedingungen für den Erhalt einer Gutschrift"
           },
           "notes": null
         },
@@ -1203,7 +1233,7 @@
           "evidence": [],
           "source": {
             "source_id": "mentoring",
-            "locator": "Bedingungen"
+            "locator": "Bedingungen für den Erhalt einer Gutschrift"
           },
           "notes": null
         },
@@ -1214,11 +1244,18 @@
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Haben Sie für dieses Projekt schon einmal Unterstützung durch eine Innosuisse-Mentorin oder einen -Mentor erhalten?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "mentoring",
-            "locator": "Bedingungen"
+            "locator": "Bedingungen für den Erhalt einer Gutschrift"
           },
           "notes": null
         },
@@ -1240,7 +1277,7 @@
           "evidence": [],
           "source": {
             "source_id": "mentoring",
-            "locator": "Bedingungen"
+            "locator": "Bedingungen für den Erhalt einer Gutschrift"
           },
           "notes": null
         }
@@ -1278,19 +1315,19 @@
         "example": null,
         "source": {
           "source_id": "mentoring",
-          "locator": "Schritt 1 und 2"
+          "locator": "Gesuch um Unterstützung, Schritt 1: Erstbeurteilung und Schritt 2: Projektinitiierung oder -überarbeitung"
         },
         "note": "max_amount_chf bezieht sich auf die grössere der beiden Gutschriften."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Beantragung jederzeit im Eingabeportal.",
+          "rule": "Keine Eingabefrist genannt. Gutschrift im Eingabeportal beantragen.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "mentoring",
-            "locator": "Schritt 1"
+            "locator": "Gesuch um Unterstützung, Schritt 1: Erstbeurteilung"
           }
         },
         "assessment_period": null,
@@ -1306,7 +1343,7 @@
             "condition": null,
             "source": {
               "source_id": "mentoring",
-              "locator": "Mentorinnen und Mentoren"
+              "locator": "Mentorinnen und -Mentoren von Innosuisse"
             }
           }
         ],
@@ -1340,7 +1377,7 @@
         "note": "Keine Eingabefrist genannt.",
         "source": {
           "source_id": "initial",
-          "locator": "Deadlines"
+          "locator": "1. Submit application"
         }
       },
       "recipient": {
@@ -1384,7 +1421,7 @@
           "evidence": [],
           "source": {
             "source_id": "initial",
-            "locator": "Eligibility"
+            "locator": "1. Submit application, Requirements"
           },
           "notes": null
         },
@@ -1409,7 +1446,7 @@
           "evidence": [],
           "source": {
             "source_id": "initial",
-            "locator": "Eligibility"
+            "locator": "1. Submit application, Requirements"
           },
           "notes": "In begründeten Fällen bis 10 Jahre, z. B. bei Life Sciences."
         },
@@ -1426,9 +1463,9 @@
           "evidence": [],
           "source": {
             "source_id": "initial",
-            "locator": "Evaluation criteria"
+            "locator": "2. Evaluation and decision, Assessment criteria"
           },
-          "notes": null
+          "notes": "Auch unter «Requirements» genannt («must meet the following requirements»)."
         },
         {
           "id": "skalierbar_team",
@@ -1443,7 +1480,24 @@
           "evidence": [],
           "source": {
             "source_id": "initial",
-            "locator": "Evaluation criteria"
+            "locator": "2. Evaluation and decision, Assessment criteria"
+          },
+          "notes": "Auch unter «Requirements» genannt («must meet the following requirements»)."
+        },
+        {
+          "id": "nachhaltigkeit",
+          "text": "Die Geschäftsidee hat keine negativen Auswirkungen auf die nachhaltige Entwicklung, idealerweise trägt sie dazu bei.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "2. Evaluation and decision, Assessment criteria"
           },
           "notes": null
         },
@@ -1458,7 +1512,7 @@
           "evidence": [],
           "source": {
             "source_id": "initial",
-            "locator": "Eligibility"
+            "locator": "2. Evaluation and decision, Formal criteria"
           },
           "notes": null
         }
@@ -1480,7 +1534,7 @@
         "example": null,
         "source": {
           "source_id": "initial",
-          "locator": "Voucher amount"
+          "locator": "Einleitung und 1. Submit application"
         },
         "note": "Ein Eigenanteil ist auf der Seite nicht genannt."
       },
@@ -1492,7 +1546,7 @@
           "relative": null,
           "source": {
             "source_id": "initial",
-            "locator": "Deadlines"
+            "locator": "1. Submit application"
           }
         },
         "assessment_period": null,
@@ -1508,7 +1562,7 @@
             "condition": null,
             "source": {
               "source_id": "initial",
-              "locator": "Application process"
+              "locator": "1. Submit application, What your application should include"
             }
           }
         ],
@@ -1518,7 +1572,7 @@
             "condition": null,
             "source": {
               "source_id": "initial",
-              "locator": "Closing the programme"
+              "locator": "4. Conclude coaching, Evaluation report"
             }
           }
         ]
@@ -1528,7 +1582,7 @@
           "text": "Evaluationsbericht einreichen, startup@innosuisse.ch informieren, offene Zahlungen begleichen und Feedback geben.",
           "source": {
             "source_id": "initial",
-            "locator": "Closing the programme"
+            "locator": "4. Conclude coaching, Evaluation report; Closure and next steps"
           }
         }
       ],
@@ -1559,7 +1613,7 @@
         "note": "Keine Eingabefrist genannt.",
         "source": {
           "source_id": "core",
-          "locator": "Deadlines"
+          "locator": "1. Submit application"
         }
       },
       "recipient": {
@@ -1601,7 +1655,7 @@
           "evidence": [],
           "source": {
             "source_id": "core",
-            "locator": "Eligibility"
+            "locator": "1. Submit application, Requirements"
           },
           "notes": null
         },
@@ -1615,11 +1669,18 @@
             "unternehmensalter",
             "standort_kanton"
           ],
-          "question": null,
+          "question": {
+            "text": "Ist Ihr Start-up in den letzten 5 Jahren in der Schweiz gegründet worden oder steht die Gründung bevor?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "core",
-            "locator": "Eligibility"
+            "locator": "1. Submit application, Requirements"
           },
           "notes": "In begründeten Fällen bis 10 Jahre."
         },
@@ -1636,9 +1697,9 @@
           "evidence": [],
           "source": {
             "source_id": "core",
-            "locator": "Evaluation criteria"
+            "locator": "2. Evaluation and decision, Assessment criteria"
           },
-          "notes": null
+          "notes": "Auch unter «Requirements» genannt («must meet the following requirements»)."
         },
         {
           "id": "skalierbar_team",
@@ -1653,7 +1714,24 @@
           "evidence": [],
           "source": {
             "source_id": "core",
-            "locator": "Evaluation criteria"
+            "locator": "2. Evaluation and decision, Assessment criteria"
+          },
+          "notes": "Auch unter «Requirements» genannt («must meet the following requirements»)."
+        },
+        {
+          "id": "nachhaltigkeit",
+          "text": "Die Geschäftsidee hat keine negativen Auswirkungen auf die nachhaltige Entwicklung, idealerweise trägt sie dazu bei.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "2. Evaluation and decision, Assessment criteria"
           },
           "notes": null
         },
@@ -1668,7 +1746,7 @@
           "evidence": [],
           "source": {
             "source_id": "core",
-            "locator": "Eligibility"
+            "locator": "2. Evaluation and decision, Formal criteria"
           },
           "notes": null
         }
@@ -1687,7 +1765,7 @@
             "text": "Ein negativer Meilenstein-Review schliesst die Gutschrift.",
             "source": {
               "source_id": "core",
-              "locator": "Milestone reviews"
+              "locator": "4. Milestone Review, Negative evaluation"
             }
           }
         ],
@@ -1698,7 +1776,7 @@
         "example": null,
         "source": {
           "source_id": "core",
-          "locator": "Voucher amount"
+          "locator": "Einleitung und 3. Coaching process"
         },
         "note": "Ob ein Eigenanteil nötig ist, nennt die Seite nicht."
       },
@@ -1710,7 +1788,7 @@
           "relative": null,
           "source": {
             "source_id": "core",
-            "locator": "Deadlines"
+            "locator": "1. Submit application"
           }
         },
         "assessment_period": null,
@@ -1726,7 +1804,7 @@
             "condition": null,
             "source": {
               "source_id": "core",
-              "locator": "Application process"
+              "locator": "1. Submit application, What your application should include"
             }
           },
           {
@@ -1734,7 +1812,7 @@
             "condition": null,
             "source": {
               "source_id": "core",
-              "locator": "Application process"
+              "locator": "1. Submit application, What your application should include"
             }
           },
           {
@@ -1742,7 +1820,7 @@
             "condition": null,
             "source": {
               "source_id": "core",
-              "locator": "Application process"
+              "locator": "1. Submit application, What your application should include"
             }
           },
           {
@@ -1750,7 +1828,7 @@
             "condition": null,
             "source": {
               "source_id": "core",
-              "locator": "Application process"
+              "locator": "1. Submit application, What your application should include"
             }
           }
         ],
@@ -1761,7 +1839,7 @@
           "text": "Von Innosuisse gesetzte Meilensteine erreichen und an Reviews berichten.",
           "source": {
             "source_id": "core",
-            "locator": "Milestone reviews"
+            "locator": "3. Coaching process, Milestone Review; 4. Milestone Review"
           }
         }
       ],
@@ -1784,16 +1862,7 @@
       "text": "Das Innovationsmentoring hilft, die Idee zu strukturieren, einen Forschungspartner zu finden und ein Gesuch für ein Innovationsprojekt einzureichen.",
       "source": {
         "source_id": "mentoring",
-        "locator": "Schritt 2"
-      }
-    },
-    {
-      "with": "innosuisse:core-coaching",
-      "type": "voraussetzung",
-      "text": "Core Coaching setzt ein abgeschlossenes Initial Coaching voraus.",
-      "source": {
-        "source_id": "core",
-        "locator": "Eligibility"
+        "locator": "Schritt 2: Projektinitiierung oder -überarbeitung"
       }
     },
     {
@@ -1802,7 +1871,7 @@
       "text": "Innovationsmentoring: Für dasselbe Projekt darf kein paralleles anderes Beratungsangebot (z. B. regionale oder kantonale Stelle) bezogen werden.",
       "source": {
         "source_id": "mentoring",
-        "locator": "Bedingungen"
+        "locator": "Bedingungen für den Erhalt einer Gutschrift"
       }
     }
   ],
@@ -1819,7 +1888,7 @@
     "note": "Ablauf je Instrument leicht verschieden, z. B. Pitch bei Start-up Innovationsprojekten und Core Coaching.",
     "source": {
       "source_id": "ip_up",
-      "locator": "Abschnitte 1 bis 3"
+      "locator": "1. Gesuch einreichen bis 3. Verträge abschliessen und Projekt starten"
     }
   },
   "contacts": [
@@ -1828,33 +1897,40 @@
       "role": "Innovationsprojekte und Start-up Innovationsprojekte",
       "email": "innoprojects@innosuisse.ch",
       "phone": null,
-      "url": "https://www.innosuisse.admin.ch/de/innosuisse-kontaktieren"
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner"
     },
     {
-      "name": "Innosuisse Start-up",
+      "name": "Innosuisse Start-up Coaching",
       "role": "Start-up Coaching",
       "email": "startup@innosuisse.ch",
-      "phone": null,
+      "phone": "+41 58 343 61 90",
       "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up"
     },
     {
       "name": "Innosuisse Innovationsscheck",
       "role": "Verlängerungen und Fragen zum Innovationsscheck",
       "email": "innocheque@innosuisse.ch",
-      "phone": null,
+      "phone": "+41 58 343 61 84",
       "url": "https://www.innosuisse.admin.ch/de/innovationsscheck"
+    },
+    {
+      "name": "Innosuisse Beratung und Vernetzung",
+      "role": "Innovationsmentoring",
+      "email": "mentoring@innosuisse.ch",
+      "phone": "+41 58 343 61 85",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring"
     }
   ],
   "legal_basis": [
     {
       "title": "Bundesgesetz über die Förderung der Forschung und der Innovation (FIFG)",
-      "ref": null,
+      "ref": "SR 420.1",
       "url": "https://www.admin.ch/opc/de/classified-compilation/20091419/index.html"
     },
     {
       "title": "Vollzugsbestimmungen für die Förderung von Innovationsprojekten",
-      "ref": "Art. 12",
-      "url": "https://www.innosuisse.admin.ch/de/rechtliche-grundlagengesetze-verordnungen-und-vollzugsbestimmungen"
+      "ref": "Art. 3, 5, 12, 13, 24",
+      "url": "https://www.innosuisse.admin.ch/dam/de/sd-web/YitfLXE0bECV/Vollzugsbestimmungen%20der%20Schweizerischen%20Agentur%20f%C3%BCr%20Innovationsf%C3%B6rderung%20f%C3%BCr%20die%20F%C3%B6rderung%20von%20Innovationsprojekten.pdf"
     }
   ],
   "sources": [
@@ -1865,7 +1941,7 @@
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1875,7 +1951,7 @@
       "url": "https://www.innosuisse.admin.ch/de/start-up-innovationsprojekte",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1885,7 +1961,7 @@
       "url": "https://www.innosuisse.admin.ch/de/innovationsscheck",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1895,7 +1971,7 @@
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1905,7 +1981,7 @@
       "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1915,7 +1991,7 @@
       "url": "https://www.innosuisse.admin.ch/en/initial-coaching-for-start-up",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1925,7 +2001,7 @@
       "url": "https://www.innosuisse.admin.ch/en/core-coaching-for-start-up",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -1935,23 +2011,38 @@
       "url": "https://www.innosuisse.admin.ch/de/haeufig-gestellte-fragen",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "vollzug_ip",
+      "title": "Vollzugsbestimmungen der Schweizerischen Agentur für Innovationsförderung für die Förderung von Innovationsprojekten (für Gesuche ab 01.01.2023)",
+      "type": "reglement",
+      "url": "https://www.innosuisse.admin.ch/dam/de/sd-web/YitfLXE0bECV/Vollzugsbestimmungen%20der%20Schweizerischen%20Agentur%20f%C3%BCr%20Innovationsf%C3%B6rderung%20f%C3%BCr%20die%20F%C3%B6rderung%20von%20Innovationsprojekten.pdf",
+      "version": "vom 2. September 2022, in Kraft seit 1. Januar 2023",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
       "Nicht erfasst: Scale-up Coaching (bis CHF 75'000, 24 Monate), Eurostars, Globalstars und bilaterale Ausschreibungen, Flagship-Initiative, Innovationsprojekte ohne Umsetzungspartner (nur Forschende), Swiss Accelerator, Enterprise Europe Network, Start-up Camps und Messen, Entrepreneurship Training.",
-      "Sitzungstermine für Start-up Innovationsprojekte nicht separat erfasst. Prüfen, ob dieselben Daten wie bei Innovationsprojekten gelten.",
-      "Rechtsanspruch: Quellen enthalten keine ausdrückliche Aussage, kein_rechtsanspruch ist eine Einordnung aufgrund des Evaluationsverfahrens. Gegen das FIFG prüfen.",
       "Aktueller Overheadsatz für Innovationsprojekte (FAQ nennt nur Höchstgrenze 2021 bis 2024 und Satz 2023).",
       "Eigenanteil bei Initial und Core Coaching nicht genannt.",
       "Initial und Core Coaching: Quellen nur auf Englisch gesichtet.",
       "Gemeinden und Verwaltungen: Innovationsscheck und Mentoring nennen öffentliche Organisationen, Start-up Innovationsprojekte schliessen öffentliche Verwaltung aus.",
-      "Quellen nicht lokal abgelegt (local_path null)."
+      "Quellen nicht lokal abgelegt (local_path null).",
+      "Rechtsanspruch: kein_rechtsanspruch ist abgeleitet aus Vollzugsbestimmungen Innovationsprojekte Art. 3 Abs. 4 Bst. a (Budgetvorbehalt, die besten Gesuche). FIFG nicht roh lesbar (admin.ch liefert 403). Bitte bestätigen.",
+      "innovationsprojekt-umsetzungspartner, recipient: forschungspartner ist abgeleitet aus FAQ (keine finanzielle Grenze für Beiträge an Forschungspartner, Overheadbeiträge an alle beitragsberechtigten Forschungspartner) und Vollzugsbestimmungen Art. 5 Abs. 1 und Art. 13 Abs. 1. Bitte bestätigen.",
+      "timing.deadline.next_dates (Innovationsprojekte, Start-up Innovationsprojekte): leer gelassen. Publiziert sind Sitzungsdaten je Themengruppe, die Frist liegt 6 bzw. 8 Wochen davor. Daten stehen in timing.note. Klären, ob Sitzungsdaten oder berechnete Fristen erfasst werden sollen.",
+      "Start-up Innovationsprojekte: Sitzungs- und Pitchdaten stammen aus den HTML-Daten der Seite (Tabelle wird per JavaScript angezeigt). Im Browser gegenprüfen.",
+      "Initial und Core Coaching: Marktpotenzial, Verteidigbarkeit, Skalierbarkeit und Team stehen auch unter «Requirements». kind bewertung beibehalten, bitte prüfen.",
+      "combination_rules: Regel «Core Coaching setzt ein abgeschlossenes Initial Coaching voraus» entfernt, weil combination_rules für alle Instrumente des Programms gelten (der Fahrplan hätte jedes Innosuisse-Instrument nach das Initial Coaching gesetzt). Die Bedingung steht als muss-Kriterium core-coaching.initial_coaching_abgeschlossen (Quelle core, «1. Submit application, Requirements»).",
+      "combination_rules: Die Regel mit «*» zum Innovationsmentoring (kein paralleles Beratungsangebot) gilt ebenfalls programmweit, steht aber schon als muss-Kriterium innovationsmentoring.keine_parallele_beratung. Prüfen, ob die Regel bleiben soll."
     ]
   }
 }
