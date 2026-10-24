@@ -3,7 +3,8 @@
 Rules run in RULES order; the first that applies gives `Rejected.rule`. Except for
 `verfuegbarkeit`, a rule only drops on a known profile value (`angegeben` or `annahme`).
 A missing value keeps the instrument. Required partners never drop an instrument
-(see knowledge_base/partners.py).
+(see knowledge_base/partners.py). Project types are compared with their implied types
+(see project_types.py).
 """
 
 from collections.abc import Callable, Iterable
@@ -11,6 +12,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from app.agent.profile_values import known, known_set
+from app.agent.project_types import with_implied
 from app.knowledge_base.flat import FlatInstrument
 from app.models.contract import ProjectProfile, Rejected
 
@@ -49,22 +51,39 @@ def _availability(_: ProjectProfile, item: FlatInstrument) -> str | None:
     return reason
 
 
-def _canton(profile: ProjectProfile, item: FlatInstrument) -> str | None:
+def _location(profile: ProjectProfile, item: FlatInstrument) -> str | None:
+    """Canton first, then municipality. Both are reported under the rule `kanton`, the
+    contract's location rule."""
     cantons = item.program.scope.cantons
     canton = known(profile, "standort_kanton")
-    if not cantons or canton is None or canton in cantons:
+    if cantons and canton is not None and canton not in cantons:
+        return f"Gilt nur im Kanton {', '.join(cantons)}; Ihr Standort liegt im Kanton {canton}."
+    municipalities = item.program.scope.municipalities
+    municipality = known(profile, "standort_gemeinde")
+    if not municipalities or not isinstance(municipality, str):
         return None
-    return f"Gilt nur im Kanton {', '.join(cantons)}; Ihr Standort liegt im Kanton {canton}."
+    if _normalised(municipality) in {_normalised(m) for m in municipalities}:
+        return None
+    return f"Gilt nur in der Gemeinde {', '.join(municipalities)}; Ihr Standort ist {municipality}."
 
 
-def _overlap_check(profile_field: str, filter_field: str, reason: str) -> Check:
+def _normalised(name: str) -> str:
+    return " ".join(name.split()).casefold()
+
+
+def _overlap_check(
+    profile_field: str,
+    filter_field: str,
+    reason: str,
+    expand: Callable[[set[str]], set[str]] = lambda values: values,
+) -> Check:
     """Drop if the filter list is restricted and the known profile values miss it entirely.
-    An empty filter list means: no restriction."""
+    An empty filter list means: no restriction. `expand` adds implied values first."""
 
     def check(profile: ProjectProfile, item: FlatInstrument) -> str | None:
         allowed = getattr(item.instrument.filter, filter_field)
         values = known_set(profile, profile_field)
-        if not allowed or values is None or values & set(allowed):
+        if not allowed or values is None or expand(values) & set(allowed):
             return None
         return reason
 
@@ -93,7 +112,7 @@ def _company_age(profile: ProjectProfile, item: FlatInstrument) -> str | None:
 
 RULES: tuple[tuple[RejectRule, Check], ...] = (
     ("verfuegbarkeit", _availability),
-    ("kanton", _canton),
+    ("kanton", _location),
     (
         "gesuchsteller",
         _overlap_check(
@@ -108,6 +127,7 @@ RULES: tuple[tuple[RejectRule, Check], ...] = (
             "art_des_vorhabens",
             "project_types",
             "Das Instrument fördert eine andere Art von Vorhaben.",
+            with_implied,
         ),
     ),
     (

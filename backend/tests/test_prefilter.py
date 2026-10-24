@@ -142,3 +142,29 @@ def test_clear_purpose_without_project_type_drops_everything(kb: KnowledgeBase):
     result = prefilter(make_profile(art_des_vorhabens=[]), kb.instruments())
     assert result.kept == []
     assert set(_rules(result.rejected).values()) == {"vorhaben"}
+
+
+def _scoped(kb: KnowledgeBase, municipalities: list[str]) -> FlatInstrument:
+    lib = _lib(kb)
+    scope = lib.program.scope.model_copy(update={"municipalities": municipalities})
+    return FlatInstrument(lib.program.model_copy(update={"scope": scope}), lib.instrument)
+
+
+def test_prototype_implies_development(kb: KnowledgeBase):
+    only_development = _lib(kb, project_types=["entwicklung"])
+    profile = make_profile(art_des_vorhabens=["prototyp"])
+    assert prefilter(profile, [only_development]).rejected == []
+    other = make_profile(art_des_vorhabens=["export"])
+    assert _rules(prefilter(other, [only_development]).rejected) == {"lib-beitrag": "vorhaben"}
+
+
+def test_municipality_scope(kb: KnowledgeBase):
+    city_only = _scoped(kb, ["Luzern"])
+    inside = make_profile(standort_kanton="LU", standort_gemeinde="luzern ")
+    outside = make_profile(standort_kanton="LU", standort_gemeinde="Ruswil")
+    unknown = make_profile(standort_kanton="LU")
+    assert prefilter(inside, [city_only]).rejected == []
+    assert prefilter(unknown, [city_only]).rejected == []
+    (rejected,) = prefilter(outside, [city_only]).rejected
+    assert rejected.rule == "kanton"
+    assert rejected.reason == "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil."
