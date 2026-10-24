@@ -99,7 +99,10 @@ export function App() {
       setError(t.update.failed);
       return;
     }
-    if (!next.view.finished || r?.run_id !== nextRunId || r.status !== "fertig" || !r.plan) return;
+    // The fetched result decides, not only the event stream: a stream that stalls must not leave the page
+    // stuck at "0 von 8 geprüft" while the run is long done.
+    const done = r?.run_id === nextRunId && r.status === "fertig" && r.completed_at !== null && r.plan !== null;
+    if (!done || !r.plan) return;
     keepScroll.current = window.scrollY;
     const change = openProgram ? fitChange(before.current, findProgram(r, openProgram)) : null;
     setNotice(change?.before && change.after ? t.program.fitChanged(FIT_LABEL[change.before], FIT_LABEL[change.after]) : t.update.done);

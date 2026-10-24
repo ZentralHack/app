@@ -6,6 +6,8 @@ import { traceView } from "../lib/trace";
 /** Events after which the run result has new content worth fetching. */
 const REFRESH_ON = new Set<TraceEvent["type"]>(["prefilter_result", "instrument_completed", "instrument_failed", "step_completed", "plan_ready", "run_completed", "run_failed"]);
 
+const POLL_MS = 3000;
+
 const message = (e: unknown) => (e instanceof ApiRequestError ? e.message : "Die Analyse konnte nicht geladen werden.");
 
 interface RunData {
@@ -48,8 +50,14 @@ export function useRun(runId: string | null) {
       if (REFRESH_ON.has(event.type)) void refresh();
     });
     void refresh();
+    // Fallback if the event stream stalls (proxy, sleep, network): fetch the result until the run is done.
+    const poll = window.setInterval(() => {
+      const status = cache.get(runId)?.result?.status;
+      if (status === undefined || status === "laeuft") void refresh();
+    }, POLL_MS);
     return () => {
       active = false;
+      window.clearInterval(poll);
       unsubscribe();
     };
   }, [runId]);
