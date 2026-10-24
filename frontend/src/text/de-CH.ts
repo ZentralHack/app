@@ -11,6 +11,7 @@ export const t = {
     roadmap: "Ablauf",
     stepOf: (n: number, total: number) => `Schritt ${n} von ${total}`,
     unexpectedError: "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es nochmals.",
+    runGone: "Diese Analyse ist nicht mehr verfügbar. Bitte erfassen Sie Ihr Vorhaben neu.",
   },
   steps: ["Erfassen", "Profil", "Rückfragen", "Prüfung", "Ergebnisse", "Fahrplan"],
   common: {

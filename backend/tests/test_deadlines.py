@@ -62,3 +62,10 @@ def test_after_completion_has_no_date(kb):
     assert result.type == "nach_abschluss"
     assert result.next_date is None
     assert result.rule.startswith("Abschlussunterlagen")
+
+
+def test_lib_date_says_which_claim_and_cost_year(kb: KnowledgeBase):
+    lib = next(i for i in kb.instruments() if i.key == "lib:lib-beitrag")
+    result = deadline(lib, make_profile(projektstart="2027-04"), date(2026, 10, 24))
+    assert result.next_date == date(2029, 1, 31)
+    assert result.rule == "Beitragsjahr 2029, bemessen auf Ihre Kosten im Geschäftsjahr 2027."

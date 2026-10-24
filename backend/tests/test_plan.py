@@ -25,14 +25,17 @@ GRID = "foerderprogramm-energie-lu:waermenetz-anschluss"
 
 def test_sensora_plan(kb: KnowledgeBase):
     plan = build_plan([_item(kb, LIB, deadline=date(2027, 1, 31))], [], kb)
-    (entry,) = plan.timeline
+    now, entry = plan.timeline
+    # LIB is claimed on past costs: record them from the start, then submit.
+    assert (now.phase, now.title) == ("jetzt", "Kosten ab Projektstart separat erfassen")
+    assert now.action.endswith("Beitragsjahr 2027, bemessen auf Ihre Kosten im Geschäftsjahr 2025.")
     assert entry.phase == "gesuch"
     assert entry.title == "Gesuch Luzerner Innovationsbeitrag"
     assert entry.date == date(2027, 1, 31)
-    assert entry.date_rule.startswith("31. Januar des Beitragsjahres")
+    assert entry.date_rule == "Beitragsjahr 2027, bemessen auf Ihre Kosten im Geschäftsjahr 2025."
     assert plan.warnings == []
-    assert plan.next_steps[0].link == "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen"
-    assert plan.next_steps[0].due == date(2027, 1, 31)
+    assert plan.next_steps[-1].link == "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen"
+    assert plan.next_steps[-1].due == date(2027, 1, 31)
     assert [c.name for c in plan.contacts] == ["Dienststelle Raum und Wirtschaft (rawi)"]
 
 
@@ -54,6 +57,11 @@ def test_lever_goes_first_and_not_fitting_is_left_out(kb: KnowledgeBase):
     )
     assert [(e.phase, e.action) for e in plan.timeline] == [
         ("jetzt", "Forschungspartner beiziehen"),
+        (
+            "jetzt",
+            "Erfassen Sie die Projektkosten ab Projektstart getrennt in der Buchhaltung. "
+            "Beitragsjahr 2027, bemessen auf Ihre Kosten im Geschäftsjahr 2025.",
+        ),
         ("gesuch", "Gesuch einreichen."),
     ]
 
@@ -68,10 +76,11 @@ def test_phases_and_order(kb: KnowledgeBase):
         kb,
     )
     assert [(e.phase, e.instrument_id) for e in plan.timeline] == [
+        ("jetzt", "lib-beitrag"),
         ("vor_projektstart", "waermepumpe"),
         ("gesuch", "lib-beitrag"),
     ]
-    assert plan.timeline[0].date_rule == "vor Installationsbeginn"
+    assert plan.timeline[1].date_rule == "vor Installationsbeginn"
 
 
 def test_lib_deducts_other_funding(kb: KnowledgeBase):
@@ -112,7 +121,8 @@ def test_prerequisite_comes_first(kb: KnowledgeBase):
     lib = _with_rule(_item(kb, LIB, deadline=date(2027, 1, 31)), "voraussetzung", PUMP)
     pump = _item(kb, PUMP, deadline=date(2027, 6, 1))
     plan = build_plan([lib, pump], [], kb)
-    assert [e.instrument_id for e in plan.timeline] == ["waermepumpe", "lib-beitrag"]
+    order = [(e.phase, e.instrument_id) for e in plan.timeline if e.phase != "jetzt"]
+    assert order == [("vor_projektstart", "waermepumpe"), ("gesuch", "lib-beitrag")]
 
 
 def test_recommended_step_goes_to_now(kb: KnowledgeBase):
@@ -172,3 +182,29 @@ def test_nothing_fits_names_only_the_closest_programs():
     assert 1 <= len(programs) <= 3
     # Rejected only by `vorhaben`: cantonal offices first.
     assert all(full.get(p).level == "kanton" for p in programs)
+
+
+def test_lever_naming_an_offer_with_its_own_step_is_not_repeated():
+    full = load_knowledge_base(KNOWLEDGE_BASE_DIR)
+    project, mentoring = (
+        "innosuisse:innovationsprojekt-umsetzungspartner",
+        "innosuisse:innovationsmentoring",
+    )
+    gap = Gap(
+        type="anpassung",
+        criterion_ids=["forschungspartner_schweiz"],
+        lever="Innovationsmentoring nutzen, um einen passenden Forschungspartner zu finden "
+        "und das Gesuch zu strukturieren",
+        hint=None,
+        source=None,
+    )
+    plan = build_plan(
+        [_item(full, project, "passt_mit_anpassung", [gap]), _item(full, mentoring)], [], full
+    )
+    now = [e for e in plan.timeline if e.phase == "jetzt"]
+    assert [e.instrument_id for e in now] == ["innovationsmentoring"]
+    # Without the mentoring offer in the result, the lever stays.
+    alone = build_plan([_item(full, project, "passt_mit_anpassung", [gap])], [], full)
+    assert [e.instrument_id for e in alone.timeline if e.phase == "jetzt"] == [
+        "innovationsprojekt-umsetzungspartner"
+    ]

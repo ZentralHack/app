@@ -7,6 +7,7 @@ import logging
 import re
 from collections.abc import Iterable
 
+from app.agent.plan import COST_TRACKING_TITLE
 from app.knowledge_base.loader import KnowledgeBase
 from app.llm.client import LLMClient
 from app.llm.errors import LLMError
@@ -102,8 +103,11 @@ async def write_plan_texts(
         return plan, matches
 
     step_texts = {s.step_id: s for s in texts.steps}
+    # The cost-tracking step names the claim and cost year; its wording stays as the code wrote it.
     timeline = [
-        e.model_copy(update={"title": step_texts[k].title, "action": step_texts[k].action})
+        e
+        if e.title == COST_TRACKING_TITLE
+        else e.model_copy(update={"title": step_texts[k].title, "action": step_texts[k].action})
         for k, e in steps.items()
     ]
     next_steps = [

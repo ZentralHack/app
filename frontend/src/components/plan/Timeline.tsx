@@ -3,7 +3,7 @@ import { daysUntil, formatDateShort } from "../../lib/format";
 import { host, sameStep, uniqueWarnings } from "../../lib/plan";
 import { isAdvisory } from "../../lib/results";
 import { PHASE_LABEL, t } from "../../text/de-CH";
-import { urgencyOf, URGENCY_TEXT } from "../results/parts";
+import { COST_YEAR, urgencyOf, URGENCY_TEXT } from "../results/parts";
 import { External, Mail, Phone } from "../ui/icons";
 import { WarningNote } from "./WarningNote";
 
@@ -48,7 +48,8 @@ export function planItems(result: RunResult): { items: PlanItem[]; looseContacts
     phase: e.phase,
     program: programName(e.program_id),
     title: e.title,
-    actions: e.action ? [e.action] : [],
+    // A claim on past costs (LIB) says which years the date stands for.
+    actions: [e.action, e.date && e.date_rule && COST_YEAR.test(e.date_rule) ? e.date_rule : ""].filter(Boolean),
     date: e.date,
     when: e.date ? formatDateShort(e.date) : e.date_rule,
     link: null,

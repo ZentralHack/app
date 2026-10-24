@@ -41,8 +41,15 @@ export function urgencyOf(days: number | null): Urgency {
   return days < 7 ? "dringend" : days < 30 ? "bald" : "normal";
 }
 
+/** Rule the backend writes for deadlines that follow the cost year (deadlines.py `cost_year_note`). */
+export const COST_YEAR = /^Beitragsjahr \d{4}, bemessen auf Ihre Kosten im Geschäftsjahr \d{4}\.?$/;
+
 /** "31.01.2027" with "in 99 Tagen", or a short rule such as "Laufend". */
 export function deadlineText(deadline: Deadline, today: string): { main: string; sub: string | null; urgency: Urgency } {
+  if (deadline.next_date && deadline.rule && COST_YEAR.test(deadline.rule)) {
+    // A claim on past costs (LIB): the line explains the year; no urgency colour.
+    return { main: formatDateShort(deadline.next_date), sub: deadline.rule.replace(/\.$/, ""), urgency: "normal" };
+  }
   if (deadline.next_date) {
     const days = daysUntil(deadline.next_date, today);
     return { main: formatDateShort(deadline.next_date), sub: t.results.inDays(days), urgency: urgencyOf(days) };

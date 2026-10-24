@@ -7,6 +7,7 @@ import { Alert } from "./components/ui/Alert";
 import { setProgramNames } from "./content/programs";
 import { useRun } from "./hooks/useRun";
 import { parseChf } from "./lib/format";
+import { readPlace, writePlace } from "./lib/location";
 import { findProgram, fitChange, sameProfile, unansweredQuestions, withFields } from "./lib/runFlow";
 import type { EditorAnswer } from "./components/program/ProfileEditor";
 import { CaptureScreen, type CaptureDraft } from "./screens/CaptureScreen";
@@ -47,8 +48,10 @@ const EMPTY_DRAFT: CaptureDraft = {
  * where they were, sees a compact progress line, and the new result replaces the old one when it is done.
  */
 export function App() {
-  const [step, setStep] = useState<Step>(1);
-  const [reachable, setReachable] = useState<Step>(1);
+  // A reload with a run in the URL opens that run again (the result comes from GET /api/runs/{id}).
+  const [restored] = useState(() => readPlace(window.location.search));
+  const [step, setStep] = useState<Step>(() => (restored.run ? (Math.max(restored.step, 4) as Step) : 1));
+  const [reachable, setReachable] = useState<Step>(restored.run ? 6 : 1);
   const [busy, setBusy] = useState(false);
   const [draft, setDraft] = useState<CaptureDraft>(EMPTY_DRAFT);
   const [clarification, setClarification] = useState<Clarification | null>(null);
@@ -57,8 +60,8 @@ export function App() {
   const [extracted, setExtracted] = useState<ProjectProfile | null>(null);
   const [questions, setQuestions] = useState<QuestionSet | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [runId, setRunId] = useState<string | null>(null);
-  const [openProgram, setOpenProgram] = useState<InstrumentRef | null>(null);
+  const [runId, setRunId] = useState<string | null>(restored.run);
+  const [openProgram, setOpenProgram] = useState<InstrumentRef | null>(restored.step === 5 ? restored.program : null);
   // The company name is only shown in the UI; it is not part of the profile the backend checks.
   const [company, setCompany] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -100,6 +103,46 @@ export function App() {
     setRunId(nextRunId);
     setNextRunId(null);
   }, [nextRunId, next.view.failed, next.view.finished, next.result, openProgram]);
+
+  // The screen goes into the URL: a new screen is a history entry, a new run of the same screen is not.
+  const shown = useRef({ step, openProgram });
+  useEffect(() => {
+    const url = writePlace({ step, run: runId, program: step === 5 ? openProgram : null });
+    if (url === window.location.search) return;
+    const moved = shown.current.step !== step || shown.current.openProgram !== openProgram;
+    shown.current = { step, openProgram };
+    const target = url || window.location.pathname;
+    if (moved) window.history.pushState(null, "", target);
+    else window.history.replaceState(null, "", target);
+  }, [step, runId, openProgram]);
+
+  // Browser back and forward: show the screen from the URL, if it can be shown with what is loaded.
+  useEffect(() => {
+    const onPop = () => {
+      const place = readPlace(window.location.search);
+      let target = Math.min(place.step, reachable) as Step;
+      if (target === 3 && !questions) target = 2;
+      if (target === 2 && !profile) target = 1;
+      if (target >= 4 && !runId) target = 1;
+      shown.current = { step: target, openProgram: target === 5 ? place.program : null };
+      setError(null);
+      setNotice(null);
+      setStep(target);
+      setOpenProgram(target === 5 ? place.program : null);
+      window.scrollTo({ top: 0 });
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [reachable, questions, profile, runId]);
+
+  // The run from the URL no longer exists (e.g. the server restarted): start over with a note.
+  useEffect(() => {
+    if (!restored.run || runId !== restored.run || !run.error || run.result) return;
+    setRunId(null);
+    setReachable(1);
+    setStep(1);
+    setError(t.app.runGone);
+  }, [restored.run, runId, run.error, run.result]);
 
   // Same scroll position after the swap.
   useLayoutEffect(() => {

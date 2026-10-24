@@ -23,6 +23,7 @@ from app.agent.scoring import (
     RankEntry,
     assign_ranks,
     is_advisory,
+    is_competitive,
     mostly_unknown,
     muss_met_share,
     score,
@@ -244,6 +245,7 @@ def _rank(ctx: _Context) -> None:
                 _item(ctx, match).program.entitlement.type,
                 advisory=is_advisory(match.instrument_type),
                 mostly_unknown=mostly_unknown(match.criteria),
+                competitive=is_competitive(_item(ctx, match)),
             )
         )
     ranks = assign_ranks(entries)

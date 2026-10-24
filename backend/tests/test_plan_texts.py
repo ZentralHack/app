@@ -1,6 +1,7 @@
 import asyncio
 import json
 
+from app.agent.plan import COST_TRACKING_TITLE
 from app.agent.plan_texts import GapHint, PlanTexts, StepText, write_plan_texts
 from app.config import REPO_DIR
 from app.knowledge_base.loader import KnowledgeBase
@@ -66,3 +67,15 @@ def test_llm_failure_falls_back(kb: KnowledgeBase):
         raise LLMOutputError("kaputt")
 
     _assert_defaults(*_run(kb, fail))
+
+
+def test_cost_tracking_step_keeps_its_wording(kb: KnowledgeBase):
+    first = EXAMPLE.plan.timeline[0].model_copy(
+        update={"title": COST_TRACKING_TITLE, "action": "Beitragsjahr 2029, bemessen auf 2027."}
+    )
+    plan_in = EXAMPLE.plan.model_copy(update={"timeline": [first, *EXAMPLE.plan.timeline[1:]]})
+    plan, _ = asyncio.run(
+        write_plan_texts(plan_in, EXAMPLE.matches, kb, FakeLLM({"plan": _texts()}))
+    )
+    assert (plan.timeline[0].title, plan.timeline[0].action) == (first.title, first.action)
+    assert plan.timeline[1].action == "Jetzt erfassen."

@@ -13,8 +13,10 @@ unknown `muss` criterion (stricter than the backend flow, which only counts the 
 Ranking over all fitting instruments, first key wins:
 1. money before advice: `instrument_type` "beratung" goes into its own block after all others
 2. fit level
-3. floor: more than two thirds of the `muss` criteria unknown sorts after the rest of its level
-4. share of `muss` met (`annahme` counts half), nearest deadline, entitlement
+3. competition last within a level: `entitlement.type` "wettbewerb" or a deadline of type
+   "ausschreibung" (urgency still shows through the deadline and the plan)
+4. floor: more than two thirds of the `muss` criteria unknown sorts after the rest of its level
+5. share of `muss` met (`annahme` counts half), nearest deadline, entitlement
 """
 
 from collections.abc import Sequence
@@ -103,6 +105,14 @@ def mostly_unknown(criteria: Sequence[CriterionResult]) -> bool:
     return bool(muss) and Fraction(unknown, len(muss)) > MOSTLY_UNKNOWN_LIMIT
 
 
+def is_competitive(item: FlatInstrument) -> bool:
+    """Selected in a competition or a call, as the knowledge base says."""
+    return (
+        item.program.entitlement.type == "wettbewerb"
+        or item.instrument.timing.deadline.type == "ausschreibung"
+    )
+
+
 def is_advisory(instrument_type: str) -> bool:
     """Advice instead of money; shown as "Begleitende Angebote" below the funding."""
     return instrument_type in ADVISORY_TYPES
@@ -154,17 +164,19 @@ class RankEntry:
     entitlement: EntitlementType
     advisory: bool = False
     mostly_unknown: bool = False
+    competitive: bool = False
 
 
 def assign_ranks(entries: Sequence[RankEntry]) -> dict[str, int | None]:
     """1-based rank over all fitting instruments; `passt_nicht` gets no rank.
-    Order: money before advice, fit level, floor for mostly unknown, share of `muss` met,
-    nearest deadline, entitlement."""
+    Order: money before advice, fit level, competition last, floor for mostly unknown, share
+    of `muss` met, nearest deadline, entitlement."""
     ordered = sorted(
         entries,
         key=lambda e: (
             e.advisory,
             FIT_ORDER[e.fit],
+            e.competitive,
             e.mostly_unknown,
             -e.muss_met_share,
             e.next_deadline or date.max,

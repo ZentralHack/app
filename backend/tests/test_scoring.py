@@ -4,10 +4,17 @@ from fractions import Fraction
 
 import pytest
 
-from app.agent.scoring import RankEntry, assign_ranks, mostly_unknown, muss_met_share, score
-from app.config import REPO_DIR
+from app.agent.scoring import (
+    RankEntry,
+    assign_ranks,
+    is_competitive,
+    mostly_unknown,
+    muss_met_share,
+    score,
+)
+from app.config import KNOWLEDGE_BASE_DIR, REPO_DIR
 from app.knowledge_base.flat import FlatInstrument
-from app.knowledge_base.loader import KnowledgeBase
+from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
 from app.models.contract import CriterionResult, SourceLink
 
 
@@ -133,6 +140,26 @@ def test_ranking_order():
         "anpassung": 5,
         "nicht": None,
     }
+
+
+def test_competition_ranks_after_the_rest_of_its_level():
+    ranks = assign_ranks(
+        [
+            _entry("wettbewerb", "passt_gut", deadline=date(2026, 11, 4), entitlement="wettbewerb",
+                   competitive=True),
+            _entry("normal-halb", "passt_gut", Fraction(1, 2)),
+            _entry("anpassung", "passt_mit_anpassung"),
+        ]
+    )  # fmt: skip
+    assert ranks == {"normal-halb": 1, "wettbewerb": 2, "anpassung": 3}
+
+
+def test_competitive_comes_from_the_knowledge_base():
+    full_kb = load_knowledge_base(KNOWLEDGE_BASE_DIR)
+    flat = {i.key: i for i in full_kb.instruments()}
+    assert is_competitive(flat["eic-accelerator:eic-accelerator"])
+    assert is_competitive(flat["prokilowatt:projekte"])
+    assert not is_competitive(flat["lib:lib-beitrag"])
 
 
 def test_assumed_counts_half(sensora_criteria):

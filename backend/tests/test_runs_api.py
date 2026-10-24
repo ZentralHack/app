@@ -93,7 +93,8 @@ def test_sensora_full_chain(kb: KnowledgeBase):
     assert {g["type"] for g in lib["gaps"]} == {"infos_fehlen"}
     assert all(g["hint"] for g in lib["gaps"])  # standard texts after the failed plan call
     assert len(result["rejected"]) == 6
-    assert result["plan"]["timeline"][0]["date"] == "2027-01-31"
+    submission = next(e for e in result["plan"]["timeline"] if e["phase"] == "gesuch")
+    assert submission["date"] == "2027-01-31"
     assert result["disclaimer"] == "Orientierungshilfe, keine verbindliche Beurteilung"
     assert [e["type"] for e in events] == [
         "run_started",

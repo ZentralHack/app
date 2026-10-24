@@ -58,4 +58,13 @@ def _next_january_31(today: date) -> date:
 
 def deadline(item: FlatInstrument, profile: ProjectProfile, today: date) -> Deadline:
     spec = item.instrument.timing.deadline
-    return Deadline(type=spec.type, rule=spec.rule, next_date=next_deadline(item, profile, today))
+    due = next_deadline(item, profile, today)
+    return Deadline(type=spec.type, rule=cost_year_note(item, due) or spec.rule, next_date=due)
+
+
+def cost_year_note(item: FlatInstrument, due: date | None) -> str | None:
+    """For deadlines that follow the cost year: which claim year the date is and which
+    financial year it is assessed on, so a date two years ahead does not look wrong."""
+    if item.key not in COST_YEAR_DEADLINES or due is None:
+        return None
+    return f"Beitragsjahr {due.year}, bemessen auf Ihre Kosten im Geschäftsjahr {due.year - 2}."

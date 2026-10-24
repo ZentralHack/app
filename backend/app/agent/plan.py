@@ -5,6 +5,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date
 
+from app.agent.deadlines import cost_year_note
 from app.agent.prefilter import RULES
 from app.agent.scoring import Fit
 from app.knowledge_base.flat import FlatInstrument
@@ -20,6 +21,8 @@ from app.models.contract import (
 )
 from app.models.program import CombinationRule, Program
 
+COST_TRACKING_TITLE = "Kosten ab Projektstart separat erfassen"
+COST_TRACKING_ACTION = "Erfassen Sie die Projektkosten ab Projektstart getrennt in der Buchhaltung."
 FITTING: frozenset[Fit] = frozenset({"passt_gut", "passt_mit_anpassung"})
 WARNING_TYPES = frozenset({"ausgeschlossen", "abzug", "bedingt"})
 # When nothing fits: contacts of at most this many programs, the closest ones first.
@@ -75,14 +78,32 @@ def _now_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
         for gap in p.gaps
         if gap.type == "anpassung" and gap.lever
     ]
+    # Claims on past costs (LIB): the costs must be recorded from the start of the project.
+    entries += [
+        _entry("jetzt", p.item, COST_TRACKING_TITLE, f"{COST_TRACKING_ACTION} {note}")
+        for p in fitting
+        if (note := cost_year_note(p.item, p.next_deadline))
+    ]
     instruments = [p.item for p in fitting]
+    recommended = []
     for owner in instruments:
-        entries += [
+        recommended += [
             _entry("jetzt", owner, owner.instrument.name, rule.text)
             for rule in _rules(owner, "empfohlen_vorher")
             if _targets(rule, owner, instruments)
         ]
-    return entries
+    # A lever that says "use <offer>" is the same step as that offer's own recommendation.
+    names = {e.instrument_id: _name_of(instruments, e) for e in recommended}
+    entries = [
+        e
+        for e in entries
+        if not any(n in e.action for i, n in names.items() if i != e.instrument_id)
+    ]
+    return entries + recommended
+
+
+def _name_of(instruments: list[FlatInstrument], entry: TimelineEntry) -> str:
+    return next(i.instrument.name for i in instruments if i.instrument.id == entry.instrument_id)
 
 
 def _application_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
@@ -107,8 +128,9 @@ def _application_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
                 if spec.type == "nach_abschluss"
                 else "Gesuch einreichen."
             )
+            rule = cost_year_note(p.item, p.next_deadline) or spec.rule
             applications.append(
-                _entry("gesuch", p.item, _title(p.item), action, p.next_deadline, spec.rule)
+                _entry("gesuch", p.item, _title(p.item), action, p.next_deadline, rule)
             )
     applications.sort(key=lambda e: e.date or date.max)
     return before_start + applications
