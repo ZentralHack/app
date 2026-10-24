@@ -4,7 +4,7 @@ import { host, sameStep, uniqueWarnings } from "../../lib/plan";
 import { isAdvisory } from "../../lib/results";
 import { PHASE_LABEL, t } from "../../text/de-CH";
 import { COST_YEAR, deadlineInfo } from "../../lib/deadline";
-import { DISCLAIMER, deadlineEvent, downloadIcs, icsFilename, type CalendarEvent } from "../../lib/ics";
+import { DISCLAIMER, deadlineEvent, icsFilename, type CalendarEvent } from "../../lib/ics";
 import { CalendarButton } from "../ui/CalendarButton";
 import { urgencyOf, URGENCY_TEXT } from "../results/parts";
 import { External, Mail, Phone } from "../ui/icons";
@@ -247,7 +247,7 @@ export function Timeline({ result, items, done, onToggle }: Props) {
                     <span className="col-start-2 flex flex-col items-start gap-1 md:col-start-3 md:row-start-1 md:items-end md:text-right">
                       <span className={`text-sm font-semibold tabular-nums ${URGENCY_TEXT[urgencyOf(days)]}`}>{item.when}</span>
                       {label(item) && <span className="text-xs text-fg-2">{label(item)}</span>}
-                      <CalendarButton size="sm" onClick={() => downloadIcs(icsFilename(item.title), [planEvent(item, result)!])} />
+                      {planEvent(item, result) && <CalendarButton size="sm" event={planEvent(item, result)!} filename={icsFilename(item.title)} />}
                     </span>
                   )}
                 </li>

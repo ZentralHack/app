@@ -90,20 +90,22 @@ export function DeadlineFigure({ deadline, today, size = "card" }: { deadline: D
 }
 
 /** Numbered source chip. */
+/** Longer than this, a source label is cut; the tooltip always has the whole text. */
+const SOURCE_MAX = 140;
+
 export function SourceChip({ source, n }: { source: SourceLink; n?: number }) {
+  const full = `${source.title}${source.locator ? ` · ${source.locator}` : ""}`;
+  const label = full.length > SOURCE_MAX ? `${full.slice(0, SOURCE_MAX).trimEnd()}…` : full;
   return (
     <a
       href={source.url}
       target="_blank"
       rel="noopener"
-      title={`${source.title}${source.locator ? ` · ${source.locator}` : ""}`}
-      className="inline-flex h-7 max-w-full items-center gap-1.5 rounded-md border border-line bg-surface px-2 text-xs font-medium text-fg-2 no-underline transition-colors hover:border-primary hover:bg-primary-soft hover:text-primary-ink"
+      title={full}
+      className="inline-flex min-h-7 max-w-full items-center gap-1.5 rounded-md border border-line bg-surface px-2 py-1 text-xs font-medium text-fg-2 no-underline transition-colors hover:border-primary hover:bg-primary-soft hover:text-primary-ink"
     >
       {n != null && <span className="grid size-4 flex-none place-items-center rounded bg-primary-soft text-[11px] font-bold text-primary-ink">{n}</span>}
-      <span className="truncate">
-        {source.title}
-        {source.locator && ` · ${source.locator}`}
-      </span>
+      <span className="break-words">{label}</span>
     </a>
   );
 }

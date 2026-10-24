@@ -158,7 +158,10 @@ export const t = {
   },
   calendar: {
     add: "Frist in Kalender eintragen",
-    all: "Alle Fristen in Kalender",
+    all: "Alle Fristen herunterladen (.ics)",
+    google: "Google Kalender",
+    outlook: "Outlook",
+    ics: "Apple / andere (.ics)",
     allFile: "foerderfahrplan-fristen.ics",
   },
   program: {

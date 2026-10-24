@@ -13,7 +13,7 @@ import { Button } from "../components/ui/Button";
 import { CalendarButton } from "../components/ui/CalendarButton";
 import { ArrowLeft, Chat, External, Mail, Phone } from "../components/ui/icons";
 import { deadlineInfo } from "../lib/deadline";
-import { deadlineEvent, downloadIcs, icsFilename } from "../lib/ics";
+import { deadlineEvent, icsFilename } from "../lib/ics";
 import { fieldLabel, formatDateShort } from "../lib/format";
 import { criteriaGroups, criterionAnchor, groupCounts, type CriteriaItem } from "../lib/criteriaGroups";
 import { editorEntries, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
@@ -145,7 +145,7 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
               <Chat aria-hidden="true" className="size-5" />
               {t.program.ask}
             </Button>
-            {event && <CalendarButton onClick={() => downloadIcs(icsFilename(match.instrument_name), [event])} />}
+            {event && <CalendarButton event={event} filename={icsFilename(match.instrument_name)} />}
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
             {match.links.info && (

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { RunResult } from "../api/contract";
 import { planEvents, planItems } from "../components/plan/Timeline";
 import sensora from "../../../backend/demo/sensor-prototyp.json";
-import { deadlineEvent, escapeText, foldLine, icsCalendar, icsFilename, type CalendarEvent } from "./ics";
+import { deadlineEvent, escapeText, foldLine, googleCalendarUrl, icsCalendar, icsFilename, outlookCalendarUrl, type CalendarEvent } from "./ics";
 
 const result = sensora as unknown as RunResult;
 const lib = result.matches.find(m => m.instrument_id === "lib-beitrag")!;
@@ -93,5 +93,42 @@ describe("Fahrplan calendar", () => {
     const { items } = planItems(run);
     expect(items.every(i => i.date === null || i.date >= run.today)).toBe(true);
     expect(planEvents(items, run).every(e => e.date >= run.today)).toBe(true);
+  });
+});
+
+describe("calendar links", () => {
+  const e: CalendarEvent = {
+    uid: "x@fundpilot",
+    date: "2027-01-31",
+    title: "Frist: Luzerner Innovationsbeitrag (LIB) – Eingabefrist Gesuch & Beitragsjahr 2027",
+    description: "Gesuch einreichen; Quelle: Handbuch, N 165.\nOrientierungshilfe, keine verbindliche Beurteilung.",
+    url: "https://standortfoerderung.lu.ch/LIB",
+  };
+
+  it("Google: title, all-day date and details, everything encoded", () => {
+    const url = new URL(googleCalendarUrl(e));
+    expect(url.origin + url.pathname).toBe("https://calendar.google.com/calendar/render");
+    expect(url.searchParams.get("action")).toBe("TEMPLATE");
+    expect(url.searchParams.get("text")).toBe(e.title);
+    expect(url.searchParams.get("dates")).toBe("20270131/20270201");
+    expect(url.searchParams.get("details")).toContain("Orientierungshilfe, keine verbindliche Beurteilung.");
+    expect(url.searchParams.get("details")).toContain("https://standortfoerderung.lu.ch/LIB");
+    expect(googleCalendarUrl(e)).not.toMatch(/[ \n]/);
+  });
+
+  it("Outlook: subject, all-day start and end, body", () => {
+    const url = new URL(outlookCalendarUrl(e));
+    expect(url.origin + url.pathname).toBe("https://outlook.live.com/calendar/0/deeplink/compose");
+    expect(url.searchParams.get("path")).toBe("/calendar/action/compose");
+    expect(url.searchParams.get("rru")).toBe("addevent");
+    expect(url.searchParams.get("subject")).toBe(e.title);
+    expect(url.searchParams.get("startdt")).toBe("2027-01-31");
+    expect(url.searchParams.get("enddt")).toBe("2027-02-01");
+    expect(url.searchParams.get("allday")).toBe("true");
+    expect(url.searchParams.get("body")).toContain("Quelle: Handbuch, N 165.");
+  });
+
+  it("year end rolls over", () => {
+    expect(new URL(googleCalendarUrl({ ...e, date: "2026-12-31" })).searchParams.get("dates")).toBe("20261231/20270101");
   });
 });

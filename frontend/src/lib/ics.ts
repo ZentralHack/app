@@ -126,3 +126,23 @@ export function icsFilename(name: string): string {
     .slice(0, 50);
   return `frist-${slug || "foerderangebot"}.ics`;
 }
+
+const enc = encodeURIComponent;
+
+/** Google Calendar "create event" link, all-day, opened in a new tab. */
+export function googleCalendarUrl(e: CalendarEvent): string {
+  const details = e.url && !e.description.includes(e.url) ? `${e.description}\n${e.url}` : e.description;
+  return (
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    `&text=${enc(e.title)}&dates=${compact(e.date)}/${compact(nextDay(e.date))}&details=${enc(details)}`
+  );
+}
+
+/** Outlook on the web compose link (Outlook.com and Microsoft 365), all-day. */
+export function outlookCalendarUrl(e: CalendarEvent): string {
+  const body = e.url && !e.description.includes(e.url) ? `${e.description}\n${e.url}` : e.description;
+  return (
+    "https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent" +
+    `&subject=${enc(e.title)}&startdt=${e.date}&enddt=${nextDay(e.date)}&allday=true&body=${enc(body)}`
+  );
+}
