@@ -891,7 +891,7 @@
     {
       "with": "bg-mitte",
       "type": "empfohlen_vorher",
-      "text": "Abgeleitet aus Gesuch einreichen, FAQ Darlehen (betrifft den Projektbeitrag): Die Berghilfe vergibt keine Darlehen; gewerbliche Betriebe kontaktieren die zuständigen gewerblichen Bürgschaftsgenossenschaften (für Luzern laut bg-mitte.json die BG Mitte). Die Berghilfe prüft danach den verbleibenden Fehlbetrag.",
+      "text": "Abgeleitet aus Gesuch einreichen, FAQ Darlehen (betrifft den Projektbeitrag): Die Berghilfe vergibt keine Darlehen; gewerbliche Betriebe kontaktieren die zuständigen gewerblichen Bürgschaftsgenossenschaften (im Kanton Luzern ist das die BG Mitte, deren Tätigkeitsgebiet LU umfasst). Die Berghilfe prüft danach den verbleibenden Fehlbetrag.",
       "source": {
         "source_id": "gesuch",
         "locator": "FAQ «Leistet die Schweizer Berghilfe auch eine Unterstützung in Form eines Darlehens?»"
