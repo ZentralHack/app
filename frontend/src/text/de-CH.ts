@@ -230,6 +230,34 @@ export const t = {
     assumedSource: "Annahme",
   },
 
+  chat: {
+    title: "Frage dazu",
+    lead: "Fragen Sie zu diesem Förderangebot und Ihrem Ergebnis. Die Antworten stammen nur aus dem Prüfergebnis und den Programmunterlagen.",
+    placeholder: "Ihre Frage …",
+    send: "Senden",
+    close: "Schliessen",
+    thinking: "Antwort wird gesucht …",
+    you: "Sie",
+    agent: "Agent",
+    suggested: "Vorschläge",
+    contact: "Ansprechstelle",
+    disclaimer: "Orientierungshilfe, keine verbindliche Beurteilung. Keine Rechts- oder Steuerberatung, keine Berechnungen.",
+    basis: {
+      belegt: "Belegt durch Quelle",
+      abgeleitet: "Abgeleitet",
+      allgemein: "Allgemeine Erklärung, nicht aus den Programmunterlagen",
+      nicht_belegt: "Nicht belegt",
+    },
+    /** Standard questions, shown after the generated ones. `covers` hides one if a generated question has that topic. */
+    standard: [
+      { text: "Was fehlt mir noch für dieses Programm?", covers: ["offen", "passung"] },
+      { text: "Welche Unterlagen brauche ich für das Gesuch?", covers: ["unterlagen"] },
+      { text: "Bis wann muss ich einreichen?", covers: ["frist"] },
+      { text: "Kann ich das mit anderen Programmen kombinieren?", covers: ["kombination"] },
+      { text: "Was bedeutet ein Begriff aus dem Ergebnis?", covers: [], prefill: "Was bedeutet " },
+    ],
+  },
+
   update: {
     running: "Die Analyse wird mit Ihren Änderungen aktualisiert",
     failed: "Die Aktualisierung ist fehlgeschlagen. Sie sehen weiterhin das vorherige Ergebnis.",

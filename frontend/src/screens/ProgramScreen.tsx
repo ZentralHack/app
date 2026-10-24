@@ -6,6 +6,7 @@ import { DeadlineFigure, Metric, SourceChip } from "../components/results/parts"
 import { matchTitle } from "../components/results/ResultCard";
 import { StatusSymbol } from "../components/ui/StatusSymbol";
 import { WarningNote } from "../components/plan/WarningNote";
+import { ChatDrawer } from "../components/program/ChatDrawer";
 import { ProfileEditor, type EditorAnswer } from "../components/program/ProfileEditor";
 import { host, sameStep, uniqueWarnings } from "../lib/plan";
 import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
@@ -69,6 +70,7 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
 /** Program page: hero with fit, funding rule and deadline; one timeline; criteria as a contributor list. */
 export function ProgramScreen({ match, result, extracted, onBack, onEditProfile, onSaveEdits }: Props) {
   const [editing, setEditing] = useState(false);
+  const [chatting, setChatting] = useState(false);
   const warnings = uniqueWarnings(
     (result.plan?.warnings ?? []).filter(w => w.items.some(i => i.program_id === match.program_id && (!i.instrument_id || i.instrument_id === match.instrument_id))),
   );
@@ -175,6 +177,8 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
           onEditProfile();
         }}
       />
+
+      <ChatDrawer isOpen={chatting} runId={result.run_id} match={match} onClose={() => setChatting(false)} />
 
       {steps.length > 0 && (
         <section className="flex flex-col gap-4">

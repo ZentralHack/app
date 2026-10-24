@@ -3,7 +3,7 @@
  * proxies them to the backend (vite.config.ts), so no CORS setup is needed.
  */
 import type { Api } from "./client";
-import type { ApiError, TraceEvent } from "./contract";
+import type { ApiError, InstrumentRef, TraceEvent } from "./contract";
 
 const BASE = "/api";
 
@@ -54,6 +54,10 @@ async function request<T>(method: "GET" | "POST", path: string, body?: unknown):
   return data as T;
 }
 
+function chatPath(runId: string, ref: InstrumentRef): string {
+  return `/runs/${encodeURIComponent(runId)}/chat/${encodeURIComponent(ref.program_id)}/${encodeURIComponent(ref.instrument_id)}`;
+}
+
 /**
  * One open event stream per run. The server replays all events on every connect, so events at or below
  * `lastSeq` are skipped. The stream is closed after the run ends, or after the plan of a retry; otherwise
@@ -93,6 +97,8 @@ export function createHttpApi(): Api {
     buildQuestions: profile => request("POST", "/questions", { profile }),
     startRun: req => request("POST", "/runs", req),
     getRun: runId => request("GET", `/runs/${encodeURIComponent(runId)}`),
+    chatSuggestions: (runId, ref) => request("GET", `${chatPath(runId, ref)}/suggestions`),
+    chat: (runId, ref, req) => request("POST", chatPath(runId, ref), req),
 
     subscribeEvents(runId, onEvent) {
       const sub: Subscription = { onEvent, source: null, lastSeq: 0, retrying: false };

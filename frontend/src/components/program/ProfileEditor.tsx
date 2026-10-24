@@ -29,7 +29,7 @@ const DONT_KNOW = "Weiss nicht";
 const EMPTY_FIELD: ProfileField = { value: null, status: "fehlt", origin: null, quote: null, note: null };
 
 /** Wide screens get a drawer from the right, small screens a centered modal. */
-function useWide() {
+export function useWide() {
   const query = "(min-width: 768px)";
   const [wide, setWide] = useState(() => window.matchMedia(query).matches);
   useEffect(() => {
