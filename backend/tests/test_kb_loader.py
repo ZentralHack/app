@@ -8,14 +8,21 @@ from app.config import KNOWLEDGE_BASE_DIR
 from app.knowledge_base.enums import PROFILE_ENUMS
 from app.knowledge_base.loader import KnowledgeBase, find_dead_references, load_knowledge_base
 from app.models.contract import InstrumentRef
+from tests.conftest import REFERENCE_PROGRAMS, copy_reference_kb
 
 
 @pytest.fixture
 def kb_dir(tmp_path: Path) -> Path:
-    """A copy of the knowledge base that tests may break."""
-    shutil.copytree(KNOWLEDGE_BASE_DIR / "schema", tmp_path / "schema")
-    shutil.copytree(KNOWLEDGE_BASE_DIR / "programs", tmp_path / "programs")
-    return tmp_path
+    """A copy of the reference knowledge base that tests may break."""
+    return copy_reference_kb(tmp_path)
+
+
+def test_full_knowledge_base_is_valid():
+    """Every program file in knowledge_base/programs loads, and every reference resolves."""
+    kb = load_knowledge_base(KNOWLEDGE_BASE_DIR)
+    assert [(f.program_id, f.errors) for f in kb.invalid] == []
+    assert set(REFERENCE_PROGRAMS) <= {p.id for p in kb.programs}
+    assert find_dead_references(kb) == []
 
 
 def test_loads_all_programs(kb: KnowledgeBase):
