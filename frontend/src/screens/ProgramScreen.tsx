@@ -1,16 +1,16 @@
 import { useState } from "react";
-import type { CombinationWarning, InstrumentMatch, ProfileField, RunResult, TimelineEntry } from "../api/contract";
+import type { CombinationWarning, InstrumentMatch, ProfileField, ProjectProfile, RunResult, TimelineEntry } from "../api/contract";
 import { Page } from "../components/layout/Page";
 import { FitBadge } from "../components/results/FitBadge";
 import { DeadlineFigure, Metric, SourceChip } from "../components/results/parts";
 import { matchTitle } from "../components/results/ResultCard";
 import { StatusSymbol } from "../components/ui/StatusSymbol";
 import { WarningNote } from "../components/plan/WarningNote";
-import { ProfileDrawer } from "../components/program/ProfileDrawer";
+import { ProfileEditor, type EditorAnswer } from "../components/program/ProfileEditor";
 import { host, sameStep, uniqueWarnings } from "../lib/plan";
 import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
 import { fieldLabel, formatDateShort } from "../lib/format";
-import { editorFields, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
+import { editorEntries, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
 import { visibleCriteria } from "../lib/results";
 import { LEVEL_LABEL, PHASE_LABEL, t } from "../text/de-CH";
 
@@ -19,8 +19,10 @@ interface Props {
   result: RunResult;
   onBack: () => void;
   onEditProfile: () => void;
-  /** Saves fields from the inline editor; the analysis runs again in the background. */
-  onSaveFields: (changes: Record<string, ProfileField>) => void;
+  /** The profile as read from the description, to show contradictions with later corrections. */
+  extracted: ProjectProfile | null;
+  /** Saves fields and answers from the inline editor; the analysis runs again in the background. */
+  onSaveEdits: (fields: Record<string, ProfileField>, answers: EditorAnswer[]) => void;
 }
 
 interface Step {
@@ -65,15 +67,16 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
 }
 
 /** Program page: hero with fit, funding rule and deadline; one timeline; criteria as a contributor list. */
-export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFields }: Props) {
+export function ProgramScreen({ match, result, extracted, onBack, onEditProfile, onSaveEdits }: Props) {
   const [editing, setEditing] = useState(false);
   const warnings = uniqueWarnings(
     (result.plan?.warnings ?? []).filter(w => w.items.some(i => i.program_id === match.program_id && (!i.instrument_id || i.instrument_id === match.instrument_id))),
   );
   const steps = buildSteps(match, result, warnings);
   // Judged against the profile of this run, so "Angabe fehlt" never names a field the user filled in.
-  const open = openCriteria(match, result.profile);
-  const fields = editorFields(open, result.profile);
+  const open = openCriteria(match, result.profile, extracted);
+  // The button only appears when at least one input can change an open criterion.
+  const entries = editorEntries(open);
   const contact = (result.plan?.contacts ?? []).find(c => host(c.url) && host(c.url) === host(match.links.info));
   const others = (w: CombinationWarning) =>
     w.items
@@ -132,7 +135,7 @@ export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFiel
         <section className="flex flex-col gap-3 rounded-xl border border-line px-5 py-4" data-testid="open-criteria">
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
             <b className="font-semibold">{t.program.openCount(open.length)}</b>
-            {fields.length > 0 && (
+            {entries.length > 0 && (
               <button type="button" onClick={() => setEditing(true)} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
                 {t.program.completeProfile}
               </button>
@@ -149,15 +152,16 @@ export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFiel
         </section>
       )}
 
-      <ProfileDrawer
+      <ProfileEditor
         isOpen={editing}
         programName={match.instrument_name}
-        fields={fields}
+        entries={entries}
         profile={result.profile}
+        extracted={extracted}
         onClose={() => setEditing(false)}
-        onSave={changes => {
+        onSave={(fields, answers) => {
           setEditing(false);
-          onSaveFields(changes);
+          onSaveEdits(fields, answers);
         }}
         onEditWholeProfile={() => {
           setEditing(false);
@@ -240,8 +244,9 @@ export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFiel
 
 function whyOpen({ why }: OpenCriterion): string {
   if (why.kind === "fehlt") return t.program.whyMissing(why.fields.map(fieldLabel).join(", "));
+  if (why.kind === "widerspruch") return t.program.whyConflict(why.conflicts.map(c => fieldLabel(c.field)).join(", "));
   if (why.kind === "reicht_nicht") return `${t.program.whyNotEnough}: ${why.reason}`;
-  return `${t.program.whyNotInProfile}: ${why.reason}`;
+  return t.program.whyApplication;
 }
 
 /** The open program is no longer in the result after a re-run: say so and why. */

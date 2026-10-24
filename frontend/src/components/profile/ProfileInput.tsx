@@ -1,6 +1,6 @@
 import { Calendar, ComboBox, DateField, DatePicker, Input, InputGroup, ListBox, Select, TextArea, TextField } from "@heroui/react";
 import { parseDate, type DateValue } from "@internationalized/date";
-import { useState, type ReactNode } from "react";
+import { useState, type KeyboardEvent, type ReactNode } from "react";
 import { I18nProvider } from "react-aria-components";
 import type { ProfileField } from "../../api/contract";
 import { fieldLabel, formatChf, groupDigits, parseChf } from "../../lib/format";
@@ -11,6 +11,8 @@ interface Props {
   name: string;
   field: ProfileField;
   onChange: (field: ProfileField) => void;
+  /** What the profile step read from the description; shown when the user has changed the value. */
+  original?: ProfileField;
 }
 
 type Value = ProfileField["value"];
@@ -21,8 +23,9 @@ const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 /**
  * One profile field as a plain input with its label above and the status in colour below.
  * Typing or picking makes the field "angegeben". An assumption can be confirmed with the button inside the field.
+ * Nothing has a default: an empty field shows "Bitte wählen" and stays "fehlt" until the user picks something.
  */
-export function ProfileInput({ name, field, onChange }: Props) {
+export function ProfileInput({ name, field, onChange, original }: Props) {
   const spec = specFor(name);
   const id = `pf-${name}`;
   const set = (value: Value) =>
@@ -36,8 +39,8 @@ export function ProfileInput({ name, field, onChange }: Props) {
       </span>
       {"hint" in spec && spec.hint && <span className="-mt-1 text-sm text-fg-2">{spec.hint}</span>}
       <div className="relative">
-        <Control id={id} spec={spec} field={field} set={set} padRight={confirm !== null} />
-        {confirm && (
+        <Control id={id} spec={spec} field={field} set={set} padRight={confirm !== null && spec.kind !== "yesno"} />
+        {confirm && spec.kind !== "yesno" && (
           <span className={`pointer-events-none absolute flex items-center ${spec.kind === "textarea" ? "right-3 bottom-2.5" : "inset-y-0"} ${OVERLAY_RIGHT[spec.kind]}`}>
             <button
               type="button"
@@ -49,9 +52,22 @@ export function ProfileInput({ name, field, onChange }: Props) {
           </span>
         )}
       </div>
-      <StatusLine field={field} />
+      <StatusLine field={field} original={original} onConfirm={spec.kind === "yesno" ? confirm : null} />
     </div>
   );
+}
+
+/**
+ * A closed dropdown would change its value on a single letter or arrow key (typeahead), without opening.
+ * That turned "Ja" into "Nein" by accident once; choosing has to happen in the open list.
+ */
+function blockClosedKeys(e: KeyboardEvent) {
+  const target = e.target as HTMLElement;
+  if (target.getAttribute("aria-expanded") === "true") return;
+  if (e.key.length === 1 || e.key === "ArrowLeft" || e.key === "ArrowRight") {
+    if (e.key === " ") return; // space opens the list
+    e.stopPropagation();
+  }
 }
 
 /** Space the confirm button keeps free for the field's own indicator (chevron, calendar). */
@@ -62,7 +78,7 @@ const OVERLAY_RIGHT: Record<FieldSpec["kind"], string> = {
   select: "right-10",
   multi: "right-10",
   combo: "right-10",
-  yesno: "right-10",
+  yesno: "",
   date: "right-11",
 };
 
@@ -71,30 +87,48 @@ function Control({ id, spec, field, set, padRight }: { id: string; spec: FieldSp
   const pad = padRight ? "pr-32" : "";
   const placeholder = "placeholder" in spec && spec.placeholder ? spec.placeholder : t.profile.choose;
 
-  if (spec.kind === "select" || spec.kind === "yesno") {
-    const options = spec.kind === "yesno" ? [{ id: "ja", label: "Ja" }, { id: "nein", label: "Nein" }] : spec.options;
-    const current =
-      field.value === null
-        ? null
-        : spec.kind === "yesno"
-          ? field.value === true || field.value === "Ja" ? "ja" : "nein"
-          : optionId(spec.options, String(field.value));
+  if (spec.kind === "yesno") {
+    // Two explicit buttons instead of a dropdown: a click is the only way to set or change the value.
+    const current = field.value === null ? null : field.value === true || field.value === "Ja";
+    return (
+      <div role="radiogroup" aria-labelledby={labelledBy} className="flex gap-2" data-yesno={id}>
+        {[true, false].map(v => (
+          <button
+            key={String(v)}
+            type="button"
+            role="radio"
+            aria-checked={current === v}
+            onClick={() => set(current === v ? null : v)}
+            className="h-10 min-w-24 rounded-lg border border-line-strong bg-surface px-4 font-semibold transition-colors hover:border-primary aria-checked:border-primary aria-checked:bg-primary-soft aria-checked:text-primary-ink"
+          >
+            {v ? t.profile.yes : t.profile.no}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  if (spec.kind === "select") {
+    const options = spec.options;
+    const current = field.value === null ? null : optionId(spec.options, String(field.value));
     const list = withValue(options, current ? [current] : []);
     return (
-      <Select aria-labelledby={labelledBy} value={current} onChange={key => set(key === null ? null : spec.kind === "yesno" ? key === "ja" : String(key))} placeholder={placeholder} fullWidth>
-        <Select.Trigger className={pad}>
-          <Select.Value />
-          <Select.Indicator />
-        </Select.Trigger>
-        <Popover>
-          {list.map(o => (
-            <ListBox.Item key={o.id} id={o.id} textValue={o.label}>
-              {o.label}
-              <ListBox.ItemIndicator />
-            </ListBox.Item>
-          ))}
-        </Popover>
-      </Select>
+      <div onKeyDownCapture={blockClosedKeys}>
+        <Select aria-labelledby={labelledBy} value={current} onChange={key => set(key === null ? null : String(key))} placeholder={placeholder} fullWidth>
+          <Select.Trigger className={pad}>
+            <Select.Value />
+            <Select.Indicator />
+          </Select.Trigger>
+          <Popover>
+            {list.map(o => (
+              <ListBox.Item key={o.id} id={o.id} textValue={o.label}>
+                {o.label}
+                <ListBox.ItemIndicator />
+              </ListBox.Item>
+            ))}
+          </Popover>
+        </Select>
+      </div>
     );
   }
 
@@ -103,27 +137,29 @@ function Control({ id, spec, field, set, padRight }: { id: string; spec: FieldSp
     const list = withValue(spec.options, values);
     const selected = values.map(v => optionId(list, v));
     return (
-      <Select
-        aria-labelledby={labelledBy}
-        selectionMode="multiple"
-        value={selected}
-        onChange={keys => set((keys as (string | number)[]).map(String))}
-        placeholder={placeholder}
-        fullWidth
-      >
-        <Select.Trigger className={pad}>
-          <Select.Value />
-          <Select.Indicator />
-        </Select.Trigger>
-        <Popover multiple>
-          {list.map(o => (
-            <ListBox.Item key={o.id} id={o.id} textValue={o.label}>
-              {o.label}
-              <ListBox.ItemIndicator />
-            </ListBox.Item>
-          ))}
-        </Popover>
-      </Select>
+      <div onKeyDownCapture={blockClosedKeys}>
+        <Select
+          aria-labelledby={labelledBy}
+          selectionMode="multiple"
+          value={selected}
+          onChange={keys => set((keys as (string | number)[]).map(String))}
+          placeholder={placeholder}
+          fullWidth
+        >
+          <Select.Trigger className={pad}>
+            <Select.Value />
+            <Select.Indicator />
+          </Select.Trigger>
+          <Popover multiple>
+            {list.map(o => (
+              <ListBox.Item key={o.id} id={o.id} textValue={o.label}>
+                {o.label}
+                <ListBox.ItemIndicator />
+              </ListBox.Item>
+            ))}
+          </Popover>
+        </Select>
+      </div>
     );
   }
 
@@ -227,7 +263,9 @@ function NumberInput({ labelledBy, spec, field, set, pad }: { labelledBy: string
 }
 
 /** Coloured status text under the input: green angegeben, amber Annahme, red fehlt. */
-function StatusLine({ field }: { field: ProfileField }) {
+function StatusLine({ field, original, onConfirm }: { field: ProfileField; original?: ProfileField; onConfirm: (() => void) | null }) {
+  const changedFromText =
+    field.origin === "korrektur" && original?.status === "angegeben" && original.quote && JSON.stringify(original.value) !== JSON.stringify(field.value) ? original.quote : null;
   if (field.status === "angegeben") {
     const detail = field.quote
       ? `«${field.quote}»`
@@ -242,6 +280,7 @@ function StatusLine({ field }: { field: ProfileField }) {
       <p className="text-sm text-ok">
         {t.profile.given}
         {detail && <span className="text-fg-2"> · {detail}</span>}
+        {changedFromText && <span className="block text-warn">{t.profile.textSaid(changedFromText)}</span>}
       </p>
     );
   }
@@ -249,6 +288,11 @@ function StatusLine({ field }: { field: ProfileField }) {
     return (
       <p className="text-sm text-warn">
         {t.profile.assumed} · {field.note ?? t.profile.derived}. {t.profile.pleaseCheck}
+        {onConfirm && (
+          <button type="button" onClick={onConfirm} className="ml-2 font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+            {t.profile.accept}
+          </button>
+        )}
       </p>
     );
   }

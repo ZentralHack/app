@@ -13,6 +13,8 @@ import { t } from "../text/de-CH";
 
 interface Props {
   profile: ProjectProfile;
+  /** As read from the description; a corrected field shows what the description said. */
+  extracted: ProjectProfile | null;
   /** From the form on page 1; not part of the profile. */
   company: string | null;
   onChange: (name: string, field: ProfileField) => void;
@@ -40,7 +42,7 @@ function isWide(name: string) {
   return spec.kind === "textarea" || ("wide" in spec && spec.wide === true);
 }
 
-export function ProfileScreen({ profile, company, onChange, busy, onBack, onConfirm }: Props) {
+export function ProfileScreen({ profile, extracted, company, onChange, busy, onBack, onConfirm }: Props) {
   const [missing, setMissing] = useState<string[] | null>(null);
   const f = profile.fields;
   const name = company;
@@ -105,7 +107,7 @@ export function ProfileScreen({ profile, company, onChange, busy, onBack, onConf
             <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
               {group.names.map(n => (
                 <div key={n} className={isWide(n) ? "md:col-span-2" : ""}>
-                  <ProfileInput name={n} field={f[n]} onChange={field => onChange(n, field)} />
+                  <ProfileInput name={n} field={f[n]} original={extracted?.fields[n]} onChange={field => onChange(n, field)} />
                 </div>
               ))}
             </div>

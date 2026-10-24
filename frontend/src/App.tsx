@@ -8,6 +8,7 @@ import { setProgramNames } from "./content/programs";
 import { useRun } from "./hooks/useRun";
 import { parseChf } from "./lib/format";
 import { findProgram, fitChange, sameProfile, unansweredQuestions, withFields } from "./lib/runFlow";
+import type { EditorAnswer } from "./components/program/ProfileEditor";
 import { CaptureScreen, type CaptureDraft } from "./screens/CaptureScreen";
 import { PlanScreen } from "./screens/PlanScreen";
 import { ProfileScreen } from "./screens/ProfileScreen";
@@ -52,6 +53,8 @@ export function App() {
   const [draft, setDraft] = useState<CaptureDraft>(EMPTY_DRAFT);
   const [clarification, setClarification] = useState<Clarification | null>(null);
   const [profile, setProfile] = useState<ProjectProfile | null>(null);
+  // The profile as read from the description (plus the form), before any correction: shows contradictions.
+  const [extracted, setExtracted] = useState<ProjectProfile | null>(null);
   const [questions, setQuestions] = useState<QuestionSet | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [runId, setRunId] = useState<string | null>(null);
@@ -173,6 +176,7 @@ export function App() {
       fields.unternehmensalter = { value: new Date().getFullYear() - year, status: "angegeben", origin: "formular", quote: null, note: `gegründet ${year}` };
     const p = { ...res.profile, fields };
     setProfile(p);
+    setExtracted(p);
     return p;
   }
 
@@ -238,14 +242,19 @@ export function App() {
       }
     });
 
-  /** Inline editor on a program page: save, stay, run again in the background. */
-  const saveFields = (changes: Record<string, ProfileField>) =>
+  /**
+   * Inline editor on a program page: save, stay, run again in the background. Field edits go into the
+   * profile; answers to criterion questions go with the run, exactly like Rückfragen.
+   */
+  const saveEdits = (changes: Record<string, ProfileField>, edits: EditorAnswer[]) =>
     withBusy(async () => {
       if (!profile) return;
       const p = withFields(profile, changes);
       setProfile(p);
-      setQuestions(unansweredQuestions(await api.buildQuestions(p), answers));
-      await launchInBackground(p, null, {});
+      const given = Object.fromEntries(edits.map(e => [e.question.id, e.answer]));
+      setAnswers(a => ({ ...a, ...given }));
+      setQuestions(unansweredQuestions(await api.buildQuestions(p), { ...answers, ...given }));
+      await launchInBackground(p, { questions: edits.map(e => e.question) as QuestionSet["questions"], skip_reason: null }, given);
     });
 
   /** Roadmap: only steps already reached can be opened. Profile and Rückfragen after a result are an edit. */
@@ -316,7 +325,7 @@ export function App() {
           />
         )}
         {step === 2 && profile && (
-          <ProfileScreen profile={profile} company={company} onChange={updateField} busy={busy} onBack={returnTo ? returnBack : () => go(1)} onConfirm={confirmProfile} />
+          <ProfileScreen profile={profile} extracted={extracted} company={company} onChange={updateField} busy={busy} onBack={returnTo ? returnBack : () => go(1)} onConfirm={confirmProfile} />
         )}
         {step === 3 && questions && (
           <QuestionsScreen questions={questions} answers={answers} onAnswer={setAnswer} busy={busy} onBack={() => go(2)} onNext={startRun} />
@@ -335,7 +344,7 @@ export function App() {
           />
         )}
         {step === 5 && match && run.result && (
-          <ProgramScreen match={match} result={run.result} onEditProfile={editProfile} onSaveFields={saveFields} onBack={backToResults} />
+          <ProgramScreen match={match} result={run.result} extracted={extracted} onEditProfile={editProfile} onSaveEdits={saveEdits} onBack={backToResults} />
         )}
         {step === 5 && found && found.kind !== "match" && (
           <ProgramGone

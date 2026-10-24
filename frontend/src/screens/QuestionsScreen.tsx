@@ -32,7 +32,8 @@ function displayAnswer(q: Question, answer: string) {
 
 /**
  * One question at a time. Button answers advance on their own; number and date answers
- * continue with Weiter or Enter. A prefilled assumption is preselected and needs one click to confirm.
+ * continue with Weiter or Enter. An assumption from the profile is shown as a suggestion; it only becomes an
+ * answer when the user clicks it, so nothing is recorded that the user did not choose.
  * There is no skipping: every question needs an answer ("Weiss nicht" counts as one).
  */
 export function QuestionsScreen({ questions, answers, onAnswer, busy, onBack, onNext }: Props) {
@@ -61,11 +62,6 @@ export function QuestionsScreen({ questions, answers, onAnswer, busy, onBack, on
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
-  // Preselect the assumed answer once, when the question opens.
-  useEffect(() => {
-    if (q?.prefill && answers[q.id] === undefined) onAnswer(q.id, q.prefill);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q?.id]);
 
   useEffect(() => {
     if (!q) return;
@@ -141,7 +137,7 @@ export function QuestionsScreen({ questions, answers, onAnswer, busy, onBack, on
             <div className="flex flex-col gap-3">
               <h1 className="text-3xl">{q.text}</h1>
               <p className="text-lg text-fg-2">{q.why}</p>
-              {q.prefill && answer === q.prefill && !clicked && <p className="text-sm font-semibold text-warn">{t.questions.prefilled}</p>}
+              {q.prefill && answer === undefined && <p className="text-sm font-semibold text-warn">{t.questions.suggested(q.prefill)}</p>}
             </div>
 
             <div className="flex flex-col gap-3">
@@ -149,13 +145,14 @@ export function QuestionsScreen({ questions, answers, onAnswer, busy, onBack, on
               {q.input === "datum" && <DateAnswer value={typed ? answer! : ""} onChange={v => onAnswer(q.id, v)} />}
               {q.options.map((option, i) => {
                 const selected = answer === option;
+                const suggested = answer === undefined && q.prefill === option;
                 return (
                   <button
                     key={option}
                     type="button"
                     aria-pressed={selected}
                     onClick={() => choose(option)}
-                    className="group flex h-12 w-full max-w-xl items-center gap-4 rounded-lg border border-line-strong bg-surface px-4 text-left transition-all hover:border-primary hover:bg-primary-soft active:scale-[.99] aria-pressed:border-primary aria-pressed:bg-primary-soft aria-pressed:shadow-[inset_0_0_0_1px_var(--app-accent)]"
+                    className={`group flex h-12 w-full max-w-xl items-center gap-4 rounded-lg border bg-surface px-4 text-left ${suggested ? "border-dashed border-warn" : "border-line-strong"} transition-all hover:border-primary hover:bg-primary-soft active:scale-[.99] aria-pressed:border-primary aria-pressed:bg-primary-soft aria-pressed:shadow-[inset_0_0_0_1px_var(--app-accent)]`}
                   >
                     {q.input === "auswahl" && (
                       <kbd className="grid size-7 flex-none place-items-center rounded-md border border-line-strong bg-surface text-xs font-semibold text-fg-2 transition-colors group-aria-pressed:border-primary group-aria-pressed:bg-primary group-aria-pressed:text-white">
