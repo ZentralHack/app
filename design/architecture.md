@@ -47,46 +47,44 @@ backend/
   pyproject.toml
   app/
     main.py                     FastAPI app, router registration, startup
-    config.py                   settings from environment (.env)
-    api/
-      profile.py                POST /api/profile
-      questions.py              POST /api/questions
-      runs.py                   POST /api/runs, GET /api/runs/{id}, SSE events, retry
-      programs.py               GET /api/programs (knowledge base overview)
-    models/                     Pydantic models (the contract)
-      profile.py
-      questions.py
-      match.py
-      plan.py
-      trace.py
+    config.py                   settings from environment (backend/.env)
+    runs.py                     in-memory run store
+    trace.py                    RunRecorder: numbered, contract-validated events, replay
+    demo.py                     DEMO_REPLAY: plays stored real results back
+    api/                        one module per route group, deps.py, errors.py (one handler)
+    models/
+      contract.py               generated from design/contract.schema.json, do not edit
       program.py                typed view of a knowledge base file
     knowledge_base/
-      loader.py                 load, validate, index programs and the question catalog at startup
+      loader.py                 load and validate programs at startup, dead references
+      flat.py                   FlatInstrument: instrument plus its program data
+      partners.py               generated required-partner criteria and lever texts
+      profile_fields.py         value types of the core profile fields
+      catalog.py, catalog_checks.py, catalog_loader.py   question catalog, stage 1 checks
+      questions.py              fallback questions from criteria[].question
     agent/
-      orchestrator.py           runs steps 3 to 6, emits trace events
-      profile.py                step 1
-      questions.py              step 2 (pure code, picks from the question catalog)
+      orchestrator.py           runs steps 3 to 6, emits trace events, retry
+      profile.py                step 1 (LLM) and its code checks
+      normalize.py              enum normalisation, too-vague check, client profile validation
+      answers.py                apply_answers
+      questions.py              step 2 (pure code)
       prefilter.py              step 3 (pure code)
-      matching.py               step 4
+      matching.py               step 4 (LLM) and post-checks
       scoring.py                step 5 (pure code)
-      plan.py                   step 6
+      deadlines.py, plan.py     step 6a-c (pure code)
+      plan_texts.py             step 6d (LLM) with checks and standard texts
     llm/
-      client.py                 LLMClient protocol + Anthropic implementation
+      client.py                 LLMClient protocol, tiers
+      openai_client.py          OpenAI implementation (Responses API, strict)
+      schema.py                 LLMOutput and the strict-mode check
       fake.py                   deterministic fake for tests
+      usage.py                  tokens and cost per call and per run
       prompts/                  one Markdown prompt per step
-    trace.py                    TraceEmitter (per-run event queue)
-    querylog.py                 anonymised aggregate log
-  scripts/
-    build_question_catalog.py   generates and cross-checks the question catalog (offline)
-  tests/
-    test_prefilter.py
-    test_questions.py
-    test_question_catalog.py
-    test_scoring.py
-    test_plan.py
-    test_kb_loader.py
+  scripts/                      generate_contract_models, catalog_fingerprints, llm_smoke
+  demo/                         stored results for DEMO_REPLAY (written by the eval runner)
+  tests/                        unit, API and contract tests; live tests behind marker `live`
   eval/
-    run_eval.py                 runs tests/projects/*.json, prints a report
+    run_eval.py                 runs tests/projects/*.json against the real models, prints a report
 frontend/
   package.json
   src/
@@ -142,7 +140,9 @@ The pre-filter runs before the questions step as well, so questions are only ask
 - Extracts the fields named in `criteria[].profile_fields` across the knowledge base (company location, size, legal form, project type, budget, timing, partners, and so on).
 - The fields the pre-filter needs are mapped to knowledge base enums: `applicant_type` to `filter.applicant_types`, `art_des_vorhabens` to `filter.project_types`, `branche` to `filter.sectors`, `partner` to `filter.required_partners`.
 - Each field has a `value`, a `status` (`angegeben`, `annahme`, `fehlt`) and, for `angegeben`, the quote from the user text.
-- If the text is too vague to say what the money is for, the step returns `needs_clarification` with one question instead of a profile.
+- Code checks after the call: a quote for `angegeben` must occur in the text (whitespace and case ignored), otherwise the field becomes `annahme`; values must fit the field type; enum values the knowledge base does not know are dropped with a note. Form fields (Gemeinde, size, budget) always win and count as `angegeben`.
+- The model also returns `purpose_quote`, the words saying what the money is for. Without such a quote from the text, or with neither project type nor description, the step returns `needs_clarification` with one question instead of a profile.
+- `art_des_vorhabens: []` (stated) means: the purpose is clear, but no project type of the knowledge base fits. The pre-filter then drops every instrument with `vorhaben`.
 
 ### Step 2: Questions (pure code)
 No LLM call at runtime. Every question comes ready-made from the question catalog (see next section); code only decides which ones to ask.
@@ -191,7 +191,8 @@ All rules except `verfuegbarkeit` only drop on a known profile value (`angegeben
 - Input: the profile and one instrument with its criteria, exclusions and the program's `general_criteria`.
 - Output per criterion: `state` (`erfuellt`, `annahme`, `unbekannt`, `nicht_erfuellt`, `nicht_anwendbar`), a one-line German reason, and the profile field ids used as evidence.
 - `nicht_anwendbar` is only allowed for criteria with an `applies_if` condition.
-- Code post-check: `erfuellt` or `nicht_erfuellt` without evidence is downgraded to `unbekannt`. Unknown criterion ids are dropped and logged.
+- The model returns evidence field names and verbatim quotes. Code post-check: `erfuellt` or `nicht_erfuellt` needs a known evidence field and a quote that occurs in the profile, otherwise `unbekannt`; `erfuellt` resting only on assumed fields becomes `annahme`; `nicht_anwendbar` needs `applies_if`. Unknown criterion ids are dropped and logged, missing ones become `unbekannt`. Exclusion hits need an existing id and a quote. Downgrades are counted per run.
+- A failed call (after the client's retries) gives the instrument status `fehler`; the run continues.
 - Calls run with `asyncio.gather` behind a semaphore (`MAX_CONCURRENCY`, default 4).
 
 ### Step 5: Scoring (pure code)
@@ -210,7 +211,7 @@ Within a level, instruments are ranked by: share of applicable `muss` criteria `
 - Code computes the next deadline per fitting instrument from `timing.deadline` and `today`: the next of `next_dates` for fixed dates, `projektstart` for `vor_projektstart`. LIB: costs of year X are claimed by 31 January X+2 (claim years 2026 and 2027 both by 31.01.2027).
 - Code places each fitting instrument in one of three phases: **Jetzt** (levers to act on before any application, and instruments recommended beforehand via `empfohlen_vorher`), **Vor Projektstart** (deadline type `vor_projektstart`), **Gesuch** (all others, sorted by date). An instrument with a `voraussetzung` comes after its prerequisite.
 - Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`). Rules whose `with` target (program or `program:instrument`) does not exist in the knowledge base are ignored and logged, never shown.
-- The LLM writes the gap hints, using only the `levers` of that instrument, and short next-step texts per instrument. It gets the computed dates; it never computes dates itself.
+- The LLM writes the gap hints, using only the `levers` of that instrument, and short next-step texts per instrument. It gets the computed dates; it never computes dates itself. Code checks the same ids one to one and no new dates, years or programs; otherwise, or if the call fails, neutral texts from the knowledge base are used.
 
 ### Optional modules
 - **Discovery** (`agent/discovery.py`): searches official websites for programs that are not in the knowledge base. Results are shown separately, tagged "nicht verifiziert", and never scored.

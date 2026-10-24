@@ -141,6 +141,16 @@ uv run ruff check . && uv run ruff format --check .
 uv run uvicorn app.main:app --reload   # starten, http://localhost:8000/api/health
 ```
 
+In `backend/.env` gehören `OPENAI_API_KEY`, `MODEL_EXTRACT` und `MODEL_REASON`. Ohne sie laufen Wissensbasis, Rückfragen und Tests, die KI-Schritte antworten mit 503.
+
+```
+uv run python -m scripts.llm_smoke     # ein Mini-Aufruf pro Modell
+uv run pytest -m live                  # echte KI-Aufrufe, standardmässig aus
+uv run python -m eval.run_eval         # alle Testprojekte gegen die echten Modelle, mit Bericht
+```
+
+`DEMO_REPLAY=true` spielt die gespeicherten Ergebnisse in `backend/demo/` ab, wenn der Eingabetext einem Testprojekt entspricht (für den Pitch ohne Netz). Neu erzeugen mit `uv run python -m eval.run_eval --save demo`.
+
 Die Contract-Modelle in `backend/app/models/contract.py` werden aus `design/contract.schema.json` erzeugt: `uv run python scripts/generate_contract_models.py`.
 
 ### Frontend
