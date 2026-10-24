@@ -4,7 +4,7 @@ from fractions import Fraction
 
 import pytest
 
-from app.agent.scoring import RankEntry, assign_ranks, score
+from app.agent.scoring import RankEntry, assign_ranks, mostly_unknown, muss_met_share, score
 from app.config import REPO_DIR
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.loader import KnowledgeBase
@@ -44,7 +44,8 @@ def test_sensora_lib_fits_with_missing_infos(lib, sensora_criteria):
     assert nachhaltigkeit.source.locator == "N 17"
     assert result.gaps[0].lever is None
     assert result.gaps[0].source.locator == "N 21-23"
-    assert result.muss_met_share == Fraction(6, 12)
+    # 6 met and 4 assumed (counting half) of 12 applicable muss criteria.
+    assert result.muss_met_share == Fraction(8, 12)
 
 
 def test_every_unknown_muss_has_a_gap(lib, sensora_criteria):
@@ -106,8 +107,8 @@ def test_missing_partner_is_fixable(lib, sensora_criteria):
     assert result.gaps[0].type == "anpassung"
 
 
-def _entry(key, fit, share=Fraction(1), deadline=None, entitlement="kein_rechtsanspruch"):
-    return RankEntry(key, fit, share, deadline, entitlement)
+def _entry(key, fit, share=Fraction(1), deadline=None, entitlement="kein_rechtsanspruch", **flags):
+    return RankEntry(key, fit, share, deadline, entitlement, **flags)
 
 
 def test_ranking_order():
@@ -130,3 +131,32 @@ def test_ranking_order():
         "anpassung": 5,
         "nicht": None,
     }
+
+
+def test_assumed_counts_half(sensora_criteria):
+    """hr_luzern is `annahme` in the example: met adds the other half, unknown removes its half."""
+    base = muss_met_share(sensora_criteria)
+    half = Fraction(1, 2 * 12)  # 12 applicable muss criteria
+    assert muss_met_share(_with(sensora_criteria, hr_luzern="erfuellt")) == base + half
+    assert muss_met_share(_with(sensora_criteria, hr_luzern="unbekannt")) == base - half
+
+
+def test_mostly_unknown(sensora_criteria):
+    assert not mostly_unknown(sensora_criteria)
+    unknown = {c.criterion_id: "unbekannt" for c in sensora_criteria if c.kind == "muss"}
+    assert mostly_unknown(_with(sensora_criteria, **unknown))
+    # 8 of 12 unknown is exactly two thirds, not more.
+    eight = dict(list(unknown.items())[:8])
+    assert not mostly_unknown(_with(sensora_criteria, **eight))
+
+
+def test_advice_after_money_and_floor_after_known():
+    ranks = assign_ranks(
+        [
+            _entry("beratung-gut", "passt_gut", advisory=True),
+            _entry("geld-unklar", "passt_mit_anpassung", Fraction(1), mostly_unknown=True),
+            _entry("geld-anpassung", "passt_mit_anpassung", Fraction(1, 4)),
+            _entry("geld-gut", "passt_gut", Fraction(1, 2)),
+        ]
+    )
+    assert ranks == {"geld-gut": 1, "geld-anpassung": 2, "geld-unklar": 3, "beratung-gut": 4}

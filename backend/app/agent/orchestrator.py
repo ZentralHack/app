@@ -18,7 +18,14 @@ from app.agent.matching import check_instrument
 from app.agent.plan import PlanItem, build_plan
 from app.agent.plan_texts import write_plan_texts
 from app.agent.prefilter import prefilter
-from app.agent.scoring import RankEntry, assign_ranks, muss_met_share, score
+from app.agent.scoring import (
+    RankEntry,
+    assign_ranks,
+    is_advisory,
+    mostly_unknown,
+    muss_met_share,
+    score,
+)
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.loader import KnowledgeBase
 from app.llm.client import LLMClient
@@ -224,6 +231,8 @@ def _rank(ctx: _Context) -> None:
                 muss_met_share(match.criteria),
                 match.deadline.next_date,
                 _item(ctx, match).program.entitlement.type,
+                advisory=is_advisory(match.instrument_type),
+                mostly_unknown=mostly_unknown(match.criteria),
             )
         )
     ranks = assign_ranks(entries)
