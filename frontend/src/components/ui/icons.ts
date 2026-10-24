@@ -4,6 +4,8 @@ export {
   ArrowLeft,
   ArrowRight,
   Calendar,
+  CalendarPlus01 as CalendarPlus,
+  MessageCircle01 as Chat,
   LinkExternal01 as External,
   Mail01 as Mail,
   Phone,

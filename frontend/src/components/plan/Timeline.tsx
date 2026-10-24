@@ -3,7 +3,10 @@ import { daysUntil, formatDateShort } from "../../lib/format";
 import { host, sameStep, uniqueWarnings } from "../../lib/plan";
 import { isAdvisory } from "../../lib/results";
 import { PHASE_LABEL, t } from "../../text/de-CH";
-import { COST_YEAR, urgencyOf, URGENCY_TEXT } from "../results/parts";
+import { COST_YEAR, deadlineInfo } from "../../lib/deadline";
+import { DISCLAIMER, deadlineEvent, downloadIcs, icsFilename, type CalendarEvent } from "../../lib/ics";
+import { CalendarButton } from "../ui/CalendarButton";
+import { urgencyOf, URGENCY_TEXT } from "../results/parts";
 import { External, Mail, Phone } from "../ui/icons";
 import { WarningNote } from "./WarningNote";
 
@@ -50,8 +53,9 @@ export function planItems(result: RunResult): { items: PlanItem[]; looseContacts
     title: e.title,
     // A claim on past costs (LIB) says which years the date stands for.
     actions: [e.action, e.date && e.date_rule && COST_YEAR.test(e.date_rule) ? e.date_rule : ""].filter(Boolean),
-    date: e.date,
-    when: e.date ? formatDateShort(e.date) : e.date_rule,
+    // Never a date in the past (a reached project start): the rule says what is wrong instead.
+    date: e.date && e.date >= result.today ? e.date : null,
+    when: e.date && e.date >= result.today ? formatDateShort(e.date) : e.date_rule,
     link: null,
     warnings: [],
     contact: null,
@@ -115,6 +119,30 @@ export function planItems(result: RunResult): { items: PlanItem[]; looseContacts
   return { items, looseContacts };
 }
 
+function matchOfItem(item: PlanItem, result: RunResult) {
+  return result.matches.find(m => m.program_id === item.programId && m.instrument_id === item.instrumentId);
+}
+
+/** A dated plan step as a calendar event: the offer's deadline event when the step is its submission. */
+export function planEvent(item: PlanItem, result: RunResult): CalendarEvent | null {
+  if (!item.date || item.date < result.today) return null;
+  const match = matchOfItem(item, result);
+  if (match && match.deadline.next_date === item.date) return deadlineEvent(match, result);
+  return {
+    uid: `${result.run_id}-${item.key}-${item.date}@fundpilot`.replace(/[^A-Za-z0-9@._-]/g, "-"),
+    date: item.date,
+    title: `Frist: ${item.title}${item.program ? ` (${item.program})` : ""}`,
+    description: [...item.actions, item.link ? `Link: ${item.link}` : null, `${DISCLAIMER}.`].filter(Boolean).join("\n"),
+    url: item.link,
+  };
+}
+
+/** Every dated, future step of the plan, once per date and offer. */
+export function planEvents(items: PlanItem[], result: RunResult): CalendarEvent[] {
+  const events = items.map(i => planEvent(i, result)).filter((e): e is CalendarEvent => e !== null);
+  return events.filter((e, i) => events.findIndex(x => x.uid === e.uid) === i);
+}
+
 interface Props {
   result: RunResult;
   items: PlanItem[];
@@ -143,6 +171,10 @@ export function Timeline({ result, items, done, onToggle }: Props) {
     w.items
       .filter(i => !(i.program_id === own.programId && (!i.instrument_id || i.instrument_id === own.instrumentId)))
       .map(i => result.matches.find(x => x.program_id === i.program_id && (!i.instrument_id || x.instrument_id === i.instrument_id))?.instrument_name ?? i.program_id);
+  const label = (item: PlanItem) => {
+    const match = matchOfItem(item, result);
+    return match && match.deadline.next_date === item.date ? deadlineInfo(match.deadline, result.today).label : null;
+  };
   const phases = PHASES.map(p => ({ phase: p, list: items.filter(i => i.phase === p).sort((a, b) => (a.date ?? "9").localeCompare(b.date ?? "9")) })).filter(p => p.list.length > 0);
 
   return (
@@ -212,7 +244,11 @@ export function Timeline({ result, items, done, onToggle }: Props) {
                     ))}
                   </div>
                   {item.date && (
-                    <span className={`col-start-2 text-sm font-semibold tabular-nums md:col-start-3 md:row-start-1 md:text-right ${URGENCY_TEXT[urgencyOf(days)]}`}>{item.when}</span>
+                    <span className="col-start-2 flex flex-col items-start gap-1 md:col-start-3 md:row-start-1 md:items-end md:text-right">
+                      <span className={`text-sm font-semibold tabular-nums ${URGENCY_TEXT[urgencyOf(days)]}`}>{item.when}</span>
+                      {label(item) && <span className="text-xs text-fg-2">{label(item)}</span>}
+                      <CalendarButton size="sm" onClick={() => downloadIcs(icsFilename(item.title), [planEvent(item, result)!])} />
+                    </span>
                   )}
                 </li>
               );

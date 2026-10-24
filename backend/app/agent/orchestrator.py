@@ -257,7 +257,13 @@ def _rank(ctx: _Context) -> None:
 async def _plan(ctx: _Context) -> None:
     result = ctx.recorder.result
     items = [
-        PlanItem(_item(ctx, m), m.fit, m.gaps, next_deadline(_item(ctx, m), ctx.profile, ctx.today))
+        PlanItem(
+            _item(ctx, m),
+            m.fit,
+            m.gaps,
+            next_deadline(_item(ctx, m), ctx.profile, ctx.today),
+            m.deadline.rule,
+        )
         for m in result.matches
         if m.fit is not None
     ]

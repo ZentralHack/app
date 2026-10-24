@@ -156,9 +156,16 @@ export const t = {
     nextRound: (date: string) => ` Nächste Runde ab ${date}.`,
     failed: (name: string) => `${name}: Prüfung fehlgeschlagen. Die übrigen Ergebnisse sind vollständig.`,
   },
+  calendar: {
+    add: "Frist in Kalender eintragen",
+    all: "Alle Fristen in Kalender",
+    allFile: "foerderfahrplan-fristen.ics",
+  },
   program: {
     back: "Alle Ergebnisse",
-    deadline: "Nächste Frist",
+    deadline: "Frist",
+    more: "Mehr anzeigen",
+    less: "Weniger anzeigen",
     met: "Kriterien erfüllt",
     open: "Offene Punkte",
     metValue: (a: number, b: number) => `${a} von ${b}`,

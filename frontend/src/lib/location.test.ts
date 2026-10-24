@@ -19,5 +19,5 @@ import { deadlineText } from "../components/results/parts";
 
 it("LIB date explains the claim year, without urgency colour", () => {
   const d = deadlineText({ type: "fester_termin_jaehrlich", rule: "Beitragsjahr 2029, bemessen auf Ihre Kosten im Geschäftsjahr 2027.", next_date: "2029-01-31" }, "2026-10-24");
-  expect(d).toEqual({ main: "31.01.2029", sub: "Beitragsjahr 2029, bemessen auf Ihre Kosten im Geschäftsjahr 2027", urgency: "normal" });
+  expect(d).toEqual({ main: "31.01.2029", sub: "Eingabefrist Gesuch Beitragsjahr 2029 · bemessen auf Ihre Kosten im Geschäftsjahr 2027", urgency: "normal", problem: false });
 });

@@ -47,8 +47,31 @@ def next_deadline(item: FlatInstrument, profile: ProjectProfile, today: date) ->
     if spec.type in FIXED_DATE_TYPES:
         return min((d for d in spec.next_dates if d >= today), default=None)
     if spec.type == "vor_projektstart":
-        return start
+        # A start that is reached is no deadline any more, never a date in the past.
+        return start if start is not None and start > today else None
     return None
+
+
+# Event before which a `vor_projektstart` application is due, as a noun.
+EVENT_NOUNS = {
+    "projektstart": "Projektstart",
+    "baubeginn": "Baubeginn",
+    "installationsbeginn": "Installationsbeginn",
+}
+
+
+def before_start_rule(item: FlatInstrument, profile: ProjectProfile, today: date) -> str | None:
+    """For `vor_projektstart` deadlines: what is due before which event, or, when the project
+    start is already reached, the problem instead of a date."""
+    spec = item.instrument.timing.deadline
+    if spec.type != "vor_projektstart":
+        return None
+    event = (spec.relative and spec.relative.event) or "projektstart"
+    noun = EVENT_NOUNS.get(event, "Projektstart")
+    start = project_start(profile)
+    if start is not None and start <= today:
+        return f"Projektstart liegt vor dem Gesuch: Gesuch muss vor {noun} eingereicht werden."
+    return spec.rule or f"Gesuch vor {noun} einreichen."
 
 
 def _next_january_31(today: date) -> date:
@@ -59,7 +82,8 @@ def _next_january_31(today: date) -> date:
 def deadline(item: FlatInstrument, profile: ProjectProfile, today: date) -> Deadline:
     spec = item.instrument.timing.deadline
     due = next_deadline(item, profile, today)
-    return Deadline(type=spec.type, rule=cost_year_note(item, due) or spec.rule, next_date=due)
+    rule = cost_year_note(item, due) or before_start_rule(item, profile, today) or spec.rule
+    return Deadline(type=spec.type, rule=rule, next_date=due)
 
 
 def cost_year_note(item: FlatInstrument, due: date | None) -> str | None:

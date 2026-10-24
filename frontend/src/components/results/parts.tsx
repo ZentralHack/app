@@ -2,6 +2,7 @@
 import type { ReactNode } from "react";
 import type { CriterionResult, Deadline, SourceLink } from "../../api/contract";
 import { daysUntil, formatDateShort } from "../../lib/format";
+import { COST_YEAR, deadlineInfo } from "../../lib/deadline";
 import { visibleCriteria } from "../../lib/results";
 import { STATE_LABEL, t } from "../../text/de-CH";
 
@@ -41,26 +42,23 @@ export function urgencyOf(days: number | null): Urgency {
   return days < 7 ? "dringend" : days < 30 ? "bald" : "normal";
 }
 
-/** Rule the backend writes for deadlines that follow the cost year (deadlines.py `cost_year_note`). */
-export const COST_YEAR = /^Beitragsjahr \d{4}, bemessen auf Ihre Kosten im Geschäftsjahr \d{4}\.?$/;
-
-/** "31.01.2027" with "in 99 Tagen", or a short rule such as "Laufend". */
-export function deadlineText(deadline: Deadline, today: string): { main: string; sub: string | null; urgency: Urgency } {
-  if (deadline.next_date && deadline.rule && COST_YEAR.test(deadline.rule)) {
-    // A claim on past costs (LIB): the line explains the year; no urgency colour.
-    return { main: formatDateShort(deadline.next_date), sub: deadline.rule.replace(/\.$/, ""), urgency: "normal" };
-  }
-  if (deadline.next_date) {
-    const days = daysUntil(deadline.next_date, today);
-    return { main: formatDateShort(deadline.next_date), sub: t.results.inDays(days), urgency: urgencyOf(days) };
-  }
-  const label: Partial<Record<Deadline["type"], string>> = {
-    laufend: "Laufend",
-    vor_projektstart: "Vor Projektstart",
-    nach_abschluss: "Nach Abschluss",
-    ausschreibung: "Nach Ausschreibung",
+/**
+ * "31.01.2027" with what is due and "in 99 Tagen"; without a date what is due ("Gesuch jederzeit möglich");
+ * a past date never shows: the problem replaces it.
+ */
+export function deadlineText(deadline: Deadline, today: string): { main: string; sub: string | null; urgency: Urgency; problem: boolean } {
+  const info = deadlineInfo(deadline, today);
+  if (info.problem) return { main: info.problem, sub: info.label, urgency: "bald", problem: true };
+  if (!info.date) return { main: info.label, sub: null, urgency: "normal", problem: false };
+  const days = daysUntil(info.date, today);
+  // A claim on past costs (LIB) has a date years ahead: no countdown, no urgency colour.
+  const costYear = COST_YEAR.test(deadline.rule ?? "");
+  return {
+    main: formatDateShort(info.date),
+    sub: [info.label, info.note, costYear ? null : t.results.inDays(days)].filter(Boolean).join(" · "),
+    urgency: costYear ? "normal" : urgencyOf(days),
+    problem: false,
   };
-  return { main: label[deadline.type] ?? t.results.noDeadline, sub: null, urgency: "normal" };
 }
 
 /** Small muted label above a value. */
@@ -76,9 +74,16 @@ export function Metric({ label, children, className = "" }: { label: string; chi
 /** Deadline as a figure with urgency colour. */
 export function DeadlineFigure({ deadline, today, size = "card" }: { deadline: Deadline; today: string; size?: "hero" | "card" }) {
   const d = deadlineText(deadline, today);
+  if (d.problem)
+    return (
+      <span className="flex max-w-[28em] flex-col gap-0.5" data-testid="deadline-problem">
+        <span className={`${size === "hero" ? "text-lg" : "text-base"} font-semibold text-warn`}>{d.main}</span>
+      </span>
+    );
+  const big = d.main.length <= 10; // a date; a label ("Gesuch jederzeit möglich") is set smaller
   return (
     <span className="flex flex-col">
-      <span className={`${size === "hero" ? "text-4xl" : "text-xl"} font-semibold tracking-tight tabular-nums ${URGENCY_TEXT[d.urgency]}`}>{d.main}</span>
+      <span className={`${size === "hero" ? (big ? "text-4xl" : "text-2xl") : big ? "text-xl" : "text-base"} font-semibold tracking-tight tabular-nums ${URGENCY_TEXT[d.urgency]}`}>{d.main}</span>
       {d.sub && <span className={`text-sm ${d.urgency === "normal" ? "text-fg-2" : URGENCY_TEXT[d.urgency]}`}>{d.sub}</span>}
     </span>
   );

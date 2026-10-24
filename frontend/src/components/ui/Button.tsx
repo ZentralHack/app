@@ -15,6 +15,7 @@ interface Props {
   onClick?: () => void;
   className?: string;
   "aria-label"?: string;
+  "data-testid"?: string;
   children: ReactNode;
 }
 

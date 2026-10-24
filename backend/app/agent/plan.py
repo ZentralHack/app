@@ -48,6 +48,8 @@ class PlanItem:
     fit: Fit
     gaps: list[Gap]
     next_deadline: date | None
+    # The match's deadline rule (deadlines.py), e.g. the problem when the project start is reached.
+    deadline_rule: str | None = None
 
 
 def build_plan(items: list[PlanItem], rejected: list[Rejected], kb: KnowledgeBase) -> FundingPlan:
@@ -119,7 +121,7 @@ def _application_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
                     _title(p.item),
                     "Gesuch einreichen.",
                     when=p.next_deadline,
-                    rule=spec.rule or EVENT_LABELS[event],
+                    rule=p.deadline_rule or spec.rule or EVENT_LABELS[event],
                 )
             )
         else:

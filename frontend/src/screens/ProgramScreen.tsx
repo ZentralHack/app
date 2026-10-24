@@ -9,7 +9,11 @@ import { WarningNote } from "../components/plan/WarningNote";
 import { ChatDrawer } from "../components/program/ChatDrawer";
 import { ProfileEditor, type EditorAnswer } from "../components/program/ProfileEditor";
 import { host, sameStep, uniqueWarnings } from "../lib/plan";
-import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
+import { Button } from "../components/ui/Button";
+import { CalendarButton } from "../components/ui/CalendarButton";
+import { ArrowLeft, Chat, External, Mail, Phone } from "../components/ui/icons";
+import { deadlineInfo } from "../lib/deadline";
+import { deadlineEvent, downloadIcs, icsFilename } from "../lib/ics";
 import { fieldLabel, formatDateShort } from "../lib/format";
 import { criteriaGroups, criterionAnchor, groupCounts, type CriteriaItem } from "../lib/criteriaGroups";
 import { editorEntries, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
@@ -47,9 +51,19 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
   (result.plan?.timeline ?? [])
     .filter(e => e.program_id === match.program_id && e.instrument_id === match.instrument_id)
     .sort((a, b) => PHASE_ORDER[a.phase] - PHASE_ORDER[b.phase])
-    .forEach((e, i) =>
-      steps.push({ key: `tl${i}`, when: e.date ? formatDateShort(e.date) : (e.date_rule ?? PHASE_LABEL[e.phase]), title: e.title, text: e.action, link: null, warnings: [] }),
-    );
+    .forEach((e, i) => {
+      const dated = e.date && e.date >= result.today;
+      // A short rule fits the date column; a long one (e.g. a reached project start) goes under the action.
+      const short = !dated && e.date_rule && e.date_rule.length <= 24;
+      steps.push({
+        key: `tl${i}`,
+        when: dated ? formatDateShort(e.date!) : short ? e.date_rule! : PHASE_LABEL[e.phase],
+        title: e.title,
+        text: !dated && !short && e.date_rule ? `${e.action} ${e.date_rule}` : e.action,
+        link: null,
+        warnings: [],
+      });
+    });
 
   for (const s of result.plan?.next_steps ?? []) {
     if (s.program_id !== match.program_id || (s.instrument_id && s.instrument_id !== match.instrument_id)) continue;
@@ -58,9 +72,10 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
     else steps.push({ key: s.text, when: s.due ? formatDateShort(s.due) : PHASE_LABEL.jetzt, title: s.text, text: null, link: s.link, warnings: [] });
   }
 
-  const deadline = match.deadline.next_date ? formatDateShort(match.deadline.next_date) : null;
+  const info = deadlineInfo(match.deadline, result.today);
+  const deadline = info.date ? formatDateShort(info.date) : null;
   if (deadline && !steps.some(s => s.when === deadline))
-    steps.push({ key: "deadline", when: deadline, title: t.program.submit, text: match.deadline.rule, link: match.links.apply, warnings: [] });
+    steps.push({ key: "deadline", when: deadline, title: info.label, text: match.deadline.rule, link: match.links.apply, warnings: [] });
 
   // Combination notes belong to the submission, the last step.
   if (steps.length) steps[steps.length - 1].warnings = warnings;
@@ -84,6 +99,7 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
   const actionable = groups.find(g => g.key === "offen")?.items ?? [];
   // Numbered in the order shown, so the chip numbers read top to bottom.
   const numbered = groups.flatMap(g => g.items.map(i => i.criterion.criterion_id));
+  const event = deadlineEvent(match, result);
   const contact = (result.plan?.contacts ?? []).find(c => host(c.url) && host(c.url) === host(match.links.info));
   const others = (w: CombinationWarning) =>
     w.items
@@ -109,32 +125,40 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
             <h1>{matchTitle(match)}</h1>
             {match.fit && <FitBadge fit={match.fit} />}
           </div>
-          <p className="max-w-[52em]">{match.purpose}</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
-            {match.links.info && (
-              <a href={match.links.info} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
-                {t.program.programPage} <External aria-hidden="true" className="size-3.5" />
-              </a>
-            )}
-            {match.links.apply && (
-              <a href={match.links.apply} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
-                {t.program.apply} <External aria-hidden="true" className="size-3.5" />
-              </a>
-            )}
-            <button type="button" onClick={() => setChatting(true)} className="inline-flex items-center gap-1 font-semibold text-primary-ink" data-testid="ask">
-              {t.program.ask}
-            </button>
-          </div>
+          <Purpose text={match.purpose} />
         </div>
         <div className="flex flex-wrap gap-x-14 gap-y-5">
           <Metric label={t.program.deadline}>
             <DeadlineFigure deadline={match.deadline} today={result.today} size="hero" />
           </Metric>
           {match.funding_summary && (
-            <Metric label={t.results.funding} className="max-w-[36em] flex-1">
-              <span className="pt-1 text-lg">{match.funding_summary}</span>
+            <Metric label={t.results.funding} className="max-w-[32em] flex-1">
+              <span className="line-clamp-2 pt-1 text-lg" title={match.funding_summary}>
+                {match.funding_summary}
+              </span>
             </Metric>
           )}
+        </div>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <div className="flex items-center gap-2">
+            <Button onClick={() => setChatting(true)} data-testid="ask">
+              <Chat aria-hidden="true" className="size-5" />
+              {t.program.ask}
+            </Button>
+            {event && <CalendarButton onClick={() => downloadIcs(icsFilename(match.instrument_name), [event])} />}
+          </div>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            {match.links.info && (
+              <a href={match.links.info} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-fg-2">
+                {t.program.programPage} <External aria-hidden="true" className="size-3.5" />
+              </a>
+            )}
+            {match.links.apply && (
+              <a href={match.links.apply} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-fg-2">
+                {t.program.apply} <External aria-hidden="true" className="size-3.5" />
+              </a>
+            )}
+          </div>
         </div>
       </header>
 
@@ -288,6 +312,22 @@ function whyOpen({ why }: OpenCriterion): string {
   if (why.kind === "widerspruch") return t.program.whyConflict(why.conflicts.map(c => fieldLabel(c.field)).join(", "));
   if (why.kind === "reicht_nicht") return `${t.program.whyNotEnough}: ${why.reason}`;
   return t.program.whyApplication;
+}
+
+/** The purpose in at most two lines; long texts can be opened. */
+function Purpose({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  const long = text.length > 180;
+  return (
+    <div className="flex max-w-[52em] flex-col items-start gap-1">
+      <p className={open || !long ? "" : "line-clamp-2"}>{text}</p>
+      {long && (
+        <button type="button" onClick={() => setOpen(o => !o)} aria-expanded={open} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+          {open ? t.program.less : t.program.more}
+        </button>
+      )}
+    </div>
+  );
 }
 
 /** The open program is no longer in the result after a re-run: say so and why. */

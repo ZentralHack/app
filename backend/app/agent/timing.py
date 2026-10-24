@@ -48,21 +48,30 @@ def apply_timing(
     answer_field = f"{RUECKFRAGE}{criterion.id}"
     answer = known(profile, answer_field)
     start = project_start(profile)
-    if isinstance(answer, str) and _NOT_STARTED.match(answer):
+    not_started = isinstance(answer, str) and _NOT_STARTED.match(answer)
+    if answer is not None and not not_started:
+        return result  # work has begun, or "Weiss nicht": the matching result stands
+    if start is not None and start <= today:
+        # Never "erfüllbar" once the start is reached, even if the answer says not started.
+        if result.state == "nicht_erfuellt":
+            return result
+        reason = f"Projektstart {start:%m/%Y} liegt vor dem Gesuch: {_too_late(action)}"
+        return _update(result, "unbekannt", reason, [])
+    if not_started:
         reason = f"Laut Ihrer Antwort hat das Projekt noch nicht begonnen. {action}"
         return _update(result, "annahme", reason, [answer_field])
-    if answer is not None:
-        return result  # work has begun, or "Weiss nicht": the matching result stands
-    if start is not None and start > today:
+    if start is not None:
         reason = f"Projekt startet {start:%m/%Y}. {action}"
         return _update(result, "annahme", reason, ["projektstart"])
-    if start is not None and result.state in ("erfuellt", "annahme"):
-        reason = (
-            f"Der Projektstart {start:%m/%Y} ist erreicht. "
-            "Ob das Gesuch vorher eingereicht wurde, ist offen."
-        )
-        return _update(result, "unbekannt", reason, [])
     return result
+
+
+def _too_late(action: str) -> str:
+    """'Gesuch vor Baubeginn einreichen.' → 'Gesuch muss vor Baubeginn eingereicht werden.'"""
+    match = re.match(r"^(Gesuch|Antrag) (vor .+) einreichen\.$", action)
+    if match is None:
+        return action
+    return f"{match.group(1)} muss {match.group(2)} eingereicht werden."
 
 
 def _update(

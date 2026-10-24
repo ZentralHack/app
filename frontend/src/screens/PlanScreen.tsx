@@ -2,7 +2,9 @@ import { useState } from "react";
 import type { RunResult } from "../api/contract";
 import { Page } from "../components/layout/Page";
 import { PageHeader } from "../components/layout/PageHeader";
-import { ContactLine, planItems, Timeline } from "../components/plan/Timeline";
+import { ContactLine, planEvents, planItems, Timeline } from "../components/plan/Timeline";
+import { CalendarPlus } from "../components/ui/icons";
+import { downloadIcs } from "../lib/ics";
 import { Button } from "../components/ui/Button";
 import { daysUntil, formatDateShort } from "../lib/format";
 import { t } from "../text/de-CH";
@@ -26,6 +28,7 @@ export function PlanScreen({ result, onEditProfile, onNewProject }: Props) {
   }
 
   const { items, looseContacts } = planItems(result);
+  const events = planEvents(items, result);
   const next = items.filter(i => i.date && i.date >= result.today).sort((a, b) => a.date!.localeCompare(b.date!))[0];
   const toggle = (key: string) =>
     setDone(prev => {
@@ -48,7 +51,15 @@ export function PlanScreen({ result, onEditProfile, onNewProject }: Props) {
             </>
           )}
         </p>
-        <p className="text-sm font-semibold text-fg-2">{t.plan.progress(done.size, items.length)}</p>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <p className="text-sm font-semibold text-fg-2">{t.plan.progress(done.size, items.length)}</p>
+          {events.length > 0 && (
+            <Button variant="secondary" size="sm" onClick={() => downloadIcs(t.calendar.allFile, events)} data-testid="calendar-all">
+              <CalendarPlus aria-hidden="true" className="size-4" />
+              {t.calendar.all}
+            </Button>
+          )}
+        </div>
       </header>
 
       <Timeline result={result} items={items} done={done} onToggle={toggle} />

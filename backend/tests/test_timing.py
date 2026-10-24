@@ -105,3 +105,21 @@ def test_no_start_and_other_criteria_are_left_alone(full_kb: KnowledgeBase):
     lib = _criteria(full_kb)["lib:lib-beitrag:kosten_bemessungsjahr"]
     future = make_profile(projektstart="2027-01")
     assert apply_timing(lib, _result("unbekannt"), future, TODAY).state == "unbekannt"
+
+
+def test_reached_start_is_open_with_the_problem_even_if_answer_says_not_started(
+    full_kb: KnowledgeBase,
+):
+    past = make_profile(projektstart="2026-10-03")
+    out = apply_timing(_pump(full_kb), _result("annahme"), past, TODAY)
+    assert out.state == "unbekannt"
+    assert out.reason == (
+        "Projektstart 10/2026 liegt vor dem Gesuch: "
+        "Gesuch muss vor Installationsbeginn eingereicht werden."
+    )
+    contradiction = make_profile(
+        projektstart="2026-10-03", rueckfrage_gesuch_vor_installationsbeginn="Nein"
+    )
+    assert apply_timing(_pump(full_kb), _result("unbekannt"), contradiction, TODAY).state == (
+        "unbekannt"
+    )

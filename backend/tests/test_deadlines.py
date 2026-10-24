@@ -69,3 +69,24 @@ def test_lib_date_says_which_claim_and_cost_year(kb: KnowledgeBase):
     result = deadline(lib, make_profile(projektstart="2027-04"), date(2026, 10, 24))
     assert result.next_date == date(2029, 1, 31)
     assert result.rule == "Beitragsjahr 2029, bemessen auf Ihre Kosten im Geschäftsjahr 2027."
+
+
+def test_reached_project_start_is_never_a_deadline(kb):
+    """A heat pump whose installation started on 03.10.2026: no date in the past, the
+    problem in the rule instead (was "Nächste Frist 03.10.2026, in -21 Tagen")."""
+    pump = _instrument(kb, "foerderprogramm-energie-lu:waermepumpe")
+    past = make_profile(projektstart="2026-10-03")
+    assert next_deadline(pump, past, TODAY) is None
+    result = deadline(pump, past, TODAY)
+    assert result.next_date is None
+    assert result.rule == (
+        "Projektstart liegt vor dem Gesuch: Gesuch muss vor Installationsbeginn eingereicht werden."
+    )
+    assert deadline(pump, make_profile(projektstart="2026-10-24"), TODAY).next_date is None
+
+
+def test_future_project_start_names_the_event(kb):
+    pump = _instrument(kb, "foerderprogramm-energie-lu:waermepumpe")
+    result = deadline(pump, make_profile(projektstart="2026-12"), TODAY)
+    assert result.next_date == date(2026, 12, 1)
+    assert result.rule == "Gesuch vor Installationsbeginn einreichen."
