@@ -5,8 +5,8 @@
   "short_name": "NRP Luzern",
   "provider": {
     "name": "Kanton Luzern",
-    "unit": "Dienststelle Raum und Wirtschaft (rawi)",
-    "url": null
+    "unit": "Bau-, Umwelt- und Wirtschaftsdepartement, Dienststelle Raum und Wirtschaft (rawi), Abteilung Wirtschaftsentwicklung",
+    "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp"
   },
   "level": "kanton",
   "scope": {
@@ -14,15 +14,15 @@
       "LU"
     ],
     "municipalities": [],
-    "note": "Perimeter in Kapitel 7 des Umsetzungsprogramms, nicht gesichtet. Regionale Entwicklungsträger decken 80 Luzerner Gemeinden ab."
+    "note": "Der gesamte Kanton Luzern liegt im NRP-Wirkungsbereich. Die 80 Luzerner Gemeinden sind vier regionalen Entwicklungsträgern (RET) zugeordnet. Fünf Gemeinden gehören zudem zu zofingenregio."
   },
-  "purpose": "Die NRP fördert mit Bundes- und Kantonsmitteln Projekte, die Unternehmertum, Innovation und Wertschöpfung in den Luzerner Regionen stärken.",
+  "purpose": "Der Kanton Luzern gewährt mit Mitteln von Bund und Kanton à-fonds-perdu-Beiträge und zinslose Darlehen für innovative, wertschöpfungs- und wachstumsorientierte Projekte. Ziel: Standortvoraussetzungen verbessern, Innovationen fördern, Wertschöpfung und Wettbewerbsfähigkeit steigern.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Einordnung: Förderung über Leistungsvereinbarungen, keine ausdrückliche Aussage.",
+    "note": "Abgeleitet aus Arbeitshilfe Kap. 8.2, S. 21: Je nach Höhe der beantragten Mittel entscheidet der Regierungsrat, das BUWD oder die rawi «abschliessend über die Unterstützung des Projekts». Ein Rechtsanspruch wird nirgends genannt.",
     "source": {
-      "source_id": "up",
-      "locator": "S. 5"
+      "source_id": "arbeitshilfe",
+      "locator": "Kap. 8.2, S. 21"
     }
   },
   "budget": null,
@@ -32,7 +32,7 @@
     {
       "id": "nrp-projektfoerderung",
       "name": "NRP-Projektförderung Kanton Luzern",
-      "description": "À-fonds-perdu-Beiträge von Bund und Kanton an Projekte der Standortentwicklung, des Tourismus und der Regionalentwicklung gemäss Umsetzungsprogramm 2024 bis 2027.",
+      "description": "À-fonds-perdu-Beiträge von Bund und Kanton (je zur Hälfte) an innovative, wertschöpfungsorientierte Projekte in den Wertschöpfungssystemen Standortentwicklung, Tourismus und Regionalentwicklung gemäss Umsetzungsprogramm 2024 bis 2027. Inklusive Kleinstinfrastrukturen bis CHF 100'000.",
       "keywords": [
         "NRP",
         "Neue Regionalpolitik",
@@ -44,15 +44,15 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Umsetzungsprogramm 2024 bis 2027.",
+        "note": "Laufende Umsetzungsperiode von Anfang 2024 bis Ende 2027. Projektanträge über die Umsetzungspartner (siehe application).",
         "source": {
-          "source_id": "up",
-          "locator": "Titel"
+          "source_id": "rawi_einfuehrung",
+          "locator": "Einführung"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Projektträgerschaft"
+        "note": "Projektträgerschaft. Der Kanton zahlt an den RET, der die Mittel per Projektvereinbarung an die Projektträger weiterleitet (Arbeitshilfe Kap. 8.3)."
       },
       "filter": {
         "applicant_types": [
@@ -77,25 +77,90 @@
       "eligible_items": [
         {
           "id": "schwerpunkte",
-          "name": "Förderschwerpunkte",
-          "definition": "Standortentwicklung (Kooperationen, Fachkräfte, Start-ups, Digitalisierung, wirtschaftliche Vorranggebiete), Tourismus, Regionalentwicklung (Ortskerne, Baukultur, regionale Wirtschaftskreisläufe).",
+          "name": "Stossrichtungen des Umsetzungsprogramms 2024 bis 2027",
+          "definition": "14 Stossrichtungen. Standortentwicklung: Unternehmerische Kooperationen fördern, Fachkräftepotenzial fördern, Startup Förderung, Chancen der Digitalisierung nutzen, Wirtschaftliche Vorranggebiete entwickeln. Tourismus: Produkte im Zeichen der Qualitätsführerschaft entwickeln, Chancen der Digitalisierung nutzen, Lebensraum ausgewogen in Wert setzen, Agiles Destinationsmanagement etablieren. Regionalentwicklung: Ortskerne entwickeln, Baukulturelles Erbe in Wert setzen, Regionale Kräfte aktivieren für eine nachhaltige Entwicklung, Aufbau von regionalen Wirtschaftskreisläufen, Chancen der Digitalisierung nutzen.",
           "examples_positive": [
-            "Kleinst- und Vorprojekte",
-            "Machbarkeitsstudien",
-            "Kleinstinfrastrukturen"
+            "Businesspläne, Machbarkeitsstudien, Vorstudien (Konzeptprojekte)",
+            "Entwicklung von neuen Produkten (Umsetzungsprojekte, höchstens bis Prototyp)"
           ],
           "examples_negative": [],
           "source": {
-            "source_id": "up",
-            "locator": "S. 30-35"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.1, S. 6; Kap. 7.2, S. 16"
+          }
+        },
+        {
+          "id": "kleinstinfrastrukturen",
+          "name": "Kleinstinfrastrukturen",
+          "definition": "Kleine Infrastrukturvorhaben mit à-fonds-perdu-Beitrag bis CHF 100'000, Gesamtkosten höchstens CHF 700'000. Keine oder nur marginale direkte Cashflows für den Projektträger, bedeutender kommerzieller Nutzen für Dritte, Vermarktung in der regionalen und lokalen Tourismusstrategie. Jährlich höchstens zwei Projekte. Beispiele gemäss Umsetzungsprogramm (Kap. 1.5, S. 15; Kap. 3.4, S. 31): «bspw. neue Bike-Trails», «Rad- und Wanderwege, Bike-Trails».",
+          "examples_positive": [
+            "Bike-Trails",
+            "Rad- und Wanderwege"
+          ],
+          "examples_negative": [
+            "Übernachtung und Gastronomie von Beherbergungsbetrieben"
+          ],
+          "source": {
+            "source_id": "merkblatt_kleinst",
+            "locator": "Hintergrund, Leitlinien, SGH und NRP"
           }
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "text": "Keine Dauersubventionierung: Betriebskostenbeiträge sind ausgeschlossen.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Ausschlusskriterien, S. 9"
+          }
+        },
+        {
+          "text": "Keine einzelbetriebliche Förderung: keine Projekte, die exklusiv einem Unternehmen in einem bestehenden Markt Vorteile verschaffen.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Ausschlusskriterien, S. 9"
+          }
+        },
+        {
+          "text": "Keine Marketingprojekte: reine Standortpromotion oder Marketingaktivitäten sind ausgeschlossen.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Ausschlusskriterien, S. 9"
+          }
+        },
+        {
+          "text": "Keine Infrastrukturkosten über à-fonds-perdu-Beiträge (nur über Darlehen). Ausnahme: Kleinstinfrastrukturen.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+          }
+        },
+        {
+          "text": "Keine laufenden Projekte: Anträge nach Projektstart werden nicht unterstützt. Kosten vor Einreichung des definitiven Antrags sind nicht anrechenbar.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+          }
+        },
+        {
+          "text": "Stossrichtung Ortskerne: ausgenommen sind reine Aufwertungsprojekte, Renovation von Gebäuden, direkte Wohnbauförderung.",
+          "source": {
+            "source_id": "up",
+            "locator": "Kap. 3.5, S. 33 (PDF-S. 34)"
+          }
+        },
+        {
+          "text": "Übernachtung und Gastronomie von Beherbergungsbetrieben werden nicht mit NRP-Mitteln unterstützt (Ausnahmen nur für nicht renditeorientierte Trägerschaften mit regionalwirtschaftlicher Bedeutung).",
+          "source": {
+            "source_id": "merkblatt_kleinst",
+            "locator": "SGH und NRP"
+          }
+        }
+      ],
       "criteria": [
         {
           "id": "passt_schwerpunkt",
-          "text": "Das Projekt passt zu einem Förderschwerpunkt des Umsetzungsprogramms (Standortentwicklung, Tourismus, Regionalentwicklung).",
+          "text": "Das Projekt lässt sich in eine der 14 Stossrichtungen des Umsetzungsprogramms 2024 bis 2027 einordnen (Standortentwicklung, Tourismus, Regionalentwicklung).",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -108,19 +173,20 @@
               "Zusammenarbeit mehrerer Betriebe",
               "Tourismusangebot",
               "Ortskern oder Region stärken",
-              "Etwas anderes"
+              "Etwas anderes",
+              "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
-            "source_id": "up",
-            "locator": "S. 30-35"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.1, S. 6"
           },
-          "notes": null
+          "notes": "Webseite rawi: Projekte «müssen sie im kantonalen NRP-Umsetzungsprogramm 2024-2027 verankert sein»."
         },
         {
           "id": "ueberbetrieblich",
-          "text": "Überbetriebliche Kooperationen und Unternehmensnetzwerke stehen im Vordergrund.",
+          "text": "Breit abgestützte Projektträgerschaft: mehrere Unternehmen oder Organisationen, regional verankert.",
           "kind": "soll",
           "about": "partner",
           "applies_if": null,
@@ -130,31 +196,122 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "up",
-            "locator": "S. 30"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 2, S. 3; Kap. 4, S. 5"
+          },
+          "notes": "Kap. 2 nennt es als zentrale Anforderung. Kap. 4: «Dabei sollen insbesondere Projekte unterstützt werden, die sich durch eine breit abgestützte Projektträgerschaft auszeichnen.» Darum soll."
+        },
+        {
+          "id": "kein_einzelbetrieblich",
+          "text": "Das Projekt verschafft nicht exklusiv einem Unternehmen in einem bestehenden Markt Vorteile (keine einzelbetriebliche Förderung).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Wem nützt das Projekt?",
+            "options": [
+              "Mehreren Betrieben oder Organisationen",
+              "Nur unserem eigenen Unternehmen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Ausschlusskriterien, S. 9"
+          },
+          "notes": null
+        },
+        {
+          "id": "regionaler_nutzen",
+          "text": "Das Projekt schafft einen nachweisbaren regionalen volkswirtschaftlichen Nutzen: Es erhöht die Wertschöpfung in einer Luzerner Region oder im ganzen Kanton (Marktorientierung, Arbeitsplätze, Export oder lokale Wirtschaft).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "rawi_verfahren",
+            "locator": "Anforderungen an Projekte und Projektantrag"
+          },
+          "notes": "Kriterium Wertschöpfung mit Unterfaktoren: Arbeitshilfe Kap. 5.2, S. 8."
+        },
+        {
+          "id": "innovationsgehalt",
+          "text": "Der Innovationsgehalt ist plausibel nachgewiesen oder begründet: Das Projekt erschliesst neue Wertschöpfungspotenziale oder optimiert bestehende auf neuartige Weise (Produkte, Dienstleistungen, Prozesse, Geschäftsmodelle, Kooperationsformen, Netzwerke).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8"
+          },
+          "notes": null
+        },
+        {
+          "id": "vorwettbewerblich",
+          "text": "Das Projekt ist im vorwettbewerblichen Bereich angesiedelt. Gefördert wird höchstens bis zur Phase Prototypentwicklung, nicht bis Serienreife oder Markteintritt.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Wie weit geht Ihr Projekt?",
+            "options": [
+              "Konzept, Studie oder Entwicklung bis zum Prototyp",
+              "Bis zur Serienreife oder zum Markteintritt",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8"
           },
           "notes": null
         },
         {
           "id": "eigenmittel",
-          "text": "Relevante finanzielle Eigenmittel der Projektträger.",
+          "text": "Die Projektträgerschaft trägt mindestens 50 % der Gesamtkosten (Eigenleistungen, Eigenfinanzierung, Beiträge Dritter). Die NRP übernimmt in der Regel höchstens 50 %.",
           "kind": "soll",
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [
             "budget"
           ],
-          "question": null,
-          "evidence": [],
-          "source": {
-            "source_id": "up",
-            "locator": "S. 16"
+          "question": {
+            "text": "Kann Ihre Trägerschaft mindestens die Hälfte der Projektkosten selbst tragen (Arbeitsleistung, eigenes Geld oder Beiträge Dritter)?",
+            "options": [
+              "Ja, mindestens 50 %",
+              "Nein, weniger als 50 %",
+              "Weiss nicht"
+            ]
           },
-          "notes": null
+          "evidence": [
+            "Budget (Vorlage Kosten und Finanzierung)"
+          ],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8; Kap. 2, S. 3"
+          },
+          "notes": "Kap. 5.2 nennt es als zentrales Kriterium. Kap. 2 schränkt ein: «in der Regel max. 50 %», Kap. 5.3: «Grundsätzlich». Darum soll."
         },
         {
           "id": "eigenwirtschaftlichkeit",
-          "text": "Ausrichtung auf Eigenwirtschaftlichkeit und breite Trägerschaft.",
+          "text": "Die Projektträgerschaft sichert die langfristige wirtschaftliche Tragfähigkeit des Projekts über die NRP-Finanzierung hinaus (Anschubfinanzierung).",
           "kind": "soll",
           "about": "vorhaben",
           "applies_if": null,
@@ -164,104 +321,368 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "up",
-            "locator": "S. 16"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8"
           },
           "notes": null
         },
         {
           "id": "wirkungsziele",
-          "text": "Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in einer Leistungsvereinbarung.",
+          "text": "Der Projektantrag definiert klare Projektziele, Projektphasen mit messbaren Meilensteinen und mindestens zwei Wirkungsindikatoren (keine Indikatoren nötig bei Kleinstprojekten bis CHF 20'000).",
           "kind": "muss",
           "about": "dokumente",
           "applies_if": null,
           "profile_fields": [],
           "question": null,
+          "evidence": [
+            "Beilage Leistungs- und Wirkungsmessung"
+          ],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8; Kap. 7.2, S. 16"
+          },
+          "notes": null
+        },
+        {
+          "id": "vor_projektstart",
+          "text": "Der definitive NRP-Antrag wird vor Projektstart eingereicht. Anträge nach Projektstart werden nicht unterstützt.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": null,
           "evidence": [],
           "source": {
-            "source_id": "up",
-            "locator": "S. 5 und S. 16"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+          },
+          "notes": "Nach Einreichung des definitiven Antrags kann auf eigenes Risiko gestartet werden."
+        },
+        {
+          "id": "keine_infrastrukturkosten",
+          "text": "Infrastrukturkosten werden nicht mit à-fonds-perdu-Beiträgen finanziert, nur über NRP-Darlehen. Ausnahme: Kleinstinfrastrukturen.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+          },
+          "notes": null
+        },
+        {
+          "id": "kleinstinfra_gesamtkosten",
+          "text": "Bei Kleinstinfrastrukturen dürfen die Gesamtkosten CHF 700'000 nicht überschreiten.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": "nur bei Kleinstinfrastruktur-Projekten",
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Wie hoch sind die Gesamtkosten Ihres Infrastrukturvorhabens?",
+            "options": [
+              "Bis CHF 700'000",
+              "Über CHF 700'000",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Kleinstinfrastrukturen, S. 9"
+          },
+          "notes": "Merkblatt Kleinstinfrastrukturen: «Die Obergrenze der Projektgesamtkosten liegt bei Fr. 700'000»."
+        },
+        {
+          "id": "kleinstinfra_nutzen_dritte",
+          "text": "Bei Kleinstinfrastrukturen: kein oder nur marginaler direkter Cashflow für den Projektträger, bedeutender kommerzieller Nutzen für andere wirtschaftliche Akteure, Vermarktung in der regionalen und lokalen Tourismusstrategie.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": "nur bei Kleinstinfrastruktur-Projekten",
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "merkblatt_kleinst",
+            "locator": "Hintergrund («Folgende Voraussetzungen sind zu erfüllen»)"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "À-fonds-perdu-Beiträge je nach Projekt. Kleinstinfrastrukturen bis CHF 100'000 pro Projekt, je zur Hälfte Bund und Kanton.",
-        "cost_categories": [],
+        "summary": "À-fonds-perdu-Beitrag, je zur Hälfte von Bund und Kanton. Grundsätzlich höchstens 50 % der Gesamtkosten. Kleinstinfrastrukturen: höchstens CHF 100'000 pro Projekt bei Gesamtkosten bis CHF 700'000.",
+        "cost_categories": [
+          {
+            "id": "konzipierung",
+            "name": "Konzipierungskosten",
+            "rate_pct": null,
+            "definition": "Konzepte und Studien (z.B. Machbarkeitsstudie) sowie weitere Grundlagenarbeiten (z.B. rechtliche Fragestellungen).",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          },
+          {
+            "id": "zusammenarbeit",
+            "name": "Überbetriebliche Zusammenarbeitskosten",
+            "rate_pct": null,
+            "definition": "Gemeinsame Aufwendungen der beteiligten Unternehmen und Organisationen für Entwicklung und Organisation von Vorhaben, z.B. Workshops oder Fokusgruppen.",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          },
+          {
+            "id": "wissensvermittlung",
+            "name": "Kosten für Wissensvermittlung und Produkteinführung",
+            "rate_pct": null,
+            "definition": "Schulung, Aus- und Weiterbildung von Mitarbeitenden im Zusammenhang mit dem Projekt sowie Kosten der Dienstleistungs- oder Produkteinführung.",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          },
+          {
+            "id": "sachkosten",
+            "name": "Sachkosten",
+            "rate_pct": null,
+            "definition": "Sachkosten können in den Projektantrag aufgenommen werden (eigene Spalte in der Budget-Vorlage).",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          },
+          {
+            "id": "externe_kosten",
+            "name": "Externe Kosten",
+            "rate_pct": null,
+            "definition": "Aufträge an Dritte zu marktüblichen Stundenansätzen. Ab CHF 15'000 Offerte bei Einreichung und Abrechnung bei Abschluss.",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          }
+        ],
         "units": [
           {
             "unit": "Projekt",
-            "condition": "Kleinstinfrastrukturen",
+            "condition": "Kleinstinfrastruktur: Höchstbeitrag pro Projekt, Gesamtkosten höchstens CHF 700'000",
             "base_chf": null,
             "amount_chf": 100000
           }
         ],
-        "max_share_of_costs_pct": null,
+        "max_share_of_costs_pct": 50,
         "min_amount_chf": null,
         "max_amount_chf": null,
-        "cofinancing": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Die Projektträgerschaft übernimmt mindestens 50 % der Gesamtkosten mit Eigenleistungen, Eigenfinanzierung und Beiträgen externer Partner."
+        },
         "deductions": [],
         "payout_forms": [
           "À-fonds-perdu-Beitrag"
         ],
-        "calculation_basis": null,
+        "calculation_basis": "Gesamtkosten des Projekts. Eigenleistungen der Projektträgerschaft mit CHF 90 pro Stunde. Externe Kosten zu marktüblichen Stundenansätzen.",
         "example": null,
         "source": {
-          "source_id": "up",
-          "locator": "S. 7 und S. 16"
+          "source_id": "arbeitshilfe",
+          "locator": "Kap. 5.3, S. 10"
         },
-        "note": "Allgemeiner Höchstanteil und Darlehen werden im Umsetzungsprogramm nicht genannt."
+        "note": "Auszahlung in der Regel in jährlichen Tranchen nach Projektfortschritt und Schlusszahlung nach Würdigung des Schlussberichts. Bei begründeten ausserordentlichen Mehrkosten kann der Beitrag um höchstens 20 % erhöht werden (nicht bei Kleinstprojekten bis CHF 20'000), falls NRP-Mittel vorhanden. Infrastrukturen finanziert die NRP über Darlehen (in der Regel zinslos, Laufzeit 10 bis 20 Jahre), hier nicht als eigenes Instrument erfasst."
       },
       "timing": {
         "deadline": {
-          "type": "unbekannt",
-          "rule": "Antragsverfahren gemäss NRP-Arbeitshilfe, nicht gesichtet.",
+          "type": "vor_projektstart",
+          "rule": "Keine festen Eingabefristen genannt. Den definitiven Antrag vor Projektstart einreichen. Kosten vor Einreichung sind nicht anrechenbar. Danach Start auf eigenes Risiko möglich.",
           "next_dates": [],
-          "relative": null,
+          "relative": {
+            "event": "projektstart",
+            "direction": "vor",
+            "offset_days": null
+          },
           "source": {
-            "source_id": "up",
-            "locator": "S. 8"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
           }
         },
         "assessment_period": null,
-        "decision_time": null,
-        "max_duration_months": null,
+        "decision_time": "Das gesamte Prüfverfahren dauert in der Regel drei bis sechs Wochen (Webseite rawi, Projektbeurteilung).",
+        "max_duration_months": 48,
         "repeat_limit": null,
-        "note": null
+        "note": "Förderung in der Regel höchstens 4 Jahre (Arbeitshilfe Kap. 5.2, S. 9). Entscheid je nach Höhe des Beitrags durch rawi, BUWD oder Regierungsrat. Umsetzungsperiode bis Ende 2027."
       },
       "documents": {
-        "application": [],
-        "completion": []
+        "application": [
+          {
+            "name": "NRP-Projektantrag (Formular rawi)",
+            "condition": null,
+            "source": {
+              "source_id": "formulare",
+              "locator": "01a NRP-Antragsformular.docx"
+            }
+          },
+          {
+            "name": "Budget mit Zeitplan (Vorlage NRP-Budget bzw. Kosten und Finanzierung)",
+            "condition": "obligatorisch",
+            "source": {
+              "source_id": "formulare",
+              "locator": "01a NRP-Antragsformular.docx, Beilagen; 01b NRP-Budget.xlsx"
+            }
+          },
+          {
+            "name": "Beilage Leistungs- und Wirkungsmessung (Projektphasen, Meilensteine, mindestens 2 Wirkungsindikatoren)",
+            "condition": "obligatorisch; Wirkungsindikatoren nicht nötig bei Kleinstprojekten bis CHF 20'000",
+            "source": {
+              "source_id": "formulare",
+              "locator": "01a NRP-Antragsformular.docx, Beilage 1"
+            }
+          },
+          {
+            "name": "Stellungnahme des RET bzw. der LTAG im Projektantrag",
+            "condition": null,
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 8.1, S. 19"
+            }
+          },
+          {
+            "name": "Offerte für externe Kosten",
+            "condition": "bei externen Kosten ab CHF 15'000",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Zwischenbericht inkl. Zwischenabrechnung, einmal im Jahr",
+            "condition": "fakultativ bei Kleinstprojekten bis CHF 20'000",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 9, S. 24"
+            }
+          },
+          {
+            "name": "Schlussbericht inkl. Schlussabrechnung",
+            "condition": null,
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 9, S. 24"
+            }
+          },
+          {
+            "name": "Stundenrapporte zu Eigenleistungen und Zahlungsnachweise zu Eigenfinanzierung und Drittleistungen",
+            "condition": "mit der Schlussabrechnung",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.2, S. 12"
+            }
+          },
+          {
+            "name": "Abrechnung der externen Kosten",
+            "condition": "bei externen Kosten ab CHF 15'000",
+            "source": {
+              "source_id": "arbeitshilfe",
+              "locator": "Kap. 5.3.1, S. 10"
+            }
+          }
+        ]
       },
       "obligations": [
         {
-          "text": "Leistungsvereinbarung mit Wirkungs- und Leistungszielen einhalten.",
+          "text": "Projektvereinbarung einhalten: Leistungen, Meilensteine und Wirkungsnachweise wie vereinbart.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 7.3, S. 18; Kap. 8.3, S. 21"
+          }
+        },
+        {
+          "text": "Bei Sollbruchstellen (vor allem bei mehrjährigen Projekten) wird die nächste Tranche erst nach Erreichen der Meilensteine freigegeben. Nachweise erbringen.",
           "source": {
             "source_id": "up",
-            "locator": "S. 5"
+            "locator": "Kap. 6.1.2, S. 41 (PDF-S. 42)"
+          }
+        },
+        {
+          "text": "Mindestens drei Jahre nach Einreichung des Schlussberichts Informationen zu den Wirkungen liefern.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 7.3, S. 18"
+          }
+        },
+        {
+          "text": "Bei Kostenunterschreitung den entsprechenden NRP-Anteil zurückzahlen. Nicht budgetierte Mehrkosten trägt in der Regel die Projektträgerschaft.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.3.1, S. 11"
+          }
+        },
+        {
+          "text": "Bei Kommunikation auf die NRP-Finanzierung von Bund und Kantonen hinweisen und das NRP-Logo verwenden.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 11, S. 24"
+          }
+        },
+        {
+          "text": "SECO und rawi dürfen Name und Adresse des Beitragsempfängers sowie die Höhe des NRP-Beitrags bekannt geben.",
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 10, S. 24"
           }
         }
       ],
       "levers": [
         {
-          "text": "Projekt mit mehreren Betrieben oder Partnern aufziehen",
+          "text": "Projektträgerschaft aus mehreren Unternehmen oder Organisationen bilden",
           "affects_criteria": [
             "ueberbetrieblich"
           ],
           "source": {
-            "source_id": "up",
-            "locator": "S. 30"
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 2, S. 3"
+          }
+        },
+        {
+          "text": "Projekt auf Konzeptphase oder Entwicklung bis zum Prototyp begrenzen",
+          "affects_criteria": [
+            "vorwettbewerblich"
+          ],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2, S. 8"
+          }
+        },
+        {
+          "text": "Infrastruktur als Kleinstinfrastruktur auslegen (Gesamtkosten bis CHF 700'000, Beitrag bis CHF 100'000)",
+          "affects_criteria": [
+            "keine_infrastrukturkosten"
+          ],
+          "source": {
+            "source_id": "arbeitshilfe",
+            "locator": "Kap. 5.2 Kleinstinfrastrukturen, S. 9; Kap. 5.3.1, S. 11"
           }
         }
       ],
       "links": {
-        "info": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-        "apply": null,
-        "form": null
+        "info": "https://rawi.lu.ch/neue_regionalpolitik_nrp",
+        "apply": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
+        "form": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_projektunterlagen.zip?rev=0f96edb4838c4e78bcc54ae6a64a5b5f"
       },
       "source": {
-        "source_id": "up",
+        "source_id": "arbeitshilfe",
         "locator": null
       }
     }
@@ -270,31 +691,100 @@
     {
       "with": "innotour",
       "type": "bedingt",
-      "text": "Kumulation mit Innotour nur ausnahmsweise, Innotour und NRP zusammen höchstens 50% der Gesamtkosten.",
+      "text": "Innotour und NRP sind komplementär. Nur in Ausnahmefällen beide: Das Projekt muss den Fördergrundsätzen beider Instrumente entsprechen und in Teilprojekte aufgeteilt werden. Innotour und NRP-Bundesbeitrag zusammen höchstens 50 % der Gesamtkosten.",
       "source": {
         "source_id": "innotour_faq",
-        "locator": "Kumulation mit der NRP"
+        "locator": "Weitere Förderinstrumente des Bundes: «Können Projekte über Innotour und die Neue Regionalpolitik (NRP) gleichzeitig finanziert werden?»"
       }
     }
   ],
   "application": {
     "channel": "other",
-    "url": null,
+    "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
     "steps": [
-      "Kontakt mit dem regionalen Entwicklungsträger (RET) für Projektentwicklung",
-      "Gesuch gemäss NRP-Arbeitshilfe"
+      "Vor dem Antrag Kontakt mit dem zuständigen Umsetzungspartner aufnehmen: regionaler Entwicklungsträger (RET), bei Tourismus die Luzern Tourismus AG (LTAG).",
+      "Projektantrag (inkl. Budget) mit den rawi-Formularen erarbeiten, mit Unterstützung des Umsetzungspartners.",
+      "Antrag beim Umsetzungspartner einreichen. Der RET ergänzt eine Stellungnahme und reicht den Antrag bei der rawi ein.",
+      "Besprechung bei der rawi: RET oder LTAG präsentieren das Projekt zusammen mit dem Projektträger.",
+      "Die rawi koordiniert die Prüfung. Entscheid je nach Betrag durch rawi, BUWD oder Regierungsrat, in der Regel innert drei bis sechs Wochen.",
+      "Projektvereinbarung, Auszahlung in Tranchen, jährlicher Zwischenbericht und Schlussbericht."
     ],
-    "note": "Die RET übernehmen Projektmanagement und Projektentwicklung in den Regionen.",
+    "note": "Im Wirkungsperimeter von LuzernPlus und Zofingenregio nimmt die Abteilung Wirtschaftsentwicklung der rawi das Projektmanagement direkt wahr.",
     "source": {
-      "source_id": "up",
-      "locator": "S. 28"
+      "source_id": "rawi_verfahren",
+      "locator": "Beratung, Projektantrag einreichen, Projektbeurteilung, Projektgenehmigung"
     }
   },
-  "contacts": [],
+  "contacts": [
+    {
+      "name": "Dienststelle Raum und Wirtschaft (rawi), Abteilung Wirtschaftsentwicklung",
+      "role": "Zuständige kantonale Dienststelle für die NRP",
+      "email": "rawi@lu.ch",
+      "phone": "+41 41 228 51 83",
+      "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren"
+    },
+    {
+      "name": "LuzernPlus",
+      "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+      "email": "info@luzernplus.ch",
+      "phone": "041 444 82 82",
+      "url": "https://www.luzernplus.ch/"
+    },
+    {
+      "name": "Region Sursee-Mittelland",
+      "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+      "email": "info@sursee-mittelland.ch",
+      "phone": "041 925 88 60",
+      "url": "https://www.sursee-mittelland.ch/"
+    },
+    {
+      "name": "Region Luzern West",
+      "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+      "email": null,
+      "phone": "+41 41 490 02 80",
+      "url": "https://www.regionwest.ch/"
+    },
+    {
+      "name": "IDEE SEETAL",
+      "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+      "email": null,
+      "phone": null,
+      "url": "https://www.idee-seetal.ch/"
+    },
+    {
+      "name": "Zofingenregio",
+      "role": "Regionalverband, Umsetzungspartner NRP (fünf Luzerner Gemeinden)",
+      "email": "info@zofingenregio.ch",
+      "phone": null,
+      "url": "https://www.zofingenregio.ch/"
+    },
+    {
+      "name": "Luzern Tourismus AG (LTAG)",
+      "role": "Umsetzungspartnerin NRP für Tourismusprojekte",
+      "email": null,
+      "phone": "+41 41 227 17 17",
+      "url": "https://www.luzern.com/de/ueber-uns/ueber-luzern-tourismus/"
+    }
+  ],
   "legal_basis": [
     {
       "title": "Bundesgesetz über Regionalpolitik",
       "ref": null,
+      "url": null
+    },
+    {
+      "title": "Verordnung über Regionalpolitik (VRP)",
+      "ref": "Art. 1 Abs. 1 (Perimeter)",
+      "url": null
+    },
+    {
+      "title": "Gesetz über die Wirtschaftsförderung und die Regionalpolitik (Kanton Luzern)",
+      "ref": "SRL 900, §§ 10 bis 15",
+      "url": null
+    },
+    {
+      "title": "Bundesgesetz über Finanzhilfen und Abgeltungen (Subventionsgesetz, SuG)",
+      "ref": "Art. 26",
       "url": null
     }
   ],
@@ -303,10 +793,60 @@
       "id": "up",
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "type": "reglement",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/nr_umsetzungsprogramm.pdf?rev=708c466ca19f4a8baccb8e74a47c690c",
+      "version": "Stand 5. Februar 2024",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "arbeitshilfe",
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "type": "handbuch",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "version": "29.08.2025",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "rawi_verfahren",
+      "title": "Projekteingabe und -verfahren, Neue Regionalpolitik, rawi Kanton Luzern",
+      "type": "webseite",
+      "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "rawi_einfuehrung",
+      "title": "Neue Regionalpolitik (NRP): Einführung, rawi Kanton Luzern",
+      "type": "webseite",
+      "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Einfuehrung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "merkblatt_kleinst",
+      "title": "Merkblatt Kleine Infrastrukturvorhaben (Kleinstinfrastrukturen), rawi Kanton Luzern",
+      "type": "merkblatt",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_Merkblatt_Kleinstinfrastrukturen.pdf?rev=4745d0b59c6049aa9863b4410d4fa839",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "formulare",
+      "title": "NRP-Formulare rawi (Zip): Projektantrag, Budget, Zwischen- und Schlussbericht",
+      "type": "formular",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_projektunterlagen.zip?rev=0f96edb4838c4e78bcc54ae6a64a5b5f",
+      "version": "Antragsformular 24.02.2025",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -316,20 +856,23 @@
       "url": "https://www.seco.admin.ch/de/innotour-faq",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "WICHTIG: Gesuchsverfahren, Fristen, Höchstanteile und Kontaktstelle fehlen. Aktualisierte NRP-Arbeitshilfe 2024-2027 und Webseite des Kantons beschaffen.",
-      "Perimeter (Kapitel 7) nicht gesichtet: Ist die Stadt Luzern bzw. Agglomeration ausgeschlossen?",
-      "Ob einzelbetriebliche Förderung möglich ist, regelt das Umsetzungsprogramm nicht ausdrücklich.",
+      "entitlement: «kein_rechtsanspruch» ist abgeleitet (Arbeitshilfe Kap. 8.2). Beim Kanton bestätigen.",
+      "budget: Jährliche NRP-Mittel des Kantons nicht im Text der Quellen (nur als Grafik im Umsetzungsprogramm, Abb. 15).",
+      "funding.max_amount_chf: Ausser bei Kleinstinfrastrukturen kein Höchstbetrag genannt. Ab welchem Betrag entscheiden BUWD oder Regierungsrat?",
+      "filter.applicant_types: Quelle nennt «Private». Sind Privatpersonen ohne Unternehmen als Projektträger zugelassen?",
+      "filter.project_types: «gruendung» stützt sich auf die Stossrichtung «Startup Förderung» (Ökosysteme, Technopark). Einzelne Gründungen fallen unter «keine einzelbetriebliche Förderung». Beim Kanton klären.",
+      "Nicht erfasst: NRP-Darlehen für wertschöpfungsorientierte Infrastrukturen (zinslos, 10 bis 20 Jahre, Sicherheit nötig; Arbeitshilfe Kap. 5.2 und 8.4). Eventuell als eigenes Instrument aufnehmen.",
       "Nicht erfasst: RIS Zentralschweiz und interkantonale Tourismusprojekte (Teil des Programms).",
-      "Rechtsgrundlage nicht aus Quelle belegt.",
+      "legal_basis: SR-Nummer und URL des Bundesgesetzes über Regionalpolitik nicht aus einer roh gelesenen Quelle belegt (Fedlex nur mit JavaScript).",
       "Quellen nicht lokal abgelegt."
     ]
   }
