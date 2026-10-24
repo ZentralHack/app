@@ -16,13 +16,13 @@ Förderprogramme für Unternehmen im Kanton Luzern sind über Kanton, Gemeinden,
 1. **Erfassen:** Vorhaben in 1 bis 3 Sätzen, dazu Gemeinde, Mitarbeitende, Budget.
 2. **Profil prüfen:** Jedes Feld ist markiert als *angegeben*, *Annahme* oder *fehlt* und lässt sich korrigieren.
 3. **Rückfragen:** Nur Fragen, deren Antwort eine Einstufung ändern kann, höchstens 10, «Weiss nicht» ist immer möglich.
-4. **Prüfung live:** Der Agent prüft jedes Kriterium jedes in Frage kommenden Programms und zeigt dabei seine Arbeit.
+4. **Prüfung live:** Der Agent prüft jedes Kriterium jedes in Frage kommenden Förderangebots und zeigt dabei seine Arbeit.
 5. **Ergebnisse:** passt gut / passt mit Anpassung / passt nicht, je mit Kriterien, Belegen, Quellen, Frist und der Förderregel aus der Quelle. Beratungsangebote stehen getrennt als «Begleitende Angebote».
 6. **Förderfahrplan:** Was jetzt zu tun ist, was vor Projektstart, was zum Gesuch, mit Fristen, Links, Ansprechstellen und Kombinationshinweisen. Export als PDF über den Browser.
 
 ### Was es besonders macht
-- **Förderfahrplan statt Liste:** Programme auf einer Zeitachse; was kollidiert, steht beim betroffenen Schritt.
-- **«So wird es passend»:** Bei knappen Treffern zeigt der Agent, welche Änderung das Programm erschliesst, z. B. einen Forschungspartner beiziehen. Nur Hebel, die in der Wissensbasis stehen.
+- **Förderfahrplan statt Liste:** Förderangebote auf einer Zeitachse; was kollidiert, steht beim betroffenen Schritt.
+- **«So wird es passend»:** Bei knappen Treffern zeigt der Agent, welche Änderung das Förderangebot erschliesst, z. B. einen Forschungspartner beiziehen. Nur Hebel, die in der Wissensbasis stehen.
 - **Einblicke für den Kanton (Konzept):** Eine anonymisierte Auswertung der Anfragen könnte zeigen, was Unternehmen fördern lassen wollen und welche Programme niemand findet. Im Prototyp nicht umgesetzt.
 
 ## So arbeitet der Agent
@@ -53,8 +53,8 @@ flowchart LR
 |---|---|---|
 | 1 · Profil | LLM | Freitext wird zu einem strukturierten Profil. Code prüft danach: Ein Zitat für *angegeben* muss wörtlich im Text stehen, sonst wird es zur *Annahme*. Ist kein Zweck erkennbar, fragt der Agent zuerst, wofür das Geld ist. |
 | 2 · Rückfragen | Code | Fragen aus einem geprüften Fragenkatalog, ausgewählt nach Wirkung. Kein Modellaufruf. |
-| 3 · Vorfilter | Code | Nur aktuell beantragbare Instrumente; falscher Kanton oder falsche Gemeinde, Gesuchstellertyp, Vorhabenstyp, Branche, Grösse oder Alter fallen mit Begründung weg. Ein fehlender Partner ist nie ein Ausschluss, sondern ein Hebel. |
-| 4 · Prüfung | LLM | Ein Aufruf pro Instrument, parallel. Jedes Kriterium: erfüllt, Annahme, unbekannt oder nicht erfüllt, mit Begründung und wörtlichem Beleg. |
+| 3 · Vorfilter | Code | Nur aktuell beantragbare Förderangebote; falscher Kanton oder falsche Gemeinde, Gesuchstellertyp, Vorhabenstyp, Branche, Grösse oder Alter fallen mit Begründung weg. Ein fehlender Partner ist nie ein Ausschluss, sondern ein Hebel. |
+| 4 · Prüfung | LLM | Ein Aufruf pro Förderangebot, parallel. Jedes Kriterium: erfüllt, Annahme, unbekannt oder nicht erfüllt, mit Begründung und wörtlichem Beleg. |
 | 5 · Bewertung | Code | Deterministisch: *passt gut*, *passt mit Anpassung* oder *passt nicht*, dazu die Reihenfolge. |
 | 6 · Förderfahrplan | Code + LLM | Code ordnet nach Frist und Phase und prüft Kombinationsregeln. Das LLM formuliert nur die Texte; Code verwirft jede Antwort mit neuen Daten oder fremden Programmen. |
 
@@ -69,9 +69,9 @@ flowchart LR
 
 ## Wissensbasis
 
-21 Programme mit 37 Instrumenten, eine JSON-Datei pro Programm in [`knowledge_base/programs/`](knowledge_base/programs/), validiert gegen das [Schema v2](knowledge_base/schema/program.schema.json). Jede Quelle hat Titel, URL und Prüfdatum, jedes Kriterium eine Fundstelle (Randnummer, Ziffer, Seite). Unbekannte Werte sind `null` und werden nicht geraten. Anleitung zum Ergänzen: [`knowledge_base/README.md`](knowledge_base/README.md).
+37 Förderangebote aus 21 Programmen (im Code: Instrumente), eine JSON-Datei pro Programm in [`knowledge_base/programs/`](knowledge_base/programs/), validiert gegen das [Schema v2](knowledge_base/schema/program.schema.json). Jede Quelle hat Titel, URL und Prüfdatum, jedes Kriterium eine Fundstelle (Randnummer, Ziffer, Seite). Unbekannte Werte sind `null` und werden nicht geraten. Anleitung zum Ergänzen: [`knowledge_base/README.md`](knowledge_base/README.md).
 
-| Programm | Ebene | Anbieter | Instrumente | Hauptquelle |
+| Programm | Ebene | Anbieter | Förderangebote | Hauptquelle |
 |---|---|---|---|---|
 | Förderprogramm Energie Kanton Luzern 2026 | Kanton | Kanton Luzern | 6 | [Förderbedingungen 2026](https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca) |
 | Luzerner Innovationsbeitrag | Kanton | Kanton Luzern | 1 | [Handbuch LIB](https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0) |
@@ -97,7 +97,7 @@ flowchart LR
 
 ## Getestet
 
-[`tests/projects/`](tests/projects/) enthält 8 fiktive Vorhaben mit erwarteten Programmen und Einstufungen: fünf Standardfälle (u. a. das Sensor-Beispiel aus der Challenge) und drei Grenzfälle (zu vage, ausserhalb Luzern, kein passendes Programm). Jedes Projekt beantwortet die Rückfragen.
+[`tests/projects/`](tests/projects/) enthält 8 fiktive Vorhaben mit erwarteten Förderangeboten und Einstufungen: fünf Standardfälle (u. a. das Sensor-Beispiel aus der Challenge) und drei Grenzfälle (zu vage, ausserhalb Luzern, kein passendes Förderangebot). Jedes Projekt beantwortet die Rückfragen.
 
 Stand 24.10.2026, je 3 Läufe pro Projekt mit den echten Modellen (`uv run python -m eval.run_eval`):
 - 7 von 8 Projekten erfüllen ihre Erwartungen in allen 3 Läufen. Beim Tourismus-Startup weicht das Ergebnis ab, unter anderem weil das Budget unter der Mindestsumme von Innotour liegt.
@@ -160,7 +160,7 @@ tests/projects/    fiktive Testprojekte mit Erwartungen
 ## Grenzen
 
 - **Keine verbindliche Beurteilung.** Die Einstufung ist eine Orientierungshilfe; entscheiden tut die Förderstelle.
-- **Auswahl, nicht vollständig.** 21 Programme, nicht alle Angebote in der Schweiz. Programme ausserhalb der Wissensbasis findet der Agent nicht.
+- **Auswahl, nicht vollständig.** 37 Förderangebote aus 21 Programmen, nicht alle Angebote in der Schweiz. Förderangebote ausserhalb der Wissensbasis findet der Agent nicht.
 - **Datenstand.** Die Programmdaten wurden am 23. und 24.10.2026 aus öffentlichen Quellen erfasst und sind noch nicht alle von Hand gegen die Quelle verifiziert. Programme ändern sich.
 - **Keine Beträge.** Der Agent rechnet keine Förderbeträge aus; er zeigt die Regel aus der Quelle.
 - **LLM-Schwankungen.** Dasselbe Vorhaben kann in einzelnen Kriterien unterschiedlich eingestuft werden; der Eval misst das (siehe oben).

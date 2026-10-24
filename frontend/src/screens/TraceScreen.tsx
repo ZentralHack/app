@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
 import type { RunResult } from "../api/contract";
 import { Page } from "../components/layout/Page";
+import { SummaryLine } from "../components/results/SummaryLine";
 import { stepIndex, TracePanel } from "../components/trace/TracePanel";
 import { Button } from "../components/ui/Button";
-import { splitMatches } from "../lib/results";
 import { progress, STEP_ORDER, type InstrumentLine, type TraceView } from "../lib/trace";
 import { t } from "../text/de-CH";
 
@@ -15,10 +14,12 @@ interface Props {
   onNext: () => void;
 }
 
-/** Screen 4: the live trace. When the analysis finishes, the outcome is revealed once. */
+/**
+ * Screen 4: the live trace. During the checks it only shows progress; the counts appear once step
+ * "bewertung" is done, from the same RunResult and with the same wording as the results page.
+ */
 export function TraceScreen({ view, result, onRetry, onCancel, onNext }: Props) {
-  const finished = view.finished && result?.status === "fertig";
-  const counts = result && splitMatches(result.matches);
+  const scored = view.stages.bewertung.status === "fertig" && result !== null && result.matches.every(m => m.status === "fertig" || m.status === "fehler");
 
   return (
     <Page>
@@ -36,11 +37,9 @@ export function TraceScreen({ view, result, onRetry, onCancel, onNext }: Props) 
 
       <TracePanel view={view} result={result} onRetry={onRetry} />
 
-      {finished && counts && (
-        <section aria-label={t.trace.done} className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <RevealTile label={t.results.kpiGood} value={counts.good.length} tone="text-ok" delay={0} />
-          <RevealTile label={t.results.kpiAdapt} value={counts.adapt.length} tone="text-warn" delay={350} />
-          <RevealTile label={t.results.kpiChecked} value={result.matches.length + result.rejected.length} delay={700} />
+      {scored && (
+        <section aria-label={t.trace.done} className="animate-pop rounded-xl border border-line bg-surface px-5 py-4">
+          <SummaryLine result={result} className="text-lg" />
         </section>
       )}
 
@@ -53,36 +52,5 @@ export function TraceScreen({ view, result, onRetry, onCancel, onNext }: Props) 
         </Button>
       </div>
     </Page>
-  );
-}
-
-/** Counts from 0 to `value` once, starting after `delay` ms. */
-function useCountUp(value: number, delay: number, duration = 650) {
-  const [n, setN] = useState(0);
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setN(value);
-      return;
-    }
-    let frame = 0;
-    const start = performance.now() + delay;
-    const tick = (now: number) => {
-      const p = Math.min(1, Math.max(0, (now - start) / duration));
-      setN(Math.round(value * (1 - Math.pow(1 - p, 3))));
-      if (p < 1) frame = requestAnimationFrame(tick);
-    };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [value, delay, duration]);
-  return n;
-}
-
-function RevealTile({ label, value, tone = "text-fg", delay }: { label: string; value: number; tone?: string; delay: number }) {
-  const n = useCountUp(value, delay);
-  return (
-    <div className="flex animate-pop flex-col gap-1 rounded-xl border border-line bg-surface px-5 py-4" style={{ animationDelay: `${delay}ms` }}>
-      <span className="text-xs font-semibold tracking-wide text-fg-2">{label}</span>
-      <span className={`text-4xl font-semibold tracking-tight tabular-nums ${tone}`}>{n}</span>
-    </div>
   );
 }

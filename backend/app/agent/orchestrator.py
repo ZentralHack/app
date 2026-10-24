@@ -111,7 +111,8 @@ async def _analyse(ctx: _Context) -> None:
     instruments = list(ctx.kb.instruments())
     recorder.emit(
         "run_started",
-        f"Analyse gestartet: {len(ctx.kb.programs)} Programme, {len(instruments)} Instrumente.",
+        f"Analyse gestartet: {len(instruments)} Förderangebote"
+        f" aus {len(ctx.kb.programs)} Programmen.",
         {"programs": len(ctx.kb.programs), "instruments": len(instruments)},
     )
 
@@ -119,7 +120,8 @@ async def _analyse(ctx: _Context) -> None:
         result = prefilter(ctx.profile, instruments)
         recorder.emit(
             "prefilter_result",
-            f"{len(result.kept)} Instrumente bleiben, {len(result.rejected)} passen nicht.",
+            f"{len(result.kept)} Förderangebote kommen in Frage,"
+            f" {len(result.rejected)} passen nicht.",
             {
                 "kept": [i.ref.model_dump() for i in result.kept],
                 "rejected": [r.model_dump(mode="json") for r in result.rejected],

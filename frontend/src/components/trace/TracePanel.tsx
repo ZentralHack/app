@@ -28,7 +28,7 @@ export function TracePanel({ view, result, onRetry }: Props) {
       <Stage name="vorfilter" status={view.stages.vorfilter.status}>
         {view.prefilter && view.totals && (
           <Line>
-            {view.totals.instruments} Instrumente in {view.totals.programs} Programmen geprüft, <b className="font-semibold">{view.prefilter.kept} kommen in Frage</b>.
+            {t.trace.totals(view.totals.instruments, view.totals.programs)}, <b className="font-semibold">{t.trace.kept(view.prefilter.kept)}</b>.
           </Line>
         )}
         {view.prefilter &&
@@ -41,6 +41,11 @@ export function TracePanel({ view, result, onRetry }: Props) {
       </Stage>
 
       <Stage name="pruefung" status={view.stages.pruefung.status}>
+        {view.instruments.length > 0 && (
+          <Line>
+            <b className="font-semibold tabular-nums">{t.trace.checked(view.instruments.filter(l => l.status !== "laeuft").length, view.prefilter?.kept ?? view.instruments.length)}</b>
+          </Line>
+        )}
         {view.instruments.map(l => (
           <Line key={l.key} icon={l.status === "laeuft" ? <Spinner /> : <StatusSymbol state={l.status === "fehler" ? "nicht_erfuellt" : "erfuellt"} size="sm" />}>
             <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">

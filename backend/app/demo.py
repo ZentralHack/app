@@ -89,14 +89,14 @@ async def _replay(case: RunResult, recorder: RunRecorder, sleep) -> None:
     total = len(case.matches) + len(case.rejected)
     emit(
         "run_started",
-        f"Analyse gestartet: {len(programs)} Programme, {total} Instrumente.",
+        f"Analyse gestartet: {total} Förderangebote aus {len(programs)} Programmen.",
         {"programs": len(programs), "instruments": total},
     )
     emit("step_started", "Vorfilter läuft.", {"step": "vorfilter"})
     await sleep(STEP_DELAY_S)
     emit(
         "prefilter_result",
-        f"{len(case.matches)} Instrumente bleiben, {len(case.rejected)} passen nicht.",
+        f"{len(case.matches)} Förderangebote kommen in Frage, {len(case.rejected)} passen nicht.",
         {
             "kept": [
                 {"program_id": m.program_id, "instrument_id": m.instrument_id} for m in case.matches

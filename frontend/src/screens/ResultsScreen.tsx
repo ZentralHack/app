@@ -6,10 +6,12 @@ import { PageHeader } from "../components/layout/PageHeader";
 import { RejectedList } from "../components/results/RejectedList";
 import { matchTitle, ResultCard } from "../components/results/ResultCard";
 import { FitBadge } from "../components/results/FitBadge";
+import { SummaryLine } from "../components/results/SummaryLine";
 import { ArrowRight } from "../components/ui/icons";
 import { Alert } from "../components/ui/Alert";
 import { Button } from "../components/ui/Button";
-import { isAdvisory, splitMatches } from "../lib/results";
+import { splitMatches } from "../lib/results";
+import { resultGroups } from "../lib/summary";
 import { t } from "../text/de-CH";
 
 interface Props {
@@ -33,12 +35,9 @@ export function ResultsScreen({ result, company, onOpen, onRetry, onNext }: Prop
   }
 
   const running = result.status === "laeuft";
-  const split = splitMatches(result.matches);
-  const { notFit, failed } = split;
   // Money first; advice and coaching get their own quiet section below.
-  const good = split.good.filter(m => !isAdvisory(m));
-  const adapt = split.adapt.filter(m => !isAdvisory(m));
-  const advice = [...split.good, ...split.adapt].filter(isAdvisory);
+  const { good, adapt, advice, failed } = resultGroups(result);
+  const { notFit } = splitMatches(result.matches);
   const fitting = [...good, ...adapt];
   const pending = result.matches.filter(m => m.status === "ausstehend" || m.status === "laeuft");
   const top = fitting[0];
@@ -50,12 +49,7 @@ export function ResultsScreen({ result, company, onOpen, onRetry, onNext }: Prop
     <Page>
       <header className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
         <PageHeader title={running && fitting.length === 0 ? t.results.loading : t.results.heading(company)} lead={running || top ? undefined : t.results.nothing}>
-          {!running && top && (
-            <p className="flex flex-wrap gap-x-4 text-lg font-semibold">
-              <span className="text-ok">{t.results.counts(good.length, adapt.length).good}</span>
-              <span className="text-warn">{t.results.counts(good.length, adapt.length).adapt}</span>
-            </p>
-          )}
+          {!running && <SummaryLine result={result} className="text-lg" />}
         </PageHeader>
         <Button onClick={onNext} disabled={!result.plan}>
           {t.results.toPlan} <ArrowRight aria-hidden="true" className="size-4" />

@@ -90,7 +90,7 @@ export const FIELD_SPEC: Record<string, FieldSpec> = {
     kind: "multi",
     placeholder: "Art des Vorhabens wählen",
     options: PROJECT_TYPES,
-    hint: "Bestimmt, welche Programme geprüft werden. Bitte prüfen und ergänzen.",
+    hint: "Bestimmt, welche Förderangebote geprüft werden. Bitte prüfen und ergänzen.",
     wide: true,
   },
   vorhaben_beschreibung: { kind: "textarea", placeholder: "Was möchten Sie umsetzen?" },
