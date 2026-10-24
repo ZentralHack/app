@@ -105,9 +105,13 @@
       {
         "criterion": "sgh:sockelfinanzierung_bank",
         "reason": "Eine Bank ist keine Partnerart dieses Felds; das Kriterium hat eine eigene Rückfrage."
+      },
+      {
+        "criterion": "innotour:drei_destinationen",
+        "reason": "Die Frage betrifft nur Forschungspartner, nicht Partner aus mehreren Destinationen."
       }
     ],
-    "kb_fingerprint": "sha256:7dad8c91f0d17aa438e124ee998e750055884ab407ba328ed84284166cd71b5c",
+    "kb_fingerprint": "sha256:ce4ca2ef43efbc50aeba71240f38e0ed4d4c70bdd0fb7f0ed83c4c10d214929b",
     "generated": null,
     "review": {
       "status": "needs_review",
@@ -289,6 +293,66 @@
             "state": "nicht_erfuellt"
           }
         ]
+      },
+      {
+        "criterion": "berghilfe:nicht_abgeschlossen",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "bfe-pilot-demonstration:projektbeginn_nach_vertrag",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "klimastiftung-schweiz:antrag_vor_umsetzung",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "nrp-luzern:vor_projektstart",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
       }
     ],
     "not_decidable": [
@@ -301,7 +365,7 @@
         "reason": "Hängt vom Datum der Zusicherung ab, nicht nur vom Projektstart."
       }
     ],
-    "kb_fingerprint": "sha256:c91dacf7e2b6553303dd86c07a94f61510871dd530dbe27028f3186f66a3e4a0",
+    "kb_fingerprint": "sha256:5c3580a18d8d20b538b0dadbb4f867326e19eb7ce05b648f2a775f6fcf81e2ff",
     "generated": null,
     "review": {
       "status": "needs_review",
@@ -393,7 +457,7 @@
       }
     ],
     "not_decidable": [],
-    "kb_fingerprint": "sha256:bab4756c133e24cc5031da83f76d8b3aa66389e53430ae267c0600f19eb6d9c1",
+    "kb_fingerprint": "sha256:04cc6cc39152bab7316c6923e7b67ef56453f5c1d8e568ac4812eda89e4eb8fd",
     "generated": null,
     "review": {
       "status": "needs_review",
@@ -535,7 +599,7 @@
         "reason": "Der nicht für die wärmetechnischen Anforderungen nötige Anteil lässt sich aus dem Baujahr nicht ableiten."
       }
     ],
-    "kb_fingerprint": "sha256:64dd2b1f0b3c1afeedd73e51912fdeb0050a0bac6ab9bd51ea457eb552dcfdbe",
+    "kb_fingerprint": "sha256:8929e5d64743ff279ff4e5210d37ca64fcd706997b421f67fd7986b118b4ea8e",
     "generated": null,
     "review": {
       "status": "needs_review",
