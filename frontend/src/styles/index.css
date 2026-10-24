@@ -1,0 +1,190 @@
+/* Entry stylesheet: Tailwind, HeroUI primitives, then the app's tokens. Import order matters. */
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/* Fonts and accent: Schibsted Grotesk, primary #009FE1 (fixed by the team). */
+:root {
+  --app-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --app-text: "Schibsted Grotesk", system-ui, sans-serif;
+  --display-weight: 600;
+  --display-tracking: -0.025em;
+
+  --app-accent: #009fe1;
+  --app-accent-hover: #008cc6;
+  --app-accent-soft: #e6f5fc;
+  --app-accent-ink: #0079ab;
+}
+
+/* HeroUI theme variables, pointed at the app palette. Unlayered, so they win over HeroUI's theme layer. */
+:root {
+  --background: #f6f7f8;
+  --foreground: #0e1621;
+  --surface: #ffffff;
+  --border: #e4e7eb;
+  --separator: #e4e7eb;
+  --muted: #667180;
+  --accent: var(--app-accent);
+  --accent-foreground: #ffffff;
+  --focus: var(--app-accent);
+  --success: #16803c;
+  --danger: #c42b2b;
+  --radius: 0.5rem;
+  /* Fields: visible border instead of HeroUI's white-on-white shadow. */
+  --field-background: #ffffff;
+  --field-border-width: 1px;
+  --field-border: #c3c9d1;
+  --field-border-hover: #98a1ad;
+  --field-border-focus: var(--app-accent);
+  --field-shadow: none;
+  --field-placeholder: #8a94a1;
+}
+
+@theme inline {
+  --font-sans: var(--app-text);
+  --font-display: var(--app-display);
+
+  --color-bg: var(--background);
+  --color-fg: var(--foreground);
+  --color-primary: var(--app-accent);
+  --color-primary-hover: var(--app-accent-hover);
+  --color-primary-soft: var(--app-accent-soft);
+  --color-primary-ink: var(--app-accent-ink);
+}
+
+@theme {
+  --color-fg-2: #3a4553;
+  --color-fg-muted: #667180;
+  --color-line: #e4e7eb;
+  --color-line-strong: #cdd2d9;
+  --color-sunken: #f1f3f5;
+
+  --color-ok: #16803c;
+  --color-ok-soft: #e6f4ea;
+  --color-warn: #b25e09;
+  --color-warn-soft: #fdf1e1;
+  --color-star: #f2b705;
+  --color-star-soft: #fff7d6;
+  --color-star-ink: #7a5800;
+  --color-unknown: #5b6675;
+  --color-unknown-soft: #eef0f3;
+  --color-error: #c42b2b;
+  --color-error-soft: #fcebea;
+
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 21px;
+  --text-2xl: 26px;
+  --text-3xl: 32px;
+  --text-4xl: 36px;
+
+  --radius-badge: 6px;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04);
+  --shadow-lift: 0 1px 2px rgb(16 24 40 / 0.05), 0 8px 24px rgb(16 24 40 / 0.08);
+  --container-app: 1280px;
+  --ease-app: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-pop: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-draw: draw 0.35s 0.1s ease-out both;
+  --animate-pulse-ring: pulse-ring 2s ease-out infinite;
+  --animate-rise: rise 0.32s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-grow-x: grow-x 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-shimmer: shimmer 1.2s linear infinite;
+
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes draw {
+    from { stroke-dashoffset: 16; }
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes pulse-ring {
+    from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--app-accent) 35%, transparent); }
+    to { box-shadow: 0 0 0 10px transparent; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes grow-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+}
+
+:root {
+  --pad-card: 24px;
+  --gap-section: 32px;
+  --control-h: 44px;
+  --sidebar-w: 264px;
+}
+
+/* Display type: page titles, big figures, the profile initial. */
+@utility type-display {
+  font-family: var(--app-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.08;
+}
+
+/* Loading placeholder with a moving sheen. */
+@utility skeleton-sheen {
+  background: linear-gradient(90deg, var(--color-sunken) 0%, #e6e9ed 50%, var(--color-sunken) 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--app-text);
+    font-size: var(--text-base);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum" 0;
+  }
+  h1 {
+    font-family: var(--app-display);
+    font-weight: var(--display-weight);
+    letter-spacing: var(--display-tracking);
+    font-size: var(--text-3xl);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+  h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  h2 { font-size: var(--text-lg); }
+  h3 { font-size: var(--text-base); }
+  /* Links always look like links: accent colour and underline. Components may opt out with no-underline. */
+  a {
+    color: var(--app-accent-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--app-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -155,8 +155,17 @@ Die Contract-Modelle in `backend/app/models/contract.py` werden aus `design/cont
 
 ### Frontend
 
-<!-- TODO: Frontend-Setup -->
-> Folgt mit dem Frontend.
+Voraussetzung: Node 20 oder neuer. Das Backend muss laufen (siehe oben), Vite leitet `/api` an `http://127.0.0.1:8000` weiter.
+
+```
+cd frontend
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # Typprüfung und Produktions-Build
+npm run sync       # src/api/contract.ts neu aus design/contract.schema.json erzeugen
+```
+
+React 19, Vite, TypeScript, Tailwind CSS v4, HeroUI v3. Alle UI-Texte in `src/text/de-CH.ts`, die Schnittstelle zum Backend in `src/api/`.
 
 ## Testprojekte
 
