@@ -158,7 +158,7 @@
           "notes": "Formular: «Die UTF beschränkt sich auf die Entwicklung von Anlagen und Verfahren welche die Umwelt im öffentlichen Interesse entlasten.» Gesetzlich: Art. 49 Abs. 3 USG."
         },
         {
-          "id": "vor_markteintritt",
+          "id": "phase_vor_markteintritt",
           "text": "Das Vorhaben ist ein Pilot- und Demonstrationsprojekt in der Phase vor dem Markteintritt, ein Projekt zur Verbesserung der Ressourceneffizienz oder eine Machbarkeitsstudie.",
           "kind": "soll",
           "about": "vorhaben",
@@ -426,7 +426,7 @@
         {
           "text": "Vor dem Gesuch eine Projektskizze (1 bis 2 Seiten) einreichen und mit der Sektion Innovation telefonieren, um die Förderungswürdigkeit abzuklären",
           "affects_criteria": [
-            "vor_markteintritt",
+            "phase_vor_markteintritt",
             "umweltentlastung"
           ],
           "source": {
@@ -572,7 +572,7 @@
       "funding.max_amount_chf: Seite «Eingabe eines Gesuchs» nennt max. CHF 0.5 Mio. für P&D, das Formular (1.8.2026) nennt «Anbegehrter Beitrag der UTF (max. 1 Million)». Beim BAFU klären.",
       "application.steps: Seite «Eingabe eines Gesuchs» widersprüchlich. Kleinprojekt: Sektion Innovation entscheidet unter CHF 150'000. Projekt und Kriterien: Expertenkommission über CHF 50'000. Schwelle klären.",
       "criteria.kommerzielle_nutzung: Seite sagt «muss glaubhaft dargestellt werden», Formular erlaubt Befreiung von der Rückzahlung bei kostenloser Veröffentlichung. Klären, ob nicht-kommerzielle Projekte möglich sind.",
-      "criteria.vor_markteintritt: auf soll gesetzt, da kein Ausschluss genannt und Art. 49 Abs. 3 USG auch die Markteinführung nennt. Prüfen.",
+      "criteria.phase_vor_markteintritt: auf soll gesetzt, da kein Ausschluss genannt und Art. 49 Abs. 3 USG auch die Markteinführung nennt. Prüfen.",
       "budget.year: Jahr des Betrags CHF 1.7 Mio. nicht genannt (Seite vom 5.9.2025)."
     ]
   }
