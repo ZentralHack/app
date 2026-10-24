@@ -164,3 +164,15 @@ def test_criterion_question_falls_back_to_the_criterion_question(full_kb: Knowle
 def test_no_question_when_nothing_in_a_profile_decides_it(full_kb: KnowledgeBase):
     item, scoped = _scoped(full_kb, "eic-accelerator", "eic-accelerator", "auswahl_jury")
     assert criterion_question(item, scoped, full_kb) is None
+
+
+def test_a_given_field_is_never_asked_again(full_kb: KnowledgeBase):
+    """Projektstart is given: the timing criterion gets its own question, not Projektstart."""
+    item, scoped = _scoped(
+        full_kb, "foerderprogramm-energie-lu", "waermepumpe", "gesuch_vor_installationsbeginn"
+    )
+    empty = criterion_question(item, scoped, full_kb, make_profile())
+    assert empty is not None and empty.profile_field == "projektstart"
+    given = criterion_question(item, scoped, full_kb, make_profile(projektstart="2026-12"))
+    assert given is not None
+    assert given.profile_field == "rueckfrage_gesuch_vor_installationsbeginn"

@@ -84,6 +84,7 @@ export function SourceChip({ source, n }: { source: SourceLink; n?: number }) {
       href={source.url}
       target="_blank"
       rel="noopener"
+      title={`${source.title}${source.locator ? ` · ${source.locator}` : ""}`}
       className="inline-flex h-7 max-w-full items-center gap-1.5 rounded-md border border-line bg-surface px-2 text-xs font-medium text-fg-2 no-underline transition-colors hover:border-primary hover:bg-primary-soft hover:text-primary-ink"
     >
       {n != null && <span className="grid size-4 flex-none place-items-center rounded bg-primary-soft text-[11px] font-bold text-primary-ink">{n}</span>}

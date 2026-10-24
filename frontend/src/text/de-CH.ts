@@ -167,7 +167,31 @@ export const t = {
     warnings: "Warnungen",
     combination: "Kombination",
     missing: "Fehlt für die Beurteilung",
-    openCount: (n: number) => (n === 1 ? "1 Kriterium ist noch offen" : `${n} Kriterien sind noch offen`),
+    openCount: (n: number) => (n === 1 ? "1 Punkt können Sie noch klären" : `${n} Punkte können Sie noch klären`),
+    laterCount: (n: number) => (n === 1 ? "1 weiterer Punkt wird im Gesuch nachgewiesen." : `${n} weitere Punkte werden im Gesuch nachgewiesen.`),
+    legend: {
+      erfuellt: "erfüllt (belegt durch Ihre Angaben)",
+      annahme: "Annahme oder erfüllbar",
+      unbekannt: "noch offen",
+      nicht_erfuellt: "nicht erfüllt",
+    },
+    groups: {
+      nicht_erfuellt: "Nicht erfüllt",
+      offen: "Offen: das können Sie klären",
+      erfuellbar: "Erfüllbar oder angenommen",
+      gesuch: "Im Gesuch nachzuweisen",
+      erfuellt: "Erfüllt",
+    },
+    criteriaSummary: (c: { total: number; erfuellt: number; erfuellbar: number; offen: number; gesuch: number; nicht_erfuellt: number }) =>
+      [
+        `${c.erfuellt} von ${c.total} Bedingungen erfüllt`,
+        c.erfuellbar && `${c.erfuellbar} erfüllbar oder angenommen`,
+        c.offen && `${c.offen} offen`,
+        c.gesuch && `${c.gesuch} im Gesuch nachzuweisen`,
+        c.nicht_erfuellt && `${c.nicht_erfuellt} nicht erfüllt`,
+      ]
+        .filter(Boolean)
+        .join(" · "),
     contact: "Ansprechstelle",
     criteria: "Kriterien",
     ask: "Frage dazu",

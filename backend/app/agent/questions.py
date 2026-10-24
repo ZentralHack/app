@@ -127,12 +127,20 @@ def _fallback_open(
 
 
 def criterion_question(
-    item: FlatInstrument, scoped: ScopedCriterion, kb: KnowledgeBase
+    item: FlatInstrument,
+    scoped: ScopedCriterion,
+    kb: KnowledgeBase,
+    profile: ProjectProfile | None = None,
 ) -> Question | None:
-    """The question that can decide this criterion, independent of points and profile: the
-    catalog question of a field that decides it, else the criterion's own question. No
-    prefill, so nothing is preselected. The inline editor on the program page offers it."""
-    fields = _decided_by(kb.catalog.entries).get(criterion_ref(item, scoped), [])
+    """The question that can decide this criterion, independent of points: the catalog
+    question of a deciding field the user has not given yet, else the criterion's own
+    question. A field that is `angegeben` is never asked again. No prefill, so nothing is
+    preselected. The inline editor on the program page offers it."""
+    fields = [
+        name
+        for name in _decided_by(kb.catalog.entries).get(criterion_ref(item, scoped), [])
+        if profile is None or _given(profile, name) is False
+    ]
     own = kb.criterion_questions.get(scoped.criterion.id)
     if fields:
         name = fields[0]
@@ -147,6 +155,11 @@ def criterion_question(
         criterion_id=scoped.criterion.id,
     )
     return Question(**draft | {"affects": [ref]})
+
+
+def _given(profile: ProjectProfile, name: str) -> bool:
+    field_ = profile.fields.get(name)
+    return field_ is not None and field_.status == "angegeben"
 
 
 def _catalog_question(

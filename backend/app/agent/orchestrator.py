@@ -27,6 +27,7 @@ from app.agent.scoring import (
     muss_met_share,
     score,
 )
+from app.agent.timing import apply_timing
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.loader import KnowledgeBase
 from app.llm.client import LLMClient
@@ -195,13 +196,18 @@ async def _check(ctx: _Context, item: FlatInstrument) -> None:
         _instrument_failed(ctx, item, CHECK_FAILED, retryable=True)
         return
     recorder.downgrades += check.downgrades
-    scored = score(item, check.criteria, bool(check.exclusion_hits), check.lever_texts)
-    criteria = [
-        c.model_copy(update={"question": criterion_question(item, scoped, ctx.kb)})
+    # Timing conditions the user can still meet are not open (see timing.py); scored after that.
+    timed = [
+        apply_timing(scoped.criterion, c, ctx.profile, ctx.today)
         for scoped, c in zip(item.criteria(), check.criteria, strict=True)
     ]
+    scored = score(item, timed, bool(check.exclusion_hits), check.lever_texts)
+    criteria = [
+        c.model_copy(update={"question": criterion_question(item, scoped, ctx.kb, ctx.profile)})
+        for scoped, c in zip(item.criteria(), timed, strict=True)
+    ]
     _set_match(ctx, item, status="fertig", fit=scored.fit, criteria=criteria, gaps=scored.gaps)
-    badges = Counter(c.state for c in check.criteria)
+    badges = Counter(c.state for c in timed)
     recorder.emit(
         "instrument_completed",
         f"{item.instrument.name}: {FIT_LABELS[scored.fit]}.",

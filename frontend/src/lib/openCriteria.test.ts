@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { InstrumentMatch, ProfileField, RunResult } from "../api/contract";
 import pv from "../../../backend/demo/pv-schreinerei.json";
 import sensora from "../../../backend/demo/sensor-prototyp.json";
-import { conflictOf, editorEntries, openCriteria, RUECKFRAGE } from "./openCriteria";
+import { conflictOf, editorEntries, openCriteria, RUECKFRAGE, shortText } from "./openCriteria";
 
 const runs = Object.entries(import.meta.glob("../../../backend/demo/*.json", { eager: true, import: "default" })).map(
   ([path, data]) => [path.split("/").pop()!, data as unknown as RunResult] as const,
@@ -85,4 +85,12 @@ describe("Gebäudeeigentum (PV)", () => {
     const same = { ...profile, fields: { ...profile.fields, eigentum_gebaeude: { ...corrected, value: true } } };
     expect(conflictOf("eigentum_gebaeude", same, run.profile)).toBeNull();
   });
+});
+
+it("short text does not stop at abbreviations", () => {
+  expect(shortText("Nachweis über nachhaltiges Wirtschaften: Bericht nach Art. 964b OR (auch auf Gruppenstufe). Weiteres.")).toBe(
+    "Nachweis über nachhaltiges Wirtschaften: Bericht nach Art. 964b OR (auch auf Gruppenstufe).",
+  );
+  expect(shortText("Gilt z. B. für Hotels. Mehr.")).toBe("Gilt z. B. für Hotels.");
+  expect(shortText("Das Gesuch ist vor Installationsbeginn eingereicht.")).toBe("Das Gesuch ist vor Installationsbeginn eingereicht.");
 });

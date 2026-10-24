@@ -10,8 +10,8 @@ import { ProfileEditor, type EditorAnswer } from "../components/program/ProfileE
 import { host, sameStep, uniqueWarnings } from "../lib/plan";
 import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
 import { fieldLabel, formatDateShort } from "../lib/format";
+import { criteriaGroups, criterionAnchor, groupCounts, type CriteriaItem } from "../lib/criteriaGroups";
 import { editorEntries, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
-import { visibleCriteria } from "../lib/results";
 import { LEVEL_LABEL, PHASE_LABEL, t } from "../text/de-CH";
 
 interface Props {
@@ -77,6 +77,11 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
   const open = openCriteria(match, result.profile, extracted);
   // The button only appears when at least one input can change an open criterion.
   const entries = editorEntries(open);
+  const groups = criteriaGroups(match, result.profile, extracted);
+  const counts = groupCounts(groups);
+  const actionable = groups.find(g => g.key === "offen")?.items ?? [];
+  // Numbered in the order shown, so the chip numbers read top to bottom.
+  const numbered = groups.flatMap(g => g.items.map(i => i.criterion.criterion_id));
   const contact = (result.plan?.contacts ?? []).find(c => host(c.url) && host(c.url) === host(match.links.info));
   const others = (w: CombinationWarning) =>
     w.items
@@ -131,24 +136,26 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
         </div>
       </header>
 
-      {open.length > 0 && (
+      {actionable.length > 0 && (
         <section className="flex flex-col gap-3 rounded-xl border border-line px-5 py-4" data-testid="open-criteria">
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
-            <b className="font-semibold">{t.program.openCount(open.length)}</b>
+            <b className="font-semibold">{t.program.openCount(actionable.length)}</b>
             {entries.length > 0 && (
               <button type="button" onClick={() => setEditing(true)} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
                 {t.program.completeProfile}
               </button>
             )}
           </div>
-          <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
-            {open.map(o => (
-              <li key={o.criterion.criterion_id} className="flex flex-col">
-                <span>{shortText(o.criterion.text)}</span>
-                <span className="text-sm text-fg-2">{whyOpen(o)}</span>
+          <ul className="m-0 flex list-none flex-col gap-1.5 p-0">
+            {actionable.map(({ criterion }) => (
+              <li key={criterion.criterion_id}>
+                <a href={`#${criterionAnchor(criterion)}`} title={criterion.text} className="text-fg">
+                  {shortText(criterion.text)}
+                </a>
               </li>
             ))}
           </ul>
+          {counts.gesuch > 0 && <p className="text-sm text-fg-2">{t.program.laterCount(counts.gesuch)}</p>}
         </section>
       )}
 
@@ -201,22 +208,33 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
         </section>
       )}
 
-      <section className="flex flex-col gap-2">
+      <section className="flex flex-col gap-4">
         <h2>{t.program.criteria}</h2>
-        <ul className="m-0 flex list-none flex-col divide-y divide-line border-y border-line p-0">
-          {visibleCriteria(match.criteria).map((c, i) => (
-            <li key={c.criterion_id} className="grid grid-cols-[24px_minmax(0,1fr)] gap-x-3 gap-y-1 py-3 md:grid-cols-[24px_minmax(0,1fr)_auto]">
-              <span className="pt-0.5">{c.state !== "nicht_anwendbar" && <StatusSymbol state={c.state} />}</span>
-              <div className="flex min-w-0 flex-col">
-                <span className="font-semibold">{c.text}</span>
-                <span className="text-fg-2">{c.reason}</span>
-              </div>
-              <span className="col-start-2 md:col-start-3">
-                <SourceChip source={c.source} n={i + 1} />
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col gap-2">
+          <p className="text-lg font-semibold" data-testid="criteria-summary">
+            {t.program.criteriaSummary(counts)}
+          </p>
+          <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-1.5 p-0 text-sm text-fg-2" data-testid="criteria-legend" aria-label="Legende">
+            {(["erfuellt", "annahme", "unbekannt", "nicht_erfuellt"] as const).map(s => (
+              <li key={s} className="inline-flex items-center gap-1.5">
+                <StatusSymbol state={s} size="sm" />
+                {t.program.legend[s]}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {groups.map(g => (
+          <div key={g.key} className="flex flex-col gap-1">
+            <h3 className="text-base font-semibold">
+              {t.program.groups[g.key]} <span className="font-normal text-fg-2">({g.items.length})</span>
+            </h3>
+            <ul className="m-0 flex list-none flex-col divide-y divide-line border-y border-line p-0">
+              {g.items.map(item => (
+                <CriterionRow key={item.criterion.criterion_id} item={item} n={numbered.indexOf(item.criterion.criterion_id) + 1} />
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
 
       {contact && (
@@ -239,6 +257,25 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
         </p>
       )}
     </Page>
+  );
+}
+
+/** One checklist row: criterion and reason over the full width, the source chip small below. */
+function CriterionRow({ item: { criterion: c, open }, n }: { item: CriteriaItem; n: number }) {
+  return (
+    <li id={criterionAnchor(c)} className="grid scroll-mt-24 grid-cols-[24px_minmax(0,1fr)] gap-x-3 py-3">
+      <span className="pt-0.5">{c.state !== "nicht_anwendbar" && <StatusSymbol state={c.state} />}</span>
+      <div className="flex min-w-0 flex-col items-start gap-1">
+        <span className="font-semibold" data-testid="criterion-text">
+          {c.text}
+        </span>
+        <span className="text-fg-2">{c.reason}</span>
+        {open && open.inputs.length > 0 && <span className="text-sm text-primary-ink">{whyOpen(open)}</span>}
+        <span className="max-w-full sm:max-w-md">
+          <SourceChip source={c.source} n={n} />
+        </span>
+      </div>
+    </li>
   );
 }
 

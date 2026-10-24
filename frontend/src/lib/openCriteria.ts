@@ -67,7 +67,8 @@ export function openCriteria(match: InstrumentMatch, profile: ProjectProfile, ex
     .filter(c => c.state === "unbekannt")
     .map(criterion => {
       const fields = neededFields(criterion);
-      const question = criterion.question;
+      const answered = criterion.question && profile.fields[criterion.question.profile_field];
+      const question = answered && answered.status === "angegeben" && answered.value !== "Weiss nicht" ? null : criterion.question;
       if (criterion.kind === "bewertung" || (fields.length === 0 && !question)) {
         return { criterion, why: { kind: "gesuch", reason: criterion.reason }, inputs: [] };
       }
@@ -106,8 +107,19 @@ export function editorEntries(open: OpenCriterion[]): EditorEntry[] {
   return [...byKey.values()].sort((a, b) => order[a.input.kind] - order[b.input.kind]);
 }
 
-/** First sentence of a criterion text, for the short list. */
+/** Words that end in a dot without ending the sentence ("Art. 964b OR", "z. B."). */
+const ABBREVIATION = /(?:^|[\s(])(?:Art|Abs|Nr|Ziff|lit|bzw|ca|inkl|exkl|evtl|gem|resp|max|min|vgl|z|B|d|h|u|a|\d+)\.$/;
+
+/** First sentence of a criterion text, for the short list; abbreviations do not end it. */
 export function shortText(text: string, max = 140): string {
-  const sentence = text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
+  let sentence = text;
+  for (const m of text.matchAll(/[.!?](?=\s|$)/g)) {
+    const head = text.slice(0, m.index! + 1);
+    if (!ABBREVIATION.test(head)) {
+      sentence = head;
+      break;
+    }
+  }
+  sentence = sentence.trim();
   return sentence.length > max ? `${sentence.slice(0, max - 1).trimEnd()}…` : sentence;
 }

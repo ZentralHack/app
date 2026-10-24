@@ -5,6 +5,7 @@ import { fieldLabel, formatFieldValue } from "../../lib/format";
 import { shortText, type Conflict, type EditorEntry } from "../../lib/openCriteria";
 import { t } from "../../text/de-CH";
 import { ProfileInput } from "../profile/ProfileInput";
+import { DateAnswer, NumberAnswer } from "../questions/AnswerInputs";
 import { Button } from "../ui/Button";
 
 export interface EditorAnswer {
@@ -24,6 +25,7 @@ interface Props {
   onEditWholeProfile: () => void;
 }
 
+const DONT_KNOW = "Weiss nicht";
 const EMPTY_FIELD: ProfileField = { value: null, status: "fehlt", origin: null, quote: null, note: null };
 
 /** Wide screens get a drawer from the right, small screens a centered modal. */
@@ -230,15 +232,18 @@ function QuestionInput({
           ))}
         </div>
       ) : (
-        <input
-          type={question.input === "datum" ? "month" : "text"}
-          inputMode={question.input === "zahl" ? "numeric" : undefined}
-          value={answer ?? ""}
-          onChange={e => onAnswer(e.target.value)}
-          aria-label={question.text}
-          placeholder={question.unit ?? ""}
-          className="h-10 rounded-lg border border-line-strong bg-surface px-3"
-        />
+        <div className="flex flex-col gap-2">
+          {question.input === "zahl" ? (
+            <NumberAnswer question={question} value={answer && answer !== DONT_KNOW ? answer : ""} onChange={onAnswer} autoFocus={false} />
+          ) : (
+            <DateAnswer value={answer && answer !== DONT_KNOW ? answer : ""} onChange={v => v && onAnswer(v)} />
+          )}
+          {question.options.includes(DONT_KNOW) && (
+            <Choice selected={answer === DONT_KNOW} onClick={() => onAnswer(DONT_KNOW)}>
+              <span>{DONT_KNOW}</span>
+            </Choice>
+          )}
+        </div>
       )}
     </div>
   );
