@@ -17,7 +17,7 @@ The Fördermittel-Agent takes a free-text description of a company project ("Vor
 | Layer | Choice | Why |
 |---|---|---|
 | Backend | Python 3.13, FastAPI, Pydantic v2 | Typed models double as LLM output schemas and API schemas. Async for parallel LLM calls. |
-| LLM | Anthropic Python SDK (`AsyncAnthropic`), `messages.parse` with Pydantic output models | Native structured outputs; validated objects instead of string parsing. |
+| LLM | OpenAI Python SDK (`AsyncOpenAI`), Responses API with Structured Outputs (strict) and Pydantic output models | Schema-enforced JSON; validated objects instead of string parsing. Anthropic is the fallback behind the same interface. |
 | Knowledge base | JSON files + `jsonschema` (draft 2020-12) | Human-editable, reviewable in git, no database needed for 10 to 20 programs. |
 | Frontend | React 18, TypeScript, Vite, Tailwind CSS | Fast to build, widely known, good fit for a step-by-step UI with a live panel. |
 | API types | OpenAPI from FastAPI, TypeScript types generated with `openapi-typescript` | One source of truth for shapes. Backend and frontend cannot drift apart. |
@@ -181,7 +181,9 @@ Drops instruments using `instrument.availability`, `instrument.filter` and `prog
 | `mitarbeitende` | employee count outside `employees_min` / `employees_max` |
 | `unternehmensalter` | company age above `company_age_years_max` |
 
-All rules except `verfuegbarkeit` only drop on a known profile value. If the value is `fehlt`, the instrument stays in. Every drop carries a German reason, shown under "passt nicht".
+All rules except `verfuegbarkeit` only drop on a known profile value (`angegeben` or `annahme`). If the value is `fehlt`, the instrument stays in. An empty filter list (`applicant_types`, `project_types`, `sectors`) means no restriction. Every drop carries a German reason, shown under "passt nicht".
+
+`scope.municipalities` is not checked yet: a pre-filter rule for it is needed as soon as a Gemeinde program exists.
 
 **Required partners never drop an instrument.** A missing partner is something the user can change, and the brief's own example (Innosuisse with a research partner) depends on showing it. Instead, code adds one `muss` criterion per entry in `filter.required_partners` (scope `filter`, e.g. "Ein Forschungspartner ist beteiligt.", source = the instrument's source) to the matching input. If it is not met, scoring treats it as fixable: fit `passt_mit_anpassung`, gap `anpassung` with the fixed text for that partner type (e.g. "Forschungspartner beiziehen"). These texts are defined once in code, one per enum value.
 
@@ -190,19 +192,23 @@ All rules except `verfuegbarkeit` only drop on a known profile value. If the val
 - Output per criterion: `state` (`erfuellt`, `annahme`, `unbekannt`, `nicht_erfuellt`, `nicht_anwendbar`), a one-line German reason, and the profile field ids used as evidence.
 - `nicht_anwendbar` is only allowed for criteria with an `applies_if` condition.
 - Code post-check: `erfuellt` or `nicht_erfuellt` without evidence is downgraded to `unbekannt`. Unknown criterion ids are dropped and logged.
-- Calls run with `asyncio.gather` behind a semaphore (default 8 concurrent).
+- Calls run with `asyncio.gather` behind a semaphore (`MAX_CONCURRENCY`, default 4).
 
 ### Step 5: Scoring (pure code)
 For each instrument:
 1. A `muss` criterion `nicht_erfuellt`, with no lever in `levers` that affects it: **passt nicht**.
-2. A `muss` criterion `nicht_erfuellt` that a lever affects, or a required-partner criterion (scope `filter`) not met: **passt mit Anpassung**, with gap type `anpassung`.
-3. No `muss` failure, but two or more `muss` criteria `unbekannt`: **passt mit Anpassung**, with gap type `infos_fehlen`.
-4. Otherwise: **passt gut**.
+2. An exclusion or negative example applies: **passt nicht**.
+3. A `muss` criterion `nicht_erfuellt` that a lever affects, or a required-partner criterion (scope `filter`) not met: **passt mit Anpassung**, with gap type `anpassung`.
+4. More than a third of the applicable `muss` criteria are `unbekannt`: **passt mit Anpassung** ("Infos fehlen").
+5. Otherwise: **passt gut**.
 
-Within a level, instruments are ranked by: share of `muss` criteria `erfuellt` (with `annahme` counting half), then share of `soll` criteria met, then the nearest deadline. The thresholds live in one constants block and are covered by unit tests.
+Every `unbekannt` criterion gets a gap of type `infos_fehlen`, so "passt gut" never hides an unknown `muss` criterion. Criteria `nicht_anwendbar` are not counted.
+
+Within a level, instruments are ranked by: share of applicable `muss` criteria `erfuellt`, then the nearest deadline, then `entitlement` (`rechtsanspruch_im_budget` before `kein_rechtsanspruch` before `wettbewerb`). `rank` counts only fitting instruments; `passt_nicht` has no rank. The thresholds live in one constants block and are covered by unit tests.
 
 ### Step 6: Plan
-- Code places each instrument that fits on a timeline: **Jetzt** (deadline within 8 weeks, or `vor_projektstart` and the project starts soon), **Vor Projektstart**, **Gesuch** (fixed yearly dates), using `timing.deadline` and today's date.
+- Code computes the next deadline per fitting instrument from `timing.deadline` and `today`: the next of `next_dates` for fixed dates, `projektstart` for `vor_projektstart`. LIB: costs of year X are claimed by 31 January X+2 (claim years 2026 and 2027 both by 31.01.2027).
+- Code places each fitting instrument in one of three phases: **Jetzt** (levers to act on before any application, and instruments recommended beforehand via `empfohlen_vorher`), **Vor Projektstart** (deadline type `vor_projektstart`), **Gesuch** (all others, sorted by date). An instrument with a `voraussetzung` comes after its prerequisite.
 - Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`). Rules whose `with` target (program or `program:instrument`) does not exist in the knowledge base are ignored and logged, never shown.
 - The LLM writes the gap hints, using only the `levers` of that instrument, and short next-step texts per instrument. It gets the computed dates; it never computes dates itself.
 
