@@ -32,8 +32,8 @@ export function ProfileDrawer({ isOpen, programName, fields, profile, onClose, o
 
   return (
     <Drawer.Backdrop isOpen={isOpen} onOpenChange={open => !open && close()}>
-      <Drawer.Content placement="right" className="w-full max-w-xl">
-        <Drawer.Dialog aria-label={t.editor.title} className="flex h-full flex-col" data-testid="profile-drawer">
+      <Drawer.Content placement="right">
+        <Drawer.Dialog aria-label={t.editor.title} className="w-full sm:w-[34rem]" data-testid="profile-drawer">
           <Drawer.Header className="flex flex-col gap-2">
             <Drawer.Heading className="text-2xl">{t.editor.title}</Drawer.Heading>
             <p className="text-fg-2">{t.editor.lead(programName)}</p>

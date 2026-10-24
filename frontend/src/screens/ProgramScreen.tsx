@@ -151,7 +151,7 @@ export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFiel
 
       <ProfileDrawer
         isOpen={editing}
-        programName={matchTitle(match)}
+        programName={match.instrument_name}
         fields={fields}
         profile={result.profile}
         onClose={() => setEditing(false)}

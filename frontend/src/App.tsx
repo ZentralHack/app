@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { api, ApiRequestError } from "./api";
 import type { Clarification, InstrumentMatch, InstrumentRef, ProfileField, ProjectProfile, QuestionSet } from "./api/contract";
-import { RunUpdating } from "./components/layout/RunUpdating";
+import { RunUpdated, RunUpdating } from "./components/layout/RunUpdating";
 import { Sidebar } from "./components/layout/Sidebar";
 import { Alert } from "./components/ui/Alert";
 import { setProgramNames } from "./content/programs";
@@ -296,17 +296,13 @@ export function App() {
     <div className="flex min-h-screen flex-col lg:flex-row">
       <Sidebar step={step} reachable={reachable} onNavigate={n => navigate(n as Step)} />
       <div className="flex min-w-0 flex-1 flex-col">
-        {nextRunId && step >= 5 && <RunUpdating view={next.view} />}
+        {step >= 5 && (nextRunId ? <RunUpdating view={next.view} /> : notice && <RunUpdated text={notice} onClose={() => setNotice(null)} />)}
         {(error ?? run.error) && (
           <div className="mx-auto w-full max-w-app px-6 pt-6 lg:px-14">
             <Alert tone="error">{error ?? run.error}</Alert>
           </div>
         )}
-        {notice && step >= 5 && (
-          <div className="mx-auto w-full max-w-app px-6 pt-6 lg:px-14" data-testid="notice">
-            <Alert tone="info">{notice}</Alert>
-          </div>
-        )}
+
         {step === 1 && (
           <CaptureScreen
             draft={draft}

@@ -197,6 +197,7 @@ export const t = {
     running: "Die Analyse wird mit Ihren Änderungen aktualisiert",
     failed: "Die Aktualisierung ist fehlgeschlagen. Sie sehen weiterhin das vorherige Ergebnis.",
     done: "Ergebnis aktualisiert.",
+    close: "Ausblenden",
   },
   plan: {
     title: "Ihr Förderfahrplan",
