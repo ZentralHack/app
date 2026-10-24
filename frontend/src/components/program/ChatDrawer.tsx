@@ -1,8 +1,8 @@
 import { Drawer, Modal } from "@heroui/react";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { api, ApiRequestError } from "../../api";
+import { api } from "../../api";
 import type { ChatResponse, InstrumentMatch } from "../../api/contract";
-import { chatChips, chatMessages, historyKey, loadHistory, saveHistory, type Chip, type Turn } from "../../lib/chat";
+import { chatChips, chatError, chatMessages, historyKey, loadHistory, saveHistory, type Chip, type Turn } from "../../lib/chat";
 import { t } from "../../text/de-CH";
 import { SourceChip } from "../results/parts";
 import { Button } from "../ui/Button";
@@ -60,7 +60,10 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
   async function ask(question: string) {
     const text = question.trim();
     if (!text || busy) return;
-    const before = loadHistory(key);
+    const history = loadHistory(key);
+    // Sending a failed question again replaces the failed turn.
+    const last = history.at(-1);
+    const before = last?.error && last.question === text ? history.slice(0, -1) : history;
     update([...before, { question: text, response: null }]);
     setDraft("");
     setBusy(true);
@@ -68,8 +71,8 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
       const response = await api.chat(runId, ref, { messages: chatMessages(before, text) });
       update([...before, { question: text, response }]);
     } catch (e) {
-      const error = e instanceof ApiRequestError ? e.message : String(e);
-      update([...before, { question: text, response: null, error }]);
+      const { message, retry } = chatError(e);
+      update([...before, { question: text, response: null, error: message, retry }]);
     } finally {
       setBusy(false);
       input.current?.focus();
@@ -111,9 +114,14 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
             </span>
           )}
           {turn.error && (
-            <p role="alert" className="text-sm text-error">
-              {turn.error}
-            </p>
+            <div role="alert" className="flex flex-col items-start gap-1" data-testid="chat-error">
+              <p className="text-sm text-error">{turn.error}</p>
+              {turn.retry && i === turns.length - 1 && (
+                <button type="button" disabled={busy} onClick={() => void ask(turn.question)} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+                  {t.chat.retry}
+                </button>
+              )}
+            </div>
           )}
         </div>
       ))}

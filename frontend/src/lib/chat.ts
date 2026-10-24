@@ -1,4 +1,5 @@
 import type { ChatMessage, ChatRequest, ChatResponse, ChatSuggestions, InstrumentRef } from "../api/contract";
+import { ApiRequestError } from "../api/http";
 import { t } from "../text/de-CH";
 
 type Topic = ChatSuggestions["questions"][number]["topic"];
@@ -14,6 +15,8 @@ export interface Turn {
   /** Null while the answer is loading or after it failed. */
   response: ChatResponse | null;
   error?: string;
+  /** Sending the same question again can help (e.g. the AI was not reachable). */
+  retry?: boolean;
 }
 
 export const MAX_CHIPS = 5;
@@ -50,3 +53,13 @@ const histories = new Map<string, Turn[]>();
 export const historyKey = (runId: string, ref: InstrumentRef) => `${runId}:${ref.program_id}:${ref.instrument_id}`;
 export const loadHistory = (key: string): Turn[] => histories.get(key) ?? [];
 export const saveHistory = (key: string, turns: Turn[]) => histories.set(key, turns);
+
+/** Errors worth sending the same question again for. */
+const RETRYABLE = new Set(["ki_nicht_verfuegbar", "ki_antwort_ungueltig", "netzwerk", "interner_fehler"]);
+
+/** A specific message per error code, and whether sending again can help. */
+export function chatError(error: unknown): { message: string; retry: boolean } {
+  if (!(error instanceof ApiRequestError)) return { message: t.chat.errors.interner_fehler, retry: true };
+  const message = t.chat.errors[error.code] ?? t.chat.errorOther(error.code, error.message);
+  return { message, retry: RETRYABLE.has(error.code) };
+}

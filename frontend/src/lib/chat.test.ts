@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { ChatResponse } from "../api/contract";
 import { t } from "../text/de-CH";
-import { chatChips, chatMessages, MAX_CHIPS, type Turn } from "./chat";
+import { ApiRequestError } from "../api/http";
+import { chatChips, chatError, chatMessages, MAX_CHIPS, type Turn } from "./chat";
 
 const STANDARD = t.chat.standard.map(s => s.text);
 
@@ -67,5 +68,25 @@ describe("chatMessages", () => {
     expect(messages.length).toBeLessThanOrEqual(20);
     expect(messages.at(-1)).toEqual({ role: "user", text: "Neu" });
     expect(messages[0].role).toBe("user");
+  });
+});
+
+describe("chatError", () => {
+  it.each([
+    ["run_nicht_gefunden", 404, "Analyse abgelaufen, bitte neu starten", false],
+    ["nicht_gefunden", 404, "Backend neu starten", false],
+    ["ki_nicht_verfuegbar", 503, "KI nicht erreichbar", true],
+    ["ki_antwort_ungueltig", 502, "keine gültige Antwort", true],
+    ["netzwerk", 0, "Server nicht erreichbar", true],
+    ["angebot_nicht_gefunden", 404, "nicht mehr im Ergebnis", false],
+  ])("%s → specific message", (code, status, text, retry) => {
+    const e = chatError(new ApiRequestError(status, code, "Diese Anfrage ist nicht möglich."));
+    expect(e.message).toContain(text);
+    expect(e.message).not.toBe("Diese Anfrage ist nicht möglich.");
+    expect(e.retry).toBe(retry);
+  });
+
+  it("an unknown code keeps the server message and names the code", () => {
+    expect(chatError(new ApiRequestError(418, "teekanne", "Kein Kaffee.")).message).toBe("Kein Kaffee. (Fehler teekanne)");
   });
 });
