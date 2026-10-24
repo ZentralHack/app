@@ -9,12 +9,13 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import chat, health, profile, programs, questions, runs
 from app.api.errors import register_error_handlers
-from app.config import DEMO_DIR, KNOWLEDGE_BASE_DIR, Settings, get_settings
+from app.config import DEMO_DIR, FRONTEND_DIST, KNOWLEDGE_BASE_DIR, Settings, get_settings
 from app.demo import DemoCases, load_demo_cases
 from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
 from app.llm.client import LLMClient
 from app.llm.openai_client import OpenAIClient
 from app.runs import RunStore
+from app.web import BasicAuthMiddleware, mount_frontend
 
 
 def create_app(
@@ -52,6 +53,15 @@ def create_app(
     register_error_handlers(app)
     for module in (health, programs, profile, questions, runs, chat):
         app.include_router(module.router, prefix="/api")
+    if settings.basic_auth_user and settings.basic_auth_password:
+        app.add_middleware(
+            BasicAuthMiddleware,
+            user=settings.basic_auth_user,
+            password=settings.basic_auth_password.get_secret_value(),
+        )
+    dist = settings.frontend_dist or FRONTEND_DIST
+    if (dist / "index.html").is_file():
+        mount_frontend(app, dist)
     return app
 
 

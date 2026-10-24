@@ -13,6 +13,7 @@ REPO_DIR = BACKEND_DIR.parent
 KNOWLEDGE_BASE_DIR = REPO_DIR / "knowledge_base"
 CONTRACT_SCHEMA = REPO_DIR / "design" / "contract.schema.json"
 DEMO_DIR = BACKEND_DIR / "demo"
+FRONTEND_DIST = REPO_DIR / "frontend" / "dist"
 CHAT_LOG = BACKEND_DIR / "logs" / "chat_questions.jsonl"
 
 
@@ -33,6 +34,11 @@ class Settings(BaseSettings):
     dev_persist_runs: bool = False
     dev_runs_file: Path = Path.home() / ".fundpilot" / "runs.json"
     cors_origins: str = "http://localhost:5173"
+    # Production: basic auth for site and API, off when unset.
+    basic_auth_user: str | None = None
+    basic_auth_password: SecretStr | None = None
+    # Built frontend served under the same origin; None means frontend/dist if it exists.
+    frontend_dist: Path | None = None
     # Anonymised chat questions (JSONL, gitignored); None turns the log off.
     chat_log: Path | None = CHAT_LOG
     # USD per million tokens (input, output), only for the cost estimate in the log.
