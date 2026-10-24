@@ -1,0 +1,707 @@
+{
+ "run_id": "run_451ad2af",
+ "status": "fertig",
+ "created_at": "2026-10-24T02:15:09.959579Z",
+ "completed_at": "2026-10-24T02:15:09.960741Z",
+ "today": "2026-10-24",
+ "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
+ "profile": {
+  "input_text": "Unser Treuhandbüro in Kriens mit 8 Mitarbeitenden möchte für das 20-Jahr-Jubiläum einen Firmenausflug und ein Fest für Kunden organisieren. Kosten etwa CHF 30'000.",
+  "summary": "Gefördert werden sollen ein Firmenausflug und ein Kundenfest zum 20-Jahr-Jubiläum des Treuhandbüros.",
+  "fields": {
+   "standort_kanton": {
+    "value": "LU",
+    "status": "annahme",
+    "origin": "text",
+    "quote": "in Kriens",
+    "note": "Kriens liegt im Kanton Luzern."
+   },
+   "standort_gemeinde": {
+    "value": "Kriens",
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "applicant_type": {
+    "value": [
+     "unternehmen"
+    ],
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Unser Treuhandbüro",
+    "note": "Ein Treuhandbüro ist ein Unternehmen."
+   },
+   "art_des_vorhabens": {
+    "value": [],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "einen Firmenausflug und ein Fest für Kunden organisieren",
+    "note": "Der genannte Zweck passt zu keinem der erlaubten Vorhabenstypen."
+   },
+   "branche": {
+    "value": [
+     "dienstleistung"
+    ],
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Unser Treuhandbüro",
+    "note": "Ein Treuhandbüro ist eine Dienstleistung."
+   },
+   "partner": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "vorhaben_beschreibung": {
+    "value": "Organisation eines Firmenausflugs und eines Kundenfests zum 20-Jahr-Jubiläum.",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "für das 20-Jahr-Jubiläum einen Firmenausflug und ein Fest für Kunden organisieren",
+    "note": null
+   },
+   "taetigkeit": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "rechtsform": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "handelsregister": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "raeumlichkeiten": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "mitarbeitende": {
+    "value": 8,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "unternehmensalter": {
+    "value": 20,
+    "status": "annahme",
+    "origin": "text",
+    "quote": "20-Jahr-Jubiläum",
+    "note": "Das Jubiläum deutet auf ein Unternehmensalter von 20 Jahren hin."
+   },
+   "umsatz": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "geschaeftsjahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "revisionsart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "nachhaltigkeitsbericht": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "budget": {
+    "value": 30000,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "laufzeit": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "projektstart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "baujahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "bestehende_heizung": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "eigentum_gebaeude": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   }
+  }
+ },
+ "matches": [],
+ "rejected": [
+  {
+   "program_id": "berghilfe",
+   "instrument_id": "projektbeitrag",
+   "program_name": "Schweizer Berghilfe",
+   "instrument_name": "Projektbeitrag der Schweizer Berghilfe",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "bfe-pilot-demonstration",
+   "instrument_id": "pd-finanzhilfe",
+   "program_name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
+   "instrument_name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "bg-mitte",
+   "instrument_id": "ordentliche-buergschaft",
+   "program_name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+   "instrument_name": "Ordentliche Bürgschaft für Bankkredite",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "eic-accelerator",
+   "instrument_id": "eic-accelerator",
+   "program_name": "EIC Accelerator (Horizon Europe)",
+   "instrument_name": "EIC Accelerator (Grant und Investition)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermedaemmung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmedämmung Gebäudehülle mit Bonus Gebäudehülleneffizienz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermepumpe",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "holzfeuerung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Holzfeuerungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermenetz-anschluss",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Anschluss an ein Wärmenetz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "bonus-ersatz-elektroheizung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "ladeinfrastruktur",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Ladeinfrastruktur in Mehrparteiengebäuden und bidirektionale Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "heizungsersatz",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "desinvestitionsbeitrag",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "photovoltaik",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "e-mobilitaet",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "abwaermenutzung",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsprojekt-umsetzungspartner",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsprojekte mit Umsetzungspartner",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "start-up-innovationsprojekt",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Innovationsprojekte",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsscheck",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsscheck",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsmentoring",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsmentoring",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "initial-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Initial Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "core-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Core Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innotour",
+   "instrument_id": "innotour-finanzhilfe",
+   "program_name": "Innotour, Förderung von Innovation, Zusammenarbeit und Wissensaufbau im Tourismus",
+   "instrument_name": "Innotour Finanzhilfe für überbetriebliche Tourismusprojekte",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "itz",
+   "instrument_id": "innovation-sparring",
+   "program_name": "ITZ InnovationsTransfer Zentralschweiz",
+   "instrument_name": "Innovation Sparring",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "klimastiftung-schweiz",
+   "instrument_id": "innovationsfoerderung",
+   "program_name": "Klimastiftung Schweiz",
+   "instrument_name": "Innovationsförderung Klimastiftung Schweiz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "lib",
+   "instrument_id": "lib-beitrag",
+   "program_name": "Luzerner Innovationsbeitrag",
+   "instrument_name": "Luzerner Innovationsbeitrag",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "nrp-luzern",
+   "instrument_id": "nrp-projektfoerderung",
+   "program_name": "Neue Regionalpolitik (NRP) Kanton Luzern 2024 bis 2027",
+   "instrument_name": "NRP-Projektförderung Kanton Luzern",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "peik",
+   "instrument_id": "peik-energieberatung",
+   "program_name": "PEIK, Energieberatung für KMU von EnergieSchweiz",
+   "instrument_name": "PEIK Energieberatung und Umsetzungsbegleitung für KMU",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "prokilowatt",
+   "instrument_id": "projekte",
+   "program_name": "ProKilowatt, wettbewerbliche Ausschreibungen für Stromeffizienz",
+   "instrument_name": "ProKilowatt Projekte (Stromeffizienz)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "kleiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Kleine Einmalvergütung (KLEIV) für Photovoltaikanlagen unter 100 kW",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "greiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Grosse Einmalvergütung (GREIV) für Photovoltaikanlagen ab 100 kW",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "heiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Hohe Einmalvergütung (HEIV) für Photovoltaikanlagen ohne Eigenverbrauch",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "saffa",
+   "instrument_id": "buergschaft",
+   "program_name": "Bürgschaftsgenossenschaft SAFFA",
+   "instrument_name": "Bürgschaft für Unternehmerinnen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "serv",
+   "instrument_id": "lieferantenkreditversicherung",
+   "program_name": "SERV Schweizerische Exportrisikoversicherung",
+   "instrument_name": "Lieferantenkreditversicherung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "sgh",
+   "instrument_id": "darlehen",
+   "program_name": "Schweizerische Gesellschaft für Hotelkredit (SGH)",
+   "instrument_name": "Darlehen für Beherbergungsbetriebe",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "steuerliche-innovationsfoerderung-lu",
+   "instrument_id": "patentbox",
+   "program_name": "Steuerliche Innovationsförderung Kanton Luzern (Patentbox und F&E-Zusatzabzug)",
+   "instrument_name": "Patentbox (ermässigte Besteuerung von Gewinnen aus Patenten)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "technologiefonds",
+   "instrument_id": "buergschaft",
+   "program_name": "Technologiefonds",
+   "instrument_name": "Bürgschaft Technologiefonds",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "umwelttechnologiefoerderung",
+   "instrument_id": "utf-finanzhilfe",
+   "program_name": "Umwelttechnologieförderung (UTF) des BAFU",
+   "instrument_name": "Finanzhilfe Umwelttechnologieförderung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  }
+ ],
+ "plan": {
+  "timeline": [],
+  "warnings": [],
+  "next_steps": [],
+  "contacts": [
+   {
+    "name": "Schweizer Berghilfe",
+    "role": "Soodstrasse 55, 8134 Adliswil",
+    "email": "info@berghilfe.ch",
+    "phone": "044 712 60 60",
+    "url": "https://www.berghilfe.ch/kontakt"
+   },
+   {
+    "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+    "role": "Bahnhofstrasse 59D, 3401 Burgdorf",
+    "email": "info@bgm-ccc.ch",
+    "phone": "034 420 20 20",
+    "url": "https://www.bgm-ccc.ch/kontakt"
+   },
+   {
+    "name": "Euresearch",
+    "role": "Status der Schweiz in Horizon Europe",
+    "email": null,
+    "phone": null,
+    "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
+   },
+   {
+    "name": "Energieberatung Kanton Luzern, c/o Umweltberatung Luzern",
+    "role": "Allgemeine Fragen und Status von Gesuchen",
+    "email": "energie@umweltberatung-luzern.ch",
+    "phone": "041 412 32 32",
+    "url": "https://umweltberatung-luzern.ch/"
+   },
+   {
+    "name": "Umweltberatung Luzern",
+    "role": "Erste Anlaufstelle, Löwenplatz 11, 6004 Luzern",
+    "email": "info@umweltberatung-luzern.ch",
+    "phone": "+41 41 412 32 32",
+    "url": "https://www.stadtluzern.ch/_rte/publikation/420010"
+   },
+   {
+    "name": "Innosuisse Innovationsprojekte",
+    "role": "Innovationsprojekte und Start-up Innovationsprojekte",
+    "email": "innoprojects@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/de/innosuisse-kontaktieren"
+   },
+   {
+    "name": "Innosuisse Start-up",
+    "role": "Start-up Coaching",
+    "email": "startup@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up"
+   },
+   {
+    "name": "Innosuisse Innovationsscheck",
+    "role": "Verlängerungen und Fragen zum Innovationsscheck",
+    "email": "innocheque@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/de/innovationsscheck"
+   },
+   {
+    "name": "SECO Tourismuspolitik",
+    "role": "Holzikofenweg 36, 3003 Bern",
+    "email": "tourismus@seco.admin.ch",
+    "phone": "058 462 27 58",
+    "url": "https://www.seco.admin.ch/de/innotour-foerderangebot"
+   },
+   {
+    "name": "ITZ InnovationsTransfer Zentralschweiz",
+    "role": "Kontaktformular",
+    "email": null,
+    "phone": null,
+    "url": "https://www.itz.ch/ueber-uns/kontakt"
+   },
+   {
+    "name": "Klimastiftung Schweiz",
+    "role": "Mythenquai 50/60, 8002 Zürich",
+    "email": null,
+    "phone": "+41 43 285 44 80",
+    "url": "https://www.klimastiftung.ch/de/kontakt/"
+   },
+   {
+    "name": "Dienststelle Raum und Wirtschaft (rawi)",
+    "role": "Fragen zum LIB",
+    "email": "innovationsbeitrag@lu.ch",
+    "phone": "+41 41 228 51 83",
+    "url": "https://standortfoerderung.lu.ch/LIB"
+   },
+   {
+    "name": "PEIK c/o act Cleantech Solutions AG",
+    "role": "Brandschenkestrasse 6, 8001 Zürich",
+    "email": "info@peik.ch",
+    "phone": "058 750 05 25",
+    "url": "https://peik.ch/"
+   },
+   {
+    "name": "ProKilowatt c/o CimArk",
+    "role": "Rue de l'Industrie 23, 1950 Sion",
+    "email": "prokilowatt@cimark.ch",
+    "phone": "+41 58 332 21 42",
+    "url": "https://www.prokw.ch/"
+   },
+   {
+    "name": "Pronovo AG",
+    "role": "Hotline Mo bis Fr 08.00 bis 12.00 und 13.00 bis 16.30 Uhr",
+    "email": "info@pronovo.ch",
+    "phone": "0848 014 014",
+    "url": "https://pronovo.ch/de/unternehmen/kontakt/"
+   },
+   {
+    "name": "Bürgschaftsgenossenschaft SAFFA",
+    "role": "Auf der Lyss 14, 4051 Basel",
+    "email": "info@saffa.ch",
+    "phone": "061 683 18 42",
+    "url": "https://www.saffa.ch/"
+   },
+   {
+    "name": "SERV Zürich",
+    "role": "Genferstrasse 6, 8002 Zürich",
+    "email": "info@serv-ch.com",
+    "phone": "+41 58 551 55 55",
+    "url": "https://www.serv-ch.com/en/contact/"
+   },
+   {
+    "name": "Schweizerische Gesellschaft für Hotelkredit",
+    "role": "Uetlibergstrasse 134b, 8027 Zürich",
+    "email": "info@sgh.ch",
+    "phone": "+41 44 209 16 16",
+    "url": "https://sgh.ch/kontakt"
+   },
+   {
+    "name": "Dienststelle Steuern Kanton Luzern, Juristische Personen",
+    "role": "Fragen zu Patentbox und F&E-Abzug",
+    "email": null,
+    "phone": null,
+    "url": "https://steuern.lu.ch/juristischepersonen/kontaktformular_jp"
+   },
+   {
+    "name": "Geschäftsstelle Technologiefonds, Emerald Technology Ventures AG",
+    "role": "Bellerivestrasse 241, 8008 Zürich",
+    "email": "info@technologiefonds.ch",
+    "phone": "044 269 61 40",
+    "url": "https://www.technologiefonds.ch/kontakt"
+   },
+   {
+    "name": "BAFU, Sektion Innovation",
+    "role": "3003 Bern",
+    "email": "innovation@bafu.admin.ch",
+    "phone": "+41 58 469 69 10",
+    "url": "https://www.bafu.admin.ch/de/utf"
+   }
+  ]
+ },
+ "error": null
+}

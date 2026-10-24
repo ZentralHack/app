@@ -1,0 +1,1522 @@
+{
+ "run_id": "run_67587f7c",
+ "status": "fertig",
+ "created_at": "2026-10-24T02:15:18.693088Z",
+ "completed_at": "2026-10-24T02:15:41.386408Z",
+ "today": "2026-10-24",
+ "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
+ "profile": {
+  "input_text": "Unsere Bäckerei in Sursee mit 25 Mitarbeitenden möchte einen neuen Backofen kaufen und ein neues Kassensystem einführen. Wir kaufen beides fertig beim Hersteller. Kosten rund CHF 150'000.",
+  "summary": "Gefördert werden soll der Kauf eines neuen Backofens und die Einführung eines neuen Kassensystems.",
+  "fields": {
+   "standort_kanton": {
+    "value": "LU",
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Unsere Bäckerei in Sursee",
+    "note": "Sursee liegt im Kanton Luzern."
+   },
+   "standort_gemeinde": {
+    "value": "Sursee",
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "applicant_type": {
+    "value": [
+     "unternehmen"
+    ],
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Unsere Bäckerei",
+    "note": "Eine Bäckerei wird als Unternehmen eingeordnet."
+   },
+   "art_des_vorhabens": {
+    "value": [
+     "digitalisierung",
+     "investition"
+    ],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "einen neuen Backofen kaufen und ein neues Kassensystem einführen",
+    "note": null
+   },
+   "branche": {
+    "value": [
+     "gewerbe"
+    ],
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Unsere Bäckerei",
+    "note": "Eine Bäckerei wird dem Gewerbe zugeordnet."
+   },
+   "partner": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "vorhaben_beschreibung": {
+    "value": "Kauf eines neuen Backofens und Einführung eines neuen Kassensystems; beides wird fertig beim Hersteller gekauft.",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "einen neuen Backofen kaufen und ein neues Kassensystem einführen. Wir kaufen beides fertig beim Hersteller.",
+    "note": null
+   },
+   "taetigkeit": {
+    "value": "Bäckerei",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Unsere Bäckerei",
+    "note": null
+   },
+   "rechtsform": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "handelsregister": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "raeumlichkeiten": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "mitarbeitende": {
+    "value": 25,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "unternehmensalter": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "umsatz": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "geschaeftsjahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "revisionsart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "nachhaltigkeitsbericht": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "budget": {
+    "value": 150000,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "laufzeit": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "projektstart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "baujahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "bestehende_heizung": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "eigentum_gebaeude": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   }
+  }
+ },
+ "matches": [
+  {
+   "program_id": "berghilfe",
+   "instrument_id": "projektbeitrag",
+   "program_name": "Schweizer Berghilfe",
+   "instrument_name": "Projektbeitrag der Schweizer Berghilfe",
+   "provider": "Schweizer Berghilfe",
+   "level": "stiftung",
+   "purpose": "Die spendenfinanzierte Schweizer Berghilfe unterstützt Projekte, die Arbeitsplätze und Wertschöpfung im Berggebiet schaffen, wenn das Geld nicht ausreicht.",
+   "instrument_type": "beitrag",
+   "funding_summary": "À-fonds-perdu-Beitrag, Höhe nach Bedarf zur Schliessung der Finanzierungslücke.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+    "apply": "https://gesuch.berghilfe.ch/?locale=de",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 1,
+   "criteria": [
+    {
+     "criterion_id": "berggebiet",
+     "scope": "instrument",
+     "text": "Das Projekt schafft Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet. Die Region wird geprüft.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der Standort Sursee ist genannt, aber ob das Projekt Arbeitsplätze und Wertschöpfung im geprüften Berggebiet schafft, geht daraus nicht hervor.",
+     "evidence": [
+      "standort_gemeinde",
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Wer kann ein Gesuch stellen"
+     }
+    },
+    {
+     "criterion_id": "finanzielles_engagement",
+     "scope": "instrument",
+     "text": "Die Trägerschaft engagiert sich finanziell mit Eigenmitteln, Arbeit oder Material.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die genannten Projektkosten belegen noch keinen finanziellen Eigenbeitrag der Trägerschaft.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "finanzierungsluecke",
+     "scope": "instrument",
+     "text": "Nach Eigenleistungen und tragbaren Fremdfinanzierungen (öffentliche Investitionshilfen, Darlehen) bleibt ein Fehlbetrag.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Aus den genannten Projektkosten lässt sich ohne Angaben zu Eigenleistungen und Fremdfinanzierung kein Fehlbetrag ableiten.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "projekt_konkret",
+     "scope": "instrument",
+     "text": "Das Projekt ist konkret und die Planung fortgeschritten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die geplanten Anschaffungen sind konkret beschrieben, der Stand der Planung ist jedoch nicht belegt.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "finanzielle_notwendigkeit",
+     "scope": "instrument",
+     "text": "Es besteht eine finanzielle Notwendigkeit. Die gesamte finanzielle Situation wird geprüft, ohne feste Grenzen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur gesamten finanziellen Situation liegen keine Angaben vor, aus denen sich eine finanzielle Notwendigkeit beurteilen liesse.",
+     "evidence": [],
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "berggebiet"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob das Projekt im Schweizer Berggebiet Arbeitsplätze und Wertschöpfung schafft und welche Region betroffen ist.",
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Wer kann ein Gesuch stellen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "finanzielles_engagement"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob und wie sich die Trägerschaft mit Eigenmitteln, Arbeit oder Material beteiligt.",
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "finanzierungsluecke"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob nach Eigenleistungen und tragbaren Fremdfinanzierungen ein Fehlbetrag bleibt.",
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "projekt_konkret"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wie konkret das Projekt ist und wie weit die Planung fortgeschritten ist.",
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "finanzielle_notwendigkeit"
+     ],
+     "lever": null,
+     "hint": "Klären Sie anhand der gesamten finanziellen Situation, ob eine finanzielle Notwendigkeit besteht.",
+     "source": {
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "itz",
+   "instrument_id": "innovation-sparring",
+   "program_name": "ITZ InnovationsTransfer Zentralschweiz",
+   "instrument_name": "Innovation Sparring",
+   "provider": "ITZ InnovationsTransfer Zentralschweiz",
+   "level": "region",
+   "purpose": "ITZ unterstützt KMU und Start-ups mit kostenlosem Innovationssparring und vermittelt Partner und Förderstellen in der Region.",
+   "instrument_type": "beratung",
+   "funding_summary": "Sparring bis 20 Stunden kostenlos, Erstgespräch (30 Minuten) kostenlos und unverbindlich.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Anfrage jederzeit über das Formular Jetzt Innovieren.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+    "apply": "https://www.itz.ch/jetztinnovieren",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "innovationsvorhaben",
+     "scope": "instrument",
+     "text": "Es gibt ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Beschrieben ist der Kauf fertiger Produkte, nicht ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Angebot"
+     }
+    },
+    {
+     "criterion_id": "sparring_check",
+     "scope": "instrument",
+     "text": "Ein 30-minütiger Sparring-Check klärt, ob Sparring passt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob ein 30-minütiger Sparring-Check stattgefunden hat, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Ablauf"
+     }
+    },
+    {
+     "criterion_id": "zielgruppe",
+     "scope": "instrument",
+     "text": "KMU, Start-ups oder Privatpersonen.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Aus der Bäckerei mit 25 Mitarbeitenden lässt sich eine Zugehörigkeit zur Zielgruppe KMU ableiten.",
+     "evidence": [
+      "taetigkeit",
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Für wen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "sparring_check"
+     ],
+     "lever": null,
+     "hint": "Klären Sie im Sparring-Check, ob Sparring für Ihr Vorhaben passt.",
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Ablauf"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "nrp-luzern",
+   "instrument_id": "nrp-projektfoerderung",
+   "program_name": "Neue Regionalpolitik (NRP) Kanton Luzern 2024 bis 2027",
+   "instrument_name": "NRP-Projektförderung Kanton Luzern",
+   "provider": "Kanton Luzern",
+   "level": "kanton",
+   "purpose": "Die NRP fördert mit Bundes- und Kantonsmitteln Projekte, die Unternehmertum, Innovation und Wertschöpfung in den Luzerner Regionen stärken.",
+   "instrument_type": "beitrag",
+   "funding_summary": "À-fonds-perdu-Beiträge je nach Projekt. Kleinstinfrastrukturen bis CHF 100'000 pro Projekt, je zur Hälfte Bund und Kanton.",
+   "deadline": {
+    "type": "unbekannt",
+    "rule": "Antragsverfahren gemäss NRP-Arbeitshilfe, nicht gesichtet.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+    "apply": null,
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "passt_schwerpunkt",
+     "scope": "instrument",
+     "text": "Das Projekt passt zu einem Förderschwerpunkt des Umsetzungsprogramms (Standortentwicklung, Tourismus, Regionalentwicklung).",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Der beschriebene Kauf fertiger Betriebsmittel lässt keinen Bezug zu Standortentwicklung, Tourismus oder Regionalentwicklung erkennen.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 30-35"
+     }
+    },
+    {
+     "criterion_id": "ueberbetrieblich",
+     "scope": "instrument",
+     "text": "Überbetriebliche Kooperationen und Unternehmensnetzwerke stehen im Vordergrund.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Ob weitere Betriebe oder Partner am Vorhaben beteiligt sind, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 30"
+     }
+    },
+    {
+     "criterion_id": "eigenmittel",
+     "scope": "instrument",
+     "text": "Relevante finanzielle Eigenmittel der Projektträger.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Das angegebene Budget belegt nicht, welche finanziellen Eigenmittel die Projektträger einbringen.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 16"
+     }
+    },
+    {
+     "criterion_id": "eigenwirtschaftlichkeit",
+     "scope": "instrument",
+     "text": "Ausrichtung auf Eigenwirtschaftlichkeit und breite Trägerschaft.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Die Beschreibung enthält keine ausreichenden Angaben zur Eigenwirtschaftlichkeit oder zu einer breiten Trägerschaft.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 16"
+     }
+    },
+    {
+     "criterion_id": "wirkungsziele",
+     "scope": "instrument",
+     "text": "Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in einer Leistungsvereinbarung.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Angaben zu Wirkungs- und Leistungszielen, Meilensteinen und Sollbruchstellen fehlen.",
+     "evidence": [],
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 5 und S. 16"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "ueberbetrieblich"
+     ],
+     "lever": "Projekt mit mehreren Betrieben oder Partnern aufziehen",
+     "hint": "Klären Sie, ob Sie das Projekt mit mehreren Betrieben oder Partnern aufziehen können.",
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 30"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "eigenmittel"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welche finanziellen Eigenmittel die Projektträger einbringen.",
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 16"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "eigenwirtschaftlichkeit"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wie das Projekt eigenwirtschaftlich werden soll und wie breit die Trägerschaft ist.",
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 16"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "wirkungsziele"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welche Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in der Leistungsvereinbarung festgehalten werden.",
+     "source": {
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "locator": "S. 5 und S. 16"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "kleiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Kleine Einmalvergütung (KLEIV) für Photovoltaikanlagen unter 100 kW",
+   "provider": "Pronovo AG",
+   "level": "bund",
+   "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. Die Vergütung deckt höchstens 30% der Investitionskosten von Referenzanlagen.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Einmaliger Beitrag pro kW installierter Leistung, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+   "deadline": {
+    "type": "nach_abschluss",
+    "rule": "Gesuch erst nach Realisierung der Anlage. Keine Frist für die Gesuchstellung genannt.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+    "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+    "form": "https://pronovo.ch/de/services/tarifrechner/"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "min_2_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "fester_standort",
+     "scope": "instrument",
+     "text": "Die Anlage hat einen festen Standort.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das Vorhaben beschreibt keine Photovoltaikanlage, für die ein fester Standort belegt werden könnte.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "zustimmung_grundeigentuemer",
+     "scope": "instrument",
+     "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob die gesuchstellende Person Grundeigentümerin ist oder eine Zustimmung benötigt, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    },
+    {
+     "criterion_id": "unter_100_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat weniger als 100 kW. Bei grösseren Anlagen wird die Leistung über 99.9 kW in der KLEIV nicht gefördert.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das Vorhaben betrifft keine Photovoltaikanlage mit einer installierten Leistung unter 100 kW.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
+      "locator": null
+     }
+    },
+    {
+     "criterion_id": "anlage_realisiert",
+     "scope": "instrument",
+     "text": "Die Anlage ist realisiert. Das Gesuch kann erst danach eingereicht werden.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Der geplante Kauf und die geplante Einführung belegen keine bereits realisierte Photovoltaikanlage.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Zeitpunkt"
+     }
+    },
+    {
+     "criterion_id": "erweiterung_2_kw",
+     "scope": "instrument",
+     "text": "Bei Erweiterungen mindestens 2 kW zusätzliche Leistung, angeschlossen an die Grundanlage.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Das beschriebene Vorhaben ist keine Erweiterung einer Photovoltaikanlage.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Erweiterungen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "zustimmung_grundeigentuemer"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "greiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Grosse Einmalvergütung (GREIV) für Photovoltaikanlagen ab 100 kW",
+   "provider": "Pronovo AG",
+   "level": "bund",
+   "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. Die Vergütung deckt höchstens 30% der Investitionskosten von Referenzanlagen.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Einmaliger Beitrag pro kW, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Gesuch kann bereits vor der Realisierung eingereicht werden. Die Anlage muss nicht vor einer Förderzusage erstellt werden.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+    "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+    "form": "https://pronovo.ch/de/services/tarifrechner/"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "min_2_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW installierter Leistung.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "fester_standort",
+     "scope": "instrument",
+     "text": "Die Anlage hat einen festen Standort.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben umfasst keine Photovoltaikanlage, für die ein fester Standort belegt werden könnte.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "zustimmung_grundeigentuemer",
+     "scope": "instrument",
+     "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    },
+    {
+     "criterion_id": "ab_100_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat eine Leistung ab 100 kW.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit einer Leistung ab 100 kW.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
+      "locator": null
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "zustimmung_grundeigentuemer"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "heiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Hohe Einmalvergütung (HEIV) für Photovoltaikanlagen ohne Eigenverbrauch",
+   "provider": "Pronovo AG",
+   "level": "bund",
+   "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. Die Vergütung deckt höchstens 30% der Investitionskosten von Referenzanlagen.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Erhöhter einmaliger Beitrag pro kW für Anlagen ohne Eigenverbrauch bis 149.99 kW. Betrag im Pronovo-Tarifrechner berechnen.",
+   "deadline": {
+    "type": "unbekannt",
+    "rule": "Zeitpunkt der Gesuchstellung für HEIV in den gesichteten Quellen nicht genannt.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+    "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+    "form": "https://pronovo.ch/de/services/tarifrechner/"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "min_2_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit installierter Leistung.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "fester_standort",
+     "scope": "instrument",
+     "text": "Die Anlage hat einen festen Standort.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben umfasst keine Photovoltaikanlage, für die ein fester Standort belegt werden könnte.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Mindestleistung"
+     }
+    },
+    {
+     "criterion_id": "zustimmung_grundeigentuemer",
+     "scope": "instrument",
+     "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    },
+    {
+     "criterion_id": "ohne_eigenverbrauch",
+     "scope": "instrument",
+     "text": "Die gesamte Elektrizität wird eingespeist, kein Eigenverbrauch.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Der beschriebene Kauf eines Backofens und eines Kassensystems sieht keine vollständige Einspeisung von Elektrizität aus einer Photovoltaikanlage vor.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "locator": "Eigenverbrauch"
+     }
+    },
+    {
+     "criterion_id": "bis_149_99_kw",
+     "scope": "instrument",
+     "text": "Die Anlage hat 2 kW bis 149.99 kW.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben betrifft keine Photovoltaikanlage im geforderten Leistungsbereich.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
+      "locator": null
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "zustimmung_grundeigentuemer"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "source": {
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "locator": "Unterlagen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "technologiefonds",
+   "instrument_id": "buergschaft",
+   "program_name": "Technologiefonds",
+   "instrument_name": "Bürgschaft Technologiefonds",
+   "provider": "Schweizerische Eidgenossenschaft, Bundesamt für Umwelt (BAFU)",
+   "level": "bund",
+   "purpose": "Der Technologiefonds verbürgt Darlehen an innovative Schweizer Unternehmen, deren Produkte oder Verfahren Treibhausgasemissionen reduzieren, Energie effizient nutzen oder erneuerbare Energien fördern.",
+   "instrument_type": "buergschaft",
+   "funding_summary": "Bürgschaft für ein Darlehen bis CHF 3 Mio. für höchstens 10 Jahre, mindestens 40% Eigenfinanzierung.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Online-Bewerbung jederzeit über den Vorab-Check.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.technologiefonds.ch/buergschaften",
+    "apply": "https://www.technologiefonds.ch/vorab-check",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "sitz_schweiz",
+     "scope": "instrument",
+     "text": "Das Unternehmen hat seinen Sitz in der Schweiz.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Der Sitz in der Schweiz ist aus dem angegebenen Standort Sursee ableitbar, der Kantonsstandort ist im Profil jedoch als Annahme erfasst.",
+     "evidence": [
+      "standort_kanton"
+     ],
+     "source": {
+      "title": "Bürgschaften, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften",
+      "locator": "Zielgruppe"
+     }
+    },
+    {
+     "criterion_id": "co2_einsparung",
+     "scope": "instrument",
+     "text": "Die Innovation spart CO2-Emissionen direkt oder indirekt ein, mit Nachweis.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Für eine direkte oder indirekte CO2-Einsparung und deren Nachweis enthält die Vorhabenbeschreibung keine ausreichenden Angaben.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Umweltnutzen"
+     }
+    },
+    {
+     "criterion_id": "innovatives_produkt",
+     "scope": "instrument",
+     "text": "Innovatives Produkt oder Verfahren mit guten Marktchancen.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Beschrieben ist der Kauf fertiger Produkte statt eines innovativen Produkts oder Verfahrens mit guten Marktchancen.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Bürgschaften, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften",
+      "locator": "Zielgruppe"
+     }
+    },
+    {
+     "criterion_id": "marktreif_umsatz",
+     "scope": "instrument",
+     "text": "Das Unternehmen ist marktreif und erzielt bereits Umsätze von mindestens CHF 100'000.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob das Unternehmen bereits Umsätze von mindestens CHF 100'000 erzielt, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": null
+     }
+    },
+    {
+     "criterion_id": "positives_eigenkapital",
+     "scope": "instrument",
+     "text": "Nicht überschuldet, nicht zahlungsunfähig, positives Eigenkapital. Rangrücktritte beheben keine Überschuldung.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Kreditwürdigkeit"
+     }
+    },
+    {
+     "criterion_id": "kreditwuerdigkeit",
+     "scope": "instrument",
+     "text": "Kreditwürdigkeit, die sich auch auf die im Business Plan plausibel dargelegte zukünftige Ertragslage stützen kann.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Kreditwürdigkeit und zur künftigen Ertragslage liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Kreditwürdigkeit"
+     }
+    },
+    {
+     "criterion_id": "eigenfinanzierung_40",
+     "scope": "instrument",
+     "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert (neues Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel, vorhandene liquide Mittel).",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das angegebene Budget belegt nicht, welcher Anteil mit anderen Mitteln finanziert wird.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Konditionen, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
+      "locator": "Anteil"
+     }
+    },
+    {
+     "criterion_id": "wertschoepfung_schweiz",
+     "scope": "instrument",
+     "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
+     "kind": "soll",
+     "state": "annahme",
+     "reason": "Aus der Tätigkeit als Bäckerei in Sursee lässt sich Schweizer Wertschöpfung ableiten, ihr Anteil ist jedoch nicht belegt.",
+     "evidence": [
+      "taetigkeit",
+      "standort_gemeinde"
+     ],
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Grösse"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "co2_einsparung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob und wie die Innovation nachweislich direkt oder indirekt CO2-Emissionen einspart.",
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Umweltnutzen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "marktreif_umsatz"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen marktreif ist und bereits den erforderlichen Umsatz erzielt.",
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": null
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "positives_eigenkapital"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen zahlungsfähig und nicht überschuldet ist sowie positives Eigenkapital aufweist.",
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Kreditwürdigkeit"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kreditwuerdigkeit"
+     ],
+     "lever": null,
+     "hint": "Klären Sie Ihre Kreditwürdigkeit und ob die zukünftige Ertragslage im Business Plan plausibel dargelegt ist.",
+     "source": {
+      "title": "Zielgruppe, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "locator": "Kreditwürdigkeit"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "eigenfinanzierung_40"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welcher Anteil des Vorhabens durch andere Mittel finanziert ist.",
+     "source": {
+      "title": "Konditionen, Technologiefonds",
+      "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
+      "locator": "Anteil"
+     }
+    }
+   ],
+   "error": null
+  }
+ ],
+ "rejected": [
+  {
+   "program_id": "bfe-pilot-demonstration",
+   "instrument_id": "pd-finanzhilfe",
+   "program_name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
+   "instrument_name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "bg-mitte",
+   "instrument_id": "ordentliche-buergschaft",
+   "program_name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+   "instrument_name": "Ordentliche Bürgschaft für Bankkredite",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "eic-accelerator",
+   "instrument_id": "eic-accelerator",
+   "program_name": "EIC Accelerator (Horizon Europe)",
+   "instrument_name": "EIC Accelerator (Grant und Investition)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermedaemmung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmedämmung Gebäudehülle mit Bonus Gebäudehülleneffizienz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermepumpe",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "holzfeuerung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Holzfeuerungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermenetz-anschluss",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Anschluss an ein Wärmenetz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "bonus-ersatz-elektroheizung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "ladeinfrastruktur",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Ladeinfrastruktur in Mehrparteiengebäuden und bidirektionale Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "heizungsersatz",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "desinvestitionsbeitrag",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "photovoltaik",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "e-mobilitaet",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "abwaermenutzung",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsprojekt-umsetzungspartner",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsprojekte mit Umsetzungspartner",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "start-up-innovationsprojekt",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Innovationsprojekte",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsscheck",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsscheck",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsmentoring",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsmentoring",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "initial-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Initial Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "core-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Core Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innotour",
+   "instrument_id": "innotour-finanzhilfe",
+   "program_name": "Innotour, Förderung von Innovation, Zusammenarbeit und Wissensaufbau im Tourismus",
+   "instrument_name": "Innotour Finanzhilfe für überbetriebliche Tourismusprojekte",
+   "reason": "Das Instrument ist auf andere Branchen beschränkt.",
+   "rule": "branche",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "klimastiftung-schweiz",
+   "instrument_id": "innovationsfoerderung",
+   "program_name": "Klimastiftung Schweiz",
+   "instrument_name": "Innovationsförderung Klimastiftung Schweiz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "lib",
+   "instrument_id": "lib-beitrag",
+   "program_name": "Luzerner Innovationsbeitrag",
+   "instrument_name": "Luzerner Innovationsbeitrag",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "peik",
+   "instrument_id": "peik-energieberatung",
+   "program_name": "PEIK, Energieberatung für KMU von EnergieSchweiz",
+   "instrument_name": "PEIK Energieberatung und Umsetzungsbegleitung für KMU",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "prokilowatt",
+   "instrument_id": "projekte",
+   "program_name": "ProKilowatt, wettbewerbliche Ausschreibungen für Stromeffizienz",
+   "instrument_name": "ProKilowatt Projekte (Stromeffizienz)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "saffa",
+   "instrument_id": "buergschaft",
+   "program_name": "Bürgschaftsgenossenschaft SAFFA",
+   "instrument_name": "Bürgschaft für Unternehmerinnen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "serv",
+   "instrument_id": "lieferantenkreditversicherung",
+   "program_name": "SERV Schweizerische Exportrisikoversicherung",
+   "instrument_name": "Lieferantenkreditversicherung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "sgh",
+   "instrument_id": "darlehen",
+   "program_name": "Schweizerische Gesellschaft für Hotelkredit (SGH)",
+   "instrument_name": "Darlehen für Beherbergungsbetriebe",
+   "reason": "Das Instrument ist auf andere Branchen beschränkt.",
+   "rule": "branche",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "steuerliche-innovationsfoerderung-lu",
+   "instrument_id": "patentbox",
+   "program_name": "Steuerliche Innovationsförderung Kanton Luzern (Patentbox und F&E-Zusatzabzug)",
+   "instrument_name": "Patentbox (ermässigte Besteuerung von Gewinnen aus Patenten)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "umwelttechnologiefoerderung",
+   "instrument_id": "utf-finanzhilfe",
+   "program_name": "Umwelttechnologieförderung (UTF) des BAFU",
+   "instrument_name": "Finanzhilfe Umwelttechnologieförderung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  }
+ ],
+ "plan": {
+  "timeline": [
+   {
+    "phase": "gesuch",
+    "program_id": "berghilfe",
+    "instrument_id": "projektbeitrag",
+    "title": "Gesuch bei der Schweizer Berghilfe einreichen",
+    "date": null,
+    "date_rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
+    "action": "Reichen Sie das Gesuch für einen Projektbeitrag der Schweizer Berghilfe ein."
+   }
+  ],
+  "warnings": [],
+  "next_steps": [
+   {
+    "text": "Reichen Sie das Gesuch für einen Projektbeitrag der Schweizer Berghilfe ein.",
+    "program_id": "berghilfe",
+    "instrument_id": "projektbeitrag",
+    "link": "https://gesuch.berghilfe.ch/?locale=de",
+    "due": null
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Schweizer Berghilfe",
+    "role": "Soodstrasse 55, 8134 Adliswil",
+    "email": "info@berghilfe.ch",
+    "phone": "044 712 60 60",
+    "url": "https://www.berghilfe.ch/kontakt"
+   }
+  ]
+ },
+ "error": null
+}

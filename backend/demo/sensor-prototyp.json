@@ -1,0 +1,2564 @@
+{
+ "run_id": "run_d9ec3f36",
+ "status": "fertig",
+ "created_at": "2026-10-24T02:16:43.211654Z",
+ "completed_at": "2026-10-24T02:17:16.182978Z",
+ "today": "2026-10-24",
+ "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
+ "profile": {
+  "input_text": "Wir sind ein KMU aus Emmen mit 18 Mitarbeitenden. Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen. Budget rund CHF 400'000. Einen Forschungspartner haben wir noch nicht.",
+  "summary": "Gefördert werden soll die Entwicklung eines optischen Sensors für die industrielle Qualitätskontrolle mit Prototypbau und Tests bei Pilotkunden.",
+  "fields": {
+   "standort_kanton": {
+    "value": "LU",
+    "status": "annahme",
+    "origin": "text",
+    "quote": "Emmen",
+    "note": "Emmen liegt im Kanton Luzern."
+   },
+   "standort_gemeinde": {
+    "value": "Emmen",
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "applicant_type": {
+    "value": [
+     "kmu",
+     "unternehmen"
+    ],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Wir sind ein KMU aus Emmen",
+    "note": null
+   },
+   "art_des_vorhabens": {
+    "value": [
+     "prototyp",
+     "entwicklung"
+    ],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "einen Prototyp bauen und bei Pilotkunden testen",
+    "note": null
+   },
+   "branche": {
+    "value": [
+     "industrie"
+    ],
+    "status": "annahme",
+    "origin": "text",
+    "quote": "für die Qualitätskontrolle in der Industrie",
+    "note": "Der Sensor ist für Qualitätskontrollen in der Industrie bestimmt."
+   },
+   "partner": {
+    "value": [],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Einen Forschungspartner haben wir noch nicht.",
+    "note": null
+   },
+   "vorhaben_beschreibung": {
+    "value": "Entwicklung eines neuartigen optischen Sensors für die Qualitätskontrolle in der Industrie, einschliesslich Prototypbau und Tests bei Pilotkunden.",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen.",
+    "note": null
+   },
+   "taetigkeit": {
+    "value": "Entwicklung eines neuartigen optischen Sensors für die Qualitätskontrolle in der Industrie.",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie",
+    "note": null
+   },
+   "rechtsform": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "handelsregister": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "raeumlichkeiten": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "mitarbeitende": {
+    "value": 18,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "unternehmensalter": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "umsatz": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "geschaeftsjahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "revisionsart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "nachhaltigkeitsbericht": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "budget": {
+    "value": 400000,
+    "status": "angegeben",
+    "origin": "formular",
+    "quote": null,
+    "note": null
+   },
+   "laufzeit": {
+    "value": 18,
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "in den nächsten 18 Monaten",
+    "note": null
+   },
+   "projektstart": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "baujahr": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "bestehende_heizung": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   },
+   "eigentum_gebaeude": {
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
+   }
+  }
+ },
+ "matches": [
+  {
+   "program_id": "bfe-pilot-demonstration",
+   "instrument_id": "pd-finanzhilfe",
+   "program_name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
+   "instrument_name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
+   "provider": "Bundesamt für Energie (BFE)",
+   "level": "bund",
+   "purpose": "Das BFE fördert Pilot-, Demonstrations- und Leuchtturmprojekte, die neue Energietechnologien im Sinne der Energiestrategie 2050 zur Marktreife bringen.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Höchstens 50% der nicht amortisierbaren Kosten, bei Pilotprojekten ausnahmsweise bis 70%.",
+   "deadline": {
+    "type": "unbekannt",
+    "rule": "Eingabezeitpunkt in der FAQ nicht genannt.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+    "apply": null,
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "innovativer_ansatz",
+     "scope": "instrument",
+     "text": "Innovativer Ansatz, der viel Energie spart, erneuerbare Energien stärker nutzt oder dem Energiesystem nützt.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Der beschriebene Sensor dient der industriellen Qualitätskontrolle; ein Nutzen für Energieeinsparung, erneuerbare Energien oder das Energiesystem ist nicht erkennbar.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Fragen und Antworten P+D-Programm, BFE",
+      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+      "locator": "Was ist ein P+D-Projekt"
+     }
+    },
+    {
+     "criterion_id": "pilot_oder_demo",
+     "scope": "instrument",
+     "text": "Pilotprojekt (frühe Phase, Teilsysteme) oder Demonstrationsprojekt (ausgereift, meist Massstab 1:1).",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Prototypbau und Tests bei Pilotkunden sprechen für ein Pilotprojekt in einer frühen Phase.",
+     "evidence": [
+      "art_des_vorhabens"
+     ],
+     "source": {
+      "title": "Fragen und Antworten P+D-Programm, BFE",
+      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+      "locator": "Was ist ein P+D-Projekt"
+     }
+    },
+    {
+     "criterion_id": "finanzierungsnachweis",
+     "scope": "instrument",
+     "text": "Finanzierungsbestätigungen oder Jahresberichte.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Bei einem angegebenen Projektbudget von rund CHF 400'000 ist die Bedingung eines Förderbeitrags von über CHF 1 Mio. nicht einschlägig.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Fragen und Antworten P+D-Programm, BFE",
+      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+      "locator": "Skizze"
+     }
+    }
+   ],
+   "gaps": [],
+   "error": null
+  },
+  {
+   "program_id": "eic-accelerator",
+   "instrument_id": "eic-accelerator",
+   "program_name": "EIC Accelerator (Horizon Europe)",
+   "instrument_name": "EIC Accelerator (Grant und Investition)",
+   "provider": "European Innovation Council (EIC)",
+   "level": "international",
+   "purpose": "Der EIC Accelerator finanziert Start-ups und KMU mit bahnbrechenden Innovationen bis zur Marktreife und Skalierung, mit Grant und Investition.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Grant als Pauschalbetrag unter EUR 2.5 Mio. und/oder Investition von EUR 1 bis 10 Mio. als Eigenkapital oder Quasi-Eigenkapital.",
+   "deadline": {
+    "type": "ausschreibung",
+    "rule": "Short Proposals werden am ersten Dienstag jedes Monats gebündelt. Full Proposals an Stichtagen, 17 Uhr Brüssel.",
+    "next_date": "2026-11-04"
+   },
+   "links": {
+    "info": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+    "apply": null,
+    "form": "https://eic.ec.europa.eu/document/download/52598755-1351-4b54-b46b-e2682d0a3aec_en?filename=EIC-Work-Programme-2026.pdf"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 2,
+   "criteria": [
+    {
+     "criterion_id": "kmu_startup",
+     "scope": "instrument",
+     "text": "Einzelnes Start-up oder KMU (inkl. Spin-off). Small Mid-Caps bis 499 Mitarbeitende nur für Investition. Natürliche Personen, die ein KMU gründen wollen, sind zugelassen.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das Unternehmen bezeichnet sich als KMU und erfüllt damit den genannten Antragstellertyp.",
+     "evidence": [
+      "applicant_type",
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Who can apply"
+     }
+    },
+    {
+     "criterion_id": "sitz_assoziiertes_land",
+     "scope": "instrument",
+     "text": "Sitz in einem EU-Mitgliedstaat oder einem mit Horizon Europe assoziierten Land. Die Schweiz ist seit 1. Januar 2025 assoziiert.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Der Sitz in einem assoziierten Land ist aufgrund der aus Emmen abgeleiteten Kantonsangabe wahrscheinlich.",
+     "evidence": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
+     "source": {
+      "title": "Status of Switzerland in Horizon Europe, Euresearch",
+      "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html",
+      "locator": "Associated since"
+     }
+    },
+    {
+     "criterion_id": "trl_6_8",
+     "scope": "instrument",
+     "text": "Grant-Aktivitäten auf Technologiereifegrad TRL 6 bis 8, abgeschlossen innert 24 Monaten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die geplante Laufzeit liegt innerhalb von 24 Monaten, der Technologiereifegrad der Grant-Aktivitäten ist jedoch nicht belegt.",
+     "evidence": [
+      "laufzeit",
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Funding amounts"
+     }
+    },
+    {
+     "criterion_id": "ein_antrag",
+     "scope": "instrument",
+     "text": "Nur ein Antrag pro EIC-Accelerator-Call gleichzeitig.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angaben zu weiteren gleichzeitigen EIC-Accelerator-Anträgen.",
+     "evidence": [],
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Who can apply"
+     }
+    },
+    {
+     "criterion_id": "auswahl_jury",
+     "scope": "instrument",
+     "text": "Auswahl über Short Proposal, Full Proposal und Interview vor einer EIC-Jury.",
+     "kind": "bewertung",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angaben zur Teilnahme am vorgesehenen Auswahlverfahren.",
+     "evidence": [],
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Application steps"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "trl_6_8"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die Grant-Aktivitäten den geforderten Technologiereifegrad erreichen und innerhalb der vorgesehenen Dauer abgeschlossen werden können.",
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Funding amounts"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "ein_antrag"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob bereits ein Antrag für denselben EIC-Accelerator-Call läuft.",
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Who can apply"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "auswahl_jury"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Sie Short Proposal, Full Proposal und Interview vor der EIC-Jury durchlaufen können.",
+     "source": {
+      "title": "EIC Accelerator, European Innovation Council",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "locator": "Application steps"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsprojekt-umsetzungspartner",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsprojekte mit Umsetzungspartner",
+   "provider": "Innosuisse",
+   "level": "bund",
+   "purpose": "Innosuisse fördert wissenschaftsbasierte Innovation von KMU, Start-ups und anderen Schweizer Organisationen mit Projektbeiträgen, Gutschriften für Vorstudien, Mentoring und Coaching.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Innosuisse bezahlt die Kosten des Forschungspartners plus Overhead. Das Unternehmen trägt 40 bis 60% der Gesamtprojektkosten, davon mindestens 5% bar an den Forschungspartner.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+    "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "form": "https://www.innosuisse.admin.ch/dam/de/sd-web/l6ulpxzSOif4/Checkliste%20(Innovationsprojekte).pdf"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 7,
+   "criteria": [
+    {
+     "criterion_id": "wertschoepfung_schweiz",
+     "scope": "instrument",
+     "text": "Das Unternehmen bzw. die Organisation ist in der Schweiz wertschöpfend tätig.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Aus dem Standort in Emmen und der beschriebenen Entwicklungstätigkeit lässt sich eine wertschöpfende Tätigkeit in der Schweiz ableiten.",
+     "evidence": [
+      "standort_kanton",
+      "taetigkeit"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+     }
+    },
+    {
+     "criterion_id": "forschungspartner_schweiz",
+     "scope": "instrument",
+     "text": "Ein Schweizer Forschungspartner (Hochschule oder anerkannte Forschungsstätte) will das Projekt mit dem Unternehmen umsetzen.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Ein Forschungspartner für die gemeinsame Umsetzung ist noch nicht vorhanden.",
+     "evidence": [
+      "partner"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "partner_unabhaengig",
+     "scope": "instrument",
+     "text": "Forschungs- und Umsetzungspartner sind finanziell und personell voneinander unabhängig.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ohne benannten Forschungspartner lässt sich die finanzielle und personelle Unabhängigkeit nicht prüfen.",
+     "evidence": [
+      "partner"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen (Art. 12 Vollzugsbestimmungen)"
+     }
+    },
+    {
+     "criterion_id": "eigenleistung_40_60",
+     "scope": "instrument",
+     "text": "Das Unternehmen trägt die bei ihm anfallenden Projektkosten im Umfang von 40 bis 60% der Gesamtprojektkosten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Budget enthält keine Aufteilung der Projektkosten auf das Unternehmen und den Forschungspartner.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+     }
+    },
+    {
+     "criterion_id": "barbeitrag_5",
+     "scope": "instrument",
+     "text": "Das Unternehmen zahlt dem Forschungspartner einen Barbeitrag von mindestens 5% der Gesamtprojektkosten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Höhe eines Barbeitrags an den Forschungspartner liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+     }
+    },
+    {
+     "criterion_id": "innovationsgehalt",
+     "scope": "instrument",
+     "text": "Der wissenschaftliche und wirtschaftliche Ansatz ist neuartig.",
+     "kind": "bewertung",
+     "state": "annahme",
+     "reason": "Der Sensor wird als neuartig beschrieben, der wissenschaftliche und wirtschaftliche Neuheitsgehalt ist damit aber noch nicht belegt.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 2, Kriterien"
+     }
+    },
+    {
+     "criterion_id": "wertschoepfung_projekt",
+     "scope": "instrument",
+     "text": "Die Umsetzung verbessert die Wettbewerbssituation und schafft Wertschöpfung für Wirtschaft oder Gesellschaft in der Schweiz.",
+     "kind": "bewertung",
+     "state": "annahme",
+     "reason": "Eine Verbesserung der industriellen Qualitätskontrolle lässt einen wirtschaftlichen Nutzen vermuten, dessen Wirkung in der Schweiz aber nicht belegt ist.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 2, Kriterien"
+     }
+    },
+    {
+     "criterion_id": "methodik_kompetenz",
+     "scope": "instrument",
+     "text": "Methodische Qualität, realistische Ziele und Meilensteine, stimmiges Kosten-Nutzen-Verhältnis sowie nötige Kompetenzen der Partner.",
+     "kind": "bewertung",
+     "state": "unbekannt",
+     "reason": "Prototypbau und Pilottests sind vorgesehen, doch Angaben zu Methodik, Meilensteinen, Kosten-Nutzen-Verhältnis und Partnerkompetenzen reichen für eine Prüfung nicht aus.",
+     "evidence": [
+      "vorhaben_beschreibung",
+      "partner"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 2, Kriterien"
+     }
+    },
+    {
+     "criterion_id": "partner_forschungspartner",
+     "scope": "filter",
+     "text": "Ein Forschungspartner (Hochschule oder Forschungsinstitution) ist beteiligt.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Am Vorhaben ist derzeit kein Forschungspartner beteiligt.",
+     "evidence": [
+      "partner"
+     ],
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": null
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "anpassung",
+     "criterion_ids": [
+      "forschungspartner_schweiz"
+     ],
+     "lever": "Innovationsmentoring nutzen, um einen passenden Forschungspartner zu finden und das Gesuch zu strukturieren",
+     "hint": "Nutzen Sie Innovationsmentoring, um einen Schweizer Forschungspartner zu finden und das Gesuch zu strukturieren.",
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Erfahren Sie mehr über das Angebot"
+     }
+    },
+    {
+     "type": "anpassung",
+     "criterion_ids": [
+      "partner_forschungspartner"
+     ],
+     "lever": "Forschungspartner beiziehen",
+     "hint": "Beziehen Sie eine Hochschule oder Forschungsinstitution als Forschungspartner bei.",
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": null
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "partner_unabhaengig"
+     ],
+     "lever": "Regeln zum geistigen Eigentum schon bei der Ausarbeitung des Gesuchs grundsätzlich vereinbaren",
+     "hint": "Klären Sie, ob Forschungs- und Umsetzungspartner finanziell und personell unabhängig sind.",
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 3, Hinweis"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "eigenleistung_40_60"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welchen Anteil der Gesamtprojektkosten Ihr Unternehmen mit eigenen Projektkosten trägt.",
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "barbeitrag_5"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welchen Barbeitrag Ihr Unternehmen an den Forschungspartner zahlt.",
+     "source": {
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "methodik_kompetenz"
+     ],
+     "lever": "Innovationsmentoring nutzen, um einen passenden Forschungspartner zu finden und das Gesuch zu strukturieren",
+     "hint": "Klären Sie, ob Methodik, Ziele, Meilensteine, Kosten-Nutzen-Verhältnis und Kompetenzen der Partner ausreichend dargelegt sind.",
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Erfahren Sie mehr über das Angebot"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsmentoring",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsmentoring",
+   "provider": "Innosuisse",
+   "level": "bund",
+   "purpose": "Innosuisse fördert wissenschaftsbasierte Innovation von KMU, Start-ups und anderen Schweizer Organisationen mit Projektbeiträgen, Gutschriften für Vorstudien, Mentoring und Coaching.",
+   "instrument_type": "beratung",
+   "funding_summary": "Kostenlos: Gutschrift Erstbeurteilung bis CHF 1'000 (5 Stunden), danach Gutschrift Projektinitiierung bis CHF 6'000 (30 Stunden).",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Beantragung jederzeit im Eingabeportal.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+    "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 8,
+   "criteria": [
+    {
+     "criterion_id": "sitz_schweiz",
+     "scope": "instrument",
+     "text": "Das KMU oder die Organisation ist in der Schweiz ansässig.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Ein Sitz in der Schweiz ist aufgrund des angegebenen Standorts Emmen anzunehmen, der Kanton ist im Profil jedoch nur als Annahme erfasst.",
+     "evidence": [
+      "standort_gemeinde",
+      "standort_kanton"
+     ],
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "criterion_id": "weniger_250_vzae",
+     "scope": "instrument",
+     "text": "Weniger als 250 Vollzeitbeschäftigte zum Zeitpunkt des Gesuchs.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Aus den angegebenen 18 Mitarbeitenden lässt sich eine Zahl unter 250 Vollzeitbeschäftigten ableiten; der Stand zum Zeitpunkt des Gesuchs ist nicht ausdrücklich belegt.",
+     "evidence": [
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "criterion_id": "keine_grosse_gruppe",
+     "scope": "instrument",
+     "text": "Gehört nicht zu einer Gruppe mit mehr als 250 Vollzeitbeschäftigten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die Zahl der eigenen Mitarbeitenden gibt keinen Aufschluss über eine allfällige Gruppenzugehörigkeit.",
+     "evidence": [
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "criterion_id": "erstmals_mentoring",
+     "scope": "instrument",
+     "text": "Für dieses Projekt erstmals Unterstützung durch eine Innosuisse-Mentorin oder einen Mentor.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angaben zu einer bisherigen Unterstützung durch eine Innosuisse-Mentorin oder einen Mentor für dieses Projekt.",
+     "evidence": [],
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "criterion_id": "keine_parallele_beratung",
+     "scope": "instrument",
+     "text": "Für dieses Projekt kein paralleles anderes Beratungsangebot, zum Beispiel einer regionalen oder kantonalen Stelle.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angaben zu einer parallelen Beratung für dieses Projekt.",
+     "evidence": [],
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "keine_grosse_gruppe"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wie viele Vollzeitbeschäftigte die Unternehmensgruppe hat.",
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "erstmals_mentoring"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob dieses Projekt bereits durch Innosuisse-Mentoring unterstützt wurde.",
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "keine_parallele_beratung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Sie für dieses Projekt parallel ein anderes Beratungsangebot nutzen.",
+     "source": {
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "locator": "Bedingungen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "itz",
+   "instrument_id": "innovation-sparring",
+   "program_name": "ITZ InnovationsTransfer Zentralschweiz",
+   "instrument_name": "Innovation Sparring",
+   "provider": "ITZ InnovationsTransfer Zentralschweiz",
+   "level": "region",
+   "purpose": "ITZ unterstützt KMU und Start-ups mit kostenlosem Innovationssparring und vermittelt Partner und Förderstellen in der Region.",
+   "instrument_type": "beratung",
+   "funding_summary": "Sparring bis 20 Stunden kostenlos, Erstgespräch (30 Minuten) kostenlos und unverbindlich.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Anfrage jederzeit über das Formular Jetzt Innovieren.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+    "apply": "https://www.itz.ch/jetztinnovieren",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_gut",
+   "rank": 1,
+   "criteria": [
+    {
+     "criterion_id": "innovationsvorhaben",
+     "scope": "instrument",
+     "text": "Es gibt ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Die Entwicklung eines neuartigen optischen Sensors ist ein Technologievorhaben.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Angebot"
+     }
+    },
+    {
+     "criterion_id": "sparring_check",
+     "scope": "instrument",
+     "text": "Ein 30-minütiger Sparring-Check klärt, ob Sparring passt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angabe dazu, ob ein Sparring-Check stattgefunden hat oder vorgesehen ist.",
+     "evidence": [],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Ablauf"
+     }
+    },
+    {
+     "criterion_id": "zielgruppe",
+     "scope": "instrument",
+     "text": "KMU, Start-ups oder Privatpersonen.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das Unternehmen bezeichnet sich ausdrücklich als KMU.",
+     "evidence": [
+      "applicant_type"
+     ],
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Für wen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "sparring_check"
+     ],
+     "lever": null,
+     "hint": "Klären Sie im Sparring-Check, ob das Angebot für Ihr Vorhaben passt.",
+     "source": {
+      "title": "Innovation Sparring, ITZ",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "locator": "Ablauf"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "klimastiftung-schweiz",
+   "instrument_id": "innovationsfoerderung",
+   "program_name": "Klimastiftung Schweiz",
+   "instrument_name": "Innovationsförderung Klimastiftung Schweiz",
+   "provider": "Klimastiftung Schweiz",
+   "level": "stiftung",
+   "purpose": "Die Klimastiftung Schweiz unterstützt KMU in der Schweiz und in Liechtenstein bei der Entwicklung und Skalierung innovativer, klimafreundlicher Produkte, finanziert von Partnerunternehmen.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Höchstens 50% der Projektkosten, maximal CHF 200'000, als Beitrag oder als zinslose, bei Erfolg ganz oder teilweise rückzahlbare Finanzierung.",
+   "deadline": {
+    "type": "fester_termin_jaehrlich",
+    "rule": "Eingabe bis 1. März oder 1. September. Entscheide im Juni bzw. November.",
+    "next_date": "2027-03-01"
+   },
+   "links": {
+    "info": "https://www.klimastiftung.ch/de/antrag-stellen/",
+    "apply": "https://funding.klimastiftung.ch/de/user",
+    "form": "https://www.klimastiftung.ch/wp-content/uploads/20251119_Reglement_Innovationsfoerderung_D_signed.pdf"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 5,
+   "criteria": [
+    {
+     "criterion_id": "sitz_ch_fl",
+     "scope": "instrument",
+     "text": "Sitz in der Schweiz oder in Liechtenstein.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Der Sitz in der Schweiz ist aus der Angabe Emmen ableitbar, der Kanton Luzern ist im Profil jedoch als Annahme erfasst.",
+     "evidence": [
+      "standort_kanton",
+      "applicant_type"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "max_250_mitarbeitende",
+     "scope": "instrument",
+     "text": "Höchstens 250 Mitarbeitende.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das Unternehmen gibt 18 Mitarbeitende an.",
+     "evidence": [
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "keine_gruendungsphase",
+     "scope": "instrument",
+     "text": "Das Unternehmen ist kein Start-up in der Gründungsphase.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob sich das Unternehmen noch in der Gründungsphase befindet, geht aus dem Profil nicht hervor.",
+     "evidence": [],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "kein_grosskonzern",
+     "scope": "instrument",
+     "text": "Das Kapital ist nicht oder zu weniger als der Hälfte im Besitz von Grosskonzernen oder öffentlich-rechtlichen Organisationen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Eigentümerschaft am Kapital liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "umsetzung_ch_fl",
+     "scope": "instrument",
+     "text": "Das Projekt wird hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der Unternehmensstandort Emmen belegt nicht, wo das Projekt hauptsächlich umgesetzt wird.",
+     "evidence": [
+      "standort_kanton"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "treibhausgas_vermeidung",
+     "scope": "instrument",
+     "text": "Das Projekt vermeidet Treibhausgasemissionen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die Beschreibung des Sensors nennt keine Vermeidung von Treibhausgasemissionen.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "technische_innovation",
+     "scope": "instrument",
+     "text": "Technische Innovation mit dem Ziel des Markteintritts in der Schweiz oder Liechtenstein.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ein neuartiger technischer Sensor ist beschrieben, ein angestrebter Markteintritt in der Schweiz oder in Liechtenstein jedoch nicht.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "criterion_id": "verwaessernde_finanzierung",
+     "scope": "instrument",
+     "text": "Erhaltene und geplante verwässernde Finanzierungen betragen höchstens das Zehnfache des beantragten Betrags.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Projektbudget erlaubt keinen Vergleich zwischen verwässernden Finanzierungen und dem beantragten Förderbetrag.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "keine_gruendungsphase"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen noch ein Start-up in der Gründungsphase ist.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kein_grosskonzern"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welcher Anteil Ihres Kapitals Grosskonzernen oder öffentlich-rechtlichen Organisationen gehört.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "umsetzung_ch_fl"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wo das Projekt hauptsächlich umgesetzt wird.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "treibhausgas_vermeidung"
+     ],
+     "lever": "Möglichst tiefen Förderbetrag beantragen, um das Verhältnis zur CO2-Einsparung zu verbessern",
+     "hint": "Klären Sie, welche Treibhausgasemissionen das Projekt vermeidet.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Funding amount"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "technische_innovation"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die technische Innovation auf einen Markteintritt in der Schweiz oder Liechtenstein abzielt.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "verwaessernde_finanzierung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie die Höhe der erhaltenen und geplanten verwässernden Finanzierungen im Verhältnis zum beantragten Betrag.",
+     "source": {
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "locator": "Eligibility criteria"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "lib",
+   "instrument_id": "lib-beitrag",
+   "program_name": "Luzerner Innovationsbeitrag",
+   "instrument_name": "Luzerner Innovationsbeitrag",
+   "provider": "Kanton Luzern",
+   "level": "kanton",
+   "purpose": "Förderbeiträge für Tätigkeiten und Massnahmen im Bereich Forschung, Entwicklung und Innovation von Luzerner Unternehmen aller Branchen, inkl. Dienstleistungssektor und Startups.",
+   "instrument_type": "beitrag",
+   "funding_summary": "30% der Personal-, 20% der Investitions-, 10% der Auftragsforschungs- und 10% der sonstigen Aufwendungen für förderberechtigte Tätigkeiten. Höchstens 50% der Aufwendungen.",
+   "deadline": {
+    "type": "fester_termin_jaehrlich",
+    "rule": "31. Januar des Beitragsjahres, 23:59 Uhr, keine Fristverlängerung. Beitragsjahre 2026 und 2027: beide bis 31. Januar 2027.",
+    "next_date": "2027-01-31"
+   },
+   "links": {
+    "info": "https://standortfoerderung.lu.ch/LIB",
+    "apply": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+    "form": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 4,
+   "criteria": [
+    {
+     "criterion_id": "unternehmerisch_taetig",
+     "scope": "programm",
+     "text": "Das Unternehmen ist unternehmerisch tätig, d. h. erbringt mit eigenem oder beauftragtem Personal Leistungen am Markt (oder beabsichtigt dies, z. B. Startups). Rechtsform egal.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das KMU entwickelt einen Sensor und plant Tests bei Pilotkunden, was eine beabsichtigte Leistung am Markt belegt.",
+     "evidence": [
+      "applicant_type",
+      "taetigkeit",
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 13"
+     }
+    },
+    {
+     "criterion_id": "hr_luzern",
+     "scope": "programm",
+     "text": "Eintrag im Handelsregister des Kantons Luzern (Sitz oder Zweigniederlassung), spätestens am Tag der Gesuchseinreichung.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der Standort Emmen belegt keinen Eintrag im Luzerner Handelsregister.",
+     "evidence": [
+      "standort_gemeinde"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 20"
+     }
+    },
+    {
+     "criterion_id": "praesenz_raeume",
+     "scope": "programm",
+     "text": "Eigene Räumlichkeiten im Kanton Luzern, dauerhaft verfügbar während des gesamten Bemessungsjahres. Eine c/o- oder Domiziladresse genügt nicht.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob dauerhaft eigene Räumlichkeiten im Kanton Luzern verfügbar sind, ist nicht belegt.",
+     "evidence": [],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 21-23"
+     }
+    },
+    {
+     "criterion_id": "praesenz_personal",
+     "scope": "programm",
+     "text": "Eigenes vertragliches oder faktisches (ausgeliehenes, weisungsgebundenes) Personal im Kanton Luzern während des gesamten Bemessungsjahres.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die Zahl der Mitarbeitenden ist angegeben, nicht aber deren Einsatz im Kanton Luzern während des gesamten Bemessungsjahres.",
+     "evidence": [
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 24-25"
+     }
+    },
+    {
+     "criterion_id": "revision",
+     "scope": "programm",
+     "text": "Ordentlich geprüfte Jahresrechnung (Einzelabschluss) für das Bemessungsjahr. Alternativ Prüfbericht nach SA-CH (PS-CH 700 oder ISA-CH 700). Eine Review nach PS 910 reicht nicht.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Prüfung der Jahresrechnung für das Bemessungsjahr fehlen Angaben.",
+     "evidence": [],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 14-15"
+     }
+    },
+    {
+     "criterion_id": "nachhaltigkeit",
+     "scope": "programm",
+     "text": "Nachweis über nachhaltiges Wirtschaften: Bericht nach Art. 964b OR (auch auf Gruppenstufe) oder kompakte Übersicht von 2 bis 3 Seiten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ein Nachhaltigkeitsbericht oder eine entsprechende Übersicht ist nicht belegt.",
+     "evidence": [],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 16-18"
+     }
+    },
+    {
+     "criterion_id": "keine_ausstaende",
+     "scope": "programm",
+     "text": "Keine fälligen, unbezahlten Forderungen von Behörden und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Zu fälligen unbezahlten Behördenforderungen oder einem Konkurs- beziehungsweise Liquidationsverfahren fehlen Angaben.",
+     "evidence": [],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 26-29"
+     }
+    },
+    {
+     "criterion_id": "fei_taetigkeit",
+     "scope": "instrument",
+     "text": "Das Vorhaben umfasst förderberechtigte Tätigkeiten: Grundlagen- oder industrielle Forschung, experimentelle Entwicklung, wesentliche Organisations- oder Prozessinnovation oder klinische Studien.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Die Entwicklung eines neuartigen Sensors mit Prototypbau und Tests bei Pilotkunden entspricht einer förderberechtigten Entwicklungstätigkeit.",
+     "evidence": [
+      "vorhaben_beschreibung",
+      "art_des_vorhabens"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 51-72"
+     }
+    },
+    {
+     "criterion_id": "neuartig",
+     "scope": "instrument",
+     "text": "Die Tätigkeit ist schöpferisch und für das Unternehmen neuartig. Die blosse Anwendung bestehender Lösungen genügt nicht.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Der Sensor wird als neuartig beschrieben, doch seine Neuartigkeit gerade für das Unternehmen geht daraus nur indirekt hervor.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 64, N 69"
+     }
+    },
+    {
+     "criterion_id": "systematisch",
+     "scope": "instrument",
+     "text": "Zielgerichtetes, systematisches Vorgehen, z. B. mit Budget, Zeitplan und Dokumentation.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Budget und geplanter Zeitraum sprechen für ein zielgerichtetes Vorgehen, eine systematische Dokumentation ist jedoch nicht belegt.",
+     "evidence": [
+      "budget",
+      "laufzeit",
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 66"
+     }
+    },
+    {
+     "criterion_id": "ausfuehrung_luzern",
+     "scope": "instrument",
+     "text": "Die Tätigkeiten werden mit eigenem Personal in eigenen Räumlichkeiten im Kanton Luzern ausgeführt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ob die Entwicklungsarbeiten mit eigenem Personal in eigenen Räumlichkeiten im Kanton Luzern stattfinden, ist nicht belegt.",
+     "evidence": [
+      "standort_gemeinde",
+      "mitarbeitende"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 75"
+     }
+    },
+    {
+     "criterion_id": "auftragsforschung_steuerung",
+     "scope": "instrument",
+     "text": "Bei ausgelagerter Forschung trägt das Unternehmen Risiken und Finanzierung und hat mindestens eine Person, die den Auftrag instruiert, überwacht und steuert.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Das Profil beschreibt keine ausgelagerte Forschung und nennt ausdrücklich noch keinen Forschungspartner.",
+     "evidence": [
+      "partner"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 76-81"
+     }
+    },
+    {
+     "criterion_id": "kosten_selbst_getragen",
+     "scope": "instrument",
+     "text": "Die Aufwendungen werden vom Unternehmen wirtschaftlich selbst getragen und nicht weiterverrechnet.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das genannte Budget belegt weder die wirtschaftliche Kostentragung durch das Unternehmen noch, dass keine Weiterverrechnung erfolgt.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 88"
+     }
+    },
+    {
+     "criterion_id": "kosten_bemessungsjahr",
+     "scope": "instrument",
+     "text": "Die Aufwendungen sind in der Jahresrechnung des Bemessungsjahres erfasst: dem Geschäftsjahr, das zwei Kalenderjahre vor dem Beitragsjahr endet.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ohne Angaben zu Geschäftsjahr und buchhalterischer Erfassung ist die Zuordnung der Aufwendungen zum Bemessungsjahr offen.",
+     "evidence": [],
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 35-39"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "hr_luzern"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen bei Gesuchseinreichung mit Sitz oder Zweigniederlassung im Luzerner Handelsregister eingetragen ist.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 20"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "praesenz_raeume"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihnen im Bemessungsjahr dauerhaft eigene Räumlichkeiten im Kanton Luzern zur Verfügung stehen.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 21-23"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "praesenz_personal"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen im Bemessungsjahr durchgehend eigenes Personal im Kanton Luzern hat.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 24-25"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "revision"
+     ],
+     "lever": "Prüfbericht nach SA-CH (PS-CH 700) für das Bemessungsjahr erstellen lassen, falls keine ordentliche Revision besteht",
+     "hint": "Klären Sie, ob für das Bemessungsjahr eine ordentlich geprüfte Jahresrechnung oder ein geeigneter Prüfbericht vorliegt.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 14"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "nachhaltigkeit"
+     ],
+     "lever": "Kompakte Nachhaltigkeitsübersicht (2-3 Seiten) erstellen",
+     "hint": "Klären Sie, ob ein Nachweis über nachhaltiges Wirtschaften vorliegt.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 17"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "keine_ausstaende"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob fällige Behördenforderungen unbezahlt sind oder ein Konkurs- oder Liquidationsverfahren eröffnet wurde.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 26-29"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "ausfuehrung_luzern"
+     ],
+     "lever": "Arbeiten ausserhalb Luzerns als Auftragsforschung vergeben und intern steuern",
+     "hint": "Klären Sie, welche Tätigkeiten eigenes Personal in eigenen Räumlichkeiten im Kanton Luzern ausführt.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 76-80"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kosten_selbst_getragen"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen die Aufwendungen selbst trägt und nicht weiterverrechnet.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 88"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kosten_bemessungsjahr"
+     ],
+     "lever": "Zeiterfassung oder eigene Kostenstelle für das F&E-Personal einführen",
+     "hint": "Klären Sie, ob die Aufwendungen in der Jahresrechnung des Bemessungsjahres erfasst sind.",
+     "source": {
+      "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+      "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+      "locator": "N 96-97"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "steuerliche-innovationsfoerderung-lu",
+   "instrument_id": "patentbox",
+   "program_name": "Steuerliche Innovationsförderung Kanton Luzern (Patentbox und F&E-Zusatzabzug)",
+   "instrument_name": "Patentbox (ermässigte Besteuerung von Gewinnen aus Patenten)",
+   "provider": "Kanton Luzern",
+   "level": "kanton",
+   "purpose": "Steuerliche Entlastung für Gewinne aus Patenten (Patentbox). Der ebenfalls gesetzlich vorgesehene zusätzliche Abzug für Forschung und Entwicklung beträgt derzeit 0%.",
+   "instrument_type": "sonstiges",
+   "funding_summary": "Gewinn aus Patenten wird nur zu 10% besteuert (Ermässigung 90%). Alle Ermässigungen zusammen höchstens 70% des steuerbaren Gewinns.",
+   "deadline": {
+    "type": "unbekannt",
+    "rule": "Gewährung auf Antrag. Zeitpunkt und Formular nennt die Quelle nicht.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+    "apply": null,
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 6,
+   "criteria": [
+    {
+     "criterion_id": "steuerpflichtig_luzern",
+     "scope": "instrument",
+     "text": "Steuerpflicht im Kanton Luzern als juristische Person, Personengesellschaft oder Selbständigerwerbende.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der Standort in Emmen lässt die Steuerpflicht im Kanton Luzern vermuten, belegt sie aber nicht.",
+     "evidence": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "criterion_id": "patent_vorhanden",
+     "scope": "instrument",
+     "text": "Das Unternehmen erzielt Gewinn aus einem Patent oder einem vergleichbaren Recht.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die Entwicklung des Sensors belegt weder ein Patent oder vergleichbares Recht noch einen daraus erzielten Gewinn.",
+     "evidence": [
+      "taetigkeit",
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "criterion_id": "nexus_fe_aufwand",
+     "scope": "instrument",
+     "text": "Der begünstigte Anteil richtet sich nach dem Verhältnis des qualifizierenden zum gesamten F&E-Aufwand pro Patent (Nexusquotient).",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zum qualifizierenden und gesamten F&E-Aufwand pro Patent liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "criterion_id": "dokumentation",
+     "scope": "instrument",
+     "text": "Dokumentation gemäss Art. 7 bis 9 der Verordnung über die ermässigte Besteuerung (SR 642.142.1) beim Erstantrag und laufend.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur erforderlichen Dokumentation liegen keine Angaben vor.",
+     "evidence": [],
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1, Verfahren"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "steuerpflichtig_luzern"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Sie im Kanton Luzern steuerpflichtig sind.",
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "patent_vorhanden"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Ihr Unternehmen Gewinn aus einem Patent oder vergleichbaren Recht erzielt.",
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "nexus_fe_aufwand"
+     ],
+     "lever": null,
+     "hint": "Klären Sie pro Patent das Verhältnis des qualifizierenden zum gesamten F&E-Aufwand.",
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "dokumentation"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die erforderliche Dokumentation für Erstantrag und laufende Nachweise vorliegt.",
+     "source": {
+      "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
+      "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+      "locator": "Abschnitt 1, Verfahren"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "umwelttechnologiefoerderung",
+   "instrument_id": "utf-finanzhilfe",
+   "program_name": "Umwelttechnologieförderung (UTF) des BAFU",
+   "instrument_name": "Finanzhilfe Umwelttechnologieförderung",
+   "provider": "Bundesamt für Umwelt (BAFU)",
+   "level": "bund",
+   "purpose": "Der Bund unterstützt Technologien, Anlagen, Verfahren und Produkte, welche die Umweltbelastung vermindern, damit Forschungsresultate schneller marktfähig werden.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Bundesmittel insgesamt in der Regel höchstens 50% der Projektkosten, bei Pilot- und Demonstrationsprojekten höchstens CHF 500'000 UTF-Finanzhilfe.",
+   "deadline": {
+    "type": "unbekannt",
+    "rule": "Keine Eingabefristen genannt. Vorher Projektskizze (1 bis 2 Seiten) und Telefonat mit der Sektion Innovation.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.bafu.admin.ch/de/utf",
+    "apply": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+    "form": null
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 3,
+   "criteria": [
+    {
+     "criterion_id": "umweltentlastung",
+     "scope": "instrument",
+     "text": "Das Vorhaben vermindert die Umweltbelastung im öffentlichen Interesse.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ein Umweltnutzen oder eine Verminderung der Umweltbelastung ist nicht beschrieben.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Umwelttechnologieförderung, BAFU",
+      "url": "https://www.bafu.admin.ch/de/utf",
+      "locator": "Rechtsgrundlage"
+     }
+    },
+    {
+     "criterion_id": "vor_markteintritt",
+     "scope": "instrument",
+     "text": "Pilot- oder Demonstrationsprojekt vor dem Markteintritt oder Machbarkeitsstudie.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Prototypbau und Tests bei Pilotkunden deuten auf ein Pilotprojekt vor dem Markteintritt hin, der Marktstatus ist jedoch nicht ausdrücklich belegt.",
+     "evidence": [
+      "art_des_vorhabens"
+     ],
+     "source": {
+      "title": "Umwelttechnologieförderung, BAFU",
+      "url": "https://www.bafu.admin.ch/de/utf",
+      "locator": "Was wird gefördert"
+     }
+    },
+    {
+     "criterion_id": "kommerzielle_nutzung",
+     "scope": "instrument",
+     "text": "Eine glaubhafte kommerzielle Nutzung der Resultate ist dargelegt.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Die geplanten Tests bei Pilotkunden deuten auf eine kommerzielle Nutzung hin, ein entsprechender Plan ist jedoch nicht dargelegt.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Kriterien"
+     }
+    },
+    {
+     "criterion_id": "eigenanteil_50",
+     "scope": "instrument",
+     "text": "Die Gesuchsteller tragen mindestens 50% der Projektkosten.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Budget ist angegeben, aber der von den Gesuchstellern getragene Kostenanteil nicht.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Förderanteil"
+     }
+    },
+    {
+     "criterion_id": "dauer_4_jahre",
+     "scope": "instrument",
+     "text": "Projektdauer höchstens 4 Jahre.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Die geplante Projektdauer von 18 Monaten liegt unter vier Jahren.",
+     "evidence": [
+      "laufzeit"
+     ],
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Dauer"
+     }
+    },
+    {
+     "criterion_id": "bewertung_utf",
+     "scope": "instrument",
+     "text": "Umweltnutzen, Innovation, wirtschaftliche und technische Machbarkeit inkl. Marktaussichten, Wertschöpfung in der Schweiz, weitere Nachhaltigkeitsaspekte.",
+     "kind": "bewertung",
+     "state": "unbekannt",
+     "reason": "Innovation und Pilotkundentests sind beschrieben, für eine Einordnung aller genannten Bewertungsaspekte fehlen jedoch Angaben insbesondere zum Umweltnutzen und zur Wertschöpfung in der Schweiz.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Kriterien"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "umweltentlastung"
+     ],
+     "lever": "Vor dem Gesuch Projektskizze einreichen und mit der Sektion Innovation telefonieren",
+     "hint": "Klären Sie, wie das Vorhaben die Umweltbelastung im öffentlichen Interesse vermindert.",
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Projektskizze"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "eigenanteil_50"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, welchen Anteil der Projektkosten die Gesuchsteller tragen.",
+     "source": {
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "locator": "Förderanteil"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "bewertung_utf"
+     ],
+     "lever": "Gemischtes Team aus Unternehmen und Forschung bilden, ausdrücklich erwünscht",
+     "hint": "Klären Sie Umweltnutzen, Innovation, Machbarkeit, Marktaussichten, Schweizer Wertschöpfung und weitere Nachhaltigkeitsaspekte des Vorhabens.",
+     "source": {
+      "title": "Umwelttechnologieförderung, BAFU",
+      "url": "https://www.bafu.admin.ch/de/utf",
+      "locator": "Wer kann Gesuche stellen"
+     }
+    }
+   ],
+   "error": null
+  }
+ ],
+ "rejected": [
+  {
+   "program_id": "berghilfe",
+   "instrument_id": "projektbeitrag",
+   "program_name": "Schweizer Berghilfe",
+   "instrument_name": "Projektbeitrag der Schweizer Berghilfe",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "bg-mitte",
+   "instrument_id": "ordentliche-buergschaft",
+   "program_name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+   "instrument_name": "Ordentliche Bürgschaft für Bankkredite",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermedaemmung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmedämmung Gebäudehülle mit Bonus Gebäudehülleneffizienz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermepumpe",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "holzfeuerung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Holzfeuerungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "waermenetz-anschluss",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Anschluss an ein Wärmenetz",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "bonus-ersatz-elektroheizung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "ladeinfrastruktur",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Ladeinfrastruktur in Mehrparteiengebäuden und bidirektionale Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "heizungsersatz",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "desinvestitionsbeitrag",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "photovoltaik",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "e-mobilitaet",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "abwaermenutzung",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "start-up-innovationsprojekt",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Innovationsprojekte",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "innovationsscheck",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Innovationsscheck",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "initial-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Initial Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innosuisse",
+   "instrument_id": "core-coaching",
+   "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+   "instrument_name": "Start-up Coaching: Core Coaching",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "innotour",
+   "instrument_id": "innotour-finanzhilfe",
+   "program_name": "Innotour, Förderung von Innovation, Zusammenarbeit und Wissensaufbau im Tourismus",
+   "instrument_name": "Innotour Finanzhilfe für überbetriebliche Tourismusprojekte",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "nrp-luzern",
+   "instrument_id": "nrp-projektfoerderung",
+   "program_name": "Neue Regionalpolitik (NRP) Kanton Luzern 2024 bis 2027",
+   "instrument_name": "NRP-Projektförderung Kanton Luzern",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "peik",
+   "instrument_id": "peik-energieberatung",
+   "program_name": "PEIK, Energieberatung für KMU von EnergieSchweiz",
+   "instrument_name": "PEIK Energieberatung und Umsetzungsbegleitung für KMU",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "prokilowatt",
+   "instrument_id": "projekte",
+   "program_name": "ProKilowatt, wettbewerbliche Ausschreibungen für Stromeffizienz",
+   "instrument_name": "ProKilowatt Projekte (Stromeffizienz)",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "kleiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Kleine Einmalvergütung (KLEIV) für Photovoltaikanlagen unter 100 kW",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "greiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Grosse Einmalvergütung (GREIV) für Photovoltaikanlagen ab 100 kW",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "pronovo",
+   "instrument_id": "heiv",
+   "program_name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+   "instrument_name": "Hohe Einmalvergütung (HEIV) für Photovoltaikanlagen ohne Eigenverbrauch",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "saffa",
+   "instrument_id": "buergschaft",
+   "program_name": "Bürgschaftsgenossenschaft SAFFA",
+   "instrument_name": "Bürgschaft für Unternehmerinnen",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "serv",
+   "instrument_id": "lieferantenkreditversicherung",
+   "program_name": "SERV Schweizerische Exportrisikoversicherung",
+   "instrument_name": "Lieferantenkreditversicherung",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "sgh",
+   "instrument_id": "darlehen",
+   "program_name": "Schweizerische Gesellschaft für Hotelkredit (SGH)",
+   "instrument_name": "Darlehen für Beherbergungsbetriebe",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "technologiefonds",
+   "instrument_id": "buergschaft",
+   "program_name": "Technologiefonds",
+   "instrument_name": "Bürgschaft Technologiefonds",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
+   "availability_status": null,
+   "next_round": null
+  }
+ ],
+ "plan": {
+  "timeline": [
+   {
+    "phase": "jetzt",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "title": "Forschungspartner mit Mentoring finden",
+    "date": null,
+    "date_rule": null,
+    "action": "Nutzen Sie Innovationsmentoring, um einen passenden Forschungspartner zu finden und das Gesuch zu strukturieren."
+   },
+   {
+    "phase": "jetzt",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "title": "Forschungspartner beiziehen",
+    "date": null,
+    "date_rule": null,
+    "action": "Beziehen Sie einen Forschungspartner für das Innovationsprojekt bei."
+   },
+   {
+    "phase": "jetzt",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsmentoring",
+    "title": "Innovationsmentoring nutzen",
+    "date": null,
+    "date_rule": null,
+    "action": "Nutzen Sie Innovationsmentoring, um Ihre Idee zu strukturieren, einen Forschungspartner zu finden und das Gesuch vorzubereiten."
+   },
+   {
+    "phase": "jetzt",
+    "program_id": "itz",
+    "instrument_id": "innovation-sparring",
+    "title": "Innovation Sparring anfragen",
+    "date": null,
+    "date_rule": null,
+    "action": "Fragen Sie das ITZ an, um passende Förderstellen einzuordnen."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "eic-accelerator",
+    "instrument_id": "eic-accelerator",
+    "title": "EIC-Accelerator-Gesuch einreichen",
+    "date": "2026-11-04",
+    "date_rule": "Short Proposals werden am ersten Dienstag jedes Monats gebündelt. Full Proposals an Stichtagen, 17 Uhr Brüssel.",
+    "action": "Reichen Sie Ihr Gesuch für den EIC Accelerator ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "lib",
+    "instrument_id": "lib-beitrag",
+    "title": "Gesuch für den Luzerner Innovationsbeitrag einreichen",
+    "date": "2027-01-31",
+    "date_rule": "31. Januar des Beitragsjahres, 23:59 Uhr, keine Fristverlängerung. Beitragsjahre 2026 und 2027: beide bis 31. Januar 2027.",
+    "action": "Reichen Sie Ihr Gesuch für den Luzerner Innovationsbeitrag ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "klimastiftung-schweiz",
+    "instrument_id": "innovationsfoerderung",
+    "title": "Gesuch bei der Klimastiftung einreichen",
+    "date": "2027-03-01",
+    "date_rule": "Eingabe bis 1. März oder 1. September. Entscheide im Juni bzw. November.",
+    "action": "Reichen Sie Ihr Gesuch für die Innovationsförderung der Klimastiftung Schweiz ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "title": "Gesuch für Innovationsprojekt einreichen",
+    "date": null,
+    "date_rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe.",
+    "action": "Reichen Sie Ihr Gesuch für das Innovationsprojekt mit Umsetzungspartner ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsmentoring",
+    "title": "Gesuch für Innovationsmentoring einreichen",
+    "date": null,
+    "date_rule": "Beantragung jederzeit im Eingabeportal.",
+    "action": "Reichen Sie Ihr Gesuch für Innovationsmentoring ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "itz",
+    "instrument_id": "innovation-sparring",
+    "title": "Innovation Sparring anfragen",
+    "date": null,
+    "date_rule": "Anfrage jederzeit über das Formular Jetzt Innovieren.",
+    "action": "Reichen Sie Ihre Anfrage für Innovation Sparring ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "steuerliche-innovationsfoerderung-lu",
+    "instrument_id": "patentbox",
+    "title": "Patentbox beantragen",
+    "date": null,
+    "date_rule": "Gewährung auf Antrag. Zeitpunkt und Formular nennt die Quelle nicht.",
+    "action": "Beantragen Sie die Patentbox."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "umwelttechnologiefoerderung",
+    "instrument_id": "utf-finanzhilfe",
+    "title": "Finanzhilfe für Umwelttechnologie beantragen",
+    "date": null,
+    "date_rule": "Keine Eingabefristen genannt. Vorher Projektskizze (1 bis 2 Seiten) und Telefonat mit der Sektion Innovation.",
+    "action": "Reichen Sie vor dem Gesuch eine Projektskizze ein und telefonieren Sie mit der Sektion Innovation."
+   }
+  ],
+  "warnings": [
+   {
+    "type": "ausgeschlossen",
+    "items": [
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsprojekt-umsetzungspartner"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsmentoring"
+     },
+     {
+      "program_id": "eic-accelerator",
+      "instrument_id": "eic-accelerator"
+     },
+     {
+      "program_id": "itz",
+      "instrument_id": "innovation-sparring"
+     },
+     {
+      "program_id": "klimastiftung-schweiz",
+      "instrument_id": "innovationsfoerderung"
+     },
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     },
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     },
+     {
+      "program_id": "umwelttechnologiefoerderung",
+      "instrument_id": "utf-finanzhilfe"
+     }
+    ],
+    "text": "Start-up Innovationsprojekte: Für dasselbe Projekt darf keine laufende Förderung bestehen.",
+    "source": {
+     "title": "Start-up Innovationsprojekte, Webseite Innosuisse",
+     "url": "https://www.innosuisse.admin.ch/de/start-up-innovationsprojekte",
+     "locator": "Voraussetzungen"
+    }
+   },
+   {
+    "type": "bedingt",
+    "items": [
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsprojekt-umsetzungspartner"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsmentoring"
+     },
+     {
+      "program_id": "eic-accelerator",
+      "instrument_id": "eic-accelerator"
+     },
+     {
+      "program_id": "itz",
+      "instrument_id": "innovation-sparring"
+     },
+     {
+      "program_id": "klimastiftung-schweiz",
+      "instrument_id": "innovationsfoerderung"
+     },
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     },
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     },
+     {
+      "program_id": "umwelttechnologiefoerderung",
+      "instrument_id": "utf-finanzhilfe"
+     }
+    ],
+    "text": "Innovationsmentoring: Für dasselbe Projekt darf kein paralleles anderes Beratungsangebot (z. B. regionale oder kantonale Stelle) bezogen werden.",
+    "source": {
+     "title": "Innovationsmentoring, Webseite Innosuisse",
+     "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+     "locator": "Bedingungen"
+    }
+   },
+   {
+    "type": "abzug",
+    "items": [
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     },
+     {
+      "program_id": "eic-accelerator",
+      "instrument_id": "eic-accelerator"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsprojekt-umsetzungspartner"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsmentoring"
+     },
+     {
+      "program_id": "itz",
+      "instrument_id": "innovation-sparring"
+     },
+     {
+      "program_id": "klimastiftung-schweiz",
+      "instrument_id": "innovationsfoerderung"
+     },
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     },
+     {
+      "program_id": "umwelttechnologiefoerderung",
+      "instrument_id": "utf-finanzhilfe"
+     }
+    ],
+    "text": "Andere Finanzhilfen für dieselben Tätigkeiten und dasselbe Bemessungsjahr werden vom LIB abgezogen.",
+    "source": {
+     "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+     "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+     "locator": "N 142"
+    }
+   },
+   {
+    "type": "abzug",
+    "items": [
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     },
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     }
+    ],
+    "text": "Die Steuerersparnis aus Patentbox und F&E-Zusatzabzug wird abgezogen, wenn dieselbe Tätigkeit und dasselbe Bemessungsjahr betroffen sind.",
+    "source": {
+     "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+     "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+     "locator": "N 137-141"
+    }
+   },
+   {
+    "type": "abzug",
+    "items": [
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     },
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     }
+    ],
+    "text": "Beim Luzerner Innovationsbeitrag wird die Steuerersparnis aus Patentbox oder F&E-Zusatzabzug abgezogen, wenn dieselbe Tätigkeit und dasselbe Bemessungsjahr betroffen sind.",
+    "source": {
+     "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
+     "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
+     "locator": "N 137-141"
+    }
+   },
+   {
+    "type": "abzug",
+    "items": [
+     {
+      "program_id": "umwelttechnologiefoerderung",
+      "instrument_id": "utf-finanzhilfe"
+     },
+     {
+      "program_id": "eic-accelerator",
+      "instrument_id": "eic-accelerator"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsprojekt-umsetzungspartner"
+     },
+     {
+      "program_id": "innosuisse",
+      "instrument_id": "innovationsmentoring"
+     },
+     {
+      "program_id": "itz",
+      "instrument_id": "innovation-sparring"
+     },
+     {
+      "program_id": "klimastiftung-schweiz",
+      "instrument_id": "innovationsfoerderung"
+     },
+     {
+      "program_id": "lib",
+      "instrument_id": "lib-beitrag"
+     },
+     {
+      "program_id": "steuerliche-innovationsfoerderung-lu",
+      "instrument_id": "patentbox"
+     }
+    ],
+    "text": "UTF-Finanzhilfe und andere Bundesbeiträge zusammen in der Regel höchstens 50% der Projektkosten.",
+    "source": {
+     "title": "Eingabe eines Gesuchs, BAFU",
+     "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+     "locator": "Förderanteil"
+    }
+   }
+  ],
+  "next_steps": [
+   {
+    "text": "Nutzen Sie Innovationsmentoring, um einen passenden Forschungspartner zu finden und das Gesuch zu strukturieren.",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "link": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "due": null
+   },
+   {
+    "text": "Beziehen Sie einen Forschungspartner für das Innovationsprojekt bei.",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "link": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "due": null
+   },
+   {
+    "text": "Nutzen Sie Innovationsmentoring, um Ihre Idee zu strukturieren, einen Forschungspartner zu finden und das Gesuch vorzubereiten.",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsmentoring",
+    "link": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "due": null
+   },
+   {
+    "text": "Fragen Sie das ITZ an, um passende Förderstellen einzuordnen.",
+    "program_id": "itz",
+    "instrument_id": "innovation-sparring",
+    "link": "https://www.itz.ch/jetztinnovieren",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie Ihr Gesuch für den EIC Accelerator ein.",
+    "program_id": "eic-accelerator",
+    "instrument_id": "eic-accelerator",
+    "link": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+    "due": "2026-11-04"
+   },
+   {
+    "text": "Reichen Sie Ihr Gesuch für den Luzerner Innovationsbeitrag ein.",
+    "program_id": "lib",
+    "instrument_id": "lib-beitrag",
+    "link": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+    "due": "2027-01-31"
+   },
+   {
+    "text": "Reichen Sie Ihr Gesuch für die Innovationsförderung der Klimastiftung Schweiz ein.",
+    "program_id": "klimastiftung-schweiz",
+    "instrument_id": "innovationsfoerderung",
+    "link": "https://funding.klimastiftung.ch/de/user",
+    "due": "2027-03-01"
+   },
+   {
+    "text": "Reichen Sie Ihr Gesuch für das Innovationsprojekt mit Umsetzungspartner ein.",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsprojekt-umsetzungspartner",
+    "link": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie Ihr Gesuch für Innovationsmentoring ein.",
+    "program_id": "innosuisse",
+    "instrument_id": "innovationsmentoring",
+    "link": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie Ihre Anfrage für Innovation Sparring ein.",
+    "program_id": "itz",
+    "instrument_id": "innovation-sparring",
+    "link": "https://www.itz.ch/jetztinnovieren",
+    "due": null
+   },
+   {
+    "text": "Beantragen Sie die Patentbox.",
+    "program_id": "steuerliche-innovationsfoerderung-lu",
+    "instrument_id": "patentbox",
+    "link": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie vor dem Gesuch eine Projektskizze ein und telefonieren Sie mit der Sektion Innovation.",
+    "program_id": "umwelttechnologiefoerderung",
+    "instrument_id": "utf-finanzhilfe",
+    "link": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+    "due": null
+   }
+  ],
+  "contacts": [
+   {
+    "name": "Euresearch",
+    "role": "Status der Schweiz in Horizon Europe",
+    "email": null,
+    "phone": null,
+    "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
+   },
+   {
+    "name": "Innosuisse Innovationsprojekte",
+    "role": "Innovationsprojekte und Start-up Innovationsprojekte",
+    "email": "innoprojects@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/de/innosuisse-kontaktieren"
+   },
+   {
+    "name": "Innosuisse Start-up",
+    "role": "Start-up Coaching",
+    "email": "startup@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up"
+   },
+   {
+    "name": "Innosuisse Innovationsscheck",
+    "role": "Verlängerungen und Fragen zum Innovationsscheck",
+    "email": "innocheque@innosuisse.ch",
+    "phone": null,
+    "url": "https://www.innosuisse.admin.ch/de/innovationsscheck"
+   },
+   {
+    "name": "ITZ InnovationsTransfer Zentralschweiz",
+    "role": "Kontaktformular",
+    "email": null,
+    "phone": null,
+    "url": "https://www.itz.ch/ueber-uns/kontakt"
+   },
+   {
+    "name": "Klimastiftung Schweiz",
+    "role": "Mythenquai 50/60, 8002 Zürich",
+    "email": null,
+    "phone": "+41 43 285 44 80",
+    "url": "https://www.klimastiftung.ch/de/kontakt/"
+   },
+   {
+    "name": "Dienststelle Raum und Wirtschaft (rawi)",
+    "role": "Fragen zum LIB",
+    "email": "innovationsbeitrag@lu.ch",
+    "phone": "+41 41 228 51 83",
+    "url": "https://standortfoerderung.lu.ch/LIB"
+   },
+   {
+    "name": "Dienststelle Steuern Kanton Luzern, Juristische Personen",
+    "role": "Fragen zu Patentbox und F&E-Abzug",
+    "email": null,
+    "phone": null,
+    "url": "https://steuern.lu.ch/juristischepersonen/kontaktformular_jp"
+   },
+   {
+    "name": "BAFU, Sektion Innovation",
+    "role": "3003 Bern",
+    "email": "innovation@bafu.admin.ch",
+    "phone": "+41 58 469 69 10",
+    "url": "https://www.bafu.admin.ch/de/utf"
+   }
+  ]
+ },
+ "error": null
+}
