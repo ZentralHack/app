@@ -362,8 +362,9 @@ def suggestions(target: ChatTarget) -> ChatSuggestions:
 
 
 def short_text(text: str, limit: int = 60) -> str:
-    """The first clause of a criterion text, at most `limit` characters."""
-    clause = re.split(r"[:;(]", text, maxsplit=1)[0].strip().rstrip(".,")
+    """The first clause of a criterion text without parentheses, at most `limit` characters."""
+    text = re.sub(r"\s*\([^)]*\)", "", text)
+    clause = re.split(r"[:;]", text, maxsplit=1)[0].strip().rstrip(".,")
     if len(clause) <= limit:
         return clause
     return clause[:limit].rsplit(" ", 1)[0] + " …"

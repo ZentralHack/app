@@ -33,7 +33,9 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
   const input = useRef<HTMLTextAreaElement>(null);
   const end = useRef<HTMLDivElement>(null);
 
-  useEffect(() => setTurns(loadHistory(key)), [key]);
+  useEffect(() => {
+    setTurns(loadHistory(key));
+  }, [key]);
   useEffect(() => {
     if (!isOpen) return;
     let live = true;
@@ -46,7 +48,9 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
     };
     // `ref` is rebuilt every render; the key covers it.
   }, [isOpen, key]);
-  useEffect(() => end.current?.scrollIntoView({ block: "end", behavior: "smooth" }), [turns]);
+  useEffect(() => {
+    end.current?.scrollIntoView({ block: "end", behavior: "smooth" });
+  }, [turns]);
 
   const update = (next: Turn[]) => {
     saveHistory(key, next);
@@ -68,6 +72,7 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
       update([...before, { question: text, response: null, error }]);
     } finally {
       setBusy(false);
+      input.current?.focus();
     }
   }
 
@@ -189,7 +194,7 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
 function Answer({ response: r }: { response: ChatResponse }) {
   return (
     <div className="flex max-w-[92%] flex-col items-start gap-2" data-basis={r.basis}>
-      <p className="whitespace-pre-line">{r.answer}</p>
+      <p className="whitespace-pre-line text-fg">{r.answer}</p>
       {r.citations.length > 0 && (
         <div className="flex max-w-full flex-wrap gap-1.5">
           {r.citations.map(c => (
