@@ -13,16 +13,10 @@ import { RECHTSFORMEN } from "../content/rechtsformen";
 import { groupDigits } from "../lib/format";
 import { t } from "../text/de-CH";
 
-/** Answer to a quick yes/no question on page 1; "" = not answered. */
-export type Tri = "ja" | "nein" | "weiss_nicht" | "";
-export const QUICK_FIELDS = ["sitz_schweiz_uid", "umsatz_mind_100k", "kreditwuerdig", "co2_befreit"] as const;
-export type QuickField = (typeof QUICK_FIELDS)[number];
-
 export interface CaptureDraft {
   name: string;
   rechtsform: string;
   gruendungsjahr: string;
-  quick: Record<QuickField, Tri>;
   text: string;
   gemeinde: string;
   mitarbeitende: string;
@@ -55,7 +49,6 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
     [t.capture.rechtsform, draft.rechtsform.trim() === ""],
     [t.capture.founded, draft.gruendungsjahr.length !== 4],
     [t.capture.budget, draft.budget === ""],
-    ...QUICK_FIELDS.map((f): [string, boolean] => [t.capture.quickQuestions[f], draft.quick[f] === ""]),
   ];
 
   function submit() {
@@ -81,7 +74,7 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
                 key={ex.label}
                 type="button"
                 aria-pressed={draft.text === ex.text}
-                onClick={() => set({ text: ex.text, name: ex.company, rechtsform: ex.rechtsform, gruendungsjahr: ex.gruendungsjahr, gemeinde: ex.gemeinde, mitarbeitende: ex.mitarbeitende, budget: ex.budget, quick: { ...ex.quick } })}
+                onClick={() => set({ text: ex.text, name: ex.company, rechtsform: ex.rechtsform, gruendungsjahr: ex.gruendungsjahr, gemeinde: ex.gemeinde, mitarbeitende: ex.mitarbeitende, budget: ex.budget })}
                 className="rounded-md border border-line px-2.5 py-1 text-left text-sm transition-colors hover:border-line-strong hover:bg-bg aria-pressed:border-primary aria-pressed:bg-primary-soft aria-pressed:text-primary-ink"
               >
                 {ex.label}
@@ -170,18 +163,6 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
           </TextField>
         </div>
 
-        <fieldset className="flex flex-col">
-          <legend className="mb-2 text-sm font-semibold">{t.capture.quick}</legend>
-          <div className="flex flex-col divide-y divide-line">
-            {QUICK_FIELDS.map(f => (
-              <div key={f} className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-2.5">
-                <span id={`quick-${f}`}>{t.capture.quickQuestions[f]}</span>
-                <YesNo labelledBy={`quick-${f}`} value={draft.quick[f]} onChange={v => set({ quick: { ...draft.quick, [f]: v } })} />
-              </div>
-            ))}
-          </div>
-        </fieldset>
-
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
           <span className="text-fg-2">{t.capture.duration}</span>
           <Button onClick={submit} disabled={busy}>
@@ -199,30 +180,5 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
         }}
       />
     </Page>
-  );
-}
-
-/** Three-way segmented control: Ja / Nein / Weiss nicht. Clicking the active option clears it. */
-function YesNo({ labelledBy, value, onChange }: { labelledBy: string; value: Tri; onChange: (v: Tri) => void }) {
-  const options: [Exclude<Tri, "">, string][] = [
-    ["ja", t.capture.yes],
-    ["nein", t.capture.no],
-    ["weiss_nicht", t.capture.unknown],
-  ];
-  return (
-    <div role="radiogroup" aria-labelledby={labelledBy} className="inline-flex overflow-hidden rounded-lg border border-line-strong">
-      {options.map(([id, label]) => (
-        <button
-          key={id}
-          type="button"
-          role="radio"
-          aria-checked={value === id}
-          onClick={() => onChange(value === id ? "" : id)}
-          className="border-l border-line-strong px-3.5 py-1.5 text-sm transition-colors first:border-l-0 hover:bg-bg aria-checked:bg-primary-soft aria-checked:font-semibold aria-checked:text-primary-ink"
-        >
-          {label}
-        </button>
-      ))}
-    </div>
   );
 }

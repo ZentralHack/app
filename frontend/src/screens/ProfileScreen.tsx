@@ -12,6 +12,8 @@ import { t } from "../text/de-CH";
 
 interface Props {
   profile: ProjectProfile;
+  /** From the form on page 1; not part of the profile. */
+  company: string | null;
   onChange: (name: string, field: ProfileField) => void;
   busy: boolean;
   onBack: () => void;
@@ -28,10 +30,10 @@ function groupFields(fields: ProjectProfile["fields"]) {
   return groups.filter(g => g.names.length > 0);
 }
 
-export function ProfileScreen({ profile, onChange, busy, onBack, onConfirm }: Props) {
+export function ProfileScreen({ profile, company, onChange, busy, onBack, onConfirm }: Props) {
   const [missing, setMissing] = useState<string[] | null>(null);
   const f = profile.fields;
-  const name = typeof f.unternehmensname?.value === "string" ? f.unternehmensname.value : null;
+  const name = company;
   const rechtsform = typeof f.rechtsform?.value === "string" ? f.rechtsform.value : null;
   const subline = [
     f.standort_gemeinde?.value && `${formatFieldValue("standort_gemeinde", f.standort_gemeinde)}${f.standort_kanton?.value ? ` ${f.standort_kanton.value}` : ""}`,

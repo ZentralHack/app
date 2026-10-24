@@ -1,23 +1,24 @@
 import { useState } from "react";
-import { api } from "./api";
+import { api, ApiRequestError } from "./api";
 import type { Clarification, InstrumentRef, ProfileField, ProjectProfile, QuestionSet } from "./api/contract";
 import { Sidebar } from "./components/layout/Sidebar";
+import { Alert } from "./components/ui/Alert";
 import { useRun } from "./hooks/useRun";
 import { parseChf } from "./lib/format";
-import { CaptureScreen, QUICK_FIELDS, type CaptureDraft } from "./screens/CaptureScreen";
+import { CaptureScreen, type CaptureDraft } from "./screens/CaptureScreen";
 import { PlanScreen } from "./screens/PlanScreen";
 import { ProfileScreen } from "./screens/ProfileScreen";
 import { ProgramScreen } from "./screens/ProgramScreen";
 import { QuestionsScreen } from "./screens/QuestionsScreen";
 import { ResultsScreen } from "./screens/ResultsScreen";
 import { TraceScreen } from "./screens/TraceScreen";
+import { t } from "./text/de-CH";
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 const EMPTY_DRAFT: CaptureDraft = {
   name: "",
   rechtsform: "",
   gruendungsjahr: "",
-  quick: { sitz_schweiz_uid: "", umsatz_mind_100k: "", kreditwuerdig: "", co2_befreit: "" },
   text: "",
   gemeinde: "",
   mitarbeitende: "",
@@ -40,9 +41,13 @@ export function App() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [runId, setRunId] = useState<string | null>(null);
   const [openProgram, setOpenProgram] = useState<InstrumentRef | null>(null);
+  // The company name is only shown in the UI; it is not part of the profile the backend checks.
+  const [company, setCompany] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const run = useRun(runId);
 
   function go(next: Step) {
+    setError(null);
     setStep(next);
     setOpenProgram(null);
     setReachable(r => (next > r ? next : r));
@@ -58,16 +63,20 @@ export function App() {
   /** An edit on `at` makes everything after it outdated. */
   const reopenFrom = (at: Step) => setReachable(r => (r > at ? at : r));
 
+  /** Runs one user action against the API. A failed request shows its German message above the screen. */
   async function withBusy(work: () => Promise<void>) {
     setBusy(true);
+    setError(null);
     try {
       await work();
+    } catch (e) {
+      setError(e instanceof ApiRequestError ? e.message : t.app.unexpectedError);
     } finally {
       setBusy(false);
     }
   }
 
-  /** Sends the draft to the profile step. The company name is not part of the request, so it is added here. */
+  /** Sends the draft to the profile step, then adds what the form knows better than the text. */
   async function createProfile(d: CaptureDraft): Promise<ProjectProfile | null> {
     const res = await api.createProfile({
       text: d.text,
@@ -77,23 +86,14 @@ export function App() {
     });
     setClarification(res.clarification);
     if (res.status !== "ok" || !res.profile) return null;
-    const name: ProfileField = d.name.trim()
-      ? { value: d.name.trim(), status: "angegeben", origin: "formular", quote: null, note: null }
-      : { value: null, status: "fehlt", origin: null, quote: null, note: null };
-    const fields: ProjectProfile["fields"] = { ...res.profile.fields, unternehmensname: name };
+    setCompany(d.name.trim() || null);
+    const fields: ProjectProfile["fields"] = { ...res.profile.fields };
     // A Rechtsform from the form wins over one read from the text; without it the text-based value stays.
     if (d.rechtsform.trim()) fields.rechtsform = { value: d.rechtsform.trim(), status: "angegeben", origin: "formular", quote: null, note: null };
     // Gründungsjahr becomes the age in years, which is what the programs check.
     const year = Number(d.gruendungsjahr);
     if (d.gruendungsjahr.length === 4 && year <= new Date().getFullYear())
       fields.unternehmensalter = { value: new Date().getFullYear() - year, status: "angegeben", origin: "formular", quote: null, note: `gegründet ${year}` };
-    for (const f of QUICK_FIELDS) {
-      const a = d.quick[f];
-      fields[f] =
-        a === "ja" || a === "nein"
-          ? { value: a === "ja", status: "angegeben", origin: "formular", quote: null, note: null }
-          : { value: null, status: "fehlt", origin: null, quote: null, note: a === "weiss_nicht" ? "Weiss nicht" : null };
-    }
     const p = { ...res.profile, fields };
     setProfile(p);
     return p;
@@ -158,17 +158,22 @@ export function App() {
     setQuestions(null);
     setAnswers({});
     setRunId(null);
+    setCompany(null);
     setReachable(1);
     go(1);
   }
 
-  const company = profile?.fields.unternehmensname?.value;
   const match = openProgram && run.result?.matches.find(m => m.program_id === openProgram.program_id && m.instrument_id === openProgram.instrument_id);
 
   return (
     <div className="flex min-h-screen flex-col lg:flex-row">
       <Sidebar step={step} reachable={reachable} onNavigate={n => navigate(n as Step)} />
       <div className="flex min-w-0 flex-1 flex-col">
+        {(error ?? run.error) && (
+          <div className="mx-auto w-full max-w-app px-6 pt-6 lg:px-14">
+            <Alert tone="error">{error ?? run.error}</Alert>
+          </div>
+        )}
         {step === 1 && (
           <CaptureScreen
             draft={draft}
@@ -181,7 +186,7 @@ export function App() {
             onSubmit={analyse}
           />
         )}
-        {step === 2 && profile && <ProfileScreen profile={profile} onChange={updateField} busy={busy} onBack={() => go(1)} onConfirm={confirmProfile} />}
+        {step === 2 && profile && <ProfileScreen profile={profile} company={company} onChange={updateField} busy={busy} onBack={() => go(1)} onConfirm={confirmProfile} />}
         {step === 3 && questions && (
           <QuestionsScreen questions={questions} answers={answers} onAnswer={setAnswer} busy={busy} onBack={() => go(2)} onNext={startRun} />
         )}
@@ -212,7 +217,7 @@ export function App() {
         {step === 5 && !match && (
           <ResultsScreen
             result={run.result}
-            company={typeof company === "string" ? company : null}
+            company={company}
             onOpen={ref => {
               setOpenProgram(ref);
               window.scrollTo({ top: 0 });

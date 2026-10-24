@@ -12,7 +12,6 @@ export const EXAMPLES = [
     gemeinde: "Emmen",
     mitarbeitende: "18",
     budget: "400'000",
-    quick: { sitz_schweiz_uid: "ja", umsatz_mind_100k: "ja", kreditwuerdig: "ja", co2_befreit: "nein" },
     text: SENSOR_TEXT,
   },
   {
@@ -23,7 +22,6 @@ export const EXAMPLES = [
     gemeinde: "Ruswil",
     mitarbeitende: "12",
     budget: "250'000",
-    quick: { sitz_schweiz_uid: "ja", umsatz_mind_100k: "ja", kreditwuerdig: "ja", co2_befreit: "nein" },
     text: "Unsere Schreinerei in Ruswil hat 12 Mitarbeitende. Wir wollen nächstes Jahr das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren. Das Gebäude ist von 1985 und gehört uns.",
   },
   {
@@ -34,7 +32,6 @@ export const EXAMPLES = [
     gemeinde: "Musterwil",
     mitarbeitende: "35",
     budget: "2'800'000",
-    quick: { sitz_schweiz_uid: "ja", umsatz_mind_100k: "ja", kreditwuerdig: "ja", co2_befreit: "nein" },
     text: "Wir sind eine Landgemeinde im Kanton Luzern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking umbauen und die Ölheizung durch eine Wärmepumpe ersetzen.",
   },
 ] as const;
