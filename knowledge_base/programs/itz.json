@@ -12,15 +12,15 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "ITZ ist in der Zentralschweiz tätig. Die Sparring-Seite nennt keine Beschränkung auf bestimmte Kantone."
+    "note": "ITZ nennt die Zentralschweiz als Auftrag und wird von den sechs Kantonen Luzern, Nidwalden, Obwalden, Schwyz, Uri und Zug sowie vom Bund unterstützt. Eine ausdrückliche Beschränkung auf Unternehmen aus diesen Kantonen nennen die Quellen nicht. Darum keine Kantone als Filter."
   },
-  "purpose": "ITZ unterstützt KMU und Start-ups mit kostenlosem Innovationssparring und vermittelt Partner und Förderstellen in der Region.",
+  "purpose": "ITZ hilft Unternehmen und Gewerbebetrieben, Startups und Menschen mit Ideen, Vorhaben weiterzubringen. Mit kostenlosem Innovation Sparring und Zugang zum Netzwerk in der Zentralschweiz. ITZ ist keine Förderstelle.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Der Sparring-Check klärt, ob das Angebot passt.",
+    "note": "Abgeleitet aus Innovation Sparring, Ablauf Schritt 02 Check: Im Sparring-Check klärt ITZ, ob Sparring passt.",
     "source": {
       "source_id": "sparring",
-      "locator": "Ablauf"
+      "locator": "So läuft das Innovation Sparring ab, Schritt 02 Check"
     }
   },
   "budget": null,
@@ -44,12 +44,12 @@
         "note": null,
         "source": {
           "source_id": "sparring",
-          "locator": null
+          "locator": "Seitentitel und Ablauf Schritt 03 Sparring"
         }
       },
       "recipient": {
         "type": "dienstleister",
-        "note": "ITZ erbringt die Beratung, für das Unternehmen kostenlos."
+        "note": "Abgeleitet aus Innovation Sparring, Ablauf Schritt 03: ITZ erbringt das Sparring selbst, bis 20 Stunden kostenlos. Kein Geld an das Unternehmen."
       },
       "filter": {
         "applicant_types": [
@@ -78,15 +78,15 @@
       "criteria": [
         {
           "id": "innovationsvorhaben",
-          "text": "Es gibt ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
-          "kind": "muss",
+          "text": "Es gibt ein Vorhaben oder eine Idee, die weitergebracht werden soll.",
+          "kind": "soll",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
           "question": {
-            "text": "Haben Sie ein konkretes Innovations- oder Entwicklungsvorhaben?",
+            "text": "Haben Sie ein Vorhaben oder eine Idee, die Sie weiterbringen wollen?",
             "options": [
               "Ja",
               "Nein",
@@ -95,14 +95,14 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "sparring",
-            "locator": "Angebot"
+            "source_id": "startseite",
+            "locator": "Abschnitt «Für Menschen, die ihr Vorhaben weiterbringen wollen.»"
           },
-          "notes": null
+          "notes": "Die Quelle nennt kein Muss. Für Privatpersonen genügt eine Idee: «Du musst nichts gegründet haben.» (Für Privatpersonen)."
         },
         {
           "id": "sparring_check",
-          "text": "Ein 30-minütiger Sparring-Check klärt, ob Sparring passt.",
+          "text": "Ein 30-minütiger Sparring-Check klärt, ob Sparring passt. Der Check ist kostenlos und unverbindlich.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -111,14 +111,14 @@
           "evidence": [],
           "source": {
             "source_id": "sparring",
-            "locator": "Ablauf"
+            "locator": "So läuft das Innovation Sparring ab, Schritt 02 Check; Abschnitt «Der Einstieg ist schnell und klar.»"
           },
-          "notes": null
+          "notes": "Entscheid liegt bei ITZ. Keine Frage an den Nutzer."
         },
         {
           "id": "zielgruppe",
-          "text": "KMU, Start-ups oder Privatpersonen.",
-          "kind": "muss",
+          "text": "Unternehmen und Gewerbebetriebe (KMU), Startups und Privatpersonen mit Ideen.",
+          "kind": "soll",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [
@@ -127,10 +127,10 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "sparring",
-            "locator": "Für wen"
+            "source_id": "ueber-uns",
+            "locator": "Abschnitt «Warum es das ITZ gibt.»"
           },
-          "notes": null
+          "notes": "Die Quelle nennt diese Zielgruppen, aber keinen Ausschluss anderer Gesuchsteller."
         }
       ],
       "funding": {
@@ -145,7 +145,7 @@
             "amount_chf": null
           }
         ],
-        "max_share_of_costs_pct": 100,
+        "max_share_of_costs_pct": null,
         "min_amount_chf": null,
         "max_amount_chf": null,
         "cofinancing": null,
@@ -157,19 +157,19 @@
         "example": null,
         "source": {
           "source_id": "sparring",
-          "locator": "Kosten"
+          "locator": "So läuft das Innovation Sparring ab, Schritt 03 Sparring; Abschnitt «Der Einstieg ist schnell und klar.»"
         },
-        "note": null
+        "note": "ITZ zahlt keine Beiträge an Projektkosten («Nicht als Förderstelle», Über uns). Was nach 20 Stunden gilt, nennt die Quelle nicht."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Anfrage jederzeit über das Formular Jetzt Innovieren.",
+          "rule": "Abgeleitet aus Innovation Sparring, Ablauf Schritt 01 Anfrage: Anfrage über das Formular «Jetzt Innovieren». Die Quelle nennt keine Frist.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "sparring",
-            "locator": "Ablauf"
+            "locator": "So läuft das Innovation Sparring ab, Schritt 01 Anfrage"
           }
         },
         "assessment_period": null,
@@ -181,11 +181,11 @@
       "documents": {
         "application": [
           {
-            "name": "Kurze Beschreibung des Vorhabens in eigenen Worten",
+            "name": "Beschreibung des Vorhabens in eigenen Worten (muss nicht ausformuliert sein)",
             "condition": null,
             "source": {
               "source_id": "sparring",
-              "locator": "Ablauf"
+              "locator": "So läuft das Innovation Sparring ab, Schritt 01 Anfrage"
             }
           }
         ],
@@ -208,10 +208,10 @@
     {
       "with": "innosuisse",
       "type": "empfohlen_vorher",
-      "text": "ITZ hilft bei der Einordnung von Förderstellen wie Innosuisse und kantonalen Programmen.",
+      "text": "Abgeleitet aus Innovation Sparring, «Förderung und Finanzierung einordnen», und Startseite «lange bevor es jemand prüft oder finanziert»: ITZ hilft vor einem Gesuch einzuordnen, welcher Topf passt, von Innosuisse bis zu den kantonalen Programmen.",
       "source": {
         "source_id": "sparring",
-        "locator": "Finanzierung"
+        "locator": "Woran wir mit dir arbeiten, «Förderung und Finanzierung einordnen.»"
       }
     }
   ],
@@ -224,18 +224,18 @@
       "Sparring bis 20 Stunden",
       "Feedback"
     ],
-    "note": null,
+    "note": "Das Formular ist ein eingebettetes HubSpot-Formular. Es ist nur mit JavaScript sichtbar.",
     "source": {
       "source_id": "sparring",
-      "locator": "Ablauf"
+      "locator": "So läuft das Innovation Sparring ab, Schritte 01 bis 04"
     }
   },
   "contacts": [
     {
       "name": "ITZ InnovationsTransfer Zentralschweiz",
-      "role": "Kontaktformular",
-      "email": null,
-      "phone": null,
+      "role": "Allgemeiner Kontakt, Ebenaustrasse 20, 6048 Horw",
+      "email": "info@itz.ch",
+      "phone": "+41 41 349 50 60",
       "url": "https://www.itz.ch/ueber-uns/kontakt"
     }
   ],
@@ -248,7 +248,7 @@
       "url": "https://www.itz.ch/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -258,18 +258,84 @@
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "ueber-uns",
+      "title": "Über uns, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/ueber-uns/ueber-uns",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "oekosystem",
+      "title": "Innovationsökosystem Zentralschweiz, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/was-wir-anbieten/%C3%B6kosystem",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/ueber-uns/kontakt",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "fuer-privatpersonen",
+      "title": "Für Privatpersonen, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/f%C3%BCr-wen/privatpersonen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "fuer-kmu",
+      "title": "Für KMU, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/f%C3%BCr-wen/kmu",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "fuer-startups",
+      "title": "Für Startups, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/f%C3%BCr-wen/startups",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Wer das Angebot finanziert (Kantone, NRP, RIS) und ob es auf Zentralschweizer Unternehmen beschränkt ist, nennen die Quellen nicht.",
-      "Vollständiger Name InnovationsTransfer Zentralschweiz nicht auf den gesichteten Seiten bestätigt.",
-      "Nicht erfasst: ZentralschweizZünder (Startup Acceleration), Bereich Finanzierung.",
+      "scope: Gilt das Sparring auch für Unternehmen ausserhalb der sechs Zentralschweizer Kantone? Die Quellen nennen nur einen «klaren Fokus auf die Zentralschweiz». Bei ITZ nachfragen.",
+      "Finanzierung von ITZ: Über uns nennt die sechs Kantone und den Bund. Die Ökosystem-Seite listet SECO, ZVDK und NRP als Unterstützer. Ob das Sparring über NRP finanziert ist, sagt keine Quelle ausdrücklich.",
+      "funding: Was nach den 20 kostenlosen Stunden gilt (Kosten, Verlängerung), nennen die Quellen nicht.",
+      "funding.max_share_of_costs_pct auf null gesetzt: ITZ deckt keine Projektkosten, nur das eigene Sparring. Bitte bestätigen.",
+      "timing.deadline: «laufend» ist abgeleitet. Die Quelle nennt keine Frist. Bitte bestätigen.",
+      "combination_rules innosuisse «empfohlen_vorher» ist abgeleitet. Die Quelle sagt nicht wörtlich, dass ITZ vor Innosuisse empfohlen ist. Bitte bestätigen.",
+      "filter.project_types: «organisationsinnovation» ist abgeleitet aus «Strategie und Neuausrichtung». Die Quellen beschränken die Art des Vorhabens nicht ausdrücklich.",
+      "entitlement und recipient.note sind abgeleitet aus dem Ablauf. Bitte bestätigen.",
+      "Nicht erfasst: ZentralschweizZünder (Startup Acceleration), Alpine Drone Consortium, Bereich Finanzierung.",
       "Quellen nicht lokal abgelegt."
     ]
   }
