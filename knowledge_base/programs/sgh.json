@@ -258,7 +258,7 @@
           "notes": "FAQ: «Im Grundsatz finanzieren wir ergänzend zu einer Sockelfinanzierung, die nicht zwingend bei einer Bank sein muss.» FAQ Darlehenshöhe: «in Verbindung mit einer vorrangigen Sockelfinanzierung». Verordnung Art. 4 Abs. 1: «subsidiär zu privaten Kapitalgebern»."
         },
         {
-          "id": "eigenmittel",
+          "id": "eigenmittelanteil",
           "text": "Ein gewisser Eigenmittelanteil. Das Projekt darf nicht ausschliesslich fremdfinanziert sein.",
           "kind": "soll",
           "about": "kosten",
