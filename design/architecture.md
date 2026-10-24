@@ -176,14 +176,14 @@ Drops instruments using `instrument.availability`, `instrument.filter` and `prog
 | `verfuegbarkeit` | `availability.status` is not `aktiv`. The reject carries the status and `next_round`, so the UI can say "nächste Runde ab ...". |
 | `kanton` | profile canton not in `scope.cantons` (empty list means all of Switzerland) |
 | `gesuchsteller` | no profile applicant type in `applicant_types` |
-| `vorhaben` | no profile project type in `project_types` |
+| `vorhaben` | no profile project type in `project_types`, after adding implied types (`agent/project_types.py`, e.g. `prototyp` implies `entwicklung`) |
 | `branche` | `sectors` is not empty and no profile sector is in it (empty means open to all sectors) |
 | `mitarbeitende` | employee count outside `employees_min` / `employees_max` |
 | `unternehmensalter` | company age above `company_age_years_max` |
 
 All rules except `verfuegbarkeit` only drop on a known profile value (`angegeben` or `annahme`). If the value is `fehlt`, the instrument stays in. An empty filter list (`applicant_types`, `project_types`, `sectors`) means no restriction. Every drop carries a German reason, shown under "passt nicht".
 
-`scope.municipalities` is not checked yet: a pre-filter rule for it is needed as soon as a Gemeinde program exists.
+`scope.municipalities` is checked after the canton, within the same rule `kanton` (the contract's location rule): a known `standort_gemeinde` outside the list drops the instrument.
 
 **Required partners never drop an instrument.** A missing partner is something the user can change, and the brief's own example (Innosuisse with a research partner) depends on showing it. Instead, code adds one `muss` criterion per entry in `filter.required_partners` (scope `filter`, e.g. "Ein Forschungspartner ist beteiligt.", source = the instrument's source) to the matching input. If it is not met, scoring treats it as fixable: fit `passt_mit_anpassung`, gap `anpassung` with the fixed text for that partner type (e.g. "Forschungspartner beiziehen"). These texts are defined once in code, one per enum value.
 
@@ -205,12 +205,13 @@ For each instrument:
 
 Every `unbekannt` criterion gets a gap of type `infos_fehlen`, so "passt gut" never hides an unknown `muss` criterion. Criteria `nicht_anwendbar` are not counted.
 
-Within a level, instruments are ranked by: share of applicable `muss` criteria `erfuellt`, then the nearest deadline, then `entitlement` (`rechtsanspruch_im_budget` before `kein_rechtsanspruch` before `wettbewerb`). `rank` counts only fitting instruments; `passt_nicht` has no rank. The thresholds live in one constants block and are covered by unit tests.
+Ranking over all fitting instruments: advice (`instrument_type: beratung`) comes after every money instrument, so the UI can show it as "Begleitende Angebote"; then fit level; then a floor: instruments with more than two thirds of their `muss` criteria unknown come after the rest of their level; then the share of applicable `muss` criteria met (`annahme` counts half), the nearest deadline and `entitlement` (`rechtsanspruch_im_budget` before `kein_rechtsanspruch` before `wettbewerb`). `rank` counts only fitting instruments; `passt_nicht` has no rank. The thresholds live in one constants block and are covered by unit tests.
 
 ### Step 6: Plan
 - Code computes the next deadline per fitting instrument from `timing.deadline` and `today`: the next of `next_dates` for fixed dates, `projektstart` for `vor_projektstart`. LIB: costs of year X are claimed by 31 January X+2 (claim years 2026 and 2027 both by 31.01.2027).
 - Code places each fitting instrument in one of three phases: **Jetzt** (levers to act on before any application, and instruments recommended beforehand via `empfohlen_vorher`), **Vor Projektstart** (deadline type `vor_projektstart`), **Gesuch** (all others, sorted by date). An instrument with a `voraussetzung` comes after its prerequisite.
-- Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`). Rules whose `with` target (program or `program:instrument`) does not exist in the knowledge base are ignored and logged, never shown.
+- Code applies `combination_rules` between all fitting instruments and produces warnings (`ausgeschlossen`, `abzug`, `bedingt`), each instrument listed once. Rules against any other program (`with: "*"`) list only the owner's instruments; those of the same type in one program are merged into one note. Rules whose `with` target (program or `program:instrument`) does not exist in the knowledge base are ignored and logged, never shown.
+- If nothing fits, the contacts come from at most three programs: those checked in detail first, then rejects by how far they got through the pre-filter, cantonal offices first.
 - The LLM writes the gap hints, using only the `levers` of that instrument, and short next-step texts per instrument. It gets the computed dates; it never computes dates itself. Code checks the same ids one to one and no new dates, years or programs; otherwise, or if the call fails, neutral texts from the knowledge base are used.
 
 ### Optional modules

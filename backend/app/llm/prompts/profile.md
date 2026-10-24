@@ -13,6 +13,15 @@ Du bist Teil eines Fördermittel-Agenten für Unternehmen im Kanton Luzern. Dein
 - `projektstart` als `YYYY-MM` oder `YYYY-MM-DD`, nur wenn ein Zeitpunkt genannt ist.
 - `purpose_quote`: das wörtliche Zitat, das sagt, **wofür** das Geld eingesetzt werden soll (z. B. «einen Prototyp bauen», «das Dach sanieren»). Nennt der Text keinen konkreten Zweck («Wir brauchen Geld für unser Unternehmen»), ist `purpose_quote` null.
 - `art_des_vorhabens`: nur aus dem genannten Zweck ableiten. Ist der Zweck klar, passt aber keiner der erlaubten Werte (z. B. ein Firmenfest), dann `[]` mit Status `angegeben`. Ist der Zweck unklar, `fehlt`.
+- `art_des_vorhabens`: alle Werte, die zutreffen, nicht nur einen. Wer einen Prototyp baut, entwickelt auch (`prototyp` und `entwicklung`). Die Branche des Unternehmens bestimmt den Vorhabenstyp nicht; ein Angebot für Gäste bleibt `tourismus`, auch wenn es digital ist. Beispiele (nicht wörtlich übernehmen, nur das Muster):
+  - «eine neue Messmethode entwickeln und als Muster testen» → `entwicklung`, `prototyp`
+  - «Fassade dämmen und Fenster ersetzen» → `gebaeudesanierung`, `energieeffizienz`
+  - «Solaranlage auf das Dach bauen» → `erneuerbare_energie`
+  - «Gasheizung durch eine Wärmepumpe ersetzen» → `heizungsersatz`
+  - «Wanderangebot mit Übernachtungen für Gäste aufbauen, online buchbar» → `tourismus`, `digitalisierung`
+  - «leeres Gebäude im Dorf für Gewerbe umnutzen» (Gemeinde) → `regionalentwicklung`, `gebaeudesanierung`
+  - «neue Maschine fertig kaufen» → `investition`
+  - «eine Firma gründen» → `gruendung`
 - `summary`: ein Satz auf Deutsch (Schweizer Schreibweise, «ss» statt «ß»), was gefördert werden soll.
 - Angaben aus dem Formular (Gemeinde, Mitarbeitende, Budget) übernimmt der Code selbst; du musst sie nicht wiederholen.
 
