@@ -1,0 +1,423 @@
+{
+  "schema_version": "2.0",
+  "id": "prokilowatt",
+  "name": "ProKilowatt, wettbewerbliche Ausschreibungen für Stromeffizienz",
+  "short_name": "ProKilowatt",
+  "provider": {
+    "name": "Bundesamt für Energie (BFE)",
+    "unit": "Geschäftsstelle ProKilowatt c/o CimArk",
+    "url": "https://www.prokw.ch/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz."
+  },
+  "purpose": "ProKilowatt fördert Massnahmen, die den Stromverbrauch in Industrie, Gewerbe, Dienstleistungen, Haushalten und Landwirtschaft senken.",
+  "entitlement": {
+    "type": "wettbewerb",
+    "note": "Projekte werden im kompetitiven Verfahren nach Kosten-Nutzen ausgewählt.",
+    "source": {
+      "source_id": "faq",
+      "locator": "Projekt vs. Programm"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "projekte",
+      "name": "ProKilowatt Projekte (Stromeffizienz)",
+      "description": "Förderbeitrag an Massnahmen, die den Stromverbrauch bestehender Anlagen senken, vergeben in einem wettbewerblichen Verfahren nach Kosten-Nutzen.",
+      "keywords": [
+        "ProKilowatt",
+        "Stromeffizienz",
+        "wettbewerbliche Ausschreibungen",
+        "BFE"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Ausschreibung 2026 am 3. November 2025 lanciert. Einreichung laut FAQ laufend über das Online-Tool.",
+        "source": {
+          "source_id": "startseite",
+          "locator": "Ablauf"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Projektträger"
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "eigentuemer"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "energieeffizienz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "bereiche",
+          "name": "Ersatz oder Optimierung",
+          "definition": "Beleuchtung, Kälte, Motoren, Pumpen, Lüftung, industrielle Prozesse, Gemeinden und weitere.",
+          "examples_positive": [],
+          "examples_negative": [
+            "Erneuerbare Energieproduktion",
+            "Reine CO2-Einsparung"
+          ],
+          "source": {
+            "source_id": "startseite",
+            "locator": null
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Massnahmen, die bereits umgesetzt sind oder sich mit einer Amortisation unter 4 Jahren selbst rechnen",
+          "source": {
+            "source_id": "faq",
+            "locator": "Ausschlüsse"
+          }
+        },
+        {
+          "text": "Massnahmen ohne Stromeffizienz, etwa erneuerbare Energieproduktion",
+          "source": {
+            "source_id": "faq",
+            "locator": "Ausschlüsse"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "senkt_stromverbrauch",
+          "text": "Die Massnahme senkt den Stromverbrauch von Geräten, Anlagen, Fahrzeugen oder Gebäuden.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Senkt Ihr Vorhaben den Stromverbrauch bestehender Anlagen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "umsetzung_schweiz",
+          "text": "Umsetzung in der Schweiz.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "bestehende_anlage",
+          "text": "Bestehende Anlagen werden ersetzt oder optimiert.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "nicht_begonnen",
+          "text": "Die Massnahme ist noch nicht begonnen: Material erst nach dem Zuschlag bestellen und Verträge erst danach unterzeichnen.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": {
+            "text": "Haben Sie schon Material bestellt oder Verträge für die Massnahme unterschrieben?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "amortisation_ueber_4",
+          "text": "Die Amortisationsdauer liegt über 4 Jahren.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "kosten_nutzen_8_rp",
+          "text": "Kosten-Nutzen-Verhältnis höchstens 8 Rappen Förderbeitrag pro eingesparte kWh. Je tiefer, desto besser die Chancen.",
+          "kind": "bewertung",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Payback und Kosten-Nutzen"
+          },
+          "notes": null
+        },
+        {
+          "id": "investition_ueber_70000",
+          "text": "Einreichung als Projekt bei Investitionssummen über CHF 70'000. Darunter kann ein Programm mit garantierter Förderung passender sein.",
+          "kind": "soll",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Wie hoch ist die geplante Investition?",
+            "options": [
+              "Unter CHF 70'000",
+              "CHF 70'000 bis 300'000",
+              "Über CHF 300'000",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Projekt vs. Programm"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Bis 30% der Investitionskosten, mindestens CHF 20'000 und höchstens CHF 2 Mio. Förderbeitrag.",
+        "cost_categories": [
+          {
+            "id": "investition",
+            "name": "Investitionskosten",
+            "rate_pct": 30,
+            "definition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Förderhöhe"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 30,
+        "min_amount_chf": 20000,
+        "max_amount_chf": 2000000,
+        "cofinancing": null,
+        "deductions": [
+          {
+            "text": "Bleiben die Einsparungen unter der Prognose, wird anteilig gekürzt. Tiefere effektive Kosten führen zur Kürzung bei gleichem Förderprozentsatz.",
+            "source": {
+              "source_id": "faq",
+              "locator": "Berichterstattung und Auszahlung"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Auszahlung nach Projektende und Abnahme des Schlussberichts"
+        ],
+        "calculation_basis": "Förderbeitrag geteilt durch eingesparte kWh (Rp./kWh)",
+        "example": null,
+        "source": {
+          "source_id": "faq",
+          "locator": "Förderhöhe"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Einreichung über das Online-Tool vor Bestellung und Vertragsabschluss. Umsetzung erst nach dem Zuschlagsentscheid.",
+          "next_dates": [],
+          "relative": {
+            "event": "projektstart",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "faq",
+            "locator": "Umsetzungsfrist"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Rund 3 bis 4 Wochen bei vollständigem Gesuch",
+        "max_duration_months": 36,
+        "repeat_limit": null,
+        "note": "Umsetzung innert 3 Jahren nach Entscheid. Abgelehnte Projekte erst in der nächsten Ausschreibung neu einreichbar."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Antragsformular online",
+            "condition": null,
+            "source": {
+              "source_id": "startseite",
+              "locator": "Ablauf"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Schlussbericht mit Nachweis der eingesparten Strommengen und Investitionskosten",
+            "condition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Berichterstattung und Auszahlung"
+            }
+          }
+        ]
+      },
+      "obligations": [],
+      "levers": [
+        {
+          "text": "Tieferen Förderbetrag pro eingesparte kWh beantragen, um die Zuschlagschance zu erhöhen",
+          "affects_criteria": [
+            "kosten_nutzen_8_rp"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Payback und Kosten-Nutzen"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.prokw.ch/",
+        "apply": "https://www.prokw.ch/subvention/",
+        "form": "https://www.prokw.ch/informations-pratiques/"
+      },
+      "source": {
+        "source_id": "startseite",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "*",
+      "type": "ausgeschlossen",
+      "text": "Beiträge Dritter (Kantone, Gemeinden, Energieversorger, Stiftungen) für dieselben Energiesparmassnahmen sind nicht zulässig. Zulässig sind Drittbeiträge für Massnahmen ohne Energieeinsparung.",
+      "source": {
+        "source_id": "faq",
+        "locator": "Kumulation mit anderen Förderungen"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://www.prokw.ch/subvention/",
+    "steps": [
+      "Schnellberechnung der Förderung",
+      "Antrag online einreichen",
+      "Zuschlagsentscheid",
+      "Umsetzung innert 3 Jahren",
+      "Schlussbericht",
+      "Auszahlung"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "faq",
+      "locator": null
+    }
+  },
+  "contacts": [
+    {
+      "name": "ProKilowatt c/o CimArk",
+      "role": "Rue de l'Industrie 23, 1950 Sion",
+      "email": "prokilowatt@cimark.ch",
+      "phone": "+41 58 332 21 42",
+      "url": "https://www.prokw.ch/"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "startseite",
+      "title": "ProKilowatt, Startseite",
+      "type": "webseite",
+      "url": "https://www.prokw.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "ProKilowatt, Häufige Fragen (FR)",
+      "type": "faq",
+      "url": "https://www.prokw.ch/faq/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Ausschreibungsbedingungen 2026 (Seite informations-pratiques) konnten nicht gelesen werden.",
+      "Eingabetermine widersprüchlich: FAQ sagt laufend, nennt aber auch einen alten Zeitraum 2022/2023. Ob die Ausschreibung 2027 bereits läuft, ist offen.",
+      "Nicht erfasst: ProKilowatt-Programme (Einreichung über Programmträger mit garantierter Förderung).",
+      "Quellen auf Französisch, sinngemäss übersetzt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

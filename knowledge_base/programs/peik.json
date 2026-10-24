@@ -1,0 +1,319 @@
+{
+  "schema_version": "2.0",
+  "id": "peik",
+  "name": "PEIK, Energieberatung für KMU von EnergieSchweiz",
+  "short_name": "PEIK",
+  "provider": {
+    "name": "Bundesamt für Energie (BFE), EnergieSchweiz",
+    "unit": "PEIK c/o act Cleantech Solutions AG",
+    "url": "https://peik.ch/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz."
+  },
+  "purpose": "PEIK hilft KMU aller Branchen, mit einer geförderten Energieberatung Energiekosten zu senken, und unterstützt die Umsetzung der Massnahmen.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Einordnung, keine ausdrückliche Aussage in der Quelle.",
+    "source": {
+      "source_id": "startseite",
+      "locator": null
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "peik-energieberatung",
+      "name": "PEIK Energieberatung und Umsetzungsbegleitung für KMU",
+      "description": "Kostenlose Erstberatung, danach geförderte Energieanalyse mit Bericht und geförderte Begleitung bei der Umsetzung durch akkreditierte Energieberatende.",
+      "keywords": [
+        "PEIK",
+        "Energieberatung KMU",
+        "EnergieSchweiz",
+        "Energieanalyse"
+      ],
+      "instrument_type": "beratung",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Erhöhter Satz von 60% für die Umsetzungsbegleitung bis 30. April 2027.",
+        "source": {
+          "source_id": "startseite",
+          "locator": "Costs and funding"
+        }
+      },
+      "recipient": {
+        "type": "dienstleister",
+        "note": "Akkreditierte Energieberatende, die Förderung senkt die Kosten für das KMU."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "unternehmen",
+          "gemeinde"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "energieeffizienz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Unternehmen, die hauptsächlich Büro- oder Wohngebäude optimieren (dafür GEAK-Analyse)",
+          "source": {
+            "source_id": "zulassung",
+            "locator": null
+          }
+        },
+        {
+          "text": "Bundesnahe Betriebe im Programm Energie-Vorbild Bund",
+          "source": {
+            "source_id": "zulassung",
+            "locator": null
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "energiekosten_20000",
+          "text": "Die Beratung lohnt sich ab jährlichen Energiekosten von CHF 20'000.",
+          "kind": "soll",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "energiekosten"
+          ],
+          "question": {
+            "text": "Wie hoch sind Ihre jährlichen Energiekosten?",
+            "options": [
+              "Unter CHF 20'000",
+              "CHF 20'000 oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": null
+          },
+          "notes": "Kleine Betriebe (unter 100 MWh Strom bzw. 500 MWh Wärme) sind nicht Hauptzielgruppe, aber nicht ausgeschlossen."
+        },
+        {
+          "id": "kein_grossverbraucher",
+          "text": "Das Unternehmen ist nicht vom Grossverbraucherartikel der Kantone betroffen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "zulassung",
+            "locator": null
+          },
+          "notes": null
+        },
+        {
+          "id": "keine_co2_befreiung",
+          "text": "Keine Befreiung von der CO2-Abgabe und keine Rückerstattung des Netzzuschlags.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Ist Ihr Unternehmen von der CO2-Abgabe befreit?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "zulassung",
+            "locator": null
+          },
+          "notes": null
+        },
+        {
+          "id": "keine_bundesberatung",
+          "text": "Die Beratung wird nicht bereits über ein anderes Bundesprogramm gefördert.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "zulassung",
+            "locator": null
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Erstberatung kostenlos. Energieberatung 50% der Kosten, max. CHF 2'500. Umsetzungsbegleitung 60% (bis 30.04.2027), max. CHF 13'000.",
+        "cost_categories": [
+          {
+            "id": "energieberatung",
+            "name": "PEIK Energieberatung (Analyse und Bericht)",
+            "rate_pct": 50,
+            "definition": "Höchstens CHF 2'500 Förderung.",
+            "source": {
+              "source_id": "startseite",
+              "locator": "Costs and funding"
+            }
+          },
+          {
+            "id": "umsetzungsbegleitung",
+            "name": "Umsetzungsbegleitung",
+            "rate_pct": 60,
+            "definition": "60% statt 50% bis 30. April 2027, höchstens CHF 13'000 Förderung.",
+            "source": {
+              "source_id": "startseite",
+              "locator": "Costs and funding"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 60,
+        "min_amount_chf": null,
+        "max_amount_chf": 13000,
+        "cofinancing": {
+          "required": true,
+          "rule": "Restkosten trägt das Unternehmen."
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Kostenübernahme durch EnergieSchweiz"
+        ],
+        "calculation_basis": "Beratungskosten",
+        "example": null,
+        "source": {
+          "source_id": "startseite",
+          "locator": "Costs and funding"
+        },
+        "note": "Förderung pro Antrag, nicht pro Standort, wenn mehrere Standorte gemeinsam beantragen."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Keine Frist genannt. Einstieg über eine kostenlose Erstberatung.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "startseite",
+            "locator": "Process"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Kontaktformular für die Erstberatung",
+            "condition": null,
+            "source": {
+              "source_id": "startseite",
+              "locator": null
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://peik.ch/",
+        "apply": "https://peik.ch/formular",
+        "form": null
+      },
+      "source": {
+        "source_id": "startseite",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "*",
+      "type": "erlaubt",
+      "text": "Zusätzliche Förderung durch andere Träger ist erwünscht. Nur Beratungen, die bereits über ein Bundesprogramm gefördert werden, sind ausgeschlossen.",
+      "source": {
+        "source_id": "zulassung",
+        "locator": null
+      }
+    }
+  ],
+  "application": {
+    "channel": "other",
+    "url": "https://peik.ch/formular",
+    "steps": [
+      "Kostenlose Erstberatung per Telefon oder vor Ort",
+      "Analyse vor Ort und detaillierter Bericht",
+      "Umsetzung mit optionaler Begleitung"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "startseite",
+      "locator": "Process"
+    }
+  },
+  "contacts": [
+    {
+      "name": "PEIK c/o act Cleantech Solutions AG",
+      "role": "Brandschenkestrasse 6, 8001 Zürich",
+      "email": "info@peik.ch",
+      "phone": "058 750 05 25",
+      "url": "https://peik.ch/"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "startseite",
+      "title": "PEIK Energieberatung für KMU, Startseite",
+      "type": "webseite",
+      "url": "https://peik.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "zulassung",
+      "title": "Zulassungskriterien, PEIK",
+      "type": "webseite",
+      "url": "https://peik.ch/zulassungskriterien/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Ob der Kanton Luzern zusätzlich fördert, steht nicht in den Quellen.",
+      "Startseite in englischer Zusammenfassung gelesen.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

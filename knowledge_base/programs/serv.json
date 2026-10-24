@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "id": "serv",
+  "name": "SERV Schweizerische Exportrisikoversicherung",
+  "short_name": "SERV",
+  "provider": {
+    "name": "SERV Schweizerische Exportrisikoversicherung",
+    "unit": null,
+    "url": "https://www.serv-ch.com/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Exporteure mit Sitz in der Schweiz."
+  },
+  "purpose": "SERV versichert Schweizer Exporteure gegen politische Risiken und Zahlungsausfälle ausländischer Kunden und erleichtert so Exportgeschäfte.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Einordnung: Prüfung des einzelnen Geschäfts, keine ausdrückliche Aussage in der Quelle.",
+    "source": {
+      "source_id": "anforderungen",
+      "locator": null
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "lieferantenkreditversicherung",
+      "name": "Lieferantenkreditversicherung",
+      "description": "Versichert Schweizer Exporteure gegen den Ausfall einer Bar- oder Kreditforderung aus Lieferungen oder Leistungen an ausländische Kunden.",
+      "keywords": [
+        "SERV",
+        "Exportrisikoversicherung",
+        "Lieferantenkredit",
+        "Delkredere",
+        "Exportversicherung"
+      ],
+      "instrument_type": "versicherung",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "lieferantenkredit",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Exporteur"
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "export",
+          "finanzierung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "gedeckte_risiken",
+          "name": "Gedeckte Risiken",
+          "definition": "Politische, kommerzielle, Transfer- und Force-majeure-Risiken. Gedeckt sind Preis, Finanzierungskosten inkl. SERV-Prämie, Zinsen bis Fälligkeit und Verzugszinsen innerhalb der Wartefrist.",
+          "examples_positive": [],
+          "examples_negative": [
+            "Fabrikationsrisiko (separate Versicherung)"
+          ],
+          "source": {
+            "source_id": "lieferantenkredit",
+            "locator": null
+          }
+        }
+      ],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "sitz_ch_handelsregister",
+          "text": "Der Exporteur hat seinen Sitz in der Schweiz und ist im Handelsregister eingetragen.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton",
+            "handelsregister"
+          ],
+          "question": {
+            "text": "Ist Ihr Unternehmen in der Schweiz im Handelsregister eingetragen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "anforderungen",
+            "locator": "Domicile"
+          },
+          "notes": null
+        },
+        {
+          "id": "kaeufer_ausland",
+          "text": "Der Käufer hat seinen Sitz ausserhalb der Schweiz.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "taetigkeit"
+          ],
+          "question": {
+            "text": "Liefern Sie an Kunden im Ausland?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "anforderungen",
+            "locator": "Domicile"
+          },
+          "notes": null
+        },
+        {
+          "id": "schweizer_anteil",
+          "text": "Der ausländische Anteil der Lieferung oder Leistung übersteigt 80% des Auftragswerts nicht.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "anforderungen",
+            "locator": "Swiss content"
+          },
+          "notes": "Auf Antrag unter bestimmten Bedingungen überschreitbar."
+        },
+        {
+          "id": "subsidiaritaet",
+          "text": "Kurzfristige Kredite unter 24 Monaten an EU- und Kern-OECD-Länder deckt SERV nur, wenn der private Markt sie nicht versichern kann.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": "Nur bei Kreditlaufzeit unter 24 Monaten und Käufer in EU- oder Kern-OECD-Land",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "anforderungen",
+            "locator": "Subsidiarity"
+          },
+          "notes": null
+        },
+        {
+          "id": "oecd_konsens",
+          "text": "Bei Deckungsdauer über zwei Jahre Zahlungsbedingungen nach OECD-Konsensus und Berner Union.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": "Nur bei Deckungsdauer über zwei Jahre pro Geschäft",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "lieferantenkredit",
+            "locator": "Payment terms"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Versicherung des Forderungsausfalls mit einer Deckungsquote von maximal 95%, Prämie gemäss Prämienreglement.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Entschädigung im Schadenfall"
+        ],
+        "calculation_basis": "Forderungswert",
+        "example": null,
+        "source": {
+          "source_id": "lieferantenkredit",
+          "locator": "Maximum cover ratio"
+        },
+        "note": "Maximale Deckungsquote 95%. Keine Mindestgrösse für Unternehmen oder Auftrag. Prämie gemäss Prämienreglement und Prämienrechner, nicht gesichtet."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Keine Frist genannt. Antrag elektronisch im Kundenportal.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "exporteure",
+            "locator": "Application"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Antrag im SERV-Kundenportal",
+            "condition": null,
+            "source": {
+              "source_id": "exporteure",
+              "locator": "Application"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.serv-ch.com/de/leistungen/fuer-schweizer-exporteure/lieferantenkreditversicherung/",
+        "apply": "https://portal.serv-ch.com/",
+        "form": null
+      },
+      "source": {
+        "source_id": "lieferantenkredit",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://portal.serv-ch.com/",
+    "steps": [
+      "Antrag im Kundenportal erstellen und elektronisch einreichen"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "exporteure",
+      "locator": "Application"
+    }
+  },
+  "contacts": [
+    {
+      "name": "SERV Zürich",
+      "role": "Genferstrasse 6, 8002 Zürich",
+      "email": "info@serv-ch.com",
+      "phone": "+41 58 551 55 55",
+      "url": "https://www.serv-ch.com/en/contact/"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "exporteure",
+      "title": "For Swiss exporters, SERV (EN)",
+      "type": "webseite",
+      "url": "https://www.serv-ch.com/en/services/for-swiss-exporters/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "lieferantenkredit",
+      "title": "Supplier credit insurance, SERV (EN)",
+      "type": "webseite",
+      "url": "https://www.serv-ch.com/en/services/for-swiss-exporters/supplier-credit-insurance/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "anforderungen",
+      "title": "Requirements for acceptance of the insurance, SERV (EN)",
+      "type": "webseite",
+      "url": "https://www.serv-ch.com/en/services/application/requirements-for-acceptance-of-the-insurance/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Nicht erfasst: Fabrikationsrisikoversicherung, Vertragsgarantieversicherung, Gegengarantie, Konfiskationsrisikoversicherung (nur kurz beschrieben, keine Konditionen gesichtet).",
+      "Prämien nicht erfasst (Prämienreglement nicht gelesen).",
+      "Ob der Antrag vor Vertragsabschluss mit dem Kunden gestellt werden muss, steht nicht in den Quellen.",
+      "level bund und Rechtsgrundlage (SERV-Gesetz) nicht aus den gesichteten Seiten belegt.",
+      "Quellen nur auf Englisch gesichtet."
+    ]
+  }
+}

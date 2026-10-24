@@ -1,0 +1,341 @@
+{
+  "schema_version": "2.0",
+  "id": "berghilfe",
+  "name": "Schweizer Berghilfe",
+  "short_name": "Berghilfe",
+  "provider": {
+    "name": "Schweizer Berghilfe",
+    "unit": null,
+    "url": "https://www.berghilfe.ch/"
+  },
+  "level": "stiftung",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Schweizer Berggebiete. Welche Luzerner Gemeinden dazugehören, nennt die Quelle nicht."
+  },
+  "purpose": "Die spendenfinanzierte Schweizer Berghilfe unterstützt Projekte, die Arbeitsplätze und Wertschöpfung im Berggebiet schaffen, wenn das Geld nicht ausreicht.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Der Projektausschuss ist in seiner Entscheidung frei.",
+    "source": {
+      "source_id": "gesuch",
+      "locator": "Ablauf"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "projektbeitrag",
+      "name": "Projektbeitrag der Schweizer Berghilfe",
+      "description": "À-fonds-perdu-Beitrag an zukunftsweisende Projekte im Berggebiet, wenn nach Eigenleistung und tragbarer Fremdfinanzierung eine Lücke bleibt.",
+      "keywords": [
+        "Berghilfe",
+        "Schweizer Berghilfe",
+        "Berggebiet",
+        "Projektunterstützung"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Vom 1. Dezember 2026 bis 11. Januar 2027 keine neuen Gesuche wegen Systemumstellung. Neue Gesuche bis 30. November 2026 definitiv einreichen.",
+        "source": {
+          "source_id": "gesuch",
+          "locator": "Dauer"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "unternehmen",
+          "privatperson",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "investition",
+          "regionalentwicklung",
+          "tourismus",
+          "weiterbildung",
+          "erneuerbare_energie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "kategorien",
+          "name": "Gesuchskategorien",
+          "definition": "Landwirtschaft, Tourismus, Gewerbe, Wald und Holz, Energie, Bildung, Nothilfe.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": {
+            "source_id": "startseite",
+            "locator": null
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Darlehen (die Berghilfe vergibt nur A-fonds-perdu-Beiträge)",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Förderform"
+          }
+        },
+        {
+          "text": "Parallele Gesuche bei mehreren Hilfswerken (Patenschaft für Berggemeinden, Coop Patenschaft) für dasselbe Projekt",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Nicht unterstützt"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "berggebiet",
+          "text": "Das Projekt schafft Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet. Die Region wird geprüft.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_gemeinde"
+          ],
+          "question": {
+            "text": "Liegt Ihr Betrieb in einem Berggebiet?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Wer kann ein Gesuch stellen"
+          },
+          "notes": "Die Quelle definiert das Berggebiet nicht."
+        },
+        {
+          "id": "finanzielles_engagement",
+          "text": "Die Trägerschaft engagiert sich finanziell mit Eigenmitteln, Arbeit oder Material.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "finanzierungsluecke",
+          "text": "Nach Eigenleistungen und tragbaren Fremdfinanzierungen (öffentliche Investitionshilfen, Darlehen) bleibt ein Fehlbetrag.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Bleibt nach Eigenmitteln, Bankkredit und anderen Förderungen eine Finanzierungslücke?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "projekt_konkret",
+          "text": "Das Projekt ist konkret und die Planung fortgeschritten.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "finanzielle_notwendigkeit",
+          "text": "Es besteht eine finanzielle Notwendigkeit. Die gesamte finanzielle Situation wird geprüft, ohne feste Grenzen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "umsatz"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "À-fonds-perdu-Beitrag, Höhe nach Bedarf zur Schliessung der Finanzierungslücke.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Eigenleistung je nach Projekt und betrieblicher Situation."
+        },
+        "deductions": [],
+        "payout_forms": [
+          "À-fonds-perdu-Beitrag"
+        ],
+        "calculation_basis": "Verbleibender Fehlbetrag",
+        "example": null,
+        "source": {
+          "source_id": "gesuch",
+          "locator": "Förderform und Höhe"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Dauer"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel sechs bis acht Wochen nach vollständigem Dossier, Projektausschuss tagt monatlich",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": "Folgeinvestitionen und Kostenüberschreitungen bei derselben Organisation einreichen."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Online-Gesuch mit Angaben zum Projekt und zur finanziellen Situation",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Ablauf"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+        "apply": "https://gesuch.berghilfe.ch/?locale=de",
+        "form": null
+      },
+      "source": {
+        "source_id": "gesuch",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "bg-mitte",
+      "type": "empfohlen_vorher",
+      "text": "Gewerbliche Betriebe beantragen verzinsliche Darlehen bzw. Bürgschaften bei den gewerblichen Bürgschaftsgenossenschaften. Die Berghilfe prüft nur den verbleibenden Fehlbetrag.",
+      "source": {
+        "source_id": "gesuch",
+        "locator": "Förderform und Höhe"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://gesuch.berghilfe.ch/?locale=de",
+    "steps": [
+      "Kriterien prüfen",
+      "Gesuch online erfassen",
+      "Besuch eines ehrenamtlichen Experten vor Ort",
+      "Antrag an den Projektausschuss",
+      "Entscheid und Mitfinanzierung"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "gesuch",
+      "locator": "Ablauf"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Schweizer Berghilfe",
+      "role": "Soodstrasse 55, 8134 Adliswil",
+      "email": "info@berghilfe.ch",
+      "phone": "044 712 60 60",
+      "url": "https://www.berghilfe.ch/kontakt"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "startseite",
+      "title": "Schweizer Berghilfe, Startseite",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "gesuch",
+      "title": "Gesuch einreichen, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Welche Luzerner Gemeinden (z. B. Entlebuch) zum Berggebiet gehören, ist nicht belegt.",
+      "Ob das Projekt bei Gesuchseingabe noch nicht begonnen sein darf, nennt die Quelle nicht.",
+      "sectors leer gelassen, obwohl die Gesuchskategorien Landwirtschaft, Tourismus, Gewerbe, Wald und Holz, Energie und Bildung umfassen.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

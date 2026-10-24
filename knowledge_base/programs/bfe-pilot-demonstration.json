@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "id": "bfe-pilot-demonstration",
+  "name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
+  "short_name": "BFE P+D",
+  "provider": {
+    "name": "Bundesamt für Energie (BFE)",
+    "unit": null,
+    "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz."
+  },
+  "purpose": "Das BFE fördert Pilot-, Demonstrations- und Leuchtturmprojekte, die neue Energietechnologien im Sinne der Energiestrategie 2050 zur Marktreife bringen.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Einordnung, keine ausdrückliche Aussage in der Quelle.",
+    "source": {
+      "source_id": "faq",
+      "locator": null
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "pd-finanzhilfe",
+      "name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
+      "description": "Finanzhilfe des BFE an innovative Pilot-, Demonstrations- und Leuchtturmprojekte, die Energie sparen, erneuerbare Energien nutzen oder dem Energiesystem nützen.",
+      "keywords": [
+        "P+D",
+        "Pilot und Demonstration",
+        "BFE",
+        "Leuchtturmprojekt",
+        "Energiestrategie 2050"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "faq",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "startup",
+          "gemeinde",
+          "forschungsinstitution"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "prototyp",
+          "entwicklung",
+          "erneuerbare_energie",
+          "energieeffizienz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Vorhaben von Verwaltungseinheiten des Bundes",
+          "source": {
+            "source_id": "faq",
+            "locator": "Wer kann einreichen"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "innovativer_ansatz",
+          "text": "Innovativer Ansatz, der viel Energie spart, erneuerbare Energien stärker nutzt oder dem Energiesystem nützt.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Testen Sie eine neue Energietechnologie in einer Pilot- oder Demonstrationsanlage?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Was ist ein P+D-Projekt"
+          },
+          "notes": null
+        },
+        {
+          "id": "pilot_oder_demo",
+          "text": "Pilotprojekt (frühe Phase, Teilsysteme) oder Demonstrationsprojekt (ausgereift, meist Massstab 1:1).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "art_des_vorhabens"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Was ist ein P+D-Projekt"
+          },
+          "notes": null
+        },
+        {
+          "id": "finanzierungsnachweis",
+          "text": "Finanzierungsbestätigungen oder Jahresberichte.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": "Bei Förderbeiträgen über CHF 1 Mio.",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "Finanzierungsbestätigungen",
+            "Jahresberichte"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Skizze"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Höchstens 50% der nicht amortisierbaren Kosten, bei Pilotprojekten ausnahmsweise bis 70%.",
+        "cost_categories": [
+          {
+            "id": "nicht_amortisierbar",
+            "name": "Nicht amortisierbare Kosten",
+            "rate_pct": 50,
+            "definition": "Pilotprojekte in Ausnahmefällen bis 70%.",
+            "source": {
+              "source_id": "faq",
+              "locator": "Förderanteil"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 70,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Restliche nicht amortisierbare Kosten durch die Gesuchsteller."
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Finanzhilfe"
+        ],
+        "calculation_basis": "Nicht amortisierbare Kosten",
+        "example": null,
+        "source": {
+          "source_id": "faq",
+          "locator": "Förderanteil"
+        },
+        "note": "70% nur in Ausnahmefällen für Pilotprojekte."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Eingabezeitpunkt in der FAQ nicht genannt.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "faq",
+            "locator": null
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuchsformular",
+            "condition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Skizze"
+            }
+          },
+          {
+            "name": "Finanzbeiblatt",
+            "condition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Skizze"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Zwischen- und Schlussberichte nach BFE-Vorlagen, Berichtsentwurf und Finanzrapport rund zwei Monate vor Projektende",
+            "condition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Berichterstattung"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Projektberichte werden grundsätzlich auf der Plattform ARAMIS veröffentlicht.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Berichterstattung"
+          }
+        },
+        {
+          "text": "Projektänderungen der zuständigen Projektbegleitung melden.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Kontakt"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+        "apply": null,
+        "form": null
+      },
+      "source": {
+        "source_id": "faq",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": null,
+  "contacts": [],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "faq",
+      "title": "Fragen und Antworten P+D-Programm, BFE",
+      "type": "faq",
+      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "WICHTIG: Nur die FAQ gesichtet. Eingabeweg, Fristen, Projektdauer, Entscheiddauer, Kumulation, Rückzahlung und Kontakt fehlen. Hauptseite des P+D-Programms beschaffen.",
+      "Rechtsgrundlage (Energiegesetz) nicht aus Quelle belegt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

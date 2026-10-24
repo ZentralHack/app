@@ -1,0 +1,473 @@
+{
+  "schema_version": "2.0",
+  "id": "innotour",
+  "name": "Innotour, Förderung von Innovation, Zusammenarbeit und Wissensaufbau im Tourismus",
+  "short_name": "Innotour",
+  "provider": {
+    "name": "Staatssekretariat für Wirtschaft SECO",
+    "unit": "Tourismuspolitik",
+    "url": "https://www.seco.admin.ch/de/innotour-foerderangebot"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz, Fokus auf nationale Vorhaben. Bei regionalen Modellvorhaben werden die Kantone angehört."
+  },
+  "purpose": "Innotour fördert überbetriebliche Innovation, Kooperation und Wissensaufbau im Schweizer Tourismus.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Entscheid des SECO, Gesuche solange Mittel verfügbar.",
+    "source": {
+      "source_id": "angebot",
+      "locator": "Ablauf"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "innotour-finanzhilfe",
+      "name": "Innotour Finanzhilfe für überbetriebliche Tourismusprojekte",
+      "description": "Finanzhilfe des Bundes für Innovation, Zusammenarbeit und Wissensaufbau im Tourismus, für Vorhaben mehrerer Unternehmen oder Organisationen.",
+      "keywords": [
+        "Innotour",
+        "SECO Tourismus",
+        "Tourismusförderung",
+        "Modellvorhaben"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Gesuche laufend, solange Mittel verfügbar sind.",
+        "source": {
+          "source_id": "faq",
+          "locator": "Eingabezeitpunkt"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Projektträgerschaft"
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "tourismus",
+          "organisationsinnovation",
+          "digitalisierung",
+          "weiterbildung"
+        ],
+        "required_partners": [
+          "mehrere_betriebe"
+        ],
+        "sectors": [
+          "tourismus",
+          "hotellerie"
+        ]
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Einzelbetriebliche Subventionen",
+          "source": {
+            "source_id": "angebot",
+            "locator": "Voraussetzungen"
+          }
+        },
+        {
+          "text": "Reine Werbemassnahmen, Betriebs- und Infrastrukturkosten, reine Veranstaltungsprojekte und Reserven",
+          "source": {
+            "source_id": "angebot",
+            "locator": "Förderschwerpunkte"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ueberbetrieblich",
+          "text": "Das Vorhaben wird von mehreren Unternehmen oder Organisationen überbetrieblich geplant und umgesetzt.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": {
+            "text": "Setzen Sie das Projekt zusammen mit anderen Tourismusbetrieben oder Organisationen um?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "angebot",
+            "locator": "Voraussetzungen"
+          },
+          "notes": "Die FAQ nennt einmal zwei, einmal drei Destinationen. Beim SECO klären."
+        },
+        {
+          "id": "tourismus_traegerschaft",
+          "text": "Touristische Akteure sind bei Planung und Umsetzung massgeblich beteiligt und finanzieren mit.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "branche"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Wer kann ein Gesuch stellen"
+          },
+          "notes": null
+        },
+        {
+          "id": "national_oder_modell",
+          "text": "Nationale Ausrichtung. Regionale oder lokale Vorhaben müssen die Kriterien der Modellvorhaben des Bundes erfüllen.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "angebot",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "projektvolumen_200000",
+          "text": "Anrechenbares Projektvolumen von mindestens CHF 200'000.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Wie hoch sind die anrechenbaren Projektkosten?",
+            "options": [
+              "Unter CHF 200'000",
+              "CHF 200'000 oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Mindestvolumen"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenfinanzierung_50",
+          "text": "Die Projektträger finanzieren mindestens 50% des Vorhabens.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "angebot",
+            "locator": "Finanzhilfe und Eigenleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "cash_10",
+          "text": "Mindestens 10% der anrechenbaren Kosten als finanzielle Leistung (Cash), substanziell aus der Tourismusbranche.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können die Projektpartner mindestens 10% der Kosten bar beisteuern?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Kofinanzierung"
+          },
+          "notes": null
+        },
+        {
+          "id": "start_6_monate",
+          "text": "Projektbeginn spätestens sechs Monate nach Zusicherung der Finanzhilfe.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Projektdauer"
+          },
+          "notes": null
+        },
+        {
+          "id": "quantifizierter_nutzen",
+          "text": "Beitrag zu dringenden Bedürfnissen des Schweizer Tourismus mit quantifiziertem Nutzen.",
+          "kind": "soll",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "angebot",
+            "locator": "Voraussetzungen"
+          },
+          "notes": "Laut Quelle in der Regel nachzuweisen."
+        }
+      ],
+      "funding": {
+        "model": "kostenbeteiligung",
+        "summary": "Innotour und weitere Bundesmittel zusammen höchstens 50% der Gesamtkosten, mindestens CHF 200'000 Projektvolumen, kein Maximalbetrag.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Projektträger mindestens 50%, davon mindestens 10% der anrechenbaren Kosten als Cash. Arbeitsleistungen im bestehenden Pensum zählen nicht zu den 10%."
+        },
+        "deductions": [
+          {
+            "text": "Leistungen von Schweiz Tourismus und weitere Bundesmittel zählen zur 50%-Grenze.",
+            "source": {
+              "source_id": "faq",
+              "locator": "Maximaler Anteil des Bundes"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Finanzhilfe gemäss Verfügung"
+        ],
+        "calculation_basis": "Anrechenbare Projektkosten gemäss Merkblatt Kosten und Finanzierung",
+        "example": null,
+        "source": {
+          "source_id": "faq",
+          "locator": "Maximaler Anteil des Bundes, Mindestvolumen"
+        },
+        "note": "Bereits angefallene, verhältnismässige Kosten können rückwirkend finanziert werden, auf Risiko der Gesuchsteller."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Keine Eingabefristen, solange Mittel verfügbar. Auch bereits gestartete Projekte möglich.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "faq",
+            "locator": "Eingabezeitpunkt"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel bis zu zwei Monate nach vollständigem Gesuch",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Finanzhilfegesuch (Excel) mit Handunterschrift im Original per Post",
+            "condition": null,
+            "source": {
+              "source_id": "angebot",
+              "locator": "Gesuchsunterlagen"
+            }
+          },
+          {
+            "name": "Projektbeschrieb (Word-Vorlage)",
+            "condition": null,
+            "source": {
+              "source_id": "angebot",
+              "locator": "Gesuchsunterlagen"
+            }
+          },
+          {
+            "name": "Budget gemäss Merkblatt Kosten und Finanzierung",
+            "condition": null,
+            "source": {
+              "source_id": "angebot",
+              "locator": "Gesuchsunterlagen"
+            }
+          },
+          {
+            "name": "Mandatierungsschreiben der touristischen Partner",
+            "condition": "wenn eine nicht-touristische Organisation einreicht",
+            "source": {
+              "source_id": "faq",
+              "locator": "Wer kann ein Gesuch stellen"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Zwischen- und Schlussberichte mit Schlussabrechnung",
+            "condition": null,
+            "source": {
+              "source_id": "angebot",
+              "locator": "Ablauf"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Zwischen- und Schlussberichte gemäss Fristen der Verfügung.",
+          "source": {
+            "source_id": "angebot",
+            "locator": "Fristen"
+          }
+        },
+        {
+          "text": "Wirkungsbericht zwei Jahre nach Projektabschluss.",
+          "source": {
+            "source_id": "angebot",
+            "locator": "Fristen"
+          }
+        },
+        {
+          "text": "Jährlich werden rund 10% der Projekte kontrolliert.",
+          "source": {
+            "source_id": "angebot",
+            "locator": "Ablauf"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Vorprüfung oder Vorgespräch mit dem SECO nutzen",
+          "affects_criteria": [
+            "ueberbetrieblich",
+            "national_oder_modell"
+          ],
+          "source": {
+            "source_id": "angebot",
+            "locator": "Ablauf"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.seco.admin.ch/de/innotour-foerderangebot",
+        "apply": null,
+        "form": "https://www.seco.admin.ch/dam/de/sd-web/gccU6RfCEuBM/Neues%20FHG%20nach%20Priorit%C3%A4tenordnung%20(5).xlsx"
+      },
+      "source": {
+        "source_id": "angebot",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "nrp-luzern",
+      "type": "bedingt",
+      "text": "Kumulation mit der NRP nur in Ausnahmefällen, mit Aufteilung in Teilprojekte. Innotour und NRP zusammen höchstens 50% der Gesamtkosten.",
+      "source": {
+        "source_id": "faq",
+        "locator": "Kumulation mit der NRP"
+      }
+    }
+  ],
+  "application": {
+    "channel": "mixed",
+    "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
+    "steps": [
+      "Projektskizze und Budgetbeschrieb erarbeiten",
+      "Optional Vorprüfung oder Vorgespräch mit dem SECO",
+      "Gesuch einreichen: Formular im Original per Post, übrige Unterlagen digital",
+      "Vollständigkeits- und Rechtsprüfung",
+      "Entscheid und Verfügung des SECO",
+      "Zwischen- und Schlussberichterstattung",
+      "Wirkungsbericht nach zwei Jahren"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "angebot",
+      "locator": "Ablauf"
+    }
+  },
+  "contacts": [
+    {
+      "name": "SECO Tourismuspolitik",
+      "role": "Holzikofenweg 36, 3003 Bern",
+      "email": "tourismus@seco.admin.ch",
+      "phone": "058 462 27 58",
+      "url": "https://www.seco.admin.ch/de/innotour-foerderangebot"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über die Förderung von Innovation, Zusammenarbeit und Wissensaufbau im Tourismus",
+      "ref": "Art. 3",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2012/75/de"
+    }
+  ],
+  "sources": [
+    {
+      "id": "angebot",
+      "title": "Innotour Förderangebot, SECO",
+      "type": "webseite",
+      "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "FAQ zur Innotourförderung, SECO",
+      "type": "faq",
+      "url": "https://www.seco.admin.ch/de/innotour-faq",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "FAQ widersprüchlich: überbetrieblich mit Akteuren aus zwei oder aus mindestens drei Destinationen?",
+      "Merkblätter (Kosten und Finanzierung, Modellvorhaben, Digitalisierung) nicht im Detail gesichtet.",
+      "sectors tourismus und hotellerie gesetzt, weil die Quelle auf die Tourismusbranche einschränkt. Gastronomie und Bergbahnen gehören ebenfalls dazu, sind aber nicht genannt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

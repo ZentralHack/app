@@ -1,0 +1,434 @@
+{
+  "schema_version": "2.0",
+  "id": "sgh",
+  "name": "Schweizerische Gesellschaft für Hotelkredit (SGH)",
+  "short_name": "SGH",
+  "provider": {
+    "name": "Schweizerische Gesellschaft für Hotelkredit",
+    "unit": null,
+    "url": "https://sgh.ch/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Nur im gesetzlichen Förderperimeter. Basel-Stadt, Genf und Solothurn werden laut Webseite nicht finanziert."
+  },
+  "purpose": "Die SGH setzt für den Bund die Förderung der Beherbergungswirtschaft um und finanziert Investitionen, Käufe und Neubauten von Hotels mit Darlehen.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Prüfung und Entscheid durch die SGH.",
+    "source": {
+      "source_id": "anfrage",
+      "locator": null
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "darlehen",
+      "name": "Darlehen für Beherbergungsbetriebe",
+      "description": "Nachrangige Darlehen der SGH, die Finanzierungslücken zwischen Eigenkapital und Bankfinanzierung schliessen, auch über die Belehnungsgrenze der Banken hinaus.",
+      "keywords": [
+        "SGH",
+        "Hotelkredit",
+        "Hotelfinanzierung",
+        "Startdarlehen",
+        "Impulsdarlehen"
+      ],
+      "instrument_type": "darlehen",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "unterstuetzung",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Beherbergungsbetrieb (Eigentümer- oder Mietbetrieb)"
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "eigentuemer"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "investition",
+          "finanzierung",
+          "tourismus"
+        ],
+        "required_partners": [],
+        "sectors": [
+          "hotellerie"
+        ]
+      },
+      "eligible_items": [
+        {
+          "id": "investitionen",
+          "name": "Investitionen, Käufe und Neubauten",
+          "definition": "Hotels, strukturierte Beherbergungsbetriebe sowie Grundstücke und Bauten.",
+          "examples_positive": [],
+          "examples_negative": [
+            "Liquiditätsfinanzierungen"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Neubau, Kauf, Umbau"
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Reine Gastronomiebetriebe",
+          "source": {
+            "source_id": "loesungen",
+            "locator": "Ausschlüsse"
+          }
+        },
+        {
+          "text": "Liquiditätsfinanzierungen",
+          "source": {
+            "source_id": "faq",
+            "locator": "Nicht finanziert"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "min_15_zimmer",
+          "text": "Mindestens 15 Zimmer oder 30 Betten.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "zimmer_betten"
+          ],
+          "question": {
+            "text": "Wie viele Zimmer bzw. Betten hat Ihr Betrieb?",
+            "options": [
+              "Weniger als 15 Zimmer und weniger als 30 Betten",
+              "15 Zimmer oder 30 Betten oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "unterstuetzung",
+            "locator": "Betriebe"
+          },
+          "notes": null
+        },
+        {
+          "id": "hotelmaessige_leistungen",
+          "text": "Rezeption, Restaurations- oder Frühstücksservice und tägliche Zimmerreinigung.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "taetigkeit"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "loesungen",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "foerderperimeter",
+          "text": "Der Betrieb liegt im gesetzlichen Förderperimeter gemäss Verordnung über die Förderung der Beherbergungswirtschaft.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton",
+            "standort_gemeinde"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "unterstuetzung",
+            "locator": "Fördergebiet"
+          },
+          "notes": "Ob und welche Luzerner Gemeinden finanzierbar sind, nennen die Quellen nicht."
+        },
+        {
+          "id": "wirtschaftlich_nachhaltig",
+          "text": "Wirtschaftlich nachhaltig aufgestellter Betrieb.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "umsatz"
+          ],
+          "question": null,
+          "evidence": [
+            "Abschlüsse der letzten 3 Jahre",
+            "Budget für mindestens 3 Jahre"
+          ],
+          "source": {
+            "source_id": "unterstuetzung",
+            "locator": "Betriebe"
+          },
+          "notes": null
+        },
+        {
+          "id": "sockelfinanzierung_bank",
+          "text": "Das Darlehen ist nur zusammen mit einer vorrangigen Bankfinanzierung möglich.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": {
+            "text": "Haben Sie eine Bank, die den vorrangigen Teil finanziert?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Schriftliche Finanzierungszusage einer Bank"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Darlehenshöhe"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenmittel",
+          "text": "Ein gewisser Eigenmittelanteil. Das Projekt darf nicht vollständig fremdfinanziert sein.",
+          "kind": "soll",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "loesungen",
+            "locator": "Eigenmittel"
+          },
+          "notes": "Kein fixer Prozentsatz."
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Darlehen bis maximal CHF 6 Mio., Rückzahlung in der Regel 15, höchstens 20 Jahre.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 6000000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Startdarlehen",
+          "Impulsdarlehen",
+          "Festzinsdarlehen",
+          "Variables Darlehen"
+        ],
+        "calculation_basis": "Höhe nach Unternehmenswert und Tragbarkeit aller finanziellen Verpflichtungen.",
+        "example": null,
+        "source": {
+          "source_id": "faq",
+          "locator": "Darlehenshöhe"
+        },
+        "note": "Zinssätze gemäss PDF Zinskonditionen (Stand 01.04.2025), nicht gesichtet. Bearbeitungsgebühr 1% des Darlehens, mindestens CHF 500, höchstens CHF 5'000. Sicherheiten: Eigentümerbetrieb Grundpfand, Mietbetrieb z. B. Wertschriftendepot, Versicherungspolicen oder Solidarbürgschaften."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": null,
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "anfrage",
+            "locator": null
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": 240,
+        "repeat_limit": null,
+        "note": "Ablauf: Gesuch, Erstprüfung, Objektbesichtigung, Detailprüfung, Entscheid."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Businessplan",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Angaben zum Investitionsprojekt und geplanter Finanzierungsstruktur",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Schriftliche Finanzierungszusage einer Bank",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Angaben zu bestehenden Fremdfinanzierungen",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Abschlüsse der letzten 3 Jahre und Budget für mindestens 3 Jahre",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Gebäudeversicherungspolice, aktueller Betreibungsauszug, Lebenslauf",
+            "condition": null,
+            "source": {
+              "source_id": "anfrage",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [
+        {
+          "text": "Mehrere Banken für die vorrangige Finanzierung anfragen",
+          "affects_criteria": [
+            "sockelfinanzierung_bank"
+          ],
+          "source": {
+            "source_id": "loesungen",
+            "locator": "Bank"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://sgh.ch/finanzierung/unsere-unterstuetzung",
+        "apply": "https://sgh.ch/finanzierung/ihre-anfrage",
+        "form": null
+      },
+      "source": {
+        "source_id": "unterstuetzung",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "other",
+    "url": "https://sgh.ch/finanzierung/ihre-anfrage",
+    "steps": [
+      "Gesuch",
+      "Erstprüfung",
+      "Objektbesichtigung",
+      "Detailprüfung",
+      "Entscheid"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "anfrage",
+      "locator": null
+    }
+  },
+  "contacts": [
+    {
+      "name": "Schweizerische Gesellschaft für Hotelkredit",
+      "role": "Uetlibergstrasse 134b, 8027 Zürich",
+      "email": "info@sgh.ch",
+      "phone": "+41 44 209 16 16",
+      "url": "https://sgh.ch/kontakt"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über die Förderung der Beherbergungswirtschaft",
+      "ref": "SR 935.12",
+      "url": "https://sgh.ch/unternehmen/dokumente-und-medien/gesetzliche-grundlagen"
+    }
+  ],
+  "sources": [
+    {
+      "id": "unterstuetzung",
+      "title": "Finanzierung: Unsere Unterstützung, SGH",
+      "type": "webseite",
+      "url": "https://sgh.ch/finanzierung/unsere-unterstuetzung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "loesungen",
+      "title": "Finanzierung: Unsere Lösungen, SGH",
+      "type": "webseite",
+      "url": "https://sgh.ch/finanzierung/unsere-loesungen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "anfrage",
+      "title": "Finanzierung: Ihre Anfrage, SGH",
+      "type": "webseite",
+      "url": "https://sgh.ch/finanzierung/ihre-anfrage",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "Fragen zur Finanzierung, SGH",
+      "type": "faq",
+      "url": "https://sgh.ch/haeufige-fragen/fragen-zur-finanzierung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "WICHTIG: Ob Luzerner Gemeinden im Förderperimeter liegen, nennen die Quellen nicht. Verordnung bzw. SGH-Karte prüfen.",
+      "Nicht erfasst: SGH-Beratung (Unterseite nicht im Detail gesichtet).",
+      "Zinssätze nicht erfasst (PDF Zinskonditionen nicht gelesen).",
+      "Umbauten: Laut FAQ werden Investitionen, Käufe und Neubauten finanziert, Umbau wird nicht ausdrücklich genannt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

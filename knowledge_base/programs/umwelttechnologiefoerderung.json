@@ -1,0 +1,425 @@
+{
+  "schema_version": "2.0",
+  "id": "umwelttechnologiefoerderung",
+  "name": "Umwelttechnologieförderung (UTF) des BAFU",
+  "short_name": "UTF",
+  "provider": {
+    "name": "Bundesamt für Umwelt (BAFU)",
+    "unit": "Abteilung Ökonomie und Innovation, Sektion Innovation",
+    "url": "https://www.bafu.admin.ch/de/utf"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz."
+  },
+  "purpose": "Der Bund unterstützt Technologien, Anlagen, Verfahren und Produkte, welche die Umweltbelastung vermindern, damit Forschungsresultate schneller marktfähig werden.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Es besteht kein Rechtsanspruch auf Förderung.",
+    "source": {
+      "source_id": "gesuch",
+      "locator": "Kriterien"
+    }
+  },
+  "budget": {
+    "annual_chf": 1700000,
+    "year": null,
+    "oversubscription": "auswahl",
+    "note": "Rund CHF 1.7 Mio. pro Jahr, jährlich vom Parlament bewilligt.",
+    "source": {
+      "source_id": "utf",
+      "locator": "Mittel"
+    }
+  },
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "utf-finanzhilfe",
+      "name": "Finanzhilfe Umwelttechnologieförderung",
+      "description": "Finanzhilfe des BAFU an Pilot- und Demonstrationsprojekte sowie Machbarkeitsstudien für Technologien, die die Umweltbelastung vermindern.",
+      "keywords": [
+        "UTF",
+        "Umwelttechnologieförderung",
+        "BAFU",
+        "Pilot- und Demonstrationsanlage"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Expertenkommission tagt in der Regel zweimal pro Jahr.",
+        "source": {
+          "source_id": "gesuch",
+          "locator": "Fristen"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "startup",
+          "forschungsinstitution"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "prototyp",
+          "entwicklung",
+          "machbarkeitsstudie",
+          "klimaschutz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "themen",
+          "name": "Themenbereiche",
+          "definition": "Abfall, Recycling und Rohstoffe, Biodiversität, Boden und Altlasten, Klima, Lärm, Luftreinhaltung, Gefahrenprävention, Ressourceneffizienz, Wasser.",
+          "examples_positive": [
+            "Pilot- und Demonstrationsprojekte vor Markteintritt",
+            "Machbarkeitsstudien"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "utf",
+            "locator": "Was wird gefördert"
+          }
+        }
+      ],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "umweltentlastung",
+          "text": "Das Vorhaben vermindert die Umweltbelastung im öffentlichen Interesse.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Reduziert Ihre Technologie Umweltbelastungen wie Abfall, Emissionen oder Ressourcenverbrauch?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "utf",
+            "locator": "Rechtsgrundlage"
+          },
+          "notes": null
+        },
+        {
+          "id": "vor_markteintritt",
+          "text": "Pilot- oder Demonstrationsprojekt vor dem Markteintritt oder Machbarkeitsstudie.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "art_des_vorhabens"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "utf",
+            "locator": "Was wird gefördert"
+          },
+          "notes": null
+        },
+        {
+          "id": "kommerzielle_nutzung",
+          "text": "Eine glaubhafte kommerzielle Nutzung der Resultate ist dargelegt.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenanteil_50",
+          "text": "Die Gesuchsteller tragen mindestens 50% der Projektkosten.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie mindestens die Hälfte der Projektkosten selbst tragen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Förderanteil"
+          },
+          "notes": null
+        },
+        {
+          "id": "dauer_4_jahre",
+          "text": "Projektdauer höchstens 4 Jahre.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "laufzeit"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Dauer"
+          },
+          "notes": null
+        },
+        {
+          "id": "bewertung_utf",
+          "text": "Umweltnutzen, Innovation, wirtschaftliche und technische Machbarkeit inkl. Marktaussichten, Wertschöpfung in der Schweiz, weitere Nachhaltigkeitsaspekte.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Bundesmittel insgesamt in der Regel höchstens 50% der Projektkosten, bei Pilot- und Demonstrationsprojekten höchstens CHF 500'000 UTF-Finanzhilfe.",
+        "cost_categories": [
+          {
+            "id": "projektkosten",
+            "name": "Projektkosten",
+            "rate_pct": 50,
+            "definition": "Machbarkeitsstudien unter CHF 50'000 ausnahmsweise mehr als 50%.",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Förderanteil"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": 500000,
+        "cofinancing": {
+          "required": true,
+          "rule": "Mindestens 50% der Projektkosten durch die Gesuchsteller."
+        },
+        "deductions": [
+          {
+            "text": "Andere Bundesbeiträge zählen zur 50%-Grenze.",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Förderanteil"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Finanzhilfe"
+        ],
+        "calculation_basis": "Projektkosten mit UTF-Saläransätzen",
+        "example": null,
+        "source": {
+          "source_id": "gesuch",
+          "locator": "Förderanteil"
+        },
+        "note": "max_amount_chf gilt für Pilot- und Demonstrationsprojekte. Rückzahlung aus kommerziellen Erträgen bis zur Höhe des Beitrags."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Keine Eingabefristen genannt. Vorher Projektskizze (1 bis 2 Seiten) und Telefonat mit der Sektion Innovation.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Projektskizze"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": 48,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Beitragsgesuch (Word), vollständig ausgefüllt",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Finanzteil (Excel)",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Projektskizze 1 bis 2 Seiten für die Vorabklärung",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Projektskizze"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Bei Kommerzialisierung Rückzahlung der Finanzhilfe aus den Erträgen bis zur Höhe des Beitrags.",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Vor dem Gesuch Projektskizze einreichen und mit der Sektion Innovation telefonieren",
+          "affects_criteria": [
+            "vor_markteintritt",
+            "umweltentlastung"
+          ],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Projektskizze"
+          }
+        },
+        {
+          "text": "Gemischtes Team aus Unternehmen und Forschung bilden, ausdrücklich erwünscht",
+          "affects_criteria": [
+            "bewertung_utf"
+          ],
+          "source": {
+            "source_id": "utf",
+            "locator": "Wer kann Gesuche stellen"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.bafu.admin.ch/de/utf",
+        "apply": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+        "form": null
+      },
+      "source": {
+        "source_id": "utf",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "*",
+      "type": "abzug",
+      "text": "UTF-Finanzhilfe und andere Bundesbeiträge zusammen in der Regel höchstens 50% der Projektkosten.",
+      "source": {
+        "source_id": "gesuch",
+        "locator": "Förderanteil"
+      }
+    }
+  ],
+  "application": {
+    "channel": "email",
+    "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+    "steps": [
+      "Projektskizze und Telefonat mit der Sektion Innovation",
+      "Vollständiges Beitragsgesuch mit Finanzteil",
+      "Entscheid durch Sektion Innovation bzw. Expertenkommission"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "gesuch",
+      "locator": null
+    }
+  },
+  "contacts": [
+    {
+      "name": "BAFU, Sektion Innovation",
+      "role": "3003 Bern",
+      "email": "innovation@bafu.admin.ch",
+      "phone": "+41 58 469 69 10",
+      "url": "https://www.bafu.admin.ch/de/utf"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Umweltschutzgesetz (USG)",
+      "ref": "Art. 49 Abs. 3",
+      "url": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "utf",
+      "title": "Umwelttechnologieförderung, BAFU",
+      "type": "webseite",
+      "url": "https://www.bafu.admin.ch/de/utf",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "gesuch",
+      "title": "Eingabe eines Gesuchs, BAFU",
+      "type": "webseite",
+      "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Einreichungsweg (E-Mail?) nicht ausdrücklich genannt, channel email ist eine Annahme.",
+      "Zusatzangebot: kostenlose begleitete Patentrecherche des IGE für geförderte Projekte, nicht als Instrument erfasst.",
+      "Entscheiddauer nicht genannt.",
+      "Quellen teilweise in englischer Zusammenfassung gelesen.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

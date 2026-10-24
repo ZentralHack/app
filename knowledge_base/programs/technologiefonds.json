@@ -1,0 +1,473 @@
+{
+  "schema_version": "2.0",
+  "id": "technologiefonds",
+  "name": "Technologiefonds",
+  "short_name": "Technologiefonds",
+  "provider": {
+    "name": "Schweizerische Eidgenossenschaft, Bundesamt für Umwelt (BAFU)",
+    "unit": "Geschäftsstelle: Emerald Technology Ventures AG im Auftrag des BAFU",
+    "url": "https://www.technologiefonds.ch/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Unternehmen mit Sitz in der Schweiz."
+  },
+  "purpose": "Der Technologiefonds verbürgt Darlehen an innovative Schweizer Unternehmen, deren Produkte oder Verfahren Treibhausgasemissionen reduzieren, Energie effizient nutzen oder erneuerbare Energien fördern.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Ein Bürgschaftskomitee entscheidet nach Vorselektion und Due Diligence.",
+    "source": {
+      "source_id": "vorgehen",
+      "locator": "Antrag an das Bürgschaftskomitee"
+    }
+  },
+  "budget": {
+    "annual_chf": null,
+    "year": null,
+    "oversubscription": "auswahl",
+    "note": "Laut Webseite stehen CHF 500 Mio. für Bürgschaften zur Verfügung (Gesamtvolumen, kein Jahresbudget).",
+    "source": {
+      "source_id": "vorteile",
+      "locator": null
+    }
+  },
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "buergschaft",
+      "name": "Bürgschaft Technologiefonds",
+      "description": "Darlehensbürgschaft für innovative Unternehmen, deren Produkte oder Verfahren Treibhausgasemissionen reduzieren. Schliesst die Lücke zwischen Start-up-Finanzierung und regulären Firmenkrediten.",
+      "keywords": [
+        "Technologiefonds",
+        "Bürgschaft Cleantech",
+        "Klimaschutz Bürgschaft",
+        "Vorab-Check"
+      ],
+      "instrument_type": "buergschaft",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Bewerbung online über den Vorab-Check.",
+        "source": {
+          "source_id": "vorgehen",
+          "locator": "Vorselektion"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Das Unternehmen erhält ein verbürgtes Darlehen von einer Schweizer Bank oder einem anderen geeigneten Schweizer Darlehensgeber."
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "startup"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "klimaschutz",
+          "erneuerbare_energie",
+          "energieeffizienz",
+          "wachstum",
+          "finanzierung",
+          "investition"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "innovation",
+          "name": "Innovation mit Klimanutzen",
+          "definition": "Neuartiges Verfahren, Produkt oder Software oder Weiterentwicklung von Anlage(teilen) und Verfahrens(schritten), die CO2-Emissionen direkt oder indirekt einspart.",
+          "examples_positive": [],
+          "examples_negative": [
+            "Beratung",
+            "Aus- und Weiterbildung",
+            "Information"
+          ],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": null
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Tätigkeiten wie Beratung, Aus- und Weiterbildung und Information",
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": null
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "sitz_schweiz",
+          "text": "Das Unternehmen hat seinen Sitz in der Schweiz.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Zielgruppe"
+          },
+          "notes": null
+        },
+        {
+          "id": "co2_einsparung",
+          "text": "Die Innovation spart CO2-Emissionen direkt oder indirekt ein, mit Nachweis.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Reduziert Ihr Produkt oder Verfahren Treibhausgasemissionen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Nachweis des Umweltnutzens"
+          ],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": "Umweltnutzen"
+          },
+          "notes": null
+        },
+        {
+          "id": "innovatives_produkt",
+          "text": "Innovatives Produkt oder Verfahren mit guten Marktchancen.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Zielgruppe"
+          },
+          "notes": null
+        },
+        {
+          "id": "marktreif_umsatz",
+          "text": "Das Unternehmen ist marktreif und erzielt bereits Umsätze von mindestens CHF 100'000.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "umsatz"
+          ],
+          "question": {
+            "text": "Erzielt Ihr Unternehmen bereits Umsätze von mindestens CHF 100'000?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": null
+          },
+          "notes": null
+        },
+        {
+          "id": "positives_eigenkapital",
+          "text": "Nicht überschuldet, nicht zahlungsunfähig, positives Eigenkapital. Rangrücktritte beheben keine Überschuldung.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": "Kreditwürdigkeit"
+          },
+          "notes": null
+        },
+        {
+          "id": "kreditwuerdigkeit",
+          "text": "Kreditwürdigkeit, die sich auch auf die im Business Plan plausibel dargelegte zukünftige Ertragslage stützen kann.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "Business Plan"
+          ],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": "Kreditwürdigkeit"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenfinanzierung_40",
+          "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert (neues Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel, vorhandene liquide Mittel).",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie mindestens 40% des Vorhabens mit eigenen oder anderen Mitteln finanzieren?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "konditionen",
+            "locator": "Anteil"
+          },
+          "notes": "Bereits getätigte Investitionen in Sachanlagen sowie F&E zählen nicht."
+        },
+        {
+          "id": "wertschoepfung_schweiz",
+          "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
+          "kind": "soll",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "taetigkeit"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "zielgruppe",
+            "locator": "Grösse"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Bürgschaft für ein Darlehen bis CHF 3 Mio. für höchstens 10 Jahre, mindestens 40% Eigenfinanzierung.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": 60,
+        "min_amount_chf": null,
+        "max_amount_chf": 3000000,
+        "cofinancing": {
+          "required": true,
+          "rule": "Mindestens 40% jedes geförderten Vorhabens mit anderen Mitteln finanziert."
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Solidarbürgschaft gegenüber dem Darlehensgeber"
+        ],
+        "calculation_basis": "Verbürgt werden Darlehen und Zinsen.",
+        "example": null,
+        "source": {
+          "source_id": "konditionen",
+          "locator": null
+        },
+        "note": "Prüfgebühr CHF 1'000 nach erfolgreicher Vorselektion und CHF 2'000 nach Zusage. Jährliche Bürgschaftsgebühr 0.9% der Bürgschaftssumme. Darlehen und Zinsen innert Laufzeit zurückführen, in der Regel mindestens 20% des Darlehens innert der halben Laufzeit tilgen. Darlehensgeber: Schweizer Banken oder andere geeignete Schweizer Darlehensgeber (z. B. Mezzanine, Venture Debt, Business Angels). max_share_of_costs_pct 60 abgeleitet aus der 40%-Eigenfinanzierung."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Online-Bewerbung jederzeit über den Vorab-Check.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "vorgehen",
+            "locator": null
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Von Einreichung bis Annahme durch das Bürgschaftskomitee normalerweise mindestens drei Monate",
+        "max_duration_months": 120,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Online-Gesuchsformular",
+            "condition": null,
+            "source": {
+              "source_id": "vorgehen",
+              "locator": "Vorselektion"
+            }
+          },
+          {
+            "name": "Investorenpräsentation",
+            "condition": null,
+            "source": {
+              "source_id": "vorgehen",
+              "locator": "Vorselektion"
+            }
+          },
+          {
+            "name": "Weitere Unterlagen für die Due Diligence gemäss Liste Prüfprozess Details",
+            "condition": "nach positiver Vorselektion",
+            "source": {
+              "source_id": "vorgehen",
+              "locator": "Due Diligence"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Nach Auszahlung quartalsweise Berichterstattung an die Geschäftsstelle und einmal jährlich mündlich.",
+          "source": {
+            "source_id": "vorgehen",
+            "locator": "Berichterstattung"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.technologiefonds.ch/buergschaften",
+        "apply": "https://www.technologiefonds.ch/vorab-check",
+        "form": null
+      },
+      "source": {
+        "source_id": "buergschaften",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://www.technologiefonds.ch/vorab-check",
+    "steps": [
+      "5-Minuten-Vorab-Check online",
+      "Online-Gesuchsformular und Investorenpräsentation einreichen (Vorselektion)",
+      "Due Diligence durch die Geschäftsstelle: Technologie, Bonität, rechtliche und finanzielle Aspekte",
+      "Entscheid des Bürgschaftskomitees, danach Darlehensvertrag finalisieren",
+      "Berichterstattung nach Auszahlung"
+    ],
+    "note": "Unterlagen auf Deutsch, Französisch und Italienisch verfügbar.",
+    "source": {
+      "source_id": "vorgehen",
+      "locator": null
+    }
+  },
+  "contacts": [
+    {
+      "name": "Geschäftsstelle Technologiefonds, Emerald Technology Ventures AG",
+      "role": "Bellerivestrasse 241, 8008 Zürich",
+      "email": "info@technologiefonds.ch",
+      "phone": "044 269 61 40",
+      "url": "https://www.technologiefonds.ch/kontakt"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "CO2-Gesetz vom 23. Dezember 2011",
+      "ref": null,
+      "url": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "buergschaften",
+      "title": "Bürgschaften, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/buergschaften",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "konditionen",
+      "title": "Konditionen, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "zielgruppe",
+      "title": "Zielgruppe, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "vorgehen",
+      "title": "Vorgehen, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/buergschaften/vorgehen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "vorteile",
+      "title": "Vorteile, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/buergschaften/vorteile",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "organisation",
+      "title": "Organisation, Technologiefonds",
+      "type": "webseite",
+      "url": "https://www.technologiefonds.ch/organisation",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Artikel im CO2-Gesetz nicht genannt. Die Webseite verweist auf das CO2-Gesetz vom 23. Dezember 2011, prüfen ob die aktuelle Fassung gilt.",
+      "Liste Prüfprozess Details (PDF) nicht gesichtet, daher Unterlagen der Due Diligence unvollständig.",
+      "Kombination mit anderen Förderungen (z. B. Innosuisse) in den Quellen nicht geregelt.",
+      "max_share_of_costs_pct 60 ist aus der Pflicht zu 40% Eigenfinanzierung abgeleitet, nicht wörtlich genannt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

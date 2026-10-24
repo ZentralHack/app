@@ -1,0 +1,1966 @@
+{
+  "schema_version": "2.0",
+  "id": "innosuisse",
+  "name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
+  "short_name": "Innosuisse",
+  "provider": {
+    "name": "Innosuisse",
+    "unit": null,
+    "url": "https://www.innosuisse.admin.ch/de"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz. Sitz oder Wertschöpfung in der Schweiz je nach Instrument."
+  },
+  "purpose": "Innosuisse fördert wissenschaftsbasierte Innovation von KMU, Start-ups und anderen Schweizer Organisationen mit Projektbeiträgen, Gutschriften für Vorstudien, Mentoring und Coaching.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Gesuche werden von Expertinnen und Experten beurteilt, der Innovationsrat entscheidet. Eine ausdrückliche Aussage zum Rechtsanspruch liegt in den Quellen nicht vor.",
+    "source": {
+      "source_id": "ip_up",
+      "locator": "Abschnitt 2, Evaluation und Entscheid"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "innovationsprojekt-umsetzungspartner",
+      "name": "Innovationsprojekte mit Umsetzungspartner",
+      "description": "Wissenschaftsbasierte Innovationsprojekte, die ein Unternehmen oder eine Organisation zusammen mit einem Schweizer Forschungspartner durchführt. Innosuisse finanziert den Forschungspartner, das Unternehmen trägt seine eigenen Projektkosten.",
+      "keywords": [
+        "Innovationsprojekt",
+        "Innosuisse-Projekt",
+        "Projekt mit Umsetzungspartner",
+        "IP"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Gesuche laufend im Eingabeportal, Behandlung an Sitzungen des Innovationsrates. Sitzungstermine bis Ende 2027 publiziert.",
+        "source": {
+          "source_id": "ip_up",
+          "locator": "Abschnitt 1, Wann reichen Sie Ihr Gesuch ein?"
+        }
+      },
+      "recipient": {
+        "type": "forschungspartner",
+        "note": "Innosuisse finanziert die Kosten des Forschungspartners (inkl. Overhead). Das Unternehmen erhält kein Geld, sondern trägt 40 bis 60% der Projektkosten selbst."
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "startup",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "forschung",
+          "entwicklung",
+          "prototyp",
+          "prozessinnovation",
+          "organisationsinnovation"
+        ],
+        "required_partners": [
+          "forschungspartner"
+        ],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "forschungspartner_kosten",
+          "name": "Direkte Projektkosten des Forschungspartners",
+          "definition": "Personal- und Sachkosten des Forschungspartners. Overhead wird separat als Prozentsatz berechnet.",
+          "examples_positive": [
+            "Apparate",
+            "Verbrauchsmaterial",
+            "Lizenzen",
+            "Drittleistungen wie Rechenzeit oder Cloud-Dienste",
+            "Internationale Reisen"
+          ],
+          "examples_negative": [
+            "Verwertung",
+            "Publikationen",
+            "Schutzrechte",
+            "Spesen und Reisen innerhalb der Schweiz",
+            "Grundausstattung wie Standard-IT",
+            "Bonuszahlungen"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Innovationsprojekte mit Umsetzungspartner, Anrechenbare Kosten"
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Projekte, die gegen die wissenschaftliche Integrität oder gute wissenschaftliche Praxis verstossen",
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "wertschoepfung_schweiz",
+          "text": "Das Unternehmen bzw. die Organisation ist in der Schweiz wertschöpfend tätig.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton",
+            "taetigkeit"
+          ],
+          "question": {
+            "text": "Ist Ihr Unternehmen in der Schweiz wertschöpfend tätig?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+          },
+          "notes": null
+        },
+        {
+          "id": "forschungspartner_schweiz",
+          "text": "Ein Schweizer Forschungspartner (Hochschule oder anerkannte Forschungsstätte) will das Projekt mit dem Unternehmen umsetzen.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": {
+            "text": "Haben Sie einen Schweizer Forschungspartner, zum Beispiel eine Hochschule?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Noch in Abklärung"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "partner_unabhaengig",
+          "text": "Forschungs- und Umsetzungspartner sind finanziell und personell voneinander unabhängig.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen (Art. 12 Vollzugsbestimmungen)"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenleistung_40_60",
+          "text": "Das Unternehmen trägt die bei ihm anfallenden Projektkosten im Umfang von 40 bis 60% der Gesamtprojektkosten.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie 40 bis 60% der Projektkosten selbst tragen (Personal, Material)?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+          },
+          "notes": null
+        },
+        {
+          "id": "barbeitrag_5",
+          "text": "Das Unternehmen zahlt dem Forschungspartner einen Barbeitrag von mindestens 5% der Gesamtprojektkosten.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie dem Forschungspartner mindestens 5% der Projektkosten bar bezahlen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Voraussetzungen Umsetzungspartner"
+          },
+          "notes": "Der Barbeitrag ist Teil der Eigenleistung (FAQ, Beteiligung der Umsetzungspartner)."
+        },
+        {
+          "id": "innovationsgehalt",
+          "text": "Der wissenschaftliche und wirtschaftliche Ansatz ist neuartig.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 2, Kriterien"
+          },
+          "notes": null
+        },
+        {
+          "id": "wertschoepfung_projekt",
+          "text": "Die Umsetzung verbessert die Wettbewerbssituation und schafft Wertschöpfung für Wirtschaft oder Gesellschaft in der Schweiz.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 2, Kriterien"
+          },
+          "notes": null
+        },
+        {
+          "id": "methodik_kompetenz",
+          "text": "Methodische Qualität, realistische Ziele und Meilensteine, stimmiges Kosten-Nutzen-Verhältnis sowie nötige Kompetenzen der Partner.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung",
+            "partner"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 2, Kriterien"
+          },
+          "notes": "Weiteres Kriterium laut Quelle: Beitrag zur nachhaltigen Entwicklung."
+        }
+      ],
+      "funding": {
+        "model": "kostenbeteiligung",
+        "summary": "Innosuisse bezahlt die Kosten des Forschungspartners plus Overhead. Das Unternehmen trägt 40 bis 60% der Gesamtprojektkosten, davon mindestens 5% bar an den Forschungspartner.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Eigenleistung 40 bis 60% der direkten Gesamtkosten (ohne Overhead), davon mindestens 5% als Barbeitrag an den Forschungspartner."
+        },
+        "deductions": [
+          {
+            "text": "Beteiligt sich das Unternehmen unbegründet weniger als vereinbart, kann Innosuisse den Beitrag kürzen und Zahlungen zurückfordern.",
+            "source": {
+              "source_id": "faq",
+              "locator": "Auswirkungen geringerer Eigenbeteiligung"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Zahlung in Tranchen an den Forschungspartner"
+        ],
+        "calculation_basis": "Projektbudget im Subventionsvertrag. Effektive Kosten gemäss Schlussabrechnung bestimmen Schlusstranche oder Rückforderung.",
+        "example": null,
+        "source": {
+          "source_id": "faq",
+          "locator": "Innovationsprojekte mit Umsetzungspartner"
+        },
+        "note": "Keine finanzielle Obergrenze für Forschungspartner, sofern Kosten-Nutzen stimmt. Overhead: Prozentsatz des Projektbudgets, jährlich von Innosuisse festgelegt (Höchstgrenze 2021 bis 2024: 15%). Beiträge sind nicht mehrwertsteuerpflichtig."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 1, Sitzungstermine"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel sechs bis acht Wochen",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": "Sitzungen Innovationsrat (Jahresplanung, Verschiebung vorbehalten). Energy & Environment: 30.10.26, 27.11.26, 22.01.27, 12.03.27, 23.04.27, 21.05.27. Engineering: 25.11.26, 27.01.27, 11.03.27, 14.04.27, 19.05.27. ICT: 18.11.26, 03.02.27, 10.03.27, 21.04.27, 19.05.27. Life Sciences: 23.11.26, 27.01.27, 17.03.27, 21.04.27, 27.05.27. Social Sciences & Business Management: 25.11.26, 04.02.27, 11.03.27, 22.04.27, 27.05.27. Projektdauer meist 6 bis 36 Monate, keine feste Obergrenze (FAQ)."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuch im Eingabeportal gemäss Checkliste (Innovationsprojekte)",
+            "condition": null,
+            "source": {
+              "source_id": "ip_up",
+              "locator": "Abschnitt 1, Inhalt Ihres Gesuchs"
+            }
+          },
+          {
+            "name": "Vorabklärungen: Literaturrecherche, Bedarfs- oder Potenzialnachweis, Marktanalyse mit Wettbewerbsanalyse",
+            "condition": null,
+            "source": {
+              "source_id": "ip_up",
+              "locator": "Abschnitt 1, Inhalt Ihres Gesuchs"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Unterzeichnete IPR-Erklärung",
+            "condition": null,
+            "source": {
+              "source_id": "ip_up",
+              "locator": "Abschnitt 3, Vertrag über das geistige Eigentum"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Subventionsvertrag vor Projektstart abschliessen. Projektstart innert drei Monaten nach Inkrafttreten des Vertrags, Startdatum an innoprojects@innosuisse.ch melden.",
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 3"
+          }
+        },
+        {
+          "text": "Regelung zu geistigem Eigentum und Nutzungsrechten spätestens drei Monate nach Projektstart.",
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 3"
+          }
+        },
+        {
+          "text": "Berichte während des Projekts im Eingabeportal einreichen.",
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 4"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Innovationsmentoring nutzen, um einen passenden Forschungspartner zu finden und das Gesuch zu strukturieren",
+          "affects_criteria": [
+            "forschungspartner_schweiz",
+            "methodik_kompetenz"
+          ],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Erfahren Sie mehr über das Angebot"
+          }
+        },
+        {
+          "text": "Regeln zum geistigen Eigentum schon bei der Ausarbeitung des Gesuchs grundsätzlich vereinbaren",
+          "affects_criteria": [
+            "partner_unabhaengig"
+          ],
+          "source": {
+            "source_id": "ip_up",
+            "locator": "Abschnitt 3, Hinweis"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+        "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+        "form": "https://www.innosuisse.admin.ch/dam/de/sd-web/l6ulpxzSOif4/Checkliste%20(Innovationsprojekte).pdf"
+      },
+      "source": {
+        "source_id": "ip_up",
+        "locator": null
+      }
+    },
+    {
+      "id": "start-up-innovationsprojekt",
+      "name": "Start-up Innovationsprojekte",
+      "description": "Wissenschaftsbasierte Innovationsprojekte von Start-ups vor dem ersten Markteintritt. Gefördert wird nur das Start-up, kein Forschungspartner.",
+      "keywords": [
+        "Start-up Innovationsprojekt",
+        "SIP",
+        "Start-up Projekt Innosuisse"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Projekte können laufend eingereicht werden, es gibt keine Ausschreibungen.",
+        "source": {
+          "source_id": "sip",
+          "locator": "Einreichung und Fristen"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Ausschliesslich das Start-up. Forschungspartner erhalten keine Unterstützung."
+      },
+      "filter": {
+        "applicant_types": [
+          "startup"
+        ],
+        "employees_min": null,
+        "employees_max": 49,
+        "company_age_years_max": 5,
+        "project_types": [
+          "forschung",
+          "entwicklung",
+          "prototyp",
+          "gruendung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Nicht kommerziell tätige Vereine und Stiftungen sowie Einheiten der öffentlichen Verwaltung",
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          }
+        },
+        {
+          "text": "Projekte, für die bereits eine laufende Förderung besteht",
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          }
+        },
+        {
+          "text": "Start-ups auf der Sanktionsliste des SECO",
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "vor_markteintritt",
+          "text": "Das Start-up bietet noch keine serienreifen Produkte oder Dienstleistungen am Markt an. Prototypen oder Versuchsanlagen bei Kunden sind erlaubt.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "taetigkeit",
+            "umsatz"
+          ],
+          "question": {
+            "text": "Verkaufen Sie Ihr Produkt oder Ihre Dienstleistung bereits regulär am Markt?",
+            "options": [
+              "Nein, noch nicht",
+              "Nur Prototypen oder Pilotkunden",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "sitz_schweiz_uid",
+          "text": "Sitz in der Schweiz mit Schweizer Unternehmensidentifikationsnummer (UID).",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton",
+            "handelsregister"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz und eine UID-Nummer?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "UID-Nummer"
+          ],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "gruendung_max_5_jahre",
+          "text": "Gründung höchstens 5 Jahre vor Gesuchseinreichung.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "unternehmensalter"
+          ],
+          "question": {
+            "text": "Wann wurde Ihr Start-up gegründet?",
+            "options": [
+              "Vor weniger als 5 Jahren",
+              "Vor 5 bis 10 Jahren",
+              "Vor mehr als 10 Jahren"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": "In begründeten Ausnahmefällen bis 10 Jahre."
+        },
+        {
+          "id": "weniger_50_vzae",
+          "text": "Weniger als 50 Vollzeitäquivalente. Wird das Start-up von einem Unternehmen kontrolliert, muss die Gruppe weniger als 250 VZÄ haben.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenleistung_30",
+          "text": "Das Start-up kann die Eigenleistung von mindestens 30% der Projektkosten finanzieren.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie mindestens 30% der Projektkosten selbst finanzieren?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "ip_analyse",
+          "text": "Eine erste IP-Analyse zeigt keinen offensichtlichen Konflikt mit bestehenden Patenten, der den Markteintritt verhindern würde.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Haben Sie eine erste Patent- bzw. IP-Analyse gemacht?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "skalierbar",
+          "text": "Geschäftsmodell auf Basis eines skalierbaren Produkts oder einer skalierbaren Dienstleistung mit Potenzial für mehr als lineares Wachstum.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "bewertung_sip",
+          "text": "Innovationsgrad, Wertschöpfung in der Schweiz, methodische Qualität, Kompetenzen, Nachhaltigkeit, Kosten-Nutzen, finanzielle Leistungsfähigkeit (Financial Due Diligence) und geistiges Eigentum.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sip",
+            "locator": "Evaluation, Kriterien"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Höchstens 70% der direkten Projektkosten, mindestens 30% trägt das Start-up selbst.",
+        "cost_categories": [
+          {
+            "id": "direkte_projektkosten",
+            "name": "Direkte Projektkosten",
+            "rate_pct": 70,
+            "definition": "Projektbezogene Personalkosten (mit Stundenrapporten), Material- und Fremdleistungskosten. Details im Dokument Anrechenbare Sachkosten.",
+            "source": {
+              "source_id": "sip",
+              "locator": "Förderhöhe und Projektkosten"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 70,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "Mindestens 30% der Projektkosten als Eigenleistung des Start-ups."
+        },
+        "deductions": [],
+        "payout_forms": [],
+        "calculation_basis": "Gesamtprojektkosten müssen nachgewiesen werden, nicht nur der Anteil von Innosuisse.",
+        "example": null,
+        "source": {
+          "source_id": "sip",
+          "locator": "Förderhöhe und Projektkosten"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Gesuch mindestens acht Wochen vor einer Sitzung des Innovationsrats einreichen. Fristgerechte Einreichung garantiert keine Behandlung an der nächsten Sitzung.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "sip",
+            "locator": "Einreichung und Fristen"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Mitteilung innert acht Wochen nach der Sitzung, Gesamtprozess rund 16 Wochen",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": "Nach der Evaluation durch drei Expertinnen oder Experten folgt ein Pitch vor einer Jury."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuch im Eingabeportal gemäss Checkliste (PDF)",
+            "condition": null,
+            "source": {
+              "source_id": "sip",
+              "locator": "Einreichung und Fristen"
+            }
+          },
+          {
+            "name": "Vorabklärungen: Literaturrecherche, Bedarfs- und Potenzialnachweis, Marktanalyse mit Wettbewerbsanalyse",
+            "condition": null,
+            "source": {
+              "source_id": "sip",
+              "locator": "Einreichung und Fristen"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Stundenrapporte aller beteiligten Personen (ERP-Auszug oder Zeitnachweis)",
+            "condition": null,
+            "source": {
+              "source_id": "sip",
+              "locator": "Förderhöhe und Projektkosten"
+            }
+          },
+          {
+            "name": "Arbeitsverträge und Lohnausweise",
+            "condition": null,
+            "source": {
+              "source_id": "sip",
+              "locator": "Förderhöhe und Projektkosten"
+            }
+          },
+          {
+            "name": "Belege für Material- und Fremdleistungskosten",
+            "condition": null,
+            "source": {
+              "source_id": "sip",
+              "locator": "Förderhöhe und Projektkosten"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Subventionsvertrag vor Projektstart unterzeichnen, Startdatum an innoprojects@innosuisse.ch melden.",
+          "source": {
+            "source_id": "sip",
+            "locator": "Verträge und Projektstart"
+          }
+        },
+        {
+          "text": "Wesentliche Änderungen (Schlüsselpersonen, Projektplan, Aktionariat, Überschuldung, Wegzug aus der Schweiz) vorab schriftlich beantragen.",
+          "source": {
+            "source_id": "sip",
+            "locator": "Projektreporting"
+          }
+        },
+        {
+          "text": "Extended Project Review mit Status Report, Kostenbericht und Update zu den Unternehmensfinanzen.",
+          "source": {
+            "source_id": "sip",
+            "locator": "Projektreporting"
+          }
+        },
+        {
+          "text": "Monatlicher Zeitnachweis pro Mitarbeitendem.",
+          "source": {
+            "source_id": "sip",
+            "locator": "Projektreporting"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/de/start-up-innovationsprojekte",
+        "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+        "form": null
+      },
+      "source": {
+        "source_id": "sip",
+        "locator": null
+      }
+    },
+    {
+      "id": "innovationsscheck",
+      "name": "Innovationsscheck",
+      "description": "Gutschrift für eine Vorstudie bei einem Schweizer Forschungspartner, um die Umsetzbarkeit einer neuartigen Idee zu prüfen.",
+      "keywords": [
+        "Innocheck",
+        "Innovationsscheck",
+        "Vorstudie",
+        "Innocheque"
+      ],
+      "instrument_type": "gutschrift",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Eingabe jederzeit möglich.",
+        "source": {
+          "source_id": "scheck",
+          "locator": "1. Gesuch einreichen"
+        }
+      },
+      "recipient": {
+        "type": "forschungspartner",
+        "note": "Der Betrag der Schlussabrechnung wird an den Forschungspartner überwiesen."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "startup",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": 249,
+        "company_age_years_max": null,
+        "project_types": [
+          "machbarkeitsstudie",
+          "forschung"
+        ],
+        "required_partners": [
+          "forschungspartner"
+        ],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "vorstudie",
+          "name": "Vorstudie durch Forschungspartner",
+          "definition": "Konzeptentwicklungen, Ideenstudien sowie Analysen zum Innovations- und Marktpotenzial neuartiger Prozesse, Produkte, Dienstleistungen oder Technologien.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": {
+            "source_id": "scheck",
+            "locator": "Was finanziert der Innovationsscheck"
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Projekte, die gegen die wissenschaftliche Integrität verstossen",
+          "source": {
+            "source_id": "scheck",
+            "locator": "Voraussetzungen"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "weniger_250_vzae",
+          "text": "Weniger als 250 Vollzeitstellen. Bei Konzerngesellschaften zählt der gesamte Konzern.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
+            "options": [
+              "Weniger als 250",
+              "250 oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "scheck",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "sitz_schweiz_uid",
+          "text": "Sitz der Organisation in der Schweiz, nachgewiesen mit UID-Nummer.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton",
+            "handelsregister"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz und eine UID-Nummer?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "UID-Nummer"
+          ],
+          "source": {
+            "source_id": "scheck",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "forschungspartner_bereit",
+          "text": "Ein Schweizer Forschungspartner ist bereit, die Vorstudie durchzuführen.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": {
+            "text": "Haben Sie bereits einen Schweizer Forschungspartner für die Vorstudie?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Noch in Abklärung"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "scheck",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "kein_scheck_2_jahre",
+          "text": "In den letzten zwei Jahren keine Gutschrift für eine Vorstudie erhalten (massgebend: Verfügungsdatum).",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Haben Sie in den letzten zwei Jahren einen Innovationsscheck erhalten?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "scheck",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "bewertung_scheck",
+          "text": "Innovationsgrad, potenzieller Nutzen, Kompetenzen der Partner, realistischer Finanzplan und Aussicht auf ein Folgeprojekt.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "scheck",
+            "locator": "2. Evaluation, Kriterien"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gutschrift",
+        "summary": "100% der Kosten des Forschungspartners, maximal CHF 15'000.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": 100,
+        "min_amount_chf": null,
+        "max_amount_chf": 15000,
+        "cofinancing": {
+          "required": false,
+          "rule": null
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Überweisung an den Forschungspartner nach 30-tägiger Einsprachefrist der Schlussabrechnung"
+        ],
+        "calculation_basis": "Personal- und Materialkosten des Forschungspartners gemäss Finanzplan. Kein Overhead (FAQ).",
+        "example": null,
+        "source": {
+          "source_id": "scheck",
+          "locator": "Was finanziert der Innovationsscheck"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Eingabe jederzeit möglich, nur durch den Umsetzungspartner.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "scheck",
+            "locator": "Gesuch einreichen"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel vier bis sechs Wochen",
+        "max_duration_months": 6,
+        "repeat_limit": "Höchstens ein Innovationsscheck in zwei Jahren",
+        "note": "Einmalige Verlängerung um sechs Monate über innocheque@innosuisse.ch möglich (FAQ)."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuch im Eingabeportal: Titel, Partner, Innovation, Aufgabe des Forschungspartners, Ergebnis, Wettbewerb, Nutzen",
+            "condition": null,
+            "source": {
+              "source_id": "scheck",
+              "locator": "Was beinhaltet Ihr Gesuch"
+            }
+          },
+          {
+            "name": "Finanzplan mit Personal- und Materialkosten",
+            "condition": null,
+            "source": {
+              "source_id": "scheck",
+              "locator": "Was beinhaltet Ihr Gesuch"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Wissenschaftlicher Schlussbericht",
+            "condition": null,
+            "source": {
+              "source_id": "scheck",
+              "locator": "4. Schlussberichte"
+            }
+          },
+          {
+            "name": "Finanzbericht",
+            "condition": null,
+            "source": {
+              "source_id": "scheck",
+              "locator": "4. Schlussberichte"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Vertrag mit dem Forschungspartner selbst regeln, Innosuisse stellt keine Vorlage.",
+          "source": {
+            "source_id": "scheck",
+            "locator": "3. Vertrag abschliessen"
+          }
+        },
+        {
+          "text": "Vorstudie innert sechs Monaten abschliessen.",
+          "source": {
+            "source_id": "scheck",
+            "locator": "3. Vertrag abschliessen"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Innovationsmentoring nutzen, um einen geeigneten Forschungspartner zu finden",
+          "affects_criteria": [
+            "forschungspartner_bereit"
+          ],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Erfahren Sie mehr über das Angebot"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/de/innovationsscheck",
+        "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+        "form": null
+      },
+      "source": {
+        "source_id": "scheck",
+        "locator": null
+      }
+    },
+    {
+      "id": "innovationsmentoring",
+      "name": "Innovationsmentoring",
+      "description": "Kostenlose Beratung durch eine Innovationsmentorin oder einen Innovationsmentor, um eine Idee zu bewerten, einen Forschungspartner zu finden und ein Gesuch vorzubereiten.",
+      "keywords": [
+        "Innovationsmentor",
+        "Mentoring Innosuisse",
+        "Erstbeurteilung"
+      ],
+      "instrument_type": "beratung",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Beantragung im Eingabeportal.",
+        "source": {
+          "source_id": "mentoring",
+          "locator": "Gesuch um Unterstützung"
+        }
+      },
+      "recipient": {
+        "type": "dienstleister",
+        "note": "Die Gutschrift deckt die Stunden der Mentorin oder des Mentors. Für das Unternehmen kostenlos."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "startup",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": 249,
+        "company_age_years_max": null,
+        "project_types": [
+          "forschung",
+          "entwicklung",
+          "prozessinnovation",
+          "organisationsinnovation",
+          "machbarkeitsstudie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "sitz_schweiz",
+          "text": "Das KMU oder die Organisation ist in der Schweiz ansässig.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Bedingungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "weniger_250_vzae",
+          "text": "Weniger als 250 Vollzeitbeschäftigte zum Zeitpunkt des Gesuchs.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
+            "options": [
+              "Weniger als 250",
+              "250 oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Bedingungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "keine_grosse_gruppe",
+          "text": "Gehört nicht zu einer Gruppe mit mehr als 250 Vollzeitbeschäftigten.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Gehört Ihr Unternehmen zu einer Gruppe mit mehr als 250 Vollzeitstellen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Bedingungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "erstmals_mentoring",
+          "text": "Für dieses Projekt erstmals Unterstützung durch eine Innosuisse-Mentorin oder einen Mentor.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Bedingungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "keine_parallele_beratung",
+          "text": "Für dieses Projekt kein paralleles anderes Beratungsangebot, zum Beispiel einer regionalen oder kantonalen Stelle.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Werden Sie für dieses Projekt bereits von einer anderen Stelle beraten?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Bedingungen"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gutschrift",
+        "summary": "Kostenlos: Gutschrift Erstbeurteilung bis CHF 1'000 (5 Stunden), danach Gutschrift Projektinitiierung bis CHF 6'000 (30 Stunden).",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Gutschrift Erstbeurteilung",
+            "condition": "maximal 5 Arbeitsstunden, gültig 2 Monate ab Einreichung",
+            "base_chf": null,
+            "amount_chf": 1000
+          },
+          {
+            "unit": "Gutschrift Projektinitiierung oder -überarbeitung",
+            "condition": "maximal 30 Arbeitsstunden",
+            "base_chf": null,
+            "amount_chf": 6000
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 6000,
+        "cofinancing": {
+          "required": false,
+          "rule": null
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Gutschrift für Stunden der Mentorin oder des Mentors"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "mentoring",
+          "locator": "Schritt 1 und 2"
+        },
+        "note": "max_amount_chf bezieht sich auf die grössere der beiden Gutschriften."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Beantragung jederzeit im Eingabeportal.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "mentoring",
+            "locator": "Schritt 1"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": "Pro Projekt nur erstmalige Unterstützung",
+        "note": "Gutschrift Erstbeurteilung 2 Monate gültig, keine Verlängerung."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuch im Eingabeportal mit Wahl der Mentorin oder des Mentors",
+            "condition": null,
+            "source": {
+              "source_id": "mentoring",
+              "locator": "Mentorinnen und Mentoren"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+        "apply": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+        "form": null
+      },
+      "source": {
+        "source_id": "mentoring",
+        "locator": null
+      }
+    },
+    {
+      "id": "initial-coaching",
+      "name": "Start-up Coaching: Initial Coaching",
+      "description": "Gutschrift für Coaching durch akkreditierte Innosuisse-Coaches für Start-ups in einer frühen Phase. Voraussetzung für Core Coaching.",
+      "keywords": [
+        "Start-up Coaching",
+        "Initial Coaching",
+        "Innosuisse Coaching"
+      ],
+      "instrument_type": "coaching",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Keine Eingabefrist genannt.",
+        "source": {
+          "source_id": "initial",
+          "locator": "Deadlines"
+        }
+      },
+      "recipient": {
+        "type": "dienstleister",
+        "note": "Gutschrift nur bei akkreditierten Coaches einlösbar, keine Barauszahlung (FAQ)."
+      },
+      "filter": {
+        "applicant_types": [
+          "startup"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": 5,
+        "project_types": [
+          "gruendung",
+          "wachstum"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "wissenschaftsbasiert",
+          "text": "Innovative, wissenschaftsbasierte Geschäftsidee.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Beruht Ihre Geschäftsidee auf wissenschaftlichen oder technologischen Erkenntnissen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "Eligibility"
+          },
+          "notes": null
+        },
+        {
+          "id": "gruendung_schweiz_5_jahre",
+          "text": "In der Schweiz innerhalb der letzten 5 Jahre gegründet oder kurz vor Gründung mit Schweizer Adresse.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "unternehmensalter",
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Ist Ihr Start-up in den letzten 5 Jahren in der Schweiz gegründet worden oder steht die Gründung bevor?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "Eligibility"
+          },
+          "notes": "In begründeten Fällen bis 10 Jahre, z. B. bei Life Sciences."
+        },
+        {
+          "id": "verteidigbar_marktpotenzial",
+          "text": "Verteidigbare Idee mit hohem Marktpotenzial (z. B. IP, Know-how, Geschwindigkeit).",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "Evaluation criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "skalierbar_team",
+          "text": "Skalierbares Geschäftsmodell mit ambitioniertem, engagiertem Team.",
+          "kind": "bewertung",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "Evaluation criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "integritaet",
+          "text": "Einhaltung des Kodex für wissenschaftliche Integrität.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "initial",
+            "locator": "Eligibility"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gutschrift",
+        "summary": "Coaching-Gutschrift bis CHF 10'000 für bis zu 12 Monate bei akkreditierten Coaches.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 10000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Gutschrift bei akkreditierten Coaches"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "initial",
+          "locator": "Voucher amount"
+        },
+        "note": "Ein Eigenanteil ist auf der Seite nicht genannt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Keine Eingabefrist genannt.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "initial",
+            "locator": "Deadlines"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel drei bis vier Wochen",
+        "max_duration_months": 12,
+        "repeat_limit": null,
+        "note": "Evaluationsbericht innert zwölf Monaten nach Start, spätestens bis Ende der Gutschrift."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Gesuch im Eingabeportal: Idee, Nutzenversprechen, Wettbewerbsvorteil, Team, relevante Firmendokumente",
+            "condition": null,
+            "source": {
+              "source_id": "initial",
+              "locator": "Application process"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Evaluationsbericht mit Entwicklungsmeilensteinen",
+            "condition": null,
+            "source": {
+              "source_id": "initial",
+              "locator": "Closing the programme"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Evaluationsbericht einreichen, startup@innosuisse.ch informieren, offene Zahlungen begleichen und Feedback geben.",
+          "source": {
+            "source_id": "initial",
+            "locator": "Closing the programme"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/en/initial-coaching-for-start-up",
+        "apply": "https://www.innosuisse.admin.ch/en/innosuisse-application-platform",
+        "form": null
+      },
+      "source": {
+        "source_id": "initial",
+        "locator": null
+      }
+    },
+    {
+      "id": "core-coaching",
+      "name": "Start-up Coaching: Core Coaching",
+      "description": "Gutschrift für Coaching durch Lead Coach und Spezialcoaches (z. B. IP, Finanzplanung, Recht, Fundraising) für Start-ups, die eine Strategie umsetzen und eine Organisation aufbauen.",
+      "keywords": [
+        "Start-up Coaching",
+        "Core Coaching",
+        "Innosuisse Coaching"
+      ],
+      "instrument_type": "coaching",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Keine Eingabefrist genannt.",
+        "source": {
+          "source_id": "core",
+          "locator": "Deadlines"
+        }
+      },
+      "recipient": {
+        "type": "dienstleister",
+        "note": "Gutschrift bei akkreditierten Coaches, keine Barauszahlung (FAQ)."
+      },
+      "filter": {
+        "applicant_types": [
+          "startup"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": 5,
+        "project_types": [
+          "gruendung",
+          "wachstum"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "initial_coaching_abgeschlossen",
+          "text": "Initial Coaching von Innosuisse abgeschlossen.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Haben Sie das Innosuisse Initial Coaching abgeschlossen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "Eligibility"
+          },
+          "notes": null
+        },
+        {
+          "id": "gruendung_schweiz_5_jahre",
+          "text": "In der Schweiz innerhalb der letzten 5 Jahre gegründet oder Gründung geplant, mit Schweizer Adresse.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "unternehmensalter",
+            "standort_kanton"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "Eligibility"
+          },
+          "notes": "In begründeten Fällen bis 10 Jahre."
+        },
+        {
+          "id": "marktpotenzial_verteidigbar",
+          "text": "Hohes, realistisches Marktpotenzial und verteidigbarer Vorteil.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "Evaluation criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "skalierbar_team",
+          "text": "Skalierbares Geschäftsmodell mit ambitioniertem, offenem Team.",
+          "kind": "bewertung",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "Evaluation criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "integritaet",
+          "text": "Einhaltung des Kodex für wissenschaftliche Integrität.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "core",
+            "locator": "Eligibility"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gutschrift",
+        "summary": "Coaching-Gutschrift bis CHF 50'000, freigegeben in Etappen nach erreichten Meilensteinen, maximal 36 Monate.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 50000,
+        "cofinancing": null,
+        "deductions": [
+          {
+            "text": "Ein negativer Meilenstein-Review schliesst die Gutschrift.",
+            "source": {
+              "source_id": "core",
+              "locator": "Milestone reviews"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Gutschrift bei akkreditierten Coaches"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "core",
+          "locator": "Voucher amount"
+        },
+        "note": "Ob ein Eigenanteil nötig ist, nennt die Seite nicht."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Keine Eingabefrist genannt.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "core",
+            "locator": "Deadlines"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Rund zwei Monate, Meilenstein-Reviews zwei bis drei Wochen",
+        "max_duration_months": 36,
+        "repeat_limit": null,
+        "note": "Nach Abschluss kann das Innosuisse Certificate beantragt werden."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Beschreibung von Idee und Nutzenversprechen, Geschäftsmodell, Zielkunden, Marktpotenzial, Wettbewerb",
+            "condition": null,
+            "source": {
+              "source_id": "core",
+              "locator": "Application process"
+            }
+          },
+          {
+            "name": "Businessplan mit Finanzprognosen und Finanzierungsstand",
+            "condition": null,
+            "source": {
+              "source_id": "core",
+              "locator": "Application process"
+            }
+          },
+          {
+            "name": "Team, Wachstumspläne, Partnerschaften, SWOT, Meilensteine für 12 Monate und 2 bis 3 Jahre",
+            "condition": null,
+            "source": {
+              "source_id": "core",
+              "locator": "Application process"
+            }
+          },
+          {
+            "name": "Relevante Firmendokumente, z. B. Pitch Deck",
+            "condition": null,
+            "source": {
+              "source_id": "core",
+              "locator": "Application process"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Von Innosuisse gesetzte Meilensteine erreichen und an Reviews berichten.",
+          "source": {
+            "source_id": "core",
+            "locator": "Milestone reviews"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.innosuisse.admin.ch/en/core-coaching-for-start-up",
+        "apply": "https://www.innosuisse.admin.ch/en/innosuisse-application-platform",
+        "form": null
+      },
+      "source": {
+        "source_id": "core",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "innosuisse:innovationsprojekt-umsetzungspartner",
+      "type": "empfohlen_vorher",
+      "text": "Das Innovationsmentoring hilft, die Idee zu strukturieren, einen Forschungspartner zu finden und ein Gesuch für ein Innovationsprojekt einzureichen.",
+      "source": {
+        "source_id": "mentoring",
+        "locator": "Schritt 2"
+      }
+    },
+    {
+      "with": "innosuisse:core-coaching",
+      "type": "voraussetzung",
+      "text": "Core Coaching setzt ein abgeschlossenes Initial Coaching voraus.",
+      "source": {
+        "source_id": "core",
+        "locator": "Eligibility"
+      }
+    },
+    {
+      "with": "*",
+      "type": "ausgeschlossen",
+      "text": "Start-up Innovationsprojekte: Für dasselbe Projekt darf keine laufende Förderung bestehen.",
+      "source": {
+        "source_id": "sip",
+        "locator": "Voraussetzungen"
+      }
+    },
+    {
+      "with": "*",
+      "type": "bedingt",
+      "text": "Innovationsmentoring: Für dasselbe Projekt darf kein paralleles anderes Beratungsangebot (z. B. regionale oder kantonale Stelle) bezogen werden.",
+      "source": {
+        "source_id": "mentoring",
+        "locator": "Bedingungen"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://www.innosuisse.admin.ch/de/eingabeportal-von-innosuisse",
+    "steps": [
+      "Gesuch im Eingabeportal Innolink erfassen",
+      "Formale Prüfung durch die Geschäftsstelle",
+      "Inhaltliche Beurteilung durch unabhängige Expertinnen oder Experten",
+      "Entscheid durch den Innovationsrat, Mitteilung per IncaMail oder E-Mail",
+      "Bei Projekten: Subventionsvertrag vor Projektstart"
+    ],
+    "note": "Ablauf je Instrument leicht verschieden, z. B. Pitch bei Start-up Innovationsprojekten und Core Coaching.",
+    "source": {
+      "source_id": "ip_up",
+      "locator": "Abschnitte 1 bis 3"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Innosuisse Innovationsprojekte",
+      "role": "Innovationsprojekte und Start-up Innovationsprojekte",
+      "email": "innoprojects@innosuisse.ch",
+      "phone": null,
+      "url": "https://www.innosuisse.admin.ch/de/innosuisse-kontaktieren"
+    },
+    {
+      "name": "Innosuisse Start-up",
+      "role": "Start-up Coaching",
+      "email": "startup@innosuisse.ch",
+      "phone": null,
+      "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up"
+    },
+    {
+      "name": "Innosuisse Innovationsscheck",
+      "role": "Verlängerungen und Fragen zum Innovationsscheck",
+      "email": "innocheque@innosuisse.ch",
+      "phone": null,
+      "url": "https://www.innosuisse.admin.ch/de/innovationsscheck"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über die Förderung der Forschung und der Innovation (FIFG)",
+      "ref": null,
+      "url": "https://www.admin.ch/opc/de/classified-compilation/20091419/index.html"
+    },
+    {
+      "title": "Vollzugsbestimmungen für die Förderung von Innovationsprojekten",
+      "ref": "Art. 12",
+      "url": "https://www.innosuisse.admin.ch/de/rechtliche-grundlagengesetze-verordnungen-und-vollzugsbestimmungen"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ip_up",
+      "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "sip",
+      "title": "Start-up Innovationsprojekte, Webseite Innosuisse",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/de/start-up-innovationsprojekte",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "scheck",
+      "title": "Innovationsscheck, Webseite Innosuisse",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsscheck",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "mentoring",
+      "title": "Innovationsmentoring, Webseite Innosuisse",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "coaching",
+      "title": "Start-up Coaching, Übersicht, Webseite Innosuisse (EN)",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "initial",
+      "title": "Initial Coaching, Webseite Innosuisse (EN)",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/en/initial-coaching-for-start-up",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "core",
+      "title": "Core Coaching, Webseite Innosuisse (EN)",
+      "type": "webseite",
+      "url": "https://www.innosuisse.admin.ch/en/core-coaching-for-start-up",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "Häufig gestellte Fragen, Innosuisse",
+      "type": "faq",
+      "url": "https://www.innosuisse.admin.ch/de/haeufig-gestellte-fragen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Nicht erfasst: Scale-up Coaching (bis CHF 75'000, 24 Monate), Eurostars, Globalstars und bilaterale Ausschreibungen, Flagship-Initiative, Innovationsprojekte ohne Umsetzungspartner (nur Forschende), Swiss Accelerator, Enterprise Europe Network, Start-up Camps und Messen, Entrepreneurship Training.",
+      "Sitzungstermine für Start-up Innovationsprojekte nicht separat erfasst. Prüfen, ob dieselben Daten wie bei Innovationsprojekten gelten.",
+      "Rechtsanspruch: Quellen enthalten keine ausdrückliche Aussage, kein_rechtsanspruch ist eine Einordnung aufgrund des Evaluationsverfahrens. Gegen das FIFG prüfen.",
+      "Aktueller Overheadsatz für Innovationsprojekte (FAQ nennt nur Höchstgrenze 2021 bis 2024 und Satz 2023).",
+      "Eigenanteil bei Initial und Core Coaching nicht genannt.",
+      "Initial und Core Coaching: Quellen nur auf Englisch gesichtet.",
+      "Gemeinden und Verwaltungen: Innovationsscheck und Mentoring nennen öffentliche Organisationen, Start-up Innovationsprojekte schliessen öffentliche Verwaltung aus.",
+      "Quellen nicht lokal abgelegt (local_path null)."
+    ]
+  }
+}

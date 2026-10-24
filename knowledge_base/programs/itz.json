@@ -1,0 +1,276 @@
+{
+  "schema_version": "2.0",
+  "id": "itz",
+  "name": "ITZ InnovationsTransfer Zentralschweiz",
+  "short_name": "ITZ",
+  "provider": {
+    "name": "ITZ InnovationsTransfer Zentralschweiz",
+    "unit": null,
+    "url": "https://www.itz.ch/"
+  },
+  "level": "region",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "ITZ ist in der Zentralschweiz tätig. Die Sparring-Seite nennt keine Beschränkung auf bestimmte Kantone."
+  },
+  "purpose": "ITZ unterstützt KMU und Start-ups mit kostenlosem Innovationssparring und vermittelt Partner und Förderstellen in der Region.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Der Sparring-Check klärt, ob das Angebot passt.",
+    "source": {
+      "source_id": "sparring",
+      "locator": "Ablauf"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "innovation-sparring",
+      "name": "Innovation Sparring",
+      "description": "Strukturiertes Sparring zu Strategie, Geschäftsmodell, IP, Technologie und Finanzierung, bis 20 Stunden kostenlos.",
+      "keywords": [
+        "ITZ",
+        "Innovation Sparring",
+        "Sparring-Check",
+        "Innovationsberatung Zentralschweiz"
+      ],
+      "instrument_type": "beratung",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "sparring",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "dienstleister",
+        "note": "ITZ erbringt die Beratung, für das Unternehmen kostenlos."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "startup",
+          "unternehmen",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "entwicklung",
+          "prozessinnovation",
+          "organisationsinnovation",
+          "gruendung",
+          "wachstum",
+          "digitalisierung",
+          "finanzierung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "innovationsvorhaben",
+          "text": "Es gibt ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Haben Sie ein konkretes Innovations- oder Entwicklungsvorhaben?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "sparring",
+            "locator": "Angebot"
+          },
+          "notes": null
+        },
+        {
+          "id": "sparring_check",
+          "text": "Ein 30-minütiger Sparring-Check klärt, ob Sparring passt.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sparring",
+            "locator": "Ablauf"
+          },
+          "notes": null
+        },
+        {
+          "id": "zielgruppe",
+          "text": "KMU, Start-ups oder Privatpersonen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "rechtsform"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "sparring",
+            "locator": "Für wen"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gutschrift",
+        "summary": "Sparring bis 20 Stunden kostenlos, Erstgespräch (30 Minuten) kostenlos und unverbindlich.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Stunde Sparring",
+            "condition": "bis 20 Stunden",
+            "base_chf": null,
+            "amount_chf": null
+          }
+        ],
+        "max_share_of_costs_pct": 100,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Kostenlose Beratung"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "sparring",
+          "locator": "Kosten"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Anfrage jederzeit über das Formular Jetzt Innovieren.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "sparring",
+            "locator": "Ablauf"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Kurze Beschreibung des Vorhabens in eigenen Worten",
+            "condition": null,
+            "source": {
+              "source_id": "sparring",
+              "locator": "Ablauf"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+        "apply": "https://www.itz.ch/jetztinnovieren",
+        "form": null
+      },
+      "source": {
+        "source_id": "sparring",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "innosuisse",
+      "type": "empfohlen_vorher",
+      "text": "ITZ hilft bei der Einordnung von Förderstellen wie Innosuisse und kantonalen Programmen.",
+      "source": {
+        "source_id": "sparring",
+        "locator": "Finanzierung"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://www.itz.ch/jetztinnovieren",
+    "steps": [
+      "Anfrage mit Beschreibung des Vorhabens",
+      "30-minütiger Sparring-Check",
+      "Sparring bis 20 Stunden",
+      "Feedback"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "sparring",
+      "locator": "Ablauf"
+    }
+  },
+  "contacts": [
+    {
+      "name": "ITZ InnovationsTransfer Zentralschweiz",
+      "role": "Kontaktformular",
+      "email": null,
+      "phone": null,
+      "url": "https://www.itz.ch/ueber-uns/kontakt"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "startseite",
+      "title": "ITZ, Startseite",
+      "type": "webseite",
+      "url": "https://www.itz.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "sparring",
+      "title": "Innovation Sparring, ITZ",
+      "type": "webseite",
+      "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Wer das Angebot finanziert (Kantone, NRP, RIS) und ob es auf Zentralschweizer Unternehmen beschränkt ist, nennen die Quellen nicht.",
+      "Vollständiger Name InnovationsTransfer Zentralschweiz nicht auf den gesichteten Seiten bestätigt.",
+      "Nicht erfasst: ZentralschweizZünder (Startup Acceleration), Bereich Finanzierung.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

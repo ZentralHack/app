@@ -1,0 +1,323 @@
+{
+  "schema_version": "2.0",
+  "id": "saffa",
+  "name": "Bürgschaftsgenossenschaft SAFFA",
+  "short_name": "SAFFA",
+  "provider": {
+    "name": "Bürgschaftsgenossenschaft SAFFA",
+    "unit": null,
+    "url": "https://www.saffa.ch/"
+  },
+  "level": "privat",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz. Einzige der vier anerkannten Bürgschaftsgenossenschaften mit gesamtschweizerischem Tätigkeitsgebiet."
+  },
+  "purpose": "SAFFA verbürgt Bankkredite für Unternehmerinnen, die ein Unternehmen gründen oder ein bestehendes übernehmen oder betreiben.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Entscheid der SAFFA nach Prüfung.",
+    "source": {
+      "source_id": "buergschaften",
+      "locator": "Ablauf"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "buergschaft",
+      "name": "Bürgschaft für Unternehmerinnen",
+      "description": "SAFFA verbürgt Bankkredite für Unternehmen, die mindestens zur Hälfte in Frauenhand sind, für Gründung oder Betrieb.",
+      "keywords": [
+        "SAFFA",
+        "Bürgschaft Frauen",
+        "Unternehmerinnen",
+        "Bürgschaftsgenossenschaft"
+      ],
+      "instrument_type": "buergschaft",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "buergschaften",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Die Bank vergibt den Kredit, SAFFA verbürgt ihn."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "startup",
+          "unternehmen"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "gruendung",
+          "nachfolge",
+          "finanzierung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "frauenanteil_50",
+          "text": "Das Unternehmen ist mindestens zu 50% in Frauenhand.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "frauenanteil_eigentum"
+          ],
+          "question": {
+            "text": "Gehört Ihr Unternehmen mindestens zur Hälfte Frauen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "sitz_schweiz",
+          "text": "Sitz des Unternehmens in der Schweiz.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "bankkredit_benoetigt",
+          "text": "Es wird ein Bankkredit benötigt.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner",
+            "budget"
+          ],
+          "question": {
+            "text": "Brauchen Sie einen Bankkredit?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "todesfallpolice",
+          "text": "Eine Todesfallrisikopolice wird abgeschlossen.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Kosten"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Bürgschaft für einen Bankkredit bis CHF 1 Mio., Rückzahlung innert 10 Jahren.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 1000000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Verbürgung des Bankkredits"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "buergschaften",
+          "locator": "Bürgschaftshöhe"
+        },
+        "note": "Einschreibegebühr CHF 300. Gesuchsprüfungsgebühr bei Bewilligung 1.1% des verbürgten Betrags, max. CHF 3'000. Jährliche Bürgschaftskommission 1.25% auf dem offenen Betrag. Genossenschaftsanteil CHF 100."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Keine Frist genannt.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Ablauf"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": 120,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Bürgschaftsgesuch",
+            "condition": null,
+            "source": {
+              "source_id": "buergschaften",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Finanzierung und Business Plan",
+            "condition": null,
+            "source": {
+              "source_id": "buergschaften",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Schuldenverzeichnis (Kreditorenliste), Umsätze, Budget",
+            "condition": null,
+            "source": {
+              "source_id": "buergschaften",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Einzahlungsschein Einschreibegebühr",
+            "condition": null,
+            "source": {
+              "source_id": "buergschaften",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Halbjährliche Reportingpflicht.",
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Kosten"
+          }
+        },
+        {
+          "text": "Jährliche Bürgschaftskommission von 1.25% bezahlen.",
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Kosten"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.saffa.ch/buergschaften",
+        "apply": "https://www.saffa.ch/buergschaften",
+        "form": null
+      },
+      "source": {
+        "source_id": "buergschaften",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://www.saffa.ch/buergschaften",
+    "steps": [
+      "Gesuch einreichen",
+      "Prüfung mit persönlicher Vorstellung des Projekts",
+      "Entscheid, danach Kredit der Bank und Verbürgung durch SAFFA"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "buergschaften",
+      "locator": "Ablauf"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Bürgschaftsgenossenschaft SAFFA",
+      "role": "Auf der Lyss 14, 4051 Basel",
+      "email": "info@saffa.ch",
+      "phone": "061 683 18 42",
+      "url": "https://www.saffa.ch/"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "startseite",
+      "title": "SAFFA, Startseite",
+      "type": "webseite",
+      "url": "https://www.saffa.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "buergschaften",
+      "title": "Bürgschaften, SAFFA",
+      "type": "webseite",
+      "url": "https://www.saffa.ch/buergschaften",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Entscheiddauer nicht genannt.",
+      "level privat gewählt, da SAFFA eine Genossenschaft ist; das Schema kennt keine eigene Kategorie für Bürgschaftsgenossenschaften (bg-mitte ist als region erfasst).",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

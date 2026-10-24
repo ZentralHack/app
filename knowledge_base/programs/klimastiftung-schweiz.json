@@ -1,0 +1,443 @@
+{
+  "schema_version": "2.0",
+  "id": "klimastiftung-schweiz",
+  "name": "Klimastiftung Schweiz",
+  "short_name": "Klimastiftung",
+  "provider": {
+    "name": "Klimastiftung Schweiz",
+    "unit": null,
+    "url": "https://www.klimastiftung.ch/de/"
+  },
+  "level": "stiftung",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Schweiz und Liechtenstein."
+  },
+  "purpose": "Die Klimastiftung Schweiz unterstützt KMU in der Schweiz und in Liechtenstein bei der Entwicklung und Skalierung innovativer, klimafreundlicher Produkte, finanziert von Partnerunternehmen.",
+  "entitlement": {
+    "type": "wettbewerb",
+    "note": "Der Stiftungsrat entscheidet zweimal jährlich, Förderung wird mit der CO2-Einsparung verglichen.",
+    "source": {
+      "source_id": "antrag",
+      "locator": "Process"
+    }
+  },
+  "budget": {
+    "annual_chf": 3000000,
+    "year": null,
+    "oversubscription": "auswahl",
+    "note": "Laut Startseite rund CHF 3 Mio. pro Jahr.",
+    "source": {
+      "source_id": "startseite",
+      "locator": null
+    }
+  },
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "innovationsfoerderung",
+      "name": "Innovationsförderung Klimastiftung Schweiz",
+      "description": "Beiträge oder zinslose, bei Erfolg rückzahlbare Finanzierungen für technische Innovationen von KMU, die Treibhausgasemissionen vermeiden.",
+      "keywords": [
+        "Klimastiftung",
+        "Klimastiftung Schweiz",
+        "Klimainnovation KMU"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Eingaben jeweils am 1. März und 1. September.",
+        "source": {
+          "source_id": "antrag",
+          "locator": "Application deadlines"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "unternehmen"
+        ],
+        "employees_min": null,
+        "employees_max": 250,
+        "company_age_years_max": null,
+        "project_types": [
+          "entwicklung",
+          "prototyp",
+          "klimaschutz",
+          "energieeffizienz",
+          "erneuerbare_energie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Projekte zur Effizienzsteigerung von Verbrennungsmotoren sowie Entwicklung elektrischer Personenwagen oder Lastwagen",
+          "source": {
+            "source_id": "antrag",
+            "locator": "Exclusions"
+          }
+        },
+        {
+          "text": "Capacity-Building-Projekte (Bildung und Sensibilisierung) einschliesslich Angebote zur CO2-Kompensation",
+          "source": {
+            "source_id": "antrag",
+            "locator": "Exclusions"
+          }
+        },
+        {
+          "text": "Projekte, die bestehende Infrastruktur oder Anlagen nur ersetzen oder optimieren",
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "sitz_ch_fl",
+          "text": "Sitz in der Schweiz oder in Liechtenstein.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder in Liechtenstein?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "max_250_mitarbeitende",
+          "text": "Höchstens 250 Mitarbeitende.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Wie viele Mitarbeitende hat Ihr Unternehmen?",
+            "options": [
+              "Bis 250",
+              "Mehr als 250",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "keine_gruendungsphase",
+          "text": "Das Unternehmen ist kein Start-up in der Gründungsphase.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "unternehmensalter"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "kein_grosskonzern",
+          "text": "Das Kapital ist nicht oder zu weniger als der Hälfte im Besitz von Grosskonzernen oder öffentlich-rechtlichen Organisationen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "umsetzung_ch_fl",
+          "text": "Das Projekt wird hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "treibhausgas_vermeidung",
+          "text": "Das Projekt vermeidet Treibhausgasemissionen.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Vermeidet Ihr Projekt Treibhausgasemissionen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "technische_innovation",
+          "text": "Technische Innovation mit dem Ziel des Markteintritts in der Schweiz oder Liechtenstein.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        },
+        {
+          "id": "verwaessernde_finanzierung",
+          "text": "Erhaltene und geplante verwässernde Finanzierungen betragen höchstens das Zehnfache des beantragten Betrags.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Eligibility criteria"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "Höchstens 50% der Projektkosten, maximal CHF 200'000, als Beitrag oder als zinslose, bei Erfolg ganz oder teilweise rückzahlbare Finanzierung.",
+        "cost_categories": [
+          {
+            "id": "projektkosten",
+            "name": "Gesamte Projektkosten",
+            "rate_pct": 50,
+            "definition": null,
+            "source": {
+              "source_id": "antrag",
+              "locator": "Funding amount"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": 200000,
+        "cofinancing": {
+          "required": true,
+          "rule": "Mindestens 50% der Projektkosten aus anderen Mitteln."
+        },
+        "deductions": [],
+        "payout_forms": [
+          "Nicht rückzahlbarer Beitrag",
+          "Zinslose, bei Erfolg rückzahlbare Finanzierung"
+        ],
+        "calculation_basis": "Erwartete Förderung wird mit der berechneten CO2-Einsparung verglichen.",
+        "example": null,
+        "source": {
+          "source_id": "antrag",
+          "locator": "Funding amount"
+        },
+        "note": "Die Stiftung empfiehlt, einen möglichst tiefen Betrag zu beantragen. Konditionen im Fördervertrag. Auszahlung nach Meilensteinen."
+      },
+      "timing": {
+        "deadline": {
+          "type": "fester_termin_jaehrlich",
+          "rule": "Eingabe bis 1. März oder 1. September. Entscheide im Juni bzw. November.",
+          "next_dates": [
+            "2027-03-01",
+            "2027-09-01"
+          ],
+          "relative": null,
+          "source": {
+            "source_id": "antrag",
+            "locator": "Application deadlines"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Juni (Eingabe März) bzw. November (Eingabe September)",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": "Gesuch vor der Umsetzung einreichen (Satz auf der Webseite unklar formuliert)."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Antrag im Förderportal auf Deutsch, Französisch oder Englisch",
+            "condition": null,
+            "source": {
+              "source_id": "antrag",
+              "locator": "Process"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Nachweise der Umsetzung über das Portal",
+            "condition": null,
+            "source": {
+              "source_id": "antrag",
+              "locator": "Process"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Meilensteine gemäss individuellem Fördervertrag nachweisen.",
+          "source": {
+            "source_id": "antrag",
+            "locator": "Process"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Möglichst tiefen Förderbetrag beantragen, um das Verhältnis zur CO2-Einsparung zu verbessern",
+          "affects_criteria": [
+            "treibhausgas_vermeidung"
+          ],
+          "source": {
+            "source_id": "antrag",
+            "locator": "Funding amount"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://www.klimastiftung.ch/de/antrag-stellen/",
+        "apply": "https://funding.klimastiftung.ch/de/user",
+        "form": "https://www.klimastiftung.ch/wp-content/uploads/20251119_Reglement_Innovationsfoerderung_D_signed.pdf"
+      },
+      "source": {
+        "source_id": "antrag",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "*",
+      "type": "erlaubt",
+      "text": "Andere Förderung durch Dritte schliesst einen Antrag nicht aus.",
+      "source": {
+        "source_id": "antrag",
+        "locator": "Other requirements"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://funding.klimastiftung.ch/de/user",
+    "steps": [
+      "Im Förderportal registrieren",
+      "Antrag einreichen",
+      "Gespräch mit einem Mitglied des Beirats",
+      "Entscheid des Stiftungsrats",
+      "Individueller Fördervertrag",
+      "Auszahlung nach Meilensteinen"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "antrag",
+      "locator": "Process"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Klimastiftung Schweiz",
+      "role": "Mythenquai 50/60, 8002 Zürich",
+      "email": null,
+      "phone": "+41 43 285 44 80",
+      "url": "https://www.klimastiftung.ch/de/kontakt/"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "antrag",
+      "title": "Antrag stellen, Klimastiftung Schweiz",
+      "type": "webseite",
+      "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "startseite",
+      "title": "Klimastiftung Schweiz, Startseite",
+      "type": "webseite",
+      "url": "https://www.klimastiftung.ch/de/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Reglement Innovationsförderung (PDF vom 19.11.2025) war nicht maschinenlesbar. Alle Kriterien stammen von der Webseite, mit dem Reglement abgleichen.",
+      "Zeitpunkt: Muss das Gesuch vor Projektbeginn eingereicht sein? Satz auf der Webseite unklar.",
+      "Ab wann gilt ein Unternehmen nicht mehr als Start-up in der Gründungsphase? Nicht definiert.",
+      "Die Webseite wurde in einer englischen Zusammenfassung gelesen, Locator sind englische Abschnittstitel.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

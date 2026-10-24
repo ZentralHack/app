@@ -1,0 +1,931 @@
+{
+  "schema_version": "2.0",
+  "id": "pronovo",
+  "name": "Einmalvergütung für Photovoltaikanlagen (Pronovo)",
+  "short_name": "Pronovo EIV",
+  "provider": {
+    "name": "Pronovo AG",
+    "unit": null,
+    "url": "https://pronovo.ch/de/foerderung/photovoltaik/"
+  },
+  "level": "bund",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "Ganze Schweiz."
+  },
+  "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. Die Vergütung deckt höchstens 30% der Investitionskosten von Referenzanlagen.",
+  "entitlement": {
+    "type": "rechtsanspruch_im_budget",
+    "note": "Einordnung unsicher: Auszahlung erfolgt laut FAQ nach Reihenfolge vollständig eingereichter Gesuche. Ausdrückliche Aussage fehlt.",
+    "source": {
+      "source_id": "faq_pv",
+      "locator": "Wartezeit"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "kleiv",
+      "name": "Kleine Einmalvergütung (KLEIV) für Photovoltaikanlagen unter 100 kW",
+      "description": "Einmaliger Investitionsbeitrag für PV-Anlagen unter 100 kW, auch für Erweiterungen bestehender Anlagen.",
+      "keywords": [
+        "KLEIV",
+        "Einmalvergütung",
+        "EIV",
+        "Pronovo",
+        "Solarförderung",
+        "PV-Förderung"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Seite zuletzt geändert am 16.07.2026.",
+        "source": {
+          "source_id": "pv",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Anlagenbetreiberin oder Anlagenbetreiber gemäss Meldung bei Pronovo."
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "erneuerbare_energie",
+          "investition"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Anlagen unter 2 kW",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Anlagen unter 2 kW"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "min_2_kw",
+          "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Wie gross ist die geplante PV-Anlage?",
+            "options": [
+              "Unter 2 kW",
+              "2 bis unter 100 kW",
+              "100 kW oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "fester_standort",
+          "text": "Die Anlage hat einen festen Standort.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "zustimmung_grundeigentuemer",
+          "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [
+            "eigentum_gebaeude"
+          ],
+          "question": {
+            "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Grundbuchauszug nicht älter als ein Jahr"
+          ],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Unterlagen"
+          },
+          "notes": null
+        },
+        {
+          "id": "unter_100_kw",
+          "text": "Die Anlage hat weniger als 100 kW. Bei grösseren Anlagen wird die Leistung über 99.9 kW in der KLEIV nicht gefördert.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "pv",
+            "locator": null
+          },
+          "notes": "Ergänzung zur Leistung über 99.9 kW laut Swissolar."
+        },
+        {
+          "id": "anlage_realisiert",
+          "text": "Die Anlage ist realisiert. Das Gesuch kann erst danach eingereicht werden.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Zeitpunkt"
+          },
+          "notes": null
+        },
+        {
+          "id": "erweiterung_2_kw",
+          "text": "Bei Erweiterungen mindestens 2 kW zusätzliche Leistung, angeschlossen an die Grundanlage.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Erweiterungen",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "Projektnummer der Grundanlage"
+          ],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Erweiterungen"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "Einmaliger Beitrag pro kW installierter Leistung, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Ansatz gemäss EnFV Anhang 2.1, nicht verifiziert",
+            "base_chf": null,
+            "amount_chf": null
+          }
+        ],
+        "max_share_of_costs_pct": 30,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [
+          {
+            "text": "Erweiterungen erhalten nur einen Leistungsbeitrag, keine Pauschale. Für Anlagen, die vor dem 1.1.2018 bereits 30 kW oder mehr hatten, besteht für die Leistung ab 30 kW kein Anspruch.",
+            "source": {
+              "source_id": "faq_pv",
+              "locator": "Erweiterungen"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Einmalige Auszahlung"
+        ],
+        "calculation_basis": "Installierte Leistung in kW",
+        "example": null,
+        "source": {
+          "source_id": "swissolar",
+          "locator": "Maximaler Anteil"
+        },
+        "note": "Konkrete Ansätze (Grund- und Leistungsbeitrag pro kW) stehen im Anhang 2.1 der Energieförderungsverordnung (EnFV) und im Tarifrechner von Pronovo, wurden aber nicht aus einer Primärquelle gelesen. Boni für Neigung über 75 Grad, Standort über 1500 m ü. M. und Parkflächen sowie erhöhte Förderung für integrierte Anlagen laut Swissolar, Beträge nicht genannt. Steuerliche Behandlung je Kanton verschieden (FAQ)."
+      },
+      "timing": {
+        "deadline": {
+          "type": "nach_abschluss",
+          "rule": "Gesuch erst nach Realisierung der Anlage. Keine Frist für die Gesuchstellung genannt.",
+          "next_dates": [],
+          "relative": {
+            "event": "inbetriebnahme",
+            "direction": "nach",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Zeitpunkt"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Wartezeit bis zur Auszahlung unter einem Jahr (Swissolar)",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll der Installateurin",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Grundbuchauszug oder gleichwertiges Dokument, nicht älter als ein Jahr",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Drei Fotos (Bauphase, Randabschlüsse, Gesamtanlage)",
+            "condition": "nur bei integrierten Anlagen",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Zahlungsinformationen (IBAN)",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Projektnummer der Grundanlage",
+            "condition": "bei Erweiterungen",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        },
+        {
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+        "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+        "form": "https://pronovo.ch/de/services/tarifrechner/"
+      },
+      "source": {
+        "source_id": "pv",
+        "locator": null
+      }
+    },
+    {
+      "id": "greiv",
+      "name": "Grosse Einmalvergütung (GREIV) für Photovoltaikanlagen ab 100 kW",
+      "description": "Einmaliger Investitionsbeitrag für PV-Anlagen ab 100 kW. Gesuch bereits vor der Realisierung möglich.",
+      "keywords": [
+        "GREIV",
+        "Einmalvergütung",
+        "EIV",
+        "Pronovo",
+        "Grosse PV-Anlage"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "pv",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Anlagenbetreiberin oder Anlagenbetreiber."
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "erneuerbare_energie",
+          "investition"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "min_2_kw",
+          "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Wie gross ist die geplante PV-Anlage?",
+            "options": [
+              "Unter 2 kW",
+              "2 bis unter 100 kW",
+              "100 kW oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "fester_standort",
+          "text": "Die Anlage hat einen festen Standort.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "zustimmung_grundeigentuemer",
+          "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [
+            "eigentum_gebaeude"
+          ],
+          "question": {
+            "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Grundbuchauszug nicht älter als ein Jahr"
+          ],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Unterlagen"
+          },
+          "notes": null
+        },
+        {
+          "id": "ab_100_kw",
+          "text": "Die Anlage hat eine Leistung ab 100 kW.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "pv",
+            "locator": null
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "Einmaliger Beitrag pro kW, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Ansatz gemäss EnFV Anhang 2.1, nicht verifiziert",
+            "base_chf": null,
+            "amount_chf": null
+          }
+        ],
+        "max_share_of_costs_pct": 30,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Einmalige Auszahlung"
+        ],
+        "calculation_basis": "Installierte Leistung in kW",
+        "example": null,
+        "source": {
+          "source_id": "swissolar",
+          "locator": "Maximaler Anteil"
+        },
+        "note": "Konkrete Ansätze (Grund- und Leistungsbeitrag pro kW) stehen im Anhang 2.1 der Energieförderungsverordnung (EnFV) und im Tarifrechner von Pronovo, wurden aber nicht aus einer Primärquelle gelesen. Boni für Neigung über 75 Grad, Standort über 1500 m ü. M. und Parkflächen sowie erhöhte Förderung für integrierte Anlagen laut Swissolar, Beträge nicht genannt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Gesuch kann bereits vor der Realisierung eingereicht werden. Die Anlage muss nicht vor einer Förderzusage erstellt werden.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Zeitpunkt"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Wartezeit bis zur Zusicherung unter einem Jahr (Swissolar)",
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll der Installateurin",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Grundbuchauszug oder gleichwertiges Dokument, nicht älter als ein Jahr",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Drei Fotos (Bauphase, Randabschlüsse, Gesamtanlage)",
+            "condition": "nur bei integrierten Anlagen",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Zahlungsinformationen (IBAN)",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Geplante Leistung, Inbetriebnahmedatum, jährliche Produktion, zukünftige Anlagengrösse und Kategorie (freistehend, angebaut, integriert)",
+            "condition": "bei Gesuch vor Realisierung",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        },
+        {
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+        "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+        "form": "https://pronovo.ch/de/services/tarifrechner/"
+      },
+      "source": {
+        "source_id": "pv",
+        "locator": null
+      }
+    },
+    {
+      "id": "heiv",
+      "name": "Hohe Einmalvergütung (HEIV) für Photovoltaikanlagen ohne Eigenverbrauch",
+      "description": "Höhere Einmalvergütung für PV-Anlagen von 2 kW bis 149.99 kW, die den gesamten Strom einspeisen.",
+      "keywords": [
+        "HEIV",
+        "Hohe Einmalvergütung",
+        "Volleinspeisung",
+        "Pronovo"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Über 150 kW Vergabe per Auktion (nicht erfasst).",
+        "source": {
+          "source_id": "pv",
+          "locator": null
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Anlagenbetreiberin oder Anlagenbetreiber."
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "erneuerbare_energie",
+          "investition"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Anlagen mit Eigenverbrauch",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Eigenverbrauch"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "min_2_kw",
+          "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Wie gross ist die geplante PV-Anlage?",
+            "options": [
+              "Unter 2 kW",
+              "2 bis unter 100 kW",
+              "100 kW oder mehr",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "fester_standort",
+          "text": "Die Anlage hat einen festen Standort.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Mindestleistung"
+          },
+          "notes": null
+        },
+        {
+          "id": "zustimmung_grundeigentuemer",
+          "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [
+            "eigentum_gebaeude"
+          ],
+          "question": {
+            "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Grundbuchauszug nicht älter als ein Jahr"
+          ],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Unterlagen"
+          },
+          "notes": null
+        },
+        {
+          "id": "ohne_eigenverbrauch",
+          "text": "Die gesamte Elektrizität wird eingespeist, kein Eigenverbrauch.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Wollen Sie den Solarstrom vollständig ins Netz einspeisen (kein Eigenverbrauch)?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Eigenverbrauch"
+          },
+          "notes": null
+        },
+        {
+          "id": "bis_149_99_kw",
+          "text": "Die Anlage hat 2 kW bis 149.99 kW.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "pv",
+            "locator": null
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "Erhöhter einmaliger Beitrag pro kW für Anlagen ohne Eigenverbrauch bis 149.99 kW. Betrag im Pronovo-Tarifrechner berechnen.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Ansatz nicht verifiziert",
+            "base_chf": null,
+            "amount_chf": null
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Einmalige Auszahlung"
+        ],
+        "calculation_basis": "Installierte Leistung in kW",
+        "example": null,
+        "source": {
+          "source_id": "swissolar",
+          "locator": "HEIV"
+        },
+        "note": "Bis 150 kW mit festgelegtem Beitrag, darüber Auktion (Swissolar). Höhe nicht aus Primärquelle belegt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Zeitpunkt der Gesuchstellung für HEIV in den gesichteten Quellen nicht genannt.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "gesuch",
+            "locator": null
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll der Installateurin",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Grundbuchauszug oder gleichwertiges Dokument, nicht älter als ein Jahr",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Drei Fotos (Bauphase, Randabschlüsse, Gesamtanlage)",
+            "condition": "nur bei integrierten Anlagen",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Zahlungsinformationen (IBAN)",
+            "condition": null,
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        },
+        {
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Frist nach Inbetriebnahme"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://pronovo.ch/de/foerderung/photovoltaik/",
+        "apply": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+        "form": "https://pronovo.ch/de/services/tarifrechner/"
+      },
+      "source": {
+        "source_id": "pv",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+    "steps": [
+      "Förderbeitrag im Tarifrechner unverbindlich berechnen",
+      "Gesuch im Pronovo Kundenportal stellen, selbst oder durch bevollmächtigte Installateurin",
+      "Unterlagen hochladen (Abnahmeprotokoll, Grundbuchauszug, IBAN, ggf. Fotos)"
+    ],
+    "note": "KLEIV erst nach Realisierung, GREIV bereits vor Realisierung.",
+    "source": {
+      "source_id": "gesuch",
+      "locator": null
+    }
+  },
+  "contacts": [
+    {
+      "name": "Pronovo AG",
+      "role": "Hotline Mo bis Fr 08.00 bis 12.00 und 13.00 bis 16.30 Uhr",
+      "email": "info@pronovo.ch",
+      "phone": "0848 014 014",
+      "url": "https://pronovo.ch/de/unternehmen/kontakt/"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Energiegesetz vom 30. September 2016 (EnG)",
+      "ref": null,
+      "url": null
+    },
+    {
+      "title": "Energieförderungsverordnung vom 1. November 2017 (EnFV)",
+      "ref": "Anhang 2.1",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2017/766/de"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pv",
+      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
+      "type": "webseite",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
+      "version": null,
+      "published": "2026-02-19",
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "gesuch",
+      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
+      "type": "webseite",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq_pv",
+      "title": "Häufige Fragen Einmalvergütung, Pronovo",
+      "type": "faq",
+      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "swissolar",
+      "title": "PV-Förderung, Swissolar",
+      "type": "webseite",
+      "url": "https://www.swissolar.ch/de/wissen/wirtschaftlichkeit/foerderung/pv-foerderung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "WICHTIG: Vergütungsansätze (CHF pro kW, Grundbeitrag, Boni) fehlen. Weder die Pronovo-Seiten noch Swissolar nennen Beträge. Anhang 2.1 EnFV oder Pronovo-Tarifrechner beschaffen. Sekundärquelle CKW nennt Werte mit Stand September 2025 und widerspricht sich, daher nicht übernommen.",
+      "Nicht erfasst: Auktionen für HEIV über 150 kW bzw. gleitende Marktprämie, Winterstrombonus, Einspeisevergütungssystem (EVS), Förderung anderer Technologien.",
+      "Zeitpunkt der Gesuchstellung bei HEIV nicht belegt.",
+      "Kumulation mit kantonaler oder kommunaler Förderung: FAQ behandelt das nicht.",
+      "Rechtsanspruch: Einordnung rechtsanspruch_im_budget nicht ausdrücklich belegt.",
+      "Swissolar ist ein Branchenverband, keine Primärquelle. Aussagen zu 30%, Wartezeiten und Boni mit EnFV abgleichen.",
+      "Hinweis zur Auszahlung in der FAQ bezieht sich auf 2025 und ist möglicherweise veraltet."
+    ]
+  }
+}

@@ -84,18 +84,28 @@ Use exactly these ids for file names, `id`, `combination_rules[].with` and test 
 |---|---|---|
 | `lib` | Luzerner Innovationsbeitrag | done |
 | `foerderprogramm-energie-lu` | Förderprogramm Energie Kanton Luzern | done (6 instruments) |
-| `innosuisse` | Innosuisse, Schweizerische Agentur für Innovationsförderung | planned |
-| `nrp-luzern` | Neue Regionalpolitik (NRP), Umsetzung Kanton Luzern | planned |
+| `innosuisse` | Innosuisse, Schweizerische Agentur für Innovationsförderung | draft (6 instruments) |
+| `nrp-luzern` | Neue Regionalpolitik (NRP), Umsetzung Kanton Luzern | draft (thin: Arbeitshilfe, deadlines and contact missing) |
 | `startup-luzern` | Startup-Förderung der Standortförderung Kanton Luzern | planned |
-| `itz` | InnovationsTransfer Zentralschweiz (ITZ) | planned |
-| `bg-mitte` | Bürgschaftsgenossenschaft Mitte (BG Mitte) | planned |
-| `serv` | Schweizerische Exportrisikoversicherung (SERV) | planned |
+| `itz` | InnovationsTransfer Zentralschweiz (ITZ) | draft |
+| `bg-mitte` | Bürgschaftsgenossenschaft Mitte (BG Mitte) | draft |
+| `serv` | Schweizerische Exportrisikoversicherung (SERV) | draft |
 | `s-ge` | Switzerland Global Enterprise (S-GE) | planned |
-| `innotour` | Innotour (SECO) | planned |
-| `pronovo` | Pronovo, Einmalvergütung für Photovoltaikanlagen | planned, only if the LU energy program does not cover PV for companies |
-| `klimastiftung-schweiz` | Klimastiftung Schweiz | candidate |
+| `innotour` | Innotour (SECO) | draft |
+| `pronovo` | Pronovo, Einmalvergütung für Photovoltaikanlagen | draft (3 instruments, rates per kW still missing) |
+| `klimastiftung-schweiz` | Klimastiftung Schweiz | draft |
 | `gemeinde-<name>` | One offer of a Luzern Gemeinde, e.g. `gemeinde-emmen` | candidate |
-| `steuerliche-innovationsfoerderung-lu` | Patentbox and R&D super-deduction, Kanton Luzern | reserved: referenced in `lib.json`, no file planned |
+| `gemeinde-luzern` | Förderprogramm Energie Stadt Luzern (Energiefonds, Förderhandbuch 2026) | draft (5 instruments) |
+| `steuerliche-innovationsfoerderung-lu` | Patentbox and R&D super-deduction, Kanton Luzern | draft (Patentbox only, R&D deduction currently 0%) |
+| `technologiefonds` | Technologiefonds (BAFU), Bürgschaften für Klimainnovationen | draft |
+| `sgh` | Schweizerische Gesellschaft für Hotelkredit (SGH) | draft (Luzern funding perimeter unclear) |
+| `saffa` | Bürgschaftsgenossenschaft SAFFA (Unternehmerinnen) | draft |
+| `peik` | PEIK, Energieberatung für KMU (EnergieSchweiz) | draft |
+| `prokilowatt` | ProKilowatt, Stromeffizienz (BFE) | draft |
+| `eic-accelerator` | EIC Accelerator (Horizon Europe) | draft |
+| `berghilfe` | Schweizer Berghilfe | draft |
+| `umwelttechnologiefoerderung` | Umwelttechnologieförderung (BAFU) | draft |
+| `bfe-pilot-demonstration` | Pilot-, Demonstrations- und Leuchtturmprogramm (BFE) | draft (thin: FAQ only) |
 
 Instrument ids are chosen per file (kebab-case, unique within the program).
 - Known open question: LIB FAQ says the R&D tax deduction and LIB can't be combined; Handbuch N 136–141 says the tax saving is deducted. Ask the canton.

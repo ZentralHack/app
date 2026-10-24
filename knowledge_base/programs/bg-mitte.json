@@ -1,0 +1,445 @@
+{
+  "schema_version": "2.0",
+  "id": "bg-mitte",
+  "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+  "short_name": "BG Mitte",
+  "provider": {
+    "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+    "unit": null,
+    "url": "https://www.bgm-ccc.ch/"
+  },
+  "level": "region",
+  "scope": {
+    "cantons": [
+      "BE",
+      "JU",
+      "SO",
+      "AG",
+      "BS",
+      "BL",
+      "LU",
+      "OW",
+      "NW"
+    ],
+    "municipalities": [],
+    "note": "Kanton Aargau nur Fricktal."
+  },
+  "purpose": "BG Mitte verbürgt Bankkredite von KMU für Investitionen, Wachstum, Nachfolge und Gründung, wenn Eigenkapital oder Sicherheiten fehlen. Sie ist eine vom Bund anerkannte Bürgschaftsgenossenschaft.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Der Ausschuss der BG Mitte entscheidet über Annahme oder Ablehnung.",
+    "source": {
+      "source_id": "sogehts",
+      "locator": "Schritt 3"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "ordentliche-buergschaft",
+      "name": "Ordentliche Bürgschaft für Bankkredite",
+      "description": "BG Mitte verbürgt Bankkredite von KMU, wenn das Eigenkapital nicht reicht und die Bank Sicherheiten verlangt. Sie gewährt keine Darlehen selbst.",
+      "keywords": [
+        "Bürgschaft",
+        "BG Mitte",
+        "Bürgschaftsgenossenschaft",
+        "KMU-Bürgschaft",
+        "Kreditsicherheit"
+      ],
+      "instrument_type": "buergschaft",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Gesuche laufend, Gesuchsformular auf der Webseite.",
+        "source": {
+          "source_id": "sogehts",
+          "locator": "Schritt 1"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Der Bürgschein geht direkt an die kreditgebende Bank. Das KMU erhält den verbürgten Bankkredit."
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "startup"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "nachfolge",
+          "wachstum",
+          "investition",
+          "gruendung",
+          "finanzierung",
+          "gebaeudesanierung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "verwendungszwecke",
+          "name": "Verwendungszwecke",
+          "definition": "Betriebsübernahmen und Nachfolgeregelungen, Betriebserweiterungen und Wachstum, Investitionen, Bau oder Kauf betrieblich genutzter Liegenschaften, Startup-Finanzierungen.",
+          "examples_positive": [
+            "Liquidität",
+            "Investitionen in mobile Anlagen",
+            "Nachhaltige Sanierungen",
+            "Abspaltungen"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Verwendungszwecke"
+          }
+        }
+      ],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "taetigkeitsgebiet",
+          "text": "Der Betrieb liegt im Tätigkeitsgebiet der BG Mitte: BE, JU, SO, AG (nur Fricktal), BS, BL, LU, OW, NW.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "In welchem Kanton liegt Ihr Betrieb?",
+            "options": [
+              "Luzern",
+              "Anderer Kanton im Gebiet der BG Mitte",
+              "Anderer Kanton",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "webseite",
+            "locator": "Kantone"
+          },
+          "notes": "Ob Sitz oder Betriebsstandort massgebend ist, nennt die Quelle nicht."
+        },
+        {
+          "id": "bankkredit",
+          "text": "Es wird ein Bankkredit benötigt, für den die Bank Sicherheiten verlangt.",
+          "kind": "muss",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner",
+            "budget"
+          ],
+          "question": {
+            "text": "Brauchen Sie einen Bankkredit, für den die Bank Sicherheiten verlangt?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "faq",
+            "locator": "Hinweis: nur Bürgschaften für Bankkredite"
+          },
+          "notes": "BG Mitte gewährt keine Darlehen direkt."
+        },
+        {
+          "id": "kreditwuerdigkeit",
+          "text": "Positive Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "umsatz"
+          ],
+          "question": null,
+          "evidence": [
+            "Bilanz und Erfolgsrechnung der letzten drei Jahre",
+            "Budget und Finanzplanung"
+          ],
+          "source": {
+            "source_id": "faq",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "integre_fuehrung",
+          "text": "Betriebsführung durch eine integre, fachlich qualifizierte Person.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "Aktuelle Betreibungsauskunft"
+          ],
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "risikoverteilung",
+          "text": "Ausgewogene Risikoverteilung zwischen Eigentümerin oder Eigentümer, Bank und BG Mitte.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "rueckbuergschaft",
+          "text": "Rückbürgschaft der Inhaberin oder des Inhabers, auf mehrere Beteiligte verteilbar.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": "Nur bei juristischen Personen",
+          "profile_fields": [
+            "rechtsform"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Voraussetzungen"
+          },
+          "notes": null
+        },
+        {
+          "id": "todesfallversicherung",
+          "text": "Todesfallrisikoversicherung.",
+          "kind": "soll",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Voraussetzungen"
+          },
+          "notes": "Laut Quelle in der Regel verlangt."
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Bürgschaft für einen Bankkredit bis maximal CHF 1 Mio., Amortisation bis 10 Jahre.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 1000000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Bürgschein direkt an die Bank"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "ordentlich",
+          "locator": "Maximaler Bürgschaftsbetrag und Kosten"
+        },
+        "note": "Risikoprämie 1.25% pro Jahr auf dem verbürgten Betrag. Gesuchsprüfungskosten einmalig 1%, mindestens CHF 500, höchstens CHF 2'000. Kostenvorschuss CHF 300, wird angerechnet. Bei Ablehnung keine Kosten (FAQ). Amortisation in der Regel 5 bis 10 Jahre. Sicherheiten: bei Kapitalgesellschaften Todesfallrisikopolice, Rückbürgschaft und/oder Grundpfand (FAQ). Bankzins zusätzlich."
+      },
+      "timing": {
+        "deadline": {
+          "type": "laufend",
+          "rule": "Gesuch jederzeit mit Unterlagen einreichen.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "sogehts",
+            "locator": "Schritt 1"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Ausschuss entscheidet innert 5 Arbeitstagen nach dem Prüfungsbericht. In der Regel rund zwei Wochen nach Gesuch, bei komplexen Finanzierungen länger (FAQ).",
+        "max_duration_months": 120,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Ausgefülltes Bürgschaftsgesuch (Gesuchsformular)",
+            "condition": null,
+            "source": {
+              "source_id": "sogehts",
+              "locator": "Schritt 1"
+            }
+          },
+          {
+            "name": "Finanzierungszweck und -struktur",
+            "condition": null,
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Aktuelle Betreibungsauskunft",
+            "condition": null,
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Bilanz und Erfolgsrechnung der letzten drei Jahre, ggf. Revisionsbericht oder Zwischenabschluss",
+            "condition": null,
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Budget und Finanzplanung",
+            "condition": null,
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Unterlagen"
+            }
+          },
+          {
+            "name": "Aufstellung der privaten Vermögensverhältnisse",
+            "condition": null,
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Unterlagen"
+            }
+          }
+        ],
+        "completion": [
+          {
+            "name": "Unterzeichneter Bürgschaftsvertrag und verlangte Unterlagen",
+            "condition": null,
+            "source": {
+              "source_id": "sogehts",
+              "locator": "Schritt 4"
+            }
+          }
+        ]
+      },
+      "obligations": [
+        {
+          "text": "Risikoprämie von 1.25% pro Jahr bezahlen.",
+          "source": {
+            "source_id": "ordentlich",
+            "locator": "Kosten"
+          }
+        }
+      ],
+      "levers": [],
+      "links": {
+        "info": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+        "apply": "https://www.bgm-ccc.ch/vorab-check",
+        "form": "https://www.bgm-ccc.ch/fileadmin/Dokumente/Downloads/gesuchsformular_de.pdf"
+      },
+      "source": {
+        "source_id": "ordentlich",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "mixed",
+    "url": "https://www.bgm-ccc.ch/so-gehts",
+    "steps": [
+      "Optional: Vorab-Check auf der Webseite",
+      "Ausgefülltes Bürgschaftsgesuch mit Unterlagen einreichen, Vorauszahlung CHF 300",
+      "Prüfung mit Gesprächen mit Bank und Unternehmen, Betriebsbesuch, Prüfungsbericht",
+      "Entscheid des Ausschusses innert 5 Arbeitstagen",
+      "Bürgschaftsvertrag unterzeichnen, Unterlagen einreichen, Kosten bezahlen",
+      "BG Mitte sendet den Bürgschein an die Bank"
+    ],
+    "note": "Das Gesuch stellt das Unternehmen, die Bank wird in die Prüfung einbezogen.",
+    "source": {
+      "source_id": "sogehts",
+      "locator": "Schritte 1 bis 4"
+    }
+  },
+  "contacts": [
+    {
+      "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+      "role": "Bahnhofstrasse 59D, 3401 Burgdorf",
+      "email": "info@bgm-ccc.ch",
+      "phone": "034 420 20 20",
+      "url": "https://www.bgm-ccc.ch/kontakt"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "webseite",
+      "title": "BG Mitte, Startseite",
+      "type": "webseite",
+      "url": "https://www.bgm-ccc.ch/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "ordentlich",
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "type": "webseite",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "sogehts",
+      "title": "So geht's, BG Mitte",
+      "type": "webseite",
+      "url": "https://www.bgm-ccc.ch/so-gehts",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "FAQ, BG Mitte",
+      "type": "faq",
+      "url": "https://www.bgm-ccc.ch/faq",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Nicht erfasst: AVIG-Bürgschaften und Covid-19-Kredite (Unterseiten nicht gesichtet).",
+      "Rechtsgrundlage (Bundesgesetz über die Finanzhilfen an Bürgschaftsorganisationen für KMU) nicht aus einer gelieferten Quelle belegt, daher legal_basis leer.",
+      "Beitrag des Kantons Luzern an die BG Mitte nicht aus gelieferter Quelle belegt.",
+      "Massgebend für das Tätigkeitsgebiet: Sitz oder Betriebsstandort?",
+      "Rückbürgschaft und Sicherheiten: Webseite (ordentliche Bürgschaft) und FAQ formulieren leicht verschieden.",
+      "FAQ nur als Zusammenfassung gelesen, Wortlaut prüfen. Quellen nicht lokal abgelegt."
+    ]
+  }
+}

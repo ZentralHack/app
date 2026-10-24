@@ -1,0 +1,336 @@
+{
+  "schema_version": "2.0",
+  "id": "nrp-luzern",
+  "name": "Neue Regionalpolitik (NRP) Kanton Luzern 2024 bis 2027",
+  "short_name": "NRP Luzern",
+  "provider": {
+    "name": "Kanton Luzern",
+    "unit": "Dienststelle Raum und Wirtschaft (rawi)",
+    "url": null
+  },
+  "level": "kanton",
+  "scope": {
+    "cantons": [
+      "LU"
+    ],
+    "municipalities": [],
+    "note": "Perimeter in Kapitel 7 des Umsetzungsprogramms, nicht gesichtet. Regionale Entwicklungsträger decken 80 Luzerner Gemeinden ab."
+  },
+  "purpose": "Die NRP fördert mit Bundes- und Kantonsmitteln Projekte, die Unternehmertum, Innovation und Wertschöpfung in den Luzerner Regionen stärken.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Einordnung: Förderung über Leistungsvereinbarungen, keine ausdrückliche Aussage.",
+    "source": {
+      "source_id": "up",
+      "locator": "S. 5"
+    }
+  },
+  "budget": null,
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "nrp-projektfoerderung",
+      "name": "NRP-Projektförderung Kanton Luzern",
+      "description": "À-fonds-perdu-Beiträge von Bund und Kanton an Projekte der Standortentwicklung, des Tourismus und der Regionalentwicklung gemäss Umsetzungsprogramm 2024 bis 2027.",
+      "keywords": [
+        "NRP",
+        "Neue Regionalpolitik",
+        "Regionalentwicklung",
+        "Kleinstinfrastrukturen",
+        "RET"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Umsetzungsprogramm 2024 bis 2027.",
+        "source": {
+          "source_id": "up",
+          "locator": "Titel"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Projektträgerschaft"
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "gemeinde",
+          "verein_stiftung"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "regionalentwicklung",
+          "tourismus",
+          "digitalisierung",
+          "gruendung",
+          "machbarkeitsstudie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [
+        {
+          "id": "schwerpunkte",
+          "name": "Förderschwerpunkte",
+          "definition": "Standortentwicklung (Kooperationen, Fachkräfte, Start-ups, Digitalisierung, wirtschaftliche Vorranggebiete), Tourismus, Regionalentwicklung (Ortskerne, Baukultur, regionale Wirtschaftskreisläufe).",
+          "examples_positive": [
+            "Kleinst- und Vorprojekte",
+            "Machbarkeitsstudien",
+            "Kleinstinfrastrukturen"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 30-35"
+          }
+        }
+      ],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "passt_schwerpunkt",
+          "text": "Das Projekt passt zu einem Förderschwerpunkt des Umsetzungsprogramms (Standortentwicklung, Tourismus, Regionalentwicklung).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": {
+            "text": "Worum geht es in Ihrem Projekt?",
+            "options": [
+              "Zusammenarbeit mehrerer Betriebe",
+              "Tourismusangebot",
+              "Ortskern oder Region stärken",
+              "Etwas anderes"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 30-35"
+          },
+          "notes": null
+        },
+        {
+          "id": "ueberbetrieblich",
+          "text": "Überbetriebliche Kooperationen und Unternehmensnetzwerke stehen im Vordergrund.",
+          "kind": "soll",
+          "about": "partner",
+          "applies_if": null,
+          "profile_fields": [
+            "partner"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 30"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenmittel",
+          "text": "Relevante finanzielle Eigenmittel der Projektträger.",
+          "kind": "soll",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 16"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigenwirtschaftlichkeit",
+          "text": "Ausrichtung auf Eigenwirtschaftlichkeit und breite Trägerschaft.",
+          "kind": "soll",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 16"
+          },
+          "notes": null
+        },
+        {
+          "id": "wirkungsziele",
+          "text": "Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in einer Leistungsvereinbarung.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 5 und S. 16"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "À-fonds-perdu-Beiträge je nach Projekt. Kleinstinfrastrukturen bis CHF 100'000 pro Projekt, je zur Hälfte Bund und Kanton.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Projekt",
+            "condition": "Kleinstinfrastrukturen",
+            "base_chf": null,
+            "amount_chf": 100000
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "À-fonds-perdu-Beitrag"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "up",
+          "locator": "S. 7 und S. 16"
+        },
+        "note": "Allgemeiner Höchstanteil und Darlehen werden im Umsetzungsprogramm nicht genannt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "unbekannt",
+          "rule": "Antragsverfahren gemäss NRP-Arbeitshilfe, nicht gesichtet.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "up",
+            "locator": "S. 8"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [
+        {
+          "text": "Leistungsvereinbarung mit Wirkungs- und Leistungszielen einhalten.",
+          "source": {
+            "source_id": "up",
+            "locator": "S. 5"
+          }
+        }
+      ],
+      "levers": [
+        {
+          "text": "Projekt mit mehreren Betrieben oder Partnern aufziehen",
+          "affects_criteria": [
+            "ueberbetrieblich"
+          ],
+          "source": {
+            "source_id": "up",
+            "locator": "S. 30"
+          }
+        }
+      ],
+      "links": {
+        "info": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+        "apply": null,
+        "form": null
+      },
+      "source": {
+        "source_id": "up",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "innotour",
+      "type": "bedingt",
+      "text": "Kumulation mit Innotour nur ausnahmsweise, Innotour und NRP zusammen höchstens 50% der Gesamtkosten.",
+      "source": {
+        "source_id": "innotour_faq",
+        "locator": "Kumulation mit der NRP"
+      }
+    }
+  ],
+  "application": {
+    "channel": "other",
+    "url": null,
+    "steps": [
+      "Kontakt mit dem regionalen Entwicklungsträger (RET) für Projektentwicklung",
+      "Gesuch gemäss NRP-Arbeitshilfe"
+    ],
+    "note": "Die RET übernehmen Projektmanagement und Projektentwicklung in den Regionen.",
+    "source": {
+      "source_id": "up",
+      "locator": "S. 28"
+    }
+  },
+  "contacts": [],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über Regionalpolitik",
+      "ref": null,
+      "url": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "up",
+      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
+      "type": "reglement",
+      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "innotour_faq",
+      "title": "FAQ zur Innotourförderung, SECO",
+      "type": "faq",
+      "url": "https://www.seco.admin.ch/de/innotour-faq",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "WICHTIG: Gesuchsverfahren, Fristen, Höchstanteile und Kontaktstelle fehlen. Aktualisierte NRP-Arbeitshilfe 2024-2027 und Webseite des Kantons beschaffen.",
+      "Perimeter (Kapitel 7) nicht gesichtet: Ist die Stadt Luzern bzw. Agglomeration ausgeschlossen?",
+      "Ob einzelbetriebliche Förderung möglich ist, regelt das Umsetzungsprogramm nicht ausdrücklich.",
+      "Nicht erfasst: RIS Zentralschweiz und interkantonale Tourismusprojekte (Teil des Programms).",
+      "Rechtsgrundlage nicht aus Quelle belegt.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

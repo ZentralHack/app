@@ -1,0 +1,313 @@
+{
+  "schema_version": "2.0",
+  "id": "eic-accelerator",
+  "name": "EIC Accelerator (Horizon Europe)",
+  "short_name": "EIC Accelerator",
+  "provider": {
+    "name": "European Innovation Council (EIC)",
+    "unit": "EISMEA",
+    "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en"
+  },
+  "level": "international",
+  "scope": {
+    "cantons": [],
+    "municipalities": [],
+    "note": "EU-Mitgliedstaaten und mit Horizon Europe assoziierte Länder, darunter die Schweiz seit 2025."
+  },
+  "purpose": "Der EIC Accelerator finanziert Start-ups und KMU mit bahnbrechenden Innovationen bis zur Marktreife und Skalierung, mit Grant und Investition.",
+  "entitlement": {
+    "type": "wettbewerb",
+    "note": "Mehrstufige Auswahl mit Jury-Interview.",
+    "source": {
+      "source_id": "eic",
+      "locator": "Application steps"
+    }
+  },
+  "budget": {
+    "annual_chf": null,
+    "year": 2026,
+    "oversubscription": "auswahl",
+    "note": "2026: EUR 414 Mio. Accelerator Open, EUR 220 Mio. Challenges.",
+    "source": {
+      "source_id": "eic",
+      "locator": "Budgets for 2026"
+    }
+  },
+  "general_criteria": [],
+  "general_exclusions": [],
+  "instruments": [
+    {
+      "id": "eic-accelerator",
+      "name": "EIC Accelerator (Grant und Investition)",
+      "description": "Förderung des European Innovation Council für Start-ups und KMU mit bahnbrechenden Innovationen: Grant als Pauschalbetrag und/oder Eigenkapitalinvestition.",
+      "keywords": [
+        "EIC Accelerator",
+        "Horizon Europe",
+        "European Innovation Council",
+        "EU-Förderung"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": "2026-11-04",
+        "note": "Short Proposals laufend, Full Proposals an Stichtagen.",
+        "source": {
+          "source_id": "eic",
+          "locator": "2026 batching dates"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "startup",
+          "kmu",
+          "unternehmen",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "entwicklung",
+          "prototyp",
+          "wachstum",
+          "finanzierung"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "kmu_startup",
+          "text": "Einzelnes Start-up oder KMU (inkl. Spin-off). Small Mid-Caps bis 499 Mitarbeitende nur für Investition. Natürliche Personen, die ein KMU gründen wollen, sind zugelassen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende",
+            "rechtsform"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "eic",
+            "locator": "Who can apply"
+          },
+          "notes": null
+        },
+        {
+          "id": "sitz_assoziiertes_land",
+          "text": "Sitz in einem EU-Mitgliedstaat oder einem mit Horizon Europe assoziierten Land. Die Schweiz ist seit 1. Januar 2025 assoziiert.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_kanton"
+          ],
+          "question": {
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder einem EU-Land?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "euresearch",
+            "locator": "Associated since"
+          },
+          "notes": null
+        },
+        {
+          "id": "trl_6_8",
+          "text": "Grant-Aktivitäten auf Technologiereifegrad TRL 6 bis 8, abgeschlossen innert 24 Monaten.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "eic",
+            "locator": "Funding amounts"
+          },
+          "notes": null
+        },
+        {
+          "id": "ein_antrag",
+          "text": "Nur ein Antrag pro EIC-Accelerator-Call gleichzeitig.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "eic",
+            "locator": "Who can apply"
+          },
+          "notes": null
+        },
+        {
+          "id": "auswahl_jury",
+          "text": "Auswahl über Short Proposal, Full Proposal und Interview vor einer EIC-Jury.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "eic",
+            "locator": "Application steps"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "Grant als Pauschalbetrag unter EUR 2.5 Mio. und/oder Investition von EUR 1 bis 10 Mio. als Eigenkapital oder Quasi-Eigenkapital.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Grant (Pauschalbetrag)",
+          "Eigenkapital oder Quasi-Eigenkapital",
+          "Blended Finance"
+        ],
+        "calculation_basis": null,
+        "example": null,
+        "source": {
+          "source_id": "eic",
+          "locator": "Funding amounts"
+        },
+        "note": "Beträge in EUR, daher nicht in den CHF-Feldern. Bei Blended Finance in Schritt 4 Erhöhung um bis zu EUR 2 Mio. verhandelbar. Projekte ab Programmjahr 2025 werden direkt von der EU-Kommission finanziert (Euresearch)."
+      },
+      "timing": {
+        "deadline": {
+          "type": "ausschreibung",
+          "rule": "Short Proposals werden am ersten Dienstag jedes Monats gebündelt. Full Proposals an Stichtagen, 17 Uhr Brüssel.",
+          "next_dates": [
+            "2026-11-04"
+          ],
+          "relative": null,
+          "source": {
+            "source_id": "eic",
+            "locator": "2026 batching dates"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "Short Proposal 4 bis 6 Wochen, Full Proposal 8 bis 9 Wochen, Interview 2 bis 3 Wochen, Due Diligence 2 bis 6 Monate",
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": "Stichtage 2027 noch nicht publiziert."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Short Proposal: Formular 12 Seiten, Pitch Deck bis 10 Folien, Video bis 3 Minuten",
+            "condition": null,
+            "source": {
+              "source_id": "eic",
+              "locator": "Application steps"
+            }
+          },
+          {
+            "name": "Full Proposal: Formular 20 Seiten, Pitch Deck, Umsetzungsplan, Finanzangaben, Absichtserklärungen, FTO-Analyse, Video",
+            "condition": null,
+            "source": {
+              "source_id": "eic",
+              "locator": "Application steps"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+        "apply": null,
+        "form": "https://eic.ec.europa.eu/document/download/52598755-1351-4b54-b46b-e2682d0a3aec_en?filename=EIC-Work-Programme-2026.pdf"
+      },
+      "source": {
+        "source_id": "eic",
+        "locator": null
+      }
+    }
+  ],
+  "combination_rules": [],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+    "steps": [
+      "Short Proposal",
+      "Full Proposal",
+      "Interview mit EIC-Jury",
+      "Grant-Vertrag bzw. Due Diligence für Investition"
+    ],
+    "note": null,
+    "source": {
+      "source_id": "eic",
+      "locator": "Application steps"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Euresearch",
+      "role": "Status der Schweiz in Horizon Europe",
+      "email": null,
+      "phone": null,
+      "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "eic",
+      "title": "EIC Accelerator, European Innovation Council",
+      "type": "webseite",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    },
+    {
+      "id": "euresearch",
+      "title": "Status of Switzerland in Horizon Europe, Euresearch",
+      "type": "webseite",
+      "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Euresearch bestätigt die Assoziierung ab 2025 allgemein, erwähnt den EIC Accelerator (insbesondere die Investitionskomponente) aber nicht ausdrücklich. Beim SBFI oder Euresearch klären.",
+      "Stichtage 2027 nicht publiziert.",
+      "Beträge in EUR, Schema kennt nur CHF-Felder.",
+      "Contacts: Euresearch ist als Anlaufstelle für die Schweiz eingetragen, die Quelle nennt aber keine E-Mail.",
+      "Quellen nicht lokal abgelegt."
+    ]
+  }
+}

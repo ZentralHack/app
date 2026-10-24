@@ -1,0 +1,1131 @@
+{
+  "schema_version": "2.0",
+  "id": "gemeinde-luzern",
+  "name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+  "short_name": "Energiefonds Stadt Luzern",
+  "provider": {
+    "name": "Stadt Luzern",
+    "unit": "Dienstabteilung Umweltschutz",
+    "url": "https://www.stadtluzern.ch/_rte/publikation/420010"
+  },
+  "level": "gemeinde",
+  "scope": {
+    "cantons": [
+      "LU"
+    ],
+    "municipalities": [
+      "Luzern"
+    ],
+    "note": "Gebäude, Anlage oder Projekt in der Stadt Luzern."
+  },
+  "purpose": "Die Stadt Luzern fördert aus dem Energiefonds Heizungsersatz, Solarstrom, E-Mobilität, Abwärmenutzung, Gebäudehülle und Analysen, zusätzlich zu kantonalen und nationalen Beiträgen.",
+  "entitlement": {
+    "type": "kein_rechtsanspruch",
+    "note": "Kein Rechtsanspruch. Bei knappen Mitteln werden neue Projekte priorisiert.",
+    "source": {
+      "source_id": "handbuch",
+      "locator": "Kap. 3, Punkte 6 und 7"
+    }
+  },
+  "budget": {
+    "annual_chf": null,
+    "year": 2026,
+    "oversubscription": "auswahl",
+    "note": "Priorisierung neuer Projekte bei knappen Mitteln.",
+    "source": {
+      "source_id": "handbuch",
+      "locator": "Kap. 3, Punkt 7"
+    }
+  },
+  "general_criteria": [
+    {
+      "id": "in_stadt_luzern",
+      "text": "Gebäude, Anlage oder Projekt befinden sich in der Stadt Luzern.",
+      "kind": "muss",
+      "about": "ort",
+      "applies_if": null,
+      "profile_fields": [
+        "standort_gemeinde"
+      ],
+      "question": {
+        "text": "Liegt das Gebäude in der Stadt Luzern?",
+        "options": [
+          "Ja",
+          "Nein",
+          "Weiss nicht"
+        ]
+      },
+      "evidence": [],
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 3, Punkt 1"
+      },
+      "notes": null
+    },
+    {
+      "id": "gesuch_vor_realisierung",
+      "text": "Gesuch vor Baubeginn bzw. Realisierung, nachträgliche Förderung ausgeschlossen.",
+      "kind": "muss",
+      "about": "zeit",
+      "applies_if": null,
+      "profile_fields": [
+        "projektstart"
+      ],
+      "question": {
+        "text": "Haben die Arbeiten schon begonnen?",
+        "options": [
+          "Nein",
+          "Ja",
+          "Weiss nicht"
+        ]
+      },
+      "evidence": [],
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 3, Punkt 2"
+      },
+      "notes": null
+    },
+    {
+      "id": "drittbeitraege_offenlegen",
+      "text": "Beiträge Dritter werden im Gesuch offengelegt.",
+      "kind": "muss",
+      "about": "dokumente",
+      "applies_if": null,
+      "profile_fields": [],
+      "question": null,
+      "evidence": [],
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 3, Punkt 3"
+      },
+      "notes": null
+    }
+  ],
+  "general_exclusions": [
+    {
+      "text": "Unvollständige Gesuche werden ohne weitere Bearbeitung retourniert.",
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 3, Punkt 11"
+      }
+    }
+  ],
+  "instruments": [
+    {
+      "id": "heizungsersatz",
+      "name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
+      "description": "Beiträge der Stadt Luzern an Wärmepumpen und Wärmenetzanschlüsse, zusätzlich zu kantonalen Beiträgen.",
+      "keywords": [
+        "Energiefonds Stadt Luzern",
+        "Wärmepumpe Stadt Luzern",
+        "Fernwärme Stadt Luzern"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Förderhandbuch 2026.",
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Deckblatt"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft. Das ausführende Unternehmen kann mit der Abwicklung beauftragt werden."
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "heizungsersatz",
+          "erneuerbare_energie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "waermenetzgebiet",
+          "text": "Liegt die Liegenschaft in einem Wärmenetzgebiet und wird ein Anschluss angeboten, gibt es keinen städtischen Beitrag für die Wärmepumpe.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": "Nur bei Wärmepumpen",
+          "profile_fields": [
+            "standort_gemeinde"
+          ],
+          "question": {
+            "text": "Liegt Ihre Liegenschaft in einem Gebiet mit Wärmenetz-Angebot?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.2, Punkt 3"
+          },
+          "notes": null
+        },
+        {
+          "id": "oekostrom_wp",
+          "text": "Ab Inbetriebnahme wird ein ökologisches Stromprodukt bezogen.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Wärmepumpen",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.2, Punkt 4"
+          },
+          "notes": null
+        },
+        {
+          "id": "warmwasser_anbinden",
+          "text": "Das Warmwasser wird an die neue Wärmeerzeugung angebunden, sofern es nicht erneuerbar aufbereitet wird.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Wärmenetzanschluss",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.1, Punkt 2"
+          },
+          "notes": null
+        },
+        {
+          "id": "geak_ab_10000",
+          "text": "GEAK D, GEAK Plus oder Minergie-Zertifikat.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": "Nur wenn die Beiträge CHF 10'000 übersteigen",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "GEAK D, GEAK Plus oder Minergie-Zertifikat"
+          ],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.1 und 6.2, Punkt 5"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "gestaffelt",
+        "summary": "Wärmepumpe Luft/Wasser ab CHF 4'000, Sole/Wasser ab CHF 8'500, Wärmenetzanschluss ab CHF 4'100. Natürliche Kältemittel plus 10%.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Anlage (pauschal)",
+            "condition": "Luft/Wasser-Wärmepumpe bis 15 kW",
+            "base_chf": 4000,
+            "amount_chf": null
+          },
+          {
+            "unit": "kWth",
+            "condition": "Luft/Wasser-Wärmepumpe ab 15 kW",
+            "base_chf": 2500,
+            "amount_chf": 100
+          },
+          {
+            "unit": "Anlage (pauschal)",
+            "condition": "Sole/Wasser- oder Wasser/Wasser-Wärmepumpe bis 15 kW",
+            "base_chf": 8500,
+            "amount_chf": null
+          },
+          {
+            "unit": "kWth",
+            "condition": "Sole/Wasser- oder Wasser/Wasser-Wärmepumpe ab 15 kW",
+            "base_chf": 4000,
+            "amount_chf": 300
+          },
+          {
+            "unit": "Anschluss (pauschal)",
+            "condition": "Wärmenetzanschluss bis 15 kW",
+            "base_chf": 4100,
+            "amount_chf": null
+          },
+          {
+            "unit": "kWth",
+            "condition": "Wärmenetzanschluss ab 15 kW",
+            "base_chf": 3500,
+            "amount_chf": 40
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [
+          {
+            "text": "Die Summe aller Förderbeiträge (Stadt, Kanton, Bund) darf die Investitionssumme nicht übersteigen.",
+            "source": {
+              "source_id": "handbuch",
+              "locator": "Kap. 3, Punkt 4"
+            }
+          }
+        ],
+        "payout_forms": [
+          "Auszahlung nach Einreichung der Abschlussbeilagen"
+        ],
+        "calculation_basis": "Thermische Leistung in kW",
+        "example": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 6.1 und 6.2"
+        },
+        "note": "Natürliche Kältemittel erhöhen den Wärmepumpenbeitrag um 10%."
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Baubeginn digital einreichen.",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 3, Punkt 2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel innerhalb eines Monats per E-Mail",
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": "Beitrag verfällt 24 Monate nach Zusicherung."
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
+        "apply": "https://portal.energie-foerderung.ch/sl",
+        "form": null
+      },
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 6"
+      }
+    },
+    {
+      "id": "desinvestitionsbeitrag",
+      "name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
+      "description": "50% des Restwerts einer weniger als 10 Jahre alten Öl- oder Gasheizung, die stillgelegt und durch Wärmenetz oder Wärmepumpe ersetzt wird.",
+      "keywords": [
+        "Desinvestitionsbeitrag",
+        "Restwert Ölheizung",
+        "Gasheizung ersetzen"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 6.3"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft"
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "heizungsersatz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "heizung_unter_10_jahre",
+          "text": "Die Öl- oder Gasheizung ist jünger als 10 Jahre (Stichtag Inbetriebnahme der neuen Anlage).",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "bestehende_heizung"
+          ],
+          "question": {
+            "text": "Wie alt ist Ihre Öl- oder Gasheizung?",
+            "options": [
+              "Jünger als 10 Jahre",
+              "10 Jahre oder älter",
+              "Keine Öl- oder Gasheizung",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.3"
+          },
+          "notes": null
+        },
+        {
+          "id": "ersatz_wn_wp",
+          "text": "Die fossile Heizung wird stillgelegt und durch Wärmenetzanschluss oder Wärmepumpe ersetzt.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "bestehende_heizung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.3, Punkt 1"
+          },
+          "notes": null
+        },
+        {
+          "id": "grossanlagen_individuell",
+          "text": "Kessel ab 500 kW sowie gewerbliche, industrielle oder landwirtschaftliche Anlagen werden individuell beurteilt.",
+          "kind": "soll",
+          "about": "objekt",
+          "applies_if": "Nur bei Kesseln ab 500 kW oder gewerblichen Anlagen",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.3, Punkt 4"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "individuell",
+        "summary": "50% des Restwerts der fossilen Heizung, Restwert linear über 20 Jahre abgeschrieben.",
+        "cost_categories": [],
+        "units": [],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Auszahlung nach Abschluss"
+        ],
+        "calculation_basis": "Standardisierter Restwert, linear über 20 Jahre",
+        "example": "Baujahr 2018, Inbetriebnahme 2025 ergibt 8 Jahre Kesselalter.",
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 6.3"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Baubeginn.",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 3, Punkt 2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel innerhalb eines Monats",
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
+        "apply": "https://portal.energie-foerderung.ch/sl",
+        "form": null
+      },
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 6.3"
+      }
+    },
+    {
+      "id": "photovoltaik",
+      "name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
+      "description": "20% der Einmalvergütung und der Zuschläge des Bundes (Pronovo) zusätzlich, plus Zuschläge für Gründach, steile Anlagen und blendarme Module.",
+      "keywords": [
+        "Solarförderung Stadt Luzern",
+        "PV Stadt Luzern",
+        "Gründach PV"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 7.1"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft"
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "erneuerbare_energie"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Freistehende Anlagen",
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 7.1, Punkt 7"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "nicht_freistehend",
+          "text": "Die Anlage ist nicht freistehend (Dach oder Fassade).",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 7.1, Punkt 7"
+          },
+          "notes": null
+        },
+        {
+          "id": "mehrwert_in_stadt",
+          "text": "Der ökologische Mehrwert des eingespeisten Stroms verbleibt in der Stadt Luzern.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 7.1, Punkt 6"
+          },
+          "notes": null
+        },
+        {
+          "id": "pronovo_eiv",
+          "text": "Der Beitrag bemisst sich an der Einmalvergütung des Bundes (Pronovo).",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 7.1"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "20% der Pronovo-Einmalvergütung und Zuschläge, plus CHF 200/kWp bei Gründach, CHF 100/m² bei Neigung ab 75 Grad, CHF 300/kWp für blendarme Module.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "kWp",
+            "condition": "Zuschlag Dachbegrünung",
+            "base_chf": null,
+            "amount_chf": 200
+          },
+          {
+            "unit": "m2",
+            "condition": "Zuschlag steile Anlagen oder Fassaden (Neigung ab 75 Grad)",
+            "base_chf": null,
+            "amount_chf": 100
+          },
+          {
+            "unit": "kWp",
+            "condition": "Zuschlag blendarme Module",
+            "base_chf": null,
+            "amount_chf": 300
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Auszahlung nach Abschluss"
+        ],
+        "calculation_basis": "20% der Einmalvergütung und Zuschläge des Bundes",
+        "example": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 7.1"
+        },
+        "note": "Bei denkmalpflegerischen Auflagen 50% der Mehrkosten. Keine Obergrenze genannt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Baubeginn der PV-Anlage.",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 7.1, Punkt 2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel innerhalb eines Monats",
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
+        "apply": "https://portal.energie-foerderung.ch/sl",
+        "form": null
+      },
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 7.1"
+      }
+    },
+    {
+      "id": "e-mobilitaet",
+      "name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
+      "description": "Beiträge pro Parkplatz auf privatem Grund an die Basisinfrastruktur und an Ladestationen.",
+      "keywords": [
+        "Ladestation Stadt Luzern",
+        "E-Mobilität",
+        "Ladeinfrastruktur Tiefgarage"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 8"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": "Eigentümerschaft der Parkierungsanlage"
+      },
+      "filter": {
+        "applicant_types": [
+          "eigentuemer",
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "verein_stiftung",
+          "privatperson"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "e_mobilitaet"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [
+        {
+          "text": "Reiner Ersatz sowie Installation im Neubau",
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 8.1 und 8.2"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "privater_grund",
+          "text": "Parkplätze auf privatem Grund, auch mit öffentlicher Nutzung.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 8.1, Punkt 1"
+          },
+          "notes": null
+        },
+        {
+          "id": "kein_ersatz_neubau",
+          "text": "Kein reiner Ersatz und keine Installation im Neubau.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "baujahr"
+          ],
+          "question": {
+            "text": "Handelt es sich um einen Neubau oder um den Ersatz bestehender Ladestationen?",
+            "options": [
+              "Nein, Erstinstallation im bestehenden Gebäude",
+              "Neubau",
+              "Ersatz",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 8.1 und 8.2"
+          },
+          "notes": null
+        },
+        {
+          "id": "ein_gesuch_pro_anlage",
+          "text": "Pro Parkierungsanlage nur ein Gesuch, auch bei mehreren Eigentümerschaften. Ausbau vorab mit allen abstimmen.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 8.1, Punkt 2"
+          },
+          "notes": null
+        },
+        {
+          "id": "oekostrom_lastmanagement",
+          "text": "Ladestationen mit Ökostrom oder eigenem PV-Strom, Lastmanagement ab der dritten Ladestation, Basisinfrastruktur ab der sechsten.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Ladestationen",
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 8.2, Punkt 3"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "Basisinfrastruktur CHF 200 pro Parkplatz (erste 50), danach CHF 100, max. CHF 20'000. Ladestationen CHF 600 pro Parkplatz (erste 50), danach CHF 300, max. CHF 60'000.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "Parkplatz",
+            "condition": "Basisinfrastruktur, Parkplatz 1 bis 50",
+            "base_chf": null,
+            "amount_chf": 200
+          },
+          {
+            "unit": "Parkplatz",
+            "condition": "Basisinfrastruktur, ab Parkplatz 51",
+            "base_chf": null,
+            "amount_chf": 100
+          },
+          {
+            "unit": "Parkplatz",
+            "condition": "Ladestation, Parkplatz 1 bis 50",
+            "base_chf": null,
+            "amount_chf": 600
+          },
+          {
+            "unit": "Parkplatz",
+            "condition": "Ladestation, ab Parkplatz 51",
+            "base_chf": null,
+            "amount_chf": 300
+          }
+        ],
+        "max_share_of_costs_pct": null,
+        "min_amount_chf": null,
+        "max_amount_chf": 80000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Auszahlung nach Abschluss"
+        ],
+        "calculation_basis": "Anzahl Parkplätze",
+        "example": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 8.1 und 8.2"
+        },
+        "note": "max_amount_chf ist die Summe aus Basisinfrastruktur (CHF 20'000) und Ladestationen (CHF 60'000)."
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Realisierung.",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 3, Punkt 2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": "In der Regel innerhalb eines Monats",
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
+        "apply": "https://portal.energie-foerderung.ch/sl",
+        "form": null
+      },
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 8"
+      }
+    },
+    {
+      "id": "abwaermenutzung",
+      "name": "Abwärmenutzung und Wärmerückgewinnung",
+      "description": "Beitrag an Anlagen zur Abwärmenutzung oder Wärmerückgewinnung nach eingesparter Primärenergie.",
+      "keywords": [
+        "Abwärme",
+        "Wärmerückgewinnung",
+        "Energiefonds Stadt Luzern"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 6.4"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "unternehmen",
+          "kmu",
+          "grossunternehmen",
+          "eigentuemer"
+        ],
+        "employees_min": null,
+        "employees_max": null,
+        "company_age_years_max": null,
+        "project_types": [
+          "energieeffizienz"
+        ],
+        "required_partners": [],
+        "sectors": []
+      },
+      "eligible_items": [],
+      "exclusions": [],
+      "criteria": [
+        {
+          "id": "einsparung_6000_kwh",
+          "text": "Primärenergieeinsparung von mehr als 6'000 kWh pro Jahr.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.4, Punkt 3"
+          },
+          "notes": null
+        },
+        {
+          "id": "sia_480",
+          "text": "Wirtschaftlichkeitsberechnung nach SIA 480.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [
+            "Berechnung nach SIA 480"
+          ],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.4, Punkt 6"
+          },
+          "notes": null
+        },
+        {
+          "id": "neubau_anteil",
+          "text": "Bei Neubauten nur der Anteil, der nicht zur Erfüllung der wärmetechnischen Anforderungen nötig ist.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Neubauten",
+          "profile_fields": [
+            "baujahr"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 6.4, Punkt 2"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "pro_einheit",
+        "summary": "CHF 0.20 pro kWh eingesparte Primärenergie Wärme bzw. CHF 0.40 pro kWh Elektrizität, höchstens 30% der nicht amortisierbaren Mehrkosten.",
+        "cost_categories": [],
+        "units": [
+          {
+            "unit": "kWh eingesparte Primärenergie Wärme",
+            "condition": null,
+            "base_chf": null,
+            "amount_chf": 0.2
+          },
+          {
+            "unit": "kWh eingesparte Elektrizität",
+            "condition": null,
+            "base_chf": null,
+            "amount_chf": 0.4
+          }
+        ],
+        "max_share_of_costs_pct": 30,
+        "min_amount_chf": null,
+        "max_amount_chf": null,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [
+          "Auszahlung nach Abschluss"
+        ],
+        "calculation_basis": "Nicht amortisierbare Mehrkosten",
+        "example": null,
+        "source": {
+          "source_id": "handbuch",
+          "locator": "Kap. 6.4"
+        },
+        "note": null
+      },
+      "timing": {
+        "deadline": {
+          "type": "vor_projektstart",
+          "rule": "Gesuch vor Baubeginn.",
+          "next_dates": [],
+          "relative": {
+            "event": "baubeginn",
+            "direction": "vor",
+            "offset_days": null
+          },
+          "source": {
+            "source_id": "handbuch",
+            "locator": "Kap. 3, Punkt 2"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": 24,
+        "repeat_limit": null,
+        "note": null
+      },
+      "documents": {
+        "application": [],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
+        "apply": "https://portal.energie-foerderung.ch/sl",
+        "form": null
+      },
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 6.4"
+      }
+    }
+  ],
+  "combination_rules": [
+    {
+      "with": "foerderprogramm-energie-lu",
+      "type": "erlaubt",
+      "text": "Städtische Beiträge kommen zusätzlich zu kantonalen Beiträgen. Die Summe aller Beiträge darf die Investition nicht übersteigen.",
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 2.3 und Kap. 3, Punkt 4"
+      }
+    },
+    {
+      "with": "pronovo",
+      "type": "bedingt",
+      "text": "Der städtische PV-Beitrag beträgt 20% der Einmalvergütung und Zuschläge des Bundes.",
+      "source": {
+        "source_id": "handbuch",
+        "locator": "Kap. 7.1"
+      }
+    },
+    {
+      "with": "prokilowatt",
+      "type": "ausgeschlossen",
+      "text": "ProKilowatt lässt keine Drittbeiträge für dieselben Energiesparmassnahmen zu.",
+      "source": {
+        "source_id": "prokw_faq",
+        "locator": "Kumulation mit anderen Förderungen"
+      }
+    }
+  ],
+  "application": {
+    "channel": "online_portal",
+    "url": "https://portal.energie-foerderung.ch/sl",
+    "steps": [
+      "Login oder Konto erstellen (gleiches Konto wie Kantonsportal)",
+      "Neues Gesuch erstellen und Massnahme wählen",
+      "Erfassung abschliessen, danach keine Änderung mehr",
+      "Entscheid in der Regel innerhalb eines Monats per E-Mail",
+      "Massnahme umsetzen",
+      "Abschluss im Portal erfassen und Beilagen hochladen",
+      "Auszahlung"
+    ],
+    "note": "Spezialgesuche werden quartalsweise beurteilt. Ist zuerst der Kanton zuständig, leitet das Portal weiter.",
+    "source": {
+      "source_id": "handbuch",
+      "locator": "Kap. 2.3"
+    }
+  },
+  "contacts": [
+    {
+      "name": "Umweltberatung Luzern",
+      "role": "Erste Anlaufstelle, Löwenplatz 11, 6004 Luzern",
+      "email": "info@umweltberatung-luzern.ch",
+      "phone": "+41 41 412 32 32",
+      "url": "https://www.stadtluzern.ch/_rte/publikation/420010"
+    }
+  ],
+  "legal_basis": [],
+  "sources": [
+    {
+      "id": "handbuch",
+      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
+      "type": "handbuch",
+      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
+      "version": "1.0",
+      "published": "2026-07-15",
+      "checked": "2026-10-23",
+      "local_path": "sources/gemeinde-luzern/Foerderhandbuch_2026.pdf"
+    },
+    {
+      "id": "prokw_faq",
+      "title": "ProKilowatt, Häufige Fragen (FR)",
+      "type": "faq",
+      "url": "https://www.prokw.ch/faq/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-23",
+      "local_path": null
+    }
+  ],
+  "meta": {
+    "last_verified": "2026-10-23",
+    "verified_by": null,
+    "status": "draft",
+    "open_questions": [
+      "Nicht erfasst: GEAK Plus (30%, max. CHF 750 bzw. 1'100), Studien und Konzepte (50%, max. CHF 20'000), Gebäudehülle (Fenster CHF 200/m², Dämmung gegen unbeheizt CHF 40/m², Mindestsumme CHF 1'500, Boni), Solarthermie (CHF 250/kW), Balkonkraftwerke, Veranstaltungen und spezielle Projekte.",
+      "Baubeginn ist im Handbuch nicht definiert.",
+      "Gesuchsbeilagen pro Massnahme nicht erfasst (stehen im Handbuch).",
+      "Ob Wärmepumpen im Neubau gefördert werden, regelt das Handbuch nicht ausdrücklich.",
+      "Handbuch über eine Textauswertung gelesen, Zahlen im Original prüfen. PDF noch nicht unter local_path abgelegt."
+    ]
+  }
+}
