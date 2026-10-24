@@ -226,6 +226,28 @@
      "profile_fields": [
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_berggebiet",
+      "profile_field": "rueckfrage_berggebiet",
+      "text": "Liegt Ihr Betrieb in einer Bergzone (I bis IV) oder im Sömmerungsgebiet?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, aber ein wesentlicher Teil der Rohstoffe stammt von dort",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "berggebiet"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -245,6 +267,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzielles_engagement",
+      "profile_field": "rueckfrage_finanzielles_engagement",
+      "text": "Bringen Sie eigene Mittel ins Projekt ein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzielles_engagement"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -264,6 +307,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzierungsluecke",
+      "profile_field": "rueckfrage_finanzierungsluecke",
+      "text": "Bleibt nach Eigenmitteln, Bankkredit und anderen Förderungen eine Finanzierungslücke?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzierungsluecke"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -283,6 +347,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_projekt_konkret",
+      "profile_field": "rueckfrage_projekt_konkret",
+      "text": "Wie weit ist die Planung Ihres Projekts?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Planung fortgeschritten",
+       "Erst Idee oder Konzept",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "projekt_konkret"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -300,6 +385,7 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": null,
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -415,6 +501,28 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_taetigkeitsgebiet",
+      "profile_field": "rueckfrage_taetigkeitsgebiet",
+      "text": "In welchem Kanton liegt Ihr Betrieb?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Luzern",
+       "Anderer Kanton im Gebiet der BG Mitte",
+       "Anderer Kanton",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "taetigkeitsgebiet"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "BG Mitte, Startseite",
       "url": "https://www.bgm-ccc.ch/",
@@ -436,6 +544,27 @@
       "partner",
       "budget"
      ],
+     "question": {
+      "id": "q_bankkredit",
+      "profile_field": "rueckfrage_bankkredit",
+      "text": "Brauchen Sie einen Bankkredit, für den eine Bürgschaft helfen soll?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "bankkredit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -455,6 +584,27 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": {
+      "id": "q_kreditwuerdigkeit",
+      "profile_field": "rueckfrage_kreditwuerdigkeit",
+      "text": "Bestehen gegen Sie oder Ihre Firma Betreibungen, Pfändungen oder Verlustscheine?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "kreditwuerdigkeit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -470,6 +620,7 @@
      "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung enthält das Profil keine Angaben.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -489,6 +640,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -506,6 +658,27 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": {
+      "id": "q_rueckbuergschaft",
+      "profile_field": "rueckfrage_rueckbuergschaft",
+      "text": "Sind Sie als Inhaberin oder Inhaber bereit, sich mit einer teilweisen persönlichen Mithaftung mitzuverpflichten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "rueckbuergschaft"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -521,6 +694,7 @@
      "reason": "Das Profil enthält keine Angabe zu einer Todesfallrisikoversicherung.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -648,6 +822,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovationsvorhaben",
+      "profile_field": "rueckfrage_innovationsvorhaben",
+      "text": "Haben Sie ein Vorhaben oder eine Idee, die Sie weiterbringen wollen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "itz",
+        "instrument_id": "innovation-sparring",
+        "criterion_id": "innovationsvorhaben"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -663,6 +858,7 @@
      "reason": "Ob ein 30-minütiger Sparring-Check stattgefunden hat, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -683,6 +879,7 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -745,6 +942,29 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_passt_schwerpunkt",
+      "profile_field": "rueckfrage_passt_schwerpunkt",
+      "text": "Worum geht es in Ihrem Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Zusammenarbeit mehrerer Betriebe",
+       "Tourismusangebot",
+       "Ortskern oder Region stärken",
+       "Etwas anderes",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "passt_schwerpunkt"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -764,6 +984,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_ueberbetrieblich",
+      "profile_field": "rueckfrage_ueberbetrieblich",
+      "text": "Setzen Sie das Projekt zusammen mit anderen Tourismusbetrieben oder Organisationen um?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "ueberbetrieblich"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -783,6 +1024,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenmittel",
+      "profile_field": "rueckfrage_eigenmittel",
+      "text": "Kann Ihre Trägerschaft mindestens die Hälfte der Projektkosten selbst tragen (Arbeitsleistung, eigenes Geld oder Beiträge Dritter)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mindestens 50 %",
+       "Nein, weniger als 50 %",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "eigenmittel"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -802,6 +1064,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -817,6 +1080,7 @@
      "reason": "Das Profil enthält keine Angaben zu Wirkungs- und Leistungszielen, Meilensteinen oder Sollbruchstellen einer Leistungsvereinbarung.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -903,6 +1167,28 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -920,6 +1206,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -937,6 +1224,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -954,6 +1262,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -974,6 +1283,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "anlage_realisiert"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -991,6 +1319,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1051,6 +1380,28 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "greiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1068,6 +1419,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1085,6 +1437,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "greiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -1102,6 +1475,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -1162,6 +1536,28 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1179,6 +1575,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1196,6 +1593,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -1213,6 +1631,27 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_ohne_eigenverbrauch",
+      "profile_field": "rueckfrage_ohne_eigenverbrauch",
+      "text": "Wollen Sie den Solarstrom vollständig ins Netz einspeisen (kein Eigenverbrauch)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "ohne_eigenverbrauch"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1230,6 +1669,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -1293,6 +1733,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_schweiz",
+      "profile_field": "rueckfrage_sitz_schweiz",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "sitz_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -1312,6 +1773,28 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_co2_einsparung",
+      "profile_field": "rueckfrage_co2_einsparung",
+      "text": "Reduziert Ihr Produkt oder Verfahren Treibhausgase, fördert es erneuerbare Energien, spart es Strom oder schont es natürliche Ressourcen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mit Nachweis",
+       "Ja, aber noch ohne Nachweis",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "co2_einsparung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1331,6 +1814,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovatives_produkt",
+      "profile_field": "rueckfrage_innovatives_produkt",
+      "text": "Ist Ihr Produkt oder Verfahren eine Neu- oder Weiterentwicklung mit guten Chancen, sich am Markt durchzusetzen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "innovatives_produkt"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -1350,6 +1854,28 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": {
+      "id": "q_marktreif_umsatz",
+      "profile_field": "rueckfrage_marktreif_umsatz",
+      "text": "Hat Ihr Produkt bereits mindestens CHF 100'000 Umsatz bei Kunden generiert?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mindestens CHF 100'000",
+       "Weniger als CHF 100'000",
+       "Noch kein Umsatz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "marktreif_umsatz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1365,6 +1891,27 @@
      "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_positives_eigenkapital",
+      "profile_field": "rueckfrage_positives_eigenkapital",
+      "text": "Ist das Eigenkapital Ihres Unternehmens positiv, ohne Überschuldung und ohne drohende Zahlungsunfähigkeit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "positives_eigenkapital"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1380,6 +1927,7 @@
      "reason": "Zur Kreditwürdigkeit und zukünftigen Ertragslage liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1399,6 +1947,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenfinanzierung_40",
+      "profile_field": "rueckfrage_eigenfinanzierung_40",
+      "text": "Können Sie mindestens 40% des Vorhabens mit eigenen oder anderen Mitteln finanzieren?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "eigenfinanzierung_40"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Konditionen, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
@@ -1419,6 +1988,7 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": null,
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",

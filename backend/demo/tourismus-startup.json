@@ -228,6 +228,28 @@
      "profile_fields": [
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_berggebiet",
+      "profile_field": "rueckfrage_berggebiet",
+      "text": "Liegt Ihr Betrieb in einer Bergzone (I bis IV) oder im Sömmerungsgebiet?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, aber ein wesentlicher Teil der Rohstoffe stammt von dort",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "berggebiet"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -247,6 +269,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzielles_engagement",
+      "profile_field": "rueckfrage_finanzielles_engagement",
+      "text": "Bringen Sie eigene Mittel ins Projekt ein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzielles_engagement"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -266,6 +309,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzierungsluecke",
+      "profile_field": "rueckfrage_finanzierungsluecke",
+      "text": "Bleibt nach Eigenmitteln, Bankkredit und anderen Förderungen eine Finanzierungslücke?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzierungsluecke"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -285,6 +349,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_projekt_konkret",
+      "profile_field": "rueckfrage_projekt_konkret",
+      "text": "Wie weit ist die Planung Ihres Projekts?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Planung fortgeschritten",
+       "Erst Idee oder Konzept",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "projekt_konkret"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -302,6 +387,7 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": null,
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -416,6 +502,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_ueberbetrieblich",
+      "profile_field": "rueckfrage_ueberbetrieblich",
+      "text": "Setzen Sie das Projekt zusammen mit anderen Tourismusbetrieben oder Organisationen um?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "ueberbetrieblich"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -435,6 +542,27 @@
      "profile_fields": [
       "branche"
      ],
+     "question": {
+      "id": "q_tourismus_traegerschaft",
+      "profile_field": "rueckfrage_tourismus_traegerschaft",
+      "text": "Sind Tourismusbetriebe oder Tourismusorganisationen massgeblich an Planung, Umsetzung und Finanzierung beteiligt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "tourismus_traegerschaft"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -454,6 +582,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_national_oder_modell",
+      "profile_field": "rueckfrage_national_oder_modell",
+      "text": "In wie vielen Kantonen wird das Projekt umgesetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "In einem Kanton",
+       "In zwei oder mehr Kantonen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "national_oder_modell"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -474,6 +623,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_projektvolumen_200000",
+      "profile_field": "rueckfrage_projektvolumen_200000",
+      "text": "Wie hoch sind die anrechenbaren Projektkosten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter CHF 200'000",
+       "CHF 200'000 oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "projektvolumen_200000"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -491,6 +661,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenfinanzierung_50",
+      "profile_field": "rueckfrage_eigenfinanzierung_50",
+      "text": "Können die Projektträger mindestens 50% der Projektkosten selbst finanzieren?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "eigenfinanzierung_50"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -508,6 +699,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_cash_10",
+      "profile_field": "rueckfrage_cash_10",
+      "text": "Können die Projektpartner mindestens 10% der Kosten bar beisteuern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "cash_10"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -525,6 +737,27 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_start_6_monate",
+      "profile_field": "rueckfrage_start_6_monate",
+      "text": "Ist das Projekt schon gestartet oder beginnt es spätestens sechs Monate nach einer Zusage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innotour",
+        "instrument_id": "innotour-finanzhilfe",
+        "criterion_id": "start_6_monate"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -544,6 +777,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -563,6 +797,7 @@
      "profile_fields": [
       "partner"
      ],
+     "question": null,
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -703,6 +938,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovationsvorhaben",
+      "profile_field": "rueckfrage_innovationsvorhaben",
+      "text": "Haben Sie ein Vorhaben oder eine Idee, die Sie weiterbringen wollen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "itz",
+        "instrument_id": "innovation-sparring",
+        "criterion_id": "innovationsvorhaben"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -718,6 +974,7 @@
      "reason": "Das Profil enthält keine Angabe dazu, ob ein Sparring-Check stattgefunden hat.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -737,6 +994,7 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -799,6 +1057,29 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_passt_schwerpunkt",
+      "profile_field": "rueckfrage_passt_schwerpunkt",
+      "text": "Worum geht es in Ihrem Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Zusammenarbeit mehrerer Betriebe",
+       "Tourismusangebot",
+       "Ortskern oder Region stärken",
+       "Etwas anderes",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "passt_schwerpunkt"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -818,6 +1099,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_ueberbetrieblich",
+      "profile_field": "rueckfrage_ueberbetrieblich",
+      "text": "Setzen Sie das Projekt zusammen mit anderen Tourismusbetrieben oder Organisationen um?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "ueberbetrieblich"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -837,6 +1139,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenmittel",
+      "profile_field": "rueckfrage_eigenmittel",
+      "text": "Kann Ihre Trägerschaft mindestens die Hälfte der Projektkosten selbst tragen (Arbeitsleistung, eigenes Geld oder Beiträge Dritter)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mindestens 50 %",
+       "Nein, weniger als 50 %",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "eigenmittel"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -856,6 +1179,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -871,6 +1195,7 @@
      "reason": "Angaben zu Wirkungs- und Leistungszielen, Meilensteinen und Sollbruchstellen in einer Leistungsvereinbarung fehlen.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",

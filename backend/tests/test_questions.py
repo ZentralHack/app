@@ -1,7 +1,10 @@
+import pytest
+
 from app.agent.prefilter import prefilter
-from app.agent.questions import SKIP_REASON, build_questions, select_questions
+from app.agent.questions import SKIP_REASON, build_questions, criterion_question, select_questions
+from app.config import KNOWLEDGE_BASE_DIR
 from app.knowledge_base.flat import FlatInstrument
-from app.knowledge_base.loader import KnowledgeBase
+from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
 from app.models.contract import CriterionRef
 from tests.contract_check import assert_contract
 from tests.factories import field, make_profile, sensora_profile
@@ -123,3 +126,41 @@ def test_soll_alone_is_below_threshold(kb: KnowledgeBase):
         profile, [FlatInstrument(program, instrument)], {}, kb.criterion_questions
     )
     assert result.questions == []
+
+
+def _scoped(kb: KnowledgeBase, program: str, instrument: str, criterion: str):
+    item = next(
+        i for i in kb.instruments() if i.program.id == program and i.instrument.id == instrument
+    )
+    return item, next(s for s in item.criteria() if s.criterion.id == criterion)
+
+
+def test_criterion_question_prefers_the_deciding_catalog_question(kb: KnowledgeBase):
+    item, scoped = _scoped(kb, "lib", "lib-beitrag", "hr_luzern")
+    question = criterion_question(item, scoped, kb)
+    assert question is not None
+    assert (question.id, question.profile_field) == ("q_handelsregister", "handelsregister")
+    assert question.prefill is None
+    assert question.affects == [
+        CriterionRef(program_id="lib", instrument_id=None, criterion_id="hr_luzern")
+    ]
+    assert_contract("Question", question)
+
+
+@pytest.fixture(scope="module")
+def full_kb() -> KnowledgeBase:
+    return load_knowledge_base(KNOWLEDGE_BASE_DIR)
+
+
+def test_criterion_question_falls_back_to_the_criterion_question(full_kb: KnowledgeBase):
+    item, scoped = _scoped(full_kb, "pronovo", "kleiv", "zustimmung_grundeigentuemer")
+    question = criterion_question(item, scoped, full_kb)
+    assert question is not None
+    assert question.id == "q_zustimmung_grundeigentuemer"
+    assert question.profile_field == "rueckfrage_zustimmung_grundeigentuemer"
+    assert question.options[-1] == "Weiss nicht"
+
+
+def test_no_question_when_nothing_in_a_profile_decides_it(full_kb: KnowledgeBase):
+    item, scoped = _scoped(full_kb, "eic-accelerator", "eic-accelerator", "auswahl_jury")
+    assert criterion_question(item, scoped, full_kb) is None

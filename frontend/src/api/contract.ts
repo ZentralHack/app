@@ -222,6 +222,10 @@ export interface CriterionResult {
    * Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)
    */
   profile_fields: string[];
+  /**
+   * Die Frage, die das Kriterium entscheiden kann: Katalogfrage eines entscheidenden Profilfelds, sonst criteria[].question; null, wenn es keine gibt. Ohne prefill. Beantwortet wie eine Rückfrage (Answer).
+   */
+  question: Question | null;
   source: SourceLink;
 }
 /**

@@ -216,6 +216,12 @@ class CriterionResult(BaseModel):
             description="Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)"
         ),
     ]
+    question: Annotated[
+        Question | None,
+        Field(
+            description="Die Frage, die das Kriterium entscheiden kann: Katalogfrage eines entscheidenden Profilfelds, sonst criteria[].question; null, wenn es keine gibt. Ohne prefill. Beantwortet wie eine Rückfrage (Answer)."
+        ),
+    ]
     source: SourceLink
 
 

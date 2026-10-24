@@ -126,7 +126,32 @@ def _fallback_open(
     return not fields or any(known(profile, name) is None for name in fields)
 
 
-def _catalog_question(profile: ProjectProfile, name: str, entry: CatalogEntry) -> dict[str, Any]:
+def criterion_question(
+    item: FlatInstrument, scoped: ScopedCriterion, kb: KnowledgeBase
+) -> Question | None:
+    """The question that can decide this criterion, independent of points and profile: the
+    catalog question of a field that decides it, else the criterion's own question. No
+    prefill, so nothing is preselected. The inline editor on the program page offers it."""
+    fields = _decided_by(kb.catalog.entries).get(criterion_ref(item, scoped), [])
+    own = kb.criterion_questions.get(scoped.criterion.id)
+    if fields:
+        name = fields[0]
+        draft = _catalog_question(None, name, kb.catalog.entries[name])
+    elif own is not None:
+        draft = _fallback_question(own)
+    else:
+        return None
+    ref = CriterionRef(
+        program_id=item.program.id,
+        instrument_id=None if scoped.scope == "programm" else item.instrument.id,
+        criterion_id=scoped.criterion.id,
+    )
+    return Question(**draft | {"affects": [ref]})
+
+
+def _catalog_question(
+    profile: ProjectProfile | None, name: str, entry: CatalogEntry
+) -> dict[str, Any]:
     return {
         "id": f"q_{name}",
         "profile_field": name,
@@ -135,7 +160,7 @@ def _catalog_question(profile: ProjectProfile, name: str, entry: CatalogEntry) -
         "input": entry.input,
         "unit": entry.unit,
         "options": [o.label for o in entry.options],
-        "prefill": _prefill(profile, name, entry),
+        "prefill": _prefill(profile, name, entry) if profile else None,
     }
 
 

@@ -227,6 +227,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovativer_ansatz",
+      "profile_field": "rueckfrage_innovativer_ansatz",
+      "text": "Erproben Sie eine neue Energietechnologie oder einen neuen Ansatz im realen Umfeld (Energieeffizienz, erneuerbare Energie, Speicher oder Netze)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "innovativer_ansatz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -246,6 +267,28 @@
      "profile_fields": [
       "art_des_vorhabens"
      ],
+     "question": {
+      "id": "q_pilot_oder_demo",
+      "profile_field": "rueckfrage_pilot_oder_demo",
+      "text": "Wie weit ist Ihre Technologie entwickelt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Grundlagen oder Laborversuch (TRS 1-3)",
+       "Pilotanlage, Erprobung im realen Umfeld (TRS 4-7)",
+       "Anlage im Massstab 1:1 zur Markterprobung (TRS 7-9)",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "pilot_oder_demo"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -265,6 +308,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -329,6 +373,28 @@
       "mitarbeitende",
       "rechtsform"
      ],
+     "question": {
+      "id": "q_kmu_startup",
+      "profile_field": "rueckfrage_kmu_startup",
+      "text": "Welche Art von Unternehmen beantragt die Förderung?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Start-up oder KMU",
+       "Small Mid-Cap (bis 499 Mitarbeitende)",
+       "Noch nicht gegründet, Gründung geplant",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "kmu_startup"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -349,6 +415,28 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_assoziiertes_land",
+      "profile_field": "rueckfrage_sitz_assoziiertes_land",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz, einem EU-Land oder einem anderen mit Horizon Europe assoziierten Land?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, Gründung oder Verlegung geplant",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "sitz_assoziiertes_land"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Status of Switzerland in Horizon Europe, Euresearch",
       "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html",
@@ -368,6 +456,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_trl_6_8",
+      "profile_field": "rueckfrage_trl_6_8",
+      "text": "Ist Ihre Technologie bereits im relevanten Umfeld validiert (TRL 5 abgeschlossen)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, erst im Labor",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "trl_6_8"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -383,6 +492,27 @@
      "reason": "Das Profil enthält keine Angabe zu weiteren gleichzeitigen EIC-Accelerator-Anträgen.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_ein_antrag",
+      "profile_field": "rueckfrage_ein_antrag",
+      "text": "Haben Sie zurzeit einen anderen Antrag beim EIC Accelerator oder EIC STEP Scale Up hängig?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "ein_antrag"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -400,6 +530,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -491,6 +622,27 @@
       "standort_kanton",
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_wertschoepfung_schweiz",
+      "profile_field": "rueckfrage_wertschoepfung_schweiz",
+      "text": "Ist Ihr Unternehmen in der Schweiz wertschöpfend tätig?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "wertschoepfung_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -511,6 +663,28 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner",
+      "profile_field": "partner",
+      "text": "Arbeiten Sie für dieses Projekt mit einer Hochschule oder Forschungsinstitution zusammen?",
+      "why": "Einige Programme fördern nur Projekte mit einem Forschungspartner.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, die Zusammenarbeit ist vereinbart",
+       "Wir suchen noch einen Partner",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "forschungspartner_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -528,6 +702,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner_unabhaengig",
+      "profile_field": "rueckfrage_partner_unabhaengig",
+      "text": "Sind Ihr Unternehmen und der Forschungspartner finanziell und personell unabhängig voneinander?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "partner_unabhaengig"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -547,6 +742,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenleistung_40_60",
+      "profile_field": "rueckfrage_eigenleistung_40_60",
+      "text": "Können Sie 40 bis 60% der Projektkosten selbst tragen (Personal, Material)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "eigenleistung_40_60"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -566,6 +782,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_barbeitrag_5",
+      "profile_field": "rueckfrage_barbeitrag_5",
+      "text": "Können Sie dem Forschungspartner mindestens 5% der Projektkosten bar bezahlen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "barbeitrag_5"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -586,6 +823,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -605,6 +843,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -626,6 +865,7 @@
       "vorhaben_beschreibung",
       "partner"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -646,6 +886,28 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner",
+      "profile_field": "partner",
+      "text": "Arbeiten Sie für dieses Projekt mit einer Hochschule oder Forschungsinstitution zusammen?",
+      "why": "Einige Programme fördern nur Projekte mit einem Forschungspartner.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, die Zusammenarbeit ist vereinbart",
+       "Wir suchen noch einen Partner",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "partner_forschungspartner"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -774,6 +1036,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_schweiz",
+      "profile_field": "rueckfrage_sitz_schweiz",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "sitz_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -793,6 +1076,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_weniger_250_vzae",
+      "profile_field": "rueckfrage_weniger_250_vzae",
+      "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 250",
+       "250 oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "weniger_250_vzae"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -812,6 +1116,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_keine_grosse_gruppe",
+      "profile_field": "rueckfrage_keine_grosse_gruppe",
+      "text": "Gehört Ihr Unternehmen zu einer Gruppe mit mehr als 250 Vollzeitstellen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "keine_grosse_gruppe"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -827,6 +1152,27 @@
      "reason": "Das Profil enthält keine Angabe dazu, ob für dieses Projekt bereits Innosuisse-Innovationsmentoring beansprucht wurde.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_erstmals_mentoring",
+      "profile_field": "rueckfrage_erstmals_mentoring",
+      "text": "Haben Sie für dieses Projekt schon einmal Unterstützung durch eine Innosuisse-Mentorin oder einen -Mentor erhalten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "erstmals_mentoring"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -844,6 +1190,27 @@
       "rueckfrage_keine_parallele_beratung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_keine_parallele_beratung",
+      "profile_field": "rueckfrage_keine_parallele_beratung",
+      "text": "Werden Sie für dieses Projekt bereits von einer anderen Stelle beraten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "keine_parallele_beratung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -919,6 +1286,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovationsvorhaben",
+      "profile_field": "rueckfrage_innovationsvorhaben",
+      "text": "Haben Sie ein Vorhaben oder eine Idee, die Sie weiterbringen wollen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "itz",
+        "instrument_id": "innovation-sparring",
+        "criterion_id": "innovationsvorhaben"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -934,6 +1322,7 @@
      "reason": "Das Profil enthält keine Angabe dazu, ob ein 30-minütiger Sparring-Check stattgefunden hat.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -953,6 +1342,7 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -1016,6 +1406,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_ch_fl",
+      "profile_field": "rueckfrage_sitz_ch_fl",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "sitz_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1035,6 +1446,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_max_250_mitarbeitende",
+      "profile_field": "rueckfrage_max_250_mitarbeitende",
+      "text": "Wie viele Vollzeitstellen hat Ihre ganze Firmengruppe?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 250 Vollzeitstellen",
+       "250 oder mehr Vollzeitstellen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "max_250_mitarbeitende"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1052,6 +1484,27 @@
      "profile_fields": [
       "unternehmensalter"
      ],
+     "question": {
+      "id": "q_keine_gruendungsphase",
+      "profile_field": "rueckfrage_keine_gruendungsphase",
+      "text": "Ist Ihr Unternehmen ein Start-up in der Gründungsphase?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "keine_gruendungsphase"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1067,6 +1520,27 @@
      "reason": "Zu den Eigentumsverhältnissen am Kapital liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_kein_grosskonzern",
+      "profile_field": "rueckfrage_kein_grosskonzern",
+      "text": "Gehört die Hälfte oder mehr Ihres Unternehmenskapitals grösseren Konzernen (inkl. Joint Venture) oder öffentlich-rechtlichen Organisationen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein, weniger als die Hälfte",
+       "Ja, die Hälfte oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "kein_grosskonzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1086,6 +1560,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_umsetzung_ch_fl",
+      "profile_field": "rueckfrage_umsetzung_ch_fl",
+      "text": "Wird Ihr Projekt hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "umsetzung_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1105,6 +1600,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_treibhausgas_vermeidung",
+      "profile_field": "rueckfrage_treibhausgas_vermeidung",
+      "text": "Vermeidet Ihr Projekt Treibhausgasemissionen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "treibhausgas_vermeidung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1125,6 +1641,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_technische_innovation",
+      "profile_field": "rueckfrage_technische_innovation",
+      "text": "Ist Ihr Projekt ein technisches Innovationsvorhaben mit dem Ziel eines Markteintritts in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "technische_innovation"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1144,6 +1681,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_verwaessernde_finanzierung",
+      "profile_field": "rueckfrage_verwaessernde_finanzierung",
+      "text": "Wie hoch sind die erhaltenen und geplanten dilutiven Finanzierungen für das Projekt im Vergleich zum beantragten Förderbetrag?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Höchstens das Zehnfache",
+       "Mehr als das Zehnfache",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "verwaessernde_finanzierung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1271,6 +1829,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_umweltentlastung",
+      "profile_field": "rueckfrage_umweltentlastung",
+      "text": "Reduziert Ihre Technologie Umweltbelastungen wie Abfall, Emissionen oder Ressourcenverbrauch?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "umweltentlastung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1290,6 +1869,7 @@
      "profile_fields": [
       "art_des_vorhabens"
      ],
+     "question": null,
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1307,6 +1887,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_kommerzielle_nutzung",
+      "profile_field": "rueckfrage_kommerzielle_nutzung",
+      "text": "Wollen Sie die Resultate später kommerziell verwerten (Verkauf, Lizenzen, Dienstleistungen)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "kommerzielle_nutzung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1326,6 +1927,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenanteil_50",
+      "profile_field": "rueckfrage_eigenanteil_50",
+      "text": "Können Sie mit Ihren Projektpartnern mindestens die Hälfte der Projektkosten ohne Bundesgelder tragen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "eigenanteil_50"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1343,6 +1965,27 @@
      "profile_fields": [
       "laufzeit"
      ],
+     "question": {
+      "id": "q_dauer_4_jahre",
+      "profile_field": "rueckfrage_dauer_4_jahre",
+      "text": "Wie lange dauert Ihr Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Höchstens 4 Jahre",
+       "Länger als 4 Jahre",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "dauer_4_jahre"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1362,6 +2005,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",

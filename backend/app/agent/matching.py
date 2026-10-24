@@ -188,6 +188,7 @@ def _result(
             reason=reason,
             evidence=evidence,
             profile_fields=criterion.profile_fields,
+            question=None,  # set by the orchestrator, which knows the question catalog
             source=item.criterion_source(criterion.source),
         ),
         downgraded,

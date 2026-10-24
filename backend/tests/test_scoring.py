@@ -100,6 +100,7 @@ def test_missing_partner_is_fixable(lib, sensora_criteria):
         reason="Kein Partner genannt.",
         evidence=["partner"],
         profile_fields=["partner"],
+        question=None,
         source=source,
     )
     result = score(lib, [*sensora_criteria, partner], False)

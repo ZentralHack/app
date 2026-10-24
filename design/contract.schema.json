@@ -440,6 +440,7 @@
         "reason",
         "evidence",
         "profile_fields",
+        "question",
         "source"
       ],
       "additionalProperties": false,
@@ -490,6 +491,17 @@
             "type": "string"
           },
           "description": "Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)"
+        },
+        "question": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Question"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Die Frage, die das Kriterium entscheiden kann: Katalogfrage eines entscheidenden Profilfelds, sonst criteria[].question; null, wenn es keine gibt. Ohne prefill. Beantwortet wie eine Rückfrage (Answer)."
         },
         "source": {
           "$ref": "#/$defs/SourceLink"

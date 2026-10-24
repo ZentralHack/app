@@ -18,6 +18,7 @@ from app.agent.matching import check_instrument
 from app.agent.plan import PlanItem, build_plan
 from app.agent.plan_texts import write_plan_texts
 from app.agent.prefilter import prefilter
+from app.agent.questions import criterion_question
 from app.agent.scoring import (
     RankEntry,
     assign_ranks,
@@ -195,9 +196,11 @@ async def _check(ctx: _Context, item: FlatInstrument) -> None:
         return
     recorder.downgrades += check.downgrades
     scored = score(item, check.criteria, bool(check.exclusion_hits), check.lever_texts)
-    _set_match(
-        ctx, item, status="fertig", fit=scored.fit, criteria=check.criteria, gaps=scored.gaps
-    )
+    criteria = [
+        c.model_copy(update={"question": criterion_question(item, scoped, ctx.kb)})
+        for scoped, c in zip(item.criteria(), check.criteria, strict=True)
+    ]
+    _set_match(ctx, item, status="fertig", fit=scored.fit, criteria=criteria, gaps=scored.gaps)
     badges = Counter(c.state for c in check.criteria)
     recorder.emit(
         "instrument_completed",

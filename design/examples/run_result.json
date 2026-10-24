@@ -193,6 +193,27 @@
             "rechtsform",
             "taetigkeit"
           ],
+          "question": {
+            "id": "q_unternehmerisch_taetig",
+            "profile_field": "rueckfrage_unternehmerisch_taetig",
+            "text": "Erbringt Ihr Unternehmen Leistungen am Markt oder für verbundene Unternehmen, oder plant es dies?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "unternehmerisch_taetig"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -214,6 +235,28 @@
             "standort_kanton",
             "handelsregister"
           ],
+          "question": {
+            "id": "q_handelsregister",
+            "profile_field": "handelsregister",
+            "text": "Ist Ihr Unternehmen im Handelsregister des Kantons Luzern eingetragen (Sitz oder Zweigniederlassung)?",
+            "why": "Kantonale Programme setzen meist einen Eintrag im Luzerner Handelsregister voraus.",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein, in einem anderen Kanton",
+              "Nein, gar nicht eingetragen",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "hr_luzern"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -234,6 +277,28 @@
             "standort_kanton",
             "raeumlichkeiten"
           ],
+          "question": {
+            "id": "q_raeumlichkeiten",
+            "profile_field": "raeumlichkeiten",
+            "text": "Hat Ihr Unternehmen eigene oder gemietete Räume im Kanton Luzern, die dauernd zur Verfügung stehen?",
+            "why": "Einige Programme verlangen eine tatsächliche Präsenz im Kanton, eine Domiziladresse genügt nicht.",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein, nur eine Domiziladresse (c/o)",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "praesenz_raeume"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -254,6 +319,28 @@
           "profile_fields": [
             "mitarbeitende"
           ],
+          "question": {
+            "id": "q_praesenz_personal",
+            "profile_field": "rueckfrage_praesenz_personal",
+            "text": "Beschäftigt Ihr Unternehmen eigenes oder ausgeliehenes Personal in Räumlichkeiten im Kanton Luzern?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja, während des ganzen Geschäftsjahres",
+              "Nur während eines Teils des Geschäftsjahres",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "praesenz_personal"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -273,6 +360,29 @@
           "profile_fields": [
             "revisionsart"
           ],
+          "question": {
+            "id": "q_revisionsart",
+            "profile_field": "revisionsart",
+            "text": "Wie wird die Jahresrechnung Ihres Unternehmens geprüft?",
+            "why": "Einige Programme setzen eine geprüfte Jahresrechnung voraus.",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ordentliche Revision",
+              "Eingeschränkte Revision",
+              "Keine Revision (Opting-out)",
+              "Keine Revisionspflicht, z. B. Einzelunternehmen",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "revision"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -290,6 +400,27 @@
           "profile_fields": [
             "nachhaltigkeitsbericht"
           ],
+          "question": {
+            "id": "q_nachhaltigkeit",
+            "profile_field": "rueckfrage_nachhaltigkeit",
+            "text": "Hat Ihr Unternehmen einen Nachhaltigkeitsbericht oder eine Übersicht zu Nachhaltigkeitsthemen?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "nachhaltigkeit"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -305,6 +436,27 @@
           "reason": "Keine Angaben zu offenen Forderungen von Behörden.",
           "evidence": [],
           "profile_fields": [],
+          "question": {
+            "id": "q_keine_ausstaende",
+            "profile_field": "rueckfrage_keine_ausstaende",
+            "text": "Hat Ihr Unternehmen fällige, unbezahlte Forderungen von Behörden, oder läuft ein Konkurs- oder Nachlassverfahren?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": null,
+                "criterion_id": "keine_ausstaende"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -326,6 +478,29 @@
             "vorhaben_beschreibung",
             "art_des_vorhabens"
           ],
+          "question": {
+            "id": "q_fei_taetigkeit",
+            "profile_field": "rueckfrage_fei_taetigkeit",
+            "text": "Welche Art von Arbeiten umfasst Ihr Vorhaben?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Forschung oder experimentelle Entwicklung",
+              "Selbst entwickelte Prozess- oder Organisationsinnovation",
+              "Klinische Studie",
+              "Keine davon (z. B. Marketing, Einkauf bestehender Software)",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "fei_taetigkeit"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -345,6 +520,28 @@
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
+          "question": {
+            "id": "q_neuartig",
+            "profile_field": "rueckfrage_neuartig",
+            "text": "Entwickeln Sie die Lösung selbst, oder setzen Sie eine bestehende Lösung ein?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Eigenentwicklung",
+              "Bestehende Lösung anpassen",
+              "Bestehende Lösung einsetzen",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "neuartig"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -366,6 +563,27 @@
             "budget",
             "laufzeit"
           ],
+          "question": {
+            "id": "q_systematisch",
+            "profile_field": "rueckfrage_systematisch",
+            "text": "Gehen Sie systematisch vor, z. B. mit Budget, Zeitplan und Dokumentation?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "systematisch"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -386,6 +604,28 @@
           "profile_fields": [
             "standort_kanton"
           ],
+          "question": {
+            "id": "q_ausfuehrung_luzern",
+            "profile_field": "rueckfrage_ausfuehrung_luzern",
+            "text": "Wo werden die Arbeiten ausgeführt?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Im Kanton Luzern mit eigenem Personal",
+              "Ausserhalb des Kantons, als Auftrag an Dritte",
+              "Ausserhalb des Kantons, mit eigenem Personal",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "ausfuehrung_luzern"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -403,6 +643,27 @@
           "profile_fields": [
             "partner"
           ],
+          "question": {
+            "id": "q_auftragsforschung_steuerung",
+            "profile_field": "rueckfrage_auftragsforschung_steuerung",
+            "text": "Steuert eine Person Ihres Unternehmens den Forschungsauftrag (instruieren, überwachen, entscheiden), und trägt Ihr Unternehmen Finanzierung und Risiken?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "auftragsforschung_steuerung"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -420,6 +681,28 @@
             "budget"
           ],
           "profile_fields": [],
+          "question": {
+            "id": "q_kosten_selbst_getragen",
+            "profile_field": "rueckfrage_kosten_selbst_getragen",
+            "text": "Verrechnen Sie die F&E-Kosten an Dritte weiter, z. B. an Kunden oder Konzerngesellschaften?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Nein",
+              "Ja, teilweise",
+              "Ja, vollständig",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "kosten_selbst_getragen"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -440,6 +723,28 @@
             "projektstart",
             "geschaeftsjahr"
           ],
+          "question": {
+            "id": "q_kosten_bemessungsjahr",
+            "profile_field": "rueckfrage_kosten_bemessungsjahr",
+            "text": "Sind die Projektkosten bereits angefallen, oder fallen sie erst an?",
+            "why": "",
+            "input": "auswahl",
+            "unit": null,
+            "options": [
+              "Bereits angefallen",
+              "Laufend",
+              "Fallen erst an",
+              "Weiss nicht"
+            ],
+            "affects": [
+              {
+                "program_id": "lib",
+                "instrument_id": "lib-beitrag",
+                "criterion_id": "kosten_bemessungsjahr"
+              }
+            ],
+            "prefill": null
+          },
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",

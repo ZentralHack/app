@@ -270,6 +270,28 @@
      "profile_fields": [
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_berggebiet",
+      "profile_field": "rueckfrage_berggebiet",
+      "text": "Liegt Ihr Betrieb in einer Bergzone (I bis IV) oder im Sömmerungsgebiet?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, aber ein wesentlicher Teil der Rohstoffe stammt von dort",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "berggebiet"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -289,6 +311,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzielles_engagement",
+      "profile_field": "rueckfrage_finanzielles_engagement",
+      "text": "Bringen Sie eigene Mittel ins Projekt ein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzielles_engagement"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -309,6 +352,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_finanzierungsluecke",
+      "profile_field": "rueckfrage_finanzierungsluecke",
+      "text": "Bleibt nach Eigenmitteln, Bankkredit und anderen Förderungen eine Finanzierungslücke?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "finanzierungsluecke"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -329,6 +393,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_projekt_konkret",
+      "profile_field": "rueckfrage_projekt_konkret",
+      "text": "Wie weit ist die Planung Ihres Projekts?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Planung fortgeschritten",
+       "Erst Idee oder Konzept",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "berghilfe",
+        "instrument_id": "projektbeitrag",
+        "criterion_id": "projekt_konkret"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -346,6 +431,7 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": null,
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -447,6 +533,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovativer_ansatz",
+      "profile_field": "rueckfrage_innovativer_ansatz",
+      "text": "Erproben Sie eine neue Energietechnologie oder einen neuen Ansatz im realen Umfeld (Energieeffizienz, erneuerbare Energie, Speicher oder Netze)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "innovativer_ansatz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -467,6 +574,28 @@
      "profile_fields": [
       "art_des_vorhabens"
      ],
+     "question": {
+      "id": "q_pilot_oder_demo",
+      "profile_field": "rueckfrage_pilot_oder_demo",
+      "text": "Wie weit ist Ihre Technologie entwickelt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Grundlagen oder Laborversuch (TRS 1-3)",
+       "Pilotanlage, Erprobung im realen Umfeld (TRS 4-7)",
+       "Anlage im Massstab 1:1 zur Markterprobung (TRS 7-9)",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "pilot_oder_demo"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -486,6 +615,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -534,6 +664,28 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_taetigkeitsgebiet",
+      "profile_field": "rueckfrage_taetigkeitsgebiet",
+      "text": "In welchem Kanton liegt Ihr Betrieb?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Luzern",
+       "Anderer Kanton im Gebiet der BG Mitte",
+       "Anderer Kanton",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "taetigkeitsgebiet"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "BG Mitte, Startseite",
       "url": "https://www.bgm-ccc.ch/",
@@ -554,6 +706,27 @@
       "partner",
       "budget"
      ],
+     "question": {
+      "id": "q_bankkredit",
+      "profile_field": "rueckfrage_bankkredit",
+      "text": "Brauchen Sie einen Bankkredit, für den eine Bürgschaft helfen soll?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "bankkredit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -573,6 +746,27 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": {
+      "id": "q_kreditwuerdigkeit",
+      "profile_field": "rueckfrage_kreditwuerdigkeit",
+      "text": "Bestehen gegen Sie oder Ihre Firma Betreibungen, Pfändungen oder Verlustscheine?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "kreditwuerdigkeit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -588,6 +782,7 @@
      "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -607,6 +802,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -624,6 +820,27 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": {
+      "id": "q_rueckbuergschaft",
+      "profile_field": "rueckfrage_rueckbuergschaft",
+      "text": "Sind Sie als Inhaberin oder Inhaber bereit, sich mit einer teilweisen persönlichen Mithaftung mitzuverpflichten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bg-mitte",
+        "instrument_id": "ordentliche-buergschaft",
+        "criterion_id": "rueckbuergschaft"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -639,6 +856,7 @@
      "reason": "Zur Todesfallrisikoversicherung liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -755,6 +973,27 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -774,6 +1013,27 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -794,6 +1054,7 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -813,6 +1074,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "gesuch_vor_baubeginn"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -832,6 +1112,25 @@
      "profile_fields": [
       "baujahr"
      ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "baubewilligung_vor_2000"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -847,6 +1146,7 @@
      "reason": "Der U-Wert des Dachs nach der Sanierung ist nicht angegeben.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -862,6 +1162,7 @@
      "reason": "Die U-Werte vor und nach der Sanierung fehlen, sodass die Verbesserung nicht beurteilt werden kann.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -881,6 +1182,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_min_foerdersumme",
+      "profile_field": "rueckfrage_min_foerdersumme",
+      "text": "Wie viele m2 Bauteilfläche wollen Sie dämmen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 50 m2",
+       "50 m2 oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "min_foerdersumme"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -898,6 +1220,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_geak_plus",
+      "profile_field": "rueckfrage_geak_plus",
+      "text": "Liegt für das Gebäude ein aktueller GEAK Plus vor?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "geak_plus"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -915,6 +1258,27 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_bonus_90_prozent",
+      "profile_field": "rueckfrage_bonus_90_prozent",
+      "text": "Werden mindestens 90% der Fassaden- und Dachflächen gleichzeitig gedämmt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "bonus_90_prozent"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1031,6 +1395,27 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1051,6 +1436,27 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1071,6 +1477,7 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1090,6 +1497,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "gesuch_vor_installationsbeginn"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1109,6 +1535,30 @@
      "profile_fields": [
       "bestehende_heizung"
      ],
+     "question": {
+      "id": "q_ersetzt_oel_gas_elektro",
+      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
+      "text": "Welche Heizung wird ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Öl",
+       "Erdgas",
+       "Elektro",
+       "Wärmepumpe",
+       "Holz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "ersetzt_oel_gas_elektro"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1128,6 +1578,25 @@
      "profile_fields": [
       "baujahr"
      ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "kein_neubau"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1145,6 +1614,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1162,6 +1632,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1177,6 +1648,7 @@
      "reason": "Das Profil enthält keine Angaben zu installierten Strom- und Wärmezählern.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1194,6 +1666,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1271,6 +1744,27 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1290,6 +1784,27 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1310,6 +1825,7 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1329,6 +1845,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "holzfeuerung",
+        "criterion_id": "gesuch_vor_installationsbeginn"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1348,6 +1883,30 @@
      "profile_fields": [
       "bestehende_heizung"
      ],
+     "question": {
+      "id": "q_ersetzt_oel_gas_elektro",
+      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
+      "text": "Welche Heizung wird ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Öl",
+       "Erdgas",
+       "Elektro",
+       "Wärmepumpe",
+       "Holz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "holzfeuerung",
+        "criterion_id": "ersetzt_oel_gas_elektro"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1367,6 +1926,25 @@
      "profile_fields": [
       "baujahr"
      ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "holzfeuerung",
+        "criterion_id": "kein_neubau"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1382,6 +1960,7 @@
      "reason": "Das Profil enthält keine Angabe zu einer Leistungsgarantie EnergieSchweiz.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1399,6 +1978,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1416,6 +1996,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1494,6 +2075,27 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1514,6 +2116,27 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1534,6 +2157,7 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1553,6 +2177,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermenetz-anschluss",
+        "criterion_id": "gesuch_vor_installationsbeginn"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1572,6 +2215,25 @@
      "profile_fields": [
       "baujahr"
      ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermenetz-anschluss",
+        "criterion_id": "kein_neubau"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1589,6 +2251,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1604,6 +2267,7 @@
      "reason": "Das Profil enthält keine Angabe zu einem Wärmeliefervertrag mit einem Netzbetreiber.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1681,6 +2345,27 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1701,6 +2386,27 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1721,6 +2427,7 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1741,6 +2448,28 @@
      "profile_fields": [
       "bestehende_heizung"
      ],
+     "question": {
+      "id": "q_dezentrale_heizung",
+      "profile_field": "rueckfrage_dezentrale_heizung",
+      "text": "Welche Heizung hat das Gebäude heute?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Dezentrale Elektroheizungen",
+       "Dezentrale fossile Heizungen (z. B. Öfen)",
+       "Zentrale Heizung",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "bonus-ersatz-elektroheizung",
+        "criterion_id": "dezentrale_heizung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1758,6 +2487,27 @@
      "profile_fields": [
       "bestehende_heizung"
      ],
+     "question": {
+      "id": "q_ueber_50_prozent",
+      "profile_field": "rueckfrage_ueber_50_prozent",
+      "text": "War die alte dezentrale Heizung die Hauptheizung (mehr als die Hälfte des Heizwärmebedarfs)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "bonus-ersatz-elektroheizung",
+        "criterion_id": "ueber_50_prozent"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1775,6 +2525,27 @@
       "rueckfrage_alle_ersetzt"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_alle_ersetzt",
+      "profile_field": "rueckfrage_alle_ersetzt",
+      "text": "Werden alle dezentralen Heizungen im Gebäude ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "bonus-ersatz-elektroheizung",
+        "criterion_id": "alle_ersetzt"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1794,6 +2565,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "bonus-ersatz-elektroheizung",
+        "criterion_id": "gesuch_vor_baubeginn"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1869,6 +2659,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_ch_fl",
+      "profile_field": "rueckfrage_sitz_ch_fl",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "sitz_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1888,6 +2699,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_max_250_mitarbeitende",
+      "profile_field": "rueckfrage_max_250_mitarbeitende",
+      "text": "Wie viele Vollzeitstellen hat Ihre ganze Firmengruppe?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 250 Vollzeitstellen",
+       "250 oder mehr Vollzeitstellen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "max_250_mitarbeitende"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1905,6 +2737,27 @@
      "profile_fields": [
       "unternehmensalter"
      ],
+     "question": {
+      "id": "q_keine_gruendungsphase",
+      "profile_field": "rueckfrage_keine_gruendungsphase",
+      "text": "Ist Ihr Unternehmen ein Start-up in der Gründungsphase?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "keine_gruendungsphase"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1920,6 +2773,27 @@
      "reason": "Zur Eigentümerschaft am Kapital des Unternehmens liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_kein_grosskonzern",
+      "profile_field": "rueckfrage_kein_grosskonzern",
+      "text": "Gehört die Hälfte oder mehr Ihres Unternehmenskapitals grösseren Konzernen (inkl. Joint Venture) oder öffentlich-rechtlichen Organisationen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein, weniger als die Hälfte",
+       "Ja, die Hälfte oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "kein_grosskonzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1940,6 +2814,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_umsetzung_ch_fl",
+      "profile_field": "rueckfrage_umsetzung_ch_fl",
+      "text": "Wird Ihr Projekt hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "umsetzung_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1959,6 +2854,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_treibhausgas_vermeidung",
+      "profile_field": "rueckfrage_treibhausgas_vermeidung",
+      "text": "Vermeidet Ihr Projekt Treibhausgasemissionen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "treibhausgas_vermeidung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1978,6 +2894,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_technische_innovation",
+      "profile_field": "rueckfrage_technische_innovation",
+      "text": "Ist Ihr Projekt ein technisches Innovationsvorhaben mit dem Ziel eines Markteintritts in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "technische_innovation"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1997,6 +2934,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_verwaessernde_finanzierung",
+      "profile_field": "rueckfrage_verwaessernde_finanzierung",
+      "text": "Wie hoch sind die erhaltenen und geplanten dilutiven Finanzierungen für das Projekt im Vergleich zum beantragten Förderbetrag?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Höchstens das Zehnfache",
+       "Mehr als das Zehnfache",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "verwaessernde_finanzierung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -2083,6 +3041,28 @@
      "profile_fields": [
       "energiekosten"
      ],
+     "question": {
+      "id": "q_energiekosten_20000",
+      "profile_field": "rueckfrage_energiekosten_20000",
+      "text": "Wie hoch sind Ihre jährlichen Energiekosten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter CHF 20'000",
+       "CHF 20'000 bis 300'000",
+       "Über CHF 300'000",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "peik",
+        "instrument_id": "peik-energieberatung",
+        "criterion_id": "energiekosten_20000"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "PEIK Energieberatung für KMU, Startseite",
       "url": "https://peik.ch/",
@@ -2098,6 +3078,27 @@
      "reason": "Ob das Unternehmen vom kantonalen Grossverbraucherartikel betroffen ist, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_kein_grossverbraucher",
+      "profile_field": "rueckfrage_kein_grossverbraucher",
+      "text": "Braucht Ihr Betrieb pro Jahr mehr als 500'000 kWh Strom oder mehr als 5 GWh Wärme?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein, weniger",
+       "Ja, mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "peik",
+        "instrument_id": "peik-energieberatung",
+        "criterion_id": "kein_grossverbraucher"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2115,6 +3116,27 @@
       "rueckfrage_keine_co2_befreiung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_keine_co2_befreiung",
+      "profile_field": "rueckfrage_keine_co2_befreiung",
+      "text": "Ist Ihr Unternehmen von der CO2-Abgabe befreit oder erhält es den Netzzuschlag zurückerstattet?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "peik",
+        "instrument_id": "peik-energieberatung",
+        "criterion_id": "keine_co2_befreiung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2130,6 +3152,27 @@
      "reason": "Das Profil enthält keine Angabe dazu, ob die Beratung bereits durch ein anderes Bundesprogramm gefördert wird.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_keine_bundesberatung",
+      "profile_field": "rueckfrage_keine_bundesberatung",
+      "text": "Wird diese Energieberatung bereits durch ein anderes Bundesprogramm gefördert (z. B. Projektförderung für Energiestädte)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "peik",
+        "instrument_id": "peik-energieberatung",
+        "criterion_id": "keine_bundesberatung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2231,6 +3274,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_senkt_stromverbrauch",
+      "profile_field": "rueckfrage_senkt_stromverbrauch",
+      "text": "Senkt Ihr Vorhaben den Stromverbrauch von Geräten, Anlagen, Fahrzeugen oder Gebäuden?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "senkt_stromverbrauch"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2250,6 +3314,7 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": null,
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2267,6 +3332,27 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_bestehende_anlage",
+      "profile_field": "rueckfrage_bestehende_anlage",
+      "text": "Ersetzt oder optimiert Ihre Massnahme eine bestehende Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, bestehende Anlage",
+       "Nein, Neubau oder neue Anlage",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "bestehende_anlage"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2286,6 +3372,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "nicht_begonnen"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2305,6 +3410,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_amortisation_ueber_4",
+      "profile_field": "rueckfrage_amortisation_ueber_4",
+      "text": "Wie lange dauert es, bis sich die Investition über die eingesparten Stromkosten bezahlt macht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 4 Jahre",
+       "4 Jahre oder länger",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "amortisation_ueber_4"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2322,6 +3448,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "ProKilowatt, Häufige Fragen (FR)",
       "url": "https://www.prokw.ch/faq/",
@@ -2341,6 +3468,28 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_investition_ueber_70000",
+      "profile_field": "rueckfrage_investition_ueber_70000",
+      "text": "Wie hoch sind die geplanten Investitionskosten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter CHF 70'000",
+       "CHF 70'000 bis 300'000",
+       "Über CHF 300'000",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "investition_ueber_70000"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "ProKilowatt, Häufige Fragen (FR)",
       "url": "https://www.prokw.ch/faq/",
@@ -2427,6 +3576,28 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2444,6 +3615,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2463,6 +3635,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -2480,6 +3673,7 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2500,6 +3694,25 @@
      "profile_fields": [
       "projektstart"
      ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "kleiv",
+        "criterion_id": "anlage_realisiert"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -2517,6 +3730,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2578,6 +3792,28 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "greiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2595,6 +3831,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2614,6 +3851,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "greiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -2631,6 +3889,7 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2677,6 +3936,28 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_min_2_kw",
+      "profile_field": "rueckfrage_min_2_kw",
+      "text": "Wie gross ist die geplante PV-Anlage?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unter 2 kW",
+       "2 bis unter 100 kW",
+       "100 kW oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "min_2_kw"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2694,6 +3975,7 @@
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2713,6 +3995,27 @@
      "profile_fields": [
       "eigentum_gebaeude"
      ],
+     "question": {
+      "id": "q_zustimmung_grundeigentuemer",
+      "profile_field": "rueckfrage_zustimmung_grundeigentuemer",
+      "text": "Sind Sie Eigentümer des Grundstücks, auf dem die Anlage steht?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "zustimmung_grundeigentuemer"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -2730,6 +4033,27 @@
       "rueckfrage_ohne_eigenverbrauch"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_ohne_eigenverbrauch",
+      "profile_field": "rueckfrage_ohne_eigenverbrauch",
+      "text": "Wollen Sie den Solarstrom vollständig ins Netz einspeisen (kein Eigenverbrauch)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "pronovo",
+        "instrument_id": "heiv",
+        "criterion_id": "ohne_eigenverbrauch"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2748,6 +4072,7 @@
       "rueckfrage_min_2_kw"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2811,6 +4136,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_schweiz",
+      "profile_field": "rueckfrage_sitz_schweiz",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "sitz_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -2830,6 +4176,28 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_co2_einsparung",
+      "profile_field": "rueckfrage_co2_einsparung",
+      "text": "Reduziert Ihr Produkt oder Verfahren Treibhausgase, fördert es erneuerbare Energien, spart es Strom oder schont es natürliche Ressourcen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mit Nachweis",
+       "Ja, aber noch ohne Nachweis",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "co2_einsparung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2849,6 +4217,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovatives_produkt",
+      "profile_field": "rueckfrage_innovatives_produkt",
+      "text": "Ist Ihr Produkt oder Verfahren eine Neu- oder Weiterentwicklung mit guten Chancen, sich am Markt durchzusetzen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "innovatives_produkt"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -2868,6 +4257,28 @@
      "profile_fields": [
       "umsatz"
      ],
+     "question": {
+      "id": "q_marktreif_umsatz",
+      "profile_field": "rueckfrage_marktreif_umsatz",
+      "text": "Hat Ihr Produkt bereits mindestens CHF 100'000 Umsatz bei Kunden generiert?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, mindestens CHF 100'000",
+       "Weniger als CHF 100'000",
+       "Noch kein Umsatz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "marktreif_umsatz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2883,6 +4294,27 @@
      "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals enthält das Profil keine Angaben.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_positives_eigenkapital",
+      "profile_field": "rueckfrage_positives_eigenkapital",
+      "text": "Ist das Eigenkapital Ihres Unternehmens positiv, ohne Überschuldung und ohne drohende Zahlungsunfähigkeit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "positives_eigenkapital"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2900,6 +4332,7 @@
       "rueckfrage_bankkredit"
      ],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2919,6 +4352,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenfinanzierung_40",
+      "profile_field": "rueckfrage_eigenfinanzierung_40",
+      "text": "Können Sie mindestens 40% des Vorhabens mit eigenen oder anderen Mitteln finanzieren?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "technologiefonds",
+        "instrument_id": "buergschaft",
+        "criterion_id": "eigenfinanzierung_40"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Konditionen, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
@@ -2940,6 +4394,7 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": null,
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",

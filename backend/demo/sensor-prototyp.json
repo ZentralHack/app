@@ -246,6 +246,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovativer_ansatz",
+      "profile_field": "rueckfrage_innovativer_ansatz",
+      "text": "Erproben Sie eine neue Energietechnologie oder einen neuen Ansatz im realen Umfeld (Energieeffizienz, erneuerbare Energie, Speicher oder Netze)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "innovativer_ansatz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -266,6 +287,28 @@
      "profile_fields": [
       "art_des_vorhabens"
      ],
+     "question": {
+      "id": "q_pilot_oder_demo",
+      "profile_field": "rueckfrage_pilot_oder_demo",
+      "text": "Wie weit ist Ihre Technologie entwickelt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Grundlagen oder Laborversuch (TRS 1-3)",
+       "Pilotanlage, Erprobung im realen Umfeld (TRS 4-7)",
+       "Anlage im Massstab 1:1 zur Markterprobung (TRS 7-9)",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "bfe-pilot-demonstration",
+        "instrument_id": "pd-finanzhilfe",
+        "criterion_id": "pilot_oder_demo"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -285,6 +328,7 @@
      "profile_fields": [
       "budget"
      ],
+     "question": null,
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -335,6 +379,28 @@
       "mitarbeitende",
       "rechtsform"
      ],
+     "question": {
+      "id": "q_kmu_startup",
+      "profile_field": "rueckfrage_kmu_startup",
+      "text": "Welche Art von Unternehmen beantragt die Förderung?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Start-up oder KMU",
+       "Small Mid-Cap (bis 499 Mitarbeitende)",
+       "Noch nicht gegründet, Gründung geplant",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "kmu_startup"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -355,6 +421,28 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_assoziiertes_land",
+      "profile_field": "rueckfrage_sitz_assoziiertes_land",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz, einem EU-Land oder einem anderen mit Horizon Europe assoziierten Land?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, Gründung oder Verlegung geplant",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "sitz_assoziiertes_land"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Status of Switzerland in Horizon Europe, Euresearch",
       "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html",
@@ -375,6 +463,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_trl_6_8",
+      "profile_field": "rueckfrage_trl_6_8",
+      "text": "Ist Ihre Technologie bereits im relevanten Umfeld validiert (TRL 5 abgeschlossen)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, erst im Labor",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "trl_6_8"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -390,6 +499,27 @@
      "reason": "Das Profil enthält keine Angabe zu gleichzeitig eingereichten EIC-Accelerator-Anträgen.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_ein_antrag",
+      "profile_field": "rueckfrage_ein_antrag",
+      "text": "Haben Sie zurzeit einen anderen Antrag beim EIC Accelerator oder EIC STEP Scale Up hängig?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "eic-accelerator",
+        "instrument_id": "eic-accelerator",
+        "criterion_id": "ein_antrag"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -407,6 +537,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -497,6 +628,27 @@
       "standort_kanton",
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_wertschoepfung_schweiz",
+      "profile_field": "rueckfrage_wertschoepfung_schweiz",
+      "text": "Ist Ihr Unternehmen in der Schweiz wertschöpfend tätig?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "wertschoepfung_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -516,6 +668,28 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner",
+      "profile_field": "partner",
+      "text": "Arbeiten Sie für dieses Projekt mit einer Hochschule oder Forschungsinstitution zusammen?",
+      "why": "Einige Programme fördern nur Projekte mit einem Forschungspartner.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, die Zusammenarbeit ist vereinbart",
+       "Wir suchen noch einen Partner",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "forschungspartner_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -535,6 +709,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner_unabhaengig",
+      "profile_field": "rueckfrage_partner_unabhaengig",
+      "text": "Sind Ihr Unternehmen und der Forschungspartner finanziell und personell unabhängig voneinander?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "partner_unabhaengig"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -554,6 +749,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenleistung_40_60",
+      "profile_field": "rueckfrage_eigenleistung_40_60",
+      "text": "Können Sie 40 bis 60% der Projektkosten selbst tragen (Personal, Material)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "eigenleistung_40_60"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -573,6 +789,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_barbeitrag_5",
+      "profile_field": "rueckfrage_barbeitrag_5",
+      "text": "Können Sie dem Forschungspartner mindestens 5% der Projektkosten bar bezahlen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "barbeitrag_5"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -592,6 +829,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -611,6 +849,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -632,6 +871,7 @@
       "vorhaben_beschreibung",
       "partner"
      ],
+     "question": null,
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -651,6 +891,28 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_partner",
+      "profile_field": "partner",
+      "text": "Arbeiten Sie für dieses Projekt mit einer Hochschule oder Forschungsinstitution zusammen?",
+      "why": "Einige Programme fördern nur Projekte mit einem Forschungspartner.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, die Zusammenarbeit ist vereinbart",
+       "Wir suchen noch einen Partner",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "criterion_id": "partner_forschungspartner"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -779,6 +1041,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_schweiz",
+      "profile_field": "rueckfrage_sitz_schweiz",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "sitz_schweiz"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -798,6 +1081,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_weniger_250_vzae",
+      "profile_field": "rueckfrage_weniger_250_vzae",
+      "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 250",
+       "250 oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "weniger_250_vzae"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -817,6 +1121,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_keine_grosse_gruppe",
+      "profile_field": "rueckfrage_keine_grosse_gruppe",
+      "text": "Gehört Ihr Unternehmen zu einer Gruppe mit mehr als 250 Vollzeitstellen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "keine_grosse_gruppe"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -832,6 +1157,27 @@
      "reason": "Das Profil enthält keine Angabe zu einer bisherigen Unterstützung durch eine Innosuisse-Mentorin oder einen Innosuisse-Mentor für dieses Projekt.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_erstmals_mentoring",
+      "profile_field": "rueckfrage_erstmals_mentoring",
+      "text": "Haben Sie für dieses Projekt schon einmal Unterstützung durch eine Innosuisse-Mentorin oder einen -Mentor erhalten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "erstmals_mentoring"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -849,6 +1195,27 @@
       "rueckfrage_keine_parallele_beratung"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_keine_parallele_beratung",
+      "profile_field": "rueckfrage_keine_parallele_beratung",
+      "text": "Werden Sie für dieses Projekt bereits von einer anderen Stelle beraten?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsmentoring",
+        "criterion_id": "keine_parallele_beratung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -924,6 +1291,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_innovationsvorhaben",
+      "profile_field": "rueckfrage_innovationsvorhaben",
+      "text": "Haben Sie ein Vorhaben oder eine Idee, die Sie weiterbringen wollen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "itz",
+        "instrument_id": "innovation-sparring",
+        "criterion_id": "innovationsvorhaben"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -939,6 +1327,7 @@
      "reason": "Ob ein 30-minütiger Sparring-Check durchgeführt wird, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "profile_fields": [],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -958,6 +1347,7 @@
      "profile_fields": [
       "rechtsform"
      ],
+     "question": null,
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -1020,6 +1410,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_sitz_ch_fl",
+      "profile_field": "rueckfrage_sitz_ch_fl",
+      "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "sitz_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1039,6 +1450,27 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_max_250_mitarbeitende",
+      "profile_field": "rueckfrage_max_250_mitarbeitende",
+      "text": "Wie viele Vollzeitstellen hat Ihre ganze Firmengruppe?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 250 Vollzeitstellen",
+       "250 oder mehr Vollzeitstellen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "max_250_mitarbeitende"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1056,6 +1488,27 @@
      "profile_fields": [
       "unternehmensalter"
      ],
+     "question": {
+      "id": "q_keine_gruendungsphase",
+      "profile_field": "rueckfrage_keine_gruendungsphase",
+      "text": "Ist Ihr Unternehmen ein Start-up in der Gründungsphase?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "keine_gruendungsphase"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1071,6 +1524,27 @@
      "reason": "Zu den Eigentumsverhältnissen des Kapitals fehlen Angaben.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_kein_grosskonzern",
+      "profile_field": "rueckfrage_kein_grosskonzern",
+      "text": "Gehört die Hälfte oder mehr Ihres Unternehmenskapitals grösseren Konzernen (inkl. Joint Venture) oder öffentlich-rechtlichen Organisationen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein, weniger als die Hälfte",
+       "Ja, die Hälfte oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "kein_grosskonzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1090,6 +1564,27 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_umsetzung_ch_fl",
+      "profile_field": "rueckfrage_umsetzung_ch_fl",
+      "text": "Wird Ihr Projekt hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "umsetzung_ch_fl"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1109,6 +1604,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_treibhausgas_vermeidung",
+      "profile_field": "rueckfrage_treibhausgas_vermeidung",
+      "text": "Vermeidet Ihr Projekt Treibhausgasemissionen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "treibhausgas_vermeidung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1128,6 +1644,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_technische_innovation",
+      "profile_field": "rueckfrage_technische_innovation",
+      "text": "Ist Ihr Projekt ein technisches Innovationsvorhaben mit dem Ziel eines Markteintritts in der Schweiz oder in Liechtenstein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "technische_innovation"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1147,6 +1684,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_verwaessernde_finanzierung",
+      "profile_field": "rueckfrage_verwaessernde_finanzierung",
+      "text": "Wie hoch sind die erhaltenen und geplanten dilutiven Finanzierungen für das Projekt im Vergleich zum beantragten Förderbetrag?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Höchstens das Zehnfache",
+       "Mehr als das Zehnfache",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "klimastiftung-schweiz",
+        "instrument_id": "innovationsfoerderung",
+        "criterion_id": "verwaessernde_finanzierung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1276,6 +1834,27 @@
       "rechtsform",
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_unternehmerisch_taetig",
+      "profile_field": "rueckfrage_unternehmerisch_taetig",
+      "text": "Erbringt Ihr Unternehmen Leistungen am Markt oder für verbundene Unternehmen, oder plant es dies?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "unternehmerisch_taetig"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1296,6 +1875,28 @@
       "standort_kanton",
       "handelsregister"
      ],
+     "question": {
+      "id": "q_handelsregister",
+      "profile_field": "handelsregister",
+      "text": "Ist Ihr Unternehmen im Handelsregister des Kantons Luzern eingetragen (Sitz oder Zweigniederlassung)?",
+      "why": "Kantonale Programme setzen meist einen Eintrag im Luzerner Handelsregister voraus.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, in einem anderen Kanton",
+       "Nein, gar nicht eingetragen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "hr_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1316,6 +1917,28 @@
       "standort_kanton",
       "raeumlichkeiten"
      ],
+     "question": {
+      "id": "q_raeumlichkeiten",
+      "profile_field": "raeumlichkeiten",
+      "text": "Hat Ihr Unternehmen eigene oder gemietete Räume im Kanton Luzern, die dauernd zur Verfügung stehen?",
+      "why": "Einige Programme verlangen eine tatsächliche Präsenz im Kanton, eine Domiziladresse genügt nicht.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, nur eine Domiziladresse (c/o)",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "praesenz_raeume"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1335,6 +1958,28 @@
      "profile_fields": [
       "mitarbeitende"
      ],
+     "question": {
+      "id": "q_praesenz_personal",
+      "profile_field": "rueckfrage_praesenz_personal",
+      "text": "Beschäftigt Ihr Unternehmen eigenes oder ausgeliehenes Personal in Räumlichkeiten im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, während des ganzen Geschäftsjahres",
+       "Nur während eines Teils des Geschäftsjahres",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "praesenz_personal"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1354,6 +1999,29 @@
      "profile_fields": [
       "revisionsart"
      ],
+     "question": {
+      "id": "q_revisionsart",
+      "profile_field": "revisionsart",
+      "text": "Wie wird die Jahresrechnung Ihres Unternehmens geprüft?",
+      "why": "Einige Programme setzen eine geprüfte Jahresrechnung voraus.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ordentliche Revision",
+       "Eingeschränkte Revision",
+       "Keine Revision (Opting-out)",
+       "Keine Revisionspflicht, z. B. Einzelunternehmen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "revision"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1373,6 +2041,27 @@
      "profile_fields": [
       "nachhaltigkeitsbericht"
      ],
+     "question": {
+      "id": "q_nachhaltigkeit",
+      "profile_field": "rueckfrage_nachhaltigkeit",
+      "text": "Hat Ihr Unternehmen einen Nachhaltigkeitsbericht oder eine Übersicht zu Nachhaltigkeitsthemen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "nachhaltigkeit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1388,6 +2077,27 @@
      "reason": "Zu fälligen unbezahlten Behördenforderungen und zu einem Konkurs- oder Liquidationsverfahren liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_keine_ausstaende",
+      "profile_field": "rueckfrage_keine_ausstaende",
+      "text": "Hat Ihr Unternehmen fällige, unbezahlte Forderungen von Behörden, oder läuft ein Konkurs- oder Nachlassverfahren?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": null,
+        "criterion_id": "keine_ausstaende"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1409,6 +2119,29 @@
       "vorhaben_beschreibung",
       "art_des_vorhabens"
      ],
+     "question": {
+      "id": "q_fei_taetigkeit",
+      "profile_field": "rueckfrage_fei_taetigkeit",
+      "text": "Welche Art von Arbeiten umfasst Ihr Vorhaben?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Forschung oder experimentelle Entwicklung",
+       "Selbst entwickelte Prozess- oder Organisationsinnovation",
+       "Klinische Studie",
+       "Keine davon (z. B. Marketing, Einkauf bestehender Software)",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "fei_taetigkeit"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1428,6 +2161,28 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_neuartig",
+      "profile_field": "rueckfrage_neuartig",
+      "text": "Entwickeln Sie die Lösung selbst, oder setzen Sie eine bestehende Lösung ein?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Eigenentwicklung",
+       "Bestehende Lösung anpassen",
+       "Bestehende Lösung einsetzen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "neuartig"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1449,6 +2204,27 @@
       "budget",
       "laufzeit"
      ],
+     "question": {
+      "id": "q_systematisch",
+      "profile_field": "rueckfrage_systematisch",
+      "text": "Gehen Sie systematisch vor, z. B. mit Budget, Zeitplan und Dokumentation?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "systematisch"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1470,6 +2246,28 @@
      "profile_fields": [
       "standort_kanton"
      ],
+     "question": {
+      "id": "q_ausfuehrung_luzern",
+      "profile_field": "rueckfrage_ausfuehrung_luzern",
+      "text": "Wo werden die Arbeiten ausgeführt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Im Kanton Luzern mit eigenem Personal",
+       "Ausserhalb des Kantons, als Auftrag an Dritte",
+       "Ausserhalb des Kantons, mit eigenem Personal",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "ausfuehrung_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1489,6 +2287,27 @@
      "profile_fields": [
       "partner"
      ],
+     "question": {
+      "id": "q_auftragsforschung_steuerung",
+      "profile_field": "rueckfrage_auftragsforschung_steuerung",
+      "text": "Steuert eine Person Ihres Unternehmens den Forschungsauftrag (instruieren, überwachen, entscheiden), und trägt Ihr Unternehmen Finanzierung und Risiken?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "auftragsforschung_steuerung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1506,6 +2325,28 @@
       "budget"
      ],
      "profile_fields": [],
+     "question": {
+      "id": "q_kosten_selbst_getragen",
+      "profile_field": "rueckfrage_kosten_selbst_getragen",
+      "text": "Verrechnen Sie die F&E-Kosten an Dritte weiter, z. B. an Kunden oder Konzerngesellschaften?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Nein",
+       "Ja, teilweise",
+       "Ja, vollständig",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "kosten_selbst_getragen"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1526,6 +2367,28 @@
       "projektstart",
       "geschaeftsjahr"
      ],
+     "question": {
+      "id": "q_kosten_bemessungsjahr",
+      "profile_field": "rueckfrage_kosten_bemessungsjahr",
+      "text": "Sind die Projektkosten bereits angefallen, oder fallen sie erst an?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Bereits angefallen",
+       "Laufend",
+       "Fallen erst an",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "lib",
+        "instrument_id": "lib-beitrag",
+        "criterion_id": "kosten_bemessungsjahr"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1642,6 +2505,27 @@
       "standort_kanton",
       "rechtsform"
      ],
+     "question": {
+      "id": "q_steuerpflichtig_luzern",
+      "profile_field": "rueckfrage_steuerpflichtig_luzern",
+      "text": "Ist Ihr Unternehmen im Kanton Luzern steuerpflichtig?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "steuerliche-innovationsfoerderung-lu",
+        "instrument_id": "patentbox",
+        "criterion_id": "steuerpflichtig_luzern"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1661,6 +2545,28 @@
      "profile_fields": [
       "taetigkeit"
      ],
+     "question": {
+      "id": "q_patent_vorhanden",
+      "profile_field": "rueckfrage_patent_vorhanden",
+      "text": "Besitzt Ihr Unternehmen ein erteiltes Patent oder vergleichbares Recht, mit dem es Gewinn erzielt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Patent angemeldet, noch nicht erteilt",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "steuerliche-innovationsfoerderung-lu",
+        "instrument_id": "patentbox",
+        "criterion_id": "patent_vorhanden"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1676,6 +2582,28 @@
      "reason": "Angaben zum qualifizierenden und gesamten F&E-Aufwand pro Patent fehlen.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_nexus_fe_aufwand",
+      "profile_field": "rueckfrage_nexus_fe_aufwand",
+      "text": "Wer hat die Forschung und Entwicklung für das Patent durchgeführt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Unser Unternehmen selbst in der Schweiz",
+       "Teilweise beauftragte Dritte",
+       "Konzerngesellschaften im Ausland oder Patent zugekauft",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "steuerliche-innovationsfoerderung-lu",
+        "instrument_id": "patentbox",
+        "criterion_id": "nexus_fe_aufwand"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1691,6 +2619,28 @@
      "reason": "Zur erforderlichen Dokumentation beim Erstantrag und im weiteren Verlauf liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
+     "question": {
+      "id": "q_dokumentation",
+      "profile_field": "rueckfrage_dokumentation",
+      "text": "Können Sie Ihren F&E-Aufwand und den Gewinn den einzelnen Patenten zuordnen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja, pro Patent",
+       "Nur pro Produkt oder Produktfamilie",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "steuerliche-innovationsfoerderung-lu",
+        "instrument_id": "patentbox",
+        "criterion_id": "dokumentation"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1779,6 +2729,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_umweltentlastung",
+      "profile_field": "rueckfrage_umweltentlastung",
+      "text": "Reduziert Ihre Technologie Umweltbelastungen wie Abfall, Emissionen oder Ressourcenverbrauch?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "umweltentlastung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1799,6 +2770,7 @@
      "profile_fields": [
       "art_des_vorhabens"
      ],
+     "question": null,
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1818,6 +2790,27 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": {
+      "id": "q_kommerzielle_nutzung",
+      "profile_field": "rueckfrage_kommerzielle_nutzung",
+      "text": "Wollen Sie die Resultate später kommerziell verwerten (Verkauf, Lizenzen, Dienstleistungen)?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "kommerzielle_nutzung"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1837,6 +2830,27 @@
      "profile_fields": [
       "budget"
      ],
+     "question": {
+      "id": "q_eigenanteil_50",
+      "profile_field": "rueckfrage_eigenanteil_50",
+      "text": "Können Sie mit Ihren Projektpartnern mindestens die Hälfte der Projektkosten ohne Bundesgelder tragen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "eigenanteil_50"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1856,6 +2870,27 @@
      "profile_fields": [
       "laufzeit"
      ],
+     "question": {
+      "id": "q_dauer_4_jahre",
+      "profile_field": "rueckfrage_dauer_4_jahre",
+      "text": "Wie lange dauert Ihr Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Höchstens 4 Jahre",
+       "Länger als 4 Jahre",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "umwelttechnologiefoerderung",
+        "instrument_id": "utf-finanzhilfe",
+        "criterion_id": "dauer_4_jahre"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1875,6 +2910,7 @@
      "profile_fields": [
       "vorhaben_beschreibung"
      ],
+     "question": null,
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
