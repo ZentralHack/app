@@ -17,10 +17,10 @@
   "purpose": "SERV versichert Schweizer Exporteure gegen politische Risiken und Zahlungsausfälle ausländischer Kunden und erleichtert so Exportgeschäfte.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Einordnung: Prüfung des einzelnen Geschäfts, keine ausdrückliche Aussage in der Quelle.",
+    "note": "Kein Rechtsanspruch auf Abschluss einer Versicherung (Art. 15 Abs. 2 SERVG).",
     "source": {
-      "source_id": "anforderungen",
-      "locator": null
+      "source_id": "servg",
+      "locator": "Art. 15 Abs. 2"
     }
   },
   "budget": null,
@@ -45,7 +45,7 @@
         "note": null,
         "source": {
           "source_id": "lieferantenkredit",
-          "locator": null
+          "locator": "Produktseite, Einleitung"
         }
       },
       "recipient": {
@@ -72,14 +72,14 @@
         {
           "id": "gedeckte_risiken",
           "name": "Gedeckte Risiken",
-          "definition": "Politische, kommerzielle, Transfer- und Force-majeure-Risiken. Gedeckt sind Preis, Finanzierungskosten inkl. SERV-Prämie, Zinsen bis Fälligkeit und Verzugszinsen innerhalb der Wartefrist.",
+          "definition": "Versicherbar sind politisches Risiko, Transferrisiko, höhere Gewalt und Delkredererisiko. Gedeckt sind Bar- oder Kreditforderungen für erbrachte Lieferungen und Leistungen, Finanzierungsnebenkosten inkl. SERV-Prämie, Zinsforderungen bis zur Fälligkeit, Verzugszinsen (innerhalb der Karenzpflicht) und Vorfälligkeitsentschädigung.",
           "examples_positive": [],
           "examples_negative": [
-            "Fabrikationsrisiko (separate Versicherung)"
+            "Risiken in der Fabrikationsphase (nur mit zusätzlicher Fabrikationsrisikoversicherung)"
           ],
           "source": {
             "source_id": "lieferantenkredit",
-            "locator": null
+            "locator": "Einleitung und Abschnitt «Deckungsgegenstand»"
           }
         }
       ],
@@ -87,7 +87,7 @@
       "criteria": [
         {
           "id": "sitz_ch_handelsregister",
-          "text": "Der Exporteur hat seinen Sitz in der Schweiz und ist im Handelsregister eingetragen.",
+          "text": "Der Exporteur ist in der Schweiz niedergelassen und im Handelsregister eingetragen.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -106,13 +106,13 @@
           "evidence": [],
           "source": {
             "source_id": "anforderungen",
-            "locator": "Domicile"
+            "locator": "Versicherungsvoraussetzungen, Punkt 1"
           },
-          "notes": null
+          "notes": "Gesetzliche Grundlage: Art. 13 Abs. 1 lit. a SERVG."
         },
         {
           "id": "kaeufer_ausland",
-          "text": "Der Käufer hat seinen Sitz ausserhalb der Schweiz.",
+          "text": "Der Besteller hat seinen Sitz im Ausland.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -130,61 +130,77 @@
           "evidence": [],
           "source": {
             "source_id": "anforderungen",
-            "locator": "Domicile"
+            "locator": "Versicherungsvoraussetzungen, Punkt 4"
           },
-          "notes": null
+          "notes": "Gesetzliche Grundlage: Art. 13 Abs. 1 lit. c SERVG."
         },
         {
           "id": "schweizer_anteil",
-          "text": "Der ausländische Anteil der Lieferung oder Leistung übersteigt 80% des Auftragswerts nicht.",
-          "kind": "muss",
+          "text": "Der ausländische Zuliefer- oder Leistungsanteil sollte 80 Prozent des Auftragswerts nicht überschreiten (schweizerische Wertschöpfung mindestens 20 Prozent).",
+          "kind": "soll",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
+          "question": {
+            "text": "Wie hoch ist der Schweizer Wertschöpfungsanteil am Auftragswert?",
+            "options": [
+              "Mindestens 20 Prozent",
+              "Weniger als 20 Prozent",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "anforderungen",
-            "locator": "Swiss content"
+            "locator": "Versicherungsvoraussetzungen, Punkt 3"
           },
-          "notes": "Auf Antrag unter bestimmten Bedingungen überschreitbar."
+          "notes": "Keine harte Grenze: Unter bestimmten Voraussetzungen und auf Antrag kann die Wertschöpfung unter 20 Prozent liegen. Entscheid im Ermessen der SERV (Merkblatt Warenursprung und Wertschöpfung, S. 1; Art. 3 Abs. 3 SERV-V). Schweizer Ursprung der Ware genügt ebenfalls."
         },
         {
           "id": "subsidiaritaet",
-          "text": "Kurzfristige Kredite unter 24 Monaten an EU- und Kern-OECD-Länder deckt SERV nur, wenn der private Markt sie nicht versichern kann.",
+          "text": "Exporte mit Kreditlaufzeiten unter 24 Monaten in EU- und OECD-Kernländer versichert die SERV nur, wenn sie auf dem Privatmarkt nicht versichert werden können.",
           "kind": "muss",
           "about": "vorhaben",
-          "applies_if": "Nur bei Kreditlaufzeit unter 24 Monaten und Käufer in EU- oder Kern-OECD-Land",
+          "applies_if": "Nur bei Kreditlaufzeit unter 24 Monaten und Besteller in einem EU- oder OECD-Kernland",
           "profile_fields": [],
-          "question": null,
-          "evidence": [],
+          "question": {
+            "text": "Haben Sie für dieses Geschäft zwei Absagen von privaten Exportkreditversicherern?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Zwei Absagen von privaten Exportkreditversicherern"
+          ],
           "source": {
             "source_id": "anforderungen",
-            "locator": "Subsidiarity"
+            "locator": "Versicherungsvoraussetzungen, Punkt 6"
           },
-          "notes": null
+          "notes": "Länderliste und Nachweis gemäss Merkblatt Subsidiarität (S. 1, Fussnote 2): alle EU-Staaten, Australien, Island, Japan, Kanada, Neuseeland, Norwegen, Schweiz, USA, Vereinigtes Königreich. Mit zwei Absagen privater Exportkreditversicherer ist eine Deckung als Ausnahme möglich."
         },
         {
           "id": "oecd_konsens",
-          "text": "Bei Deckungsdauer über zwei Jahre Zahlungsbedingungen nach OECD-Konsensus und Berner Union.",
+          "text": "Bei einer Versicherungsdauer über zwei Jahre pro Einzelgeschäft müssen die Zahlungsbedingungen den OECD-Konsensusregeln und den Exportkredit-Richtlinien der Berner Union entsprechen.",
           "kind": "muss",
           "about": "zeit",
-          "applies_if": "Nur bei Deckungsdauer über zwei Jahre pro Geschäft",
+          "applies_if": "Nur bei Versicherungsdauer über zwei Jahre pro Einzelgeschäft",
           "profile_fields": [],
           "question": null,
           "evidence": [],
           "source": {
             "source_id": "lieferantenkredit",
-            "locator": "Payment terms"
+            "locator": "Abschnitt «Zahlungsbedingungen»"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "Versicherung des Forderungsausfalls mit einer Deckungsquote von maximal 95%, Prämie gemäss Prämienreglement.",
+        "summary": "Versicherung des Forderungsausfalls mit maximalem Deckungssatz von 95 Prozent. Prämie individuell nach Prämientarif und Prämienreglement.",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": null,
@@ -195,45 +211,76 @@
         "payout_forms": [
           "Entschädigung im Schadenfall"
         ],
-        "calculation_basis": "Forderungswert",
+        "calculation_basis": "Versicherter Kreditbetrag multipliziert mit dem Deckungssatz",
         "example": null,
         "source": {
           "source_id": "lieferantenkredit",
-          "locator": "Maximum cover ratio"
+          "locator": "Einleitung, «Maximaler Deckungssatz: 95%»"
         },
-        "note": "Maximale Deckungsquote 95%. Keine Mindestgrösse für Unternehmen oder Auftrag. Prämie gemäss Prämienreglement und Prämienrechner, nicht gesichtet."
+        "note": "Maximaler Deckungssatz 95 Prozent (auch Art. 4 Abs. 1 SERV-V). Keine Mindestgrössen und keine Mindestprämien (FAQ). Prämie aus Risiko- und Aufwandsprämie; abhängig von Bemessungsgrundlage, Laufzeit und Deckungsprofil, Bonität und Land des Schuldners, Sicherheiten und Deckungssatz (Seite Prämien). Bei Standardgeschäften keine zusätzlichen Gebühren. Unverbindliche Indikation im Prämiensimulator."
       },
       "timing": {
         "deadline": {
-          "type": "unbekannt",
-          "rule": "Keine Frist genannt. Antrag elektronisch im Kundenportal.",
+          "type": "laufend",
+          "rule": "Keine Eingabefrist. Antrag frühzeitig stellen, spätestens vor Risikobeginn. Bereits eingetretene Risiken sind nicht versicherbar.",
           "next_dates": [],
           "relative": null,
           "source": {
-            "source_id": "exporteure",
-            "locator": "Application"
+            "source_id": "faq",
+            "locator": "«Soll ich direkt eine Versicherungspolice ... beantragen?» und «Kann ich noch nachträglich eine Exportrisikoversicherung abschliessen?»"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": null
+        "note": "Abgeleitet aus FAQ («Kann ich noch nachträglich …»): Anträge sind grundsätzlich bis zum Eintritt eines versicherbaren Risikos möglich, daher laufend."
       },
       "documents": {
         "application": [
           {
-            "name": "Antrag im SERV-Kundenportal",
+            "name": "Antragsformular im SERV-Antragsportal (online)",
             "condition": null,
             "source": {
-              "source_id": "exporteure",
-              "locator": "Application"
+              "source_id": "faq",
+              "locator": "«Welche Dokumente muss ich bei einem Antrag einreichen?»"
+            }
+          },
+          {
+            "name": "Zusätzliche Angaben zu Unternehmen, Kunde (Kennzahlen, Bilanzen, Erfolgsrechnungen) oder sozialer und ökologischer Verträglichkeit",
+            "condition": "Je nach Versicherung, Exportgeschäft und Kunde; das Portal zeigt, was nötig ist",
+            "source": {
+              "source_id": "faq",
+              "locator": "«Welche Dokumente muss ich bei einem Antrag einreichen?»"
+            }
+          },
+          {
+            "name": "Zwei Absagen von privaten Exportkreditversicherern",
+            "condition": "Nur bei kurzfristigem Geschäft in ein Land auf der Liste der EU-Kommission",
+            "source": {
+              "source_id": "subsidiaritaet",
+              "locator": "S. 1, «Marktfähige/nicht-marktfähige Risiken»"
             }
           }
         ],
         "completion": []
       },
-      "obligations": [],
+      "obligations": [
+        {
+          "text": "Die Angaben im Antrag sind verbindlich. Abweichungen können zur Minderung oder Verweigerung der Schadenzahlung führen.",
+          "source": {
+            "source_id": "faq",
+            "locator": "«Worauf muss ich beim Antrag achten?»"
+          }
+        },
+        {
+          "text": "Änderungen der Angaben in der Police und Vorkommnisse, die auf einen drohenden Schaden hindeuten, umgehend der SERV melden.",
+          "source": {
+            "source_id": "faq",
+            "locator": "«Die SERV hat die Versicherungspolice ausgestellt. Was muss ich nun beachten?»"
+          }
+        }
+      ],
       "levers": [],
       "links": {
         "info": "https://www.serv-ch.com/de/leistungen/fuer-schweizer-exporteure/lieferantenkreditversicherung/",
@@ -251,12 +298,13 @@
     "channel": "online_portal",
     "url": "https://portal.serv-ch.com/",
     "steps": [
-      "Antrag im Kundenportal erstellen und elektronisch einreichen"
+      "Optional vor Vertragsunterzeichnung: Grundsätzliche Versicherungszusage beantragen (bei unveränderter Sach- und Rechtslage sechs Monate gültig).",
+      "Nach Unterzeichnung des Exportvertrags: Antrag auf Versicherungspolice im Kundenportal erfassen und elektronisch einreichen."
     ],
-    "note": null,
+    "note": "Anträge nur online über das Antragsportal.",
     "source": {
-      "source_id": "exporteure",
-      "locator": "Application"
+      "source_id": "faq",
+      "locator": "«Soll ich direkt eine Versicherungspolice ... beantragen?» und «Wie beantrage ich eine Versicherung?»"
     }
   },
   "contacts": [
@@ -265,52 +313,140 @@
       "role": "Genferstrasse 6, 8002 Zürich",
       "email": "info@serv-ch.com",
       "phone": "+41 58 551 55 55",
-      "url": "https://www.serv-ch.com/en/contact/"
+      "url": "https://www.serv-ch.com/de/kontakt/"
+    },
+    {
+      "name": "SERV Lausanne",
+      "role": "Avenue d'Ouchy 47, Postfach 315, 1001 Lausanne",
+      "email": "lausanne@serv-ch.com",
+      "phone": "+41 58 551 55 25",
+      "url": "https://www.serv-ch.com/de/kontakt/"
     }
   ],
-  "legal_basis": [],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über die Schweizerische Exportrisikoversicherung (SERVG)",
+      "ref": "SR 946.10, Art. 6, 13, 15",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/UEber_uns/Rechtliche_Rahmenbedingungen/SERV-Gesetz_d.pdf"
+    },
+    {
+      "title": "Verordnung über die Schweizerische Exportrisikoversicherung (SERV-V)",
+      "ref": "SR 946.101, Art. 3, 4, 5",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/UEber_uns/Rechtliche_Rahmenbedingungen/SERV-Verordnung_d.pdf"
+    }
+  ],
   "sources": [
     {
       "id": "exporteure",
-      "title": "For Swiss exporters, SERV (EN)",
+      "title": "Für Schweizer Exporteure, SERV",
       "type": "webseite",
-      "url": "https://www.serv-ch.com/en/services/for-swiss-exporters/",
+      "url": "https://www.serv-ch.com/de/leistungen/fuer-schweizer-exporteure/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
       "id": "lieferantenkredit",
-      "title": "Supplier credit insurance, SERV (EN)",
+      "title": "Lieferantenkreditversicherung, SERV",
       "type": "webseite",
-      "url": "https://www.serv-ch.com/en/services/for-swiss-exporters/supplier-credit-insurance/",
+      "url": "https://www.serv-ch.com/de/leistungen/fuer-schweizer-exporteure/lieferantenkreditversicherung/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
       "id": "anforderungen",
-      "title": "Requirements for acceptance of the insurance, SERV (EN)",
+      "title": "Voraussetzungen für einen Versicherungsabschluss, SERV",
       "type": "webseite",
-      "url": "https://www.serv-ch.com/en/services/application/requirements-for-acceptance-of-the-insurance/",
+      "url": "https://www.serv-ch.com/de/leistungen/antragsstellung/voraussetzungen-fuer-einen-versicherungsabschluss/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "faq",
+      "title": "FAQ, SERV",
+      "type": "faq",
+      "url": "https://www.serv-ch.com/de/leistungen/faq/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "praemien",
+      "title": "Prämien, SERV",
+      "type": "webseite",
+      "url": "https://www.serv-ch.com/de/praemien/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "subsidiaritaet",
+      "title": "Information Subsidiarität, SERV",
+      "type": "merkblatt",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/Leistungen/Produkte/Voraussetzungen_Abschluss/Information_Subsidiaritaet_d.pdf",
+      "version": "V7.6, Stand 1. April 2022",
+      "published": "2022-04-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "warenursprung",
+      "title": "Information Warenursprung und Wertschöpfung, SERV",
+      "type": "merkblatt",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/Leistungen/Produkte/Voraussetzungen_Abschluss/Information_Warenursprung_d.pdf",
+      "version": "Version 6.0, Stand 01.01.2023",
+      "published": "2023-01-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "organisation",
+      "title": "Organisation, SERV",
+      "type": "webseite",
+      "url": "https://www.serv-ch.com/de/ueber-uns/organisation/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "servg",
+      "title": "Exportrisikoversicherungsgesetz (SERVG), SR 946.10",
+      "type": "gesetz",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/UEber_uns/Rechtliche_Rahmenbedingungen/SERV-Gesetz_d.pdf",
+      "version": "Stand am 1. Januar 2016",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "serv_v",
+      "title": "Verordnung über die Schweizerische Exportrisikoversicherung (SERV-V), SR 946.101",
+      "type": "verordnung",
+      "url": "https://www.serv-ch.com/fileadmin/user_upload/files/UEber_uns/Rechtliche_Rahmenbedingungen/SERV-Verordnung_d.pdf",
+      "version": "Stand am 1. Januar 2023",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
       "Nicht erfasst: Fabrikationsrisikoversicherung, Vertragsgarantieversicherung, Gegengarantie, Konfiskationsrisikoversicherung (nur kurz beschrieben, keine Konditionen gesichtet).",
-      "Prämien nicht erfasst (Prämienreglement nicht gelesen).",
-      "Ob der Antrag vor Vertragsabschluss mit dem Kunden gestellt werden muss, steht nicht in den Quellen.",
-      "level bund und Rechtsgrundlage (SERV-Gesetz) nicht aus den gesichteten Seiten belegt.",
-      "Quellen nur auf Englisch gesichtet."
+      "funding: keine festen Prämiensätze erfasst, nur Faktoren (Seite Prämien). Konkrete Prämie nur via Prämiensimulator oder Grundsätzliche Versicherungszusage.",
+      "subsidiaritaet: Die Seite Voraussetzungen spricht von Kreditlaufzeit unter 24 Monaten, das Merkblatt Subsidiarität von Höchstrisikodauer (Fabrikationsdauer plus Kreditlaufzeit). Welche Dauer gilt?",
+      "timing.deadline.type laufend ist abgeleitet aus der FAQ (Antrag bis zum Eintritt eines versicherbaren Risikos). Bitte bestätigen.",
+      "filter.project_types finanzierung: nur indirekt belegt (Lieferantenkredit an den Besteller, Finanzierungsnebenkosten gedeckt). Bitte bestätigen."
     ]
   }
 }
