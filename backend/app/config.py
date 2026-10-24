@@ -28,6 +28,10 @@ class Settings(BaseSettings):
     demo_today: date | None = None
     demo_replay: bool = False
     cors_origins: str = "http://localhost:5173"
+    # USD per million tokens (input, output), only for the cost estimate in the log.
+    # Defaults from third-party price lists (Backend-Flow), check against the console.
+    price_small_usd: tuple[float, float] = (0.10, 0.50)
+    price_main_usd: tuple[float, float] = (2.0, 10.0)
 
     @property
     def cors_origin_list(self) -> list[str]:

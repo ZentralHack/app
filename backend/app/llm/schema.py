@@ -17,10 +17,18 @@ class StrictSchemaError(TypeError):
     pass
 
 
+# Not supported by OpenAI Structured Outputs in strict mode.
+UNSUPPORTED_KEYWORDS = frozenset(
+    {"allOf", "not", "if", "then", "else", "dependentRequired", "dependentSchemas"}
+)
+
+
 def strict_json_schema(output: type[BaseModel]) -> dict[str, Any]:
     """JSON Schema of `output`, or StrictSchemaError if it is not valid for strict mode."""
     schema = output.model_json_schema()
     problems = list(_problems(schema, output.__name__))
+    if "anyOf" in schema:
+        problems.append("Wurzel darf kein anyOf sein")
     if problems:
         raise StrictSchemaError(f"{output.__name__} ist nicht strict: " + "; ".join(problems))
     return schema
@@ -33,6 +41,8 @@ def _problems(node: Any, path: str) -> Iterator[str]:
         return
     if not isinstance(node, dict):
         return
+    for keyword in UNSUPPORTED_KEYWORDS & node.keys():
+        yield f"{path}: {keyword} nicht unterstützt"
     if node.get("type") == "object":
         properties = node.get("properties", {})
         if node.get("additionalProperties") is not False:

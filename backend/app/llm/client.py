@@ -8,9 +8,11 @@ Derive them from `LLMOutput`; `strict_json_schema` checks this before every call
 from typing import Literal, Protocol
 
 from app.config import Settings
+from app.llm.errors import LLMUnavailableError
 from app.llm.schema import LLMOutput
 
 type Tier = Literal["main", "small"]
+type Effort = Literal["none", "low", "medium", "high"]
 
 
 class LLMClient(Protocol):
@@ -22,11 +24,8 @@ class LLMClient(Protocol):
         user: str,  # per-call content
         output: type[T],
         tier: Tier,
+        effort: Effort,  # reasoning effort for this call
     ) -> T: ...
-
-
-class LLMNotConfiguredError(RuntimeError):
-    """No model id for a tier in the settings."""
 
 
 def model_for_tier(settings: Settings, tier: Tier) -> str:
@@ -35,5 +34,5 @@ def model_for_tier(settings: Settings, tier: Tier) -> str:
     model = settings.model_extract if tier == "small" else settings.model_reason
     if not model:
         variable = "MODEL_EXTRACT" if tier == "small" else "MODEL_REASON"
-        raise LLMNotConfiguredError(f"{variable} ist nicht gesetzt.")
+        raise LLMUnavailableError(f"{variable} ist nicht gesetzt.", retryable=False)
     return model

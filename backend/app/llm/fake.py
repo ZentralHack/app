@@ -3,7 +3,7 @@
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass, field
 
-from app.llm.client import Tier
+from app.llm.client import Effort, Tier
 from app.llm.schema import LLMOutput, strict_json_schema
 
 type FakeResponse = LLMOutput | Callable[[str], LLMOutput]
@@ -15,6 +15,7 @@ class FakeCall:
     system: str
     user: str
     tier: Tier
+    effort: Effort
 
 
 @dataclass
@@ -26,10 +27,17 @@ class FakeLLM:
     calls: list[FakeCall] = field(default_factory=list)
 
     async def structured[T: LLMOutput](
-        self, *, task: str, system: str, user: str, output: type[T], tier: Tier
+        self,
+        *,
+        task: str,
+        system: str,
+        user: str,
+        output: type[T],
+        tier: Tier,
+        effort: Effort,
     ) -> T:
         strict_json_schema(output)
-        self.calls.append(FakeCall(task, system, user, tier))
+        self.calls.append(FakeCall(task, system, user, tier, effort))
         response = self.responses[task]
         result = response(user) if callable(response) else response
         if not isinstance(result, output):
