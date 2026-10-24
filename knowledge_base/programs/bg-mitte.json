@@ -22,12 +22,12 @@
       "NW"
     ],
     "municipalities": [],
-    "note": "Kanton Aargau nur Fricktal."
+    "note": "Kanton Aargau nur Fricktal. Massgebend ist laut Vorab-Check der Firmensitz."
   },
   "purpose": "BG Mitte verbürgt Bankkredite von KMU für Investitionen, Wachstum, Nachfolge und Gründung, wenn Eigenkapital oder Sicherheiten fehlen. Sie ist eine vom Bund anerkannte Bürgschaftsgenossenschaft.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Der Ausschuss der BG Mitte entscheidet über Annahme oder Ablehnung.",
+    "note": "Der zuständige Ausschuss der BG Mitte entscheidet über Annahme oder Ablehnung. Die BG Mitte muss einen ablehnenden Entscheid nicht begründen (AGB Ziff. 4).",
     "source": {
       "source_id": "sogehts",
       "locator": "Schritt 3"
@@ -52,10 +52,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Gesuche laufend, Gesuchsformular auf der Webseite.",
+        "note": "Angebot auf der Webseite, Gesuchsformular Version 2025 online. Keine Eingabefrist genannt.",
         "source": {
-          "source_id": "sogehts",
-          "locator": "Schritt 1"
+          "source_id": "ordentlich",
+          "locator": "Ordentliche Bürgschaft, Das Wichtigste in Kürze"
         }
       },
       "recipient": {
@@ -75,8 +75,7 @@
           "wachstum",
           "investition",
           "gruendung",
-          "finanzierung",
-          "gebaeudesanierung"
+          "finanzierung"
         ],
         "required_partners": [],
         "sectors": []
@@ -85,17 +84,17 @@
         {
           "id": "verwendungszwecke",
           "name": "Verwendungszwecke",
-          "definition": "Betriebsübernahmen und Nachfolgeregelungen, Betriebserweiterungen und Wachstum, Investitionen, Bau oder Kauf betrieblich genutzter Liegenschaften, Startup-Finanzierungen.",
+          "definition": "Gründung von Jung- und Neuunternehmungen, Betriebsübernahmen und Nachfolgeregelungen, Betriebserweiterungen und Wachstumsfinanzierungen, Investitionen jeder Art, Bau oder Kauf von gewerblichen Liegenschaften, Beschaffung von Betriebskapital, nachhaltige Sanierungen.",
           "examples_positive": [
-            "Liquidität",
-            "Investitionen in mobile Anlagen",
+            "Maschinen, Installationen, Fahrzeuge",
+            "Beschaffung von Betriebskapital",
             "Nachhaltige Sanierungen",
-            "Abspaltungen"
+            "Gründung von Jung- und Neuunternehmungen"
           ],
           "examples_negative": [],
           "source": {
-            "source_id": "ordentlich",
-            "locator": "Verwendungszwecke"
+            "source_id": "gesuchsformular",
+            "locator": "AGB Ziff. 2 Gesuchseingang, Seite 3"
           }
         }
       ],
@@ -103,7 +102,7 @@
       "criteria": [
         {
           "id": "taetigkeitsgebiet",
-          "text": "Der Betrieb liegt im Tätigkeitsgebiet der BG Mitte: BE, JU, SO, AG (nur Fricktal), BS, BL, LU, OW, NW.",
+          "text": "Der Firmensitz liegt im Tätigkeitsgebiet der BG Mitte: BE, BL, BS, JU, LU, NW, OW, SO und das Fricktal (AG), oder der Sitz wird dorthin verlegt.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -121,14 +120,14 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "webseite",
-            "locator": "Kantone"
+            "source_id": "vorabcheck",
+            "locator": "Frage 4/6 Firmensitz"
           },
-          "notes": "Ob Sitz oder Betriebsstandort massgebend ist, nennt die Quelle nicht."
+          "notes": "Laut Vorab-Check sind in den übrigen Kantonen andere Bürgschaftsorganisationen zuständig."
         },
         {
           "id": "bankkredit",
-          "text": "Es wird ein Bankkredit benötigt, für den die Bank Sicherheiten verlangt.",
+          "text": "Es wird ein Bankkredit benötigt. Die BG Mitte vergibt ausschliesslich Bürgschaften zugunsten von Bankkrediten.",
           "kind": "muss",
           "about": "partner",
           "applies_if": null,
@@ -137,7 +136,7 @@
             "budget"
           ],
           "question": {
-            "text": "Brauchen Sie einen Bankkredit, für den die Bank Sicherheiten verlangt?",
+            "text": "Brauchen Sie einen Bankkredit, für den eine Bürgschaft helfen soll?",
             "options": [
               "Ja",
               "Nein",
@@ -147,51 +146,57 @@
           "evidence": [],
           "source": {
             "source_id": "faq",
-            "locator": "Hinweis: nur Bürgschaften für Bankkredite"
+            "locator": "Frage «Kann ich bei der Bürgschaftsgenossenschaft einen Kredit beantragen?»"
           },
           "notes": "BG Mitte gewährt keine Darlehen direkt."
         },
         {
           "id": "kreditwuerdigkeit",
-          "text": "Positive Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
+          "text": "Positive Kreditwürdigkeit und Kreditfähigkeit des Unternehmens und seiner Exponenten.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [
             "umsatz"
           ],
-          "question": null,
+          "question": {
+            "text": "Bestehen gegen Sie oder Ihre Firma Betreibungen, Pfändungen oder Verlustscheine?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
-            "Bilanz und Erfolgsrechnung der letzten drei Jahre",
-            "Budget und Finanzplanung"
+            "Aktuelle Betreibungsauskunft",
+            "Bilanz und Erfolgsrechnung der letzten 3 Jahre",
+            "Budget und mittelfristige Finanzplanung"
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Voraussetzungen"
+            "locator": "Frage «Was sind die Grundvoraussetzungen für eine Bürgschaft?»"
           },
-          "notes": null
+          "notes": "Quelle: «wird ... vorausgesetzt». Das Gesuchsformular fragt unter «Kreditwürdigkeit» nach Betreibungen, Pfändungen, Konkursandrohungen und Verlustscheinen (Seite 2)."
         },
         {
           "id": "integre_fuehrung",
-          "text": "Betriebsführung durch eine integre, fachlich qualifizierte Person.",
-          "kind": "muss",
+          "text": "Betriebsführung durch eine integre und fachlich ausgewiesene Person mit guten beruflichen Qualifikationen.",
+          "kind": "soll",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [],
           "question": null,
-          "evidence": [
-            "Aktuelle Betreibungsauskunft"
-          ],
+          "evidence": [],
           "source": {
             "source_id": "ordentlich",
-            "locator": "Voraussetzungen"
+            "locator": "Das Wichtigste in Kürze, Rahmenbedingungen"
           },
-          "notes": null
+          "notes": "Als Rahmenbedingung genannt, ohne Knock-out-Formulierung. Beurteilung durch die BG Mitte."
         },
         {
           "id": "risikoverteilung",
-          "text": "Ausgewogene Risikoverteilung zwischen Eigentümerin oder Eigentümer, Bank und BG Mitte.",
-          "kind": "muss",
+          "text": "Die Gesamtfinanzierung soll eine ausgewogene Risikoverteilung zwischen Unternehmen, Bank und BG Mitte beinhalten.",
+          "kind": "soll",
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [
@@ -200,31 +205,38 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "ordentlich",
-            "locator": "Voraussetzungen"
+            "source_id": "faq",
+            "locator": "Frage «Was sind die Grundvoraussetzungen für eine Bürgschaft?»"
           },
-          "notes": null
+          "notes": "Quelle formuliert «soll». Auch als Rahmenbedingung auf der Seite Ordentliche Bürgschaft genannt. Beurteilung durch die BG Mitte."
         },
         {
           "id": "rueckbuergschaft",
-          "text": "Rückbürgschaft der Inhaberin oder des Inhabers, auf mehrere Beteiligte verteilbar.",
+          "text": "Bei juristischen Personen verpflichten sich die hauptverantwortlichen natürlichen Personen anteilmässig mit (Rückbürgschaft, Aufteilung auf mehrere Beteiligte möglich).",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": "Nur bei juristischen Personen",
           "profile_fields": [
             "rechtsform"
           ],
-          "question": null,
+          "question": {
+            "text": "Sind Sie als Inhaberin oder Inhaber bereit, sich mit einer teilweisen persönlichen Mithaftung mitzuverpflichten?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "ordentlich",
-            "locator": "Voraussetzungen"
+            "source_id": "gesuchsformular",
+            "locator": "AGB Ziff. 9 Bedingungen/Sicherheiten, Seite 3"
           },
-          "notes": null
+          "notes": "AGB: «haben sich ... anteilmässig mitzuverpflichten». Die FAQ nennt «Rückbürgschaft und/oder Grundpfandtitel», der Vorab-Check «in der Regel» ein persönliches Commitment."
         },
         {
           "id": "todesfallversicherung",
-          "text": "Todesfallrisikoversicherung.",
+          "text": "In aller Regel Abschluss einer Todesfallrisikoversicherung.",
           "kind": "soll",
           "about": "dokumente",
           "applies_if": null,
@@ -233,9 +245,9 @@
           "evidence": [],
           "source": {
             "source_id": "ordentlich",
-            "locator": "Voraussetzungen"
+            "locator": "Das Wichtigste in Kürze, Rahmenbedingungen"
           },
-          "notes": "Laut Quelle in der Regel verlangt."
+          "notes": "Laut Quelle «in aller Regel». FAQ nennt die Todesfallrisikopolice bei Kapital- und Personengesellschaften als Sicherheit."
         }
       ],
       "funding": {
@@ -255,14 +267,14 @@
         "example": null,
         "source": {
           "source_id": "ordentlich",
-          "locator": "Maximaler Bürgschaftsbetrag und Kosten"
+          "locator": "Das Wichtigste in Kürze, Bürgschaftsbetrag und Kosten"
         },
-        "note": "Risikoprämie 1.25% pro Jahr auf dem verbürgten Betrag. Gesuchsprüfungskosten einmalig 1%, mindestens CHF 500, höchstens CHF 2'000. Kostenvorschuss CHF 300, wird angerechnet. Bei Ablehnung keine Kosten (FAQ). Amortisation in der Regel 5 bis 10 Jahre. Sicherheiten: bei Kapitalgesellschaften Todesfallrisikopolice, Rückbürgschaft und/oder Grundpfand (FAQ). Bankzins zusätzlich."
+        "note": "Risikoprämie 1.25% pro Jahr auf dem verbleibenden verbürgten Kredit (AGB Ziff. 11). Gesuchsprüfungskosten einmalig 1% des verbürgten Kredits, mindestens CHF 500, höchstens CHF 2'000, auch wenn die Bürgschaft nachträglich nicht beansprucht wird (AGB Ziff. 11). Kostenvorschuss CHF 300 mit dem Gesuch, wird angerechnet. Bei Ablehnung werden ausser dem Kostenvorschuss keine weiteren Kosten in Rechnung gestellt (AGB Ziff. 11). Amortisation in der Regel 5 bis 10 Jahre. Sicherheiten: bei Kapitalgesellschaften Todesfallrisikopolice, Rückbürgschaft und/oder Grundpfandtitel; bei Personengesellschaften Todesfallrisikopolice und Grundpfandtitel bei Verbürgung einer Hypothek (FAQ). Bankzins zusätzlich. Für innovative Projekte können in Zusammenarbeit mit kantonalen Wirtschaftsförderungen zusätzliche Bürgschaften über Spezialfonds gewährt werden (AGB Ziff. 7)."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Gesuch jederzeit mit Unterlagen einreichen.",
+          "rule": "Abgeleitet aus So geht's, Schritt 1: Keine Eingabefrist genannt. Gesuch mit Unterlagen und Kostenvorschuss einreichen.",
           "next_dates": [],
           "relative": null,
           "source": {
@@ -271,10 +283,10 @@
           }
         },
         "assessment_period": null,
-        "decision_time": "Ausschuss entscheidet innert 5 Arbeitstagen nach dem Prüfungsbericht. In der Regel rund zwei Wochen nach Gesuch, bei komplexen Finanzierungen länger (FAQ).",
+        "decision_time": "Entscheid grundsätzlich innert rund 2 Wochen nach Einreichung, bis zur passenden Finanzierungsstruktur kann es länger dauern (FAQ). Der Ausschuss entscheidet innert 5 Arbeitstagen nach Erhalt des Prüfungsberichts (So geht's, Schritt 3).",
         "max_duration_months": 120,
         "repeat_limit": null,
-        "note": null
+        "note": "Amortisation längstens innert 10 Jahren. In Härtefällen kann die BG Mitte auf Gesuch einer Verlängerung auf höchstens 15 Jahre zustimmen (AGB Ziff. 8)."
       },
       "documents": {
         "application": [
@@ -291,7 +303,7 @@
             "condition": null,
             "source": {
               "source_id": "ordentlich",
-              "locator": "Unterlagen"
+              "locator": "Einzureichende Unterlagen"
             }
           },
           {
@@ -299,31 +311,39 @@
             "condition": null,
             "source": {
               "source_id": "ordentlich",
-              "locator": "Unterlagen"
+              "locator": "Einzureichende Unterlagen"
             }
           },
           {
-            "name": "Bilanz und Erfolgsrechnung der letzten drei Jahre, ggf. Revisionsbericht oder Zwischenabschluss",
+            "name": "Bilanz und Erfolgsrechnung der letzten 3 Jahre, inkl. Revisionsstellen-Bericht falls vorhanden, ggf. Zwischenabschluss",
             "condition": null,
             "source": {
               "source_id": "ordentlich",
-              "locator": "Unterlagen"
+              "locator": "Einzureichende Unterlagen"
             }
           },
           {
-            "name": "Budget und Finanzplanung",
+            "name": "Budget und mittelfristige Finanzplanung",
             "condition": null,
             "source": {
               "source_id": "ordentlich",
-              "locator": "Unterlagen"
+              "locator": "Einzureichende Unterlagen"
             }
           },
           {
-            "name": "Aufstellung der privaten Vermögensverhältnisse",
+            "name": "Aufstellung der privaten Vermögensverhältnisse (Kopie Steuererklärung)",
             "condition": null,
             "source": {
               "source_id": "ordentlich",
-              "locator": "Unterlagen"
+              "locator": "Einzureichende Unterlagen"
+            }
+          },
+          {
+            "name": "Fallweise weitere Unterlagen: Businessplan, wichtige Verträge, Liegenschaftsdokumentation, Kostenvoranschlag",
+            "condition": "Je nach Komplexität des Finanzierungszwecks",
+            "source": {
+              "source_id": "ordentlich",
+              "locator": "Einzureichende Unterlagen"
             }
           }
         ],
@@ -340,10 +360,24 @@
       },
       "obligations": [
         {
-          "text": "Risikoprämie von 1.25% pro Jahr bezahlen.",
+          "text": "Jährliche Risikoprämie von 1.25% des verbleibenden verbürgten Kredits bezahlen.",
           "source": {
-            "source_id": "ordentlich",
-            "locator": "Kosten"
+            "source_id": "gesuchsformular",
+            "locator": "AGB Ziff. 11 Kosten, Seite 4"
+          }
+        },
+        {
+          "text": "Bis zur vollständigen Rückzahlung ordentliche Buchhaltung führen und Bilanz und Erfolgsrechnung innert drei Monaten nach Abschluss unaufgefordert einsenden.",
+          "source": {
+            "source_id": "gesuchsformular",
+            "locator": "AGB Ziff. 5 Buchhaltung, Seite 3"
+          }
+        },
+        {
+          "text": "Verbürgten Kredit so rasch als möglich, längstens innert 10 Jahren amortisieren.",
+          "source": {
+            "source_id": "gesuchsformular",
+            "locator": "AGB Ziff. 8 Bürgschaftsdauer, Seite 3"
           }
         }
       ],
@@ -365,28 +399,41 @@
     "url": "https://www.bgm-ccc.ch/so-gehts",
     "steps": [
       "Optional: Vorab-Check auf der Webseite",
-      "Ausgefülltes Bürgschaftsgesuch mit Unterlagen einreichen, Vorauszahlung CHF 300",
-      "Prüfung mit Gesprächen mit Bank und Unternehmen, Betriebsbesuch, Prüfungsbericht",
+      "Ausgefülltes Bürgschaftsgesuch mit Unterlagen einreichen und Kostenvorschuss CHF 300 überweisen",
+      "Prüfung mit Gesprächen mit Bank und Unternehmen, Betriebsbesichtigung vor Ort, Prüfungsbericht",
       "Entscheid des Ausschusses innert 5 Arbeitstagen",
       "Bürgschaftsvertrag unterzeichnen, Unterlagen einreichen, Kosten bezahlen",
-      "BG Mitte sendet den Bürgschein an die Bank"
+      "BG Mitte stellt der Bank den Bürgschein direkt zu"
     ],
     "note": "Das Gesuch stellt das Unternehmen, die Bank wird in die Prüfung einbezogen.",
     "source": {
       "source_id": "sogehts",
-      "locator": "Schritte 1 bis 4"
+      "locator": "In vier Schritten zum verbürgten Kredit, Schritte 1 bis 4"
     }
   },
   "contacts": [
     {
       "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
-      "role": "Bahnhofstrasse 59D, 3401 Burgdorf",
+      "role": "Hauptsitz, Bahnhofstrasse 59D, Postfach, 3401 Burgdorf",
       "email": "info@bgm-ccc.ch",
       "phone": "034 420 20 20",
       "url": "https://www.bgm-ccc.ch/kontakt"
+    },
+    {
+      "name": "BG Mitte, Aussenstelle Zentralschweiz",
+      "role": "Zuständig für Luzern, Nidwalden und Obwalden. Freiteilmattlistrasse 50, 6060 Sarnen",
+      "email": null,
+      "phone": "041 210 34 37",
+      "url": "https://www.bgm-ccc.ch/kontakt"
     }
   ],
-  "legal_basis": [],
+  "legal_basis": [
+    {
+      "title": "Verordnung über die Finanzhilfen an Bürgschaftsorganisationen für KMU",
+      "ref": "SR 951.251",
+      "url": null
+    }
+  ],
   "sources": [
     {
       "id": "webseite",
@@ -395,7 +442,7 @@
       "url": "https://www.bgm-ccc.ch/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -405,7 +452,7 @@
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -415,7 +462,7 @@
       "url": "https://www.bgm-ccc.ch/so-gehts",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -425,21 +472,53 @@
       "url": "https://www.bgm-ccc.ch/faq",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "vorabcheck",
+      "title": "Vorab-Check, BG Mitte",
+      "type": "webseite",
+      "url": "https://www.bgm-ccc.ch/vorab-check",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt, BG Mitte",
+      "type": "webseite",
+      "url": "https://www.bgm-ccc.ch/kontakt",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "gesuchsformular",
+      "title": "Gesuchsformular mit Allgemeinen Geschäftsbedingungen, BG Mitte",
+      "type": "formular",
+      "url": "https://www.bgm-ccc.ch/fileadmin/Dokumente/Downloads/gesuchsformular_de.pdf",
+      "version": "BGM_V2025, AGB Stand Dezember 2024",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
       "Nicht erfasst: AVIG-Bürgschaften und Covid-19-Kredite (Unterseiten nicht gesichtet).",
-      "Rechtsgrundlage (Bundesgesetz über die Finanzhilfen an Bürgschaftsorganisationen für KMU) nicht aus einer gelieferten Quelle belegt, daher legal_basis leer.",
-      "Beitrag des Kantons Luzern an die BG Mitte nicht aus gelieferter Quelle belegt.",
-      "Massgebend für das Tätigkeitsgebiet: Sitz oder Betriebsstandort?",
-      "Rückbürgschaft und Sicherheiten: Webseite (ordentliche Bürgschaft) und FAQ formulieren leicht verschieden.",
-      "FAQ nur als Zusammenfassung gelesen, Wortlaut prüfen. Quellen nicht lokal abgelegt."
+      "legal_basis: SR 951.251 nur aus AGB Ziff. 1 im Gesuchsformular belegt, Fedlex-URL nicht geprüft.",
+      "Beitrag des Kantons Luzern: FAQ nennt nur «Leistungsverträge mit allen Kantonen im Tätigkeitsgebiet», Höhe unbekannt.",
+      "criteria.rueckbuergschaft: AGB Ziff. 9 verlangt Mitverpflichtung («haben sich ... mitzuverpflichten»), FAQ nennt «Rückbürgschaft und/oder Grundpfandtitel», Vorab-Check «in der Regel». Ist es ein Knock-out?",
+      "funding.note: FAQ sagt, bei Ablehnung würden «keine Kosten» verrechnet. AGB Ziff. 11 sagt «ausser dem geleisteten Kostenvorschuss keine weiteren Kosten». Wird der Kostenvorschuss bei Ablehnung zurückerstattet?",
+      "timing.deadline: «laufend» ist abgeleitet (keine Frist genannt). Bitte bestätigen.",
+      "funding: Zusätzliche Bürgschaften über Spezialfonds für innovative Projekte (AGB Ziff. 7). Gibt es das für Luzern, und mit welchem Betrag?",
+      "Quellen nicht lokal abgelegt."
     ]
   }
 }
