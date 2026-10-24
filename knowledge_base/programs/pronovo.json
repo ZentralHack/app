@@ -14,13 +14,13 @@
     "municipalities": [],
     "note": "Ganze Schweiz."
   },
-  "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. Die Vergütung deckt höchstens 30% der Investitionskosten von Referenzanlagen.",
+  "purpose": "Einmaliger Investitionsbeitrag des Bundes an neue und erweiterte Photovoltaikanlagen, abgewickelt durch Pronovo. KLEIV und GREIV betragen höchstens 30 % der Investitionskosten von Referenzanlagen, die HEIV für Anlagen ohne Eigenverbrauch bis zu 60 %.",
   "entitlement": {
     "type": "rechtsanspruch_im_budget",
-    "note": "Einordnung unsicher: Auszahlung erfolgt laut FAQ nach Reihenfolge vollständig eingereichter Gesuche. Ausdrückliche Aussage fehlt.",
+    "note": "Abgeleitet aus EnFV Art. 39, 40 und 42: Die Vollzugsstelle setzt die Vergütung fest, wenn die Anspruchsvoraussetzungen erfüllt sind und Mittel zur Verfügung stehen. Reichen die Mittel nicht, kommen Projekte nach Einreichedatum auf eine Warteliste.",
     "source": {
-      "source_id": "faq_pv",
-      "locator": "Wartezeit"
+      "source_id": "enfv",
+      "locator": "Art. 39, 40, 42"
     }
   },
   "budget": null,
@@ -43,10 +43,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Seite zuletzt geändert am 16.07.2026.",
+        "note": "Seite zuletzt geändert am 16.07.2026 (Seitenmetadaten).",
         "source": {
           "source_id": "pv",
-          "locator": null
+          "locator": "Einleitung (drei Programme)"
         }
       },
       "recipient": {
@@ -78,7 +78,7 @@
           "text": "Anlagen unter 2 kW",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Anlagen unter 2 kW"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           }
         }
       ],
@@ -102,7 +102,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -117,7 +117,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -143,13 +143,13 @@
           ],
           "source": {
             "source_id": "gesuch",
-            "locator": "Unterlagen"
+            "locator": "Gesuchsassistent, Anmerkungen zum Grundbuchauszug"
           },
           "notes": null
         },
         {
           "id": "unter_100_kw",
-          "text": "Die Anlage hat weniger als 100 kW. Bei grösseren Anlagen wird die Leistung über 99.9 kW in der KLEIV nicht gefördert.",
+          "text": "Die Anlage oder die Erweiterung hat weniger als 100 kW. Eine grössere Anlage gilt auch als kleine Anlage, wenn auf die Vergütung der Leistung über 100 kW verzichtet wird.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
@@ -157,10 +157,10 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "pv",
-            "locator": null
+            "source_id": "faq_pv",
+            "locator": "Wann habe ich Anspruch auf eine Einmalvergütung für kleine Photovoltaikanlagen (KLEIV)?"
           },
-          "notes": "Ergänzung zur Leistung über 99.9 kW laut Swissolar."
+          "notes": null
         },
         {
           "id": "anlage_realisiert",
@@ -175,7 +175,7 @@
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Zeitpunkt"
+            "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
           },
           "notes": null
         },
@@ -192,21 +192,51 @@
           ],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Erweiterungen"
+            "locator": "Kann ich für meine Erweiterung einer Photovoltaikanlage eine Einmalvergütung beantragen?"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "pro_einheit",
-        "summary": "Einmaliger Beitrag pro kW installierter Leistung, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+        "summary": "Einmaliger Leistungsbeitrag pro kW, seit 1.4.2024 ohne Grundbeitrag. Inbetriebnahme ab 1.4.2025: angebaut oder freistehend 360 CHF/kW bis 30 kW und 300 CHF/kW für 30 bis unter 100 kW, integriert 400 bzw. 330 CHF/kW. Höchstens 30 % der Investitionskosten von Referenzanlagen.",
         "cost_categories": [],
         "units": [
           {
             "unit": "kW installierte Leistung",
-            "condition": "Ansatz gemäss EnFV Anhang 2.1, nicht verifiziert",
+            "condition": "Angebaut oder freistehend, Leistungsanteil unter 30 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.9)",
             "base_chf": null,
-            "amount_chf": null
+            "amount_chf": 360
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Angebaut oder freistehend, Leistungsanteil 30 bis unter 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.9)",
+            "base_chf": null,
+            "amount_chf": 300
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Integriert, Leistungsanteil unter 30 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.8)",
+            "base_chf": null,
+            "amount_chf": 400
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Integriert, Leistungsanteil 30 bis unter 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.8)",
+            "base_chf": null,
+            "amount_chf": 330
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Integrierte Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.1)",
+            "base_chf": null,
+            "amount_chf": 400
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Angebaute oder freistehende Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.2)",
+            "base_chf": null,
+            "amount_chf": 200
           }
         ],
         "max_share_of_costs_pct": 30,
@@ -218,25 +248,25 @@
             "text": "Erweiterungen erhalten nur einen Leistungsbeitrag, keine Pauschale. Für Anlagen, die vor dem 1.1.2018 bereits 30 kW oder mehr hatten, besteht für die Leistung ab 30 kW kein Anspruch.",
             "source": {
               "source_id": "faq_pv",
-              "locator": "Erweiterungen"
+              "locator": "Kann ich für meine Erweiterung einer Photovoltaikanlage eine Einmalvergütung beantragen?"
             }
           }
         ],
         "payout_forms": [
           "Einmalige Auszahlung"
         ],
-        "calculation_basis": "Installierte Leistung in kW",
+        "calculation_basis": "Installierte Leistung in kW. Ab 30 kW anteilsmässig über die Leistungsklassen (EnFV Anhang 2.1 Ziff. 2.5).",
         "example": null,
         "source": {
-          "source_id": "swissolar",
-          "locator": "Maximaler Anteil"
+          "source_id": "enfv",
+          "locator": "Anhang 2.1 Ziff. 2.5, 2.7, 2.8, 2.9"
         },
-        "note": "Konkrete Ansätze (Grund- und Leistungsbeitrag pro kW) stehen im Anhang 2.1 der Energieförderungsverordnung (EnFV) und im Tarifrechner von Pronovo, wurden aber nicht aus einer Primärquelle gelesen. Boni für Neigung über 75 Grad, Standort über 1500 m ü. M. und Parkflächen sowie erhöhte Förderung für integrierte Anlagen laut Swissolar, Beträge nicht genannt. Steuerliche Behandlung je Kanton verschieden (FAQ)."
+        "note": "Ansätze aus EnFV Anhang 2.1 (Stand am 1. Juli 2026), Spalte «Ab 1.4.2025». Grundbeitrag 0 Franken. Laut Tarifrechner gelten die Sätze grundsätzlich bis zum 31. März des Folgejahres; neue Tarife werden per Anfang Januar hinterlegt. Verbindlich ist die Festsetzung durch Pronovo nach dem Inbetriebnahmedatum. Höchstanteil 30 % gemäss EnG Art. 25 Abs. 2 und FAQ Pronovo. Auszahlung ohne Mehrwertsteuer (FAQ). Steuerliche Behandlung je Kanton verschieden (FAQ)."
       },
       "timing": {
         "deadline": {
           "type": "nach_abschluss",
-          "rule": "Gesuch erst nach Realisierung der Anlage. Keine Frist für die Gesuchstellung genannt.",
+          "rule": "Gesuch erst nach Inbetriebnahme der Anlage (EnFV Art. 41 Abs. 1). Keine Frist für die Gesuchstellung genannt.",
           "next_dates": [],
           "relative": {
             "event": "inbetriebnahme",
@@ -245,11 +275,11 @@
           },
           "source": {
             "source_id": "gesuch",
-            "locator": "Zeitpunkt"
+            "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
           }
         },
         "assessment_period": null,
-        "decision_time": "Wartezeit bis zur Auszahlung unter einem Jahr (Swissolar)",
+        "decision_time": null,
         "max_duration_months": null,
         "repeat_limit": null,
         "note": null
@@ -261,15 +291,15 @@
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
             }
           },
           {
             "name": "Grundbuchauszug oder gleichwertiges Dokument, nicht älter als ein Jahr",
-            "condition": null,
+            "condition": "bei Erweiterungen nur, sofern nicht bereits bei der Grundanlage eingereicht",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Anmerkungen zum Grundbuchauszug"
             }
           },
           {
@@ -277,15 +307,15 @@
             "condition": "nur bei integrierten Anlagen",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
             }
           },
           {
-            "name": "Zahlungsinformationen (IBAN)",
+            "name": "Zahlungsinformationen",
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
             }
           },
           {
@@ -293,7 +323,15 @@
             "condition": "bei Erweiterungen",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis KLEIV (Neuanlage, Erweiterung)"
+            }
+          },
+          {
+            "name": "Beglaubigte Anlagedaten (Beglaubigung)",
+            "condition": null,
+            "source": {
+              "source_id": "richtlinie",
+              "locator": "Kap. 3.1, S. 11"
             }
           }
         ],
@@ -304,14 +342,21 @@
           "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Wie lange gilt die Betriebspflicht für meine Anlage?"
           }
         },
         {
-          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres, mit mindestens der bisherigen Leistung und Kategorie.",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Ich möchte meine Anlage vorübergehend aufgrund von Reparaturmassnahmen meines Daches ausser Betrieb nehmen. Bis wann muss die Wiederinbetriebnahme erfolgen?"
+          }
+        },
+        {
+          "text": "Änderungen an der Anlage (auch Demontage, Verkleinerung, Zusammenlegung) müssen Pronovo gemeldet werden.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Muss ich es Pronovo melden, wenn ich meine PV-Anlage verändere?"
           }
         }
       ],
@@ -323,7 +368,7 @@
       },
       "source": {
         "source_id": "pv",
-        "locator": null
+        "locator": "Einleitung (drei Programme)"
       }
     },
     {
@@ -344,7 +389,7 @@
         "note": null,
         "source": {
           "source_id": "pv",
-          "locator": null
+          "locator": "Einleitung (drei Programme)"
         }
       },
       "recipient": {
@@ -392,7 +437,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -407,7 +452,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -433,7 +478,7 @@
           ],
           "source": {
             "source_id": "gesuch",
-            "locator": "Unterlagen"
+            "locator": "Gesuchsassistent, Anmerkungen zum Grundbuchauszug"
           },
           "notes": null
         },
@@ -448,21 +493,69 @@
           "evidence": [],
           "source": {
             "source_id": "pv",
-            "locator": null
+            "locator": "Einleitung (drei Programme)"
           },
-          "notes": null
+          "notes": "Die FAQ schreibt «über 100 kW», Webseite, Richtlinie und EnFV Art. 7 Abs. 1 «ab 100 kW»."
         }
       ],
       "funding": {
         "model": "pro_einheit",
-        "summary": "Einmaliger Beitrag pro kW, höchstens 30% der Investitionskosten einer Referenzanlage. Betrag im Pronovo-Tarifrechner berechnen.",
+        "summary": "Einmaliger Leistungsbeitrag pro kW, seit 1.4.2024 ohne Grundbeitrag, anteilsmässig über die Leistungsklassen. Inbetriebnahme ab 1.4.2025: Leistungsanteil ab 100 kW 250 CHF/kW (angebaut, freistehend oder integriert). Höchstens 30 % der Investitionskosten von Referenzanlagen.",
         "cost_categories": [],
         "units": [
           {
             "unit": "kW installierte Leistung",
-            "condition": "Ansatz gemäss EnFV Anhang 2.1, nicht verifiziert",
+            "condition": "Angebaut oder freistehend, Leistungsanteil unter 30 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.9)",
             "base_chf": null,
-            "amount_chf": null
+            "amount_chf": 360
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Angebaut oder freistehend, Leistungsanteil 30 bis unter 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.9)",
+            "base_chf": null,
+            "amount_chf": 300
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Integriert, Leistungsanteil unter 30 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.8)",
+            "base_chf": null,
+            "amount_chf": 400
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Integriert, Leistungsanteil 30 bis unter 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.8)",
+            "base_chf": null,
+            "amount_chf": 330
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Angebaut oder freistehend, Leistungsanteil ab 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.9)",
+            "base_chf": null,
+            "amount_chf": 250
+          },
+          {
+            "unit": "kW installierte Leistung",
+            "condition": "Integriert, Leistungsanteil ab 100 kW, Inbetriebnahme ab 1.4.2025 (EnFV Anhang 2.1 Ziff. 2.8)",
+            "base_chf": null,
+            "amount_chf": 250
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Integrierte Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.1)",
+            "base_chf": null,
+            "amount_chf": 400
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Angebaute oder freistehende Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.2)",
+            "base_chf": null,
+            "amount_chf": 200
+          },
+          {
+            "unit": "kW installierte Leistung über Parkplatzareal (Parkflächenbonus)",
+            "condition": "Anlagen ab 100 kW über dauerhaftem, bisher unüberdachtem Parkplatzareal, Inbetriebnahme ab 1.1.2025 (EnFV Anhang 2.1 Ziff. 2.7.4)",
+            "base_chf": null,
+            "amount_chf": 250
           }
         ],
         "max_share_of_costs_pct": 30,
@@ -473,13 +566,13 @@
         "payout_forms": [
           "Einmalige Auszahlung"
         ],
-        "calculation_basis": "Installierte Leistung in kW",
+        "calculation_basis": "Installierte Leistung in kW, anteilsmässig über die Leistungsklassen (EnFV Anhang 2.1 Ziff. 2.5).",
         "example": null,
         "source": {
-          "source_id": "swissolar",
-          "locator": "Maximaler Anteil"
+          "source_id": "enfv",
+          "locator": "Anhang 2.1 Ziff. 2.5, 2.7, 2.8, 2.9"
         },
-        "note": "Konkrete Ansätze (Grund- und Leistungsbeitrag pro kW) stehen im Anhang 2.1 der Energieförderungsverordnung (EnFV) und im Tarifrechner von Pronovo, wurden aber nicht aus einer Primärquelle gelesen. Boni für Neigung über 75 Grad, Standort über 1500 m ü. M. und Parkflächen sowie erhöhte Förderung für integrierte Anlagen laut Swissolar, Beträge nicht genannt."
+        "note": "Ansätze aus EnFV Anhang 2.1 (Stand am 1. Juli 2026), Spalte «Ab 1.4.2025». Grundbeitrag 0 Franken. Laut Tarifrechner gelten die Sätze grundsätzlich bis zum 31. März des Folgejahres; neue Tarife werden per Anfang Januar hinterlegt. Verbindlich ist die Festsetzung durch Pronovo nach dem Inbetriebnahmedatum. Höchstanteil 30 % gemäss EnG Art. 25 Abs. 2 und FAQ Pronovo. Winterstrombonus für Anlagen ab 100 kW mit Inbetriebnahme ab 1.1.2026 und mehr als 500 kWh pro kW im Winterhalbjahr: 2.50 Franken pro kW mal durchschnittlicher spezifischer Winterstrommehrertrag (mit Eigenverbrauch), erst nach dem dritten vollen Winterhalbjahr; dann kein Neigungswinkelbonus (EnFV Art. 38, Anhang 2.1 Ziff. 2.7.3; FAQ). Der Höhenbonus wurde per 1.1.2026 durch den Winterstrombonus ersetzt (Richtlinie Kap. 9.2)."
       },
       "timing": {
         "deadline": {
@@ -489,11 +582,11 @@
           "relative": null,
           "source": {
             "source_id": "gesuch",
-            "locator": "Zeitpunkt"
+            "locator": "Gesuchsassistent, Ergebnis GREIV (realisiert, nur projektiert)"
           }
         },
         "assessment_period": null,
-        "decision_time": "Wartezeit bis zur Zusicherung unter einem Jahr (Swissolar)",
+        "decision_time": null,
         "max_duration_months": null,
         "repeat_limit": null,
         "note": null
@@ -502,10 +595,10 @@
         "application": [
           {
             "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll der Installateurin",
-            "condition": null,
+            "condition": "bei bereits realisierter Anlage, sonst mit der Inbetriebnahmemeldung",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis GREIV (realisiert, nur projektiert)"
             }
           },
           {
@@ -513,7 +606,7 @@
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Anmerkungen zum Grundbuchauszug"
             }
           },
           {
@@ -521,15 +614,15 @@
             "condition": "nur bei integrierten Anlagen",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis GREIV (realisiert, nur projektiert)"
             }
           },
           {
-            "name": "Zahlungsinformationen (IBAN)",
-            "condition": null,
+            "name": "Zahlungsinformationen",
+            "condition": "bei Gesuch vor Realisierung und bei Erweiterungen",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis GREIV (realisiert, nur projektiert)"
             }
           },
           {
@@ -537,25 +630,71 @@
             "condition": "bei Gesuch vor Realisierung",
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Gesuchsassistent, Ergebnis GREIV (realisiert, nur projektiert)"
+            }
+          },
+          {
+            "name": "Fotos, die zeigen, dass die Anlage über einem dauerhaften, bisher unüberdachten Parkplatzareal steht",
+            "condition": "nur bei Antrag auf Parkflächenbonus",
+            "source": {
+              "source_id": "enfv",
+              "locator": "Anhang 2.1 Ziff. 4.2 Bst. f"
+            }
+          },
+          {
+            "name": "Simulation der voraussichtlichen Stromproduktion",
+            "condition": "nur bei Antrag auf Winterstrombonus",
+            "source": {
+              "source_id": "enfv",
+              "locator": "Anhang 2.1 Ziff. 4.1 Bst. i"
             }
           }
         ],
-        "completion": []
+        "completion": [
+          {
+            "name": "Inbetriebnahmemeldung mit Inbetriebnahmedatum, Abnahmeprotokoll oder Sicherheitsnachweis, Änderungen gegenüber dem Gesuch und Beglaubigung der Anlagedaten",
+            "condition": "bei Gesuch vor Realisierung, spätestens drei Monate nach Inbetriebnahme",
+            "source": {
+              "source_id": "enfv",
+              "locator": "Art. 45 Abs. 2 und 3, Anhang 2.1 Ziff. 4.2"
+            }
+          }
+        ]
       },
       "obligations": [
         {
           "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Wie lange gilt die Betriebspflicht für meine Anlage?"
           }
         },
         {
-          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres, mit mindestens der bisherigen Leistung und Kategorie.",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Ich möchte meine Anlage vorübergehend aufgrund von Reparaturmassnahmen meines Daches ausser Betrieb nehmen. Bis wann muss die Wiederinbetriebnahme erfolgen?"
+          }
+        },
+        {
+          "text": "Änderungen an der Anlage (auch Demontage, Verkleinerung, Zusammenlegung) müssen Pronovo gemeldet werden.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Muss ich es Pronovo melden, wenn ich meine PV-Anlage verändere?"
+          }
+        },
+        {
+          "text": "Nach der Zusicherung dem Grundsatz nach Inbetriebnahme spätestens nach 12 Monaten, bei Anlagen, die nicht an ein Gebäude angebaut oder integriert sind, nach 48 Monaten.",
+          "source": {
+            "source_id": "enfv",
+            "locator": "Art. 45 Abs. 1"
+          }
+        },
+        {
+          "text": "Inbetriebnahme spätestens drei Monate danach der Vollzugsstelle melden.",
+          "source": {
+            "source_id": "enfv",
+            "locator": "Art. 45 Abs. 2"
           }
         }
       ],
@@ -567,7 +706,7 @@
       },
       "source": {
         "source_id": "pv",
-        "locator": null
+        "locator": "Einleitung (drei Programme)"
       }
     },
     {
@@ -584,10 +723,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Über 150 kW Vergabe per Auktion (nicht erfasst).",
+        "note": "Ab 150 kW Vergabe per Auktion (nicht erfasst).",
         "source": {
-          "source_id": "pv",
-          "locator": null
+          "source_id": "faq_pv",
+          "locator": "Erhalte ich Unterstützung für die Investition meiner Photovoltaikanlage?"
         }
       },
       "recipient": {
@@ -619,7 +758,7 @@
           "text": "Anlagen mit Eigenverbrauch",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Eigenverbrauch"
+            "locator": "Wann habe ich Anspruch auf eine hohe Einmalvergütung (HEIV)?"
           }
         }
       ],
@@ -643,7 +782,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -658,7 +797,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Mindestleistung"
+            "locator": "Welche Bedingungen muss meine Photovoltaikanlage für die Einmalvergütung erfüllen?"
           },
           "notes": null
         },
@@ -684,13 +823,13 @@
           ],
           "source": {
             "source_id": "gesuch",
-            "locator": "Unterlagen"
+            "locator": "Gesuchsassistent, Anmerkungen zum Grundbuchauszug"
           },
           "notes": null
         },
         {
           "id": "ohne_eigenverbrauch",
-          "text": "Die gesamte Elektrizität wird eingespeist, kein Eigenverbrauch.",
+          "text": "Die gesamte produzierte Elektrizität wird eingespeist. Die Anlage wird 20 Jahre ohne Eigenverbrauch betrieben.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -706,7 +845,7 @@
           "evidence": [],
           "source": {
             "source_id": "faq_pv",
-            "locator": "Eigenverbrauch"
+            "locator": "Wann habe ich Anspruch auf eine hohe Einmalvergütung (HEIV)?"
           },
           "notes": null
         },
@@ -720,22 +859,62 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "pv",
-            "locator": null
+            "source_id": "faq_pv",
+            "locator": "Wann habe ich Anspruch auf eine hohe Einmalvergütung (HEIV)?"
+          },
+          "notes": null
+        },
+        {
+          "id": "eigener_nettozaehler",
+          "text": "Die Anlage hat einen eigenen physischen Nettozähler.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Erhält die Anlage einen eigenen Produktionszähler (Nettomessung)?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "richtlinie",
+            "locator": "Kap. 2.1, S. 6"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "pro_einheit",
-        "summary": "Erhöhter einmaliger Beitrag pro kW für Anlagen ohne Eigenverbrauch bis 149.99 kW, bis zu 60% der Investitionskosten von Referenzanlagen (FAQ Pronovo). Betrag im Pronovo-Tarifrechner berechnen.",
+        "summary": "Leistungsbeitrag von 450 CHF pro kW für neue Anlagen ohne Eigenverbrauch unter 150 kW mit Inbetriebnahme ab 1.1.2023, ohne Grundbeitrag. Bis zu 60 % der Investitionskosten von Referenzanlagen.",
         "cost_categories": [],
         "units": [
           {
             "unit": "kW installierte Leistung",
-            "condition": "Ansatz nicht verifiziert",
+            "condition": "Neue Anlage oder erhebliche Erweiterung ohne Eigenverbrauch, unter 150 kW, Inbetriebnahme ab 1.1.2023 (EnFV Anhang 2.1 Ziff. 2.10)",
             "base_chf": null,
-            "amount_chf": null
+            "amount_chf": 450
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Integrierte Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.1)",
+            "base_chf": null,
+            "amount_chf": 400
+          },
+          {
+            "unit": "kW Leistung der Anlagenteile mit Neigung ab 75 Grad (Neigungswinkelbonus)",
+            "condition": "Angebaute oder freistehende Anlagenteile (EnFV Anhang 2.1 Ziff. 2.7.2)",
+            "base_chf": null,
+            "amount_chf": 200
+          },
+          {
+            "unit": "kW installierte Leistung über Parkplatzareal (Parkflächenbonus)",
+            "condition": "Anlagen ab 100 kW über dauerhaftem, bisher unüberdachtem Parkplatzareal, Inbetriebnahme ab 1.1.2025 (EnFV Anhang 2.1 Ziff. 2.7.4)",
+            "base_chf": null,
+            "amount_chf": 250
           }
         ],
         "max_share_of_costs_pct": 60,
@@ -746,63 +925,71 @@
         "payout_forms": [
           "Einmalige Auszahlung"
         ],
-        "calculation_basis": "Installierte Leistung in kW",
+        "calculation_basis": "Installierte Leistung in kW.",
         "example": null,
         "source": {
-          "source_id": "swissolar",
-          "locator": "HEIV"
+          "source_id": "enfv",
+          "locator": "Anhang 2.1 Ziff. 2.7, 2.10"
         },
-        "note": "Bis 150 kW mit festgelegtem Beitrag, darüber Auktion (Swissolar). Höhe nicht aus Primärquelle belegt."
+        "note": "Ansatz aus EnFV Anhang 2.1 Ziff. 2.10 (Stand am 1. Juli 2026). Kein Grundbeitrag. Höchstanteil 60 % gemäss EnG Art. 25 Abs. 3 und FAQ Pronovo. Neigungswinkelbonus wird zusätzlich gewährt (FAQ). Winterstrombonus für Anlagen ab 100 kW mit Inbetriebnahme ab 1.1.2026 und mehr als 500 kWh pro kW im Winterhalbjahr: 3.50 Franken pro kW mal durchschnittlicher spezifischer Winterstrommehrertrag, erst nach dem dritten vollen Winterhalbjahr; dann kein Neigungswinkelbonus (EnFV Anhang 2.1 Ziff. 2.7.3; FAQ). Ab 150 kW wird die Höhe per Auktion bestimmt (EnFV Art. 38a)."
       },
       "timing": {
         "deadline": {
-          "type": "unbekannt",
-          "rule": "Zeitpunkt der Gesuchstellung für HEIV in den gesichteten Quellen nicht genannt.",
+          "type": "laufend",
+          "rule": "Unter 150 kW gilt dasselbe Gesuchsverfahren wie für KLEIV oder GREIV: unter 100 kW Gesuch erst nach Inbetriebnahme, ab 100 kW bereits vor der Realisierung möglich.",
           "next_dates": [],
           "relative": null,
           "source": {
-            "source_id": "gesuch",
-            "locator": null
+            "source_id": "richtlinie",
+            "locator": "Kap. 3.3, S. 12"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": null,
-        "repeat_limit": null,
-        "note": null
+        "repeat_limit": "Nach einer HEIV kann frühestens ein Jahr nach Inbetriebnahme eine weitere Anlage ohne Eigenverbrauch oder eine erneute erhebliche Erweiterung auf demselben Grundstück in Betrieb genommen und dafür eine HEIV beantragt werden (EnFV Art. 35).",
+        "note": "Abgeleitet aus Richtlinie PV, Kap. 3.3 (gleiches Verfahren wie KLEIV oder GREIV) und Kap. 3.1, 3.2: Zeitpunkt richtet sich nach der Leistung. Zur Bestätigung offen."
       },
       "documents": {
         "application": [
           {
-            "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll der Installateurin",
-            "condition": null,
+            "name": "Abnahmeprotokoll oder Sicherheitsnachweis mit Mess- und Prüfprotokoll",
+            "condition": "bei bereits realisierter Anlage, sonst mit der Inbetriebnahmemeldung",
             "source": {
-              "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "source_id": "richtlinie",
+              "locator": "Kap. 3.1 bis 3.3, S. 11-12"
             }
           },
           {
-            "name": "Grundbuchauszug oder gleichwertiges Dokument, nicht älter als ein Jahr",
+            "name": "Grundbuchauszug oder gleichwertiges Dokument",
             "condition": null,
             "source": {
-              "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "source_id": "richtlinie",
+              "locator": "Kap. 3, S. 11"
             }
           },
           {
-            "name": "Drei Fotos (Bauphase, Randabschlüsse, Gesamtanlage)",
+            "name": "Fotos des Solarstromgenerators während des Baus und nach der Fertigstellung",
             "condition": "nur bei integrierten Anlagen",
             "source": {
-              "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "source_id": "richtlinie",
+              "locator": "Kap. 3.1 bis 3.3, S. 11-12"
             }
           },
           {
-            "name": "Zahlungsinformationen (IBAN)",
+            "name": "Beglaubigte Anlagedaten (Beglaubigung)",
             "condition": null,
             "source": {
-              "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "source_id": "richtlinie",
+              "locator": "Kap. 3.1 bis 3.3, S. 11-12"
+            }
+          },
+          {
+            "name": "Erklärung, dass die gesamte produzierte Elektrizität eingespeist wird",
+            "condition": null,
+            "source": {
+              "source_id": "enfv",
+              "locator": "Anhang 2.1 Ziff. 3 Bst. m, Ziff. 4.1 Bst. h"
             }
           }
         ],
@@ -813,14 +1000,28 @@
           "text": "Betriebspflicht von 20 Jahren (seit 1. Januar 2025, ältere Verfügungen 15 bzw. 10 Jahre).",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Wie lange gilt die Betriebspflicht für meine Anlage?"
           }
         },
         {
-          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres.",
+          "text": "Nach vorübergehender Ausserbetriebnahme Wiederinbetriebnahme innert eines Jahres, mit mindestens der bisherigen Leistung und Kategorie.",
           "source": {
             "source_id": "faq_pv",
-            "locator": "Frist nach Inbetriebnahme"
+            "locator": "Ich möchte meine Anlage vorübergehend aufgrund von Reparaturmassnahmen meines Daches ausser Betrieb nehmen. Bis wann muss die Wiederinbetriebnahme erfolgen?"
+          }
+        },
+        {
+          "text": "Änderungen an der Anlage (auch Demontage, Verkleinerung, Zusammenlegung) müssen Pronovo gemeldet werden.",
+          "source": {
+            "source_id": "faq_pv",
+            "locator": "Muss ich es Pronovo melden, wenn ich meine PV-Anlage verändere?"
+          }
+        },
+        {
+          "text": "Während mindestens 20 Jahren ab Inbetriebnahme kein Eigenverbrauch. Bei Umstellung auf Eigenverbrauch wird die Vergütung pro rata zurückgefordert.",
+          "source": {
+            "source_id": "richtlinie",
+            "locator": "Kap. 4.2, S. 13"
           }
         }
       ],
@@ -832,7 +1033,7 @@
       },
       "source": {
         "source_id": "pv",
-        "locator": null
+        "locator": "Einleitung (drei Programme)"
       }
     }
   ],
@@ -848,7 +1049,7 @@
     "note": "KLEIV erst nach Realisierung, GREIV bereits vor Realisierung.",
     "source": {
       "source_id": "gesuch",
-      "locator": null
+      "locator": "Gesuchsassistent Peter Pronovo"
     }
   },
   "contacts": [
@@ -862,13 +1063,13 @@
   ],
   "legal_basis": [
     {
-      "title": "Energiegesetz vom 30. September 2016 (EnG)",
-      "ref": null,
-      "url": null
+      "title": "Energiegesetz vom 30. September 2016 (EnG), SR 730.0",
+      "ref": "Art. 25, 25a",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2017/762/de"
     },
     {
-      "title": "Energieförderungsverordnung vom 1. November 2017 (EnFV)",
-      "ref": "Anhang 2.1",
+      "title": "Energieförderungsverordnung vom 1. November 2017 (EnFV), SR 730.03",
+      "ref": "Art. 33, 35, 36-46, Anhang 2.1",
       "url": "https://www.fedlex.admin.ch/eli/cc/2017/766/de"
     }
   ],
@@ -880,7 +1081,7 @@
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
       "version": null,
       "published": "2026-02-19",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -890,7 +1091,7 @@
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -900,32 +1101,52 @@
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
-      "id": "swissolar",
-      "title": "PV-Förderung, Swissolar",
-      "type": "webseite",
-      "url": "https://www.swissolar.ch/de/wissen/wirtschaftlichkeit/foerderung/pv-foerderung",
-      "version": null,
+      "id": "richtlinie",
+      "title": "Richtlinie zur Energieförderungsverordnung EnFV, Photovoltaik, Pronovo",
+      "type": "handbuch",
+      "url": "https://pronovo.ch/download/richtlinie-zur-energiefoerderungsverordnung-photovoltaik/?wpdmdl=9718",
+      "version": "Version 4.2, Edition Oktober 2026",
+      "published": "2026-10-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "enfv",
+      "title": "Energieförderungsverordnung (EnFV), SR 730.03",
+      "type": "verordnung",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2017/766/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2017-766-20260701-de-pdf-a-1.pdf",
+      "version": "Stand am 1. Juli 2026",
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "eng",
+      "title": "Energiegesetz (EnG), SR 730.0",
+      "type": "gesetz",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2017/762/20260401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2017-762-20260401-de-pdf-a.pdf",
+      "version": "Stand am 1. April 2026",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "WICHTIG: Vergütungsansätze (CHF pro kW, Grundbeitrag, Boni) fehlen. Weder die Pronovo-Seiten noch Swissolar nennen Beträge. Anhang 2.1 EnFV oder Pronovo-Tarifrechner beschaffen. Sekundärquelle CKW nennt Werte mit Stand September 2025 und widerspricht sich, daher nicht übernommen.",
-      "Nicht erfasst: Auktionen für HEIV über 150 kW bzw. gleitende Marktprämie, Winterstrombonus, Einspeisevergütungssystem (EVS), Förderung anderer Technologien.",
-      "Zeitpunkt der Gesuchstellung bei HEIV nicht belegt.",
-      "Kumulation mit kantonaler oder kommunaler Förderung: FAQ behandelt das nicht.",
-      "Rechtsanspruch: Einordnung rechtsanspruch_im_budget nicht ausdrücklich belegt.",
-      "Swissolar ist ein Branchenverband, keine Primärquelle. Aussagen zu 30%, Wartezeiten und Boni mit EnFV abgleichen.",
-      "Hinweis zur Auszahlung in der FAQ bezieht sich auf 2025 und ist möglicherweise veraltet."
+      "funding.units: Ansätze gelten für Inbetriebnahme ab 1.4.2025 (EnFV Stand 1.7.2026). Für Inbetriebnahmen ab 1.4.2027 allfällige Anpassung der EnFV bzw. des Tarifrechners prüfen.",
+      "entitlement: Einordnung rechtsanspruch_im_budget abgeleitet aus EnFV Art. 39, 40, 42 (Mittel, Warteliste). Bestätigen.",
+      "heiv.timing.deadline: Zeitpunkt abgeleitet aus Richtlinie Kap. 3.3 (gleiches Verfahren wie KLEIV oder GREIV). Bestätigen.",
+      "heiv.documents: Unterlagen abgeleitet aus Richtlinie Kap. 3.1 bis 3.3; der Gesuchsassistent nennt die HEIV nicht. Bestätigen.",
+      "kleiv/greiv.timing.decision_time: Aktuelle Wartezeit nicht belegt. Die FAQ nennt nur das Jahr 2025, die Pronovo-News zu Wartezeiten stammt von 2019.",
+      "Nicht erfasst: Auktionen für HEIV ab 150 kW bzw. gleitende Marktprämie, Einspeisevergütungssystem (EVS), Förderung anderer Technologien. Altfälle mit Höhenbonus (bis 31.12.2025).",
+      "combination_rules: Kumulation mit kantonaler oder kommunaler Förderung wird in FAQ und Richtlinie nicht behandelt."
     ]
   }
 }
