@@ -286,7 +286,9 @@
      "state": "unbekannt",
      "reason": "Ob der bedingte Finanzierungsnachweis erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
      "evidence": [],
-     "profile_fields": [],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
