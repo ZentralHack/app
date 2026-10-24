@@ -76,6 +76,7 @@ export function App() {
   const adopted = useRef<string | null>(null);
   const before = useRef<InstrumentMatch | null>(null);
   const keepScroll = useRef<number | null>(null);
+  const inFlight = useRef(false);
 
   // Program names for the Rückfragen; without them the ids are shown, so a failure here is not an error.
   useEffect(() => {
@@ -194,6 +195,9 @@ export function App() {
 
   /** Runs one user action against the API. A failed request shows its German message above the screen. */
   async function withBusy(work: () => Promise<void>) {
+    // A second click before the button re-renders as busy must not send the request twice.
+    if (inFlight.current) return;
+    inFlight.current = true;
     setBusy(true);
     setError(null);
     try {
@@ -201,6 +205,7 @@ export function App() {
     } catch (e) {
       setError(e instanceof ApiRequestError ? e.message : t.app.unexpectedError);
     } finally {
+      inFlight.current = false;
       setBusy(false);
     }
   }

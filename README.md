@@ -1,12 +1,12 @@
 # FundPilot: Fördermittel-Agent Luzern
 
+**Live-Version:** _folgt_ (URL hier eintragen)
+
 Ein KI-Agent, der zu einem konkreten Vorhaben eines Luzerner Unternehmens passende Förderprogramme findet, nachvollziehbar erklärt, warum sie passen und was noch fehlt, und daraus einen Förderfahrplan macht.
 
 ![Zentral Hack 2026](https://img.shields.io/badge/Zentral%20Hack-2026-1f6feb)
 ![Kategorie AI Agentic](https://img.shields.io/badge/Kategorie-AI%20Agentic-8250df)
 ![Status Prototyp](https://img.shields.io/badge/Status-Prototyp-d97706)
-
-**Live-Version:** _folgt_ (URL hier eintragen)
 
 > **Orientierungshilfe, keine verbindliche Beurteilung.**
 > Der Agent beurteilt die Förderberechtigung nicht verbindlich und ersetzt weder die Prüfung durch die Förderstelle noch eine Beratung. Alle Unternehmensdaten in diesem Repo sind fiktiv.
