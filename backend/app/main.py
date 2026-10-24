@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import health, profile, programs, questions, runs
+from app.api import chat, health, profile, programs, questions, runs
 from app.api.errors import register_error_handlers
 from app.config import DEMO_DIR, KNOWLEDGE_BASE_DIR, Settings, get_settings
 from app.demo import DemoCases, load_demo_cases
@@ -48,7 +48,7 @@ def create_app(
         allow_headers=["*"],
     )
     register_error_handlers(app)
-    for module in (health, programs, profile, questions, runs):
+    for module in (health, programs, profile, questions, runs, chat):
         app.include_router(module.router, prefix="/api")
     return app
 

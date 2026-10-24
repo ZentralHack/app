@@ -583,6 +583,74 @@ export interface RunFailedEvent {
   };
 }
 /**
+ * Eine Nachricht im Rückfrage-Chat zu einem Förderangebot.
+ *
+ * This interface was referenced by `Contract`'s JSON-Schema
+ * via the `definition` "ChatMessage".
+ */
+export interface ChatMessage {
+  role: "user" | "assistant";
+  text: string;
+}
+/**
+ * Verlauf des Chats; die letzte Nachricht ist die Frage (role user).
+ *
+ * This interface was referenced by `Contract`'s JSON-Schema
+ * via the `definition` "ChatRequest".
+ */
+export interface ChatRequest {
+  /**
+   * Nur die letzten 20 Nachrichten gehen an das Modell.
+   *
+   * @minItems 1
+   */
+  messages: [ChatMessage, ...ChatMessage[]];
+}
+/**
+ * This interface was referenced by `Contract`'s JSON-Schema
+ * via the `definition` "ChatResponse".
+ */
+export interface ChatResponse {
+  /**
+   * Kurze Antwort auf Deutsch (Schweizer Schreibweise)
+   */
+  answer: string;
+  /**
+   * belegt: durch zitierte Quellen gestützt; abgeleitet: aus Ergebnis und Programmdaten geschlossen; allgemein: allgemeine Begriffserklärung, nicht aus den Programmunterlagen; nicht_belegt: keine gesicherte Auskunft
+   */
+  basis: "belegt" | "abgeleitet" | "allgemein" | "nicht_belegt";
+  /**
+   * Nur Quellen aus der Programmdatei, vom Code geprüft
+   */
+  citations: SourceLink[];
+  /**
+   * Ansprechstelle aus der Programmdatei, gesetzt bei nicht_belegt
+   */
+  contact: {
+    name: string;
+    role: string | null;
+    email: string | null;
+    phone: string | null;
+    url: string | null;
+  } | null;
+}
+/**
+ * This interface was referenced by `Contract`'s JSON-Schema
+ * via the `definition` "ChatSuggestions".
+ */
+export interface ChatSuggestions {
+  /**
+   * Höchstens 3 Vorschläge aus dem Ergebnis, vom Code erzeugt
+   */
+  questions: {
+    text: string;
+    /**
+     * Worum es geht, damit das Frontend gleichwertige Standardfragen ausblendet
+     */
+    topic: "passung" | "offen" | "frist" | "kombination" | "unterlagen";
+  }[];
+}
+/**
  * This interface was referenced by `Contract`'s JSON-Schema
  * via the `definition` "Health".
  */

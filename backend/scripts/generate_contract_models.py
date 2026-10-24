@@ -25,6 +25,8 @@ STRICT_MODELS = (
     "Answer",
     "RunRequest",
     "RetryRequest",
+    "ChatMessage",
+    "ChatRequest",
 )
 
 CODEGEN_ARGS = [

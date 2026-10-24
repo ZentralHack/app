@@ -645,6 +645,93 @@ class TraceEvent(
     )
 
 
+class ChatMessage(BaseModel):
+    """
+    Eine Nachricht im Rückfrage-Chat zu einem Förderangebot.
+    """
+
+    model_config = ConfigDict(
+        strict=True,
+        extra="forbid",
+    )
+    role: Literal["user", "assistant"]
+    text: Annotated[str, Field(max_length=2000, min_length=1)]
+
+
+class ChatRequest(BaseModel):
+    """
+    Verlauf des Chats; die letzte Nachricht ist die Frage (role user).
+    """
+
+    model_config = ConfigDict(
+        strict=True,
+        extra="forbid",
+    )
+    messages: Annotated[
+        list[ChatMessage],
+        Field(description="Nur die letzten 20 Nachrichten gehen an das Modell.", min_length=1),
+    ]
+
+
+class ChatResponseContact(BaseModel):
+    """
+    Ansprechstelle aus der Programmdatei, gesetzt bei nicht_belegt
+    """
+
+    model_config = ConfigDict(
+        extra="forbid",
+    )
+    name: str
+    role: str | None
+    email: str | None
+    phone: str | None
+    url: str | None
+
+
+class ChatResponse(BaseModel):
+    model_config = ConfigDict(
+        extra="forbid",
+    )
+    answer: Annotated[str, Field(description="Kurze Antwort auf Deutsch (Schweizer Schreibweise)")]
+    basis: Annotated[
+        Literal["belegt", "abgeleitet", "allgemein", "nicht_belegt"],
+        Field(
+            description="belegt: durch zitierte Quellen gestützt; abgeleitet: aus Ergebnis und Programmdaten geschlossen; allgemein: allgemeine Begriffserklärung, nicht aus den Programmunterlagen; nicht_belegt: keine gesicherte Auskunft"
+        ),
+    ]
+    citations: Annotated[
+        list[SourceLink],
+        Field(description="Nur Quellen aus der Programmdatei, vom Code geprüft"),
+    ]
+    contact: Annotated[
+        ChatResponseContact | None,
+        Field(description="Ansprechstelle aus der Programmdatei, gesetzt bei nicht_belegt"),
+    ]
+
+
+class ChatSuggestionsQuestion(BaseModel):
+    model_config = ConfigDict(
+        extra="forbid",
+    )
+    text: str
+    topic: Annotated[
+        Literal["passung", "offen", "frist", "kombination", "unterlagen"],
+        Field(
+            description="Worum es geht, damit das Frontend gleichwertige Standardfragen ausblendet"
+        ),
+    ]
+
+
+class ChatSuggestions(BaseModel):
+    model_config = ConfigDict(
+        extra="forbid",
+    )
+    questions: Annotated[
+        list[ChatSuggestionsQuestion],
+        Field(description="Höchstens 3 Vorschläge aus dem Ergebnis, vom Code erzeugt"),
+    ]
+
+
 class HealthQuestionCatalog(BaseModel):
     """
     Stand des Fragenkatalogs. Vor der Demo müssen draft, needs_review und veraltet 0 sein.

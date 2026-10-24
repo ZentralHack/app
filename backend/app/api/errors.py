@@ -7,6 +7,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException
 
+from app.agent.chat import ChatTargetNotFoundError
 from app.agent.errors import InvalidInputError
 from app.agent.orchestrator import RetryNotAllowedError
 from app.llm.errors import LLMOutputError, LLMUnavailableError, RefusalError
@@ -35,6 +36,10 @@ def register_error_handlers(app: FastAPI) -> None:
     @app.exception_handler(RunNotFoundError)
     async def run_not_found(_: Request, __: RunNotFoundError) -> JSONResponse:
         return _error(404, "run_nicht_gefunden", "Diese Analyse gibt es nicht (mehr).")
+
+    @app.exception_handler(ChatTargetNotFoundError)
+    async def chat_target_not_found(_: Request, __: ChatTargetNotFoundError) -> JSONResponse:
+        return _error(404, "angebot_nicht_gefunden", "Dieses Förderangebot ist nicht im Ergebnis.")
 
     @app.exception_handler(RetryNotAllowedError)
     async def retry_not_allowed(_: Request, __: RetryNotAllowedError) -> JSONResponse:

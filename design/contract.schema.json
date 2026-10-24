@@ -1663,6 +1663,158 @@
         }
       ]
     },
+    "ChatMessage": {
+      "type": "object",
+      "description": "Eine Nachricht im Rückfrage-Chat zu einem Förderangebot.",
+      "required": [
+        "role",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      }
+    },
+    "ChatRequest": {
+      "type": "object",
+      "description": "Verlauf des Chats; die letzte Nachricht ist die Frage (role user).",
+      "required": [
+        "messages"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "messages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ChatMessage"
+          },
+          "description": "Nur die letzten 20 Nachrichten gehen an das Modell."
+        }
+      }
+    },
+    "ChatResponse": {
+      "type": "object",
+      "required": [
+        "answer",
+        "basis",
+        "citations",
+        "contact"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "answer": {
+          "type": "string",
+          "description": "Kurze Antwort auf Deutsch (Schweizer Schreibweise)"
+        },
+        "basis": {
+          "enum": [
+            "belegt",
+            "abgeleitet",
+            "allgemein",
+            "nicht_belegt"
+          ],
+          "description": "belegt: durch zitierte Quellen gestützt; abgeleitet: aus Ergebnis und Programmdaten geschlossen; allgemein: allgemeine Begriffserklärung, nicht aus den Programmunterlagen; nicht_belegt: keine gesicherte Auskunft"
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceLink"
+          },
+          "description": "Nur Quellen aus der Programmdatei, vom Code geprüft"
+        },
+        "contact": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "name",
+            "role",
+            "email",
+            "phone",
+            "url"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "role": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "email": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "phone": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "description": "Ansprechstelle aus der Programmdatei, gesetzt bei nicht_belegt"
+        }
+      }
+    },
+    "ChatSuggestions": {
+      "type": "object",
+      "required": [
+        "questions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "questions": {
+          "type": "array",
+          "description": "Höchstens 3 Vorschläge aus dem Ergebnis, vom Code erzeugt",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "topic"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "topic": {
+                "enum": [
+                  "passung",
+                  "offen",
+                  "frist",
+                  "kombination",
+                  "unterlagen"
+                ],
+                "description": "Worum es geht, damit das Frontend gleichwertige Standardfragen ausblendet"
+              }
+            }
+          }
+        }
+      }
+    },
     "Health": {
       "type": "object",
       "required": [

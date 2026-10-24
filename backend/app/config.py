@@ -13,6 +13,7 @@ REPO_DIR = BACKEND_DIR.parent
 KNOWLEDGE_BASE_DIR = REPO_DIR / "knowledge_base"
 CONTRACT_SCHEMA = REPO_DIR / "design" / "contract.schema.json"
 DEMO_DIR = BACKEND_DIR / "demo"
+CHAT_LOG = BACKEND_DIR / "logs" / "chat_questions.jsonl"
 
 
 class Settings(BaseSettings):
@@ -29,6 +30,8 @@ class Settings(BaseSettings):
     demo_today: date | None = None
     demo_replay: bool = False
     cors_origins: str = "http://localhost:5173"
+    # Anonymised chat questions (JSONL, gitignored); None turns the log off.
+    chat_log: Path | None = CHAT_LOG
     # USD per million tokens (input, output), only for the cost estimate in the log.
     # Defaults from third-party price lists (Backend-Flow), check against the console.
     price_small_usd: tuple[float, float] = (0.10, 0.50)
