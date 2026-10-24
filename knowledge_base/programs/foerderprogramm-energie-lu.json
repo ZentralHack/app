@@ -230,7 +230,7 @@
             "projektstart"
           ],
           "question": {
-            "text": "Haben die Dämmarbeiten an den betroffenen Bauteilen schon begonnen?",
+            "text": "Haben die Bau- oder Installationsarbeiten für diese Massnahme schon begonnen?",
             "options": [
               "Nein",
               "Ja",
@@ -1777,7 +1777,7 @@
             "projektstart"
           ],
           "question": {
-            "text": "Haben die Installationsarbeiten (z. B. Demontage der alten Heizung) schon begonnen?",
+            "text": "Haben die Bau- oder Installationsarbeiten für diese Massnahme schon begonnen?",
             "options": [
               "Nein",
               "Ja",
