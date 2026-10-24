@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { RunResult } from "../api/contract";
-import { planEvents, planItems } from "../components/plan/Timeline";
+import { planEvents, planItems, planLabel, planPhases } from "../components/plan/Timeline";
 import sensora from "../../../backend/demo/sensor-prototyp.json";
 import { deadlineEvent, escapeText, foldLine, googleCalendarUrl, icsCalendar, icsFilename, outlookCalendarUrl, type CalendarEvent } from "./ics";
 
@@ -130,5 +130,15 @@ describe("calendar links", () => {
 
   it("year end rolls over", () => {
     expect(new URL(googleCalendarUrl({ ...e, date: "2026-12-31" })).searchParams.get("dates")).toBe("20261231/20270101");
+  });
+});
+
+describe("print checklist data", () => {
+  it("phases in plan order and the LIB step carries its deadline label", () => {
+    const { items } = planItems(result);
+    const phases = planPhases(items).map(p => p.phase);
+    expect(phases).toEqual([...phases].sort((a, b) => ["jetzt", "vor_projektstart", "gesuch"].indexOf(a) - ["jetzt", "vor_projektstart", "gesuch"].indexOf(b)));
+    const libStep = items.find(i => i.instrumentId === "lib-beitrag" && i.date);
+    expect(libStep && planLabel(libStep, result)).toMatch(/^Eingabefrist Gesuch/);
   });
 });

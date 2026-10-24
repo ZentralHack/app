@@ -301,6 +301,7 @@ export const t = {
     link: "Öffnen",
     loading: "Der Fahrplan wird erstellt …",
     exportPdf: "Als PDF exportieren",
+    printLead: (date: string) => `Checkliste zum Abhaken oder Weiterschicken. Stand ${date}.`,
     editProfile: "Angaben ändern",
     newProject: "Neues Vorhaben",
   },

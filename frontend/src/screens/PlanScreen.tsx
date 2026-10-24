@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { RunResult } from "../api/contract";
 import { Page } from "../components/layout/Page";
 import { PageHeader } from "../components/layout/PageHeader";
+import { PrintChecklist } from "../components/plan/PrintChecklist";
 import { ContactLine, planEvents, planItems, Timeline } from "../components/plan/Timeline";
 import { CalendarPlus } from "../components/ui/icons";
 import { downloadIcs } from "../lib/ics";
@@ -51,7 +52,7 @@ export function PlanScreen({ result, onEditProfile, onNewProject }: Props) {
             </>
           )}
         </p>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 print:hidden">
           <p className="text-sm font-semibold text-fg-2">{t.plan.progress(done.size, items.length)}</p>
           {events.length > 0 && (
             <Button variant="secondary" size="sm" onClick={() => downloadIcs(t.calendar.allFile, events)} data-testid="calendar-all">
@@ -62,10 +63,13 @@ export function PlanScreen({ result, onEditProfile, onNewProject }: Props) {
         </div>
       </header>
 
-      <Timeline result={result} items={items} done={done} onToggle={toggle} />
+      <div className="print:hidden">
+        <Timeline result={result} items={items} done={done} onToggle={toggle} />
+      </div>
+      <PrintChecklist result={result} items={items} contacts={looseContacts} />
 
       {looseContacts.length > 0 && (
-        <section className="flex flex-col gap-2">
+        <section className="flex flex-col gap-2 print:hidden">
           <h2>{t.plan.contacts}</h2>
           <ul className="m-0 flex list-none flex-col divide-y divide-line border-y border-line p-0">
             {looseContacts.map(c => (

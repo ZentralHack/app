@@ -143,6 +143,17 @@ export function planEvents(items: PlanItem[], result: RunResult): CalendarEvent[
   return events.filter((e, i) => events.findIndex(x => x.uid === e.uid) === i);
 }
 
+/** The deadline label of a step, when the step is the offer's submission on its deadline. */
+export function planLabel(item: PlanItem, result: RunResult): string | null {
+  const match = matchOfItem(item, result);
+  return match && match.deadline.next_date === item.date ? deadlineInfo(match.deadline, result.today).label : null;
+}
+
+/** Steps grouped by phase in plan order, dated steps first by date. Phases without steps are left out. */
+export function planPhases(items: PlanItem[]) {
+  return PHASES.map(p => ({ phase: p, list: items.filter(i => i.phase === p).sort((a, b) => (a.date ?? "9").localeCompare(b.date ?? "9")) })).filter(p => p.list.length > 0);
+}
+
 interface Props {
   result: RunResult;
   items: PlanItem[];
@@ -171,11 +182,8 @@ export function Timeline({ result, items, done, onToggle }: Props) {
     w.items
       .filter(i => !(i.program_id === own.programId && (!i.instrument_id || i.instrument_id === own.instrumentId)))
       .map(i => result.matches.find(x => x.program_id === i.program_id && (!i.instrument_id || x.instrument_id === i.instrument_id))?.instrument_name ?? i.program_id);
-  const label = (item: PlanItem) => {
-    const match = matchOfItem(item, result);
-    return match && match.deadline.next_date === item.date ? deadlineInfo(match.deadline, result.today).label : null;
-  };
-  const phases = PHASES.map(p => ({ phase: p, list: items.filter(i => i.phase === p).sort((a, b) => (a.date ?? "9").localeCompare(b.date ?? "9")) })).filter(p => p.list.length > 0);
+  const label = (item: PlanItem) => planLabel(item, result);
+  const phases = planPhases(items);
 
   return (
     <section className="flex flex-col gap-10">
