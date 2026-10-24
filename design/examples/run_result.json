@@ -189,6 +189,10 @@
             "rechtsform",
             "taetigkeit"
           ],
+          "profile_fields": [
+            "rechtsform",
+            "taetigkeit"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -203,6 +207,10 @@
           "state": "annahme",
           "reason": "Sitz in Emmen, Eintrag im Luzerner Handelsregister angenommen.",
           "evidence": [
+            "standort_kanton",
+            "handelsregister"
+          ],
+          "profile_fields": [
             "standort_kanton",
             "handelsregister"
           ],
@@ -222,6 +230,10 @@
           "evidence": [
             "raeumlichkeiten"
           ],
+          "profile_fields": [
+            "standort_kanton",
+            "raeumlichkeiten"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -239,6 +251,9 @@
             "mitarbeitende",
             "standort_gemeinde"
           ],
+          "profile_fields": [
+            "mitarbeitende"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -255,6 +270,9 @@
           "evidence": [
             "revisionsart"
           ],
+          "profile_fields": [
+            "revisionsart"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -269,6 +287,9 @@
           "state": "unbekannt",
           "reason": "Unklar, ob ein Nachhaltigkeitsnachweis vorhanden ist.",
           "evidence": [],
+          "profile_fields": [
+            "nachhaltigkeitsbericht"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -283,6 +304,7 @@
           "state": "unbekannt",
           "reason": "Keine Angaben zu offenen Forderungen von Behörden.",
           "evidence": [],
+          "profile_fields": [],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -297,6 +319,10 @@
           "state": "erfuellt",
           "reason": "Bau und Test eines Prototyps ist experimentelle Entwicklung.",
           "evidence": [
+            "vorhaben_beschreibung",
+            "art_des_vorhabens"
+          ],
+          "profile_fields": [
             "vorhaben_beschreibung",
             "art_des_vorhabens"
           ],
@@ -316,6 +342,9 @@
           "evidence": [
             "vorhaben_beschreibung"
           ],
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -330,6 +359,10 @@
           "state": "erfuellt",
           "reason": "Budget und Laufzeit sind festgelegt.",
           "evidence": [
+            "budget",
+            "laufzeit"
+          ],
+          "profile_fields": [
             "budget",
             "laufzeit"
           ],
@@ -350,6 +383,9 @@
             "standort_gemeinde",
             "mitarbeitende"
           ],
+          "profile_fields": [
+            "standort_kanton"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -364,6 +400,9 @@
           "state": "nicht_anwendbar",
           "reason": "Keine Auftragsforschung erwähnt.",
           "evidence": [],
+          "profile_fields": [
+            "partner"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -380,6 +419,7 @@
           "evidence": [
             "budget"
           ],
+          "profile_fields": [],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -395,6 +435,10 @@
           "reason": "Die Kosten fallen erst an und zählen im Geschäftsjahr, in dem sie anfallen.",
           "evidence": [
             "rueckfrage_kosten_bemessungsjahr"
+          ],
+          "profile_fields": [
+            "projektstart",
+            "geschaeftsjahr"
           ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",

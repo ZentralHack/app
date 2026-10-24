@@ -210,6 +210,12 @@ class CriterionResult(BaseModel):
     evidence: Annotated[
         list[str], Field(description="Namen der Profilfelder, auf die sich der Zustand stützt")
     ]
+    profile_fields: Annotated[
+        list[str],
+        Field(
+            description="Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)"
+        ),
+    ]
     source: SourceLink
 
 

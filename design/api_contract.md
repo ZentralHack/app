@@ -152,7 +152,7 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 | `nicht_erfuellt` | ✗ | not met, backed by profile evidence |
 | `nicht_anwendbar` | (hidden or greyed out) | the criterion's `applies_if` condition does not apply |
 
-`evidence` lists the profile field names the state is based on. It is never empty for `erfuellt` or `nicht_erfuellt`. `source` gives title, URL and locator for the "Quelle" link.
+`evidence` lists the profile field names the state is based on. It is never empty for `erfuellt` or `nicht_erfuellt`. `profile_fields` lists the fields the criterion needs according to the knowledge base (`criteria[].profile_fields`), independent of what the model cited; the frontend uses it to say which input is missing and to offer exactly those fields for editing. `source` gives title, URL and locator for the "Quelle" link.
 
 ### Gap
 - `type`: `anpassung` (a `muss` criterion is not met, and a lever could change that) or `infos_fehlen` (information is missing).

@@ -223,6 +223,9 @@
      "evidence": [
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -237,6 +240,9 @@
      "state": "unbekannt",
      "reason": "Das Budget belegt nicht, ob die Trägerschaft Eigenmittel, Arbeit oder Material einbringt.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -255,6 +261,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -271,6 +280,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -285,6 +297,9 @@
      "state": "unbekannt",
      "reason": "Die Angaben belegen keine finanzielle Notwendigkeit des Projekts.",
      "evidence": [],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -397,6 +412,9 @@
       "standort_gemeinde",
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "BG Mitte, Startseite",
       "url": "https://www.bgm-ccc.ch/",
@@ -412,6 +430,10 @@
      "reason": "Das Profil nennt den Kauf und die Kosten, aber weder einen benötigten Bankkredit noch verlangte Sicherheiten.",
      "evidence": [
       "vorhaben_beschreibung",
+      "budget"
+     ],
+     "profile_fields": [
+      "partner",
       "budget"
      ],
      "source": {
@@ -430,6 +452,9 @@
      "evidence": [
       "rueckfrage_marktreif_umsatz"
      ],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -444,6 +469,7 @@
      "state": "unbekannt",
      "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung enthält das Profil keine Angaben.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -460,6 +486,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -474,6 +503,9 @@
      "state": "unbekannt",
      "reason": "Ohne Angabe zur Rechtsform ist weder die Anwendbarkeit noch eine Rückbürgschaft beurteilbar.",
      "evidence": [],
+     "profile_fields": [
+      "rechtsform"
+     ],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -488,6 +520,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu einer Todesfallrisikoversicherung.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -612,6 +645,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -626,6 +662,7 @@
      "state": "unbekannt",
      "reason": "Ob ein 30-minütiger Sparring-Check stattgefunden hat, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -642,6 +679,9 @@
      "evidence": [
       "applicant_type",
       "mitarbeitende"
+     ],
+     "profile_fields": [
+      "rechtsform"
      ],
      "source": {
       "title": "Innovation Sparring, ITZ",
@@ -702,6 +742,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -716,6 +759,9 @@
      "state": "nicht_erfuellt",
      "reason": "Das Profil nennt keine Partner und beschreibt den Kauf fertiger Produkte statt einer überbetrieblichen Kooperation.",
      "evidence": [
+      "partner"
+     ],
+     "profile_fields": [
       "partner"
      ],
      "source": {
@@ -734,6 +780,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -750,6 +799,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -764,6 +816,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angaben zu Wirkungs- und Leistungszielen, Meilensteinen oder Sollbruchstellen einer Leistungsvereinbarung.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -849,6 +902,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -865,6 +919,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -879,6 +934,9 @@
      "state": "unbekannt",
      "reason": "Weder die Eigentumsverhältnisse noch eine allfällige Zustimmung der Grundeigentümerschaft sind im Profil belegt.",
      "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -895,6 +953,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -910,6 +969,9 @@
      "reason": "Das Profil beschreibt einen geplanten Kauf statt einer bereits realisierten Anlage.",
      "evidence": [
       "vorhaben_beschreibung",
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -928,6 +990,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -987,6 +1050,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1003,6 +1067,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1017,6 +1082,9 @@
      "state": "unbekannt",
      "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -1033,6 +1101,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -1092,6 +1161,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1108,6 +1178,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1122,6 +1193,9 @@
      "state": "unbekannt",
      "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist oder vorliegt, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -1138,6 +1212,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -1154,6 +1229,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -1214,6 +1290,9 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -1228,6 +1307,9 @@
      "state": "unbekannt",
      "reason": "Für den Kauf des Backofens und des Kassensystems ist weder eine CO2-Einsparung noch ein entsprechender Nachweis beschrieben.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -1246,6 +1328,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -1262,6 +1347,9 @@
      "evidence": [
       "rueckfrage_marktreif_umsatz"
      ],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1276,6 +1364,7 @@
      "state": "unbekannt",
      "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1290,6 +1379,7 @@
      "state": "unbekannt",
      "reason": "Zur Kreditwürdigkeit und zukünftigen Ertragslage liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1304,6 +1394,9 @@
      "state": "unbekannt",
      "reason": "Das Budget ist angegeben, nicht aber die Herkunft oder Höhe der anderweitigen Finanzierung.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -1322,6 +1415,9 @@
      "evidence": [
       "taetigkeit",
       "standort_gemeinde"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",

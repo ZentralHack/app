@@ -439,6 +439,7 @@
         "state",
         "reason",
         "evidence",
+        "profile_fields",
         "source"
       ],
       "additionalProperties": false,
@@ -482,6 +483,13 @@
             "type": "string"
           },
           "description": "Namen der Profilfelder, auf die sich der Zustand stützt"
+        },
+        "profile_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)"
         },
         "source": {
           "$ref": "#/$defs/SourceLink"

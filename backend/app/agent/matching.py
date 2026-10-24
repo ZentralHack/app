@@ -187,6 +187,7 @@ def _result(
             state=state,
             reason=reason,
             evidence=evidence,
+            profile_fields=criterion.profile_fields,
             source=item.criterion_source(criterion.source),
         ),
         downgraded,

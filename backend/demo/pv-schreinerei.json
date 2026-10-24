@@ -267,6 +267,9 @@
       "standort_gemeinde",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -281,6 +284,9 @@
      "state": "unbekannt",
      "reason": "Das Budget belegt nicht, ob sich die Trägerschaft mit Eigenmitteln, Arbeit oder Material beteiligt.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -300,6 +306,9 @@
       "budget",
       "rueckfrage_bankkredit"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -317,6 +326,9 @@
       "vorhaben_beschreibung",
       "projektstart"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -331,6 +343,9 @@
      "state": "unbekannt",
      "reason": "Die gesamte finanzielle Situation ist nicht beschrieben, sodass sich die finanzielle Notwendigkeit nicht beurteilen lässt.",
      "evidence": [],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -429,6 +444,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -446,6 +464,9 @@
       "art_des_vorhabens",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "art_des_vorhabens"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -462,6 +483,7 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -507,6 +529,9 @@
      "evidence": [
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "BG Mitte, Startseite",
       "url": "https://www.bgm-ccc.ch/",
@@ -522,6 +547,10 @@
      "reason": "Das Profil bestätigt, dass ein Bankkredit mit von der Bank verlangten Sicherheiten benötigt wird.",
      "evidence": [
       "rueckfrage_bankkredit"
+     ],
+     "profile_fields": [
+      "partner",
+      "budget"
      ],
      "source": {
       "title": "FAQ, BG Mitte",
@@ -539,6 +568,9 @@
      "evidence": [
       "rueckfrage_marktreif_umsatz"
      ],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -553,6 +585,7 @@
      "state": "unbekannt",
      "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -569,6 +602,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -583,6 +619,9 @@
      "state": "unbekannt",
      "reason": "Die Rechtsform und damit die Anwendbarkeit sowie eine allfällige Rückbürgschaft sind nicht bekannt.",
      "evidence": [],
+     "profile_fields": [
+      "rechtsform"
+     ],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -597,6 +636,7 @@
      "state": "unbekannt",
      "reason": "Zur Todesfallrisikoversicherung liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -709,6 +749,10 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -724,6 +768,9 @@
      "reason": "Laut Rückfrage ist das Unternehmen nicht von der CO2-Abgabe befreit.",
      "evidence": [
       "rueckfrage_keine_co2_befreiung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -742,6 +789,9 @@
       "eigentum_gebaeude",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -756,6 +806,9 @@
      "state": "unbekannt",
      "reason": "Ein Projektstart ist angegeben, aber der Zeitpunkt der Gesuchseinreichung ist nicht bekannt.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -774,6 +827,9 @@
      "evidence": [
       "baujahr"
      ],
+     "profile_fields": [
+      "baujahr"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -788,6 +844,7 @@
      "state": "unbekannt",
      "reason": "Der U-Wert des Dachs nach der Sanierung ist nicht angegeben.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -802,6 +859,7 @@
      "state": "unbekannt",
      "reason": "Die U-Werte vor und nach der Sanierung fehlen, sodass die Verbesserung nicht beurteilt werden kann.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -818,6 +876,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -832,6 +893,9 @@
      "state": "unbekannt",
      "reason": "Weder die Fördersumme der Basismassnahme noch das Vorliegen eines GEAK Plus ist bekannt.",
      "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -848,6 +912,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -960,6 +1025,10 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -976,6 +1045,9 @@
      "evidence": [
       "applicant_type",
       "rueckfrage_keine_co2_befreiung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -994,6 +1066,9 @@
       "eigentum_gebaeude",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1008,6 +1083,9 @@
      "state": "unbekannt",
      "reason": "Ein Projektstart ist angegeben, aber weder eine Gesuchseinreichung noch der Installationsbeginn einer Wärmepumpe ist belegt.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -1026,6 +1104,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1040,6 +1121,9 @@
      "state": "erfuellt",
      "reason": "Das angegebene Baujahr 1985 belegt, dass es sich um ein bestehendes Gebäude handelt.",
      "evidence": [
+      "baujahr"
+     ],
+     "profile_fields": [
       "baujahr"
      ],
      "source": {
@@ -1058,6 +1142,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1074,6 +1159,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1088,6 +1174,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angaben zu installierten Strom- und Wärmezählern.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1104,6 +1191,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1177,6 +1265,10 @@
       "standort_gemeinde",
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1192,6 +1284,9 @@
      "reason": "Das Unternehmen gibt an, nicht von der CO2-Abgabe befreit zu sein.",
      "evidence": [
       "rueckfrage_keine_co2_befreiung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1210,6 +1305,9 @@
       "taetigkeit",
       "eigentum_gebaeude"
      ],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1224,6 +1322,9 @@
      "state": "unbekannt",
      "reason": "Ein Projektstart ist angegeben, aber nicht, ob das Gesuch vor Installationsbeginn eingereicht wird.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -1242,6 +1343,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1258,6 +1362,9 @@
      "evidence": [
       "baujahr"
      ],
+     "profile_fields": [
+      "baujahr"
+     ],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1272,6 +1379,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu einer Leistungsgarantie EnergieSchweiz.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1288,6 +1396,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1304,6 +1413,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1378,6 +1488,10 @@
       "standort_gemeinde",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1394,6 +1508,9 @@
      "evidence": [
       "applicant_type",
       "rueckfrage_keine_co2_befreiung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1412,6 +1529,9 @@
       "eigentum_gebaeude",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1426,6 +1546,9 @@
      "state": "unbekannt",
      "reason": "Der geplante Projektstart ist angegeben, aber weder eine Gesuchseinreichung noch der Installationsbeginn einer Übergabestation ist belegt.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -1444,6 +1567,9 @@
      "evidence": [
       "baujahr"
      ],
+     "profile_fields": [
+      "baujahr"
+     ],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1460,6 +1586,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1474,6 +1601,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu einem Wärmeliefervertrag mit einem Netzbetreiber.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1547,6 +1675,10 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1563,6 +1695,9 @@
      "evidence": [
       "applicant_type",
       "rueckfrage_keine_co2_befreiung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1581,6 +1716,9 @@
       "eigentum_gebaeude",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1598,6 +1736,9 @@
       "vorhaben_beschreibung",
       "rueckfrage_dezentrale_heizung"
      ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1612,6 +1753,9 @@
      "state": "unbekannt",
      "reason": "Zum Anteil einer bestehenden Heizung am jährlichen Heizwärmebedarf liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1628,6 +1772,7 @@
      "evidence": [
       "rueckfrage_alle_ersetzt"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1642,6 +1787,9 @@
      "state": "unbekannt",
      "reason": "Ein geplanter Projektstart ist angegeben, nicht aber, ob das Gesuch davor eingereicht wird.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -1716,6 +1864,9 @@
      "evidence": [
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1732,6 +1883,9 @@
      "evidence": [
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1746,6 +1900,9 @@
      "state": "unbekannt",
      "reason": "Ob sich das Unternehmen noch in der Gründungsphase befindet, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [
+      "unternehmensalter"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1760,6 +1917,7 @@
      "state": "unbekannt",
      "reason": "Zur Eigentümerschaft am Kapital des Unternehmens liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1777,6 +1935,9 @@
       "standort_kanton",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1791,6 +1952,9 @@
      "state": "annahme",
      "reason": "Die Dämmung und die Photovoltaikanlage lassen eine Vermeidung von Treibhausgasemissionen erwarten, ohne dass diese im Profil belegt ist.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -1809,6 +1973,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1823,6 +1990,9 @@
      "state": "unbekannt",
      "reason": "Das Projektbudget gibt keinen Aufschluss über erhaltene oder geplante verwässernde Finanzierungen und den beantragten Förderbetrag.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -1908,6 +2078,9 @@
      "state": "unbekannt",
      "reason": "Die jährlichen Energiekosten sind nicht angegeben.",
      "evidence": [],
+     "profile_fields": [
+      "energiekosten"
+     ],
      "source": {
       "title": "PEIK Energieberatung für KMU, Startseite",
       "url": "https://peik.ch/",
@@ -1922,6 +2095,7 @@
      "state": "unbekannt",
      "reason": "Ob das Unternehmen vom kantonalen Grossverbraucherartikel betroffen ist, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -1938,6 +2112,7 @@
      "evidence": [
       "rueckfrage_keine_co2_befreiung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -1952,6 +2127,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe dazu, ob die Beratung bereits durch ein anderes Bundesprogramm gefördert wird.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2050,6 +2226,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2064,6 +2243,9 @@
      "state": "annahme",
      "reason": "Die Umsetzung in der Schweiz ist aufgrund des als Annahme erfassten Standorts Ruswil wahrscheinlich.",
      "evidence": [
+      "standort_kanton"
+     ],
+     "profile_fields": [
       "standort_kanton"
      ],
      "source": {
@@ -2082,6 +2264,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2096,6 +2279,9 @@
      "state": "unbekannt",
      "reason": "Der angegebene künftige Projektstart belegt nicht, ob Material bereits bestellt oder Verträge unterzeichnet wurden.",
      "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -2114,6 +2300,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2128,6 +2317,9 @@
      "state": "unbekannt",
      "reason": "Ohne Angaben zum Förderbeitrag und zu eingesparten Kilowattstunden lässt sich das Kosten-Nutzen-Verhältnis nicht bestimmen.",
      "evidence": [],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "ProKilowatt, Häufige Fragen (FR)",
       "url": "https://www.prokw.ch/faq/",
@@ -2142,6 +2334,9 @@
      "state": "erfuellt",
      "reason": "Die angegebene Investitionssumme liegt über der Schwelle für die Einreichung als Projekt.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -2229,6 +2424,7 @@
      "evidence": [
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2245,6 +2441,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2259,6 +2456,9 @@
      "state": "unbekannt",
      "reason": "Das Eigentum am Gebäude ist belegt, nicht aber das Grundeigentum oder eine allfällige Zustimmung der Grundeigentümerin.",
      "evidence": [
+      "eigentum_gebaeude"
+     ],
+     "profile_fields": [
       "eigentum_gebaeude"
      ],
      "source": {
@@ -2277,6 +2477,7 @@
      "evidence": [
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2292,6 +2493,9 @@
      "reason": "Die Anlage ist noch geplant und somit derzeit nicht realisiert.",
      "evidence": [
       "vorhaben_beschreibung",
+      "projektstart"
+     ],
+     "profile_fields": [
       "projektstart"
      ],
      "source": {
@@ -2310,6 +2514,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2370,6 +2575,7 @@
       "vorhaben_beschreibung",
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2386,6 +2592,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2400,6 +2607,9 @@
      "state": "annahme",
      "reason": "Das Eigentum am Gebäude spricht dafür, dass keine Zustimmung einer anderen Grundeigentümerin nötig ist, belegt aber das Grundeigentum nicht ausdrücklich.",
      "evidence": [
+      "eigentum_gebaeude"
+     ],
+     "profile_fields": [
       "eigentum_gebaeude"
      ],
      "source": {
@@ -2418,6 +2628,7 @@
      "evidence": [
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2463,6 +2674,7 @@
      "evidence": [
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2479,6 +2691,7 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2493,6 +2706,9 @@
      "state": "unbekannt",
      "reason": "Das Eigentum am Gebäude ist belegt, nicht aber das Eigentum am Grundstück oder eine Zustimmung der Grundeigentümerschaft.",
      "evidence": [
+      "eigentum_gebaeude"
+     ],
+     "profile_fields": [
       "eigentum_gebaeude"
      ],
      "source": {
@@ -2511,6 +2727,7 @@
      "evidence": [
       "rueckfrage_ohne_eigenverbrauch"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -2528,6 +2745,7 @@
       "vorhaben_beschreibung",
       "rueckfrage_min_2_kw"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
@@ -2588,6 +2806,9 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -2602,6 +2823,9 @@
      "state": "unbekannt",
      "reason": "Die geplante Dämmung und Photovoltaikanlage könnten CO2-Emissionen einsparen, ein Nachweis für die verlangte Innovation liegt jedoch nicht vor.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -2620,6 +2844,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Bürgschaften, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften",
@@ -2636,6 +2863,9 @@
      "evidence": [
       "rueckfrage_marktreif_umsatz"
      ],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2650,6 +2880,7 @@
      "state": "unbekannt",
      "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals enthält das Profil keine Angaben.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2666,6 +2897,7 @@
      "evidence": [
       "rueckfrage_bankkredit"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -2680,6 +2912,9 @@
      "state": "unbekannt",
      "reason": "Das Budget ist angegeben, aber zur Finanzierung von mindestens 40 Prozent mit anderen Mitteln fehlen Angaben.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -2699,6 +2934,9 @@
       "taetigkeit",
       "standort_gemeinde",
       "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "taetigkeit"
      ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",

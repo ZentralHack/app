@@ -243,6 +243,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -260,6 +263,9 @@
       "art_des_vorhabens",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "art_des_vorhabens"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -276,6 +282,7 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -322,6 +329,10 @@
       "applicant_type",
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende",
+      "rechtsform"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -338,6 +349,9 @@
      "evidence": [
       "standort_kanton",
       "standort_gemeinde"
+     ],
+     "profile_fields": [
+      "standort_kanton"
      ],
      "source": {
       "title": "Status of Switzerland in Horizon Europe, Euresearch",
@@ -356,6 +370,9 @@
       "vorhaben_beschreibung",
       "laufzeit"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -370,6 +387,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu gleichzeitig eingereichten EIC-Accelerator-Anträgen.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -384,6 +402,9 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angaben dazu, ob die Anforderungen der Auswahlstufen und des Jury-Interviews erfüllt werden.",
      "evidence": [],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -470,6 +491,10 @@
       "standort_kanton",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "taetigkeit"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -484,6 +509,9 @@
      "state": "nicht_erfuellt",
      "reason": "Ein Schweizer Forschungspartner ist derzeit nicht vorhanden.",
      "evidence": [
+      "partner"
+     ],
+     "profile_fields": [
       "partner"
      ],
      "source": {
@@ -502,6 +530,9 @@
      "evidence": [
       "partner"
      ],
+     "profile_fields": [
+      "partner"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -516,6 +547,9 @@
      "state": "unbekannt",
      "reason": "Das genannte Budget enthält keine Aufteilung der Projektkosten nach Partnern.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -534,6 +568,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -550,6 +587,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -564,6 +604,9 @@
      "state": "annahme",
      "reason": "Aus der vorgesehenen industriellen Anwendung und den Pilotkundentests lässt sich ein möglicher wirtschaftlicher Nutzen ableiten.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -583,6 +626,10 @@
       "vorhaben_beschreibung",
       "partner"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung",
+      "partner"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -597,6 +644,9 @@
      "state": "nicht_erfuellt",
      "reason": "Ein Forschungspartner ist derzeit nicht beteiligt.",
      "evidence": [
+      "partner"
+     ],
+     "profile_fields": [
       "partner"
      ],
      "source": {
@@ -724,6 +774,9 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -738,6 +791,9 @@
      "state": "annahme",
      "reason": "Die angegebenen 18 Mitarbeitenden sprechen für weniger als 250 Vollzeitbeschäftigte, belegen die Zahl der Vollzeitbeschäftigten zum Gesuchszeitpunkt aber nicht direkt.",
      "evidence": [
+      "mitarbeitende"
+     ],
+     "profile_fields": [
       "mitarbeitende"
      ],
      "source": {
@@ -756,6 +812,9 @@
      "evidence": [
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende"
+     ],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -770,6 +829,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu einer bisherigen Unterstützung durch eine Innosuisse-Mentorin oder einen Innosuisse-Mentor für dieses Projekt.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -786,6 +846,7 @@
      "evidence": [
       "rueckfrage_keine_parallele_beratung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -858,6 +919,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -872,6 +936,7 @@
      "state": "unbekannt",
      "reason": "Ob ein 30-minütiger Sparring-Check durchgeführt wird, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -887,6 +952,9 @@
      "reason": "Das Unternehmen bezeichnet sich als KMU und gehört damit zur genannten Zielgruppe.",
      "evidence": [
       "applicant_type"
+     ],
+     "profile_fields": [
+      "rechtsform"
      ],
      "source": {
       "title": "Innovation Sparring, ITZ",
@@ -947,6 +1015,9 @@
      "evidence": [
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -963,6 +1034,9 @@
      "evidence": [
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -977,6 +1051,9 @@
      "state": "unbekannt",
      "reason": "Zum Unternehmensalter und zu einer möglichen Gründungsphase fehlen Angaben.",
      "evidence": [],
+     "profile_fields": [
+      "unternehmensalter"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -991,6 +1068,7 @@
      "state": "unbekannt",
      "reason": "Zu den Eigentumsverhältnissen des Kapitals fehlen Angaben.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1005,6 +1083,9 @@
      "state": "unbekannt",
      "reason": "Der Standort des Unternehmens belegt nicht, wo das Projekt hauptsächlich umgesetzt wird.",
      "evidence": [
+      "standort_kanton"
+     ],
+     "profile_fields": [
       "standort_kanton"
      ],
      "source": {
@@ -1023,6 +1104,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1039,6 +1123,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1053,6 +1140,9 @@
      "state": "unbekannt",
      "reason": "Das Projektbudget gibt weder Auskunft über verwässernde Finanzierungen noch über den beantragten Förderbetrag.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -1180,6 +1270,10 @@
       "taetigkeit",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "rechtsform",
+      "taetigkeit"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1194,6 +1288,10 @@
      "state": "erfuellt",
      "reason": "Der Eintrag im Handelsregister des Kantons Luzern wurde bejaht.",
      "evidence": [
+      "handelsregister"
+     ],
+     "profile_fields": [
+      "standort_kanton",
       "handelsregister"
      ],
      "source": {
@@ -1212,6 +1310,10 @@
      "evidence": [
       "raeumlichkeiten"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "raeumlichkeiten"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1226,6 +1328,9 @@
      "state": "unbekannt",
      "reason": "Die Zahl der Mitarbeitenden ist angegeben, nicht aber deren Einsatzort und Präsenz während des gesamten Bemessungsjahres.",
      "evidence": [
+      "mitarbeitende"
+     ],
+     "profile_fields": [
       "mitarbeitende"
      ],
      "source": {
@@ -1244,6 +1349,9 @@
      "evidence": [
       "revisionsart"
      ],
+     "profile_fields": [
+      "revisionsart"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1260,6 +1368,9 @@
      "evidence": [
       "rueckfrage_nachhaltigkeit"
      ],
+     "profile_fields": [
+      "nachhaltigkeitsbericht"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1274,6 +1385,7 @@
      "state": "unbekannt",
      "reason": "Zu fälligen unbezahlten Behördenforderungen und zu einem Konkurs- oder Liquidationsverfahren liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1288,6 +1400,10 @@
      "state": "erfuellt",
      "reason": "Die Entwicklung eines neuartigen Sensors mit Prototyp und Tests bei Pilotkunden entspricht einer förderberechtigten Forschungs- oder Entwicklungstätigkeit.",
      "evidence": [
+      "vorhaben_beschreibung",
+      "art_des_vorhabens"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung",
       "art_des_vorhabens"
      ],
@@ -1307,6 +1423,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1321,6 +1440,10 @@
      "state": "annahme",
      "reason": "Budget und vorgesehene Laufzeit sprechen für ein zielgerichtetes Vorgehen, eine systematische Planung oder Dokumentation ist aber nicht belegt.",
      "evidence": [
+      "budget",
+      "laufzeit"
+     ],
+     "profile_fields": [
       "budget",
       "laufzeit"
      ],
@@ -1342,6 +1465,9 @@
       "raeumlichkeiten",
       "partner"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1356,6 +1482,9 @@
      "state": "nicht_anwendbar",
      "reason": "Eine ausgelagerte Forschung ist nicht beschrieben; ein Forschungspartner besteht derzeit nicht.",
      "evidence": [
+      "partner"
+     ],
+     "profile_fields": [
       "partner"
      ],
      "source": {
@@ -1374,6 +1503,7 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -1389,6 +1519,10 @@
      "reason": "Die Kosten fallen erst künftig an, ihre Erfassung in der Jahresrechnung des massgeblichen Bemessungsjahres ist damit noch nicht belegt.",
      "evidence": [
       "rueckfrage_kosten_bemessungsjahr"
+     ],
+     "profile_fields": [
+      "projektstart",
+      "geschaeftsjahr"
      ],
      "source": {
       "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
@@ -1502,6 +1636,10 @@
       "rueckfrage_steuerpflichtig_luzern",
       "applicant_type"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "rechtsform"
+     ],
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1518,6 +1656,9 @@
      "evidence": [
       "taetigkeit"
      ],
+     "profile_fields": [
+      "taetigkeit"
+     ],
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1532,6 +1673,7 @@
      "state": "unbekannt",
      "reason": "Angaben zum qualifizierenden und gesamten F&E-Aufwand pro Patent fehlen.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1546,6 +1688,7 @@
      "state": "unbekannt",
      "reason": "Zur erforderlichen Dokumentation beim Erstantrag und im weiteren Verlauf liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Luzerner Steuerbuch Band 2, § 72a-e Nr. 1: Bestimmungen gemäss Steuerreform STAF",
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
@@ -1631,6 +1774,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1648,6 +1794,9 @@
       "art_des_vorhabens",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "art_des_vorhabens"
+     ],
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1662,6 +1811,9 @@
      "state": "annahme",
      "reason": "Tests bei Pilotkunden lassen eine kommerzielle Nutzung möglich erscheinen, deren Umsetzung ist jedoch nicht näher dargelegt.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -1680,6 +1832,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1696,6 +1851,9 @@
      "evidence": [
       "laufzeit"
      ],
+     "profile_fields": [
+      "laufzeit"
+     ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1710,6 +1868,9 @@
      "state": "unbekannt",
      "reason": "Die Beschreibung nennt eine neuartige Entwicklung und Pilotkundentests, lässt aber insbesondere Umweltnutzen, Machbarkeit und Schweizer Wertschöpfung offen.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {

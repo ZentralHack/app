@@ -224,6 +224,9 @@
       "taetigkeit",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -238,6 +241,9 @@
      "state": "annahme",
      "reason": "Der geplante Prototyp deutet auf ein Pilotprojekt in einer frühen Phase hin, ohne dass die Projektphase ausdrücklich bestätigt ist.",
      "evidence": [
+      "art_des_vorhabens"
+     ],
+     "profile_fields": [
       "art_des_vorhabens"
      ],
      "source": {
@@ -256,6 +262,7 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Fragen und Antworten P+D-Programm, BFE",
       "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
@@ -316,6 +323,10 @@
       "applicant_type",
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende",
+      "rechtsform"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -331,6 +342,9 @@
      "reason": "Der Standort Aarau deutet auf einen Sitz in der Schweiz hin, der Kanton ist im Profil jedoch nur als Annahme erfasst.",
      "evidence": [
       "standort_gemeinde",
+      "standort_kanton"
+     ],
+     "profile_fields": [
       "standort_kanton"
      ],
      "source": {
@@ -349,6 +363,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -363,6 +380,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe zu weiteren gleichzeitigen EIC-Accelerator-Anträgen.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -377,6 +395,9 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angaben zur Teilnahme am Auswahlverfahren mit Short Proposal, Full Proposal und Jury-Interview.",
      "evidence": [],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "EIC Accelerator, European Innovation Council",
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
@@ -464,6 +485,10 @@
       "standort_gemeinde",
       "taetigkeit"
      ],
+     "profile_fields": [
+      "standort_kanton",
+      "taetigkeit"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -481,6 +506,9 @@
       "partner",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "partner"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -495,6 +523,9 @@
      "state": "unbekannt",
      "reason": "Zur finanziellen und personellen Unabhängigkeit der Partner liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "partner"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -511,6 +542,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -525,6 +559,9 @@
      "state": "unbekannt",
      "reason": "Das Gesamtbudget ist angegeben, ein Barbeitrag an den Forschungspartner jedoch nicht.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -544,6 +581,9 @@
       "taetigkeit",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -558,6 +598,9 @@
      "state": "unbekannt",
      "reason": "Der geplante Prototyp ist beschrieben, aber Auswirkungen auf Wettbewerb und Wertschöpfung sind nicht dargelegt.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -577,6 +620,10 @@
       "partner",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung",
+      "partner"
+     ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
@@ -593,6 +640,9 @@
      "evidence": [
       "partner",
       "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "partner"
      ],
      "source": {
       "title": "Innovationsprojekte mit Umsetzungspartner, Webseite Innosuisse",
@@ -719,6 +769,9 @@
       "standort_gemeinde",
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -733,6 +786,9 @@
      "state": "annahme",
      "reason": "Bei 30 Mitarbeitenden liegt die Zahl der Vollzeitbeschäftigten voraussichtlich unter 250, ist aber nicht ausdrücklich angegeben.",
      "evidence": [
+      "mitarbeitende"
+     ],
+     "profile_fields": [
       "mitarbeitende"
      ],
      "source": {
@@ -751,6 +807,9 @@
      "evidence": [
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende"
+     ],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -765,6 +824,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe dazu, ob für dieses Projekt bereits Innosuisse-Innovationsmentoring beansprucht wurde.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -781,6 +841,7 @@
      "evidence": [
       "rueckfrage_keine_parallele_beratung"
      ],
+     "profile_fields": [],
      "source": {
       "title": "Innovationsmentoring, Webseite Innosuisse",
       "url": "https://www.innosuisse.admin.ch/de/innovationsmentoring",
@@ -853,6 +914,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -867,6 +931,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe dazu, ob ein 30-minütiger Sparring-Check stattgefunden hat.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -882,6 +947,9 @@
      "reason": "Das Unternehmen bezeichnet sich als KMU und gehört damit zur genannten Zielgruppe.",
      "evidence": [
       "applicant_type"
+     ],
+     "profile_fields": [
+      "rechtsform"
      ],
      "source": {
       "title": "Innovation Sparring, ITZ",
@@ -943,6 +1011,9 @@
       "standort_kanton",
       "standort_gemeinde"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -959,6 +1030,9 @@
      "evidence": [
       "mitarbeitende"
      ],
+     "profile_fields": [
+      "mitarbeitende"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -973,6 +1047,9 @@
      "state": "unbekannt",
      "reason": "Ob sich das Unternehmen in der Gründungsphase befindet, geht aus dem Profil nicht hervor.",
      "evidence": [],
+     "profile_fields": [
+      "unternehmensalter"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -987,6 +1064,7 @@
      "state": "unbekannt",
      "reason": "Zu den Eigentumsverhältnissen am Kapital liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1003,6 +1081,9 @@
      "evidence": [
       "standort_kanton"
      ],
+     "profile_fields": [
+      "standort_kanton"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1017,6 +1098,9 @@
      "state": "unbekannt",
      "reason": "Aus dem Bau eines Drucksensor-Prototyps geht keine Vermeidung von Treibhausgasemissionen hervor.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -1036,6 +1120,9 @@
       "taetigkeit",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -1050,6 +1137,9 @@
      "state": "unbekannt",
      "reason": "Das angegebene Budget enthält keine Angaben zu verwässernden Finanzierungen oder zum beantragten Betrag.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -1176,6 +1266,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1192,6 +1285,9 @@
      "evidence": [
       "art_des_vorhabens"
      ],
+     "profile_fields": [
+      "art_des_vorhabens"
+     ],
      "source": {
       "title": "Umwelttechnologieförderung, BAFU",
       "url": "https://www.bafu.admin.ch/de/utf",
@@ -1206,6 +1302,9 @@
      "state": "unbekannt",
      "reason": "Eine geplante kommerzielle Nutzung der Resultate ist im Profil nicht dargelegt.",
      "evidence": [],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1222,6 +1321,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1236,6 +1338,9 @@
      "state": "unbekannt",
      "reason": "Zur Projektdauer liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "laufzeit"
+     ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
@@ -1251,6 +1356,9 @@
      "reason": "Die Neuartigkeit des Sensors ist beschrieben, für die übrigen Bewertungsaspekte fehlen jedoch ausreichende Angaben.",
      "evidence": [
       "taetigkeit"
+     ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
      ],
      "source": {
       "title": "Eingabe eines Gesuchs, BAFU",

@@ -102,6 +102,17 @@ def test_sources_come_from_the_knowledge_base(lib):
         assert_contract("CriterionResult", criterion)
 
 
+def test_profile_fields_come_from_the_knowledge_base(lib):
+    # The model cites other fields as evidence; the fields a criterion needs come from the KB.
+    output = _output(_check("revision", "unbekannt", ["budget", "laufzeit"]))
+    result = post_check(lib, sensora_profile(), output)
+    for scoped, criterion in zip(lib.criteria(), result.criteria, strict=True):
+        assert criterion.profile_fields == scoped.criterion.profile_fields
+    revision = next(c for c in result.criteria if c.criterion_id == "revision")
+    assert revision.evidence == ["budget", "laufzeit"]
+    assert revision.profile_fields != revision.evidence
+
+
 def test_exclusion_hits_need_existing_id_and_quote(lib):
     hit = ExclusionHit(exclusion_id="ausschluss_2", quotes=["bei Pilotkunden testen"])
     unproven = ExclusionHit(exclusion_id="ausschluss_3", quotes=["erfunden"])

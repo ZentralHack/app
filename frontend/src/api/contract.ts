@@ -218,6 +218,10 @@ export interface CriterionResult {
    * Namen der Profilfelder, auf die sich der Zustand stützt
    */
   evidence: string[];
+  /**
+   * Profilfelder, die das Kriterium laut Wissensbasis braucht (criteria[].profile_fields)
+   */
+  profile_fields: string[];
   source: SourceLink;
 }
 /**

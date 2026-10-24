@@ -225,6 +225,9 @@
       "standort_gemeinde",
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "standort_gemeinde"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -239,6 +242,9 @@
      "state": "unbekannt",
      "reason": "Das Budget belegt nicht, ob sich die Trägerschaft mit Eigenmitteln, Arbeit oder Material beteiligt.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -257,6 +263,9 @@
      "evidence": [
       "budget"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -273,6 +282,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -287,6 +299,9 @@
      "state": "unbekannt",
      "reason": "Zur gesamten finanziellen Situation liegen keine ausreichenden Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "umsatz"
+     ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -398,6 +413,9 @@
      "evidence": [
       "rueckfrage_ueberbetrieblich"
      ],
+     "profile_fields": [
+      "partner"
+     ],
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -414,6 +432,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "branche"
+     ],
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -428,6 +449,9 @@
      "state": "unbekannt",
      "reason": "Aus der Beschreibung geht weder eine nationale Ausrichtung noch die Erfüllung der Kriterien für ein Modellvorhaben hervor.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -447,6 +471,9 @@
       "budget",
       "laufzeit"
      ],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -461,6 +488,9 @@
      "state": "unbekannt",
      "reason": "Zum Finanzierungsanteil der Projektträger liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "Innotour Förderangebot, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-foerderangebot",
@@ -475,6 +505,9 @@
      "state": "unbekannt",
      "reason": "Zur finanziellen Eigenleistung und deren Herkunft aus der Tourismusbranche liegen keine Angaben vor.",
      "evidence": [],
+     "profile_fields": [
+      "budget"
+     ],
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -489,6 +522,9 @@
      "state": "unbekannt",
      "reason": "Ein geplanter Projektbeginn im Verhältnis zur Zusicherung der Finanzhilfe ist nicht angegeben.",
      "evidence": [],
+     "profile_fields": [
+      "projektstart"
+     ],
      "source": {
       "title": "FAQ zur Innotourförderung, SECO",
       "url": "https://www.seco.admin.ch/de/innotour-faq",
@@ -503,6 +539,9 @@
      "state": "unbekannt",
      "reason": "Die geplanten Erlebnisangebote sind beschrieben, ein dringendes Bedürfnis des Schweizer Tourismus und ein quantifizierter Nutzen jedoch nicht belegt.",
      "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -520,6 +559,9 @@
      "reason": "Die Rückfrage bestätigt eine Umsetzung zusammen mit anderen Tourismusbetrieben oder Organisationen.",
      "evidence": [
       "rueckfrage_ueberbetrieblich"
+     ],
+     "profile_fields": [
+      "partner"
      ],
      "source": {
       "title": "Innotour Förderangebot, SECO",
@@ -658,6 +700,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -672,6 +717,7 @@
      "state": "unbekannt",
      "reason": "Das Profil enthält keine Angabe dazu, ob ein Sparring-Check stattgefunden hat.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -687,6 +733,9 @@
      "reason": "Die Einordnung als Start-up ist im Profil als Annahme erfasst.",
      "evidence": [
       "applicant_type"
+     ],
+     "profile_fields": [
+      "rechtsform"
      ],
      "source": {
       "title": "Innovation Sparring, ITZ",
@@ -747,6 +796,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -763,6 +815,9 @@
      "evidence": [
       "rueckfrage_ueberbetrieblich"
      ],
+     "profile_fields": [
+      "partner"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -777,6 +832,9 @@
      "state": "unbekannt",
      "reason": "Das genannte Budget lässt nicht erkennen, welcher Anteil als Eigenmittel eingebracht wird.",
      "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
       "budget"
      ],
      "source": {
@@ -795,6 +853,9 @@
      "evidence": [
       "vorhaben_beschreibung"
      ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -809,6 +870,7 @@
      "state": "unbekannt",
      "reason": "Angaben zu Wirkungs- und Leistungszielen, Meilensteinen und Sollbruchstellen in einer Leistungsvereinbarung fehlen.",
      "evidence": [],
+     "profile_fields": [],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
