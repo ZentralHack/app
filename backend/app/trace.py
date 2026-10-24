@@ -9,6 +9,7 @@ from collections.abc import AsyncIterator
 from datetime import UTC, datetime
 from typing import Any
 
+from app.llm.usage import Usage
 from app.models.contract import RunResult, TraceEvent
 
 
@@ -17,6 +18,8 @@ class RunRecorder:
         self.run_id = run_id
         self.result = result
         self.events: list[TraceEvent] = []
+        self.downgrades = 0  # evidence-rule downgrades across all checks of this run
+        self.usage = Usage()  # LLM calls of this run, incl. retries
         self._busy = False
         self._wake = asyncio.Event()
 

@@ -90,7 +90,11 @@ def build_profile(req: ProfileRequest, extraction: ProfileExtraction) -> Project
     for name, value in form.items():
         if value is not None:
             fields[name] = ProfileField(
-                value=value, status="angegeben", origin="formular", quote=None, note=None
+                value=_coerce(name, value),
+                status="angegeben",
+                origin="formular",
+                quote=None,
+                note=None,
             )
     profile = ProjectProfile(input_text=req.text, summary=extraction.summary, fields=fields)
     return normalize_profile(profile)
@@ -120,7 +124,7 @@ def _coerce(name: str, value: Any) -> Any | None:
     field_type = FIELD_TYPES[name]
     if field_type.kind == "enum_list":
         return value if isinstance(value, list) else [value]
-    if field_type.kind == "integer" and isinstance(value, float) and value.is_integer():
+    if field_type.kind in ("integer", "number") and isinstance(value, float) and value.is_integer():
         value = int(value)
     return value if field_type.accepts(value) else None
 

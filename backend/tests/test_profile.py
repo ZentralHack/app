@@ -55,6 +55,7 @@ def test_sensora_profile():
     # Form fields win and count as stated.
     assert fields["mitarbeitende"].origin == "formular"
     assert fields["budget"].value == 400000
+    assert isinstance(fields["budget"].value, int)
     assert fields["revisionsart"].status == "fehlt"
     assert llm.calls[0].tier == "small"
     assert llm.calls[0].effort == "low"

@@ -23,7 +23,7 @@ from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.loader import KnowledgeBase
 from app.llm.client import LLMClient
 from app.llm.errors import LLMError
-from app.llm.usage import Usage, current_usage
+from app.llm.usage import current_usage
 from app.models.contract import (
     InstrumentMatch,
     InstrumentMatchLinks,
@@ -83,8 +83,7 @@ async def run_analysis(
     today: date,
 ) -> RunResult:
     ctx = _Context(profile, kb, llm, recorder, today)
-    usage = Usage()
-    token = current_usage.set(usage)
+    token = current_usage.set(recorder.usage)
     started = time.monotonic()
     recorder.set_busy(True)
     try:
@@ -96,7 +95,7 @@ async def run_analysis(
     finally:
         current_usage.reset(token)
         recorder.set_busy(False)
-        _log_run(recorder, started, usage)
+        _log_run(recorder, started)
     return recorder.result
 
 
@@ -152,6 +151,7 @@ async def retry_instrument(
     """Checks one failed instrument again (claimed with `claim_retry`), then ranks and
     plans anew."""
     ctx = _Context(recorder.result.profile, kb, llm, recorder, today)
+    token = current_usage.set(recorder.usage)
     try:
         await _check(ctx, item)
         _rank(ctx)
@@ -160,6 +160,7 @@ async def retry_instrument(
         log.exception("Nochmals-Prüfung in Lauf %s abgebrochen", recorder.run_id)
         _fail(ctx)
     finally:
+        current_usage.reset(token)
         recorder.set_busy(False)
     return recorder.result
 
@@ -183,6 +184,7 @@ async def _check(ctx: _Context, item: FlatInstrument) -> None:
         log.exception("Prüfung von %s fehlgeschlagen", item.key)
         _instrument_failed(ctx, item, CHECK_FAILED, retryable=True)
         return
+    recorder.downgrades += check.downgrades
     scored = score(item, check.criteria, bool(check.exclusion_hits), check.lever_texts)
     _set_match(
         ctx, item, status="fertig", fit=scored.fit, criteria=check.criteria, gaps=scored.gaps
@@ -334,11 +336,14 @@ def _step(recorder: RunRecorder, step: str, start: str, done: str) -> Iterator[N
     recorder.emit("step_completed", done, {"step": step, "duration_ms": _ms(started)})
 
 
-def _log_run(recorder: RunRecorder, started: float, usage: Usage) -> None:
+def _log_run(recorder: RunRecorder, started: float) -> None:
+    usage = recorder.usage
     log.info(
-        "Lauf %s: dauer_ms=%d aufrufe=%d tokens_in=%d tokens_out=%d kosten_usd=%.4f",
+        "Lauf %s: dauer_ms=%d herabstufungen=%d aufrufe=%d tokens_in=%d tokens_out=%d "
+        "kosten_usd=%.4f",
         recorder.run_id,
         _ms(started),
+        recorder.downgrades,
         len(usage.calls),
         usage.input_tokens,
         usage.output_tokens,
