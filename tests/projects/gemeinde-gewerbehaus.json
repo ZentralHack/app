@@ -4,9 +4,9 @@
   "category": "standard",
   "input": {
     "text": "Wir sind eine Landgemeinde im Kanton Luzern mit rund 4'000 Einwohnern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen. Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
-    "gemeinde": null,
-    "mitarbeitende": null,
-    "budget_chf": null
+    "gemeinde": "Musterwil",
+    "mitarbeitende": 35,
+    "budget_chf": 2800000
   },
   "answers": {
     "partner": "Nein",

@@ -164,7 +164,8 @@ async def main(names: list[str], save: Path | None) -> int:
             print("Abweichungen:\n" + "\n".join(f"- {p}" for p in report.problems))
         if save and result is not None:
             save.mkdir(parents=True, exist_ok=True)
-            (save / f"{path.stem}.json").write_text(result.model_dump_json(indent=1) + "\n")
+            out = save / f"{path.stem}.json"
+            out.write_text(result.model_dump_json(indent=1) + "\n", encoding="utf-8")
     print(f"\n{len(paths) - failed} von {len(paths)} Projekten ohne Abweichung.")
     return 1 if failed else 0
 

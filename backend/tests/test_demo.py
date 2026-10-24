@@ -39,6 +39,23 @@ def test_replay_without_llm(kb: KnowledgeBase, tmp_path: Path, monkeypatch):
         result = _wait(client, run_id)
         events = _events(client, run_id)
 
+        assert result["profile"] == profile["profile"], "the run reports the profile it was sent"
+
+        form = {"text": text, "gemeinde": "Musterwil", "mitarbeitende": 35, "budget_chf": 2800000}
+        with_form = _post(client, "/api/profile", form)["profile"]["fields"]
+        for name, value in [
+            ("standort_gemeinde", "Musterwil"),
+            ("mitarbeitende", 35),
+            ("budget", 2800000),
+        ]:
+            assert with_form[name] == {
+                "value": value,
+                "status": "angegeben",
+                "origin": "formular",
+                "quote": None,
+                "note": None,
+            }
+
         other = {"text": "Ganz anderes Vorhaben ohne Demo."}
         assert _post(client, "/api/profile", other, 503)["code"] == "ki_nicht_verfuegbar"
 

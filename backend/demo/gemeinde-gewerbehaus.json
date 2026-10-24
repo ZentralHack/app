@@ -1,25 +1,25 @@
 {
- "run_id": "run_a411b348",
+ "run_id": "run_de365f3e",
  "status": "fertig",
- "created_at": "2026-10-24T03:41:38.144860Z",
- "completed_at": "2026-10-24T03:42:05.709123Z",
+ "created_at": "2026-10-24T10:22:28.909492Z",
+ "completed_at": "2026-10-24T10:22:58.814678Z",
  "today": "2026-10-24",
  "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
  "profile": {
   "input_text": "Wir sind eine Landgemeinde im Kanton Luzern mit rund 4'000 Einwohnern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen. Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
-  "summary": "Ein leerstehendes Schulhaus soll zu einem Gewerbehaus umgebaut, energetisch saniert und mit einer Luft/Wasser-Wärmepumpe ausgestattet werden.",
+  "summary": "Ein leerstehendes Schulhaus soll zu einem Gewerbehaus umgebaut, die Ölheizung durch eine Luft/Wasser-Wärmepumpe ersetzt und die Fassade gedämmt werden.",
   "fields": {
    "standort_kanton": {
     "value": "LU",
     "status": "angegeben",
     "origin": "text",
-    "quote": "im Kanton Luzern",
+    "quote": "Wir sind eine Landgemeinde im Kanton Luzern",
     "note": null
    },
    "standort_gemeinde": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
+    "value": "Musterwil",
+    "status": "angegeben",
+    "origin": "formular",
     "quote": null,
     "note": null
    },
@@ -39,10 +39,10 @@
      "energieeffizienz",
      "heizungsersatz"
     ],
-    "status": "annahme",
+    "status": "angegeben",
     "origin": "text",
     "quote": "Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen. Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
-    "note": "Die Umnutzung zu Gewerberäumen ist Regionalentwicklung; Fassadendämmung und Heizungsersatz sind energetische Gebäudemassnahmen."
+    "note": null
    },
    "branche": {
     "value": null,
@@ -94,9 +94,9 @@
     "note": null
    },
    "mitarbeitende": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
+    "value": 35,
+    "status": "angegeben",
+    "origin": "formular",
     "quote": null,
     "note": null
    },
@@ -136,9 +136,9 @@
     "note": null
    },
    "budget": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
+    "value": 2800000,
+    "status": "angegeben",
+    "origin": "formular",
     "quote": null,
     "note": null
    },
@@ -160,14 +160,14 @@
     "value": 1962,
     "status": "angegeben",
     "origin": "text",
-    "quote": "ein leerstehendes Schulhaus von 1962",
+    "quote": "Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen.",
     "note": null
    },
    "bestehende_heizung": {
     "value": "Ölheizung",
     "status": "angegeben",
     "origin": "text",
-    "quote": "Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW",
+    "quote": "Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
     "note": null
    },
    "eigentum_gebaeude": {
@@ -177,26 +177,12 @@
     "quote": null,
     "note": null
    },
-   "rueckfrage_gebaeude_luzern": {
-    "value": "Ja",
-    "status": "angegeben",
-    "origin": "rueckfrage",
-    "quote": null,
-    "note": "Rückfrage «Steht das Gebäude im Kanton Luzern?»: Ja"
-   },
    "rueckfrage_nicht_co2_befreit": {
     "value": "Nein",
     "status": "angegeben",
     "origin": "rueckfrage",
     "quote": null,
     "note": "Rückfrage «Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?»: Nein"
-   },
-   "rueckfrage_min_foerdersumme": {
-    "value": "50 m2 oder mehr",
-    "status": "angegeben",
-    "origin": "rueckfrage",
-    "quote": null,
-    "note": "Rückfrage «Wie viele m2 Bauteilfläche wollen Sie dämmen?»: 50 m2 oder mehr"
    },
    "rueckfrage_alle_ersetzt": {
     "value": "Nein",
@@ -210,166 +196,11 @@
     "status": "angegeben",
     "origin": "rueckfrage",
     "quote": null,
-    "note": "Rückfrage «Ist Ihr Unternehmen von der CO2-Abgabe befreit?»: Nein"
+    "note": "Rückfrage «Ist Ihr Unternehmen von der CO2-Abgabe befreit oder erhält es den Netzzuschlag zurückerstattet?»: Nein"
    }
   }
  },
  "matches": [
-  {
-   "program_id": "bfe-pilot-demonstration",
-   "instrument_id": "pd-finanzhilfe",
-   "program_name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
-   "instrument_name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
-   "provider": "Bundesamt für Energie (BFE)",
-   "level": "bund",
-   "purpose": "Das BFE fördert Pilot-, Demonstrations- und Leuchtturmprojekte, die neue Energietechnologien im Sinne der Energiestrategie 2050 zur Marktreife bringen.",
-   "instrument_type": "beitrag",
-   "funding_summary": "Höchstens 50% der nicht amortisierbaren Kosten, bei Pilotprojekten ausnahmsweise bis 70%.",
-   "deadline": {
-    "type": "unbekannt",
-    "rule": "Eingabezeitpunkt in der FAQ nicht genannt.",
-    "next_date": null
-   },
-   "links": {
-    "info": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-    "apply": null,
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_nicht",
-   "rank": null,
-   "criteria": [
-    {
-     "criterion_id": "innovativer_ansatz",
-     "scope": "instrument",
-     "text": "Innovativer Ansatz, der viel Energie spart, erneuerbare Energien stärker nutzt oder dem Energiesystem nützt.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Die beschriebenen Massnahmen belegen keinen innovativen Ansatz; ob ein solcher vorgesehen ist, bleibt offen.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "vorhaben_beschreibung"
-     ],
-     "question": {
-      "id": "q_innovativer_ansatz",
-      "profile_field": "rueckfrage_innovativer_ansatz",
-      "text": "Erproben Sie eine neue Energietechnologie oder einen neuen Ansatz im realen Umfeld (Energieeffizienz, erneuerbare Energie, Speicher oder Netze)?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "bfe-pilot-demonstration",
-        "instrument_id": "pd-finanzhilfe",
-        "criterion_id": "innovativer_ansatz"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-      "locator": "Was ist ein P+D-Projekt"
-     }
-    },
-    {
-     "criterion_id": "pilot_oder_demo",
-     "scope": "instrument",
-     "text": "Pilotprojekt (frühe Phase, Teilsysteme) oder Demonstrationsprojekt (ausgereift, meist Massstab 1:1).",
-     "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben ist ein Umbau mit energetischer Sanierung und kein Pilot- oder Demonstrationsprojekt.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "art_des_vorhabens"
-     ],
-     "question": {
-      "id": "q_pilot_oder_demo",
-      "profile_field": "rueckfrage_pilot_oder_demo",
-      "text": "Wie weit ist Ihre Technologie entwickelt?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Grundlagen oder Laborversuch (TRS 1-3)",
-       "Pilotanlage, Erprobung im realen Umfeld (TRS 4-7)",
-       "Anlage im Massstab 1:1 zur Markterprobung (TRS 7-9)",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "bfe-pilot-demonstration",
-        "instrument_id": "pd-finanzhilfe",
-        "criterion_id": "pilot_oder_demo"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-      "locator": "Was ist ein P+D-Projekt"
-     }
-    },
-    {
-     "criterion_id": "finanzierungsnachweis",
-     "scope": "instrument",
-     "text": "Finanzierungsbestätigungen oder Jahresberichte.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob der bedingte Finanzierungsnachweis erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
-     "evidence": [],
-     "profile_fields": [
-      "budget"
-     ],
-     "question": null,
-     "source": {
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-      "locator": "Skizze"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "innovativer_ansatz"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, worin der innovative Ansatz und sein Nutzen für Energieeinsparung, erneuerbare Energien oder das Energiesystem bestehen.",
-     "source": {
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-      "locator": "Was ist ein P+D-Projekt"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "finanzierungsnachweis"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Finanzierungsbestätigungen oder Jahresberichte vorliegen.",
-     "source": {
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
-      "locator": "Skizze"
-     }
-    }
-   ],
-   "error": null
-  },
   {
    "program_id": "foerderprogramm-energie-lu",
    "instrument_id": "waermedaemmung",
@@ -390,10 +221,10 @@
     "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
     "form": null
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 3,
+   "rank": 4,
    "criteria": [
     {
      "criterion_id": "gebaeude_luzern",
@@ -401,9 +232,9 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die Rückfrage bestätigt, dass das Gebäude im Kanton Luzern steht.",
+     "reason": "Das Gebäude steht gemäss Profil im Kanton Luzern.",
      "evidence": [
-      "rueckfrage_gebaeude_luzern"
+      "standort_kanton"
      ],
      "profile_fields": [
       "standort_kanton",
@@ -433,793 +264,7 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
-     }
-    },
-    {
-     "criterion_id": "nicht_co2_befreit",
-     "scope": "programm",
-     "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Das Kriterium gilt nur für Unternehmen; als Antragstellerin ist eine Gemeinde angegeben.",
-     "evidence": [
-      "applicant_type"
-     ],
-     "profile_fields": [
-      "taetigkeit"
-     ],
-     "question": {
-      "id": "q_nicht_co2_befreit",
-      "profile_field": "rueckfrage_nicht_co2_befreit",
-      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": null,
-        "criterion_id": "nicht_co2_befreit"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "criterion_id": "nicht_kantonal_bund",
-     "scope": "programm",
-     "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
-     "kind": "muss",
-     "state": "annahme",
-     "reason": "Aus der Beschreibung als Vorhaben einer Gemeinde lässt sich ableiten, dass es sich nicht um ein kantonales oder Bundesgebäude handelt; die Gebäudeeigentümerschaft ist nicht belegt.",
-     "evidence": [
-      "applicant_type",
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "eigentum_gebaeude"
-     ],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
-     }
-    },
-    {
-     "criterion_id": "gesuch_vor_baubeginn",
-     "scope": "instrument",
-     "text": "Das Gesuch ist vor Baubeginn eingereicht. Baubeginn ist der Beginn der Montage oder Demontage der Dämmung an den beantragten Bauteilen.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ein Projektstart ist angegeben, aber weder die Einreichung des Gesuchs noch der Beginn der Dämmarbeiten ist belegt.",
-     "evidence": [
-      "projektstart"
-     ],
-     "profile_fields": [
-      "projektstart"
-     ],
-     "question": {
-      "id": "q_projektstart",
-      "profile_field": "projektstart",
-      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
-      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
-      "input": "datum",
-      "unit": null,
-      "options": [
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermedaemmung",
-        "criterion_id": "gesuch_vor_baubeginn"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
-     }
-    },
-    {
-     "criterion_id": "baubewilligung_vor_2000",
-     "scope": "instrument",
-     "text": "Die Baubewilligung für das Gebäude wurde vor dem Jahr 2000 erteilt (Datum der rechtskräftigen Baubewilligung).",
-     "kind": "muss",
-     "state": "annahme",
-     "reason": "Das Baujahr 1962 spricht für eine Baubewilligung vor 2000, deren rechtskräftiges Datum aber nicht belegt ist.",
-     "evidence": [
-      "baujahr"
-     ],
-     "profile_fields": [
-      "baujahr"
-     ],
-     "question": {
-      "id": "q_baujahr",
-      "profile_field": "baujahr",
-      "text": "In welchem Jahr wurde das Gebäude gebaut?",
-      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
-      "input": "zahl",
-      "unit": "Jahr",
-      "options": [
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermedaemmung",
-        "criterion_id": "baubewilligung_vor_2000"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "Ziff. 3.3"
-     }
-    },
-    {
-     "criterion_id": "u_wert",
-     "scope": "instrument",
-     "text": "Nach der Sanierung U-Wert höchstens 0.20 W/m2K (gegen Aussenklima oder bis 2 m im Erdreich) bzw. 0.25 W/m2K (mehr als 2 m im Erdreich).",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Zur geplanten Fassadendämmung ist kein U-Wert nach der Sanierung angegeben.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 4"
-     }
-    },
-    {
-     "criterion_id": "u_wert_verbesserung",
-     "scope": "instrument",
-     "text": "Der U-Wert verbessert sich um mindestens 0.07 W/m2K.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Aus der geplanten Fassadendämmung geht die Verbesserung des U-Werts nicht hervor.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 4"
-     }
-    },
-    {
-     "criterion_id": "min_foerdersumme",
-     "scope": "instrument",
-     "text": "Die Fördersumme pro Gesuch beträgt mindestens CHF 3'000 (entspricht 50 m2 bei CHF 60/m2).",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die angegebene Dämmfläche von mindestens 50 m2 entspricht gemäss Instrument der erforderlichen Mindestfördersumme.",
-     "evidence": [
-      "rueckfrage_min_foerdersumme"
-     ],
-     "profile_fields": [
-      "budget"
-     ],
-     "question": {
-      "id": "q_min_foerdersumme",
-      "profile_field": "rueckfrage_min_foerdersumme",
-      "text": "Wie viele m2 Bauteilfläche wollen Sie dämmen?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Weniger als 50 m2",
-       "50 m2 oder mehr",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermedaemmung",
-        "criterion_id": "min_foerdersumme"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 4, Ziff. 12"
-     }
-    },
-    {
-     "criterion_id": "geak_plus",
-     "scope": "instrument",
-     "text": "Ein GEAK Plus liegt vor.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Weder die Fördersumme der Basismassnahme noch das Vorliegen eines GEAK Plus ist bekannt.",
-     "evidence": [],
-     "profile_fields": [
-      "eigentum_gebaeude"
-     ],
-     "question": {
-      "id": "q_geak_plus",
-      "profile_field": "rueckfrage_geak_plus",
-      "text": "Liegt für das Gebäude ein aktueller GEAK Plus vor?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermedaemmung",
-        "criterion_id": "geak_plus"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 5"
-     }
-    },
-    {
-     "criterion_id": "bonus_90_prozent",
-     "scope": "instrument",
-     "text": "Für den Bonus: mindestens 90% der Flächen von Dach, Fassade und Boden gegen aussen werden gedämmt, Dach und Fassade gleichzeitig.",
-     "kind": "soll",
-     "state": "unbekannt",
-     "reason": "Die Fassadendämmung ist beschrieben, nicht aber eine gleichzeitige Dachdämmung oder der Anteil der gedämmten Flächen.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": {
-      "id": "q_bonus_90_prozent",
-      "profile_field": "rueckfrage_bonus_90_prozent",
-      "text": "Werden mindestens 90% der Fassaden- und Dachflächen gleichzeitig gedämmt?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermedaemmung",
-        "criterion_id": "bonus_90_prozent"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 3"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "gesuch_vor_baubeginn"
-     ],
-     "lever": "Gesuch vor Beginn der Dämmarbeiten einreichen",
-     "hint": "Reichen Sie das Gesuch vor Beginn der Dämmarbeiten ein.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "u_wert"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob die U-Werte der sanierten Bauteile die geforderten Grenzwerte einhalten.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 4"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "u_wert_verbesserung"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob sich die U-Werte ausreichend verbessern.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 4"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "geak_plus"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob ein GEAK Plus vorliegt.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 5"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "bonus_90_prozent"
-     ],
-     "lever": "Dach und Fassade gleichzeitig sanieren und mindestens 90% der Flächen dämmen, um den Bonus zu erhalten",
-     "hint": "Sanieren Sie Dach und Fassade gleichzeitig und dämmen Sie die für den Bonus erforderlichen Flächen.",
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 3"
-     }
-    }
-   ],
-   "error": null
-  },
-  {
-   "program_id": "foerderprogramm-energie-lu",
-   "instrument_id": "waermepumpe",
-   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
-   "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
-   "provider": "Kanton Luzern",
-   "level": "kanton",
-   "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
-   "instrument_type": "beitrag",
-   "funding_summary": "Luft/Wasser ab CHF 4'000, Sole/Wasser ab CHF 8'500 pauschal bis 15 kW, darüber Grundbeitrag plus Beitrag pro kWth. Über 70 kW maximal CHF 150'000.",
-   "deadline": {
-    "type": "vor_projektstart",
-    "rule": null,
-    "next_date": "2027-06-01"
-   },
-   "links": {
-    "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/waermepumpen",
-    "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_mit_anpassung",
-   "rank": 1,
-   "criteria": [
-    {
-     "criterion_id": "gebaeude_luzern",
-     "scope": "programm",
-     "text": "Das Gebäude steht im Kanton Luzern.",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Laut Rückfrage steht das Gebäude im Kanton Luzern.",
-     "evidence": [
-      "rueckfrage_gebaeude_luzern"
-     ],
-     "profile_fields": [
-      "standort_kanton",
-      "standort_gemeinde"
-     ],
-     "question": {
-      "id": "q_gebaeude_luzern",
-      "profile_field": "rueckfrage_gebaeude_luzern",
-      "text": "Steht das Gebäude im Kanton Luzern?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": null,
-        "criterion_id": "gebaeude_luzern"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
-     }
-    },
-    {
-     "criterion_id": "nicht_co2_befreit",
-     "scope": "programm",
-     "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Das Kriterium gilt nur für Unternehmen, während das Profil eine Gemeinde als Gesuchstellerin nennt.",
-     "evidence": [
-      "applicant_type"
-     ],
-     "profile_fields": [
-      "taetigkeit"
-     ],
-     "question": {
-      "id": "q_nicht_co2_befreit",
-      "profile_field": "rueckfrage_nicht_co2_befreit",
-      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": null,
-        "criterion_id": "nicht_co2_befreit"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "criterion_id": "nicht_kantonal_bund",
-     "scope": "programm",
-     "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
-     "kind": "muss",
-     "state": "annahme",
-     "reason": "Aus dem kommunalen Vorhaben lässt sich ableiten, dass es sich nicht um ein kantonales oder Bundesgebäude handelt; die Eigentumsverhältnisse sind jedoch nicht angegeben.",
-     "evidence": [
-      "applicant_type",
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "eigentum_gebaeude"
-     ],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
-     }
-    },
-    {
-     "criterion_id": "gesuch_vor_installationsbeginn",
-     "scope": "instrument",
-     "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Der angegebene Projektstart belegt nicht, ob das Gesuch vor der Demontage der alten Heizung eingereicht wird.",
-     "evidence": [
-      "projektstart"
-     ],
-     "profile_fields": [
-      "projektstart"
-     ],
-     "question": {
-      "id": "q_projektstart",
-      "profile_field": "projektstart",
-      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
-      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
-      "input": "datum",
-      "unit": null,
-      "options": [
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermepumpe",
-        "criterion_id": "gesuch_vor_installationsbeginn"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 11 und S. 15"
-     }
-    },
-    {
-     "criterion_id": "ersetzt_oel_gas_elektro",
-     "scope": "instrument",
-     "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die geplante Wärmepumpe ersetzt laut Profil eine Ölheizung.",
-     "evidence": [
-      "bestehende_heizung",
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "bestehende_heizung"
-     ],
-     "question": {
-      "id": "q_ersetzt_oel_gas_elektro",
-      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
-      "text": "Welche Heizung wird ersetzt?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Öl",
-       "Erdgas",
-       "Elektro",
-       "Wärmepumpe",
-       "Holz",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermepumpe",
-        "criterion_id": "ersetzt_oel_gas_elektro"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "Ziff. 7.1, 8.1, 9.1, 10.1"
-     }
-    },
-    {
-     "criterion_id": "kein_neubau",
-     "scope": "instrument",
-     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Das Schulhaus stammt von 1962 und ist damit ein bestehendes Gebäude.",
-     "evidence": [
-      "baujahr"
-     ],
-     "profile_fields": [
-      "baujahr"
-     ],
-     "question": {
-      "id": "q_baujahr",
-      "profile_field": "baujahr",
-      "text": "In welchem Jahr wurde das Gebäude gebaut?",
-      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
-      "input": "zahl",
-      "unit": "Jahr",
-      "options": [
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermepumpe",
-        "criterion_id": "kein_neubau"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.1 und 4.3"
-     }
-    },
-    {
-     "criterion_id": "wpsm",
-     "scope": "instrument",
-     "text": "Wärmepumpensystem-Modul (WPSM) mit Anlagenzertifikat FWS.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Die geplante Anlage hat etwa 40 kW; das WPSM-Kriterium gilt nur für Anlagen bis 15 kW.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 11-18"
-     }
-    },
-    {
-     "criterion_id": "guetesiegel_leistungsgarantie",
-     "scope": "instrument",
-     "text": "FWS-Gütesiegel oder gleichwertig und Leistungsgarantie EnergieSchweiz.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Die Anlage ist mit etwa 40 kW geplant, doch Angaben zu WPSM, Gütesiegel und Leistungsgarantie fehlen.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 11-18"
-     }
-    },
-    {
-     "criterion_id": "zaehler",
-     "scope": "instrument",
-     "text": "Strom- und Wärmezähler sind installiert (müssen nicht geeicht sein).",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben zu Strom- und Wärmezählern.",
-     "evidence": [],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.3"
-     }
-    },
-    {
-     "criterion_id": "bohrfirma_guetesiegel",
-     "scope": "instrument",
-     "text": "Die Bohrfirma hat ein FWS-Gütesiegel.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Geplant ist eine Luft/Wasser- und keine Sole/Wasser-Wärmepumpe.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [],
-     "question": null,
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 15-18"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "gesuch_vor_installationsbeginn"
-     ],
-     "lever": "Gesuch vor Demontage der alten Heizung bzw. vor Bohrbeginn einreichen",
-     "hint": "Reichen Sie das Gesuch vor der Demontage der alten Heizung beziehungsweise vor Bohrbeginn ein.",
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.1"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "guetesiegel_leistungsgarantie"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob ein FWS-Gütesiegel oder Gleichwertiges sowie die Leistungsgarantie EnergieSchweiz vorliegen.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 11-18"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "zaehler"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Strom- und Wärmezähler installiert sind.",
-     "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.3"
-     }
-    }
-   ],
-   "error": null
-  },
-  {
-   "program_id": "foerderprogramm-energie-lu",
-   "instrument_id": "holzfeuerung",
-   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
-   "instrument_name": "Holzfeuerungen",
-   "provider": "Kanton Luzern",
-   "level": "kanton",
-   "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
-   "instrument_type": "beitrag",
-   "funding_summary": "Stückholz oder Pellet mit Tagesbehälter CHF 5'000 pauschal. Automatische Feuerung bis 15 kW CHF 8'000, darüber Grund- plus Leistungsbeitrag, über 70 kW CHF 360 pro kWth bis maximal CHF 150'000.",
-   "deadline": {
-    "type": "vor_projektstart",
-    "rule": null,
-    "next_date": "2027-06-01"
-   },
-   "links": {
-    "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/holzfeuerungen",
-    "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_mit_anpassung",
-   "rank": 2,
-   "criteria": [
-    {
-     "criterion_id": "gebaeude_luzern",
-     "scope": "programm",
-     "text": "Das Gebäude steht im Kanton Luzern.",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Das Gebäude steht gemäss Rückfrage im Kanton Luzern.",
-     "evidence": [
-      "rueckfrage_gebaeude_luzern"
-     ],
-     "profile_fields": [
-      "standort_kanton",
-      "standort_gemeinde"
-     ],
-     "question": {
-      "id": "q_gebaeude_luzern",
-      "profile_field": "rueckfrage_gebaeude_luzern",
-      "text": "Steht das Gebäude im Kanton Luzern?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Ja",
-       "Nein",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": null,
-        "criterion_id": "gebaeude_luzern"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
+      "locator": "S. 3, Kap. 2, Ziff. 1"
      }
     },
     {
@@ -1265,11 +310,14 @@
     {
      "criterion_id": "nicht_kantonal_bund",
      "scope": "programm",
-     "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
+     "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus dem Profil geht nicht hervor, ob das Gebäude unter direktem Einfluss des Regierungsrates steht oder ein Bundesgebäude ist.",
-     "evidence": [],
+     "reason": "Aus der Angabe, dass eine Gemeinde das Vorhaben plant, geht das Eigentum am Gebäude nicht hervor.",
+     "evidence": [
+      "applicant_type",
+      "vorhaben_beschreibung"
+     ],
      "profile_fields": [
       "eigentum_gebaeude"
      ],
@@ -1277,16 +325,16 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
      }
     },
     {
-     "criterion_id": "gesuch_vor_installationsbeginn",
+     "criterion_id": "gesuch_vor_baubeginn",
      "scope": "instrument",
-     "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
+     "text": "Das Gesuch ist vor Baubeginn eingereicht. Baubeginn ist der Beginn der Montage oder Demontage der Dämmung an den beantragten Bauteilen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der angegebene Projektstart belegt nicht, ob das Gesuch vor der Demontage der alten Heizung eingereicht wird.",
+     "reason": "Der Projektstart ist angegeben, nicht aber, ob das Gesuch vor Beginn der Dämmarbeiten eingereicht wird.",
      "evidence": [
       "projektstart"
      ],
@@ -1306,8 +354,8 @@
       "affects": [
        {
         "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "holzfeuerung",
-        "criterion_id": "gesuch_vor_installationsbeginn"
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "gesuch_vor_baubeginn"
        }
       ],
       "prefill": null
@@ -1315,60 +363,16 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 7 und S. 9"
+      "locator": "S. 4, Kap. 3, Ziff. 2"
      }
     },
     {
-     "criterion_id": "ersetzt_oel_gas_elektro",
+     "criterion_id": "baubewilligung_vor_2000",
      "scope": "instrument",
-     "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
+     "text": "Die Baubewilligung für das Gebäude wurde vor dem Jahr 2000 erteilt (Datum der rechtskräftigen Baubewilligung).",
      "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die geplante neue Anlage ersetzt eine Ölheizung.",
-     "evidence": [
-      "bestehende_heizung",
-      "vorhaben_beschreibung"
-     ],
-     "profile_fields": [
-      "bestehende_heizung"
-     ],
-     "question": {
-      "id": "q_ersetzt_oel_gas_elektro",
-      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
-      "text": "Welche Heizung wird ersetzt?",
-      "why": "",
-      "input": "auswahl",
-      "unit": null,
-      "options": [
-       "Öl",
-       "Erdgas",
-       "Elektro",
-       "Wärmepumpe",
-       "Holz",
-       "Weiss nicht"
-      ],
-      "affects": [
-       {
-        "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "holzfeuerung",
-        "criterion_id": "ersetzt_oel_gas_elektro"
-       }
-      ],
-      "prefill": null
-     },
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "Ziff. 4.1, 5.1, 6.1"
-     }
-    },
-    {
-     "criterion_id": "kein_neubau",
-     "scope": "instrument",
-     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Das Schulhaus stammt von 1962 und ist damit ein bestehendes Gebäude.",
+     "state": "annahme",
+     "reason": "Das Baujahr 1962 legt eine Baubewilligung vor 2000 nahe, deren rechtskräftiges Datum ist jedoch nicht angegeben.",
      "evidence": [
       "baujahr"
      ],
@@ -1388,68 +392,168 @@
       "affects": [
        {
         "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "holzfeuerung",
-        "criterion_id": "kein_neubau"
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "baubewilligung_vor_2000"
        }
       ],
       "prefill": null
      },
      "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.1"
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 3"
      }
     },
     {
-     "criterion_id": "leistungsgarantie",
+     "criterion_id": "u_wert",
      "scope": "instrument",
-     "text": "Leistungsgarantie EnergieSchweiz liegt vor.",
+     "text": "Nach der Sanierung U-Wert höchstens 0.20 W/m2K (gegen Aussenklima oder bis 2 m im Erdreich) bzw. 0.25 W/m2K (mehr als 2 m im Erdreich).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angabe zu einer Leistungsgarantie EnergieSchweiz.",
-     "evidence": [],
+     "reason": "Für die geplante Fassadendämmung ist kein U-Wert nach der Sanierung angegeben.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
      "profile_fields": [],
      "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 7-10"
+      "locator": "S. 4, Kap. 3, Ziff. 7"
      }
     },
     {
-     "criterion_id": "qm_holzheizwerke",
+     "criterion_id": "u_wert_verbesserung",
      "scope": "instrument",
-     "text": "Nachweis QM Holzheizwerke (Stufe gemäss Zuordnungsliste).",
+     "text": "Der U-Wert verbessert sich um mindestens 0.07 W/m2K.",
      "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Geplant ist eine Luft/Wasser-Wärmepumpe von etwa 40 kW und keine Holzfeuerung ab 70 kW Feuerungswärmeleistung.",
+     "state": "unbekannt",
+     "reason": "Die U-Werte vor und nach der geplanten Fassadendämmung sind nicht angegeben.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
      "question": null,
      "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.2"
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 9"
      }
     },
     {
-     "criterion_id": "abnahmemessung",
+     "criterion_id": "min_foerdersumme",
      "scope": "instrument",
-     "text": "Abnahmemessung (CO und Staub) frühestens 3 Monate vor und spätestens 12 Monate nach Inbetriebnahme.",
+     "text": "Die Fördersumme pro Gesuch beträgt mindestens CHF 3'000 (entspricht 50 m2 bei CHF 60/m2).",
      "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Die geplante Anlage ist eine Luft/Wasser-Wärmepumpe von etwa 40 kW und erreicht die angegebene Schwelle von 70 kW nicht.",
+     "state": "unbekannt",
+     "reason": "Das angegebene Gesamtbudget belegt weder die förderbare Dämmfläche noch die Fördersumme pro Gesuch.",
+     "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
+      "budget"
+     ],
+     "question": {
+      "id": "q_min_foerdersumme",
+      "profile_field": "rueckfrage_min_foerdersumme",
+      "text": "Wie viele m2 Bauteilfläche wollen Sie dämmen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Weniger als 50 m2",
+       "50 m2 oder mehr",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "min_foerdersumme"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 12"
+     }
+    },
+    {
+     "criterion_id": "geak_plus",
+     "scope": "instrument",
+     "text": "Ein aktueller GEAK Plus liegt vor. Kann für den Gebäudetyp kein GEAK Plus erstellt werden, eine Grobanalyse mit Vorgehensempfehlung gemäss Pflichtenheft BFE.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Weder die Fördersumme der Basismassnahme noch das Vorliegen eines GEAK Plus oder einer zulässigen Grobanalyse ist angegeben.",
+     "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
+     "question": {
+      "id": "q_geak_plus",
+      "profile_field": "rueckfrage_geak_plus",
+      "text": "Liegt für das Gebäude ein aktueller GEAK Plus vor?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "geak_plus"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 11"
+     }
+    },
+    {
+     "criterion_id": "bonus_90_prozent",
+     "scope": "instrument",
+     "text": "Für den Bonus: Mindestens 90% aller Hauptflächen (Fassade und Dach, ohne Wand und Boden gegen Erdreich) werden gemäss den Anforderungen der Wärmedämmung gedämmt.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Die Fassadendämmung ist vorgesehen, der Anteil der entsprechend gedämmten Hauptflächen bleibt jedoch offen.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
      "profile_fields": [],
-     "question": null,
+     "question": {
+      "id": "q_bonus_90_prozent",
+      "profile_field": "rueckfrage_bonus_90_prozent",
+      "text": "Werden mindestens 90% der Fassaden- und Dachflächen gleichzeitig gedämmt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "criterion_id": "bonus_90_prozent"
+       }
+      ],
+      "prefill": null
+     },
      "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.2"
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 28, Kap. 16, Ziff. 6"
      }
     }
    ],
@@ -1460,37 +564,89 @@
       "nicht_kantonal_bund"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gebäude von der Förderung kantonaler öffentlicher Gebäude oder Bundesgebäude ausgeschlossen ist.",
+     "hint": "Klären Sie, ob das Gebäude eine vom Kanton entsprechend beeinflusste öffentliche Baute oder eine Bundesbaute ist.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
      }
     },
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "gesuch_vor_installationsbeginn"
+      "gesuch_vor_baubeginn"
      ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Gesuch rechtzeitig eingereicht wurde.",
+     "lever": "Gesuch vor Beginn der Dämmarbeiten einreichen",
+     "hint": "Klären Sie, ob das Gesuch vor Beginn der Montage oder Demontage der Dämmung eingereicht wird.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 7 und S. 9"
+      "locator": "S. 4, Kap. 3, Ziff. 2"
      }
     },
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "leistungsgarantie"
+      "u_wert"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die Leistungsgarantie EnergieSchweiz vorliegt.",
+     "hint": "Klären Sie die U-Werte der Bauteile nach der Sanierung.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 7-10"
+      "locator": "S. 4, Kap. 3, Ziff. 7"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "u_wert_verbesserung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, um wie viel sich die U-Werte verbessern.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 9"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "min_foerdersumme"
+     ],
+     "lever": null,
+     "hint": "Klären Sie die Fördersumme pro Gesuch anhand der beantragten Dämmfläche.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 12"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "geak_plus"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob ein aktueller GEAK Plus oder bei ungeeignetem Gebäudetyp eine entsprechende Grobanalyse vorliegt.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 4, Kap. 3, Ziff. 11"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "bonus_90_prozent"
+     ],
+     "lever": "Dach und Fassade gleichzeitig sanieren und mindestens 90% der Hauptflächen dämmen, um den Bonus zu erhalten",
+     "hint": "Klären Sie, welcher Anteil der Hauptflächen von Dach und Fassade gemäss den Anforderungen gedämmt wird.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Fragen und Antworten",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
+      "locator": "Abschn. 3, S. 7, Frage zu zwei Etappen"
      }
     }
    ],
@@ -1498,28 +654,28 @@
   },
   {
    "program_id": "foerderprogramm-energie-lu",
-   "instrument_id": "waermenetz-anschluss",
+   "instrument_id": "waermepumpe",
    "program_name": "Förderprogramm Energie Kanton Luzern 2026",
-   "instrument_name": "Anschluss an ein Wärmenetz",
+   "instrument_name": "Wärmepumpen (Luft/Wasser und Sole/Wasser)",
    "provider": "Kanton Luzern",
    "level": "kanton",
    "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
    "instrument_type": "beitrag",
-   "funding_summary": "Bis 15 kW CHF 8'200 pauschal, darüber CHF 7'000 plus CHF 80 pro kW, ab 500 kW CHF 27'000 plus CHF 40 pro kW, maximal CHF 150'000.",
+   "funding_summary": "Bis 15 kW pauschal CHF 4'000 (Luft/Wasser) bzw. CHF 8'500 (Sole/Wasser, Wasser/Wasser). Darüber Grundbeitrag plus Beitrag pro kWth. Über 70 kW maximal CHF 150'000.",
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
     "next_date": "2027-06-01"
    },
    "links": {
-    "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Anschluss_an_ein_Waermenetz",
+    "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/waermepumpen",
     "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
     "form": null
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
-   "fit": "passt_nicht",
-   "rank": null,
+   "fit": "passt_mit_anpassung",
+   "rank": 2,
    "criteria": [
     {
      "criterion_id": "gebaeude_luzern",
@@ -1527,9 +683,10 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Laut Rückfrage steht das Gebäude im Kanton Luzern.",
+     "reason": "Das Vorhaben ist im Kanton Luzern verortet.",
      "evidence": [
-      "rueckfrage_gebaeude_luzern"
+      "standort_kanton",
+      "vorhaben_beschreibung"
      ],
      "profile_fields": [
       "standort_kanton",
@@ -1559,7 +716,369 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
+      "locator": "S. 3, Kap. 2, Ziff. 1"
+     }
+    },
+    {
+     "criterion_id": "nicht_co2_befreit",
+     "scope": "programm",
+     "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Als Gesuchstellerin ist eine Gemeinde und kein Unternehmen angegeben.",
+     "evidence": [
+      "applicant_type"
+     ],
+     "profile_fields": [
+      "taetigkeit"
+     ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 7"
+     }
+    },
+    {
+     "criterion_id": "nicht_kantonal_bund",
+     "scope": "programm",
+     "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Aus dem Profil geht nicht hervor, wem das Gebäude gehört und ob Kanton oder Bund Einfluss auf den Baukredit haben.",
+     "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
+     }
+    },
+    {
+     "criterion_id": "gesuch_vor_installationsbeginn",
+     "scope": "instrument",
+     "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der angegebene Projektstart belegt weder den Installationsbeginn noch die Einreichung eines Gesuchs davor.",
+     "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
+      "projektstart"
+     ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "gesuch_vor_installationsbeginn"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 7 Ziff. 11 (S. 11), Kap. 8 Ziff. 11 (S. 13), Kap. 9 Ziff. 13 (S. 15), Kap. 10 Ziff. 13 (S. 17)"
+     }
+    },
+    {
+     "criterion_id": "ersetzt_oel_gas_elektro",
+     "scope": "instrument",
+     "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Die geplante Wärmepumpe ersetzt gemäss Profil eine Ölheizung.",
+     "evidence": [
+      "bestehende_heizung",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
+     "question": {
+      "id": "q_ersetzt_oel_gas_elektro",
+      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
+      "text": "Welche Heizung wird ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Öl",
+       "Erdgas",
+       "Elektro",
+       "Wärmepumpe",
+       "Holz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "ersetzt_oel_gas_elektro"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 7-10, jeweils Ziff. 1 (S. 11, 13, 15, 17)"
+     }
+    },
+    {
+     "criterion_id": "kein_neubau",
+     "scope": "instrument",
+     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Der Umbau betrifft ein bestehendes Schulhaus aus dem Jahr 1962.",
+     "evidence": [
+      "baujahr",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "baujahr"
+     ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "criterion_id": "kein_neubau"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 7-10, jeweils Ziff. 2 (S. 11, 13, 15, 17)"
+     }
+    },
+    {
+     "criterion_id": "wpsm",
+     "scope": "instrument",
+     "text": "Wärmepumpensystemmodul (WPSM) mit Anlagenzertifikat.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Die geplante Wärmepumpe liegt mit etwa 40 kW über der Grenze von 15 kWth.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 11, Kap. 7, Ziff. 9; S. 15, Kap. 9, Ziff. 10"
+     }
+    },
+    {
+     "criterion_id": "guetesiegel_leistungsgarantie",
+     "scope": "instrument",
+     "text": "Leistungsgarantie EnergieSchweiz (unterzeichnet von Fachperson und Bauherr) und Wärmepumpe mit national oder international gültigem Gütesiegel der FWS-Gütesiegelliste. Ab 100 kW wird kein Gütesiegel verlangt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Für die geplante Wärmepumpe von etwa 40 kW fehlen Angaben zur Leistungsgarantie und zum Gütesiegel.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 7 Ziff. 10, Kap. 8 Ziff. 9, Kap. 9 Ziff. 11, Kap. 10 Ziff. 10"
+     }
+    },
+    {
+     "criterion_id": "zaehler",
+     "scope": "instrument",
+     "text": "Eine fachgerechte Strom- und Wärmemessung ist vorhanden (Zähler müssen nicht geeicht sein).",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Die geplante Wärmepumpe liegt mit etwa 40 kW unter der Grenze von 70 kW.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 13, Kap. 8, Ziff. 10; S. 17, Kap. 10, Ziff. 12"
+     }
+    },
+    {
+     "criterion_id": "bohrfirma_guetesiegel",
+     "scope": "instrument",
+     "text": "Die Erdwärmesonden-Bohrfirma hat ein FWS-Gütesiegel.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Geplant ist eine Luft/Wasser-Wärmepumpe und keine Erdwärmesondenanlage.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 15, Kap. 9, Ziff. 12; S. 17, Kap. 10, Ziff. 11"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "nicht_kantonal_bund"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob das Gebäude eine vom Kanton entsprechend beeinflusste öffentliche Baute oder eine Bundesbaute ist.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "gesuch_vor_installationsbeginn"
+     ],
+     "lever": "Gesuch vor Demontage der alten Heizung bzw. vor Bohrbeginn einreichen",
+     "hint": "Klären Sie, ob das Gesuch vor der Demontage der alten Heizung beziehungsweise vor Bohrbeginn eingereicht wird.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Fragen und Antworten",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
+      "locator": "Abschn. 4.1, S. 11, Frage «Wie ist der Baubeginn bzw. Installationsbeginn definiert?»"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "guetesiegel_leistungsgarantie"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob die unterzeichnete Leistungsgarantie und das für die Anlagenleistung erforderliche Gütesiegel vorliegen.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 7 Ziff. 10, Kap. 8 Ziff. 9, Kap. 9 Ziff. 11, Kap. 10 Ziff. 10"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "holzfeuerung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Holzfeuerungen",
+   "provider": "Kanton Luzern",
+   "level": "kanton",
+   "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Stückholz oder Pellet mit Tagesbehälter CHF 5'000 pauschal. Automatische Feuerung bis 15 kW CHF 8'000, darüber Grund- plus Leistungsbeitrag, über 70 kW CHF 360 pro kWth bis maximal CHF 150'000.",
+   "deadline": {
+    "type": "vor_projektstart",
+    "rule": null,
+    "next_date": "2027-06-01"
+   },
+   "links": {
+    "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/holzfeuerungen",
+    "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
+    "form": null
+   },
+   "source_checked": "2026-10-24",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 1,
+   "criteria": [
+    {
+     "criterion_id": "gebaeude_luzern",
+     "scope": "programm",
+     "text": "Das Gebäude steht im Kanton Luzern.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das Gebäude des beschriebenen Vorhabens liegt im Kanton Luzern.",
+     "evidence": [
+      "standort_kanton",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 1"
      }
     },
     {
@@ -1605,13 +1124,11 @@
     {
      "criterion_id": "nicht_kantonal_bund",
      "scope": "programm",
-     "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
+     "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus der Angabe, dass die Gesuchstellerin eine Gemeinde ist, geht das Eigentum am Gebäude nicht hervor.",
-     "evidence": [
-      "applicant_type"
-     ],
+     "reason": "Aus dem Profil geht nicht hervor, ob die Baute dem Kanton oder dem Bund zuzuordnen ist.",
+     "evidence": [],
      "profile_fields": [
       "eigentum_gebaeude"
      ],
@@ -1619,7 +1136,7 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
      }
     },
     {
@@ -1628,7 +1145,7 @@
      "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der angegebene Projektstart belegt weder den Zeitpunkt der Gesuchseinreichung noch den Installationsbeginn einer Übergabestation.",
+     "reason": "Der angegebene Projektstart belegt nicht, dass das Gesuch vor der Demontage der alten Heizung eingereicht wird.",
      "evidence": [
       "projektstart"
      ],
@@ -1648,7 +1165,7 @@
       "affects": [
        {
         "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermenetz-anschluss",
+        "instrument_id": "holzfeuerung",
         "criterion_id": "gesuch_vor_installationsbeginn"
        }
       ],
@@ -1657,18 +1174,63 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 19-22"
+      "locator": "S. 6 Kap. 4 Ziff. 5; S. 7 Kap. 5 Ziff. 9; S. 9 Kap. 6 Ziff. 12"
+     }
+    },
+    {
+     "criterion_id": "ersetzt_oel_gas_elektro",
+     "scope": "instrument",
+     "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Die geplante Anlage ersetzt gemäss Beschreibung eine Ölheizung.",
+     "evidence": [
+      "bestehende_heizung",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
+     "question": {
+      "id": "q_ersetzt_oel_gas_elektro",
+      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
+      "text": "Welche Heizung wird ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Öl",
+       "Erdgas",
+       "Elektro",
+       "Wärmepumpe",
+       "Holz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "holzfeuerung",
+        "criterion_id": "ersetzt_oel_gas_elektro"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 4-6, jeweils Ziff. 1 (S. 6, 7, 9)"
      }
     },
     {
      "criterion_id": "kein_neubau",
      "scope": "instrument",
-     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
+     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Das Schulhaus stammt aus dem Jahr 1962 und ist damit ein bestehendes Gebäude.",
+     "reason": "Das Vorhaben betrifft den Umbau eines bestehenden Schulhauses von 1962.",
      "evidence": [
-      "baujahr"
+      "baujahr",
+      "vorhaben_beschreibung"
      ],
      "profile_fields": [
       "baujahr"
@@ -1686,25 +1248,25 @@
       "affects": [
        {
         "program_id": "foerderprogramm-energie-lu",
-        "instrument_id": "waermenetz-anschluss",
+        "instrument_id": "holzfeuerung",
         "criterion_id": "kein_neubau"
        }
       ],
       "prefill": null
      },
      "source": {
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "locator": "Abschn. 4.1"
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 4-6, jeweils Ziff. 2 (S. 6, 7, 9)"
      }
     },
     {
-     "criterion_id": "erneuerbar_75",
+     "criterion_id": "leistungsgarantie",
      "scope": "instrument",
-     "text": "Das Wärmenetz liefert mindestens 75% erneuerbare Wärme oder Abwärme.",
+     "text": "Leistungsgarantie EnergieSchweiz und Konformitätserklärung nach Energieeffizienzverordnung (EnEV) liegen vor. Bei Einzelraumfeuerung zusätzlich Leistungserklärung nach Bauprodukteverordnung.",
      "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben beschreibt eine Luft/Wasser-Wärmepumpe statt eines Anschlusses an ein Wärmenetz.",
+     "state": "nicht_anwendbar",
+     "reason": "Geplant ist eine Luft/Wasser-Wärmepumpe und keine Holzfeuerung mit Feuerungswärmeleistung bis 70 kW.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1713,23 +1275,43 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 19-22"
+      "locator": "S. 6, Kap. 4, Ziff. 4; S. 7, Kap. 5, Ziff. 8"
      }
     },
     {
-     "criterion_id": "waermeliefervertrag",
+     "criterion_id": "qm_holzheizwerke",
      "scope": "instrument",
-     "text": "Ein Wärmeliefervertrag mit dem Netzbetreiber liegt vor.",
+     "text": "Die vollständige, termingerechte Anwendung von QM Holzheizwerke ist nachgewiesen (QM mini, vereinfacht oder Standard gemäss Zuordnung).",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob ein Wärmeliefervertrag mit einem Netzbetreiber vorliegt, ist nicht angegeben.",
-     "evidence": [],
+     "state": "nicht_anwendbar",
+     "reason": "Die geplante Luft/Wasser-Wärmepumpe ist keine Holzfeuerung mit Feuerungswärmeleistung über 70 kW.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
      "profile_fields": [],
      "question": null,
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 20-22"
+      "locator": "S. 9, Kap. 6, Ziff. 8"
+     }
+    },
+    {
+     "criterion_id": "abnahmemessung",
+     "scope": "instrument",
+     "text": "Amtliche Bestätigung der Erfüllung der LRV-Vorgaben aufgrund einer Abnahmemessung (CO und Staub), frühestens 3 Monate vor und spätestens 12 Monate nach Inbetriebnahme.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Für die geplante Luft/Wasser-Wärmepumpe trifft die Bedingung einer Holzfeuerung mit Feuerungswärmeleistung über 70 kW nicht zu.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 10, Kap. 6, Beilagen beim Abschluss Ziff. 5"
      }
     }
    ],
@@ -1740,11 +1322,11 @@
       "nicht_kantonal_bund"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gebäude von der Förderung kantonaler öffentlicher Gebäude oder Bundesgebäude ausgeschlossen ist.",
+     "hint": "Klären Sie, ob das Gebäude eine vom Kanton entsprechend beeinflusste öffentliche Baute oder eine Bundesbaute ist.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
      }
     },
     {
@@ -1753,24 +1335,11 @@
       "gesuch_vor_installationsbeginn"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gesuch rechtzeitig eingereicht wurde.",
+     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wird.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 19-22"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "waermeliefervertrag"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob ein Wärmeliefervertrag mit dem Netzbetreiber vorliegt.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 20-22"
+      "locator": "S. 6 Kap. 4 Ziff. 5; S. 7 Kap. 5 Ziff. 9; S. 9 Kap. 6 Ziff. 12"
      }
     }
    ],
@@ -1778,25 +1347,25 @@
   },
   {
    "program_id": "foerderprogramm-energie-lu",
-   "instrument_id": "bonus-ersatz-elektroheizung",
+   "instrument_id": "waermenetz-anschluss",
    "program_name": "Förderprogramm Energie Kanton Luzern 2026",
-   "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+   "instrument_name": "Anschluss an ein Wärmenetz",
    "provider": "Kanton Luzern",
    "level": "kanton",
    "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
    "instrument_type": "beitrag",
-   "funding_summary": "Bis 250 m2 EBF CHF 15'000 pauschal, ab 250 m2 EBF CHF 60 pro m2 EBF, maximal CHF 150'000.",
+   "funding_summary": "Bis 15 kW CHF 8'200 pauschal, darüber CHF 7'000 plus CHF 80 pro kW, ab 500 kW CHF 27'000 plus CHF 40 pro kW, maximal CHF 150'000.",
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
     "next_date": "2027-06-01"
    },
    "links": {
-    "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Ersatz_dezentraler_elektroheizung",
+    "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Anschluss_an_ein_Waermenetz",
     "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
     "form": null
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
    "fit": "passt_nicht",
    "rank": null,
@@ -1807,9 +1376,10 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Laut Rückfrage steht das Gebäude im Kanton Luzern.",
+     "reason": "Das beschriebene Gebäude liegt gemäss Profil im Kanton Luzern.",
      "evidence": [
-      "rueckfrage_gebaeude_luzern"
+      "standort_kanton",
+      "vorhaben_beschreibung"
      ],
      "profile_fields": [
       "standort_kanton",
@@ -1839,7 +1409,331 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
+      "locator": "S. 3, Kap. 2, Ziff. 1"
+     }
+    },
+    {
+     "criterion_id": "nicht_co2_befreit",
+     "scope": "programm",
+     "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Die Bedingung gilt nur für Unternehmen; als Antragstellerin ist eine Gemeinde angegeben.",
+     "evidence": [
+      "applicant_type"
+     ],
+     "profile_fields": [
+      "taetigkeit"
+     ],
+     "question": {
+      "id": "q_nicht_co2_befreit",
+      "profile_field": "rueckfrage_nicht_co2_befreit",
+      "text": "Ist Ihr Unternehmen an diesem Standort von der CO2-Abgabe befreit?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "nicht_co2_befreit"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 7"
+     }
+    },
+    {
+     "criterion_id": "nicht_kantonal_bund",
+     "scope": "programm",
+     "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Aus der Beschreibung geht nicht hervor, wem das Gebäude gehört und ob Kanton oder Bund den Baukredit direkt beeinflussen können.",
+     "evidence": [],
+     "profile_fields": [
+      "eigentum_gebaeude"
+     ],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
+     }
+    },
+    {
+     "criterion_id": "gesuch_vor_installationsbeginn",
+     "scope": "instrument",
+     "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der angegebene Projektstart belegt weder eine Gesuchseinreichung noch deren Zeitpunkt im Verhältnis zum Installationsbeginn.",
+     "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
+      "projektstart"
+     ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermenetz-anschluss",
+        "criterion_id": "gesuch_vor_installationsbeginn"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 19, Kap. 11, Ziff. 9; S. 21, Kap. 12, Ziff. 9"
+     }
+    },
+    {
+     "criterion_id": "ersetzt_oel_gas_elektro",
+     "scope": "instrument",
+     "text": "Der Anschluss ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral). Die ersetzte Heizung wird rückgebaut.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Die Ölheizung soll durch eine Luft/Wasser-Wärmepumpe und nicht durch einen Wärmenetzanschluss ersetzt werden; ein Rückbau ist zudem nicht belegt.",
+     "evidence": [
+      "bestehende_heizung",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "bestehende_heizung"
+     ],
+     "question": {
+      "id": "q_ersetzt_oel_gas_elektro",
+      "profile_field": "rueckfrage_ersetzt_oel_gas_elektro",
+      "text": "Welche Heizung wird ersetzt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Öl",
+       "Erdgas",
+       "Elektro",
+       "Wärmepumpe",
+       "Holz",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermenetz-anschluss",
+        "criterion_id": "ersetzt_oel_gas_elektro"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 19, Kap. 11, Ziff. 1; S. 21, Kap. 12, Ziff. 1"
+     }
+    },
+    {
+     "criterion_id": "kein_neubau",
+     "scope": "instrument",
+     "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das Vorhaben betrifft den Umbau eines bestehenden Schulhauses von 1962.",
+     "evidence": [
+      "baujahr",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "baujahr"
+     ],
+     "question": {
+      "id": "q_baujahr",
+      "profile_field": "baujahr",
+      "text": "In welchem Jahr wurde das Gebäude gebaut?",
+      "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+      "input": "zahl",
+      "unit": "Jahr",
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermenetz-anschluss",
+        "criterion_id": "kein_neubau"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 19, Kap. 11, Ziff. 2; S. 21, Kap. 12, Ziff. 2"
+     }
+    },
+    {
+     "criterion_id": "erneuerbar_75",
+     "scope": "instrument",
+     "text": "Das Wärmenetz liefert mindestens 75% erneuerbare Wärme oder Abwärme.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Das Vorhaben sieht eine Luft/Wasser-Wärmepumpe statt eines Wärmenetzes vor, das den verlangten Wärmeanteil liefern könnte.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 19, Kap. 11, Ziff. 6; S. 21, Kap. 12, Ziff. 6"
+     }
+    },
+    {
+     "criterion_id": "waermeliefervertrag",
+     "scope": "instrument",
+     "text": "Ein Wärmeliefervertrag liegt vor. Er enthält keine Bestimmungen, die eine nachträgliche Gebäudehüllensanierung erschweren oder verunmöglichen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angaben zu einem Wärmeliefervertrag oder dessen Bestimmungen.",
+     "evidence": [],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 11-12, jeweils Ziff. 8 und Gesuchsbeilage Ziff. 3 (S. 19, 21)"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "nicht_kantonal_bund"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob das Gebäude eine vom Kanton entsprechend beeinflusste öffentliche Baute oder eine Bundesbaute ist.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "gesuch_vor_installationsbeginn"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wird.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 19, Kap. 11, Ziff. 9; S. 21, Kap. 12, Ziff. 9"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "waermeliefervertrag"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob ein Wärmeliefervertrag vorliegt und eine spätere Gebäudehüllensanierung zulässt.",
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "Kap. 11-12, jeweils Ziff. 8 und Gesuchsbeilage Ziff. 3 (S. 19, 21)"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "foerderprogramm-energie-lu",
+   "instrument_id": "bonus-ersatz-elektroheizung",
+   "program_name": "Förderprogramm Energie Kanton Luzern 2026",
+   "instrument_name": "Bonus Ersatz dezentrale Elektroheizung",
+   "provider": "Kanton Luzern",
+   "level": "kanton",
+   "purpose": "Beiträge an Gebäudesanierungen, erneuerbare Heizsysteme und Ladeinfrastruktur im Kanton Luzern, finanziert über das Gebäudeprogramm (CO2-Abgabe und Kanton) und das Impulsprogramm des Bundes.",
+   "instrument_type": "beitrag",
+   "funding_summary": "Bis 250 m2 EBF CHF 15'000 pauschal, ab 250 m2 EBF CHF 60 pro m2 EBF, maximal CHF 150'000.",
+   "deadline": {
+    "type": "vor_projektstart",
+    "rule": null,
+    "next_date": "2027-06-01"
+   },
+   "links": {
+    "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Ersatz_dezentraler_elektroheizung",
+    "apply": "https://portal.dasgebaeudeprogramm.ch/lu",
+    "form": null
+   },
+   "source_checked": "2026-10-24",
+   "status": "fertig",
+   "fit": "passt_nicht",
+   "rank": null,
+   "criteria": [
+    {
+     "criterion_id": "gebaeude_luzern",
+     "scope": "programm",
+     "text": "Das Gebäude steht im Kanton Luzern.",
+     "kind": "muss",
+     "state": "erfuellt",
+     "reason": "Das beschriebene Gebäude liegt im Kanton Luzern.",
+     "evidence": [
+      "standort_kanton",
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "standort_kanton",
+      "standort_gemeinde"
+     ],
+     "question": {
+      "id": "q_gebaeude_luzern",
+      "profile_field": "rueckfrage_gebaeude_luzern",
+      "text": "Steht das Gebäude im Kanton Luzern?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "criterion_id": "gebaeude_luzern"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
+      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
+      "locator": "S. 3, Kap. 2, Ziff. 1"
      }
     },
     {
@@ -1885,10 +1779,10 @@
     {
      "criterion_id": "nicht_kantonal_bund",
      "scope": "programm",
-     "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
+     "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob das Gebäude unter direktem Einfluss des Regierungsrates steht oder ein Bundesgebäude ist, geht aus dem Profil nicht eindeutig hervor.",
+     "state": "annahme",
+     "reason": "Aus dem Vorhaben einer Gemeinde lässt sich ableiten, dass es sich wohl nicht um eine Baute des Kantons oder des Bundes handelt; die Eigentumsverhältnisse sind jedoch nicht belegt.",
      "evidence": [
       "applicant_type",
       "vorhaben_beschreibung"
@@ -1900,18 +1794,19 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
+      "locator": "S. 3, Kap. 2, Ziff. 13-14"
      }
     },
     {
      "criterion_id": "dezentrale_heizung",
      "scope": "instrument",
-     "text": "Ersetzt wird eine bestehende dezentrale elektrische Widerstandsheizung oder dezentrale fossile Heizung.",
+     "text": "Ersetzt wird eine bestehende dezentrale elektrische Widerstandsheizung oder dezentrale fossile Heizung ohne hydraulisches Wärmeverteilsystem, durch eine erneuerbare Hauptheizung mit hydraulischem Wärmeverteilsystem.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die bestehende Ölheizung ist belegt, nicht aber, ob sie dezentral ist.",
+     "reason": "Der Ersatz einer Ölheizung durch eine Wärmepumpe ist beschrieben, nicht aber, ob die bestehende Heizung dezentral ist und die verlangten Wärmeverteilsysteme vorliegen.",
      "evidence": [
-      "bestehende_heizung"
+      "bestehende_heizung",
+      "vorhaben_beschreibung"
      ],
      "profile_fields": [
       "bestehende_heizung"
@@ -1941,17 +1836,19 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 29, Ziff. 1"
+      "locator": "S. 29, Kap. 17, Ziff. 1"
      }
     },
     {
      "criterion_id": "ueber_50_prozent",
      "scope": "instrument",
-     "text": "Die bestehende Heizung deckte über 50% des jährlichen Heizwärmebedarfs des Gebäudes.",
+     "text": "Die ersetzte Heizung deckte über 50% des jährlichen Heizwärmebedarfs des Gebäudes (Hauptheizung).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der Anteil der bestehenden Heizung am jährlichen Heizwärmebedarf ist nicht angegeben.",
-     "evidence": [],
+     "reason": "Der Anteil der bestehenden Ölheizung am jährlichen Heizwärmebedarf ist nicht angegeben.",
+     "evidence": [
+      "bestehende_heizung"
+     ],
      "profile_fields": [
       "bestehende_heizung"
      ],
@@ -1979,13 +1876,13 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 29, Ziff. 3"
+      "locator": "S. 29, Kap. 17, Ziff. 3"
      }
     },
     {
      "criterion_id": "alle_ersetzt",
      "scope": "instrument",
-     "text": "Alle dezentralen elektrischen Widerstandsheizungen oder fossilen Heizungen im Gebäude werden ersetzt.",
+     "text": "Alle dezentralen elektrischen Widerstandsheizungen oder fossilen Heizungen im Gebäude werden ersetzt, ausgenommen Handtuchradiatoren.",
      "kind": "muss",
      "state": "nicht_erfuellt",
      "reason": "Laut Rückfrage werden nicht alle dezentralen Heizungen im Gebäude ersetzt.",
@@ -2017,16 +1914,16 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 29, Ziff. 4"
+      "locator": "S. 29, Kap. 17, Ziff. 4"
      }
     },
     {
      "criterion_id": "gesuch_vor_baubeginn",
      "scope": "instrument",
-     "text": "Das Gesuch ist vor Baubeginn eingereicht.",
+     "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der Projektstart ist angegeben, der Zeitpunkt der Gesuchseinreichung jedoch nicht.",
+     "reason": "Der geplante Projektstart ist angegeben, der Zeitpunkt der Gesuchseinreichung jedoch nicht.",
      "evidence": [
       "projektstart"
      ],
@@ -2055,7 +1952,7 @@
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
+      "locator": "S. 29, Kap. 17, Ziff. 6"
      }
     }
    ],
@@ -2063,27 +1960,14 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "nicht_kantonal_bund"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Gebäude von der Förderung kantonaler öffentlicher Gebäude oder Bundesgebäude ausgeschlossen ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3-4"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "dezentrale_heizung"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob eine bestehende dezentrale elektrische Widerstandsheizung oder fossile Heizung ersetzt wird.",
+     "hint": "Klären Sie die Art der bestehenden Heizung und ob sie durch eine erneuerbare Hauptheizung mit hydraulischer Wärmeverteilung ersetzt wird.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 29, Ziff. 1"
+      "locator": "S. 29, Kap. 17, Ziff. 1"
      }
     },
     {
@@ -2092,11 +1976,11 @@
       "ueber_50_prozent"
      ],
      "lever": null,
-     "hint": "Klären Sie, welchen Anteil des jährlichen Heizwärmebedarfs die bestehende Heizung deckte.",
+     "hint": "Klären Sie, welchen Anteil des jährlichen Heizwärmebedarfs die ersetzte Heizung deckte.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 29, Ziff. 3"
+      "locator": "S. 29, Kap. 17, Ziff. 3"
      }
     },
     {
@@ -2105,11 +1989,11 @@
       "gesuch_vor_baubeginn"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gesuch rechtzeitig eingereicht wurde.",
+     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wird.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3"
+      "locator": "S. 29, Kap. 17, Ziff. 6"
      }
     }
    ],
@@ -2122,34 +2006,33 @@
    "instrument_name": "NRP-Projektförderung Kanton Luzern",
    "provider": "Kanton Luzern",
    "level": "kanton",
-   "purpose": "Die NRP fördert mit Bundes- und Kantonsmitteln Projekte, die Unternehmertum, Innovation und Wertschöpfung in den Luzerner Regionen stärken.",
+   "purpose": "Der Kanton Luzern gewährt mit Mitteln von Bund und Kanton à-fonds-perdu-Beiträge und zinslose Darlehen für innovative, wertschöpfungs- und wachstumsorientierte Projekte. Ziel: Standortvoraussetzungen verbessern, Innovationen fördern, Wertschöpfung und Wettbewerbsfähigkeit steigern.",
    "instrument_type": "beitrag",
-   "funding_summary": "À-fonds-perdu-Beiträge je nach Projekt. Kleinstinfrastrukturen bis CHF 100'000 pro Projekt, je zur Hälfte Bund und Kanton.",
+   "funding_summary": "À-fonds-perdu-Beitrag, je zur Hälfte von Bund und Kanton. Grundsätzlich höchstens 50 % der Gesamtkosten. Kleinstinfrastrukturen: höchstens CHF 100'000 pro Projekt bei Gesamtkosten bis CHF 700'000.",
    "deadline": {
-    "type": "unbekannt",
-    "rule": "Antragsverfahren gemäss NRP-Arbeitshilfe, nicht gesichtet.",
-    "next_date": null
+    "type": "vor_projektstart",
+    "rule": "Keine festen Eingabefristen genannt. Den definitiven Antrag vor Projektstart einreichen. Kosten vor Einreichung sind nicht anrechenbar. Danach Start auf eigenes Risiko möglich.",
+    "next_date": "2027-06-01"
    },
    "links": {
-    "info": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-    "apply": null,
-    "form": null
+    "info": "https://rawi.lu.ch/neue_regionalpolitik_nrp",
+    "apply": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
+    "form": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_projektunterlagen.zip?rev=0f96edb4838c4e78bcc54ae6a64a5b5f"
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 4,
+   "rank": 3,
    "criteria": [
     {
      "criterion_id": "passt_schwerpunkt",
      "scope": "instrument",
-     "text": "Das Projekt passt zu einem Förderschwerpunkt des Umsetzungsprogramms (Standortentwicklung, Tourismus, Regionalentwicklung).",
+     "text": "Das Projekt lässt sich in eine der 14 Stossrichtungen des Umsetzungsprogramms 2024 bis 2027 einordnen (Standortentwicklung, Tourismus, Regionalentwicklung).",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Die Umnutzung für junge Unternehmen deutet auf Standort- oder Regionalentwicklung hin; die Zuordnung zu einem Förderschwerpunkt ist eine Ableitung.",
+     "reason": "Das Gewerbehaus für junge Unternehmen lässt sich möglicherweise der Stossrichtung Startup-Förderung zuordnen, eine konkrete Verankerung ist jedoch nicht belegt.",
      "evidence": [
-      "vorhaben_beschreibung",
-      "art_des_vorhabens"
+      "vorhaben_beschreibung"
      ],
      "profile_fields": [
       "vorhaben_beschreibung"
@@ -2178,18 +2061,18 @@
       "prefill": null
      },
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 30-35"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.1, S. 6"
      }
     },
     {
      "criterion_id": "ueberbetrieblich",
      "scope": "instrument",
-     "text": "Überbetriebliche Kooperationen und Unternehmensnetzwerke stehen im Vordergrund.",
+     "text": "Breit abgestützte Projektträgerschaft: mehrere Unternehmen oder Organisationen, regional verankert.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Ob mehrere Betriebe oder Partner das Projekt gemeinsam tragen, geht aus dem Profil nicht hervor.",
+     "reason": "Zur Beteiligung weiterer Unternehmen oder Organisationen an der Projektträgerschaft liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [
       "partner"
@@ -2216,19 +2099,140 @@
       "prefill": null
      },
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 30"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 2, S. 3; Kap. 4, S. 5"
+     }
+    },
+    {
+     "criterion_id": "kein_einzelbetrieblich",
+     "scope": "instrument",
+     "text": "Das Projekt verschafft nicht exklusiv einem Unternehmen in einem bestehenden Markt Vorteile (keine einzelbetriebliche Förderung).",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Die geplanten Werkstätten und Coworking-Flächen für junge Unternehmen sprechen gegen einen exklusiven Vorteil für ein einzelnes Unternehmen.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
+     "question": {
+      "id": "q_kein_einzelbetrieblich",
+      "profile_field": "rueckfrage_kein_einzelbetrieblich",
+      "text": "Wem nützt das Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Mehreren Betrieben oder Organisationen",
+       "Nur unserem eigenen Unternehmen",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "kein_einzelbetrieblich"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2 Ausschlusskriterien, S. 9"
+     }
+    },
+    {
+     "criterion_id": "regionaler_nutzen",
+     "scope": "instrument",
+     "text": "Das Projekt schafft einen nachweisbaren regionalen volkswirtschaftlichen Nutzen: Es erhöht die Wertschöpfung in einer Luzerner Region oder im ganzen Kanton (Marktorientierung, Arbeitsplätze, Export oder lokale Wirtschaft).",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Die Räume für junge Unternehmen könnten der lokalen Wirtschaft dienen, ein nachweisbarer regionaler Wertschöpfungseffekt ist aber nicht dargelegt.",
+     "evidence": [
+      "vorhaben_beschreibung",
+      "standort_kanton"
+     ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
+     "question": null,
+     "source": {
+      "title": "Projekteingabe und -verfahren, Neue Regionalpolitik, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
+      "locator": "Anforderungen an Projekte und Projektantrag"
+     }
+    },
+    {
+     "criterion_id": "innovationsgehalt",
+     "scope": "instrument",
+     "text": "Der Innovationsgehalt ist plausibel nachgewiesen oder begründet: Das Projekt erschliesst neue Wertschöpfungspotenziale oder optimiert bestehende auf neuartige Weise (Produkte, Dienstleistungen, Prozesse, Geschäftsmodelle, Kooperationsformen, Netzwerke).",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Aus der Beschreibung geht nicht hervor, worin eine neuartige Erschliessung oder Optimierung von Wertschöpfungspotenzialen besteht.",
+     "evidence": [],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
+     "question": null,
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
+     }
+    },
+    {
+     "criterion_id": "vorwettbewerblich",
+     "scope": "instrument",
+     "text": "Das Projekt ist im vorwettbewerblichen Bereich angesiedelt. Gefördert wird höchstens bis zur Phase Prototypentwicklung, nicht bis Serienreife oder Markteintritt.",
+     "kind": "muss",
+     "state": "nicht_erfuellt",
+     "reason": "Beschrieben ist der Umbau zu einem nutzbaren Gewerbehaus und nicht eine vorwettbewerbliche Entwicklung bis höchstens zum Prototyp.",
+     "evidence": [
+      "vorhaben_beschreibung"
+     ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
+     "question": {
+      "id": "q_vorwettbewerblich",
+      "profile_field": "rueckfrage_vorwettbewerblich",
+      "text": "Wie weit geht Ihr Projekt?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Konzept, Studie oder Entwicklung bis zum Prototyp",
+       "Bis zur Serienreife oder zum Markteintritt",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "vorwettbewerblich"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
      }
     },
     {
      "criterion_id": "eigenmittel",
      "scope": "instrument",
-     "text": "Relevante finanzielle Eigenmittel der Projektträger.",
+     "text": "Die Projektträgerschaft trägt mindestens 50 % der Gesamtkosten (Eigenleistungen, Eigenfinanzierung, Beiträge Dritter). Die NRP übernimmt in der Regel höchstens 50 %.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben zu finanziellen Eigenmitteln der Projektträger.",
-     "evidence": [],
+     "reason": "Das Budget ist angegeben, nicht aber der Finanzierungsanteil der Projektträgerschaft und Dritter.",
+     "evidence": [
+      "budget"
+     ],
      "profile_fields": [
       "budget"
      ],
@@ -2254,18 +2258,90 @@
       "prefill": null
      },
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 16"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8; Kap. 2, S. 3"
      }
     },
     {
      "criterion_id": "eigenwirtschaftlichkeit",
      "scope": "instrument",
-     "text": "Ausrichtung auf Eigenwirtschaftlichkeit und breite Trägerschaft.",
+     "text": "Die Projektträgerschaft sichert die langfristige wirtschaftliche Tragfähigkeit des Projekts über die NRP-Finanzierung hinaus (Anschubfinanzierung).",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Die geplante Nutzung als Gewerbehaus belegt weder Eigenwirtschaftlichkeit noch eine breite Trägerschaft.",
+     "reason": "Angaben zur langfristigen wirtschaftlichen Tragfähigkeit des Gewerbehauses fehlen.",
+     "evidence": [],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
+     "question": null,
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
+     }
+    },
+    {
+     "criterion_id": "wirkungsziele",
+     "scope": "instrument",
+     "text": "Der Projektantrag definiert klare Projektziele, Projektphasen mit messbaren Meilensteinen und mindestens zwei Wirkungsindikatoren (keine Indikatoren nötig bei Kleinstprojekten bis CHF 20'000).",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Projektphasen, messbare Meilensteine und Wirkungsindikatoren sind im Profil nicht angegeben.",
+     "evidence": [],
+     "profile_fields": [],
+     "question": null,
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8; Kap. 7.2, S. 16"
+     }
+    },
+    {
+     "criterion_id": "vor_projektstart",
+     "scope": "instrument",
+     "text": "Der definitive NRP-Antrag wird vor Projektstart eingereicht. Anträge nach Projektstart werden nicht unterstützt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der geplante Projektstart ist bekannt, der Zeitpunkt der Einreichung eines definitiven NRP-Antrags jedoch nicht.",
+     "evidence": [
+      "projektstart"
+     ],
+     "profile_fields": [
+      "projektstart"
+     ],
+     "question": {
+      "id": "q_projektstart",
+      "profile_field": "projektstart",
+      "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+      "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+      "input": "datum",
+      "unit": null,
+      "options": [
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "vor_projektstart"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+     }
+    },
+    {
+     "criterion_id": "keine_infrastrukturkosten",
+     "scope": "instrument",
+     "text": "Infrastrukturkosten werden nicht mit à-fonds-perdu-Beiträgen finanziert, nur über NRP-Darlehen. Ausnahme: Kleinstinfrastrukturen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Der Umbau umfasst Infrastrukturkosten, doch die beantragte Finanzierungsform ist nicht angegeben.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2274,40 +2350,110 @@
      ],
      "question": null,
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 16"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
      }
     },
     {
-     "criterion_id": "wirkungsziele",
+     "criterion_id": "kleinstinfra_gesamtkosten",
      "scope": "instrument",
-     "text": "Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in einer Leistungsvereinbarung.",
+     "text": "Bei Kleinstinfrastrukturen dürfen die Gesamtkosten CHF 700'000 nicht überschreiten.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Angaben zu Wirkungs- und Leistungszielen, Meilensteinen und Sollbruchstellen fehlen im Profil.",
-     "evidence": [],
-     "profile_fields": [],
+     "state": "nicht_anwendbar",
+     "reason": "Bei angegebenen Gesamtkosten von CHF 2'800'000 handelt es sich nicht um ein Kleinstinfrastruktur-Projekt.",
+     "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
+      "budget"
+     ],
+     "question": {
+      "id": "q_kleinstinfra_gesamtkosten",
+      "profile_field": "rueckfrage_kleinstinfra_gesamtkosten",
+      "text": "Wie hoch sind die Gesamtkosten Ihres Infrastrukturvorhabens?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Bis CHF 700'000",
+       "Über CHF 700'000",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "nrp-luzern",
+        "instrument_id": "nrp-projektfoerderung",
+        "criterion_id": "kleinstinfra_gesamtkosten"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2 Kleinstinfrastrukturen, S. 9"
+     }
+    },
+    {
+     "criterion_id": "kleinstinfra_nutzen_dritte",
+     "scope": "instrument",
+     "text": "Bei Kleinstinfrastrukturen: kein oder nur marginaler direkter Cashflow für den Projektträger, bedeutender kommerzieller Nutzen für andere wirtschaftliche Akteure, Vermarktung in der regionalen und lokalen Tourismusstrategie.",
+     "kind": "muss",
+     "state": "nicht_anwendbar",
+     "reason": "Das Vorhaben ist wegen seiner angegebenen Gesamtkosten kein Kleinstinfrastruktur-Projekt.",
+     "evidence": [
+      "budget"
+     ],
+     "profile_fields": [
+      "vorhaben_beschreibung"
+     ],
      "question": null,
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 5 und S. 16"
+      "title": "Merkblatt Kleine Infrastrukturvorhaben (Kleinstinfrastrukturen), rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_Merkblatt_Kleinstinfrastrukturen.pdf?rev=4745d0b59c6049aa9863b4410d4fa839",
+      "locator": "Hintergrund («Folgende Voraussetzungen sind zu erfüllen»)"
      }
     }
    ],
    "gaps": [
     {
+     "type": "anpassung",
+     "criterion_ids": [
+      "vorwettbewerblich"
+     ],
+     "lever": "Projekt auf Konzeptphase oder Entwicklung bis zum Prototyp begrenzen",
+     "hint": "Begrenzen Sie das Projekt auf die Konzeptphase oder die Entwicklung bis zum Prototyp.",
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
+     }
+    },
+    {
      "type": "infos_fehlen",
      "criterion_ids": [
       "ueberbetrieblich"
      ],
-     "lever": "Projekt mit mehreren Betrieben oder Partnern aufziehen",
-     "hint": "Ziehen Sie das Projekt mit mehreren Betrieben oder Partnern auf.",
+     "lever": "Projektträgerschaft aus mehreren Unternehmen oder Organisationen bilden",
+     "hint": "Klären Sie, welche regional verankerten Unternehmen oder Organisationen die Projektträgerschaft bilden.",
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 30"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 2, S. 3"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "innovationsgehalt"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wie das Projekt neue Wertschöpfungspotenziale erschliesst oder bestehende auf neuartige Weise optimiert.",
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
      }
     },
     {
@@ -2316,11 +2462,11 @@
       "eigenmittel"
      ],
      "lever": null,
-     "hint": "Klären Sie, welche finanziellen Eigenmittel die Projektträger einbringen.",
+     "hint": "Klären Sie, welchen Anteil der Gesamtkosten die Projektträgerschaft trägt.",
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 16"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8; Kap. 2, S. 3"
      }
     },
     {
@@ -2329,11 +2475,11 @@
       "eigenwirtschaftlichkeit"
      ],
      "lever": null,
-     "hint": "Klären Sie, wie das Projekt eigenwirtschaftlich und breit getragen werden soll.",
+     "hint": "Klären Sie, wie die wirtschaftliche Tragfähigkeit nach der NRP-Finanzierung gesichert wird.",
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 16"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8"
      }
     },
     {
@@ -2342,11 +2488,37 @@
       "wirkungsziele"
      ],
      "lever": null,
-     "hint": "Klären Sie, welche Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in der Leistungsvereinbarung festgehalten werden.",
+     "hint": "Klären Sie die Projektziele, Phasen und messbaren Meilensteine sowie die gegebenenfalls nötigen Wirkungsindikatoren.",
      "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 5 und S. 16"
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2, S. 8; Kap. 7.2, S. 16"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "vor_projektstart"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob der definitive Antrag vor Projektstart eingereicht wird.",
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.3.1 Nicht anrechenbare Kosten, S. 11"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "keine_infrastrukturkosten"
+     ],
+     "lever": "Infrastruktur als Kleinstinfrastruktur auslegen (Gesamtkosten bis CHF 700'000, Beitrag bis CHF 100'000)",
+     "hint": "Klären Sie, ob die geplante Infrastruktur als Kleinstinfrastruktur gilt.",
+     "source": {
+      "title": "NRP-Arbeitshilfe: Entwicklung und Umsetzung wirkungsorientierter Projekte 2024 bis 2027, rawi Kanton Luzern",
+      "url": "https://rawi.lu.ch/-/media/RAWI/Dokumente/Neue_Regionalpolitik/pe_nrp_arbeitshilfe_2024_2027.pdf?rev=5339353db6e74ba8b0ae6d8f45720d12",
+      "locator": "Kap. 5.2 Kleinstinfrastrukturen, S. 9; Kap. 5.3.1, S. 11"
      }
     }
    ],
@@ -2359,20 +2531,20 @@
    "instrument_name": "PEIK Energieberatung und Umsetzungsbegleitung für KMU",
    "provider": "Bundesamt für Energie (BFE), EnergieSchweiz",
    "level": "bund",
-   "purpose": "PEIK hilft KMU aller Branchen, mit einer geförderten Energieberatung Energiekosten zu senken, und unterstützt die Umsetzung der Massnahmen.",
+   "purpose": "PEIK hilft KMU, mit einer geförderten Energieberatung Energiesparpotenziale zu erkennen, Energiekosten zu senken und Massnahmen umzusetzen.",
    "instrument_type": "beratung",
-   "funding_summary": "Erstberatung kostenlos. Energieberatung 50% der Kosten, max. CHF 2'500. Umsetzungsbegleitung 60% (bis 30.04.2027), max. CHF 13'000.",
+   "funding_summary": "Erstgespräch kostenlos. Energieberatung: EnergieSchweiz übernimmt 50% der Beratungskosten, max. CHF 2'500. Umsetzungsbegleitung: 60% statt 50% bis 30.04.2027, max. CHF 13'000.",
    "deadline": {
     "type": "unbekannt",
-    "rule": "Keine Frist genannt. Einstieg über eine kostenlose Erstberatung.",
+    "rule": "Keine Eingabefrist genannt. Einstieg über ein kostenloses Erstgespräch (Kontaktformular).",
     "next_date": null
    },
    "links": {
     "info": "https://peik.ch/",
-    "apply": "https://peik.ch/formular",
+    "apply": "https://peik.ch/formular/",
     "form": null
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
    "rank": 5,
@@ -2380,7 +2552,7 @@
     {
      "criterion_id": "energiekosten_20000",
      "scope": "instrument",
-     "text": "Die Beratung lohnt sich ab jährlichen Energiekosten von CHF 20'000.",
+     "text": "Zielgruppe sind Unternehmen mit jährlichen Energiekosten zwischen CHF 20'000 und 300'000. Die Beratung lohnt sich ab CHF 20'000.",
      "kind": "soll",
      "state": "unbekannt",
      "reason": "Die jährlichen Energiekosten sind im Profil nicht angegeben.",
@@ -2411,9 +2583,9 @@
       "prefill": null
      },
      "source": {
-      "title": "PEIK Energieberatung für KMU, Startseite",
-      "url": "https://peik.ch/",
-      "locator": null
+      "title": "PEIK: Energieberatung für KMU, EnergieSchweiz",
+      "url": "https://www.energieschweiz.ch/unternehmen/sich-beraten-lassen/peik/",
+      "locator": "Das müssen Sie wissen"
      }
     },
     {
@@ -2422,7 +2594,7 @@
      "text": "Das Unternehmen ist nicht vom Grossverbraucherartikel der Kantone betroffen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob die Gemeinde vom kantonalen Grossverbraucherartikel betroffen ist, geht aus dem Profil nicht hervor.",
+     "reason": "Zum jährlichen Strom- und Wärmebedarf liegen keine Angaben vor.",
      "evidence": [],
      "profile_fields": [],
      "question": {
@@ -2447,9 +2619,9 @@
       "prefill": null
      },
      "source": {
-      "title": "Zulassungskriterien, PEIK",
+      "title": "Zulassungskriterien für eine PEIK-Energieberatung",
       "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
+      "locator": "In folgenden Fällen ist eine Förderung durch PEIK ausgeschlossen, Punkt 1"
      }
     },
     {
@@ -2457,8 +2629,8 @@
      "scope": "instrument",
      "text": "Keine Befreiung von der CO2-Abgabe und keine Rückerstattung des Netzzuschlags.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Eine CO2-Abgabebefreiung wird verneint, zur Rückerstattung des Netzzuschlags fehlen jedoch Angaben.",
+     "state": "erfuellt",
+     "reason": "Die Rückfrage verneint sowohl eine Befreiung von der CO2-Abgabe als auch eine Rückerstattung des Netzzuschlags.",
      "evidence": [
       "rueckfrage_keine_co2_befreiung"
      ],
@@ -2485,18 +2657,18 @@
       "prefill": null
      },
      "source": {
-      "title": "Zulassungskriterien, PEIK",
+      "title": "Zulassungskriterien für eine PEIK-Energieberatung",
       "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
+      "locator": "In folgenden Fällen ist eine Förderung durch PEIK ausgeschlossen, Punkt 2"
      }
     },
     {
      "criterion_id": "keine_bundesberatung",
      "scope": "instrument",
-     "text": "Die Beratung wird nicht bereits über ein anderes Bundesprogramm gefördert.",
+     "text": "Die Energieberatung wird nicht bereits durch ein Bundesprogramm gefördert (keine Doppelförderung auf Bundesebene).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob die Beratung bereits über ein anderes Bundesprogramm gefördert wird, ist nicht angegeben.",
+     "reason": "Das Profil enthält keine Angabe dazu, ob eine Energieberatung bereits durch ein Bundesprogramm gefördert wird.",
      "evidence": [],
      "profile_fields": [],
      "question": {
@@ -2521,9 +2693,9 @@
       "prefill": null
      },
      "source": {
-      "title": "Zulassungskriterien, PEIK",
+      "title": "Zulassungskriterien für eine PEIK-Energieberatung",
       "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
+      "locator": "In folgenden Fällen ist eine Förderung durch PEIK ausgeschlossen, Punkt 3"
      }
     }
    ],
@@ -2536,9 +2708,9 @@
      "lever": null,
      "hint": "Klären Sie die jährlichen Energiekosten Ihres Unternehmens.",
      "source": {
-      "title": "PEIK Energieberatung für KMU, Startseite",
-      "url": "https://peik.ch/",
-      "locator": null
+      "title": "PEIK: Energieberatung für KMU, EnergieSchweiz",
+      "url": "https://www.energieschweiz.ch/unternehmen/sich-beraten-lassen/peik/",
+      "locator": "Das müssen Sie wissen"
      }
     },
     {
@@ -2549,22 +2721,9 @@
      "lever": null,
      "hint": "Klären Sie, ob Ihr Unternehmen vom kantonalen Grossverbraucherartikel betroffen ist.",
      "source": {
-      "title": "Zulassungskriterien, PEIK",
+      "title": "Zulassungskriterien für eine PEIK-Energieberatung",
       "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "keine_co2_befreiung"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen von der CO2-Abgabe befreit ist oder den Netzzuschlag zurückerhält.",
-     "source": {
-      "title": "Zulassungskriterien, PEIK",
-      "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
+      "locator": "In folgenden Fällen ist eine Förderung durch PEIK ausgeschlossen, Punkt 1"
      }
     },
     {
@@ -2573,11 +2732,11 @@
       "keine_bundesberatung"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die Beratung bereits über ein anderes Bundesprogramm gefördert wird.",
+     "hint": "Klären Sie, ob die Energieberatung bereits durch ein Bundesprogramm gefördert wird.",
      "source": {
-      "title": "Zulassungskriterien, PEIK",
+      "title": "Zulassungskriterien für eine PEIK-Energieberatung",
       "url": "https://peik.ch/zulassungskriterien/",
-      "locator": null
+      "locator": "In folgenden Fällen ist eine Förderung durch PEIK ausgeschlossen, Punkt 3"
      }
     }
    ],
@@ -2590,20 +2749,20 @@
    "instrument_name": "ProKilowatt Projekte (Stromeffizienz)",
    "provider": "Bundesamt für Energie (BFE)",
    "level": "bund",
-   "purpose": "ProKilowatt fördert Massnahmen, die den Stromverbrauch in Industrie, Gewerbe, Dienstleistungen, Haushalten und Landwirtschaft senken.",
+   "purpose": "ProKilowatt fördert Stromeffizienzmassnahmen bei Geräten, Anlagen, Fahrzeugen und Gebäuden in Industrie, Gewerbe, Dienstleistungen, Haushalt und Landwirtschaft.",
    "instrument_type": "beitrag",
-   "funding_summary": "Bis 30% der Investitionskosten, mindestens CHF 20'000 und höchstens CHF 2 Mio. Förderbeitrag.",
+   "funding_summary": "Selbst festgelegter Förderbeitrag, höchstens 30 % der Investitionskosten. Mindestens CHF 20'000, höchstens CHF 6 Mio.",
    "deadline": {
-    "type": "vor_projektstart",
-    "rule": "Einreichung über das Online-Tool vor Bestellung und Vertragsabschluss. Umsetzung erst nach dem Zuschlagsentscheid.",
-    "next_date": "2027-06-01"
+    "type": "ausschreibung",
+    "rule": "Projektgesuche jederzeit bis 1.11.2026 im Webtool. Umsetzung (Auftrag, Bestellung) erst nach dem Zuschlagsentscheid.",
+    "next_date": "2026-11-01"
    },
    "links": {
-    "info": "https://www.prokw.ch/",
-    "apply": "https://www.prokw.ch/subvention/",
-    "form": "https://www.prokw.ch/informations-pratiques/"
+    "info": "https://www.prokw.ch/de/foerderbeitrag-erhalten/",
+    "apply": "https://webtool.prokw.ch/",
+    "form": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf"
    },
-   "source_checked": "2026-10-23",
+   "source_checked": "2026-10-24",
    "status": "fertig",
    "fit": "passt_nicht",
    "rank": null,
@@ -2614,7 +2773,7 @@
      "text": "Die Massnahme senkt den Stromverbrauch von Geräten, Anlagen, Fahrzeugen oder Gebäuden.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben ersetzt eine Ölheizung durch eine Wärmepumpe und dämmt die Fassade, statt eine Senkung des Stromverbrauchs zu beschreiben.",
+     "reason": "Das beschriebene Vorhaben betrifft den Heizungsersatz und die Fassadendämmung statt einer belegten Stromeinsparung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2643,18 +2802,18 @@
       "prefill": null
      },
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "ProKilowatt, Homepage (DE)",
+      "url": "https://www.prokw.ch/de/",
+      "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
      }
     },
     {
      "criterion_id": "umsetzung_schweiz",
      "scope": "instrument",
-     "text": "Umsetzung in der Schweiz.",
+     "text": "Die Massnahme wird in der Schweiz umgesetzt.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Der angegebene Standort im Kanton Luzern liegt in der Schweiz.",
+     "reason": "Der angegebene Standort liegt im Kanton Luzern und damit in der Schweiz.",
      "evidence": [
       "standort_kanton"
      ],
@@ -2663,19 +2822,20 @@
      ],
      "question": null,
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "ProKilowatt, Homepage (DE)",
+      "url": "https://www.prokw.ch/de/",
+      "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
      }
     },
     {
      "criterion_id": "bestehende_anlage",
      "scope": "instrument",
-     "text": "Bestehende Anlagen werden ersetzt oder optimiert.",
+     "text": "Die Massnahme ersetzt oder optimiert eine oder mehrere bestehende Installationen.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die bestehende Ölheizung soll ersetzt werden.",
+     "reason": "Das Vorhaben sieht den Ersatz einer bestehenden Ölheizung vor.",
      "evidence": [
+      "vorhaben_beschreibung",
       "bestehende_heizung"
      ],
      "profile_fields": [],
@@ -2701,18 +2861,54 @@
       "prefill": null
      },
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "ProKilowatt, Homepage (DE)",
+      "url": "https://www.prokw.ch/de/",
+      "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
+     }
+    },
+    {
+     "criterion_id": "eigentum_anlage",
+     "scope": "instrument",
+     "text": "Die Massnahme betrifft Anlagen im Eigentum der Projekteigentümerschaft. Die Eigentümerschaft bestätigt das Gesuch.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zum Eigentum an den betroffenen Anlagen und zur Bestätigung des Gesuchs durch die Eigentümerschaft fehlen Angaben.",
+     "evidence": [],
+     "profile_fields": [],
+     "question": {
+      "id": "q_eigentum_anlage",
+      "profile_field": "rueckfrage_eigentum_anlage",
+      "text": "Gehört die Anlage, die Sie ersetzen oder optimieren, Ihrem Unternehmen?",
+      "why": "",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+       "Ja",
+       "Nein, sie gehört einem Dritten",
+       "Weiss nicht"
+      ],
+      "affects": [
+       {
+        "program_id": "prokilowatt",
+        "instrument_id": "projekte",
+        "criterion_id": "eigentum_anlage"
+       }
+      ],
+      "prefill": null
+     },
+     "source": {
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2 (Einleitung) und Kap. 1.4"
      }
     },
     {
      "criterion_id": "nicht_begonnen",
      "scope": "instrument",
-     "text": "Die Massnahme ist noch nicht begonnen: Material erst nach dem Zuschlag bestellen und Verträge erst danach unterzeichnen.",
+     "text": "Mit der Umsetzung wurde vor dem Zuschlagsentscheid nicht begonnen. Schon ein vorbehaltloser Ausführungsbeschluss, eine Auftragserteilung oder eine Materialbestellung gilt als Beginn.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der angegebene Projektstart liegt in der Zukunft, aber zu bereits bestelltem Material oder unterzeichneten Verträgen fehlen Angaben.",
+     "reason": "Der angegebene Projektstart klärt nicht, ob vor dem Zuschlagsentscheid bereits ein Ausführungsbeschluss, eine Auftragserteilung oder eine Bestellung erfolgt ist.",
      "evidence": [
       "projektstart"
      ],
@@ -2739,18 +2935,18 @@
       "prefill": null
      },
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2.2.2, Pj-2t"
      }
     },
     {
      "criterion_id": "amortisation_ueber_4",
      "scope": "instrument",
-     "text": "Die Amortisationsdauer liegt über 4 Jahren.",
+     "text": "Die Paybackzeit (Investition geteilt durch jährliche Stromkosteneinsparung) beträgt mindestens 4 Jahre.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Amortisationsdauer liegen keine Angaben vor.",
+     "reason": "Ohne Angaben zur jährlichen Stromkosteneinsparung und zu den massgeblichen Investitionskosten lässt sich die Paybackzeit nicht bestimmen.",
      "evidence": [],
      "profile_fields": [
       "budget"
@@ -2777,37 +2973,57 @@
       "prefill": null
      },
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2.2.2, Pj-2b; Kap. 3.4 Amortisationszeit / Paybackzeit"
      }
     },
     {
      "criterion_id": "kosten_nutzen_8_rp",
      "scope": "instrument",
-     "text": "Kosten-Nutzen-Verhältnis höchstens 8 Rappen Förderbeitrag pro eingesparte kWh. Je tiefer, desto besser die Chancen.",
-     "kind": "bewertung",
+     "text": "Die Kostenwirksamkeit (beantragter Förderbeitrag geteilt durch anrechenbare kumulierte Stromeinsparung) liegt bei höchstens 8 Rp./kWh.",
+     "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ohne Angaben zum Förderbeitrag und zur eingesparten Strommenge lässt sich das Kosten-Nutzen-Verhältnis nicht prüfen.",
+     "reason": "Der beantragte Förderbeitrag und die anrechenbare Stromeinsparung sind nicht angegeben.",
      "evidence": [],
      "profile_fields": [
       "budget"
      ],
      "question": null,
      "source": {
-      "title": "ProKilowatt, Häufige Fragen (FR)",
-      "url": "https://www.prokw.ch/faq/",
-      "locator": "Payback und Kosten-Nutzen"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2.2.2, Pj-2b; Kap. 3.5 Kostenwirksamkeit"
+     }
+    },
+    {
+     "criterion_id": "kostenwirksamkeit_wettbewerb",
+     "scope": "instrument",
+     "text": "Rangierung nach Kostenwirksamkeit: Je tiefer der Förderbeitrag pro eingesparte kWh, desto besser. Die besten 85 % einer Wettbewerbsrunde erhalten einen Zuschlag.",
+     "kind": "bewertung",
+     "state": "unbekannt",
+     "reason": "Ohne beantragten Förderbeitrag und anrechenbare Stromeinsparung ist die Kostenwirksamkeit für die Rangierung nicht bestimmbar.",
+     "evidence": [],
+     "profile_fields": [
+      "budget"
+     ],
+     "question": null,
+     "source": {
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 1.2 und Kap. 2.1 Bewertung der Projekte"
      }
     },
     {
      "criterion_id": "investition_ueber_70000",
      "scope": "instrument",
-     "text": "Einreichung als Projekt bei Investitionssummen über CHF 70'000. Darunter kann ein Programm mit garantierter Förderung passender sein.",
+     "text": "Ein Projektgesuch ist bei Investitionskosten über CHF 70'000 möglich. Bei Investitionskosten unter CHF 300'000 ist auch die Anmeldung bei einem ProKilowatt-Programm möglich (Beitrag garantiert, kein Wettbewerb).",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Zur Investitionssumme liegen keine Angaben vor.",
-     "evidence": [],
+     "reason": "Das angegebene Gesamtbudget weist die Investitionskosten einer für dieses Instrument geeigneten Stromeffizienzmassnahme nicht gesondert aus.",
+     "evidence": [
+      "budget"
+     ],
      "profile_fields": [
       "budget"
      ],
@@ -2834,9 +3050,9 @@
       "prefill": null
      },
      "source": {
-      "title": "ProKilowatt, Häufige Fragen (FR)",
-      "url": "https://www.prokw.ch/faq/",
-      "locator": "Projekt vs. Programm"
+      "title": "ProKilowatt, FAQ (DE)",
+      "url": "https://www.prokw.ch/de/faq/",
+      "locator": "Generelle Fragen: «Soll ich ein Projekt einreichen oder soll ich mich lieber bei einem laufenden ProKilowatt Programm anmelden?»"
      }
     }
    ],
@@ -2844,14 +3060,27 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
+      "eigentum_anlage"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wem die betroffenen Anlagen gehören und ob die Eigentümerschaft das Gesuch bestätigt.",
+     "source": {
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2 (Einleitung) und Kap. 1.4"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
       "nicht_begonnen"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob bereits Material bestellt, Verträge unterzeichnet oder die Massnahme begonnen wurde.",
+     "hint": "Klären Sie, ob bereits ein vorbehaltloser Ausführungsbeschluss, ein Auftrag oder eine Materialbestellung vorliegt.",
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2.2.2, Pj-2t"
      }
     },
     {
@@ -2860,11 +3089,11 @@
       "amortisation_ueber_4"
      ],
      "lever": null,
-     "hint": "Klären Sie die Amortisationsdauer der Massnahme.",
+     "hint": "Klären Sie die Paybackzeit anhand der Investition und der jährlichen Stromkosteneinsparung.",
      "source": {
-      "title": "ProKilowatt, Startseite",
-      "url": "https://www.prokw.ch/",
-      "locator": "Voraussetzungen"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2.2.2, Pj-2b; Kap. 3.4 Amortisationszeit / Paybackzeit"
      }
     },
     {
@@ -2872,12 +3101,25 @@
      "criterion_ids": [
       "kosten_nutzen_8_rp"
      ],
-     "lever": "Tieferen Förderbetrag pro eingesparte kWh beantragen, um die Zuschlagschance zu erhöhen",
-     "hint": "Beantragen Sie einen tieferen Förderbetrag pro eingesparte kWh.",
+     "lever": "Tieferen Förderbeitrag beantragen, um die Kostenwirksamkeit zu verbessern und die Zuschlagschance zu erhöhen",
+     "hint": "Klären Sie die Kostenwirksamkeit anhand des beantragten Förderbeitrags und der anrechenbaren Stromeinsparung.",
      "source": {
-      "title": "ProKilowatt, Häufige Fragen (FR)",
-      "url": "https://www.prokw.ch/faq/",
-      "locator": "Payback und Kosten-Nutzen"
+      "title": "ProKilowatt, FAQ (DE)",
+      "url": "https://www.prokw.ch/de/faq/",
+      "locator": "Generelle Fragen: «Wie funktioniert das wettbewerbliche Ausschreibungsverfahren und was ist die Kostenwirksamkeit?»"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kostenwirksamkeit_wettbewerb"
+     ],
+     "lever": "Tieferen Förderbeitrag beantragen, um die Kostenwirksamkeit zu verbessern und die Zuschlagschance zu erhöhen",
+     "hint": "Klären Sie den beantragten Förderbeitrag pro eingesparte Kilowattstunde für die Rangierung.",
+     "source": {
+      "title": "ProKilowatt, FAQ (DE)",
+      "url": "https://www.prokw.ch/de/faq/",
+      "locator": "Generelle Fragen: «Wie funktioniert das wettbewerbliche Ausschreibungsverfahren und was ist die Kostenwirksamkeit?»"
      }
     },
     {
@@ -2885,12 +3127,12 @@
      "criterion_ids": [
       "investition_ueber_70000"
      ],
-     "lever": null,
-     "hint": "Klären Sie die Investitionssumme für die Einreichung als Projekt.",
+     "lever": "Mehrere gleichartige oder verschiedene Massnahmen an einem oder mehreren Standorten in einem Gesuch bündeln, um die minimale Projektgrösse zu erreichen",
+     "hint": "Klären Sie die Investitionskosten der Massnahmen für das Projektgesuch.",
      "source": {
-      "title": "ProKilowatt, Häufige Fragen (FR)",
-      "url": "https://www.prokw.ch/faq/",
-      "locator": "Projekt vs. Programm"
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "locator": "Kap. 2 Anforderungen und Bewertung der Projekte (Einleitung)"
      }
     }
    ],
@@ -2906,6 +3148,26 @@
    "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
    "rule": "gesuchsteller",
    "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "berghilfe",
+   "instrument_id": "wlan-hotellerie-gastro",
+   "program_name": "Schweizer Berghilfe",
+   "instrument_name": "WLAN für Hotels und Gastrobetriebe",
+   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
+   "rule": "gesuchsteller",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "bfe-pilot-demonstration",
+   "instrument_id": "pd-finanzhilfe",
+   "program_name": "Pilot- und Demonstrationsprogramm des BFE (P+D)",
+   "instrument_name": "Finanzhilfe für Pilot- und Demonstrationsprojekte (P+D)",
+   "reason": "Das Instrument wird nicht mehr angeboten.",
+   "rule": "verfuegbarkeit",
+   "availability_status": "eingestellt",
    "next_round": null
   },
   {
@@ -2943,8 +3205,8 @@
    "instrument_id": "heizungsersatz",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Musterwil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -2953,8 +3215,8 @@
    "instrument_id": "desinvestitionsbeitrag",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Musterwil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -2963,8 +3225,8 @@
    "instrument_id": "photovoltaik",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Musterwil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -2973,8 +3235,8 @@
    "instrument_id": "e-mobilitaet",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Musterwil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -2983,8 +3245,8 @@
    "instrument_id": "abwaermenutzung",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Musterwil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -3182,19 +3444,28 @@
  "plan": {
   "timeline": [
    {
+    "phase": "jetzt",
+    "program_id": "nrp-luzern",
+    "instrument_id": "nrp-projektfoerderung",
+    "title": "NRP-Projekt auf Prototyp begrenzen",
+    "date": null,
+    "date_rule": null,
+    "action": "Begrenzen Sie das Projekt auf die Konzeptphase oder die Entwicklung bis zum Prototyp."
+   },
+   {
     "phase": "vor_projektstart",
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "waermedaemmung",
-    "title": "Gesuch für Wärmedämmung und Bonus",
+    "title": "Gesuch für Wärmedämmung einreichen",
     "date": "2027-06-01",
     "date_rule": "vor Baubeginn",
-    "action": "Reichen Sie das Gesuch für die Wärmedämmung der Gebäudehülle und den Bonus Gebäudehülleneffizienz ein."
+    "action": "Reichen Sie das Gesuch für die Wärmedämmung der Gebäudehülle mit Bonus für Gebäudehülleneffizienz ein."
    },
    {
     "phase": "vor_projektstart",
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "waermepumpe",
-    "title": "Gesuch für Wärmepumpen",
+    "title": "Gesuch für Wärmepumpen einreichen",
     "date": "2027-06-01",
     "date_rule": "vor Installationsbeginn",
     "action": "Reichen Sie das Gesuch für die Luft/Wasser- oder Sole/Wasser-Wärmepumpe ein."
@@ -3203,34 +3474,41 @@
     "phase": "vor_projektstart",
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "holzfeuerung",
-    "title": "Gesuch für Holzfeuerung",
+    "title": "Gesuch für Holzfeuerungen einreichen",
     "date": "2027-06-01",
     "date_rule": "vor Installationsbeginn",
     "action": "Reichen Sie das Gesuch für die Holzfeuerung ein."
    },
    {
-    "phase": "gesuch",
+    "phase": "vor_projektstart",
     "program_id": "nrp-luzern",
     "instrument_id": "nrp-projektfoerderung",
-    "title": "Gesuch für NRP-Projektförderung",
-    "date": null,
-    "date_rule": "Antragsverfahren gemäss NRP-Arbeitshilfe, nicht gesichtet.",
-    "action": "Reichen Sie das Gesuch für die NRP-Projektförderung ein."
+    "title": "NRP-Gesuch einreichen",
+    "date": "2027-06-01",
+    "date_rule": "Keine festen Eingabefristen genannt. Den definitiven Antrag vor Projektstart einreichen. Kosten vor Einreichung sind nicht anrechenbar. Danach Start auf eigenes Risiko möglich.",
+    "action": "Reichen Sie den definitiven NRP-Antrag ein."
    },
    {
     "phase": "gesuch",
     "program_id": "peik",
     "instrument_id": "peik-energieberatung",
-    "title": "Gesuch für PEIK-Energieberatung",
+    "title": "PEIK-Gesuch einreichen",
     "date": null,
-    "date_rule": "Keine Frist genannt. Einstieg über eine kostenlose Erstberatung.",
+    "date_rule": "Keine Eingabefrist genannt. Einstieg über ein kostenloses Erstgespräch (Kontaktformular).",
     "action": "Reichen Sie das Gesuch für die PEIK-Energieberatung und Umsetzungsbegleitung ein."
    }
   ],
   "warnings": [],
   "next_steps": [
    {
-    "text": "Reichen Sie das Gesuch für die Wärmedämmung der Gebäudehülle und den Bonus Gebäudehülleneffizienz ein.",
+    "text": "Begrenzen Sie das Projekt auf die Konzeptphase oder die Entwicklung bis zum Prototyp.",
+    "program_id": "nrp-luzern",
+    "instrument_id": "nrp-projektfoerderung",
+    "link": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie das Gesuch für die Wärmedämmung der Gebäudehülle mit Bonus für Gebäudehülleneffizienz ein.",
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "waermedaemmung",
     "link": "https://portal.dasgebaeudeprogramm.ch/lu",
@@ -3251,17 +3529,17 @@
     "due": "2027-06-01"
    },
    {
-    "text": "Reichen Sie das Gesuch für die NRP-Projektförderung ein.",
+    "text": "Reichen Sie den definitiven NRP-Antrag ein.",
     "program_id": "nrp-luzern",
     "instrument_id": "nrp-projektfoerderung",
-    "link": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-    "due": null
+    "link": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren",
+    "due": "2027-06-01"
    },
    {
     "text": "Reichen Sie das Gesuch für die PEIK-Energieberatung und Umsetzungsbegleitung ein.",
     "program_id": "peik",
     "instrument_id": "peik-energieberatung",
-    "link": "https://peik.ch/formular",
+    "link": "https://peik.ch/formular/",
     "due": null
    }
   ],
@@ -3271,14 +3549,70 @@
     "role": "Allgemeine Fragen und Status von Gesuchen",
     "email": "energie@umweltberatung-luzern.ch",
     "phone": "041 412 32 32",
-    "url": "https://umweltberatung-luzern.ch/"
+    "url": "https://umweltberatung-luzern.ch/kontakt"
    },
    {
-    "name": "PEIK c/o act Cleantech Solutions AG",
+    "name": "Dienststelle Raum und Wirtschaft (rawi), Abteilung Wirtschaftsentwicklung",
+    "role": "Zuständige kantonale Dienststelle für die NRP",
+    "email": "rawi@lu.ch",
+    "phone": "+41 41 228 51 83",
+    "url": "https://rawi.lu.ch/neue_regionalpolitik_nrp/Projekteingabe_und_verfahren"
+   },
+   {
+    "name": "LuzernPlus",
+    "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+    "email": "info@luzernplus.ch",
+    "phone": "041 444 82 82",
+    "url": "https://www.luzernplus.ch/"
+   },
+   {
+    "name": "Region Sursee-Mittelland",
+    "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+    "email": "info@sursee-mittelland.ch",
+    "phone": "041 925 88 60",
+    "url": "https://www.sursee-mittelland.ch/"
+   },
+   {
+    "name": "Region Luzern West",
+    "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+    "email": null,
+    "phone": "+41 41 490 02 80",
+    "url": "https://www.regionwest.ch/"
+   },
+   {
+    "name": "IDEE SEETAL",
+    "role": "Regionaler Entwicklungsträger, Umsetzungspartner NRP",
+    "email": null,
+    "phone": null,
+    "url": "https://www.idee-seetal.ch/"
+   },
+   {
+    "name": "Zofingenregio",
+    "role": "Regionalverband, Umsetzungspartner NRP (fünf Luzerner Gemeinden)",
+    "email": "info@zofingenregio.ch",
+    "phone": null,
+    "url": "https://www.zofingenregio.ch/"
+   },
+   {
+    "name": "Luzern Tourismus AG (LTAG)",
+    "role": "Umsetzungspartnerin NRP für Tourismusprojekte",
+    "email": null,
+    "phone": "+41 41 227 17 17",
+    "url": "https://www.luzern.com/de/ueber-uns/ueber-luzern-tourismus/"
+   },
+   {
+    "name": "Geschäftsstelle PEIK, c/o act Cleantech Solutions AG",
     "role": "Brandschenkestrasse 6, 8001 Zürich",
     "email": "info@peik.ch",
     "phone": "058 750 05 25",
-    "url": "https://peik.ch/"
+    "url": "https://peik.ch/formular/"
+   },
+   {
+    "name": "Infoline EnergieSchweiz",
+    "role": "Kostenlose Auskunft zu Fördermitteln",
+    "email": null,
+    "phone": "0848 444 444",
+    "url": "https://www.energieschweiz.ch/beratung/infoline/"
    }
   ]
  },

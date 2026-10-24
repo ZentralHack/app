@@ -83,11 +83,19 @@ def build_profile(req: ProfileRequest, extraction: ProfileExtraction) -> Project
     fields = {
         name: _checked(name, getattr(extraction.fields, name), req.text) for name in FIELD_TYPES
     }
+    profile = ProjectProfile(input_text=req.text, summary=extraction.summary, fields=fields)
+    return normalize_profile(with_form_fields(profile, req))
+
+
+def with_form_fields(profile: ProjectProfile, req: ProfileRequest) -> ProjectProfile:
+    """The values from the form on page 1 replace whatever the text gave: `angegeben`, origin
+    `formular`. Same rule for the live path and the demo replay."""
     form = {
         "standort_gemeinde": req.gemeinde,
         "mitarbeitende": req.mitarbeitende,
         "budget": req.budget_chf,
     }
+    fields = dict(profile.fields)
     for name, value in form.items():
         if value is not None:
             fields[name] = ProfileField(
@@ -97,8 +105,7 @@ def build_profile(req: ProfileRequest, extraction: ProfileExtraction) -> Project
                 quote=None,
                 note=None,
             )
-    profile = ProjectProfile(input_text=req.text, summary=extraction.summary, fields=fields)
-    return normalize_profile(profile)
+    return profile.model_copy(update={"fields": fields})
 
 
 def _states_purpose(extraction: ProfileExtraction, text: str) -> bool:

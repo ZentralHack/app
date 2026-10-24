@@ -2,8 +2,9 @@
 are played back with realistic delays, so the pitch works without API or network.
 
 A demo case is found by its input text. Answers and profile corrections do not change a
-replayed result; anything that is not a demo case runs live as usual. The profile is handed
-out as it was before the answers, so the Rückfragen screen shows the same questions.
+replayed result, but the run reports the profile that was sent; anything that is not a demo
+case runs live as usual. The profile is handed out as it was before the answers, with the
+form values on top, so the Rückfragen screen shows the same questions.
 """
 
 import asyncio
@@ -82,9 +83,9 @@ async def replay(
 
 async def _replay(case: RunResult, recorder: RunRecorder, sleep) -> None:
     emit = recorder.emit
-    recorder.update(
-        recorder.result.model_copy(update={"profile": case.profile, "today": case.today})
-    )
+    # The run keeps the profile the client sent (form values, corrections, answers); only the
+    # checked results come from the stored case.
+    recorder.update(recorder.result.model_copy(update={"today": case.today}))
     programs = {m.program_id for m in case.matches} | {r.program_id for r in case.rejected}
     total = len(case.matches) + len(case.rejected)
     emit(
