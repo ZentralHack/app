@@ -1,6 +1,6 @@
 # FundPilot: Fördermittel-Agent Luzern
 
-**Live-Version:** _folgt_ (URL hier eintragen)
+**Live-Version:** https://fundpilot-production.up.railway.app · Benutzername: fundpilot / Passwort: adQHVijOoZBSNlB5
 
 Ein KI-Agent, der zu einem konkreten Vorhaben eines Luzerner Unternehmens passende Förderprogramme findet, nachvollziehbar erklärt, warum sie passen und was noch fehlt, und daraus einen Förderfahrplan macht.
 
