@@ -244,6 +244,8 @@ export const t = {
     close: "Schliessen",
     thinking: "Antwort wird gesucht …",
     retry: "Nochmals senden",
+    moreSources: (n: number) => (n === 1 ? "1 weitere Quelle anzeigen" : `${n} weitere Quellen anzeigen`),
+    fewerSources: "Weniger Quellen anzeigen",
     /** One message per ApiError code (contract §2), never a generic one. */
     errors: {
       run_nicht_gefunden: "Analyse abgelaufen, bitte neu starten. Der Server wurde neu gestartet und kennt diese Analyse nicht mehr.",

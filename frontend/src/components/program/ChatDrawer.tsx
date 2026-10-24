@@ -1,7 +1,7 @@
 import { Drawer, Modal } from "@heroui/react";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { api } from "../../api";
-import type { ChatResponse, InstrumentMatch } from "../../api/contract";
+import type { ChatResponse, InstrumentMatch, SourceLink } from "../../api/contract";
 import { chatChips, chatError, chatMessages, historyKey, loadHistory, saveHistory, type Chip, type Turn } from "../../lib/chat";
 import { t } from "../../text/de-CH";
 import { SourceChip } from "../results/parts";
@@ -198,20 +198,40 @@ export function ChatDrawer({ isOpen, runId, match, onClose }: Props) {
   );
 }
 
+/** The main source as a chip; further sources behind a "+N" chip that expands in place. */
+function Citations({ citations }: { citations: SourceLink[] }) {
+  const [open, setOpen] = useState(false);
+  const shown = open ? citations : citations.slice(0, 1);
+  const more = citations.length - 1;
+  return (
+    <div className="flex max-w-full flex-wrap gap-1.5" data-testid="chat-citations">
+      {shown.map(c => (
+        <span key={`${c.url}${c.locator}`} className="max-w-full">
+          <SourceChip source={c} />
+        </span>
+      ))}
+      {more > 0 && (
+        <button
+          type="button"
+          onClick={() => setOpen(o => !o)}
+          aria-expanded={open}
+          aria-label={open ? t.chat.fewerSources : t.chat.moreSources(more)}
+          title={open ? t.chat.fewerSources : t.chat.moreSources(more)}
+          className="inline-flex h-7 items-center rounded-md border border-line bg-surface px-2 text-xs font-semibold text-primary-ink transition-colors hover:border-primary hover:bg-primary-soft"
+        >
+          {open ? "−" : `+${more}`}
+        </button>
+      )}
+    </div>
+  );
+}
+
 /** One answer: text, source chips, the basis in small type, and the contact when nothing is certain. */
 function Answer({ response: r }: { response: ChatResponse }) {
   return (
     <div className="flex max-w-[92%] flex-col items-start gap-2" data-basis={r.basis}>
       <p className="whitespace-pre-line text-fg">{r.answer}</p>
-      {r.citations.length > 0 && (
-        <div className="flex max-w-full flex-wrap gap-1.5">
-          {r.citations.map(c => (
-            <span key={`${c.url}${c.locator}`} className="max-w-full sm:max-w-xs">
-              <SourceChip source={c} />
-            </span>
-          ))}
-        </div>
-      )}
+      {r.citations.length > 0 && <Citations citations={r.citations} />}
       <span className="text-xs text-fg-2">{t.chat.basis[r.basis]}</span>
       {r.contact && (
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
