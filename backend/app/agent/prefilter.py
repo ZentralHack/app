@@ -98,7 +98,8 @@ def _applicant(profile: ProjectProfile, item: FlatInstrument) -> str | None:
         return None
     count = known(profile, "mitarbeitende")
     employees = count if isinstance(count, int) else None
-    if applicant_types.with_implied(values, employees) & set(allowed):
+    projects = known_set(profile, "art_des_vorhabens") or set()
+    if applicant_types.with_implied(values, employees, projects) & set(allowed):
         return None
     return "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern."
 

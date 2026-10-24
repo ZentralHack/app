@@ -20,3 +20,10 @@ def test_nothing_is_invented_for_others():
     assert with_implied(["gemeinde"], 35) == {"gemeinde"}
     assert with_implied(["privatperson"], 4) == {"privatperson"}
     assert with_implied(["grossunternehmen"], 100) == {"grossunternehmen", "unternehmen"}
+
+
+def test_founder_or_successor_applies_as_the_company():
+    takeover = with_implied(["privatperson"], 4, ["nachfolge", "finanzierung"])
+    assert {"unternehmen", "kmu"} <= takeover
+    assert "startup" in with_implied(["privatperson"], None, ["gruendung"])
+    assert with_implied(["privatperson"], 4, ["investition"]) == {"privatperson"}
