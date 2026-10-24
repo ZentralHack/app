@@ -13,7 +13,7 @@ function Brand() {
   return (
     <div className="flex flex-col items-start gap-4">
       <img src={logo} alt={t.app.name} className="h-11 w-auto" />
-      <KantonLogo className="h-6" />
+      <KantonLogo className="h-9" />
     </div>
   );
 }
