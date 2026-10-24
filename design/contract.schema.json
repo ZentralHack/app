@@ -619,7 +619,8 @@
             "region",
             "gemeinde",
             "stiftung",
-            "privat"
+            "privat",
+            "international"
           ]
         },
         "purpose": {
