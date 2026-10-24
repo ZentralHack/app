@@ -1649,7 +1649,8 @@
         "status",
         "llm_available",
         "programs_loaded",
-        "programs_invalid"
+        "programs_invalid",
+        "question_catalog"
       ],
       "additionalProperties": false,
       "properties": {
@@ -1667,6 +1668,45 @@
         },
         "programs_invalid": {
           "type": "integer"
+        },
+        "question_catalog": {
+          "type": "object",
+          "description": "Stand des Fragenkatalogs. Vor der Demo müssen draft, needs_review und veraltet 0 sein.",
+          "required": [
+            "entries",
+            "verified",
+            "needs_review",
+            "draft",
+            "veraltet",
+            "errors"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "entries": {
+              "type": "integer",
+              "description": "verwendbare Einträge"
+            },
+            "verified": {
+              "type": "integer"
+            },
+            "needs_review": {
+              "type": "integer"
+            },
+            "draft": {
+              "type": "integer"
+            },
+            "veraltet": {
+              "type": "integer",
+              "description": "kb_fingerprint passt nicht mehr zur Wissensbasis"
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Datei nicht lesbar oder Einträge mit Fehlern (werden nicht verwendet)"
+            }
+          }
         }
       }
     },

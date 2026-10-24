@@ -19,6 +19,16 @@ Eine JSON-Datei pro Förderprogramm in `programs/`, validiert gegen [`schema/pro
 
 [`question_catalog.json`](question_catalog.json) enthält pro Profilfeld genau eine Rückfrage. Ein LLM erzeugt sie einmalig, danach wird sie geprüft. Zur Laufzeit wählt nur Code aus, ohne Modellaufruf. Details: Abschnitt «Question catalog» in [`design/architecture.md`](../design/architecture.md).
 
+**Aktueller Stand:** sechs von Hand geschriebene Einträge (`partner`, `revisionsart`, `projektstart`, `handelsregister`, `raeumlichkeiten`, `baujahr`), alle `needs_review`. Schema: [`schema/question_catalog.schema.json`](schema/question_catalog.schema.json). Die Code-Prüfung läuft beim Serverstart und in `pytest`; Einträge mit Fehlern werden nicht verwendet.
+
+> **TODO:** Das Generator-Script `backend/scripts/build_question_catalog.py` (Erzeugen per LLM, Gegenprüfung, `question_catalog_review.md`) existiert noch nicht. Bis dahin Einträge von Hand schreiben und danach den Fingerprint setzen:
+>
+> ```
+> cd backend
+> uv run python -m scripts.catalog_fingerprints          # veraltete Einträge anzeigen
+> uv run python -m scripts.catalog_fingerprints --write  # Fingerprint setzen, Review zurück auf needs_review
+> ```
+
 1. **Neu erzeugen**, wenn ein Programm ein neues Profilfeld bringt oder sich Kriterien auf einem Feld ändern: `backend/scripts/build_question_catalog.py`. Das Skript erzeugt nur die betroffenen Einträge neu (erkannt am `kb_fingerprint`), prüft sie automatisch und mit einem zweiten Modellaufruf und schreibt `question_catalog_review.md`.
 2. **Prüfen.** Jede Zeile in `question_catalog_review.md` gegen die Quelle prüfen und einmal laut lesen, als wäre man die Kundin:
    - Versteht eine KMU-Geschäftsführerin die Frage ohne Förderwissen? Eine Sache pro Frage?

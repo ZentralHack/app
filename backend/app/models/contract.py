@@ -626,6 +626,25 @@ class TraceEvent(
     )
 
 
+class HealthQuestionCatalog(BaseModel):
+    """
+    Stand des Fragenkatalogs. Vor der Demo müssen draft, needs_review und veraltet 0 sein.
+    """
+
+    model_config = ConfigDict(
+        extra="forbid",
+    )
+    entries: Annotated[int, Field(description="verwendbare Einträge")]
+    verified: int
+    needs_review: int
+    draft: int
+    veraltet: Annotated[int, Field(description="kb_fingerprint passt nicht mehr zur Wissensbasis")]
+    errors: Annotated[
+        list[str],
+        Field(description="Datei nicht lesbar oder Einträge mit Fehlern (werden nicht verwendet)"),
+    ]
+
+
 class Health(BaseModel):
     model_config = ConfigDict(
         extra="forbid",
@@ -634,6 +653,12 @@ class Health(BaseModel):
     llm_available: bool
     programs_loaded: int
     programs_invalid: int
+    question_catalog: Annotated[
+        HealthQuestionCatalog,
+        Field(
+            description="Stand des Fragenkatalogs. Vor der Demo müssen draft, needs_review und veraltet 0 sein."
+        ),
+    ]
 
 
 class ProgramSummaryInstrument(BaseModel):

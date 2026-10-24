@@ -101,14 +101,14 @@ def test_resolves_combination_targets(kb: KnowledgeBase):
 
 
 def test_question_index_from_criteria(kb: KnowledgeBase):
-    revision = kb.questions["revision"]
+    revision = kb.criterion_questions["revision"]
     assert revision.profile_field == "rueckfrage_revision"
     assert revision.options[-1] == "Weiss nicht"
     assert revision.options.count("Weiss nicht") == 1
     # Same criterion id in several energy instruments → one question.
-    assert "gesuch_vor_installationsbeginn" in kb.questions
+    assert "gesuch_vor_installationsbeginn" in kb.criterion_questions
     # "Weiss nicht" is added where the knowledge base leaves it out.
-    assert kb.questions["kosten_bemessungsjahr"].options[-1] == "Weiss nicht"
+    assert kb.criterion_questions["kosten_bemessungsjahr"].options[-1] == "Weiss nicht"
 
 
 def test_profile_enums_cover_filter_fields():

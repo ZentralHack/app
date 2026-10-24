@@ -9,6 +9,7 @@ from pathlib import Path
 import jsonschema
 from pydantic import ValidationError
 
+from app.knowledge_base.catalog_loader import QuestionCatalog, load_question_catalog
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.questions import CriterionQuestion, build_question_index
 from app.models.contract import InstrumentRef
@@ -32,7 +33,8 @@ class InvalidFile:
 class KnowledgeBase:
     programs: list[Program]
     invalid: list[InvalidFile] = field(default_factory=list)
-    questions: dict[str, CriterionQuestion] = field(default_factory=dict)
+    criterion_questions: dict[str, CriterionQuestion] = field(default_factory=dict)
+    catalog: QuestionCatalog = field(default_factory=QuestionCatalog)
 
     def get(self, program_id: str) -> Program | None:
         return next((p for p in self.programs if p.id == program_id), None)
@@ -72,7 +74,13 @@ def load_knowledge_base(directory: Path) -> KnowledgeBase:
             invalid.append(result)
         else:
             programs.append(result)
-    kb = KnowledgeBase(programs, invalid, build_question_index(programs))
+    instruments = [FlatInstrument(p, i) for p in programs for i in p.instruments]
+    kb = KnowledgeBase(
+        programs,
+        invalid,
+        build_question_index(programs),
+        load_question_catalog(directory, programs, instruments),
+    )
     for message in find_dead_references(kb):
         log.warning("Tote Referenz, wird ignoriert: %s", message)
     return kb

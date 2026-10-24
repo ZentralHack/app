@@ -33,7 +33,7 @@ Base path `/api`. JSON in and out, UTF-8. All user-facing texts in responses are
 
 | Method | Path | Request | Response | Notes |
 |---|---|---|---|---|
-| GET | `/api/health` | | `Health` | `llm_available: false` if no API key or provider unreachable |
+| GET | `/api/health` | | `Health` | `llm_available: false` if no API key or model ids; `question_catalog` counts entries per review status and lists broken entries |
 | GET | `/api/programs` | | `ProgramSummary[]` | includes invalid files with their validation errors |
 | POST | `/api/profile` | `ProfileRequest` | `ProfileResponse` | Step 1. `needs_clarification` if the input is too vague |
 | POST | `/api/questions` | `QuestionsRequest` | `QuestionSet` | Steps 3 and 2, code only, no LLM call. Empty `questions` with `skip_reason` means: skip Screen 3 |

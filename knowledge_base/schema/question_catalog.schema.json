@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "question_catalog.schema.json",
+  "title": "Fragenkatalog",
+  "description": "Eine Rückfrage pro Profilfeld. Schlüssel = Name des Profilfelds. Zur Laufzeit wählt nur Code aus, ohne Modellaufruf.",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^[a-z0-9_]+$"
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/entry"
+  },
+  "$defs": {
+    "state": {
+      "enum": ["erfuellt", "annahme", "unbekannt", "nicht_erfuellt"]
+    },
+    "criterionRef": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+:[a-z0-9_]+$",
+      "description": "'<program_id>:<criterion_id>' oder 'filter:partner_<required_partner>' für die aus filter.required_partners erzeugten Kriterien"
+    },
+    "bound": {
+      "type": ["number", "string", "null"],
+      "description": "Bei zahl eine Zahl, bei datum 'YYYY-MM' oder 'heute'. null = offen."
+    },
+    "option": {
+      "type": "object",
+      "required": ["label", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "description": "Wert, der ins Profil geschrieben wird, im Typ des Profilfelds. null nur bei 'Weiss nicht'."
+        }
+      }
+    },
+    "valueRule": {
+      "type": "object",
+      "required": ["value", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "description": "value einer Option"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        }
+      }
+    },
+    "rangeRule": {
+      "type": "object",
+      "required": ["min", "max", "state"],
+      "additionalProperties": false,
+      "description": "min inklusiv, max exklusiv",
+      "properties": {
+        "min": {
+          "$ref": "#/$defs/bound"
+        },
+        "max": {
+          "$ref": "#/$defs/bound"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": ["criterion", "map"],
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "$ref": "#/$defs/criterionRef"
+        },
+        "map": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/valueRule"
+              },
+              {
+                "$ref": "#/$defs/rangeRule"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "text",
+        "why",
+        "input",
+        "unit",
+        "min",
+        "max",
+        "options",
+        "ask_if",
+        "decides",
+        "not_decidable",
+        "kb_fingerprint",
+        "generated",
+        "review"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string",
+          "description": "Grundsatz für 'Warum wir fragen'; die betroffenen Programme hängt der Code an"
+        },
+        "input": {
+          "enum": ["auswahl", "zahl", "datum"]
+        },
+        "unit": {
+          "type": ["string", "null"]
+        },
+        "min": {
+          "type": ["number", "null"]
+        },
+        "max": {
+          "type": ["number", "null"]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "ask_if": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["fehlt", "annahme"]
+          }
+        },
+        "decides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decision"
+          }
+        },
+        "not_decidable": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["criterion", "reason"],
+            "additionalProperties": false,
+            "properties": {
+              "criterion": {
+                "$ref": "#/$defs/criterionRef"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "kb_fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "generated": {
+          "description": "null für von Hand geschriebene Einträge",
+          "type": ["object", "null"],
+          "required": ["model", "prompt_version", "date"],
+          "additionalProperties": false,
+          "properties": {
+            "model": {
+              "type": "string"
+            },
+            "prompt_version": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "required": ["status", "by", "date", "notes"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": ["draft", "needs_review", "verified"]
+            },
+            "by": {
+              "type": ["string", "null"]
+            },
+            "date": {
+              "type": ["string", "null"],
+              "format": "date"
+            },
+            "notes": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

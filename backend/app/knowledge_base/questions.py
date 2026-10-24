@@ -1,19 +1,17 @@
 """Question index for the questions step (no LLM at runtime).
 
-The reviewed question catalog (knowledge_base/question_catalog.json, one question per
-profile field) does not exist yet. Until it does, every question comes from
-`criteria[].question`, and the answer is stored as profile field `rueckfrage_<criterion_id>`.
+Fallback for criteria the question catalog cannot decide: `criteria[].question`, with the
+answer stored as profile field `rueckfrage_<criterion_id>`.
 """
 
 import logging
 from collections.abc import Iterable
 from dataclasses import dataclass
 
+from app.knowledge_base.catalog import DONT_KNOW
 from app.models.program import Program
 
 log = logging.getLogger(__name__)
-
-DONT_KNOW = "Weiss nicht"
 
 
 @dataclass(frozen=True)

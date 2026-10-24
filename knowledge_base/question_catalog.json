@@ -1,0 +1,401 @@
+{
+  "partner": {
+    "text": "Arbeiten Sie für dieses Projekt mit einer Hochschule oder Forschungsinstitution zusammen?",
+    "why": "Einige Programme fördern nur Projekte mit einem Forschungspartner.",
+    "input": "auswahl",
+    "unit": null,
+    "min": null,
+    "max": null,
+    "options": [
+      {
+        "label": "Ja, die Zusammenarbeit ist vereinbart",
+        "value": [
+          "forschungspartner"
+        ]
+      },
+      {
+        "label": "Wir suchen noch einen Partner",
+        "value": []
+      },
+      {
+        "label": "Nein",
+        "value": []
+      },
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "filter:partner_forschungspartner",
+        "map": [
+          {
+            "value": [
+              "forschungspartner"
+            ],
+            "state": "erfuellt"
+          },
+          {
+            "value": [],
+            "state": "nicht_erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [
+      {
+        "criterion": "lib:auftragsforschung_steuerung",
+        "reason": "Die Frage klärt nicht, ob Forschung als Auftrag vergeben und intern gesteuert wird (Handbuch LIB N 76-81)."
+      }
+    ],
+    "kb_fingerprint": "sha256:cc5ec9bbad44104d3119a37279ba7c580a5fff4f8496a965503e688c4a8986c3",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Prüfen: 'Wir suchen noch' und 'Nein' setzen partner auf [] (kein Partner beteiligt), das gilt dann auch für andere Partnerarten. Entscheidet das aus filter.required_partners erzeugte Kriterium partner_forschungspartner; andere Partnerarten fragt der Katalog noch nicht."
+    }
+  },
+  "revisionsart": {
+    "text": "Wie wird die Jahresrechnung Ihres Unternehmens geprüft?",
+    "why": "Einige Programme setzen eine geprüfte Jahresrechnung voraus.",
+    "input": "auswahl",
+    "unit": null,
+    "min": null,
+    "max": null,
+    "options": [
+      {
+        "label": "Ordentliche Revision",
+        "value": "ordentlich"
+      },
+      {
+        "label": "Eingeschränkte Revision",
+        "value": "eingeschraenkt"
+      },
+      {
+        "label": "Keine Revision (Opting-out)",
+        "value": "opting_out"
+      },
+      {
+        "label": "Keine Revisionspflicht, z. B. Einzelunternehmen",
+        "value": "keine"
+      },
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "lib:revision",
+        "map": [
+          {
+            "value": "ordentlich",
+            "state": "erfuellt"
+          },
+          {
+            "value": "eingeschraenkt",
+            "state": "unbekannt"
+          },
+          {
+            "value": "opting_out",
+            "state": "nicht_erfuellt"
+          },
+          {
+            "value": "keine",
+            "state": "nicht_erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [],
+    "kb_fingerprint": "sha256:e2b08d18cfcdf266c9cecaf0514d623a1e819a8f92874800ce781b8b389ad4bf",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Handbuch LIB N 14-15: Alternative ist ein Prüfbericht nach SA-CH. Eingeschränkte Revision darum 'unbekannt' (Bericht kann vorliegen), Opting-out und keine Pflicht 'nicht_erfuellt' mit Hebel 'Prüfbericht nach SA-CH'. Prüfen, ob Opting-out ebenfalls 'unbekannt' sein soll."
+    }
+  },
+  "projektstart": {
+    "text": "Wann beginnt das Projekt, oder wann hat es begonnen?",
+    "why": "Viele Gesuche müssen vor dem Start eingereicht werden, und der Start bestimmt die Fristen.",
+    "input": "datum",
+    "unit": null,
+    "min": null,
+    "max": null,
+    "options": [
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "foerderprogramm-energie-lu:gesuch_vor_baubeginn",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "foerderprogramm-energie-lu:gesuch_vor_installationsbeginn",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "foerderprogramm-energie-lu:installation_ab_2026",
+        "map": [
+          {
+            "min": null,
+            "max": "2026-01",
+            "state": "nicht_erfuellt"
+          },
+          {
+            "min": "2026-01",
+            "max": null,
+            "state": "erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [
+      {
+        "criterion": "lib:kosten_bemessungsjahr",
+        "reason": "Der Start bestimmt Beitragsjahr und Frist (rechnet der Code), nicht ob die Kosten in der Jahresrechnung des Bemessungsjahres erfasst sind."
+      }
+    ],
+    "kb_fingerprint": "sha256:a56b9a2d6e04415338ef9068a5b93bf11c218e7de0bf16e8ab18979f40319e42",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Ein Start in der Zukunft heisst nur 'Gesuch noch möglich' (annahme), ein vergangener Start beweist keinen Bau- oder Installationsbeginn (unbekannt)."
+    }
+  },
+  "handelsregister": {
+    "text": "Ist Ihr Unternehmen im Handelsregister des Kantons Luzern eingetragen (Sitz oder Zweigniederlassung)?",
+    "why": "Kantonale Programme setzen meist einen Eintrag im Luzerner Handelsregister voraus.",
+    "input": "auswahl",
+    "unit": null,
+    "min": null,
+    "max": null,
+    "options": [
+      {
+        "label": "Ja",
+        "value": "LU"
+      },
+      {
+        "label": "Nein, in einem anderen Kanton",
+        "value": "anderer_kanton"
+      },
+      {
+        "label": "Nein, gar nicht eingetragen",
+        "value": "kein_eintrag"
+      },
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "lib:hr_luzern",
+        "map": [
+          {
+            "value": "LU",
+            "state": "erfuellt"
+          },
+          {
+            "value": "anderer_kanton",
+            "state": "nicht_erfuellt"
+          },
+          {
+            "value": "kein_eintrag",
+            "state": "nicht_erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [],
+    "kb_fingerprint": "sha256:e924e811942c97ea3eb0d22cd9e7cdc09f385472a9c7f1f99a3d5bde767cc200",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Handbuch LIB N 20: Sitz oder Zweigniederlassung genügt, eine blosse steuerliche Betriebsstätte nicht. Werte 'anderer_kanton' und 'kein_eintrag' sind keine Kantonskürzel; Feldbeschreibung in x-core-fields prüfen."
+    }
+  },
+  "raeumlichkeiten": {
+    "text": "Hat Ihr Unternehmen eigene oder gemietete Räume im Kanton Luzern, die dauernd zur Verfügung stehen?",
+    "why": "Einige Programme verlangen eine tatsächliche Präsenz im Kanton, eine Domiziladresse genügt nicht.",
+    "input": "auswahl",
+    "unit": null,
+    "min": null,
+    "max": null,
+    "options": [
+      {
+        "label": "Ja",
+        "value": true
+      },
+      {
+        "label": "Nein, nur eine Domiziladresse (c/o)",
+        "value": false
+      },
+      {
+        "label": "Nein",
+        "value": false
+      },
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "lib:praesenz_raeume",
+        "map": [
+          {
+            "value": true,
+            "state": "erfuellt"
+          },
+          {
+            "value": false,
+            "state": "nicht_erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [],
+    "kb_fingerprint": "sha256:f9c827ab107c09311f56db22e1d6595072721f745bb4e44cb3622095e9473551",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Handbuch LIB N 21-23: dauerhaft verfügbar während des ganzen Bemessungsjahres; Shared Working Spaces nur bei dauerhafter Verfügbarkeit."
+    }
+  },
+  "baujahr": {
+    "text": "In welchem Jahr wurde das Gebäude gebaut?",
+    "why": "Ob Gebäudemassnahmen gefördert werden, hängt oft vom Alter des Gebäudes ab.",
+    "input": "zahl",
+    "unit": "Jahr",
+    "min": 1800,
+    "max": 2030,
+    "options": [
+      {
+        "label": "Weiss nicht",
+        "value": null
+      }
+    ],
+    "ask_if": [
+      "fehlt",
+      "annahme"
+    ],
+    "decides": [
+      {
+        "criterion": "foerderprogramm-energie-lu:baubewilligung_vor_2000",
+        "map": [
+          {
+            "min": null,
+            "max": 2000,
+            "state": "erfuellt"
+          },
+          {
+            "min": 2000,
+            "max": null,
+            "state": "unbekannt"
+          }
+        ]
+      },
+      {
+        "criterion": "foerderprogramm-energie-lu:kein_neubau",
+        "map": [
+          {
+            "min": null,
+            "max": 2022,
+            "state": "erfuellt"
+          },
+          {
+            "min": 2022,
+            "max": null,
+            "state": "unbekannt"
+          }
+        ]
+      },
+      {
+        "criterion": "foerderprogramm-energie-lu:kein_neubau_lade",
+        "map": [
+          {
+            "min": null,
+            "max": 2021,
+            "state": "erfuellt"
+          },
+          {
+            "min": 2021,
+            "max": 2022,
+            "state": "unbekannt"
+          },
+          {
+            "min": 2022,
+            "max": null,
+            "state": "nicht_erfuellt"
+          }
+        ]
+      }
+    ],
+    "not_decidable": [],
+    "kb_fingerprint": "sha256:aedf82d85b80529e08ca35350d5a85ff0408f6fa7062999208f4816f68dec0f2",
+    "generated": null,
+    "review": {
+      "status": "needs_review",
+      "by": null,
+      "date": null,
+      "notes": "Von Hand geschrieben. Gebaut vor 2000 heisst Baubewilligung vor 2000. Neubau-Grenze aus FAQ Abschn. 6 (Bauabnahme vor 31.12.2021 gilt nicht als Neubau), dort nur für Ladeinfrastruktur belegt; für Heizungen beim Kanton prüfen."
+    }
+  }
+}

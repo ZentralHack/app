@@ -4,12 +4,11 @@ import json
 import typing
 from pathlib import Path
 
-import jsonschema
 import pytest
-from referencing import Registry, Resource
 
-from app.config import CONTRACT_SCHEMA, KNOWLEDGE_BASE_DIR, REPO_DIR
+from app.config import KNOWLEDGE_BASE_DIR, REPO_DIR
 from app.models import contract, program
+from tests.contract_check import contract_validator
 
 EXAMPLES = sorted((REPO_DIR / "design" / "examples").glob("*.json"))
 EXAMPLE_MODELS = {
@@ -19,16 +18,6 @@ EXAMPLE_MODELS = {
     "run_result": "RunResult",
     "trace_events": "TraceEvent",
 }
-
-
-def _contract_validator(definition: str) -> jsonschema.Draft202012Validator:
-    schema = json.loads(CONTRACT_SCHEMA.read_text(encoding="utf-8"))
-    registry = Registry().with_resource("contract.schema.json", Resource.from_contents(schema))
-    return jsonschema.Draft202012Validator(
-        {"$ref": f"contract.schema.json#/$defs/{definition}"},
-        registry=registry,
-        format_checker=jsonschema.FormatChecker(),
-    )
 
 
 def test_every_example_has_a_model():
@@ -41,7 +30,7 @@ def test_example_round_trip(path: Path):
     model = getattr(contract, name)
     raw = json.loads(path.read_text(encoding="utf-8"))
     items = raw if isinstance(raw, list) else [raw]
-    validator = _contract_validator(name)
+    validator = contract_validator(name)
     for item in items:
         dumped = model.model_validate(item).model_dump(mode="json")
         assert list(validator.iter_errors(dumped)) == []

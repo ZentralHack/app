@@ -24,6 +24,14 @@ def test_health_without_llm(client: TestClient):
         "llm_available": False,
         "programs_loaded": 2,
         "programs_invalid": 0,
+        "question_catalog": {
+            "entries": 6,
+            "verified": 0,
+            "needs_review": 6,
+            "draft": 0,
+            "veraltet": 0,
+            "errors": [],
+        },
     }
 
 
