@@ -1,8 +1,8 @@
 {
- "run_id": "run_ae8b0096",
+ "run_id": "run_15f59f0a",
  "status": "fertig",
- "created_at": "2026-10-24T02:15:50.207951Z",
- "completed_at": "2026-10-24T02:16:35.803919Z",
+ "created_at": "2026-10-24T03:42:47.195845Z",
+ "completed_at": "2026-10-24T03:43:25.278436Z",
  "today": "2026-10-24",
  "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
  "profile": {
@@ -29,9 +29,9 @@
      "kmu"
     ],
     "status": "annahme",
-    "origin": "text",
-    "quote": "Unsere Schreinerei in Ruswil hat 12 Mitarbeitende.",
-    "note": "Die Schreinerei ist ein Unternehmen; aus der Mitarbeiterzahl wird ein KMU abgeleitet."
+    "origin": null,
+    "quote": null,
+    "note": "Die Schreinerei ist ein Unternehmen; aufgrund der Mitarbeiterzahl wird sie als KMU eingeordnet."
    },
    "art_des_vorhabens": {
     "value": [
@@ -39,10 +39,10 @@
      "energieeffizienz",
      "erneuerbare_energie"
     ],
-    "status": "annahme",
+    "status": "angegeben",
     "origin": "text",
     "quote": "das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren",
-    "note": "Die Dachsanierung und Dämmung entsprechen einer Gebäudesanierung und Energieeffizienz; die Photovoltaikanlage ist erneuerbare Energie."
+    "note": null
    },
    "branche": {
     "value": [
@@ -50,7 +50,7 @@
     ],
     "status": "annahme",
     "origin": "text",
-    "quote": "Unsere Schreinerei in Ruswil",
+    "quote": "Unsere Schreinerei",
     "note": "Eine Schreinerei wird dem Gewerbe zugeordnet."
    },
    "partner": {
@@ -61,7 +61,7 @@
     "note": null
    },
    "vorhaben_beschreibung": {
-    "value": "Sanierung und Dämmung des Werkstattdachs, anschliessend Installation einer Photovoltaikanlage mit etwa 100 kWp.",
+    "value": "Sanierung und Dämmung des Werkstattdachs sowie anschliessende Installation einer Photovoltaikanlage mit etwa 100 kWp.",
     "status": "angegeben",
     "origin": "text",
     "quote": "das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren",
@@ -71,7 +71,7 @@
     "value": "Schreinerei",
     "status": "angegeben",
     "origin": "text",
-    "quote": "Unsere Schreinerei in Ruswil",
+    "quote": "Unsere Schreinerei",
     "note": null
    },
    "rechtsform": {
@@ -89,11 +89,11 @@
     "note": null
    },
    "raeumlichkeiten": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
-    "quote": null,
-    "note": null
+    "value": true,
+    "status": "annahme",
+    "origin": "text",
+    "quote": "das Dach unserer Werkstatt",
+    "note": "Die Werkstatt befindet sich laut Text im eigenen Gebäude in Ruswil."
    },
    "mitarbeitende": {
     "value": 12,
@@ -152,11 +152,11 @@
     "note": null
    },
    "projektstart": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
+    "value": "2027-04",
+    "status": "angegeben",
+    "origin": "rueckfrage",
     "quote": null,
-    "note": null
+    "note": "Rückfrage «Wann beginnt das Projekt, oder wann hat es begonnen?»: 2027-04"
    },
    "baujahr": {
     "value": 1985,
@@ -176,8 +176,57 @@
     "value": true,
     "status": "angegeben",
     "origin": "text",
-    "quote": "gehört uns",
+    "quote": "Das Gebäude ist von 1985 und gehört uns.",
     "note": null
+   },
+   "rueckfrage_min_2_kw": {
+    "value": "100 kW oder mehr",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Wie gross ist die geplante PV-Anlage?»: 100 kW oder mehr"
+   },
+   "rueckfrage_bankkredit": {
+    "value": "Ja",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Brauchen Sie einen Bankkredit, für den die Bank Sicherheiten verlangt?»: Ja"
+   },
+   "rueckfrage_dezentrale_heizung": {
+    "value": "Zentrale Heizung",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Welche Heizung hat das Gebäude heute?»: Zentrale Heizung"
+   },
+   "rueckfrage_alle_ersetzt": {
+    "value": "Nein",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Werden alle dezentralen Heizungen im Gebäude ersetzt?»: Nein"
+   },
+   "rueckfrage_keine_co2_befreiung": {
+    "value": "Nein",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Ist Ihr Unternehmen von der CO2-Abgabe befreit?»: Nein"
+   },
+   "rueckfrage_ohne_eigenverbrauch": {
+    "value": "Nein",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Wollen Sie den Solarstrom vollständig ins Netz einspeisen (kein Eigenverbrauch)?»: Nein"
+   },
+   "rueckfrage_marktreif_umsatz": {
+    "value": "Ja",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Erzielt Ihr Unternehmen bereits Umsätze von mindestens CHF 100'000?»: Ja"
    }
   }
  },
@@ -213,9 +262,10 @@
      "text": "Das Projekt schafft Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet. Die Region wird geprüft.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der Standort Ruswil ist angegeben, aber ob das Projekt Arbeitsplätze und Wertschöpfung im geprüften Berggebiet schafft, ist nicht belegt.",
+     "reason": "Der Standort Ruswil ist angegeben, aber ob das Projekt im Schweizer Berggebiet Arbeitsplätze und Wertschöpfung schafft, ist nicht belegt.",
      "evidence": [
-      "standort_gemeinde"
+      "standort_gemeinde",
+      "vorhaben_beschreibung"
      ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -229,7 +279,7 @@
      "text": "Die Trägerschaft engagiert sich finanziell mit Eigenmitteln, Arbeit oder Material.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die Gesamtkosten sind genannt, ein finanzielles Engagement der Trägerschaft mit Eigenmitteln, Arbeit oder Material jedoch nicht.",
+     "reason": "Das Budget belegt nicht, ob sich die Trägerschaft mit Eigenmitteln, Arbeit oder Material beteiligt.",
      "evidence": [
       "budget"
      ],
@@ -245,9 +295,10 @@
      "text": "Nach Eigenleistungen und tragbaren Fremdfinanzierungen (öffentliche Investitionshilfen, Darlehen) bleibt ein Fehlbetrag.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus den genannten Gesamtkosten geht nicht hervor, ob nach Eigenleistungen und tragbaren Fremdfinanzierungen ein Fehlbetrag bleibt.",
+     "reason": "Aus dem Budget und dem angegebenen Bedarf an einem Bankkredit geht kein Fehlbetrag nach Eigenleistungen und tragbaren Fremdfinanzierungen hervor.",
      "evidence": [
-      "budget"
+      "budget",
+      "rueckfrage_bankkredit"
      ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -260,10 +311,11 @@
      "scope": "instrument",
      "text": "Das Projekt ist konkret und die Planung fortgeschritten.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Vorhaben ist beschrieben, der Stand der Planung aber nicht ausreichend belegt.",
+     "state": "annahme",
+     "reason": "Das Vorhaben ist mit Massnahmen, Anlagengrösse und geplantem Beginn konkret beschrieben; eine fortgeschrittene Planung lässt sich daraus nur ableiten.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "projektstart"
      ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -277,7 +329,7 @@
      "text": "Es besteht eine finanzielle Notwendigkeit. Die gesamte finanzielle Situation wird geprüft, ohne feste Grenzen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur gesamten finanziellen Situation liegen keine ausreichenden Angaben vor, um die finanzielle Notwendigkeit zu beurteilen.",
+     "reason": "Die gesamte finanzielle Situation ist nicht beschrieben, sodass sich die finanzielle Notwendigkeit nicht beurteilen lässt.",
      "evidence": [],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -293,7 +345,7 @@
       "berggebiet"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die Projektregion zum Schweizer Berggebiet gehört und das Projekt dort Arbeitsplätze und Wertschöpfung schafft.",
+     "hint": "Klären Sie, ob Ihr Projekt Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet schafft und ob die Region dazugehört.",
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -319,20 +371,7 @@
       "finanzierungsluecke"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob nach Eigenleistungen und tragbaren Fremdfinanzierungen ein Fehlbetrag bleibt.",
-     "source": {
-      "title": "Gesuch einreichen, Schweizer Berghilfe",
-      "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
-      "locator": "Voraussetzungen"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "projekt_konkret"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Projekt konkret und seine Planung fortgeschritten ist.",
+     "hint": "Klären Sie, welcher Fehlbetrag nach Eigenleistungen und tragbaren Fremdfinanzierungen verbleibt.",
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -386,7 +425,7 @@
      "text": "Innovativer Ansatz, der viel Energie spart, erneuerbare Energien stärker nutzt oder dem Energiesystem nützt.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Die beschriebene Dachsanierung mit Dämmung und anschliessender Photovoltaikanlage lässt keinen innovativen Ansatz erkennen.",
+     "reason": "Das beschriebene Vorhaben umfasst eine Dachsanierung mit Dämmung und eine Photovoltaikanlage, aber keinen erkennbaren innovativen Ansatz.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -402,8 +441,9 @@
      "text": "Pilotprojekt (frühe Phase, Teilsysteme) oder Demonstrationsprojekt (ausgereift, meist Massstab 1:1).",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben ist eine Sanierung mit anschliessender Installation einer Photovoltaikanlage und kein Pilot- oder Demonstrationsprojekt.",
+     "reason": "Die Beschreibung belegt eine Gebäudesanierung und PV-Installation, jedoch kein Pilot- oder Demonstrationsprojekt.",
      "evidence": [
+      "art_des_vorhabens",
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -418,7 +458,7 @@
      "text": "Finanzierungsbestätigungen oder Jahresberichte.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Bei angegebenen Gesamtkosten von etwa CHF 250'000 kann der Förderbeitrag die Schwelle für dieses Kriterium nicht überschreiten.",
+     "reason": "Bei Gesamtkosten von etwa CHF 250'000 trifft die Bedingung eines Förderbeitrags über CHF 1 Mio. nicht zu.",
      "evidence": [
       "budget"
      ],
@@ -455,7 +495,7 @@
    "source_checked": "2026-10-23",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 5,
+   "rank": 3,
    "criteria": [
     {
      "criterion_id": "taetigkeitsgebiet",
@@ -463,7 +503,7 @@
      "text": "Der Betrieb liegt im Tätigkeitsgebiet der BG Mitte: BE, JU, SO, AG (nur Fricktal), BS, BL, LU, OW, NW.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Ruswil liegt gemäss der Standortableitung im Kanton Luzern und damit im Tätigkeitsgebiet der BG Mitte.",
+     "reason": "Ruswil wird im Profil dem Kanton Luzern zugeordnet, diese Kantonszuordnung ist jedoch als Annahme gekennzeichnet.",
      "evidence": [
       "standort_kanton"
      ],
@@ -478,9 +518,11 @@
      "scope": "instrument",
      "text": "Es wird ein Bankkredit benötigt, für den die Bank Sicherheiten verlangt.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob ein Bankkredit benötigt wird und die Bank Sicherheiten verlangt, geht aus dem Profil nicht hervor.",
-     "evidence": [],
+     "state": "erfuellt",
+     "reason": "Das Profil bestätigt, dass ein Bankkredit mit von der Bank verlangten Sicherheiten benötigt wird.",
+     "evidence": [
+      "rueckfrage_bankkredit"
+     ],
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -493,8 +535,10 @@
      "text": "Positive Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen fehlen Angaben.",
-     "evidence": [],
+     "reason": "Die Angabe zu erzielten Umsätzen belegt weder eine positive Kreditwürdigkeit noch die Tragbarkeit für das Unternehmen und die Schlüsselpersonen.",
+     "evidence": [
+      "rueckfrage_marktreif_umsatz"
+     ],
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -507,7 +551,7 @@
      "text": "Betriebsführung durch eine integre, fachlich qualifizierte Person.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung fehlen Angaben.",
+     "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung liegen keine Angaben vor.",
      "evidence": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
@@ -521,8 +565,10 @@
      "text": "Ausgewogene Risikoverteilung zwischen Eigentümerin oder Eigentümer, Bank und BG Mitte.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Risikoverteilung zwischen Eigentümerschaft, Bank und BG Mitte fehlen Angaben.",
-     "evidence": [],
+     "reason": "Die angegebenen Gesamtkosten lassen keine Beurteilung der Risikoverteilung zwischen Eigentümerschaft, Bank und BG Mitte zu.",
+     "evidence": [
+      "budget"
+     ],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -535,7 +581,7 @@
      "text": "Rückbürgschaft der Inhaberin oder des Inhabers, auf mehrere Beteiligte verteilbar.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ohne Angabe zur Rechtsform ist weder die Anwendbarkeit noch eine Rückbürgschaft beurteilbar.",
+     "reason": "Die Rechtsform und damit die Anwendbarkeit sowie eine allfällige Rückbürgschaft sind nicht bekannt.",
      "evidence": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
@@ -549,7 +595,7 @@
      "text": "Todesfallrisikoversicherung.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Zur Todesfallrisikoversicherung fehlen Angaben.",
+     "reason": "Zur Todesfallrisikoversicherung liegen keine Angaben vor.",
      "evidence": [],
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
@@ -562,23 +608,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "bankkredit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Sie einen Bankkredit benötigen und die Bank dafür Sicherheiten verlangt.",
-     "source": {
-      "title": "FAQ, BG Mitte",
-      "url": "https://www.bgm-ccc.ch/faq",
-      "locator": "Hinweis: nur Bürgschaften für Bankkredite"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "kreditwuerdigkeit"
      ],
      "lever": null,
-     "hint": "Klären Sie die Kreditwürdigkeit und Tragbarkeit für das Unternehmen und die Schlüsselpersonen.",
+     "hint": "Klären Sie die Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
      "source": {
       "title": "FAQ, BG Mitte",
       "url": "https://www.bgm-ccc.ch/faq",
@@ -604,7 +637,7 @@
       "risikoverteilung"
      ],
      "lever": null,
-     "hint": "Klären Sie die Risikoverteilung zwischen Eigentümerschaft, Bank und BG Mitte.",
+     "hint": "Klären Sie, wie sich das Risiko zwischen Eigentümerschaft, Bank und BG Mitte verteilt.",
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -617,7 +650,7 @@
       "rueckbuergschaft"
      ],
      "lever": null,
-     "hint": "Klären Sie, wer die Rückbürgschaft übernimmt und ob sie auf mehrere Beteiligte verteilt wird.",
+     "hint": "Klären Sie, ob die Inhaberin oder der Inhaber eine Rückbürgschaft übernimmt und ob diese auf mehrere Beteiligte verteilt wird.",
      "source": {
       "title": "Ordentliche Bürgschaft, BG Mitte",
       "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
@@ -653,7 +686,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/waermedaemmung",
@@ -663,7 +696,7 @@
    "source_checked": "2026-10-23",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 6,
+   "rank": 2,
    "criteria": [
     {
      "criterion_id": "gebaeude_luzern",
@@ -671,7 +704,7 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Ruswil liegt im Kanton Luzern; der Kantonsstandort ist im Profil jedoch als Annahme erfasst.",
+     "reason": "Der Standort liegt gemäss der geografischen Einordnung von Ruswil im Kanton Luzern.",
      "evidence": [
       "standort_kanton",
       "standort_gemeinde"
@@ -687,10 +720,10 @@
      "scope": "programm",
      "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Aus der Tätigkeit als Schreinerei geht eine allfällige Befreiung des Standorts von der CO2-Abgabe nicht hervor.",
+     "state": "erfuellt",
+     "reason": "Laut Rückfrage ist das Unternehmen nicht von der CO2-Abgabe befreit.",
      "evidence": [
-      "taetigkeit"
+      "rueckfrage_keine_co2_befreiung"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -704,7 +737,7 @@
      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Das Gebäude gehört laut Profil der Schreinerei, weshalb es vermutlich weder ein kantonales öffentliches Gebäude noch ein Bundesgebäude ist.",
+     "reason": "Das Werkstattgebäude gehört der Schreinerei und ist daher vermutlich weder ein kantonales öffentliches Gebäude noch ein Bundesgebäude.",
      "evidence": [
       "eigentum_gebaeude",
       "taetigkeit"
@@ -721,8 +754,10 @@
      "text": "Das Gesuch ist vor Baubeginn eingereicht. Baubeginn ist der Beginn der Montage oder Demontage der Dämmung an den beantragten Bauteilen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob das Gesuch vor Beginn der Dämmarbeiten eingereicht wird, ist nicht angegeben.",
-     "evidence": [],
+     "reason": "Ein Projektstart ist angegeben, aber der Zeitpunkt der Gesuchseinreichung ist nicht bekannt.",
+     "evidence": [
+      "projektstart"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -735,7 +770,7 @@
      "text": "Die Baubewilligung für das Gebäude wurde vor dem Jahr 2000 erteilt (Datum der rechtskräftigen Baubewilligung).",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Das Baujahr 1985 spricht für eine Baubewilligung vor 2000, deren rechtskräftiges Datum ist aber nicht belegt.",
+     "reason": "Aus dem Baujahr 1985 lässt sich eine Baubewilligung vor 2000 vermuten, ihr rechtskräftiges Datum ist jedoch nicht belegt.",
      "evidence": [
       "baujahr"
      ],
@@ -751,7 +786,7 @@
      "text": "Nach der Sanierung U-Wert höchstens 0.20 W/m2K (gegen Aussenklima oder bis 2 m im Erdreich) bzw. 0.25 W/m2K (mehr als 2 m im Erdreich).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der vorgesehene U-Wert des Dachs nach der Sanierung ist nicht angegeben.",
+     "reason": "Der U-Wert des Dachs nach der Sanierung ist nicht angegeben.",
      "evidence": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -765,7 +800,7 @@
      "text": "Der U-Wert verbessert sich um mindestens 0.07 W/m2K.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die U-Werte vor und nach der Sanierung sind nicht angegeben.",
+     "reason": "Die U-Werte vor und nach der Sanierung fehlen, sodass die Verbesserung nicht beurteilt werden kann.",
      "evidence": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -779,7 +814,7 @@
      "text": "Die Fördersumme pro Gesuch beträgt mindestens CHF 3'000 (entspricht 50 m2 bei CHF 60/m2).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus den Gesamtkosten lässt sich die Fördersumme für die Dämmung nicht bestimmen.",
+     "reason": "Die Gesamtkosten erlauben ohne förderfähige Dämmfläche keine Bestimmung der Fördersumme.",
      "evidence": [
       "budget"
      ],
@@ -795,7 +830,7 @@
      "text": "Ein GEAK Plus liegt vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Weder die Fördersumme der Basismassnahme noch das Vorliegen eines GEAK Plus sind bekannt.",
+     "reason": "Weder die Fördersumme der Basismassnahme noch das Vorliegen eines GEAK Plus ist bekannt.",
      "evidence": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -809,7 +844,7 @@
      "text": "Für den Bonus: mindestens 90% der Flächen von Dach, Fassade und Boden gegen aussen werden gedämmt, Dach und Fassade gleichzeitig.",
      "kind": "soll",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben umfasst die Dämmung des Dachs, aber keine gleichzeitige Fassadendämmung für den Bonus.",
+     "reason": "Das beschriebene Vorhaben sieht die Dämmung des Dachs, aber keine gleichzeitige Fassadendämmung vor.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -824,23 +859,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "nicht_co2_befreit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmensstandort von der CO2-Abgabe befreit ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "gesuch_vor_baubeginn"
      ],
      "lever": "Gesuch vor Beginn der Dämmarbeiten einreichen",
-     "hint": "Reichen Sie das Gesuch vor Beginn der Dämmarbeiten ein.",
+     "hint": "Klären Sie, ob das Gesuch vor Beginn der Montage oder Demontage der Dämmung an den beantragten Bauteilen eingereicht wurde.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -853,7 +875,7 @@
       "u_wert"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die U-Werte der Bauteile nach der Sanierung die vorgegebenen Grenzen einhalten.",
+     "hint": "Klären Sie, ob die U-Werte der Bauteile nach der Sanierung die geforderten Grenzwerte einhalten.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -866,7 +888,7 @@
       "u_wert_verbesserung"
      ],
      "lever": null,
-     "hint": "Klären Sie, um wie viel sich der U-Wert durch die Dämmung verbessert.",
+     "hint": "Klären Sie, ob sich der U-Wert im geforderten Umfang verbessert.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -915,7 +937,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/waermepumpen",
@@ -933,7 +955,7 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Der Standort in Ruswil lässt auf ein Gebäude im Kanton Luzern schliessen.",
+     "reason": "Der Standort Ruswil spricht für ein Gebäude im Kanton Luzern, die Kantonszuordnung ist im Profil jedoch als Annahme gekennzeichnet.",
      "evidence": [
       "standort_kanton",
       "standort_gemeinde"
@@ -949,9 +971,12 @@
      "scope": "programm",
      "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob der Unternehmensstandort von der CO2-Abgabe befreit ist, geht aus dem Profil nicht hervor.",
-     "evidence": [],
+     "state": "erfuellt",
+     "reason": "Laut Rückfrage ist das Unternehmen nicht von der CO2-Abgabe befreit.",
+     "evidence": [
+      "applicant_type",
+      "rueckfrage_keine_co2_befreiung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -964,10 +989,10 @@
      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus der beschriebenen Schreinerei und ihrem Eigentum am Gebäude lässt sich ableiten, dass es kein kantonales öffentliches Gebäude oder Bundesgebäude ist.",
+     "reason": "Das Gebäude gehört laut Profil der Schreinerei, weshalb ein kantonales oder Bundesgebäude nicht naheliegt.",
      "evidence": [
-      "taetigkeit",
-      "eigentum_gebaeude"
+      "eigentum_gebaeude",
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -981,8 +1006,10 @@
      "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angabe zur Einreichung eines Gesuchs vor Installationsbeginn.",
-     "evidence": [],
+     "reason": "Ein Projektstart ist angegeben, aber weder eine Gesuchseinreichung noch der Installationsbeginn einer Wärmepumpe ist belegt.",
+     "evidence": [
+      "projektstart"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -995,7 +1022,7 @@
      "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben sieht eine Photovoltaikanlage statt einer neuen Anlage zum Ersatz einer Öl-, Erdgas- oder Elektroheizung vor.",
+     "reason": "Geplant sind eine Dachsanierung und eine Photovoltaikanlage statt einer Wärmepumpe zum Ersatz einer Heizung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1011,7 +1038,7 @@
      "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Das angegebene Baujahr belegt, dass es sich um ein bestehendes Gebäude handelt.",
+     "reason": "Das angegebene Baujahr 1985 belegt, dass es sich um ein bestehendes Gebäude handelt.",
      "evidence": [
       "baujahr"
      ],
@@ -1027,7 +1054,7 @@
      "text": "Wärmepumpensystem-Modul (WPSM) mit Anlagenzertifikat FWS.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Da das beschriebene Vorhaben keine Wärmepumpe umfasst, liegt keine Anlage bis 15 kW vor, für die diese Bedingung gilt.",
+     "reason": "Es ist keine Wärmepumpe bis 15 kW geplant, sondern eine Photovoltaikanlage.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1043,7 +1070,7 @@
      "text": "FWS-Gütesiegel oder gleichwertig und Leistungsgarantie EnergieSchweiz.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Da das beschriebene Vorhaben keine Wärmepumpe umfasst, liegt keine Anlage über 15 kW ohne WPSM vor, für die diese Bedingung gilt.",
+     "reason": "Es ist keine Wärmepumpe über 15 kW ohne WPSM geplant, sondern eine Photovoltaikanlage.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1059,7 +1086,7 @@
      "text": "Strom- und Wärmezähler sind installiert (müssen nicht geeicht sein).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angabe zu installierten Strom- und Wärmezählern.",
+     "reason": "Das Profil enthält keine Angaben zu installierten Strom- und Wärmezählern.",
      "evidence": [],
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
@@ -1073,7 +1100,7 @@
      "text": "Die Bohrfirma hat ein FWS-Gütesiegel.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Das beschriebene Vorhaben umfasst keine Sole/Wasser-Wärmepumpe und damit keine dafür eingesetzte Bohrfirma.",
+     "reason": "Es ist keine Sole/Wasser-Wärmepumpe geplant, sondern eine Photovoltaikanlage.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1088,23 +1115,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "nicht_co2_befreit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmensstandort von der CO2-Abgabe befreit ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "gesuch_vor_installationsbeginn"
      ],
      "lever": "Gesuch vor Demontage der alten Heizung bzw. vor Bohrbeginn einreichen",
-     "hint": "Reichen Sie das Gesuch vor der Demontage der alten Heizung beziehungsweise vor Bohrbeginn ein.",
+     "hint": "Klären Sie, ob das Gesuch vor der Demontage der alten Heizung beziehungsweise vor Bohrbeginn eingereicht wurde.",
      "source": {
       "title": "FAQ Förderprogramm Energie Kanton Luzern",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
@@ -1140,7 +1154,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://uwe.lu.ch/themen/energie/foerderprogramme/holzfeuerungen",
@@ -1158,10 +1172,10 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Der Standort wird aufgrund der Angabe Ruswil dem Kanton Luzern zugeordnet.",
+     "reason": "Der Standort in Ruswil spricht für ein Gebäude im Kanton Luzern; die Kantonszuordnung ist im Profil als Annahme erfasst.",
      "evidence": [
-      "standort_kanton",
-      "standort_gemeinde"
+      "standort_gemeinde",
+      "standort_kanton"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1174,10 +1188,10 @@
      "scope": "programm",
      "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Aus der Tätigkeit als Schreinerei geht nicht hervor, ob der Unternehmensstandort von der CO2-Abgabe befreit ist.",
+     "state": "erfuellt",
+     "reason": "Das Unternehmen gibt an, nicht von der CO2-Abgabe befreit zu sein.",
      "evidence": [
-      "taetigkeit"
+      "rueckfrage_keine_co2_befreiung"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1190,11 +1204,11 @@
      "scope": "programm",
      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
      "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Das Gebäude gehört gemäss Profil der Schreinerei und ist damit weder als kantonales öffentliches Gebäude noch als Bundesgebäude beschrieben.",
+     "state": "annahme",
+     "reason": "Das Gebäude gehört laut Profil der Schreinerei, weshalb ein kantonales oder Bundesgebäude nicht naheliegt.",
      "evidence": [
-      "eigentum_gebaeude",
-      "taetigkeit"
+      "taetigkeit",
+      "eigentum_gebaeude"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1208,9 +1222,9 @@
      "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der geplante Zeitpunkt des Vorhabens belegt nicht, dass ein Gesuch vor Installationsbeginn eingereicht wird.",
+     "reason": "Ein Projektstart ist angegeben, aber nicht, ob das Gesuch vor Installationsbeginn eingereicht wird.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "projektstart"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1224,7 +1238,7 @@
      "text": "Die neue Anlage ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral).",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben umfasst eine Dachsanierung und eine Photovoltaikanlage statt einer neuen Heizanlage als Ersatz einer Öl-, Erdgas- oder Elektroheizung.",
+     "reason": "Beschrieben sind eine Dachsanierung und eine Photovoltaikanlage statt des Ersatzes einer Öl-, Erdgas- oder Elektroheizung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1270,7 +1284,7 @@
      "text": "Nachweis QM Holzheizwerke (Stufe gemäss Zuordnungsliste).",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Die beschriebene Anlage ist eine Photovoltaikanlage und keine Holzfeuerung mit einer Feuerungswärmeleistung ab 70 kW.",
+     "reason": "Das beschriebene Vorhaben umfasst keine Holzfeuerung, für die eine Feuerungswärmeleistung von mindestens 70 kW vorliegen könnte.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1286,7 +1300,7 @@
      "text": "Abnahmemessung (CO und Staub) frühestens 3 Monate vor und spätestens 12 Monate nach Inbetriebnahme.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Die beschriebene Anlage ist eine Photovoltaikanlage und keine Feuerungsanlage ab 70 kW, für die eine CO- und Staubmessung vorgesehen ist.",
+     "reason": "Das beschriebene Vorhaben umfasst keine Feuerungsanlage ab 70 kW, für die eine CO- und Staubmessung erforderlich wäre.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1301,23 +1315,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "nicht_co2_befreit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmensstandort von der CO2-Abgabe befreit ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "gesuch_vor_installationsbeginn"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wird.",
+     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wurde.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1353,7 +1354,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Anschluss_an_ein_Waermenetz",
@@ -1362,8 +1363,8 @@
    },
    "source_checked": "2026-10-23",
    "status": "fertig",
-   "fit": "passt_mit_anpassung",
-   "rank": 3,
+   "fit": "passt_nicht",
+   "rank": null,
    "criteria": [
     {
      "criterion_id": "gebaeude_luzern",
@@ -1371,10 +1372,11 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Ruswil wird dem Kanton Luzern zugeordnet, der Kanton ist im Profil jedoch nur als Annahme erfasst.",
+     "reason": "Ruswil liegt im Kanton Luzern, die Kantonszuordnung ist im Profil jedoch als Annahme erfasst.",
      "evidence": [
+      "standort_kanton",
       "standort_gemeinde",
-      "standort_kanton"
+      "vorhaben_beschreibung"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1387,10 +1389,11 @@
      "scope": "programm",
      "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Aus der Tätigkeit als Schreinerei geht nicht hervor, ob der Unternehmensstandort von der CO2-Abgabe befreit ist.",
+     "state": "erfuellt",
+     "reason": "Das Unternehmen gibt an, nicht von der CO2-Abgabe befreit zu sein.",
      "evidence": [
-      "taetigkeit"
+      "applicant_type",
+      "rueckfrage_keine_co2_befreiung"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1404,10 +1407,10 @@
      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus der beschriebenen Schreinerei und dem angegebenen Eigentum lässt sich ableiten, dass es sich nicht um ein kantonales oder ein Bundesgebäude handelt.",
+     "reason": "Das Gebäude gehört laut Profil der Schreinerei und ist daher voraussichtlich weder ein kantonales öffentliches Gebäude noch ein Bundesgebäude.",
      "evidence": [
-      "taetigkeit",
-      "eigentum_gebaeude"
+      "eigentum_gebaeude",
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1421,8 +1424,10 @@
      "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob ein Gesuch vor der Installation einer Übergabestation eingereicht wird, ist nicht angegeben.",
-     "evidence": [],
+     "reason": "Der geplante Projektstart ist angegeben, aber weder eine Gesuchseinreichung noch der Installationsbeginn einer Übergabestation ist belegt.",
+     "evidence": [
+      "projektstart"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1435,7 +1440,7 @@
      "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Das Gebäude stammt aus dem Jahr 1985 und ist damit ein bestehendes Gebäude.",
+     "reason": "Das Gebäude wurde 1985 erstellt und ist damit ein bestehendes Gebäude.",
      "evidence": [
       "baujahr"
      ],
@@ -1450,8 +1455,8 @@
      "scope": "instrument",
      "text": "Das Wärmenetz liefert mindestens 75% erneuerbare Wärme oder Abwärme.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Vorhaben beschreibt eine Photovoltaikanlage, enthält aber keine Angaben zu einem Wärmenetz oder dessen Wärmeanteil.",
+     "state": "nicht_erfuellt",
+     "reason": "Das beschriebene Vorhaben betrifft eine Dachsanierung und eine Photovoltaikanlage statt eines Anschlusses an ein Wärmenetz.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1467,7 +1472,7 @@
      "text": "Ein Wärmeliefervertrag mit dem Netzbetreiber liegt vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob ein Wärmeliefervertrag mit einem Netzbetreiber vorliegt, ist nicht angegeben.",
+     "reason": "Das Profil enthält keine Angabe zu einem Wärmeliefervertrag mit einem Netzbetreiber.",
      "evidence": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1480,36 +1485,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "nicht_co2_befreit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmensstandort von der CO2-Abgabe befreit ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "gesuch_vor_installationsbeginn"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wird.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 19-22"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "erneuerbar_75"
-     ],
-     "lever": null,
-     "hint": "Klären Sie den Anteil erneuerbarer Wärme oder Abwärme im Wärmenetz.",
+     "hint": "Klären Sie, ob das Gesuch vor Installationsbeginn eingereicht wurde.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1545,7 +1524,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": null,
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Ersatz_dezentraler_elektroheizung",
@@ -1563,7 +1542,7 @@
      "text": "Das Gebäude steht im Kanton Luzern.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Ruswil liegt im Kanton Luzern, der Kantonsstandort ist im Profil jedoch als Annahme erfasst.",
+     "reason": "Der Standort Ruswil lässt auf ein Gebäude im Kanton Luzern schliessen.",
      "evidence": [
       "standort_kanton",
       "standort_gemeinde"
@@ -1579,9 +1558,12 @@
      "scope": "programm",
      "text": "Der Unternehmensstandort ist nicht von der CO2-Abgabe befreit.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob der Unternehmensstandort von der CO2-Abgabe befreit ist, geht aus dem Profil nicht hervor.",
-     "evidence": [],
+     "state": "erfuellt",
+     "reason": "Das Unternehmen gibt an, nicht von der CO2-Abgabe befreit zu sein.",
+     "evidence": [
+      "applicant_type",
+      "rueckfrage_keine_co2_befreiung"
+     ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
@@ -1594,10 +1576,10 @@
      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus der beschriebenen Schreinerei und dem Eigentum am Gebäude lässt sich ableiten, dass es sich nicht um ein kantonales öffentliches Gebäude oder ein Bundesgebäude handelt.",
+     "reason": "Das angegebene Eigentum der Schreinerei spricht gegen ein kantonales oder ein Bundesgebäude, belegt dies aber nicht abschliessend.",
      "evidence": [
-      "taetigkeit",
-      "eigentum_gebaeude"
+      "eigentum_gebaeude",
+      "taetigkeit"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1613,7 +1595,8 @@
      "state": "nicht_erfuellt",
      "reason": "Das beschriebene Vorhaben umfasst eine Dachsanierung und eine Photovoltaikanlage statt des Ersatzes einer dezentralen Heizung.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "rueckfrage_dezentrale_heizung"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1627,7 +1610,7 @@
      "text": "Die bestehende Heizung deckte über 50% des jährlichen Heizwärmebedarfs des Gebäudes.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur bestehenden Heizung und ihrem Anteil am jährlichen Heizwärmebedarf enthält das Profil keine Angaben.",
+     "reason": "Zum Anteil einer bestehenden Heizung am jährlichen Heizwärmebedarf liegen keine Angaben vor.",
      "evidence": [],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1641,9 +1624,9 @@
      "text": "Alle dezentralen elektrischen Widerstandsheizungen oder fossilen Heizungen im Gebäude werden ersetzt.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben sieht keinen Ersatz dezentraler elektrischer Widerstandsheizungen oder fossiler Heizungen vor.",
+     "reason": "Laut Rückfrage werden nicht alle dezentralen Heizungen im Gebäude ersetzt.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "rueckfrage_alle_ersetzt"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1657,9 +1640,9 @@
      "text": "Das Gesuch ist vor Baubeginn eingereicht.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der geplante Baubeginn im nächsten Jahr belegt nicht, ob das Gesuch vorher eingereicht wird.",
+     "reason": "Ein geplanter Projektstart ist angegeben, nicht aber, ob das Gesuch davor eingereicht wird.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "projektstart"
      ],
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
@@ -1669,19 +1652,6 @@
     }
    ],
    "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "nicht_co2_befreit"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmensstandort von der CO2-Abgabe befreit ist.",
-     "source": {
-      "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
-      "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
-      "locator": "S. 3, Kap. 2, Ziff. 7"
-     }
-    },
     {
      "type": "infos_fehlen",
      "criterion_ids": [
@@ -1701,529 +1671,11 @@
       "gesuch_vor_baubeginn"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Baubeginn eingereicht wird.",
+     "hint": "Klären Sie, ob das Gesuch vor Baubeginn eingereicht wurde.",
      "source": {
       "title": "Förderprogramm Energie 2026: Förderbedingungen, Förderbeiträge, Gesuchsbeilagen",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
       "locator": "S. 3"
-     }
-    }
-   ],
-   "error": null
-  },
-  {
-   "program_id": "gemeinde-luzern",
-   "instrument_id": "heizungsersatz",
-   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
-   "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
-   "provider": "Stadt Luzern",
-   "level": "gemeinde",
-   "purpose": "Die Stadt Luzern fördert aus dem Energiefonds Heizungsersatz, Solarstrom, E-Mobilität, Abwärmenutzung, Gebäudehülle und Analysen, zusätzlich zu kantonalen und nationalen Beiträgen.",
-   "instrument_type": "beitrag",
-   "funding_summary": "Wärmepumpe Luft/Wasser ab CHF 4'000, Sole/Wasser ab CHF 8'500, Wärmenetzanschluss ab CHF 4'100. Natürliche Kältemittel plus 10%.",
-   "deadline": {
-    "type": "vor_projektstart",
-    "rule": "Gesuch vor Baubeginn digital einreichen.",
-    "next_date": null
-   },
-   "links": {
-    "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
-    "apply": "https://portal.energie-foerderung.ch/sl",
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_nicht",
-   "rank": null,
-   "criteria": [
-    {
-     "criterion_id": "in_stadt_luzern",
-     "scope": "programm",
-     "text": "Gebäude, Anlage oder Projekt befinden sich in der Stadt Luzern.",
-     "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Als Standort ist Ruswil und nicht die Stadt Luzern angegeben.",
-     "evidence": [
-      "standort_gemeinde",
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 1"
-     }
-    },
-    {
-     "criterion_id": "gesuch_vor_realisierung",
-     "scope": "programm",
-     "text": "Gesuch vor Baubeginn bzw. Realisierung, nachträgliche Förderung ausgeschlossen.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob das Gesuch vor Baubeginn eingereicht wird, geht aus dem Profil nicht hervor.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "criterion_id": "drittbeitraege_offenlegen",
-     "scope": "programm",
-     "text": "Beiträge Dritter werden im Gesuch offengelegt.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben dazu, ob Beiträge Dritter im Gesuch offengelegt werden.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "criterion_id": "waermenetzgebiet",
-     "scope": "instrument",
-     "text": "Liegt die Liegenschaft in einem Wärmenetzgebiet und wird ein Anschluss angeboten, gibt es keinen städtischen Beitrag für die Wärmepumpe.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Das Vorhaben sieht eine Photovoltaikanlage und keine Wärmepumpe vor.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.2, Punkt 3"
-     }
-    },
-    {
-     "criterion_id": "oekostrom_wp",
-     "scope": "instrument",
-     "text": "Ab Inbetriebnahme wird ein ökologisches Stromprodukt bezogen.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Das Vorhaben sieht keine Wärmepumpe vor.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.2, Punkt 4"
-     }
-    },
-    {
-     "criterion_id": "warmwasser_anbinden",
-     "scope": "instrument",
-     "text": "Das Warmwasser wird an die neue Wärmeerzeugung angebunden, sofern es nicht erneuerbar aufbereitet wird.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Das Vorhaben sieht keinen Wärmenetzanschluss vor.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.1, Punkt 2"
-     }
-    },
-    {
-     "criterion_id": "geak_ab_10000",
-     "scope": "instrument",
-     "text": "GEAK D, GEAK Plus oder Minergie-Zertifikat.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob die Beiträge die Schwelle überschreiten und ein entsprechender Nachweis erforderlich ist, ist nicht bekannt.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.1 und 6.2, Punkt 5"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "gesuch_vor_realisierung"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Baubeginn beziehungsweise Realisierung eingereicht wird.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "drittbeitraege_offenlegen"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, welche Beiträge Dritter im Gesuch offenzulegen sind.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "geak_ab_10000"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob ein GEAK D, GEAK Plus oder Minergie-Zertifikat vorliegt.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.1 und 6.2, Punkt 5"
-     }
-    }
-   ],
-   "error": null
-  },
-  {
-   "program_id": "gemeinde-luzern",
-   "instrument_id": "photovoltaik",
-   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
-   "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
-   "provider": "Stadt Luzern",
-   "level": "gemeinde",
-   "purpose": "Die Stadt Luzern fördert aus dem Energiefonds Heizungsersatz, Solarstrom, E-Mobilität, Abwärmenutzung, Gebäudehülle und Analysen, zusätzlich zu kantonalen und nationalen Beiträgen.",
-   "instrument_type": "beitrag",
-   "funding_summary": "20% der Pronovo-Einmalvergütung und Zuschläge, plus CHF 200/kWp bei Gründach, CHF 100/m² bei Neigung ab 75 Grad, CHF 300/kWp für blendarme Module.",
-   "deadline": {
-    "type": "vor_projektstart",
-    "rule": "Gesuch vor Baubeginn der PV-Anlage.",
-    "next_date": null
-   },
-   "links": {
-    "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
-    "apply": "https://portal.energie-foerderung.ch/sl",
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_nicht",
-   "rank": null,
-   "criteria": [
-    {
-     "criterion_id": "in_stadt_luzern",
-     "scope": "programm",
-     "text": "Gebäude, Anlage oder Projekt befinden sich in der Stadt Luzern.",
-     "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben wird bei einer Schreinerei in Ruswil beschrieben, nicht in der Stadt Luzern.",
-     "evidence": [
-      "standort_gemeinde",
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 1"
-     }
-    },
-    {
-     "criterion_id": "gesuch_vor_realisierung",
-     "scope": "programm",
-     "text": "Gesuch vor Baubeginn bzw. Realisierung, nachträgliche Förderung ausgeschlossen.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob das Gesuch vor Beginn der Arbeiten eingereicht wird, geht aus dem Profil nicht hervor.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "criterion_id": "drittbeitraege_offenlegen",
-     "scope": "programm",
-     "text": "Beiträge Dritter werden im Gesuch offengelegt.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben dazu, ob Beiträge Dritter im Gesuch offengelegt werden.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "criterion_id": "nicht_freistehend",
-     "scope": "instrument",
-     "text": "Die Anlage ist nicht freistehend (Dach oder Fassade).",
-     "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die geplante Photovoltaikanlage soll auf dem Dach der Werkstatt installiert werden.",
-     "evidence": [
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 7.1, Punkt 7"
-     }
-    },
-    {
-     "criterion_id": "mehrwert_in_stadt",
-     "scope": "instrument",
-     "text": "Der ökologische Mehrwert des eingespeisten Stroms verbleibt in der Stadt Luzern.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben zum Verbleib des ökologischen Mehrwerts von eingespeistem Strom.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 7.1, Punkt 6"
-     }
-    },
-    {
-     "criterion_id": "pronovo_eiv",
-     "scope": "instrument",
-     "text": "Der Beitrag bemisst sich an der Einmalvergütung des Bundes (Pronovo).",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Aus dem Profil geht nicht hervor, welche Einmalvergütung des Bundes für die geplante Anlage massgeblich wäre.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 7.1"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "gesuch_vor_realisierung"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Baubeginn beziehungsweise Realisierung eingereicht wird.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "drittbeitraege_offenlegen"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, welche Beiträge Dritter im Gesuch offenzulegen sind.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "mehrwert_in_stadt"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob der ökologische Mehrwert des eingespeisten Stroms in der Stadt Luzern verbleibt.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 7.1, Punkt 6"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "pronovo_eiv"
-     ],
-     "lever": null,
-     "hint": "Klären Sie die Einmalvergütung des Bundes, an der sich der städtische Beitrag bemisst.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 7.1"
-     }
-    }
-   ],
-   "error": null
-  },
-  {
-   "program_id": "gemeinde-luzern",
-   "instrument_id": "abwaermenutzung",
-   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
-   "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
-   "provider": "Stadt Luzern",
-   "level": "gemeinde",
-   "purpose": "Die Stadt Luzern fördert aus dem Energiefonds Heizungsersatz, Solarstrom, E-Mobilität, Abwärmenutzung, Gebäudehülle und Analysen, zusätzlich zu kantonalen und nationalen Beiträgen.",
-   "instrument_type": "beitrag",
-   "funding_summary": "CHF 0.20 pro kWh eingesparte Primärenergie Wärme bzw. CHF 0.40 pro kWh Elektrizität, höchstens 30% der nicht amortisierbaren Mehrkosten.",
-   "deadline": {
-    "type": "vor_projektstart",
-    "rule": "Gesuch vor Baubeginn.",
-    "next_date": null
-   },
-   "links": {
-    "info": "https://www.stadtluzern.ch/_rte/publikation/420010",
-    "apply": "https://portal.energie-foerderung.ch/sl",
-    "form": null
-   },
-   "source_checked": "2026-10-23",
-   "status": "fertig",
-   "fit": "passt_nicht",
-   "rank": null,
-   "criteria": [
-    {
-     "criterion_id": "in_stadt_luzern",
-     "scope": "programm",
-     "text": "Gebäude, Anlage oder Projekt befinden sich in der Stadt Luzern.",
-     "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben befindet sich in Ruswil und damit nicht in der Stadt Luzern.",
-     "evidence": [
-      "standort_gemeinde"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 1"
-     }
-    },
-    {
-     "criterion_id": "gesuch_vor_realisierung",
-     "scope": "programm",
-     "text": "Gesuch vor Baubeginn bzw. Realisierung, nachträgliche Förderung ausgeschlossen.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob das Gesuch vor Baubeginn eingereicht wird, geht aus dem Profil nicht hervor.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "criterion_id": "drittbeitraege_offenlegen",
-     "scope": "programm",
-     "text": "Beiträge Dritter werden im Gesuch offengelegt.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben zur Offenlegung von Beiträgen Dritter.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "criterion_id": "einsparung_6000_kwh",
-     "scope": "instrument",
-     "text": "Primärenergieeinsparung von mehr als 6'000 kWh pro Jahr.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Eine jährliche Primärenergieeinsparung ist im Profil nicht beziffert.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.4, Punkt 3"
-     }
-    },
-    {
-     "criterion_id": "sia_480",
-     "scope": "instrument",
-     "text": "Wirtschaftlichkeitsberechnung nach SIA 480.",
-     "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Eine Wirtschaftlichkeitsberechnung nach SIA 480 ist im Profil nicht dokumentiert.",
-     "evidence": [],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.4, Punkt 6"
-     }
-    },
-    {
-     "criterion_id": "neubau_anteil",
-     "scope": "instrument",
-     "text": "Bei Neubauten nur der Anteil, der nicht zur Erfüllung der wärmetechnischen Anforderungen nötig ist.",
-     "kind": "muss",
-     "state": "nicht_anwendbar",
-     "reason": "Die Massnahmen betreffen ein bestehendes Gebäude von 1985 und keinen Neubau.",
-     "evidence": [
-      "baujahr",
-      "vorhaben_beschreibung"
-     ],
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.4, Punkt 2"
-     }
-    }
-   ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "gesuch_vor_realisierung"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob das Gesuch vor Baubeginn beziehungsweise Realisierung eingereicht wird.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 2"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "drittbeitraege_offenlegen"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, welche Beiträge Dritter im Gesuch offenzulegen sind.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 3, Punkt 3"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "einsparung_6000_kwh"
-     ],
-     "lever": null,
-     "hint": "Klären Sie die jährliche Primärenergieeinsparung der Abwärmenutzung.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.4, Punkt 3"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "sia_480"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob eine Wirtschaftlichkeitsberechnung nach SIA 480 vorliegt.",
-     "source": {
-      "title": "Förderhandbuch 2026 Energie, Stadt Luzern",
-      "url": "https://www.stadtluzern.ch/_rte/publikation/420010",
-      "locator": "Kap. 6.4, Punkt 6"
      }
     }
    ],
@@ -2260,7 +1712,7 @@
      "text": "Sitz in der Schweiz oder in Liechtenstein.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Ruswil liegt in der Schweiz, der rechtliche Unternehmenssitz ist jedoch nicht ausdrücklich belegt.",
+     "reason": "Ein Sitz in der Schweiz ist aufgrund des angegebenen Standorts Ruswil anzunehmen.",
      "evidence": [
       "standort_kanton"
      ],
@@ -2276,7 +1728,7 @@
      "text": "Höchstens 250 Mitarbeitende.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die angegebene Zahl von 12 Mitarbeitenden liegt unter der Grenze von 250.",
+     "reason": "Mit 12 Mitarbeitenden liegt die Schreinerei unter der Höchstgrenze.",
      "evidence": [
       "mitarbeitende"
      ],
@@ -2292,7 +1744,7 @@
      "text": "Das Unternehmen ist kein Start-up in der Gründungsphase.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angaben zum Unternehmensalter oder zur Gründungsphase.",
+     "reason": "Ob sich das Unternehmen noch in der Gründungsphase befindet, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
@@ -2306,7 +1758,7 @@
      "text": "Das Kapital ist nicht oder zu weniger als der Hälfte im Besitz von Grosskonzernen oder öffentlich-rechtlichen Organisationen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die Eigentumsverhältnisse am Unternehmenskapital sind nicht angegeben.",
+     "reason": "Zur Eigentümerschaft am Kapital des Unternehmens liegen keine Angaben vor.",
      "evidence": [],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
@@ -2320,9 +1772,9 @@
      "text": "Das Projekt wird hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Die Umsetzung am Werkstattgebäude in Ruswil ist aus der Beschreibung naheliegend, aber nicht ausdrücklich als Projektort bestätigt.",
+     "reason": "Die Umsetzung in der Schweiz ist aufgrund des Standorts der Schreinerei und des geplanten Werkstattprojekts anzunehmen.",
      "evidence": [
-      "standort_gemeinde",
+      "standort_kanton",
       "vorhaben_beschreibung"
      ],
      "source": {
@@ -2337,7 +1789,7 @@
      "text": "Das Projekt vermeidet Treibhausgasemissionen.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Dämmung und Photovoltaik lassen eine Vermeidung von Treibhausgasemissionen erwarten, deren Wirkung ist jedoch nicht belegt.",
+     "reason": "Die Dämmung und die Photovoltaikanlage lassen eine Vermeidung von Treibhausgasemissionen erwarten, ohne dass diese im Profil belegt ist.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2353,7 +1805,7 @@
      "text": "Technische Innovation mit dem Ziel des Markteintritts in der Schweiz oder Liechtenstein.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Beschrieben ist eine Gebäudesanierung mit Photovoltaikanlage statt einer technischen Innovation für einen Markteintritt.",
+     "reason": "Beschrieben ist die Sanierung eines Werkstattdachs mit anschliessender Installation einer Photovoltaikanlage, nicht die Entwicklung einer technischen Innovation für den Markteintritt.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2369,8 +1821,10 @@
      "text": "Erhaltene und geplante verwässernde Finanzierungen betragen höchstens das Zehnfache des beantragten Betrags.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Profil nennt weder verwässernde Finanzierungen noch einen beantragten Förderbetrag für den Vergleich.",
-     "evidence": [],
+     "reason": "Das Projektbudget gibt keinen Aufschluss über erhaltene oder geplante verwässernde Finanzierungen und den beantragten Förderbetrag.",
+     "evidence": [
+      "budget"
+     ],
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -2398,7 +1852,7 @@
       "kein_grosskonzern"
      ],
      "lever": null,
-     "hint": "Klären Sie, welcher Kapitalanteil Grosskonzernen oder öffentlich-rechtlichen Organisationen gehört.",
+     "hint": "Klären Sie, welcher Anteil des Kapitals Grosskonzernen oder öffentlich-rechtlichen Organisationen gehört.",
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -2411,7 +1865,7 @@
       "verwaessernde_finanzierung"
      ],
      "lever": null,
-     "hint": "Klären Sie die Höhe erhaltener und geplanter verwässernder Finanzierungen im Verhältnis zum beantragten Betrag.",
+     "hint": "Klären Sie die Höhe der erhaltenen und geplanten verwässernden Finanzierungen im Verhältnis zum beantragten Betrag.",
      "source": {
       "title": "Antrag stellen, Klimastiftung Schweiz",
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
@@ -2444,7 +1898,7 @@
    "source_checked": "2026-10-23",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 7,
+   "rank": 5,
    "criteria": [
     {
      "criterion_id": "energiekosten_20000",
@@ -2452,7 +1906,7 @@
      "text": "Die Beratung lohnt sich ab jährlichen Energiekosten von CHF 20'000.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Die jährlichen Energiekosten sind im Profil nicht angegeben.",
+     "reason": "Die jährlichen Energiekosten sind nicht angegeben.",
      "evidence": [],
      "source": {
       "title": "PEIK Energieberatung für KMU, Startseite",
@@ -2466,7 +1920,7 @@
      "text": "Das Unternehmen ist nicht vom Grossverbraucherartikel der Kantone betroffen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob die Schreinerei vom kantonalen Grossverbraucherartikel betroffen ist, geht aus dem Profil nicht hervor.",
+     "reason": "Ob das Unternehmen vom kantonalen Grossverbraucherartikel betroffen ist, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "source": {
       "title": "Zulassungskriterien, PEIK",
@@ -2480,8 +1934,10 @@
      "text": "Keine Befreiung von der CO2-Abgabe und keine Rückerstattung des Netzzuschlags.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Befreiung von der CO2-Abgabe und zur Rückerstattung des Netzzuschlags liegen keine Angaben vor.",
-     "evidence": [],
+     "reason": "Eine Befreiung von der CO2-Abgabe wird verneint, zur Rückerstattung des Netzzuschlags fehlen jedoch Angaben.",
+     "evidence": [
+      "rueckfrage_keine_co2_befreiung"
+     ],
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2494,7 +1950,7 @@
      "text": "Die Beratung wird nicht bereits über ein anderes Bundesprogramm gefördert.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob die Beratung bereits über ein anderes Bundesprogramm gefördert wird, ist nicht angegeben.",
+     "reason": "Das Profil enthält keine Angabe dazu, ob die Beratung bereits durch ein anderes Bundesprogramm gefördert wird.",
      "evidence": [],
      "source": {
       "title": "Zulassungskriterien, PEIK",
@@ -2510,7 +1966,7 @@
       "energiekosten_20000"
      ],
      "lever": null,
-     "hint": "Klären Sie die Höhe Ihrer jährlichen Energiekosten.",
+     "hint": "Klären Sie Ihre jährlichen Energiekosten.",
      "source": {
       "title": "PEIK Energieberatung für KMU, Startseite",
       "url": "https://peik.ch/",
@@ -2536,7 +1992,7 @@
       "keine_co2_befreiung"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen von der CO2-Abgabe befreit ist oder den Netzzuschlag rückerstattet erhält.",
+     "hint": "Klären Sie, ob Ihr Unternehmen von der CO2-Abgabe befreit ist oder den Netzzuschlag zurückerstattet erhält.",
      "source": {
       "title": "Zulassungskriterien, PEIK",
       "url": "https://peik.ch/zulassungskriterien/",
@@ -2572,7 +2028,7 @@
    "deadline": {
     "type": "vor_projektstart",
     "rule": "Einreichung über das Online-Tool vor Bestellung und Vertragsabschluss. Umsetzung erst nach dem Zuschlagsentscheid.",
-    "next_date": null
+    "next_date": "2027-04-01"
    },
    "links": {
     "info": "https://www.prokw.ch/",
@@ -2590,7 +2046,7 @@
      "text": "Die Massnahme senkt den Stromverbrauch von Geräten, Anlagen, Fahrzeugen oder Gebäuden.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Die beschriebenen Massnahmen belegen keine Senkung des Stromverbrauchs; die Photovoltaikanlage erzeugt Strom.",
+     "reason": "Die beschriebene Dämmung und Photovoltaikanlage belegen keine Senkung des Stromverbrauchs.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2606,7 +2062,7 @@
      "text": "Umsetzung in der Schweiz.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Der Standort Ruswil lässt eine Umsetzung in der Schweiz annehmen.",
+     "reason": "Die Umsetzung in der Schweiz ist aufgrund des als Annahme erfassten Standorts Ruswil wahrscheinlich.",
      "evidence": [
       "standort_kanton"
      ],
@@ -2622,7 +2078,7 @@
      "text": "Bestehende Anlagen werden ersetzt oder optimiert.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Beschrieben sind eine Dachsanierung und eine neue Photovoltaikanlage, nicht der Ersatz oder die Optimierung einer bestehenden Anlage.",
+     "reason": "Das beschriebene Vorhaben betrifft eine Dachsanierung und die Installation einer Photovoltaikanlage statt den Ersatz oder die Optimierung einer bestehenden Anlage zur Stromeinsparung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2638,9 +2094,9 @@
      "text": "Die Massnahme ist noch nicht begonnen: Material erst nach dem Zuschlag bestellen und Verträge erst danach unterzeichnen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der geplante Zeitpunkt sagt nicht aus, ob Material bereits bestellt oder Verträge unterzeichnet wurden.",
+     "reason": "Der angegebene künftige Projektstart belegt nicht, ob Material bereits bestellt oder Verträge unterzeichnet wurden.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "projektstart"
      ],
      "source": {
       "title": "ProKilowatt, Startseite",
@@ -2654,7 +2110,7 @@
      "text": "Die Amortisationsdauer liegt über 4 Jahren.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus den angegebenen Kosten allein lässt sich die Amortisationsdauer nicht bestimmen.",
+     "reason": "Aus dem angegebenen Budget lässt sich die Amortisationsdauer nicht bestimmen.",
      "evidence": [
       "budget"
      ],
@@ -2671,9 +2127,7 @@
      "kind": "bewertung",
      "state": "unbekannt",
      "reason": "Ohne Angaben zum Förderbeitrag und zu eingesparten Kilowattstunden lässt sich das Kosten-Nutzen-Verhältnis nicht bestimmen.",
-     "evidence": [
-      "budget"
-     ],
+     "evidence": [],
      "source": {
       "title": "ProKilowatt, Häufige Fragen (FR)",
       "url": "https://www.prokw.ch/faq/",
@@ -2686,7 +2140,7 @@
      "text": "Einreichung als Projekt bei Investitionssummen über CHF 70'000. Darunter kann ein Programm mit garantierter Förderung passender sein.",
      "kind": "soll",
      "state": "erfuellt",
-     "reason": "Die angegebene Investitionssumme liegt über der Schwelle für eine Einreichung als Projekt.",
+     "reason": "Die angegebene Investitionssumme liegt über der Schwelle für die Einreichung als Projekt.",
      "evidence": [
       "budget"
      ],
@@ -2704,7 +2158,7 @@
       "nicht_begonnen"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob bereits Material bestellt, Verträge unterzeichnet oder die Massnahme begonnen wurde.",
+     "hint": "Klären Sie, ob die Massnahme noch nicht begonnen hat und weder Material bestellt noch Verträge unterzeichnet wurden.",
      "source": {
       "title": "ProKilowatt, Startseite",
       "url": "https://www.prokw.ch/",
@@ -2730,7 +2184,7 @@
       "kosten_nutzen_8_rp"
      ],
      "lever": "Tieferen Förderbetrag pro eingesparte kWh beantragen, um die Zuschlagschance zu erhöhen",
-     "hint": "Beantragen Sie einen tieferen Förderbetrag pro eingesparte Kilowattstunde, um Ihre Zuschlagschance zu erhöhen.",
+     "hint": "Klären Sie, welchen Förderbeitrag pro eingesparte kWh Sie beantragen wollen.",
      "source": {
       "title": "ProKilowatt, Häufige Fragen (FR)",
       "url": "https://www.prokw.ch/faq/",
@@ -2771,9 +2225,9 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die geplante Anlagenleistung liegt mit etwa 100 kWp über der Mindestleistung.",
+     "reason": "Die angegebene Anlagenleistung liegt über 2 kW.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
@@ -2786,8 +2240,8 @@
      "scope": "instrument",
      "text": "Die Anlage hat einen festen Standort.",
      "kind": "muss",
-     "state": "annahme",
-     "reason": "Die Installation auf dem Werkstattdach lässt einen festen Standort erwarten.",
+     "state": "erfuellt",
+     "reason": "Die Installation auf dem Werkstattdach belegt einen festen Standort.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2803,7 +2257,7 @@
      "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Eigentum am Gebäude ist angegeben, nicht aber das Eigentum am Grundstück oder eine allfällige Zustimmung der Grundeigentümerschaft.",
+     "reason": "Das Eigentum am Gebäude ist belegt, nicht aber das Grundeigentum oder eine allfällige Zustimmung der Grundeigentümerin.",
      "evidence": [
       "eigentum_gebaeude"
      ],
@@ -2818,10 +2272,10 @@
      "scope": "instrument",
      "text": "Die Anlage hat weniger als 100 kW. Bei grösseren Anlagen wird die Leistung über 99.9 kW in der KLEIV nicht gefördert.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Bei einer geplanten Leistung von etwa 100 kWp ist nicht belegt, dass die Anlage unter 100 kW bleibt.",
+     "state": "nicht_erfuellt",
+     "reason": "Die in der Rückfrage angegebene Leistung beträgt mindestens 100 kW und liegt damit nicht unter 100 kW.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
@@ -2835,9 +2289,10 @@
      "text": "Die Anlage ist realisiert. Das Gesuch kann erst danach eingereicht werden.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Die Installation ist erst für nächstes Jahr geplant, sodass die Anlage noch nicht realisiert ist.",
+     "reason": "Die Anlage ist noch geplant und somit derzeit nicht realisiert.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "projektstart"
      ],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
@@ -2851,7 +2306,7 @@
      "text": "Bei Erweiterungen mindestens 2 kW zusätzliche Leistung, angeschlossen an die Grundanlage.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Das Vorhaben beschreibt eine neue Installation und keine Erweiterung einer bestehenden Photovoltaikanlage.",
+     "reason": "Das Vorhaben beschreibt die Installation einer Anlage und keine Erweiterung einer bestehenden Anlage.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2874,19 +2329,6 @@
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
       "locator": "Unterlagen"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "unter_100_kw"
-     ],
-     "lever": null,
-     "hint": "Klären Sie die Leistung der Photovoltaikanlage.",
-     "source": {
-      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
-      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
-      "locator": null
      }
     }
    ],
@@ -2914,7 +2356,7 @@
    },
    "source_checked": "2026-10-23",
    "status": "fertig",
-   "fit": "passt_mit_anpassung",
+   "fit": "passt_gut",
    "rank": 1,
    "criteria": [
     {
@@ -2923,9 +2365,10 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die geplante Photovoltaikanlage mit etwa 100 kWp liegt deutlich über der Mindestleistung von 2 kW.",
+     "reason": "Die angegebene Anlagenleistung liegt über der Mindestleistung.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
@@ -2938,8 +2381,8 @@
      "scope": "instrument",
      "text": "Die Anlage hat einen festen Standort.",
      "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die Installation auf dem Werkstattdach belegt einen festen Standort der Anlage.",
+     "state": "annahme",
+     "reason": "Die geplante Installation auf dem Werkstattdach spricht für einen festen Standort.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -2954,8 +2397,8 @@
      "scope": "instrument",
      "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Eigentum am Gebäude ist angegeben, aber das Profil klärt weder das Grundeigentum noch eine allfällig erforderliche Zustimmung.",
+     "state": "annahme",
+     "reason": "Das Eigentum am Gebäude spricht dafür, dass keine Zustimmung einer anderen Grundeigentümerin nötig ist, belegt aber das Grundeigentum nicht ausdrücklich.",
      "evidence": [
       "eigentum_gebaeude"
      ],
@@ -2970,10 +2413,10 @@
      "scope": "instrument",
      "text": "Die Anlage hat eine Leistung ab 100 kW.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Die Angabe «etwa 100 kWp» belegt nicht, dass die installierte Leistung mindestens 100 kW erreicht.",
+     "state": "erfuellt",
+     "reason": "Die Rückfrage bestätigt eine geplante Anlagenleistung von mindestens 100 kW.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
@@ -2982,34 +2425,7 @@
      }
     }
    ],
-   "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "zustimmung_grundeigentuemer"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder deren Zustimmung vorliegt.",
-     "source": {
-      "title": "Gesuch stellen, Einmalvergütung, Pronovo",
-      "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
-      "locator": "Unterlagen"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "ab_100_kw"
-     ],
-     "lever": null,
-     "hint": "Klären Sie die Leistung der Photovoltaikanlage.",
-     "source": {
-      "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
-      "url": "https://pronovo.ch/de/foerderung/photovoltaik/",
-      "locator": null
-     }
-    }
-   ],
+   "gaps": [],
    "error": null
   },
   {
@@ -3034,8 +2450,8 @@
    },
    "source_checked": "2026-10-23",
    "status": "fertig",
-   "fit": "passt_mit_anpassung",
-   "rank": 2,
+   "fit": "passt_nicht",
+   "rank": null,
    "criteria": [
     {
      "criterion_id": "min_2_kw",
@@ -3043,9 +2459,9 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "erfuellt",
-     "reason": "Die geplante Photovoltaikanlage mit etwa 100 kWp liegt über der Mindestleistung.",
+     "reason": "Die geplante Anlage überschreitet die Mindestleistung von 2 kW.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
@@ -3059,7 +2475,7 @@
      "text": "Die Anlage hat einen festen Standort.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus der geplanten Installation auf dem Werkstattdach lässt sich ein fester Standort ableiten.",
+     "reason": "Die Installation auf dem Werkstattdach deutet auf einen festen Standort hin.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -3075,7 +2491,7 @@
      "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das Eigentum am Gebäude ist angegeben, nicht aber das Grundeigentum oder gegebenenfalls dessen Zustimmung.",
+     "reason": "Das Eigentum am Gebäude ist belegt, nicht aber das Eigentum am Grundstück oder eine Zustimmung der Grundeigentümerschaft.",
      "evidence": [
       "eigentum_gebaeude"
      ],
@@ -3090,9 +2506,11 @@
      "scope": "instrument",
      "text": "Die gesamte Elektrizität wird eingespeist, kein Eigenverbrauch.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Das Profil enthält keine Angabe dazu, ob die gesamte Elektrizität ohne Eigenverbrauch eingespeist wird.",
-     "evidence": [],
+     "state": "nicht_erfuellt",
+     "reason": "Die vollständige Einspeisung ohne Eigenverbrauch wurde in der Rückfrage verneint.",
+     "evidence": [
+      "rueckfrage_ohne_eigenverbrauch"
+     ],
      "source": {
       "title": "Häufige Fragen Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
@@ -3104,10 +2522,11 @@
      "scope": "instrument",
      "text": "Die Anlage hat 2 kW bis 149.99 kW.",
      "kind": "muss",
-     "state": "erfuellt",
-     "reason": "Die geplante Leistung von etwa 100 kWp liegt im geforderten Bereich.",
+     "state": "annahme",
+     "reason": "Die mit etwa 100 kWp beschriebene Anlage liegt voraussichtlich innerhalb des verlangten Leistungsbereichs, die Obergrenze ist aber nicht verbindlich belegt.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "rueckfrage_min_2_kw"
      ],
      "source": {
       "title": "Einmalvergütung Photovoltaik, Webseite Pronovo",
@@ -3128,19 +2547,6 @@
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
       "locator": "Unterlagen"
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "ohne_eigenverbrauch"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob die gesamte erzeugte Elektrizität ohne Eigenverbrauch eingespeist wird.",
-     "source": {
-      "title": "Häufige Fragen Einmalvergütung, Pronovo",
-      "url": "https://pronovo.ch/de/foerderung/photovoltaik/haeufige-fragen/",
-      "locator": "Eigenverbrauch"
      }
     }
    ],
@@ -3177,7 +2583,7 @@
      "text": "Das Unternehmen hat seinen Sitz in der Schweiz.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus dem Standort Ruswil wird ein Sitz in der Schweiz abgeleitet, ein Unternehmenssitz ist jedoch nicht ausdrücklich belegt.",
+     "reason": "Der Standort Ruswil deutet auf einen Sitz in der Schweiz hin, der Unternehmenssitz ist jedoch nicht ausdrücklich bestätigt.",
      "evidence": [
       "standort_kanton",
       "standort_gemeinde"
@@ -3193,8 +2599,8 @@
      "scope": "instrument",
      "text": "Die Innovation spart CO2-Emissionen direkt oder indirekt ein, mit Nachweis.",
      "kind": "muss",
-     "state": "nicht_erfuellt",
-     "reason": "Die beschriebene Dachsanierung und Photovoltaikanlage belegen keine Innovation mit nachgewiesener CO2-Einsparung.",
+     "state": "unbekannt",
+     "reason": "Die geplante Dämmung und Photovoltaikanlage könnten CO2-Emissionen einsparen, ein Nachweis für die verlangte Innovation liegt jedoch nicht vor.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -3210,7 +2616,7 @@
      "text": "Innovatives Produkt oder Verfahren mit guten Marktchancen.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben beschreibt eine Gebäudesanierung und die Installation einer Photovoltaikanlage statt eines innovativen Produkts oder Verfahrens mit Marktchancen.",
+     "reason": "Beschrieben sind eine Dachsanierung und die Installation einer Photovoltaikanlage, nicht ein innovatives Produkt oder Verfahren mit Marktchancen.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -3225,9 +2631,11 @@
      "scope": "instrument",
      "text": "Das Unternehmen ist marktreif und erzielt bereits Umsätze von mindestens CHF 100'000.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Zum erzielten Umsatz und zur Marktreife liegen keine ausreichenden Angaben vor.",
-     "evidence": [],
+     "state": "erfuellt",
+     "reason": "Die Rückfrage bestätigt, dass das Unternehmen bereits Umsätze von mindestens CHF 100'000 erzielt.",
+     "evidence": [
+      "rueckfrage_marktreif_umsatz"
+     ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -3240,7 +2648,7 @@
      "text": "Nicht überschuldet, nicht zahlungsunfähig, positives Eigenkapital. Rangrücktritte beheben keine Überschuldung.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Zahlungsfähigkeit, Verschuldung und Höhe des Eigenkapitals liegen keine Angaben vor.",
+     "reason": "Zur Zahlungsfähigkeit, Überschuldung und Höhe des Eigenkapitals enthält das Profil keine Angaben.",
      "evidence": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
@@ -3254,8 +2662,10 @@
      "text": "Kreditwürdigkeit, die sich auch auf die im Business Plan plausibel dargelegte zukünftige Ertragslage stützen kann.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die Kreditwürdigkeit und eine plausible zukünftige Ertragslage sind nicht belegt.",
-     "evidence": [],
+     "reason": "Der Bedarf an einem Bankkredit belegt weder die Kreditwürdigkeit noch eine plausibel dargelegte künftige Ertragslage.",
+     "evidence": [
+      "rueckfrage_bankkredit"
+     ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -3268,7 +2678,7 @@
      "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert (neues Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel, vorhandene liquide Mittel).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die angegebenen Gesamtkosten lassen keinen Schluss auf den Anteil der Finanzierung aus anderen Mitteln zu.",
+     "reason": "Das Budget ist angegeben, aber zur Finanzierung von mindestens 40 Prozent mit anderen Mitteln fehlen Angaben.",
      "evidence": [
       "budget"
      ],
@@ -3284,10 +2694,11 @@
      "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
      "kind": "soll",
      "state": "annahme",
-     "reason": "Aus der Schreinerei in Ruswil lässt sich ein Teil der Wertschöpfung in der Schweiz ableiten, dessen Umfang ist aber nicht belegt.",
+     "reason": "Die Schreinerei mit Werkstatt in Ruswil deutet auf Wertschöpfung in der Schweiz hin, deren Umfang ist jedoch nicht belegt.",
      "evidence": [
       "taetigkeit",
-      "standort_gemeinde"
+      "standort_gemeinde",
+      "vorhaben_beschreibung"
      ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
@@ -3300,14 +2711,14 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "marktreif_umsatz"
+      "co2_einsparung"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen marktreif ist und die erforderlichen Umsätze erzielt.",
+     "hint": "Klären Sie, ob und wie die Innovation nachweislich CO2-Emissionen einspart.",
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
-      "locator": null
+      "locator": "Umweltnutzen"
      }
     },
     {
@@ -3316,7 +2727,7 @@
       "positives_eigenkapital"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen zahlungsfähig, nicht überschuldet und mit positivem Eigenkapital ausgestattet ist.",
+     "hint": "Klären Sie, ob Ihr Unternehmen zahlungsfähig und nicht überschuldet ist sowie positives Eigenkapital ausweist.",
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -3342,7 +2753,7 @@
       "eigenfinanzierung_40"
      ],
      "lever": null,
-     "hint": "Klären Sie, welcher Anteil des Vorhabens bereits mit anderen Mitteln finanziert ist.",
+     "hint": "Klären Sie, welcher Anteil des Vorhabens durch andere Mittel finanziert ist.",
      "source": {
       "title": "Konditionen, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
@@ -3376,11 +2787,31 @@
   },
   {
    "program_id": "gemeinde-luzern",
+   "instrument_id": "heizungsersatz",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil.",
+   "rule": "kanton",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
    "instrument_id": "desinvestitionsbeitrag",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil.",
+   "rule": "kanton",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "photovoltaik",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -3389,8 +2820,18 @@
    "instrument_id": "e-mobilitaet",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil.",
+   "rule": "kanton",
+   "availability_status": null,
+   "next_round": null
+  },
+  {
+   "program_id": "gemeinde-luzern",
+   "instrument_id": "abwaermenutzung",
+   "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
+   "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Ruswil.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -3551,46 +2992,37 @@
     "phase": "jetzt",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
-    "title": "Finanzierung für die Berghilfe klären",
+    "title": "Finanzierung für Berghilfe-Projekt klären",
     "date": null,
     "date_rule": null,
-    "action": "Beantragen Sie für Ihren gewerblichen Betrieb ein verzinsliches Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag."
+    "action": "Beantragen Sie für Ihren gewerblichen Betrieb ein Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag."
    },
    {
     "phase": "vor_projektstart",
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "waermedaemmung",
-    "title": "Gesuch für Wärmedämmung einreichen",
-    "date": null,
+    "title": "Gesuch für Gebäudehülle und Bonus einreichen",
+    "date": "2027-04-01",
     "date_rule": "vor Baubeginn",
     "action": "Reichen Sie das Gesuch für die Wärmedämmung der Gebäudehülle mit Bonus Gebäudehülleneffizienz ein."
-   },
-   {
-    "phase": "vor_projektstart",
-    "program_id": "foerderprogramm-energie-lu",
-    "instrument_id": "waermenetz-anschluss",
-    "title": "Gesuch für Wärmenetzanschluss einreichen",
-    "date": null,
-    "date_rule": "vor Installationsbeginn",
-    "action": "Reichen Sie das Gesuch für den Anschluss an ein Wärmenetz ein."
    },
    {
     "phase": "gesuch",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
-    "title": "Projektbeitrag der Berghilfe beantragen",
+    "title": "Projektbeitrag der Schweizer Berghilfe beantragen",
     "date": null,
     "date_rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
-    "action": "Reichen Sie das Gesuch für den Projektbeitrag der Schweizer Berghilfe ein."
+    "action": "Reichen Sie das Online-Gesuch für den Projektbeitrag der Schweizer Berghilfe ein."
    },
    {
     "phase": "gesuch",
     "program_id": "bg-mitte",
     "instrument_id": "ordentliche-buergschaft",
-    "title": "Ordentliche Bürgschaft beantragen",
+    "title": "Ordentliche Bürgschaft für Bankkredit beantragen",
     "date": null,
     "date_rule": "Gesuch jederzeit mit Unterlagen einreichen.",
-    "action": "Reichen Sie das Gesuch für die Bürgschaft eines Bankkredits mit den erforderlichen Unterlagen ein."
+    "action": "Reichen Sie das Gesuch für die ordentliche Bürgschaft mit den Unterlagen ein."
    },
    {
     "phase": "gesuch",
@@ -3599,51 +3031,22 @@
     "title": "PEIK-Energieberatung anfragen",
     "date": null,
     "date_rule": "Keine Frist genannt. Einstieg über eine kostenlose Erstberatung.",
-    "action": "Steigen Sie über die kostenlose Erstberatung in die PEIK-Energieberatung und Umsetzungsbegleitung ein."
+    "action": "Nutzen Sie die kostenlose Erstberatung als Einstieg in die PEIK-Energieberatung und Umsetzungsbegleitung."
    },
    {
     "phase": "gesuch",
     "program_id": "pronovo",
     "instrument_id": "greiv",
-    "title": "Grosse Einmalvergütung beantragen",
+    "title": "Grosse Einmalvergütung für Photovoltaik beantragen",
     "date": null,
     "date_rule": "Gesuch kann bereits vor der Realisierung eingereicht werden. Die Anlage muss nicht vor einer Förderzusage erstellt werden.",
     "action": "Reichen Sie das Gesuch für die Grosse Einmalvergütung Ihrer Photovoltaikanlage ein."
-   },
-   {
-    "phase": "gesuch",
-    "program_id": "pronovo",
-    "instrument_id": "heiv",
-    "title": "Hohe Einmalvergütung beantragen",
-    "date": null,
-    "date_rule": "Zeitpunkt der Gesuchstellung für HEIV in den gesichteten Quellen nicht genannt.",
-    "action": "Reichen Sie das Gesuch für die Hohe Einmalvergütung Ihrer Photovoltaikanlage ohne Eigenverbrauch ein."
    }
   ],
-  "warnings": [
-   {
-    "type": "bedingt",
-    "items": [
-     {
-      "program_id": "foerderprogramm-energie-lu",
-      "instrument_id": "waermedaemmung"
-     },
-     {
-      "program_id": "foerderprogramm-energie-lu",
-      "instrument_id": "waermenetz-anschluss"
-     }
-    ],
-    "text": "Wärmenetzanschluss: Eine Doppelförderung ist ausgeschlossen. Bei Monitoringmethode 2 des Netzbetreibers ist die Anschlussförderung nur mit Vereinbarung mit dem Kanton möglich.",
-    "source": {
-     "title": "FAQ Förderprogramm Energie Kanton Luzern",
-     "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-     "locator": "Abschn. 4.4.2"
-    }
-   }
-  ],
+  "warnings": [],
   "next_steps": [
    {
-    "text": "Beantragen Sie für Ihren gewerblichen Betrieb ein verzinsliches Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag.",
+    "text": "Beantragen Sie für Ihren gewerblichen Betrieb ein Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag.",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
     "link": "https://gesuch.berghilfe.ch/?locale=de",
@@ -3654,31 +3057,24 @@
     "program_id": "foerderprogramm-energie-lu",
     "instrument_id": "waermedaemmung",
     "link": "https://portal.dasgebaeudeprogramm.ch/lu",
-    "due": null
+    "due": "2027-04-01"
    },
    {
-    "text": "Reichen Sie das Gesuch für den Anschluss an ein Wärmenetz ein.",
-    "program_id": "foerderprogramm-energie-lu",
-    "instrument_id": "waermenetz-anschluss",
-    "link": "https://portal.dasgebaeudeprogramm.ch/lu",
-    "due": null
-   },
-   {
-    "text": "Reichen Sie das Gesuch für den Projektbeitrag der Schweizer Berghilfe ein.",
+    "text": "Reichen Sie das Online-Gesuch für den Projektbeitrag der Schweizer Berghilfe ein.",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
     "link": "https://gesuch.berghilfe.ch/?locale=de",
     "due": null
    },
    {
-    "text": "Reichen Sie das Gesuch für die Bürgschaft eines Bankkredits mit den erforderlichen Unterlagen ein.",
+    "text": "Reichen Sie das Gesuch für die ordentliche Bürgschaft mit den Unterlagen ein.",
     "program_id": "bg-mitte",
     "instrument_id": "ordentliche-buergschaft",
     "link": "https://www.bgm-ccc.ch/vorab-check",
     "due": null
    },
    {
-    "text": "Steigen Sie über die kostenlose Erstberatung in die PEIK-Energieberatung und Umsetzungsbegleitung ein.",
+    "text": "Nutzen Sie die kostenlose Erstberatung als Einstieg in die PEIK-Energieberatung und Umsetzungsbegleitung.",
     "program_id": "peik",
     "instrument_id": "peik-energieberatung",
     "link": "https://peik.ch/formular",
@@ -3688,13 +3084,6 @@
     "text": "Reichen Sie das Gesuch für die Grosse Einmalvergütung Ihrer Photovoltaikanlage ein.",
     "program_id": "pronovo",
     "instrument_id": "greiv",
-    "link": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
-    "due": null
-   },
-   {
-    "text": "Reichen Sie das Gesuch für die Hohe Einmalvergütung Ihrer Photovoltaikanlage ohne Eigenverbrauch ein.",
-    "program_id": "pronovo",
-    "instrument_id": "heiv",
     "link": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
     "due": null
    }

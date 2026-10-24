@@ -1,8 +1,8 @@
 {
- "run_id": "run_67587f7c",
+ "run_id": "run_b8c79a1b",
  "status": "fertig",
- "created_at": "2026-10-24T02:15:18.693088Z",
- "completed_at": "2026-10-24T02:15:41.386408Z",
+ "created_at": "2026-10-24T03:42:22.029082Z",
+ "completed_at": "2026-10-24T03:42:38.960745Z",
  "today": "2026-10-24",
  "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
  "profile": {
@@ -13,7 +13,7 @@
     "value": "LU",
     "status": "annahme",
     "origin": "text",
-    "quote": "Unsere Bäckerei in Sursee",
+    "quote": "Sursee",
     "note": "Sursee liegt im Kanton Luzern."
    },
    "standort_gemeinde": {
@@ -25,17 +25,18 @@
    },
    "applicant_type": {
     "value": [
-     "unternehmen"
+     "unternehmen",
+     "kmu"
     ],
     "status": "annahme",
     "origin": "text",
-    "quote": "Unsere Bäckerei",
-    "note": "Eine Bäckerei wird als Unternehmen eingeordnet."
+    "quote": "Unsere Bäckerei in Sursee mit 25 Mitarbeitenden",
+    "note": "Die Bäckerei wird als Unternehmen eingeordnet; die 25 Mitarbeitenden sprechen für ein KMU."
    },
    "art_des_vorhabens": {
     "value": [
-     "digitalisierung",
-     "investition"
+     "investition",
+     "digitalisierung"
     ],
     "status": "angegeben",
     "origin": "text",
@@ -52,10 +53,10 @@
     "note": "Eine Bäckerei wird dem Gewerbe zugeordnet."
    },
    "partner": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
-    "quote": null,
+    "value": [],
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Wir kaufen beides fertig beim Hersteller.",
     "note": null
    },
    "vorhaben_beschreibung": {
@@ -150,11 +151,11 @@
     "note": null
    },
    "projektstart": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
+    "value": "2027-02",
+    "status": "angegeben",
+    "origin": "rueckfrage",
     "quote": null,
-    "note": null
+    "note": "Rückfrage «Wann beginnt das Projekt, oder wann hat es begonnen?»: 2027-02"
    },
    "baujahr": {
     "value": null,
@@ -176,6 +177,13 @@
     "origin": null,
     "quote": null,
     "note": null
+   },
+   "rueckfrage_marktreif_umsatz": {
+    "value": "Ja",
+    "status": "angegeben",
+    "origin": "rueckfrage",
+    "quote": null,
+    "note": "Rückfrage «Erzielt Ihr Unternehmen bereits Umsätze von mindestens CHF 100'000?»: Ja"
    }
   }
  },
@@ -203,7 +211,7 @@
    "source_checked": "2026-10-23",
    "status": "fertig",
    "fit": "passt_mit_anpassung",
-   "rank": 1,
+   "rank": 2,
    "criteria": [
     {
      "criterion_id": "berggebiet",
@@ -211,10 +219,9 @@
      "text": "Das Projekt schafft Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet. Die Region wird geprüft.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Der Standort Sursee ist genannt, aber ob das Projekt Arbeitsplätze und Wertschöpfung im geprüften Berggebiet schafft, geht daraus nicht hervor.",
+     "reason": "Der Standort Sursee ist angegeben, aber ob das Projekt Arbeitsplätze und Wertschöpfung im geprüften Berggebiet schafft, ist nicht belegt.",
      "evidence": [
-      "standort_gemeinde",
-      "vorhaben_beschreibung"
+      "standort_gemeinde"
      ],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -228,7 +235,7 @@
      "text": "Die Trägerschaft engagiert sich finanziell mit Eigenmitteln, Arbeit oder Material.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die genannten Projektkosten belegen noch keinen finanziellen Eigenbeitrag der Trägerschaft.",
+     "reason": "Das Budget belegt nicht, ob die Trägerschaft Eigenmittel, Arbeit oder Material einbringt.",
      "evidence": [
       "budget"
      ],
@@ -244,7 +251,7 @@
      "text": "Nach Eigenleistungen und tragbaren Fremdfinanzierungen (öffentliche Investitionshilfen, Darlehen) bleibt ein Fehlbetrag.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Aus den genannten Projektkosten lässt sich ohne Angaben zu Eigenleistungen und Fremdfinanzierung kein Fehlbetrag ableiten.",
+     "reason": "Aus dem Budget geht nicht hervor, ob nach Eigenleistungen und tragbaren Fremdfinanzierungen ein Fehlbetrag bleibt.",
      "evidence": [
       "budget"
      ],
@@ -260,7 +267,7 @@
      "text": "Das Projekt ist konkret und die Planung fortgeschritten.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Die geplanten Anschaffungen sind konkret beschrieben, der Stand der Planung ist jedoch nicht belegt.",
+     "reason": "Die geplanten Anschaffungen sind konkret beschrieben, der Planungsstand ist jedoch nicht belegt.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -276,7 +283,7 @@
      "text": "Es besteht eine finanzielle Notwendigkeit. Die gesamte finanzielle Situation wird geprüft, ohne feste Grenzen.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur gesamten finanziellen Situation liegen keine Angaben vor, aus denen sich eine finanzielle Notwendigkeit beurteilen liesse.",
+     "reason": "Die Angaben belegen keine finanzielle Notwendigkeit des Projekts.",
      "evidence": [],
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
@@ -305,7 +312,7 @@
       "finanzielles_engagement"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob und wie sich die Trägerschaft mit Eigenmitteln, Arbeit oder Material beteiligt.",
+     "hint": "Klären Sie, welche Eigenmittel, Arbeit oder Materialien die Trägerschaft einbringt.",
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -318,7 +325,7 @@
       "finanzierungsluecke"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob nach Eigenleistungen und tragbaren Fremdfinanzierungen ein Fehlbetrag bleibt.",
+     "hint": "Klären Sie, welcher Fehlbetrag nach Eigenleistungen und tragbaren Fremdfinanzierungen verbleibt.",
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
@@ -344,10 +351,226 @@
       "finanzielle_notwendigkeit"
      ],
      "lever": null,
-     "hint": "Klären Sie anhand der gesamten finanziellen Situation, ob eine finanzielle Notwendigkeit besteht.",
+     "hint": "Klären Sie anhand der gesamten finanziellen Situation, weshalb eine Finanzierungslücke besteht.",
      "source": {
       "title": "Gesuch einreichen, Schweizer Berghilfe",
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+      "locator": "Voraussetzungen"
+     }
+    }
+   ],
+   "error": null
+  },
+  {
+   "program_id": "bg-mitte",
+   "instrument_id": "ordentliche-buergschaft",
+   "program_name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+   "instrument_name": "Ordentliche Bürgschaft für Bankkredite",
+   "provider": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+   "level": "region",
+   "purpose": "BG Mitte verbürgt Bankkredite von KMU für Investitionen, Wachstum, Nachfolge und Gründung, wenn Eigenkapital oder Sicherheiten fehlen. Sie ist eine vom Bund anerkannte Bürgschaftsgenossenschaft.",
+   "instrument_type": "buergschaft",
+   "funding_summary": "Bürgschaft für einen Bankkredit bis maximal CHF 1 Mio., Amortisation bis 10 Jahre.",
+   "deadline": {
+    "type": "laufend",
+    "rule": "Gesuch jederzeit mit Unterlagen einreichen.",
+    "next_date": null
+   },
+   "links": {
+    "info": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+    "apply": "https://www.bgm-ccc.ch/vorab-check",
+    "form": "https://www.bgm-ccc.ch/fileadmin/Dokumente/Downloads/gesuchsformular_de.pdf"
+   },
+   "source_checked": "2026-10-23",
+   "status": "fertig",
+   "fit": "passt_mit_anpassung",
+   "rank": 1,
+   "criteria": [
+    {
+     "criterion_id": "taetigkeitsgebiet",
+     "scope": "instrument",
+     "text": "Der Betrieb liegt im Tätigkeitsgebiet der BG Mitte: BE, JU, SO, AG (nur Fricktal), BS, BL, LU, OW, NW.",
+     "kind": "muss",
+     "state": "annahme",
+     "reason": "Sursee liegt im Tätigkeitsgebiet der BG Mitte, die Zuordnung zum Kanton Luzern ist im Profil jedoch als Annahme erfasst.",
+     "evidence": [
+      "standort_gemeinde",
+      "standort_kanton"
+     ],
+     "source": {
+      "title": "BG Mitte, Startseite",
+      "url": "https://www.bgm-ccc.ch/",
+      "locator": "Kantone"
+     }
+    },
+    {
+     "criterion_id": "bankkredit",
+     "scope": "instrument",
+     "text": "Es wird ein Bankkredit benötigt, für den die Bank Sicherheiten verlangt.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Profil nennt den Kauf und die Kosten, aber weder einen benötigten Bankkredit noch verlangte Sicherheiten.",
+     "evidence": [
+      "vorhaben_beschreibung",
+      "budget"
+     ],
+     "source": {
+      "title": "FAQ, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/faq",
+      "locator": "Hinweis: nur Bürgschaften für Bankkredite"
+     }
+    },
+    {
+     "criterion_id": "kreditwuerdigkeit",
+     "scope": "instrument",
+     "text": "Positive Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Die Angabe zu bestehenden Umsätzen reicht nicht aus, um Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen zu beurteilen.",
+     "evidence": [
+      "rueckfrage_marktreif_umsatz"
+     ],
+     "source": {
+      "title": "FAQ, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/faq",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "integre_fuehrung",
+     "scope": "instrument",
+     "text": "Betriebsführung durch eine integre, fachlich qualifizierte Person.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Zur Integrität und fachlichen Qualifikation der Betriebsführung enthält das Profil keine Angaben.",
+     "evidence": [],
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "risikoverteilung",
+     "scope": "instrument",
+     "text": "Ausgewogene Risikoverteilung zwischen Eigentümerin oder Eigentümer, Bank und BG Mitte.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Das Budget allein zeigt nicht, wie das Risiko zwischen Eigentümerschaft, Bank und BG Mitte verteilt würde.",
+     "evidence": [
+      "budget"
+     ],
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "rueckbuergschaft",
+     "scope": "instrument",
+     "text": "Rückbürgschaft der Inhaberin oder des Inhabers, auf mehrere Beteiligte verteilbar.",
+     "kind": "muss",
+     "state": "unbekannt",
+     "reason": "Ohne Angabe zur Rechtsform ist weder die Anwendbarkeit noch eine Rückbürgschaft beurteilbar.",
+     "evidence": [],
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "criterion_id": "todesfallversicherung",
+     "scope": "instrument",
+     "text": "Todesfallrisikoversicherung.",
+     "kind": "soll",
+     "state": "unbekannt",
+     "reason": "Das Profil enthält keine Angabe zu einer Todesfallrisikoversicherung.",
+     "evidence": [],
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "bankkredit"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob Sie einen Bankkredit benötigen und die Bank dafür Sicherheiten verlangt.",
+     "source": {
+      "title": "FAQ, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/faq",
+      "locator": "Hinweis: nur Bürgschaften für Bankkredite"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "kreditwuerdigkeit"
+     ],
+     "lever": null,
+     "hint": "Klären Sie die Kreditwürdigkeit und Tragbarkeit des Unternehmens und der Schlüsselpersonen.",
+     "source": {
+      "title": "FAQ, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/faq",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "integre_fuehrung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wer den Betrieb führt und ob diese Person integer und fachlich qualifiziert ist.",
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "risikoverteilung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wie das Risiko zwischen Eigentümerschaft, Bank und BG Mitte verteilt ist.",
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "rueckbuergschaft"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, wer die Rückbürgschaft übernimmt und ob sie auf mehrere Beteiligte verteilt wird.",
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
+      "locator": "Voraussetzungen"
+     }
+    },
+    {
+     "type": "infos_fehlen",
+     "criterion_ids": [
+      "todesfallversicherung"
+     ],
+     "lever": null,
+     "hint": "Klären Sie, ob eine Todesfallrisikoversicherung besteht.",
+     "source": {
+      "title": "Ordentliche Bürgschaft, BG Mitte",
+      "url": "https://www.bgm-ccc.ch/angebot/ordentliche-buergschaft",
       "locator": "Voraussetzungen"
      }
     }
@@ -385,7 +608,7 @@
      "text": "Es gibt ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Beschrieben ist der Kauf fertiger Produkte, nicht ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
+     "reason": "Beschrieben ist der Kauf fertiger Geräte und eines Kassensystems, nicht ein Vorhaben zu Strategie, Geschäftsmodell, IP, Technologie oder Finanzierung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -415,9 +638,9 @@
      "text": "KMU, Start-ups oder Privatpersonen.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Aus der Bäckerei mit 25 Mitarbeitenden lässt sich eine Zugehörigkeit zur Zielgruppe KMU ableiten.",
+     "reason": "Die Bäckerei mit 25 Mitarbeitenden wird im Profil als KMU eingeordnet, allerdings nur mit Status «annahme».",
      "evidence": [
-      "taetigkeit",
+      "applicant_type",
       "mitarbeitende"
      ],
      "source": {
@@ -434,7 +657,7 @@
       "sparring_check"
      ],
      "lever": null,
-     "hint": "Klären Sie im Sparring-Check, ob Sparring für Ihr Vorhaben passt.",
+     "hint": "Klären Sie mit einem Sparring-Check, ob das Sparring für Ihr Vorhaben passt.",
      "source": {
       "title": "Innovation Sparring, ITZ",
       "url": "https://www.itz.ch/was-wir-anbieten/innovation-sparring",
@@ -475,7 +698,7 @@
      "text": "Das Projekt passt zu einem Förderschwerpunkt des Umsetzungsprogramms (Standortentwicklung, Tourismus, Regionalentwicklung).",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Der beschriebene Kauf fertiger Betriebsmittel lässt keinen Bezug zu Standortentwicklung, Tourismus oder Regionalentwicklung erkennen.",
+     "reason": "Der beschriebene Kauf für die eigene Bäckerei lässt keinen Beitrag zu Standortentwicklung, Tourismus oder Regionalentwicklung erkennen.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -490,9 +713,11 @@
      "scope": "instrument",
      "text": "Überbetriebliche Kooperationen und Unternehmensnetzwerke stehen im Vordergrund.",
      "kind": "soll",
-     "state": "unbekannt",
-     "reason": "Ob weitere Betriebe oder Partner am Vorhaben beteiligt sind, geht aus dem Profil nicht hervor.",
-     "evidence": [],
+     "state": "nicht_erfuellt",
+     "reason": "Das Profil nennt keine Partner und beschreibt den Kauf fertiger Produkte statt einer überbetrieblichen Kooperation.",
+     "evidence": [
+      "partner"
+     ],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -505,7 +730,7 @@
      "text": "Relevante finanzielle Eigenmittel der Projektträger.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Das angegebene Budget belegt nicht, welche finanziellen Eigenmittel die Projektträger einbringen.",
+     "reason": "Das angegebene Budget belegt nicht, ob die Projektträger relevante Eigenmittel einbringen.",
      "evidence": [
       "budget"
      ],
@@ -521,7 +746,7 @@
      "text": "Ausrichtung auf Eigenwirtschaftlichkeit und breite Trägerschaft.",
      "kind": "soll",
      "state": "unbekannt",
-     "reason": "Die Beschreibung enthält keine ausreichenden Angaben zur Eigenwirtschaftlichkeit oder zu einer breiten Trägerschaft.",
+     "reason": "Der Kauf für die Bäckerei belegt weder eine breite Trägerschaft noch die Ausrichtung des Projekts auf Eigenwirtschaftlichkeit.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -537,7 +762,7 @@
      "text": "Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in einer Leistungsvereinbarung.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Angaben zu Wirkungs- und Leistungszielen, Meilensteinen und Sollbruchstellen fehlen.",
+     "reason": "Das Profil enthält keine Angaben zu Wirkungs- und Leistungszielen, Meilensteinen oder Sollbruchstellen einer Leistungsvereinbarung.",
      "evidence": [],
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
@@ -547,19 +772,6 @@
     }
    ],
    "gaps": [
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
-      "ueberbetrieblich"
-     ],
-     "lever": "Projekt mit mehreren Betrieben oder Partnern aufziehen",
-     "hint": "Klären Sie, ob Sie das Projekt mit mehreren Betrieben oder Partnern aufziehen können.",
-     "source": {
-      "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
-      "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
-      "locator": "S. 30"
-     }
-    },
     {
      "type": "infos_fehlen",
      "criterion_ids": [
@@ -579,7 +791,7 @@
       "eigenwirtschaftlichkeit"
      ],
      "lever": null,
-     "hint": "Klären Sie, wie das Projekt eigenwirtschaftlich werden soll und wie breit die Trägerschaft ist.",
+     "hint": "Klären Sie, wie das Projekt eigenwirtschaftlich werden soll und wer die Trägerschaft bildet.",
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -592,7 +804,7 @@
       "wirkungsziele"
      ],
      "lever": null,
-     "hint": "Klären Sie, welche Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen in der Leistungsvereinbarung festgehalten werden.",
+     "hint": "Klären Sie die Wirkungs- und Leistungsziele, Meilensteine und Sollbruchstellen für die Leistungsvereinbarung.",
      "source": {
       "title": "NRP-Umsetzungsprogramm 2024-2027 Kanton Luzern",
       "url": "https://regiosuisse.ch/sites/default/files/2024-04/NRP-Umsetzungsporgramm%202024-2027_Luzern.pdf",
@@ -633,7 +845,7 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW.",
+     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW Leistung.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -649,7 +861,7 @@
      "text": "Die Anlage hat einen festen Standort.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben beschreibt keine Photovoltaikanlage, für die ein fester Standort belegt werden könnte.",
+     "reason": "Das Vorhaben beschreibt keine Photovoltaikanlage, für die ein fester Standort vorliegen könnte.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -665,7 +877,7 @@
      "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob die gesuchstellende Person Grundeigentümerin ist oder eine Zustimmung benötigt, geht aus dem Profil nicht hervor.",
+     "reason": "Weder die Eigentumsverhältnisse noch eine allfällige Zustimmung der Grundeigentümerschaft sind im Profil belegt.",
      "evidence": [],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
@@ -679,7 +891,7 @@
      "text": "Die Anlage hat weniger als 100 kW. Bei grösseren Anlagen wird die Leistung über 99.9 kW in der KLEIV nicht gefördert.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben betrifft keine Photovoltaikanlage mit einer installierten Leistung unter 100 kW.",
+     "reason": "Das beschriebene Vorhaben betrifft keine Photovoltaikanlage, deren Leistung unter 100 kW liegen könnte.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -695,9 +907,10 @@
      "text": "Die Anlage ist realisiert. Das Gesuch kann erst danach eingereicht werden.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Der geplante Kauf und die geplante Einführung belegen keine bereits realisierte Photovoltaikanlage.",
+     "reason": "Das Profil beschreibt einen geplanten Kauf statt einer bereits realisierten Anlage.",
      "evidence": [
-      "vorhaben_beschreibung"
+      "vorhaben_beschreibung",
+      "projektstart"
      ],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
@@ -711,7 +924,7 @@
      "text": "Bei Erweiterungen mindestens 2 kW zusätzliche Leistung, angeschlossen an die Grundanlage.",
      "kind": "muss",
      "state": "nicht_anwendbar",
-     "reason": "Das beschriebene Vorhaben ist keine Erweiterung einer Photovoltaikanlage.",
+     "reason": "Das Vorhaben beschreibt keine Erweiterung einer bestehenden Anlage.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -729,7 +942,7 @@
       "zustimmung_grundeigentuemer"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder deren Zustimmung vorliegt.",
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -770,7 +983,7 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW installierter Leistung.",
+     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -816,7 +1029,7 @@
      "text": "Die Anlage hat eine Leistung ab 100 kW.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit einer Leistung ab 100 kW.",
+     "reason": "Das beschriebene Vorhaben betrifft keine Photovoltaikanlage mit einer Leistung ab 100 kW.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -834,7 +1047,7 @@
       "zustimmung_grundeigentuemer"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder deren Zustimmung vorliegt.",
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -875,7 +1088,7 @@
      "text": "Die Anlage hat eine installierte Gesamtleistung von mindestens 2 kW.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit installierter Leistung.",
+     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage mit mindestens 2 kW.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -907,7 +1120,7 @@
      "text": "Ist die gesuchstellende Person nicht Grundeigentümerin, liegt deren Zustimmung vor.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist und vorliegt, geht aus dem Profil nicht hervor.",
+     "reason": "Ob eine Zustimmung der Grundeigentümerschaft erforderlich ist oder vorliegt, geht aus dem Profil nicht hervor.",
      "evidence": [],
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
@@ -921,7 +1134,7 @@
      "text": "Die gesamte Elektrizität wird eingespeist, kein Eigenverbrauch.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Der beschriebene Kauf eines Backofens und eines Kassensystems sieht keine vollständige Einspeisung von Elektrizität aus einer Photovoltaikanlage vor.",
+     "reason": "Das Vorhaben betrifft keine Photovoltaikanlage, deren gesamte Elektrizität eingespeist würde.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -937,7 +1150,7 @@
      "text": "Die Anlage hat 2 kW bis 149.99 kW.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Das beschriebene Vorhaben betrifft keine Photovoltaikanlage im geforderten Leistungsbereich.",
+     "reason": "Das Vorhaben betrifft einen Backofen und ein Kassensystem statt einer Photovoltaikanlage im verlangten Leistungsbereich.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -955,7 +1168,7 @@
       "zustimmung_grundeigentuemer"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder die Zustimmung der Grundeigentümerschaft vorliegt.",
+     "hint": "Klären Sie, ob die gesuchstellende Person Grundeigentümerin ist oder deren Zustimmung vorliegt.",
      "source": {
       "title": "Gesuch stellen, Einmalvergütung, Pronovo",
       "url": "https://pronovo.ch/de/foerderung/photovoltaik/gesuch-stellen/",
@@ -996,9 +1209,10 @@
      "text": "Das Unternehmen hat seinen Sitz in der Schweiz.",
      "kind": "muss",
      "state": "annahme",
-     "reason": "Der Sitz in der Schweiz ist aus dem angegebenen Standort Sursee ableitbar, der Kantonsstandort ist im Profil jedoch als Annahme erfasst.",
+     "reason": "Der Standort Sursee deutet auf einen Sitz in der Schweiz hin, der Kanton ist im Profil jedoch nur als Annahme erfasst.",
      "evidence": [
-      "standort_kanton"
+      "standort_kanton",
+      "standort_gemeinde"
      ],
      "source": {
       "title": "Bürgschaften, Technologiefonds",
@@ -1012,7 +1226,7 @@
      "text": "Die Innovation spart CO2-Emissionen direkt oder indirekt ein, mit Nachweis.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Für eine direkte oder indirekte CO2-Einsparung und deren Nachweis enthält die Vorhabenbeschreibung keine ausreichenden Angaben.",
+     "reason": "Für den Kauf des Backofens und des Kassensystems ist weder eine CO2-Einsparung noch ein entsprechender Nachweis beschrieben.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1028,7 +1242,7 @@
      "text": "Innovatives Produkt oder Verfahren mit guten Marktchancen.",
      "kind": "muss",
      "state": "nicht_erfuellt",
-     "reason": "Beschrieben ist der Kauf fertiger Produkte statt eines innovativen Produkts oder Verfahrens mit guten Marktchancen.",
+     "reason": "Das Vorhaben beschreibt den Kauf fertiger Produkte statt eines eigenen innovativen Produkts oder Verfahrens.",
      "evidence": [
       "vorhaben_beschreibung"
      ],
@@ -1043,9 +1257,11 @@
      "scope": "instrument",
      "text": "Das Unternehmen ist marktreif und erzielt bereits Umsätze von mindestens CHF 100'000.",
      "kind": "muss",
-     "state": "unbekannt",
-     "reason": "Ob das Unternehmen bereits Umsätze von mindestens CHF 100'000 erzielt, geht aus dem Profil nicht hervor.",
-     "evidence": [],
+     "state": "erfuellt",
+     "reason": "Die Rückfrage zum bereits erzielten Umsatz von mindestens CHF 100'000 wurde mit Ja beantwortet.",
+     "evidence": [
+      "rueckfrage_marktreif_umsatz"
+     ],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1072,7 +1288,7 @@
      "text": "Kreditwürdigkeit, die sich auch auf die im Business Plan plausibel dargelegte zukünftige Ertragslage stützen kann.",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Zur Kreditwürdigkeit und zur künftigen Ertragslage liegen keine Angaben vor.",
+     "reason": "Zur Kreditwürdigkeit und zukünftigen Ertragslage liegen keine Angaben vor.",
      "evidence": [],
      "source": {
       "title": "Zielgruppe, Technologiefonds",
@@ -1086,7 +1302,7 @@
      "text": "Mindestens 40% des Vorhabens sind mit anderen Mitteln finanziert (neues Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel, vorhandene liquide Mittel).",
      "kind": "muss",
      "state": "unbekannt",
-     "reason": "Das angegebene Budget belegt nicht, welcher Anteil mit anderen Mitteln finanziert wird.",
+     "reason": "Das Budget ist angegeben, nicht aber die Herkunft oder Höhe der anderweitigen Finanzierung.",
      "evidence": [
       "budget"
      ],
@@ -1102,7 +1318,7 @@
      "text": "Ein angemessener Teil der Wertschöpfung findet in der Schweiz statt.",
      "kind": "soll",
      "state": "annahme",
-     "reason": "Aus der Tätigkeit als Bäckerei in Sursee lässt sich Schweizer Wertschöpfung ableiten, ihr Anteil ist jedoch nicht belegt.",
+     "reason": "Die Bäckerei in Sursee lässt Wertschöpfung in der Schweiz vermuten, deren Umfang ist jedoch nicht belegt.",
      "evidence": [
       "taetigkeit",
       "standort_gemeinde"
@@ -1121,7 +1337,7 @@
       "co2_einsparung"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob und wie die Innovation nachweislich direkt oder indirekt CO2-Emissionen einspart.",
+     "hint": "Klären Sie, ob und nachweislich wie die Innovation direkt oder indirekt CO2-Emissionen einspart.",
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1131,23 +1347,10 @@
     {
      "type": "infos_fehlen",
      "criterion_ids": [
-      "marktreif_umsatz"
-     ],
-     "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen marktreif ist und bereits den erforderlichen Umsatz erzielt.",
-     "source": {
-      "title": "Zielgruppe, Technologiefonds",
-      "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
-      "locator": null
-     }
-    },
-    {
-     "type": "infos_fehlen",
-     "criterion_ids": [
       "positives_eigenkapital"
      ],
      "lever": null,
-     "hint": "Klären Sie, ob Ihr Unternehmen zahlungsfähig und nicht überschuldet ist sowie positives Eigenkapital aufweist.",
+     "hint": "Klären Sie, ob Ihr Unternehmen zahlungsfähig ist, positives Eigenkapital hat und auch ohne Rangrücktritte nicht überschuldet ist.",
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1160,7 +1363,7 @@
       "kreditwuerdigkeit"
      ],
      "lever": null,
-     "hint": "Klären Sie Ihre Kreditwürdigkeit und ob die zukünftige Ertragslage im Business Plan plausibel dargelegt ist.",
+     "hint": "Klären Sie Ihre Kreditwürdigkeit und ob der Business Plan die zukünftige Ertragslage plausibel darlegt.",
      "source": {
       "title": "Zielgruppe, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/zielgruppe",
@@ -1173,7 +1376,7 @@
       "eigenfinanzierung_40"
      ],
      "lever": null,
-     "hint": "Klären Sie, welcher Anteil des Vorhabens durch andere Mittel finanziert ist.",
+     "hint": "Klären Sie, welcher Anteil des Vorhabens durch andere Mittel wie Eigenkapital, Aktionärsdarlehen, nicht zweckgebundene Drittmittel oder vorhandene liquide Mittel finanziert ist.",
      "source": {
       "title": "Konditionen, Technologiefonds",
       "url": "https://www.technologiefonds.ch/buergschaften/konditionen",
@@ -1192,16 +1395,6 @@
    "instrument_name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
    "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
    "rule": "vorhaben",
-   "availability_status": null,
-   "next_round": null
-  },
-  {
-   "program_id": "bg-mitte",
-   "instrument_id": "ordentliche-buergschaft",
-   "program_name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
-   "instrument_name": "Ordentliche Bürgschaft für Bankkredite",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
    "availability_status": null,
    "next_round": null
   },
@@ -1280,8 +1473,8 @@
    "instrument_id": "heizungsersatz",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Sursee.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -1290,8 +1483,8 @@
    "instrument_id": "desinvestitionsbeitrag",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Sursee.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -1300,8 +1493,8 @@
    "instrument_id": "photovoltaik",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Sursee.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -1310,8 +1503,8 @@
    "instrument_id": "e-mobilitaet",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Sursee.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -1320,8 +1513,8 @@
    "instrument_id": "abwaermenutzung",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Sursee.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -1350,8 +1543,8 @@
    "instrument_id": "innovationsscheck",
    "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
    "instrument_name": "Innovationsscheck",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
    "availability_status": null,
    "next_round": null
   },
@@ -1360,8 +1553,8 @@
    "instrument_id": "innovationsmentoring",
    "program_name": "Innosuisse, Schweizerische Agentur für Innovationsförderung",
    "instrument_name": "Innovationsmentoring",
-   "reason": "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-   "rule": "gesuchsteller",
+   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
+   "rule": "vorhaben",
    "availability_status": null,
    "next_round": null
   },
@@ -1489,22 +1682,54 @@
  "plan": {
   "timeline": [
    {
+    "phase": "jetzt",
+    "program_id": "berghilfe",
+    "instrument_id": "projektbeitrag",
+    "title": "Finanzierung für die Berghilfe klären",
+    "date": null,
+    "date_rule": null,
+    "action": "Beantragen Sie als gewerblicher Betrieb ein verzinsliches Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag."
+   },
+   {
     "phase": "gesuch",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
     "title": "Gesuch bei der Schweizer Berghilfe einreichen",
     "date": null,
     "date_rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
-    "action": "Reichen Sie das Gesuch für einen Projektbeitrag der Schweizer Berghilfe ein."
+    "action": "Reichen Sie das Online-Gesuch für den Projektbeitrag ein."
+   },
+   {
+    "phase": "gesuch",
+    "program_id": "bg-mitte",
+    "instrument_id": "ordentliche-buergschaft",
+    "title": "Gesuch für Bankkredit-Bürgschaft einreichen",
+    "date": null,
+    "date_rule": "Gesuch jederzeit mit Unterlagen einreichen.",
+    "action": "Reichen Sie das Gesuch für die ordentliche Bürgschaft mit den Unterlagen ein."
    }
   ],
   "warnings": [],
   "next_steps": [
    {
-    "text": "Reichen Sie das Gesuch für einen Projektbeitrag der Schweizer Berghilfe ein.",
+    "text": "Beantragen Sie als gewerblicher Betrieb ein verzinsliches Darlehen oder eine Bürgschaft bei einer gewerblichen Bürgschaftsgenossenschaft und ermitteln Sie den verbleibenden Fehlbetrag.",
     "program_id": "berghilfe",
     "instrument_id": "projektbeitrag",
     "link": "https://gesuch.berghilfe.ch/?locale=de",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie das Online-Gesuch für den Projektbeitrag ein.",
+    "program_id": "berghilfe",
+    "instrument_id": "projektbeitrag",
+    "link": "https://gesuch.berghilfe.ch/?locale=de",
+    "due": null
+   },
+   {
+    "text": "Reichen Sie das Gesuch für die ordentliche Bürgschaft mit den Unterlagen ein.",
+    "program_id": "bg-mitte",
+    "instrument_id": "ordentliche-buergschaft",
+    "link": "https://www.bgm-ccc.ch/vorab-check",
     "due": null
    }
   ],
@@ -1515,6 +1740,13 @@
     "email": "info@berghilfe.ch",
     "phone": "044 712 60 60",
     "url": "https://www.berghilfe.ch/kontakt"
+   },
+   {
+    "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
+    "role": "Bahnhofstrasse 59D, 3401 Burgdorf",
+    "email": "info@bgm-ccc.ch",
+    "phone": "034 420 20 20",
+    "url": "https://www.bgm-ccc.ch/kontakt"
    }
   ]
  },

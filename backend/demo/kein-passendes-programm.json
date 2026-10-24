@@ -1,19 +1,19 @@
 {
- "run_id": "run_451ad2af",
+ "run_id": "run_5d21cb07",
  "status": "fertig",
- "created_at": "2026-10-24T02:15:09.959579Z",
- "completed_at": "2026-10-24T02:15:09.960741Z",
+ "created_at": "2026-10-24T03:42:14.176200Z",
+ "completed_at": "2026-10-24T03:42:14.177047Z",
  "today": "2026-10-24",
  "disclaimer": "Orientierungshilfe, keine verbindliche Beurteilung",
  "profile": {
   "input_text": "Unser Treuhandbüro in Kriens mit 8 Mitarbeitenden möchte für das 20-Jahr-Jubiläum einen Firmenausflug und ein Fest für Kunden organisieren. Kosten etwa CHF 30'000.",
-  "summary": "Gefördert werden sollen ein Firmenausflug und ein Kundenfest zum 20-Jahr-Jubiläum des Treuhandbüros.",
+  "summary": "Das Treuhandbüro möchte zum 20-Jahr-Jubiläum einen Firmenausflug und ein Fest für Kunden organisieren.",
   "fields": {
    "standort_kanton": {
     "value": "LU",
     "status": "annahme",
     "origin": "text",
-    "quote": "in Kriens",
+    "quote": "Kriens",
     "note": "Kriens liegt im Kanton Luzern."
    },
    "standort_gemeinde": {
@@ -37,7 +37,7 @@
     "status": "angegeben",
     "origin": "text",
     "quote": "einen Firmenausflug und ein Fest für Kunden organisieren",
-    "note": "Der genannte Zweck passt zu keinem der erlaubten Vorhabenstypen."
+    "note": null
    },
    "branche": {
     "value": [
@@ -46,14 +46,14 @@
     "status": "annahme",
     "origin": "text",
     "quote": "Unser Treuhandbüro",
-    "note": "Ein Treuhandbüro ist eine Dienstleistung."
+    "note": "Ein Treuhandbüro erbringt Dienstleistungen."
    },
    "partner": {
-    "value": null,
-    "status": "fehlt",
+    "value": [],
+    "status": "annahme",
     "origin": null,
     "quote": null,
-    "note": null
+    "note": "Im Text werden keine beteiligten oder fest vereinbarten Partner genannt."
    },
    "vorhaben_beschreibung": {
     "value": "Organisation eines Firmenausflugs und eines Kundenfests zum 20-Jahr-Jubiläum.",
@@ -63,10 +63,10 @@
     "note": null
    },
    "taetigkeit": {
-    "value": null,
-    "status": "fehlt",
-    "origin": null,
-    "quote": null,
+    "value": "Treuhandbüro",
+    "status": "angegeben",
+    "origin": "text",
+    "quote": "Unser Treuhandbüro",
     "note": null
    },
    "rechtsform": {
@@ -98,11 +98,11 @@
     "note": null
    },
    "unternehmensalter": {
-    "value": 20,
-    "status": "annahme",
-    "origin": "text",
-    "quote": "20-Jahr-Jubiläum",
-    "note": "Das Jubiläum deutet auf ein Unternehmensalter von 20 Jahren hin."
+    "value": null,
+    "status": "fehlt",
+    "origin": null,
+    "quote": null,
+    "note": null
    },
    "umsatz": {
     "value": null,
@@ -283,8 +283,8 @@
    "instrument_id": "heizungsersatz",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Heizungsersatz: Wärmepumpe und Wärmenetzanschluss",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Kriens.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -293,8 +293,8 @@
    "instrument_id": "desinvestitionsbeitrag",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Desinvestitionsbeitrag für vorzeitig ersetzte Öl- und Gasheizungen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Kriens.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -303,8 +303,8 @@
    "instrument_id": "photovoltaik",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Photovoltaik: Zusatzbeitrag der Stadt Luzern",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Kriens.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -313,8 +313,8 @@
    "instrument_id": "e-mobilitaet",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "E-Mobilität: Basisinfrastruktur und Ladestationen",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Kriens.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -323,8 +323,8 @@
    "instrument_id": "abwaermenutzung",
    "program_name": "Förderprogramm Energie Stadt Luzern 2026 (Energiefonds)",
    "instrument_name": "Abwärmenutzung und Wärmerückgewinnung",
-   "reason": "Das Instrument fördert eine andere Art von Vorhaben.",
-   "rule": "vorhaben",
+   "reason": "Gilt nur in der Gemeinde Luzern; Ihr Standort ist Kriens.",
+   "rule": "kanton",
    "availability_status": null,
    "next_round": null
   },
@@ -555,27 +555,6 @@
   "next_steps": [],
   "contacts": [
    {
-    "name": "Schweizer Berghilfe",
-    "role": "Soodstrasse 55, 8134 Adliswil",
-    "email": "info@berghilfe.ch",
-    "phone": "044 712 60 60",
-    "url": "https://www.berghilfe.ch/kontakt"
-   },
-   {
-    "name": "BG Mitte, Bürgschaftsgenossenschaft für KMU",
-    "role": "Bahnhofstrasse 59D, 3401 Burgdorf",
-    "email": "info@bgm-ccc.ch",
-    "phone": "034 420 20 20",
-    "url": "https://www.bgm-ccc.ch/kontakt"
-   },
-   {
-    "name": "Euresearch",
-    "role": "Status der Schweiz in Horizon Europe",
-    "email": null,
-    "phone": null,
-    "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
-   },
-   {
     "name": "Energieberatung Kanton Luzern, c/o Umweltberatung Luzern",
     "role": "Allgemeine Fragen und Status von Gesuchen",
     "email": "energie@umweltberatung-luzern.ch",
@@ -583,123 +562,11 @@
     "url": "https://umweltberatung-luzern.ch/"
    },
    {
-    "name": "Umweltberatung Luzern",
-    "role": "Erste Anlaufstelle, Löwenplatz 11, 6004 Luzern",
-    "email": "info@umweltberatung-luzern.ch",
-    "phone": "+41 41 412 32 32",
-    "url": "https://www.stadtluzern.ch/_rte/publikation/420010"
-   },
-   {
-    "name": "Innosuisse Innovationsprojekte",
-    "role": "Innovationsprojekte und Start-up Innovationsprojekte",
-    "email": "innoprojects@innosuisse.ch",
-    "phone": null,
-    "url": "https://www.innosuisse.admin.ch/de/innosuisse-kontaktieren"
-   },
-   {
-    "name": "Innosuisse Start-up",
-    "role": "Start-up Coaching",
-    "email": "startup@innosuisse.ch",
-    "phone": null,
-    "url": "https://www.innosuisse.admin.ch/en/start-up-coaching-for-start-up"
-   },
-   {
-    "name": "Innosuisse Innovationsscheck",
-    "role": "Verlängerungen und Fragen zum Innovationsscheck",
-    "email": "innocheque@innosuisse.ch",
-    "phone": null,
-    "url": "https://www.innosuisse.admin.ch/de/innovationsscheck"
-   },
-   {
-    "name": "SECO Tourismuspolitik",
-    "role": "Holzikofenweg 36, 3003 Bern",
-    "email": "tourismus@seco.admin.ch",
-    "phone": "058 462 27 58",
-    "url": "https://www.seco.admin.ch/de/innotour-foerderangebot"
-   },
-   {
-    "name": "ITZ InnovationsTransfer Zentralschweiz",
-    "role": "Kontaktformular",
-    "email": null,
-    "phone": null,
-    "url": "https://www.itz.ch/ueber-uns/kontakt"
-   },
-   {
-    "name": "Klimastiftung Schweiz",
-    "role": "Mythenquai 50/60, 8002 Zürich",
-    "email": null,
-    "phone": "+41 43 285 44 80",
-    "url": "https://www.klimastiftung.ch/de/kontakt/"
-   },
-   {
     "name": "Dienststelle Raum und Wirtschaft (rawi)",
     "role": "Fragen zum LIB",
     "email": "innovationsbeitrag@lu.ch",
     "phone": "+41 41 228 51 83",
     "url": "https://standortfoerderung.lu.ch/LIB"
-   },
-   {
-    "name": "PEIK c/o act Cleantech Solutions AG",
-    "role": "Brandschenkestrasse 6, 8001 Zürich",
-    "email": "info@peik.ch",
-    "phone": "058 750 05 25",
-    "url": "https://peik.ch/"
-   },
-   {
-    "name": "ProKilowatt c/o CimArk",
-    "role": "Rue de l'Industrie 23, 1950 Sion",
-    "email": "prokilowatt@cimark.ch",
-    "phone": "+41 58 332 21 42",
-    "url": "https://www.prokw.ch/"
-   },
-   {
-    "name": "Pronovo AG",
-    "role": "Hotline Mo bis Fr 08.00 bis 12.00 und 13.00 bis 16.30 Uhr",
-    "email": "info@pronovo.ch",
-    "phone": "0848 014 014",
-    "url": "https://pronovo.ch/de/unternehmen/kontakt/"
-   },
-   {
-    "name": "Bürgschaftsgenossenschaft SAFFA",
-    "role": "Auf der Lyss 14, 4051 Basel",
-    "email": "info@saffa.ch",
-    "phone": "061 683 18 42",
-    "url": "https://www.saffa.ch/"
-   },
-   {
-    "name": "SERV Zürich",
-    "role": "Genferstrasse 6, 8002 Zürich",
-    "email": "info@serv-ch.com",
-    "phone": "+41 58 551 55 55",
-    "url": "https://www.serv-ch.com/en/contact/"
-   },
-   {
-    "name": "Schweizerische Gesellschaft für Hotelkredit",
-    "role": "Uetlibergstrasse 134b, 8027 Zürich",
-    "email": "info@sgh.ch",
-    "phone": "+41 44 209 16 16",
-    "url": "https://sgh.ch/kontakt"
-   },
-   {
-    "name": "Dienststelle Steuern Kanton Luzern, Juristische Personen",
-    "role": "Fragen zu Patentbox und F&E-Abzug",
-    "email": null,
-    "phone": null,
-    "url": "https://steuern.lu.ch/juristischepersonen/kontaktformular_jp"
-   },
-   {
-    "name": "Geschäftsstelle Technologiefonds, Emerald Technology Ventures AG",
-    "role": "Bellerivestrasse 241, 8008 Zürich",
-    "email": "info@technologiefonds.ch",
-    "phone": "044 269 61 40",
-    "url": "https://www.technologiefonds.ch/kontakt"
-   },
-   {
-    "name": "BAFU, Sektion Innovation",
-    "role": "3003 Bern",
-    "email": "innovation@bafu.admin.ch",
-    "phone": "+41 58 469 69 10",
-    "url": "https://www.bafu.admin.ch/de/utf"
    }
   ]
  },
