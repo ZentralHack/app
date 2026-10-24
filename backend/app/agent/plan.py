@@ -60,7 +60,10 @@ def build_plan(items: list[PlanItem], rejected: list[Rejected], kb: KnowledgeBas
 
 
 def _now_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
-    """Levers to act on before any application, and steps recommended beforehand."""
+    """Levers to act on before any application, and steps recommended beforehand.
+
+    `empfohlen_vorher`: the instrument that carries the rule is the earlier step, `with`
+    names the later one (e.g. ITZ before Innosuisse). It is shown if both fit."""
     entries = [
         _entry("jetzt", p.item, f"{p.item.instrument.name}: so wird es passend", gap.lever)
         for p in fitting
@@ -69,11 +72,11 @@ def _now_entries(fitting: list[PlanItem]) -> list[TimelineEntry]:
     ]
     instruments = [p.item for p in fitting]
     for owner in instruments:
-        for rule in _rules(owner, "empfohlen_vorher"):
-            entries += [
-                _entry("jetzt", target, target.instrument.name, rule.text)
-                for target in _targets(rule, owner, instruments)
-            ]
+        entries += [
+            _entry("jetzt", owner, owner.instrument.name, rule.text)
+            for rule in _rules(owner, "empfohlen_vorher")
+            if _targets(rule, owner, instruments)
+        ]
     return entries
 
 

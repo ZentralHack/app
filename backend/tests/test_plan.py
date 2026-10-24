@@ -114,11 +114,14 @@ def test_prerequisite_comes_first(kb: KnowledgeBase):
 
 
 def test_recommended_step_goes_to_now(kb: KnowledgeBase):
+    # The instrument with the rule is the earlier step (like ITZ before Innosuisse).
     lib = _with_rule(_item(kb, LIB), "empfohlen_vorher", PUMP)
     plan = build_plan([lib, _item(kb, PUMP)], [], kb)
     assert plan.timeline[0].phase == "jetzt"
-    assert plan.timeline[0].instrument_id == "waermepumpe"
+    assert plan.timeline[0].instrument_id == "lib-beitrag"
     assert plan.timeline[0].action == "Regel"
+    # Without the later instrument, there is nothing to prepare for.
+    assert build_plan([lib], [], kb).timeline[0].phase == "gesuch"
 
 
 def test_dead_target_is_ignored(kb: KnowledgeBase):
