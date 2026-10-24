@@ -12,15 +12,15 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Ganze Schweiz. Einzige der vier anerkannten Bürgschaftsgenossenschaften mit gesamtschweizerischem Tätigkeitsgebiet."
+    "note": "Ganze Schweiz. Einzige der vier anerkannten Bürgschaftsgenossenschaften, die schweizweit tätig ist (Seite «Über SAFFA»)."
   },
   "purpose": "SAFFA verbürgt Bankkredite für Unternehmerinnen, die ein Unternehmen gründen oder ein bestehendes übernehmen oder betreiben.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Entscheid der SAFFA nach Prüfung.",
+    "note": "Die BG SAFFA kann Gesuche jederzeit ohne Begründung ablehnen.",
     "source": {
-      "source_id": "buergschaften",
-      "locator": "Ablauf"
+      "source_id": "voraussetzungen_pdf",
+      "locator": "Seite 1, Ablehnung"
     }
   },
   "budget": null,
@@ -44,7 +44,7 @@
         "note": null,
         "source": {
           "source_id": "buergschaften",
-          "locator": null
+          "locator": "So funktionierts; Ablauf"
         }
       },
       "recipient": {
@@ -63,7 +63,8 @@
         "project_types": [
           "gruendung",
           "nachfolge",
-          "finanzierung"
+          "finanzierung",
+          "wachstum"
         ],
         "required_partners": [],
         "sectors": []
@@ -73,7 +74,7 @@
       "criteria": [
         {
           "id": "frauenanteil_50",
-          "text": "Das Unternehmen ist mindestens zu 50% in Frauenhand.",
+          "text": "Die Gesuchstellerin ist Unternehmerin (Einzelfirma oder juristische Person). Das Unternehmen ist zu mindestens 50% in Frauenhand.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -91,9 +92,9 @@
           "evidence": [],
           "source": {
             "source_id": "buergschaften",
-            "locator": "Voraussetzungen"
+            "locator": "Voraussetzungen, Punkt 1"
           },
-          "notes": null
+          "notes": "Die Bürgschaften-Seite sagt «zu mind. 50% in Frauenhand». Das PDF «Voraussetzungen» und die Statuten (Art. 2) sprechen von «von Frauen geführten Unternehmen»."
         },
         {
           "id": "sitz_schweiz",
@@ -115,13 +116,13 @@
           "evidence": [],
           "source": {
             "source_id": "buergschaften",
-            "locator": "Voraussetzungen"
+            "locator": "Voraussetzungen, Punkt 1"
           },
           "notes": null
         },
         {
           "id": "bankkredit_benoetigt",
-          "text": "Es wird ein Bankkredit benötigt.",
+          "text": "Es wird ein Bankkredit für die Gründung oder den Betrieb des Unternehmens benötigt.",
           "kind": "muss",
           "about": "partner",
           "applies_if": null,
@@ -140,24 +141,33 @@
           "evidence": [],
           "source": {
             "source_id": "buergschaften",
-            "locator": "Voraussetzungen"
+            "locator": "Voraussetzungen, Punkt 2"
           },
           "notes": null
         },
         {
           "id": "todesfallpolice",
-          "text": "Eine Todesfallrisikopolice wird abgeschlossen.",
+          "text": "Die Bürgschaftsnehmerin schliesst eine Todesfallrisikoversicherung ab (bewilligter Bürgschaftsbetrag plus 20%, Mindestlaufzeit wie die Bürgschaft) und verpfändet die Police der finanzierenden Bank.",
           "kind": "muss",
           "about": "dokumente",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
-          "evidence": [],
-          "source": {
-            "source_id": "buergschaften",
-            "locator": "Kosten"
+          "question": {
+            "text": "Sind Sie bereit, eine Todesfallrisikoversicherung abzuschliessen und der Bank zu verpfänden?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
           },
-          "notes": null
+          "evidence": [
+            "Kopie der Police und des Pfandvertrags an die BG SAFFA"
+          ],
+          "source": {
+            "source_id": "voraussetzungen_pdf",
+            "locator": "Seite 1, Todesfallrisikoversicherung"
+          },
+          "notes": "Gilt bei Bewilligung (Bürgschaften-Seite, «Bei Bewilligung»). Die Gesuchstellerin anerkennt die Voraussetzungen mit ihrer Unterschrift als verbindlich."
         }
       ],
       "funding": {
@@ -177,9 +187,9 @@
         "example": null,
         "source": {
           "source_id": "buergschaften",
-          "locator": "Bürgschaftshöhe"
+          "locator": "Voraussetzungen; Bei Bewilligung"
         },
-        "note": "Einschreibegebühr CHF 300. Gesuchsprüfungsgebühr bei Bewilligung 1.1% des verbürgten Betrags, max. CHF 3'000. Jährliche Bürgschaftskommission 1.25% auf dem offenen Betrag. Genossenschaftsanteil CHF 100."
+        "note": "Einschreibegebühr CHF 300, nicht erstattbar. Gesuchsprüfungsgebühr bei Bewilligung 1.1% des verbürgten Betrags, max. CHF 3'000 (ab CHF 280'000 pauschal CHF 3'000). Jährliche Bürgschaftskommission 1.25% auf dem offenen Betrag, bei Inanspruchnahme durch die Bank derzeit 2.5%. Genossenschaftsanteil CHF 100."
       },
       "timing": {
         "deadline": {
@@ -196,7 +206,7 @@
         "decision_time": null,
         "max_duration_months": 120,
         "repeat_limit": null,
-        "note": null
+        "note": "Die Bürgschaft wird für maximal zehn Jahre gewährt (PDF «Voraussetzungen», Seite 1)."
       },
       "documents": {
         "application": [
@@ -205,15 +215,23 @@
             "condition": null,
             "source": {
               "source_id": "buergschaften",
-              "locator": "Unterlagen"
+              "locator": "Ablauf"
             }
           },
           {
-            "name": "Finanzierung und Business Plan",
+            "name": "Voraussetzungen für die Bürgschaftsgewährung, unterschrieben",
             "condition": null,
             "source": {
               "source_id": "buergschaften",
-              "locator": "Unterlagen"
+              "locator": "Gesuch"
+            }
+          },
+          {
+            "name": "Finanzierung (Formular) und Business Plan",
+            "condition": null,
+            "source": {
+              "source_id": "buergschaften",
+              "locator": "Ablauf; Gesuch"
             }
           },
           {
@@ -221,61 +239,91 @@
             "condition": null,
             "source": {
               "source_id": "buergschaften",
-              "locator": "Unterlagen"
+              "locator": "Ablauf; Gesuch"
             }
           },
           {
-            "name": "Einzahlungsschein Einschreibegebühr",
+            "name": "Einzahlungsschein Einschreibegebühr (QR)",
             "condition": null,
             "source": {
               "source_id": "buergschaften",
-              "locator": "Unterlagen"
+              "locator": "Gesuch"
             }
           }
         ],
-        "completion": []
+        "completion": [
+          {
+            "name": "Kopie der Todesfallrisikopolice und des Pfandvertrags",
+            "condition": "Nach Bewilligung",
+            "source": {
+              "source_id": "voraussetzungen_pdf",
+              "locator": "Seite 1, Todesfallrisikoversicherung"
+            }
+          }
+        ]
       },
       "obligations": [
+        {
+          "text": "Beitritt als Genossenschafterin mit einem Anteil à CHF 100.",
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Bei Bewilligung"
+          }
+        },
+        {
+          "text": "Gesuchsprüfungsgebühr von 1.1% des verbürgten Betrags bezahlen, max. CHF 3'000.",
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Bei Bewilligung"
+          }
+        },
+        {
+          "text": "Jährliche Bürgschaftskommission von 1.25% auf dem offenen Betrag bezahlen.",
+          "source": {
+            "source_id": "buergschaften",
+            "locator": "Bei Bewilligung"
+          }
+        },
         {
           "text": "Halbjährliche Reportingpflicht.",
           "source": {
             "source_id": "buergschaften",
-            "locator": "Kosten"
+            "locator": "Bei Bewilligung"
           }
         },
         {
-          "text": "Jährliche Bürgschaftskommission von 1.25% bezahlen.",
+          "text": "Bei einem Kredit an eine juristische Person haftet die Geschäftsinhaberin persönlich solidarisch für den Kredit.",
           "source": {
-            "source_id": "buergschaften",
-            "locator": "Kosten"
+            "source_id": "voraussetzungen_pdf",
+            "locator": "Seite 1, Persönliche Haftung"
           }
         }
       ],
       "levers": [],
       "links": {
         "info": "https://www.saffa.ch/buergschaften",
-        "apply": "https://www.saffa.ch/buergschaften",
-        "form": null
+        "apply": "https://eu1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBLe6mE3SbsoJEPHpq2_cWLImK7b-Vf8HOWAT00mjK6mQEN5JBQ_2W96GmyVx4Hxz0*",
+        "form": "https://www.saffa.ch/s/2025-V1_Voraussetzungen-fur-die-Burgschaftsgewahrung1.pdf"
       },
       "source": {
         "source_id": "buergschaften",
-        "locator": null
+        "locator": "So funktionierts"
       }
     }
   ],
   "combination_rules": [],
   "application": {
     "channel": "online_portal",
-    "url": "https://www.saffa.ch/buergschaften",
+    "url": "https://eu1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBLe6mE3SbsoJEPHpq2_cWLImK7b-Vf8HOWAT00mjK6mQEN5JBQ_2W96GmyVx4Hxz0*",
     "steps": [
-      "Gesuch einreichen",
-      "Prüfung mit persönlicher Vorstellung des Projekts",
-      "Entscheid, danach Kredit der Bank und Verbürgung durch SAFFA"
+      "Gesuch mit Beilagen einreichen und Einschreibegebühr von CHF 300 bezahlen",
+      "Prüfung durch die SAFFA mit persönlicher Vorstellung des Projekts",
+      "Entscheid, danach Kredit der Bank und Verbürgung durch die SAFFA"
     ],
-    "note": null,
+    "note": "Der Button «Bürgschaft beantragen» auf saffa.ch führt zu einem Online-Formular (Adobe Acrobat Sign). Die Formulare Finanzierung, Kreditorenliste, Umsätze und Budget stehen auf der Bürgschaften-Seite unter «Gesuch».",
     "source": {
       "source_id": "buergschaften",
-      "locator": "Ablauf"
+      "locator": "Ablauf; Voraussetzungen; Button «Bürgschaft beantragen»"
     }
   },
   "contacts": [
@@ -287,7 +335,13 @@
       "url": "https://www.saffa.ch/"
     }
   ],
-  "legal_basis": [],
+  "legal_basis": [
+    {
+      "title": "Bundesgesetz über die Finanzhilfen an Bürgschaftsorganisationen für KMU",
+      "ref": "SR 951.25",
+      "url": null
+    }
+  ],
   "sources": [
     {
       "id": "startseite",
@@ -296,7 +350,7 @@
       "url": "https://www.saffa.ch/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -306,18 +360,64 @@
       "url": "https://www.saffa.ch/buergschaften",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "voraussetzungen_pdf",
+      "title": "Voraussetzungen für die Bürgschaftsgewährung, BG SAFFA",
+      "type": "merkblatt",
+      "url": "https://www.saffa.ch/s/2025-V1_Voraussetzungen-fur-die-Burgschaftsgewahrung1.pdf",
+      "version": "2025v1",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "ueber_saffa",
+      "title": "Über SAFFA",
+      "type": "webseite",
+      "url": "https://www.saffa.ch/saffa",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "statuten",
+      "title": "Statuten der Bürgschaftsgenossenschaft SAFFA",
+      "type": "reglement",
+      "url": "https://www.saffa.ch/s/saffa-buergschaften-statuten.pdf",
+      "version": "Ausgabe Mai 2020",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "antrag_formular",
+      "title": "Bürgschaft beantragen, Online-Formular (Adobe Acrobat Sign)",
+      "type": "formular",
+      "url": "https://eu1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBLe6mE3SbsoJEPHpq2_cWLImK7b-Vf8HOWAT00mjK6mQEN5JBQ_2W96GmyVx4Hxz0*",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
       "Entscheiddauer nicht genannt.",
       "level privat gewählt, da SAFFA eine Genossenschaft ist; das Schema kennt keine eigene Kategorie für Bürgschaftsgenossenschaften (bg-mitte ist als region erfasst).",
-      "Quellen nicht lokal abgelegt."
+      "Quellen nicht lokal abgelegt.",
+      "criteria.frauenanteil_50: Bürgschaften-Seite sagt «zu mind. 50% in Frauenhand», PDF «Voraussetzungen» und Statuten sagen «von Frauen geführte Unternehmen». Zählt Eigentum oder Führung?",
+      "application.url: Das Adobe-Sign-Formular lädt nur mit JavaScript. Inhalt und Weg für die Beilagen (Excel-Formulare) nicht geprüft.",
+      "timing.deadline: Keine Frist genannt. Vermutlich laufend, aber nicht belegt.",
+      "filter.project_types: «wachstum» abgeleitet aus Statuten Art. 2 («Erhaltung und Erweiterung von Betrieben»). Bitte bestätigen.",
+      "filter.applicant_types: «startup» abgeleitet aus «Gründung» (Bürgschaften-Seite, Voraussetzungen). Bitte bestätigen.",
+      "legal_basis: SR 951.25 nur aus Statuten Art. 1 Abs. 3, Fedlex-Link nicht geprüft."
     ]
   }
 }
