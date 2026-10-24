@@ -7,6 +7,7 @@ from fastapi.testclient import TestClient
 from app.config import Settings
 from app.knowledge_base.loader import InvalidFile, KnowledgeBase
 from app.main import create_app
+from tests.contract_check import assert_contract
 
 
 @pytest.fixture
@@ -19,20 +20,15 @@ def client(kb: KnowledgeBase) -> TestClient:
 def test_health_without_llm(client: TestClient):
     response = client.get("/api/health")
     assert response.status_code == 200
-    assert response.json() == {
-        "status": "eingeschraenkt",
-        "llm_available": False,
-        "programs_loaded": 2,
-        "programs_invalid": 0,
-        "question_catalog": {
-            "entries": 6,
-            "verified": 0,
-            "needs_review": 6,
-            "draft": 0,
-            "veraltet": 0,
-            "errors": [],
-        },
-    }
+    health = response.json()
+    assert_contract("Health", health)
+    assert health["status"] == "eingeschraenkt"
+    assert health["llm_available"] is False
+    assert (health["programs_loaded"], health["programs_invalid"]) == (2, 0)
+    catalog = health["question_catalog"]
+    assert (catalog["entries"], catalog["needs_review"], catalog["errors"]) == (6, 6, [])
+    # Fingerprints are computed on the full knowledge base, the fixture only has two programs.
+    assert catalog["veraltet"] > 0
 
 
 def test_health_ok_with_llm_configured(kb: KnowledgeBase):

@@ -59,6 +59,7 @@ def check_catalog(
         findings += [Finding(field, "fehler", p) for p in problems]
         if field in FIELD_TYPES and entry.kb_fingerprint != fingerprint(instruments, field):
             findings.append(Finding(field, "warnung", STALE))
+    findings += _unloaded(catalog, instruments)
     findings += _coverage(catalog, instruments)
     return findings
 
@@ -119,18 +120,40 @@ def _decision_checks(
     if len(refs) != len(set(refs)):
         yield "Kriterium mehrfach in decides"
     for decision in entry.decides:
+        if not _program_loaded(decision.criterion, instruments):
+            continue  # reported as a warning in _unloaded
         if not _exists(decision.criterion, field, on_field):
             yield f"decides: '{decision.criterion}' ist kein Kriterium auf '{field}'"
         if len(decision.states) < 2:
             yield f"decides: '{decision.criterion}' ergibt nur einen Status, entscheidet nichts"
         yield from _rule_checks(entry, decision)
     for item in entry.not_decidable:
-        if not _exists(item.criterion, field, on_field):
+        if _program_loaded(item.criterion, instruments) and not _exists(
+            item.criterion, field, on_field
+        ):
             yield f"not_decidable: '{item.criterion}' ist kein Kriterium auf '{field}'"
     listed = set(refs) | {n.criterion for n in entry.not_decidable}
     for ref, occurrences in on_field.items():
         if ref not in listed and any(s.criterion.kind == "muss" for _, s in occurrences):
             yield f"muss-Kriterium '{ref}' fehlt in decides und not_decidable"
+
+
+def _program_loaded(ref: str, instruments: Sequence[FlatInstrument]) -> bool:
+    owner = ref.partition(":")[0]
+    return owner == FILTER_PREFIX or any(item.program.id == owner for item in instruments)
+
+
+def _unloaded(
+    catalog: dict[str, CatalogEntry], instruments: Sequence[FlatInstrument]
+) -> list[Finding]:
+    """References to programs that are not loaded (missing or invalid file): the entry
+    stays usable, the reference is reported."""
+    return [
+        Finding(field, "warnung", f"Programm von '{ref}' ist nicht geladen")
+        for field, entry in catalog.items()
+        for ref in [d.criterion for d in entry.decides] + [n.criterion for n in entry.not_decidable]
+        if not _program_loaded(ref, instruments)
+    ]
 
 
 def _exists(ref: str, field: str, on_field: dict) -> bool:

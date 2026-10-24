@@ -26,7 +26,9 @@ def _errors(kb: KnowledgeBase, field: str, change) -> list[str]:
     return [f.message for f in findings if f.severity == "fehler"]
 
 
-def test_real_catalog_has_no_errors_and_is_current(kb: KnowledgeBase):
+def test_real_catalog_has_no_errors_and_is_current():
+    """Against the full knowledge base, as the server loads it."""
+    kb = load_knowledge_base(KNOWLEDGE_BASE_DIR)
     assert kb.catalog.error is None
     errors = [f for f in kb.catalog.findings if f.severity == "fehler"]
     assert errors == []
@@ -122,6 +124,7 @@ def test_broken_entry_is_dropped(kb_dir: Path):
 
 @pytest.mark.parametrize("content", [None, "{", '{"partner": {"text": "?"}}'])
 def test_missing_or_invalid_catalog_does_not_stop_loading(kb_dir: Path, content):
+    """A missing or broken catalog leaves the programs and the fallback questions."""
     path = kb_dir / CATALOG.name
     if content is None:
         path.unlink()
@@ -130,5 +133,14 @@ def test_missing_or_invalid_catalog_does_not_stop_loading(kb_dir: Path, content)
     kb = load_knowledge_base(kb_dir)
     assert kb.catalog.entries == {}
     assert kb.catalog.error.startswith("Fragenkatalog")
-    assert len(kb.programs) == 2
+    assert {"lib", "foerderprogramm-energie-lu"} <= {p.id for p in kb.programs}
     assert "revision" in kb.criterion_questions
+
+
+def test_reference_to_unloaded_program_only_warns(kb: KnowledgeBase):
+    # The reference fixture has no innosuisse: its rows are skipped, the entry stays.
+    assert "partner" in kb.catalog.entries
+    assert any(
+        "innosuisse:forschungspartner_schweiz" in f.message and f.severity == "warnung"
+        for f in kb.catalog.findings
+    )

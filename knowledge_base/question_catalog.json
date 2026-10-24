@@ -45,21 +45,75 @@
             "state": "nicht_erfuellt"
           }
         ]
+      },
+      {
+        "criterion": "innosuisse:forschungspartner_schweiz",
+        "map": [
+          {
+            "value": [
+              "forschungspartner"
+            ],
+            "state": "annahme"
+          },
+          {
+            "value": [],
+            "state": "nicht_erfuellt"
+          }
+        ]
+      },
+      {
+        "criterion": "innosuisse:forschungspartner_bereit",
+        "map": [
+          {
+            "value": [
+              "forschungspartner"
+            ],
+            "state": "annahme"
+          },
+          {
+            "value": [],
+            "state": "nicht_erfuellt"
+          }
+        ]
       }
     ],
     "not_decidable": [
       {
         "criterion": "lib:auftragsforschung_steuerung",
         "reason": "Die Frage klärt nicht, ob Forschung als Auftrag vergeben und intern gesteuert wird (Handbuch LIB N 76-81)."
+      },
+      {
+        "criterion": "innosuisse:partner_unabhaengig",
+        "reason": "Die Frage klärt nicht, ob Forschungs- und Umsetzungspartner voneinander unabhängig sind."
+      },
+      {
+        "criterion": "innotour:ueberbetrieblich",
+        "reason": "Die Frage betrifft nur Forschungspartner, nicht andere beteiligte Betriebe."
+      },
+      {
+        "criterion": "filter:partner_mehrere_betriebe",
+        "reason": "Die Frage betrifft nur Forschungspartner, nicht andere beteiligte Betriebe."
+      },
+      {
+        "criterion": "bg-mitte:bankkredit",
+        "reason": "Eine Bank ist keine Partnerart dieses Felds; das Kriterium hat eine eigene Rückfrage."
+      },
+      {
+        "criterion": "saffa:bankkredit_benoetigt",
+        "reason": "Eine Bank ist keine Partnerart dieses Felds; das Kriterium hat eine eigene Rückfrage."
+      },
+      {
+        "criterion": "sgh:sockelfinanzierung_bank",
+        "reason": "Eine Bank ist keine Partnerart dieses Felds; das Kriterium hat eine eigene Rückfrage."
       }
     ],
-    "kb_fingerprint": "sha256:cc5ec9bbad44104d3119a37279ba7c580a5fff4f8496a965503e688c4a8986c3",
+    "kb_fingerprint": "sha256:7dad8c91f0d17aa438e124ee998e750055884ab407ba328ed84284166cd71b5c",
     "generated": null,
     "review": {
       "status": "needs_review",
       "by": null,
       "date": null,
-      "notes": "Von Hand geschrieben. Prüfen: 'Wir suchen noch' und 'Nein' setzen partner auf [] (kein Partner beteiligt), das gilt dann auch für andere Partnerarten. Entscheidet das aus filter.required_partners erzeugte Kriterium partner_forschungspartner; andere Partnerarten fragt der Katalog noch nicht."
+      "notes": "Von Hand geschrieben. Prüfen: 'Wir suchen noch' und 'Nein' setzen partner auf [] (kein Partner beteiligt), das gilt dann auch für andere Partnerarten. Entscheidet das aus filter.required_partners erzeugte Kriterium partner_forschungspartner; andere Partnerarten fragt der Katalog noch nicht. Innosuisse verlangt einen Schweizer Forschungspartner: 'Ja' ergibt darum nur 'annahme'. Prüfen: bg-mitte, saffa und sgh nutzen das Feld partner für die Bank, das passt nicht zu den Enum-Werten."
     }
   },
   "revisionsart": {
@@ -190,21 +244,70 @@
             "state": "erfuellt"
           }
         ]
+      },
+      {
+        "criterion": "gemeinde-luzern:gesuch_vor_realisierung",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "prokilowatt:nicht_begonnen",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "annahme"
+          }
+        ]
+      },
+      {
+        "criterion": "pronovo:anlage_realisiert",
+        "map": [
+          {
+            "min": null,
+            "max": "heute",
+            "state": "unbekannt"
+          },
+          {
+            "min": "heute",
+            "max": null,
+            "state": "nicht_erfuellt"
+          }
+        ]
       }
     ],
     "not_decidable": [
       {
         "criterion": "lib:kosten_bemessungsjahr",
         "reason": "Der Start bestimmt Beitragsjahr und Frist (rechnet der Code), nicht ob die Kosten in der Jahresrechnung des Bemessungsjahres erfasst sind."
+      },
+      {
+        "criterion": "innotour:start_6_monate",
+        "reason": "Hängt vom Datum der Zusicherung ab, nicht nur vom Projektstart."
       }
     ],
-    "kb_fingerprint": "sha256:a56b9a2d6e04415338ef9068a5b93bf11c218e7de0bf16e8ab18979f40319e42",
+    "kb_fingerprint": "sha256:04ab2c4037ae8c1e7ba8daf2048890aa7e1e67c21cb0b9b672e0512c45193b60",
     "generated": null,
     "review": {
       "status": "needs_review",
       "by": null,
       "date": null,
-      "notes": "Von Hand geschrieben. Ein Start in der Zukunft heisst nur 'Gesuch noch möglich' (annahme), ein vergangener Start beweist keinen Bau- oder Installationsbeginn (unbekannt)."
+      "notes": "Von Hand geschrieben. Ein Start in der Zukunft heisst nur 'Gesuch noch möglich' (annahme), ein vergangener Start beweist keinen Bau- oder Installationsbeginn (unbekannt). Pronovo: Gesuch erst nach Realisierung, ein Start in der Zukunft heisst 'noch nicht realisiert'."
     }
   },
   "handelsregister": {
@@ -253,16 +356,50 @@
             "state": "nicht_erfuellt"
           }
         ]
+      },
+      {
+        "criterion": "innosuisse:sitz_schweiz_uid",
+        "map": [
+          {
+            "value": "LU",
+            "state": "annahme"
+          },
+          {
+            "value": "anderer_kanton",
+            "state": "annahme"
+          },
+          {
+            "value": "kein_eintrag",
+            "state": "unbekannt"
+          }
+        ]
+      },
+      {
+        "criterion": "serv:sitz_ch_handelsregister",
+        "map": [
+          {
+            "value": "LU",
+            "state": "annahme"
+          },
+          {
+            "value": "anderer_kanton",
+            "state": "annahme"
+          },
+          {
+            "value": "kein_eintrag",
+            "state": "nicht_erfuellt"
+          }
+        ]
       }
     ],
     "not_decidable": [],
-    "kb_fingerprint": "sha256:e924e811942c97ea3eb0d22cd9e7cdc09f385472a9c7f1f99a3d5bde767cc200",
+    "kb_fingerprint": "sha256:bab4756c133e24cc5031da83f76d8b3aa66389e53430ae267c0600f19eb6d9c1",
     "generated": null,
     "review": {
       "status": "needs_review",
       "by": null,
       "date": null,
-      "notes": "Von Hand geschrieben. Handbuch LIB N 20: Sitz oder Zweigniederlassung genügt, eine blosse steuerliche Betriebsstätte nicht. Werte 'anderer_kanton' und 'kein_eintrag' sind keine Kantonskürzel; Feldbeschreibung in x-core-fields prüfen."
+      "notes": "Von Hand geschrieben. Handbuch LIB N 20: Sitz oder Zweigniederlassung genügt, eine blosse steuerliche Betriebsstätte nicht. Werte 'anderer_kanton' und 'kein_eintrag' sind keine Kantonskürzel; Feldbeschreibung in x-core-fields prüfen. Innosuisse und SERV verlangen den Sitz in der Schweiz; ein Luzerner Eintrag kann auch eine Zweigniederlassung sein, darum nur 'annahme'."
     }
   },
   "raeumlichkeiten": {
@@ -388,8 +525,17 @@
         ]
       }
     ],
-    "not_decidable": [],
-    "kb_fingerprint": "sha256:aedf82d85b80529e08ca35350d5a85ff0408f6fa7062999208f4816f68dec0f2",
+    "not_decidable": [
+      {
+        "criterion": "gemeinde-luzern:kein_ersatz_neubau",
+        "reason": "Das Baujahr sagt nicht, ob nur bestehende Ladestationen ersetzt werden."
+      },
+      {
+        "criterion": "gemeinde-luzern:neubau_anteil",
+        "reason": "Der nicht für die wärmetechnischen Anforderungen nötige Anteil lässt sich aus dem Baujahr nicht ableiten."
+      }
+    ],
+    "kb_fingerprint": "sha256:64dd2b1f0b3c1afeedd73e51912fdeb0050a0bac6ab9bd51ea457eb552dcfdbe",
     "generated": null,
     "review": {
       "status": "needs_review",

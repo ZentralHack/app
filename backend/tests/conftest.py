@@ -12,8 +12,9 @@ REFERENCE_PROGRAMS = ("lib", "foerderprogramm-energie-lu")
 
 
 def copy_reference_kb(target: Path) -> Path:
-    """Schema plus the reference programs, copied to `target`."""
+    """Schema, question catalog and the reference programs, copied to `target`."""
     shutil.copytree(KNOWLEDGE_BASE_DIR / "schema", target / "schema")
+    shutil.copy(KNOWLEDGE_BASE_DIR / "question_catalog.json", target)
     (target / "programs").mkdir(parents=True)
     for program_id in REFERENCE_PROGRAMS:
         shutil.copy(KNOWLEDGE_BASE_DIR / "programs" / f"{program_id}.json", target / "programs")
