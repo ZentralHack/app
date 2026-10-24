@@ -136,3 +136,9 @@ def test_missing_partner_is_a_criterion_not_a_reject(kb: KnowledgeBase):
 def test_every_partner_type_has_a_lever():
     for partner in PROFILE_ENUMS["partner"]:
         assert partner_lever(f"partner_{partner}")
+
+
+def test_clear_purpose_without_project_type_drops_everything(kb: KnowledgeBase):
+    result = prefilter(make_profile(art_des_vorhabens=[]), kb.instruments())
+    assert result.kept == []
+    assert set(_rules(result.rejected).values()) == {"vorhaben"}

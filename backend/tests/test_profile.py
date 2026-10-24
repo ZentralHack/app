@@ -18,13 +18,17 @@ SENSORA = json.loads((REPO_DIR / "tests" / "projects" / "sensor-prototyp.json").
 VAGUE = json.loads((REPO_DIR / "tests" / "projects" / "zu-vage.json").read_text())
 
 
-def _extraction(summary: str = "Ein Satz.", **fields: tuple) -> ProfileExtraction:
+def _extraction(
+    summary: str = "Ein Satz.", purpose: str | None = "einen Prototyp bauen", **fields: tuple
+) -> ProfileExtraction:
     """Keyword values are (value, status, quote); every other field is `fehlt`."""
     missing = ExtractedField(value=None, status="fehlt", quote=None, note=None)
     values = dict.fromkeys(FIELD_TYPES, missing)
     for name, (value, status, quote) in fields.items():
         values[name] = ExtractedField(value=value, status=status, quote=quote, note=None)
-    return ProfileExtraction(summary=summary, fields=ExtractedFields(**values))
+    return ProfileExtraction(
+        summary=summary, purpose_quote=purpose, fields=ExtractedFields(**values)
+    )
 
 
 def _run(req: dict, extraction: ProfileExtraction):
@@ -89,8 +93,22 @@ def test_wrong_types_and_unknown_enums_are_dropped():
     assert fields["art_des_vorhabens"].value == ["prototyp"]
 
 
-def test_too_vague_asks_what_the_money_is_for():
-    response, _ = _run(VAGUE["input"], _extraction())
+@pytest.mark.parametrize(
+    "extraction",
+    [
+        # The model names no purpose, even though it guessed a type and a description.
+        _extraction(
+            purpose=None,
+            art_des_vorhabens=(["finanzierung"], "angegeben", "Wir brauchen Geld"),
+            vorhaben_beschreibung=("Geld beschaffen", "annahme", None),
+        ),
+        # A purpose quote that is not in the text does not count.
+        _extraction(purpose="einen Prototyp bauen"),
+        _extraction(purpose="Wir brauchen Geld"),  # quote fine, but nothing else known
+    ],
+)
+def test_too_vague_asks_what_the_money_is_for(extraction):
+    response, _ = _run(VAGUE["input"], extraction)
     assert_contract("ProfileResponse", response)
     assert response.status == "needs_clarification"
     assert response.profile is None

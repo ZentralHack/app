@@ -34,10 +34,15 @@ def test_empty_partner_list_means_no_partner():
     assert result.status == "angegeben"
 
 
-def test_empty_project_type_list_becomes_fehlt():
+def test_empty_project_type_list_means_nothing_fits():
     result = normalize_profile(make_profile(art_des_vorhabens=[])).fields["art_des_vorhabens"]
-    assert result.status == "fehlt"
-    assert result.note == "Kein Wert erkannt."
+    assert result.value == []
+    assert result.status == "angegeben"
+
+
+def test_only_unknown_project_types_become_fehlt():
+    result = normalize_profile(make_profile(art_des_vorhabens=["firmenfest"]))
+    assert result.fields["art_des_vorhabens"].status == "fehlt"
 
 
 def test_fehlt_and_other_fields_are_left_alone():

@@ -174,7 +174,9 @@ def test_failed_check_is_healed_by_retry(kb: KnowledgeBase):
 def _extraction(**fields) -> ProfileExtraction:
     missing = ExtractedField(value=None, status="fehlt", quote=None, note=None)
     values = dict.fromkeys(FIELD_TYPES, missing) | fields
-    return ProfileExtraction(summary="Ein Satz.", fields=ExtractedFields(**values))
+    return ProfileExtraction(
+        summary="Ein Satz.", purpose_quote=None, fields=ExtractedFields(**values)
+    )
 
 
 def test_profile_endpoint_and_too_vague(kb: KnowledgeBase):

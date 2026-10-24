@@ -35,6 +35,7 @@ ExtractedFields = create_model(
 
 class ProfileExtraction(LLMOutput):
     summary: str
+    purpose_quote: str | None  # the words saying what the money is for
     fields: ExtractedFields  # type: ignore[valid-type]
 
 
@@ -70,7 +71,7 @@ async def extract_profile(req: ProfileRequest, llm: LLMClient) -> ProfileRespons
         effort="low",
     )
     profile = build_profile(req, extraction)
-    if is_too_vague(profile):
+    if not _states_purpose(extraction, req.text) or is_too_vague(profile):
         return ProfileResponse(
             status="needs_clarification", profile=None, clarification=CLARIFICATION
         )
@@ -98,6 +99,12 @@ def build_profile(req: ProfileRequest, extraction: ProfileExtraction) -> Project
             )
     profile = ProjectProfile(input_text=req.text, summary=extraction.summary, fields=fields)
     return normalize_profile(profile)
+
+
+def _states_purpose(extraction: ProfileExtraction, text: str) -> bool:
+    """The text names what the money is for, proven by a quote from it."""
+    quote = extraction.purpose_quote
+    return quote is not None and occurs(quote, squash(text))
 
 
 def _checked(name: str, field: ExtractedField, text: str) -> ProfileField:

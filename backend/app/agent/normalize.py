@@ -15,8 +15,9 @@ from app.models.contract import Clarification, ProfileField, ProjectProfile
 
 log = logging.getLogger(__name__)
 
-# `partner: []` means "no partner involved", which is a known answer.
-EMPTY_IS_KNOWN = frozenset({"partner"})
+# Known empty answers: `partner: []` = no partner involved; `art_des_vorhabens: []` = the
+# purpose is clear, but no project type of the knowledge base fits (pre-filter drops all).
+EMPTY_IS_KNOWN = frozenset({"partner", "art_des_vorhabens"})
 
 CLARIFICATION = Clarification(
     question="Wofür brauchen Sie die Förderung?",

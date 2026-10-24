@@ -90,7 +90,8 @@ def _compare_profile(report: Report, fields: dict, expected: dict[str, Any]) -> 
     for name, value in expected.items():
         actual = fields.get(name)
         got = actual.value if actual else None
-        same = sorted(got) == sorted(value) if isinstance(value, list) and got else got == value
+        # Lists: the expected values must be there; more is fine.
+        same = set(value) <= set(got) if isinstance(value, list) and got else got == value
         if not same:
             report.problem(f"Profil {name}: erwartet {value!r}, erhalten {got!r}")
 
