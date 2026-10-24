@@ -17,20 +17,20 @@
   "purpose": "Die Klimastiftung Schweiz unterstützt KMU in der Schweiz und in Liechtenstein bei der Entwicklung und Skalierung innovativer, klimafreundlicher Produkte, finanziert von Partnerunternehmen.",
   "entitlement": {
     "type": "wettbewerb",
-    "note": "Der Stiftungsrat entscheidet zweimal jährlich, Förderung wird mit der CO2-Einsparung verglichen.",
+    "note": "Kein Anspruch auf Förderung. Zweistufige Beurteilung (Eignung, dann Beurteilungskriterien). Das Entscheidungsgremium entscheidet zweimal pro Jahr, im Frühling und im Herbst. Die verfügbaren Mittel sind eingeschränkt.",
     "source": {
-      "source_id": "antrag",
-      "locator": "Process"
+      "source_id": "reglement",
+      "locator": "Ziff. 1 Zweck; Ziff. 5 Entscheidungsfindung"
     }
   },
   "budget": {
     "annual_chf": 3000000,
     "year": null,
     "oversubscription": "auswahl",
-    "note": "Laut Startseite rund CHF 3 Mio. pro Jahr.",
+    "note": "Laut Startseite vergibt die Stiftung jährlich Beiträge von rund CHF 3 Mio. (Gesamtbetrag der Stiftung).",
     "source": {
       "source_id": "startseite",
-      "locator": null
+      "locator": "Abschnitt «Die Stiftung»"
     }
   },
   "general_criteria": [],
@@ -52,7 +52,7 @@
         "note": "Eingaben jeweils am 1. März und 1. September.",
         "source": {
           "source_id": "antrag",
-          "locator": "Application deadlines"
+          "locator": "Abschnitt «Antrag stellen»; FAQ «Zu welchem Zeitpunkt kann ein KMU einen Antrag stellen?»"
         }
       },
       "recipient": {
@@ -69,10 +69,8 @@
         "company_age_years_max": null,
         "project_types": [
           "entwicklung",
-          "prototyp",
           "klimaschutz",
-          "energieeffizienz",
-          "erneuerbare_energie"
+          "energieeffizienz"
         ],
         "required_partners": [],
         "sectors": []
@@ -80,24 +78,24 @@
       "eligible_items": [],
       "exclusions": [
         {
-          "text": "Projekte zur Effizienzsteigerung von Verbrennungsmotoren sowie Entwicklung elektrischer Personenwagen oder Lastwagen",
+          "text": "Projekte, welche der Effizienzsteigerung von Verbrennungsmotoren dienen oder der Entwicklung von elektrisch betriebenen Personen- und Lastwagen (ausgenommen bis auf Widerruf)",
           "source": {
             "source_id": "antrag",
-            "locator": "Exclusions"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste), «Davon ausgenommen sind bis auf Widerruf»"
           }
         },
         {
-          "text": "Capacity-Building-Projekte (Bildung und Sensibilisierung) einschliesslich Angebote zur CO2-Kompensation",
+          "text": "Projekte, welche dem Capacity Building dienen (Bildung und Sensibilisierung für Klimaschutzthemen), auch das Anbieten von CO2-Kompensationen (ausgenommen bis auf Widerruf)",
           "source": {
             "source_id": "antrag",
-            "locator": "Exclusions"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste), «Davon ausgenommen sind bis auf Widerruf»"
           }
         },
         {
-          "text": "Projekte, die bestehende Infrastruktur oder Anlagen nur ersetzen oder optimieren",
+          "text": "Projekte, die auf den Ersatz oder die Optimierung bestehender Infrastruktur oder Betriebsmittel ausgerichtet sind",
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste), Punkt technisches Innovationsvorhaben"
           }
         }
       ],
@@ -122,13 +120,13 @@
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste)"
           },
-          "notes": null
+          "notes": "Reglement Ziff. 3: «Antragsberechtigt sind schweizerische und liechtensteinische KMU»."
         },
         {
           "id": "max_250_mitarbeitende",
-          "text": "Höchstens 250 Mitarbeitende.",
+          "text": "Weniger als 250 Vollzeitangestellte über die gesamte Firmengruppe (Webseite: höchstens 250 Mitarbeitende).",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -136,19 +134,19 @@
             "mitarbeitende"
           ],
           "question": {
-            "text": "Wie viele Mitarbeitende hat Ihr Unternehmen?",
+            "text": "Wie viele Vollzeitstellen hat Ihre ganze Firmengruppe?",
             "options": [
-              "Bis 250",
-              "Mehr als 250",
+              "Weniger als 250 Vollzeitstellen",
+              "250 oder mehr Vollzeitstellen",
               "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
-            "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "source_id": "reglement",
+            "locator": "Ziff. 3 Voraussetzung für die Antragstellung"
           },
-          "notes": null
+          "notes": "Webseite, Abschnitt «So funktioniert es»: «beschäftigt höchstens 250 Mitarbeitende». Reglement Ziff. 3: «<250 Vollzeitangestellte über die gesamte Firmengruppe». filter.employees_max bleibt bei 250 (Webseite), siehe offene Frage."
         },
         {
           "id": "keine_gruendungsphase",
@@ -159,28 +157,42 @@
           "profile_fields": [
             "unternehmensalter"
           ],
-          "question": null,
+          "question": {
+            "text": "Ist Ihr Unternehmen ein Start-up in der Gründungsphase?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste)"
           },
-          "notes": null
+          "notes": "Steht nur auf der Webseite, nicht im Reglement Ziff. 3. «Gründungsphase» ist nicht definiert."
         },
         {
           "id": "kein_grosskonzern",
-          "text": "Das Kapital ist nicht oder zu weniger als der Hälfte im Besitz von Grosskonzernen oder öffentlich-rechtlichen Organisationen.",
+          "text": "Das Unternehmenskapital ist nicht oder nur zu weniger als der Hälfte in den Händen grösserer Konzerne (inkl. Joint Venture) oder öffentlich-rechtlicher Organisationen.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Gehört die Hälfte oder mehr Ihres Unternehmenskapitals grösseren Konzernen (inkl. Joint Venture) oder öffentlich-rechtlichen Organisationen?",
+            "options": [
+              "Nein, weniger als die Hälfte",
+              "Ja, die Hälfte oder mehr",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "source_id": "reglement",
+            "locator": "Ziff. 3 Voraussetzung für die Antragstellung"
           },
-          "notes": null
+          "notes": "Reglement Ziff. 3: «Nicht antragsberechtigt sind KMU, deren Unternehmenskapital sich zu ≥50% in den Händen grösserer Konzerne (inkl. Joint Venture) und/oder öffentlich-rechtlicher Organisationen befindet». Gleich auf der Webseite, Abschnitt «So funktioniert es»."
         },
         {
           "id": "umsetzung_ch_fl",
@@ -191,13 +203,20 @@
           "profile_fields": [
             "standort_kanton"
           ],
-          "question": null,
+          "question": {
+            "text": "Wird Ihr Projekt hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "FAQ «Wer kann Geld von der Klimastiftung Schweiz beantragen?»"
           },
-          "notes": null
+          "notes": "FAQ: «muss ein Projekt hauptsächlich in der Schweiz oder in Liechtenstein umgesetzt werden». Kriterienliste und Reglement Ziff. 3 sagen «sollte(n)»; berücksichtigt wird, wo Entwicklung, Wertschöpfung und Klimawirkung stattfinden und wo Projektpartner ihren Sitz haben. Siehe offene Frage."
         },
         {
           "id": "treibhausgas_vermeidung",
@@ -219,57 +238,186 @@
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste)"
           },
-          "notes": null
+          "notes": "Reglement Ziff. 2: Die Stiftung bezweckt die direkte und indirekte Reduktion der Treibhausgasemissionen."
         },
         {
           "id": "technische_innovation",
-          "text": "Technische Innovation mit dem Ziel des Markteintritts in der Schweiz oder Liechtenstein.",
+          "text": "Das Projekt ist ein technisches Innovationsvorhaben, das auf einen Markteintritt in der Schweiz oder in Liechtenstein abzielt.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
+          "question": {
+            "text": "Ist Ihr Projekt ein technisches Innovationsvorhaben mit dem Ziel eines Markteintritts in der Schweiz oder in Liechtenstein?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste)"
           },
-          "notes": null
+          "notes": "Nicht förderfähig sind Projekte, die auf den Ersatz oder die Optimierung bestehender Infrastruktur oder Betriebsmittel ausgerichtet sind (gleiche Stelle). Steht so nur auf der Webseite."
         },
         {
           "id": "verwaessernde_finanzierung",
-          "text": "Erhaltene und geplante verwässernde Finanzierungen betragen höchstens das Zehnfache des beantragten Betrags.",
+          "text": "Die für das Projekt erhaltenen und geplanten dilutiven (verwässernden) Finanzierungen betragen höchstens das Zehnfache des beantragten Förderbetrags.",
           "kind": "muss",
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [
             "budget"
           ],
-          "question": null,
+          "question": {
+            "text": "Wie hoch sind die erhaltenen und geplanten dilutiven Finanzierungen für das Projekt im Vergleich zum beantragten Förderbetrag?",
+            "options": [
+              "Höchstens das Zehnfache",
+              "Mehr als das Zehnfache",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "antrag",
-            "locator": "Eligibility criteria"
+            "locator": "Abschnitt «So funktioniert es» (Kriterienliste)"
+          },
+          "notes": "Steht nur auf der Webseite, nicht im Reglement."
+        },
+        {
+          "id": "antrag_vor_umsetzung",
+          "text": "Der Förderantrag wird zwingend vor der Durchführung des Projekts eingereicht, auch vor der Beauftragung von Investitionen (z.B. Auftragsbestätigung).",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": {
+            "text": "Hat das Projekt schon begonnen, oder haben Sie Investitionen dafür schon beauftragt?",
+            "options": [
+              "Nein, noch nicht",
+              "Ja, teilweise",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 6 Eignungskriterien (1. Stufe)"
+          },
+          "notes": "Reglement Ziff. 6: «Nachträglich eingereichte Förderanträge werden abgelehnt.» Bei grösseren Projekten zählen nur Projektschritte, die bei der Eingabe noch nicht durchgeführt sind. Auch FAQ «Zu welchem Zeitpunkt kann ein KMU einen Antrag stellen?»."
+        },
+        {
+          "id": "klimanutzen",
+          "text": "Nutzen für das Klima (Reduktion von CO2 oder anderen Treibhausgasen).",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
+          },
+          "notes": null
+        },
+        {
+          "id": "innovationspotenzial",
+          "text": "Innovationspotenzial.",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
+          },
+          "notes": null
+        },
+        {
+          "id": "organisation_kompetenz",
+          "text": "Organisation und Kompetenz der Antragstellenden und deren Partner hinsichtlich Skalierung des Produkts.",
+          "kind": "bewertung",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
+          },
+          "notes": null
+        },
+        {
+          "id": "bezug_ch_fl",
+          "text": "Bezug zur Schweiz oder Liechtenstein.",
+          "kind": "bewertung",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
+          },
+          "notes": null
+        },
+        {
+          "id": "additionalitaet",
+          "text": "Additionalität der Finanzierung durch die Klimastiftung Schweiz.",
+          "kind": "bewertung",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
+          },
+          "notes": null
+        },
+        {
+          "id": "esg_wirkung",
+          "text": "Sonstige positive Auswirkungen in den Bereichen Umwelt, Soziales und Unternehmensführung (ESG).",
+          "kind": "bewertung",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 7 Beurteilungskriterien (2. Stufe)"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "prozent_kosten",
-        "summary": "Höchstens 50% der Projektkosten, maximal CHF 200'000, als Beitrag oder als zinslose, bei Erfolg ganz oder teilweise rückzahlbare Finanzierung.",
+        "summary": "Höchstens CHF 200'000 und höchstens 50% der Gesamtkosten. Festbetragsfinanzierung als Beitrag, der nicht zurückbezahlt wird, oder als zinsfreie Finanzierung, die im Erfolgsfall teils oder ganz zurückbezahlt wird.",
         "cost_categories": [
           {
             "id": "projektkosten",
-            "name": "Gesamte Projektkosten",
+            "name": "Gesamtkosten des Projekts",
             "rate_pct": 50,
             "definition": null,
             "source": {
               "source_id": "antrag",
-              "locator": "Funding amount"
+              "locator": "Abschnitt «Reglement»"
             }
           }
         ],
@@ -279,81 +427,133 @@
         "max_amount_chf": 200000,
         "cofinancing": {
           "required": true,
-          "rule": "Mindestens 50% der Projektkosten aus anderen Mitteln."
+          "rule": "Abgeleitet aus Webseite, Abschnitt «Reglement» (max. 50% der Gesamtkosten): mindestens 50% der Gesamtkosten aus anderen Mitteln. Co-Finanzierungen müssen offengelegt werden (Reglement Ziff. 8)."
         },
         "deductions": [],
         "payout_forms": [
-          "Nicht rückzahlbarer Beitrag",
-          "Zinslose, bei Erfolg rückzahlbare Finanzierung"
+          "Beitrag, der nicht zurückbezahlt wird",
+          "Zinsfreie Finanzierung, im Erfolgsfall teils oder ganz rückzahlbar"
         ],
-        "calculation_basis": "Erwartete Förderung wird mit der berechneten CO2-Einsparung verglichen.",
+        "calculation_basis": "Der erwartete Förderbeitrag wird u.a. mit den berechneten CO2-Einsparungen verglichen.",
         "example": null,
         "source": {
           "source_id": "antrag",
-          "locator": "Funding amount"
+          "locator": "Abschnitt «Reglement»"
         },
-        "note": "Die Stiftung empfiehlt, einen möglichst tiefen Betrag zu beantragen. Konditionen im Fördervertrag. Auszahlung nach Meilensteinen."
+        "note": "Die Stiftung empfiehlt, den tiefstmöglichen Betrag zu beantragen. Bedingungen in der Fördervereinbarung (FAQ «Muss ein KMU den Förderbeitrag zurückzahlen?»). Auszahlung gemäss Meilensteinen. Das Reglement Ziff. 8 nennt keine Beträge: Ober- und Untergrenzen legt der Stiftungsrat fest."
       },
       "timing": {
         "deadline": {
           "type": "fester_termin_jaehrlich",
-          "rule": "Eingabe bis 1. März oder 1. September. Entscheide im Juni bzw. November.",
-          "next_dates": [
-            "2027-03-01",
-            "2027-09-01"
-          ],
+          "rule": "Eingabefrist jeweils 1. März und 1. September. Antwort im Juni (Eingabe bis 1. März) oder im November (Eingabe bis 1. September).",
+          "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "antrag",
-            "locator": "Application deadlines"
+            "locator": "Abschnitt «Antrag stellen»; FAQ «Zu welchem Zeitpunkt kann ein KMU einen Antrag stellen?»"
           }
         },
         "assessment_period": null,
-        "decision_time": "Juni (Eingabe März) bzw. November (Eingabe September)",
+        "decision_time": "Juni (Eingabe bis 1. März) oder November (Eingabe bis 1. September)",
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": "Gesuch vor der Umsetzung einreichen (Satz auf der Webseite unklar formuliert)."
+        "note": "Antrag zwingend vor der Durchführung des Projekts einreichen, auch vor der Beauftragung von Investitionen. Nachträgliche Anträge werden abgelehnt (Reglement Ziff. 6)."
       },
       "documents": {
         "application": [
           {
-            "name": "Antrag im Förderportal auf Deutsch, Französisch oder Englisch",
+            "name": "Antrag im Antragsportal auf Deutsch, Französisch oder Englisch",
             "condition": null,
             "source": {
               "source_id": "antrag",
-              "locator": "Process"
+              "locator": "Abschnitt «Antrag stellen»"
+            }
+          },
+          {
+            "name": "Offenlegung der Co-Finanzierungen",
+            "condition": "falls Co-Finanzierungen bestehen",
+            "source": {
+              "source_id": "reglement",
+              "locator": "Ziff. 8 Art, Umfang und Höhe der Förderung"
+            }
+          },
+          {
+            "name": "Vertrauliche Informationen im Antrag spezifisch kennzeichnen",
+            "condition": "falls der Antrag vertrauliche Informationen enthält",
+            "source": {
+              "source_id": "reglement",
+              "locator": "Ziff. 13 Geheimhaltung"
             }
           }
         ],
         "completion": [
           {
-            "name": "Nachweise der Umsetzung über das Portal",
-            "condition": null,
+            "name": "Nachweise über das Antragsportal einreichen",
+            "condition": "im Falle einer Förderung",
             "source": {
               "source_id": "antrag",
-              "locator": "Process"
+              "locator": "Abschnitt «Antrag stellen» (Registrieren & Login)"
+            }
+          },
+          {
+            "name": "Bericht nach Abschluss jedes Meilensteins",
+            "condition": null,
+            "source": {
+              "source_id": "reglement",
+              "locator": "Ziff. 10 Berichterstattung"
             }
           }
         ]
       },
       "obligations": [
         {
-          "text": "Meilensteine gemäss individuellem Fördervertrag nachweisen.",
+          "text": "Auszahlung in vertraglich festgelegten Raten nach belegtem Abschluss des Projektschritts. Belege und Nachweise vorgängig einreichen.",
           "source": {
-            "source_id": "antrag",
-            "locator": "Process"
+            "source_id": "reglement",
+            "locator": "Ziff. 9 Auszahlung der Fördermittel"
+          }
+        },
+        {
+          "text": "Die Stiftung regelmässig über den Projektverlauf informieren, auch nach der letzten Auszahlung. Jährlich einen kurzen Fragebogen ausfüllen.",
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 10 Berichterstattung"
+          }
+        },
+        {
+          "text": "Kommunikation zum Projekt mit der Geschäftsstelle koordinieren und von ihr bewilligen lassen.",
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 11 Öffentlichkeitsarbeit"
+          }
+        },
+        {
+          "text": "Das Projekt wird von Firmenvertretern gegenüber der Stiftung vertreten.",
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 3 Voraussetzung für die Antragstellung"
           }
         }
       ],
       "levers": [
         {
-          "text": "Möglichst tiefen Förderbetrag beantragen, um das Verhältnis zur CO2-Einsparung zu verbessern",
+          "text": "Den tiefstmöglichen Förderbetrag beantragen, weil der Beitrag mit den berechneten CO2-Einsparungen verglichen wird",
           "affects_criteria": [
-            "treibhausgas_vermeidung"
+            "klimanutzen"
           ],
           "source": {
             "source_id": "antrag",
-            "locator": "Funding amount"
+            "locator": "Abschnitt «Reglement»"
+          }
+        },
+        {
+          "text": "Bei grösseren oder längeren Projekten nur Projektschritte beantragen, die bei der Eingabe noch nicht durchgeführt sind",
+          "affects_criteria": [
+            "antrag_vor_umsetzung"
+          ],
+          "source": {
+            "source_id": "reglement",
+            "locator": "Ziff. 6 Eignungskriterien (1. Stufe)"
           }
         }
       ],
@@ -372,10 +572,10 @@
     {
       "with": "*",
       "type": "erlaubt",
-      "text": "Andere Förderung durch Dritte schliesst einen Antrag nicht aus.",
+      "text": "Die Förderung durch andere Stellen ist kein Ausschlusskriterium.",
       "source": {
         "source_id": "antrag",
-        "locator": "Other requirements"
+        "locator": "FAQ «Kann ein KMU Geld beantragen, wenn es bereits von anderen Stellen gefördert wird?»"
       }
     }
   ],
@@ -383,24 +583,24 @@
     "channel": "online_portal",
     "url": "https://funding.klimastiftung.ch/de/user",
     "steps": [
-      "Im Förderportal registrieren",
-      "Antrag einreichen",
-      "Gespräch mit einem Mitglied des Beirats",
-      "Entscheid des Stiftungsrats",
-      "Individueller Fördervertrag",
-      "Auszahlung nach Meilensteinen"
+      "Benutzerkonto im Antragsportal erstellen",
+      "Antrag bis 1. März oder 1. September einreichen",
+      "Persönlicher Austausch mit einer Beirätin oder einem Beirat",
+      "Förderentscheid des Stiftungsrats im Frühling bzw. Herbst",
+      "Individuelle Fördervereinbarung erarbeiten",
+      "Durchführung belegen, Auszahlung gemäss Meilensteinen"
     ],
-    "note": null,
+    "note": "Die Geschäftsstelle prüft die Gesuche zuerst auf Vollständigkeit (Reglement Ziff. 5).",
     "source": {
       "source_id": "antrag",
-      "locator": "Process"
+      "locator": "Abschnitt «Antrag stellen»"
     }
   },
   "contacts": [
     {
       "name": "Klimastiftung Schweiz",
-      "role": "Mythenquai 50/60, 8002 Zürich",
-      "email": null,
+      "role": "Kontakt allgemein, Postfach, Mythenquai 50/60, 8002 Zürich",
+      "email": "info@klimastiftung.ch",
       "phone": "+41 43 285 44 80",
       "url": "https://www.klimastiftung.ch/de/kontakt/"
     }
@@ -414,7 +614,7 @@
       "url": "https://www.klimastiftung.ch/de/antrag-stellen/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -424,20 +624,34 @@
       "url": "https://www.klimastiftung.ch/de/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "reglement",
+      "title": "Reglement zum Innovationsprogramm, Klimastiftung Schweiz",
+      "type": "reglement",
+      "url": "https://www.klimastiftung.ch/wp-content/uploads/20251119_Reglement_Innovationsfoerderung_D_signed.pdf",
+      "version": "Version 003 vom 19. November 2025",
+      "published": "2025-11-19",
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Reglement Innovationsförderung (PDF vom 19.11.2025) war nicht maschinenlesbar. Alle Kriterien stammen von der Webseite, mit dem Reglement abgleichen.",
-      "Zeitpunkt: Muss das Gesuch vor Projektbeginn eingereicht sein? Satz auf der Webseite unklar.",
-      "Ab wann gilt ein Unternehmen nicht mehr als Start-up in der Gründungsphase? Nicht definiert.",
-      "Die Webseite wurde in einer englischen Zusammenfassung gelesen, Locator sind englische Abschnittstitel.",
-      "Quellen nicht lokal abgelegt."
+      "keine_gruendungsphase: Ab wann gilt ein Unternehmen nicht mehr als Start-up in der Gründungsphase? Nicht definiert.",
+      "Quellen nicht lokal abgelegt.",
+      "sources.reglement: PDF ist ein Scan ohne Text. Zitate wurden von den Seitenbildern abgeschrieben. Stichprobe prüfen.",
+      "max_250_mitarbeitende, filter.employees_max: Webseite «höchstens 250 Mitarbeitende», Reglement Ziff. 3 «<250 Vollzeitangestellte über die gesamte Firmengruppe». Welche Grenze gilt?",
+      "umsetzung_ch_fl: FAQ sagt «muss», Kriterienliste und Reglement Ziff. 3 sagen «sollte(n)». Ist es ein Ausschlusskriterium?",
+      "keine_gruendungsphase, technische_innovation, verwaessernde_finanzierung: stehen nur auf der Webseite, nicht im Reglement. Bestätigen, dass sie gelten.",
+      "funding.cofinancing: abgeleitet aus «maximal 50% der Gesamtkosten». Bestätigen.",
+      "funding.max_amount_chf, max_share_of_costs_pct: nur auf der Webseite. Reglement Ziff. 8 sagt, der Stiftungsrat legt die Grenzen fest.",
+      "timing.deadline.next_dates: Quellen nennen nur «jeweils 1. März und 1. September» ohne Jahr. Darum leer."
     ]
   }
 }
