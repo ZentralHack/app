@@ -1798,15 +1798,6 @@
     },
     {
       "with": "*",
-      "type": "ausgeschlossen",
-      "text": "Start-up Innovationsprojekte: Für dasselbe Projekt darf keine laufende Förderung bestehen.",
-      "source": {
-        "source_id": "sip",
-        "locator": "Voraussetzungen"
-      }
-    },
-    {
-      "with": "*",
       "type": "bedingt",
       "text": "Innovationsmentoring: Für dasselbe Projekt darf kein paralleles anderes Beratungsangebot (z. B. regionale oder kantonale Stelle) bezogen werden.",
       "source": {
