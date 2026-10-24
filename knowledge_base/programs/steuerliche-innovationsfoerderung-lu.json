@@ -16,13 +16,13 @@
     "municipalities": [],
     "note": "Nur Kantons- und Gemeindesteuern Luzern."
   },
-  "purpose": "Steuerliche Entlastung für Gewinne aus Patenten (Patentbox). Der ebenfalls gesetzlich vorgesehene zusätzliche Abzug für Forschung und Entwicklung beträgt derzeit 0%.",
+  "purpose": "Steuerliche Entlastung für Gewinne aus Patenten und vergleichbaren Rechten (Patentbox, Ermässigung 90%). Der ebenfalls gesetzlich vorgesehene zusätzliche Abzug für Forschung und Entwicklung (§ 72f StG) beträgt laut Steuerverordnung derzeit 0,0 Prozent.",
   "entitlement": {
     "type": "rechtsanspruch_im_budget",
     "note": "Gesetzliche Steuerermässigung auf Antrag, kein Förderbudget.",
     "source": {
-      "source_id": "steuerbuch",
-      "locator": "Abschnitt 5"
+      "source_id": "stg",
+      "locator": "§ 72b Abs. 1"
     }
   },
   "budget": null,
@@ -32,21 +32,22 @@
     {
       "id": "patentbox",
       "name": "Patentbox (ermässigte Besteuerung von Gewinnen aus Patenten)",
-      "description": "Auf Antrag wird der Reingewinn aus Patenten und vergleichbaren Rechten nur zu 10% in den steuerbaren Reingewinn einbezogen (Ermässigung 90%).",
+      "description": "Auf Antrag wird der Reingewinn aus Patenten und vergleichbaren Rechten im Verhältnis des Nexusquotienten mit einer Ermässigung von 90% in den steuerbaren Reingewinn einbezogen.",
       "keywords": [
         "Patentbox",
         "STAF",
         "Steuerermässigung Patente",
-        "§ 72a StG"
+        "§ 72a StG",
+        "§ 72b StG"
       ],
       "instrument_type": "sonstiges",
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Stand der Weisung 01.01.2025.",
+        "note": "§ 72b StG in Kraft (Steuergesetz, Stand 1. Oktober 2026).",
         "source": {
-          "source_id": "steuerbuch",
-          "locator": "Abschnitt 1"
+          "source_id": "stg",
+          "locator": "§ 72b Abs. 1"
         }
       },
       "recipient": {
@@ -74,29 +75,32 @@
         {
           "id": "qualifizierende_rechte",
           "name": "Patente und vergleichbare Rechte",
-          "definition": "Patente und vergleichbare Rechte gemäss § 72a StG.",
+          "definition": "Patente (Europäisches Patent mit Benennung Schweiz, Schweizer Patent, entsprechende ausländische Patente) und vergleichbare Rechte (ergänzende Schutzzertifikate, geschützte Topographien, geschützte Pflanzensorten, nach Heilmittelgesetz geschützte Unterlagen, Berichtsschutz nach Landwirtschaftsgesetz, entsprechende ausländische Rechte) gemäss § 72a StG.",
           "examples_positive": [
-            "Patente"
+            "Patente",
+            "Ergänzende Schutzzertifikate",
+            "Geschützte Topographien",
+            "Geschützte Pflanzensorten"
           ],
           "examples_negative": [
-            "Nicht patentierte Erfindungen von KMU",
+            "Nicht patentgeschützte Erfindungen von KMU",
             "Marken",
             "Designs",
             "Betriebsgeheimnisse",
             "Urheberrechtlich geschützte Software"
           ],
           "source": {
-            "source_id": "steuerbuch",
-            "locator": "Abschnitt 1"
+            "source_id": "stg",
+            "locator": "§ 72a Abs. 1 und 2"
           }
         }
       ],
       "exclusions": [
         {
-          "text": "Marken, Designs, Betriebsgeheimnisse und urheberrechtlich geschützte Software",
+          "text": "Nicht patentgeschützte Erfindungen von KMU (u.a. Marken, Designs, Betriebsgeheimnisse) sowie urheberrechtlich geschützte Software",
           "source": {
             "source_id": "steuerbuch",
-            "locator": "Abschnitt 1"
+            "locator": "Ziffer 1 (Allgemeines zur Patentbox)"
           }
         }
       ],
@@ -122,13 +126,13 @@
           "evidence": [],
           "source": {
             "source_id": "steuerbuch",
-            "locator": "Abschnitt 1"
+            "locator": "Ziffer 1 (Allgemeines zur Patentbox)"
           },
-          "notes": null
+          "notes": "Abgeleitet aus Steuerbuch Ziffer 1: Das Privileg steht juristischen Personen, Personengesellschaften und Selbständigerwerbenden zu. Es gilt nur für die Luzerner Staats- und Gemeindesteuern («Der Bund kennt weder eine Patentboxbesteuerung …»)."
         },
         {
           "id": "patent_vorhanden",
-          "text": "Das Unternehmen erzielt Gewinn aus einem Patent oder einem vergleichbaren Recht.",
+          "text": "Das Unternehmen erzielt Reingewinn aus einem erteilten Patent oder vergleichbaren Recht nach § 72a StG.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -136,57 +140,75 @@
             "taetigkeit"
           ],
           "question": {
-            "text": "Besitzt Ihr Unternehmen ein Patent, mit dem es Gewinn erzielt?",
+            "text": "Besitzt Ihr Unternehmen ein erteiltes Patent oder vergleichbares Recht, mit dem es Gewinn erzielt?",
             "options": [
               "Ja",
               "Nein",
-              "Patent angemeldet",
+              "Patent angemeldet, noch nicht erteilt",
               "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
-            "source_id": "steuerbuch",
-            "locator": "Abschnitt 1"
+            "source_id": "stg",
+            "locator": "§ 72a, § 72b Abs. 1"
           },
-          "notes": null
+          "notes": "Abgeleitet aus Art. 1 Abs. 1 Patentbox-Verordnung: Die ermässigte Besteuerung beginnt in der Steuerperiode, in der das Recht erteilt wird. Ein nur angemeldetes Patent genügt noch nicht."
         },
         {
           "id": "nexus_fe_aufwand",
-          "text": "Der begünstigte Anteil richtet sich nach dem Verhältnis des qualifizierenden zum gesamten F&E-Aufwand pro Patent (Nexusquotient).",
-          "kind": "muss",
+          "text": "Die Ermässigung gilt nur im Verhältnis des qualifizierenden zum gesamten F&E-Aufwand pro Patent oder vergleichbarem Recht (Nexusquotient). Qualifizierend ist F&E, die das Unternehmen selbst im Inland durchführt oder durch Dritte oder inländische Konzerngesellschaften durchführen lässt.",
+          "kind": "soll",
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Wer hat die Forschung und Entwicklung für das Patent durchgeführt?",
+            "options": [
+              "Unser Unternehmen selbst in der Schweiz",
+              "Teilweise beauftragte Dritte",
+              "Konzerngesellschaften im Ausland oder Patent zugekauft",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
-            "Aufstellung F&E-Aufwand pro Patent"
+            "Aufstellung F&E-Aufwand und Reingewinn pro Patent oder vergleichbarem Recht"
           ],
           "source": {
-            "source_id": "steuerbuch",
-            "locator": "Abschnitt 1"
+            "source_id": "stg",
+            "locator": "§ 72b Abs. 1"
           },
-          "notes": null
+          "notes": "Formel und Kategorien des Aufwands: Art. 5 Patentbox-Verordnung. Belegpflicht: Art. 8 Abs. 1 Patentbox-Verordnung."
         },
         {
           "id": "dokumentation",
-          "text": "Dokumentation gemäss Art. 7 bis 9 der Verordnung über die ermässigte Besteuerung (SR 642.142.1) beim Erstantrag und laufend.",
+          "text": "Das Unternehmen dokumentiert den F&E-Aufwand und den dazugehörigen Reingewinn und ordnet beides den einzelnen Patenten oder vergleichbaren Rechten zu. Pflicht beim erstmaligen Antrag und laufend.",
           "kind": "muss",
           "about": "dokumente",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
-          "evidence": [],
-          "source": {
-            "source_id": "steuerbuch",
-            "locator": "Abschnitt 1, Verfahren"
+          "question": {
+            "text": "Können Sie Ihren F&E-Aufwand und den Gewinn den einzelnen Patenten zuordnen?",
+            "options": [
+              "Ja, pro Patent",
+              "Nur pro Produkt oder Produktfamilie",
+              "Nein",
+              "Weiss nicht"
+            ]
           },
-          "notes": null
+          "evidence": [
+            "Dokumentation F&E-Aufwand und Reingewinn pro Patent, Produkt oder Produktfamilie"
+          ],
+          "source": {
+            "source_id": "patentbox_vo",
+            "locator": "Art. 8 Abs. 1"
+          },
+          "notes": "Steuerbuch Ziffer 2: Dokumentationspflichten nach Art. 7 bis 9 der Verordnung beim erstmaligen Antrag und für die laufende Boxenbesteuerung. Zuordnung pro Produkt oder Produktfamilie zulässig, wenn pro Recht nicht sachgerecht (Art. 8 Abs. 2)."
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "Gewinn aus Patenten wird nur zu 10% besteuert (Ermässigung 90%). Alle Ermässigungen zusammen höchstens 70% des steuerbaren Gewinns.",
+        "summary": "Reingewinn aus Patenten und vergleichbaren Rechten wird im Verhältnis des Nexusquotienten mit einer Ermässigung von 90% besteuert. Alle Ermässigungen zusammen höchstens 70% des steuerbaren Gewinns.",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": null,
@@ -195,17 +217,17 @@
         "cofinancing": null,
         "deductions": [
           {
-            "text": "Entlastungsbegrenzung: Patentbox und F&E-Abzug zusammen höchstens 70% des steuerbaren Gewinns vor Verlustverrechnung.",
+            "text": "Entlastungsbegrenzung: Patentbox und zusätzlicher F&E-Abzug zusammen höchstens 70% des steuerbaren Gewinns vor Verlustverrechnung, ohne Nettobeteiligungsertrag.",
             "source": {
-              "source_id": "steuerbuch",
-              "locator": "Abschnitt 3 (§ 72c StG)"
+              "source_id": "stg",
+              "locator": "§ 72c Abs. 1"
             }
           },
           {
-            "text": "Eintrittsbesteuerung bei Erstanwendung: F&E-Aufwand der laufenden und der zehn vorangegangenen Steuerperioden wird grundsätzlich hinzugerechnet.",
+            "text": "Eintrittsbesteuerung bei Erstanwendung: F&E-Aufwand der laufenden und der zehn vorangegangenen Steuerperioden wird grundsätzlich hinzugerechnet. Luzern besteuert die Boxengewinne ordentlich, bis dieser Betrag erreicht ist. Ein Rest wird spätestens im 5. Jahr zugerechnet.",
             "source": {
               "source_id": "steuerbuch",
-              "locator": "Abschnitt 1"
+              "locator": "Ziffer 2 (Besteuerung der Patentbox nach § 72b StG)"
             }
           }
         ],
@@ -215,8 +237,8 @@
         "calculation_basis": "Reingewinn aus qualifizierten Rechten mal Nexusquotient. Bei Produkten Kürzung um 6% der zugewiesenen Kosten und um das Markenentgelt.",
         "example": null,
         "source": {
-          "source_id": "steuerbuch",
-          "locator": "Abschnitte 1 und 3"
+          "source_id": "stg",
+          "locator": "§ 72b Abs. 1 und 2, § 72c Abs. 1"
         },
         "note": "Gilt nur kantonal. Der Bund kennt weder Patentbox noch F&E-Zusatzabzug."
       },
@@ -227,24 +249,24 @@
           "next_dates": [],
           "relative": null,
           "source": {
-            "source_id": "steuerbuch",
-            "locator": "Abschnitt 5"
+            "source_id": "stg",
+            "locator": "§ 72b Abs. 1"
           }
         },
         "assessment_period": "Steuerperiode",
         "decision_time": null,
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": null
+        "note": "Die ermässigte Besteuerung beginnt in der Steuerperiode, in der das Recht erteilt wird, und endet in der Steuerperiode, in der es erlischt (Art. 1 Patentbox-Verordnung)."
       },
       "documents": {
         "application": [
           {
-            "name": "Dokumentation nach Art. 7 bis 9 der Verordnung über die ermässigte Besteuerung",
-            "condition": null,
+            "name": "Dokumentation F&E-Aufwand und Reingewinn pro Patent oder vergleichbarem Recht (Art. 8 Patentbox-Verordnung)",
+            "condition": "Die Steuerbehörde kann die Dokumentation einfordern.",
             "source": {
-              "source_id": "steuerbuch",
-              "locator": "Abschnitt 1"
+              "source_id": "patentbox_vo",
+              "locator": "Art. 8 Abs. 1"
             }
           }
         ],
@@ -259,7 +281,7 @@
       },
       "source": {
         "source_id": "steuerbuch",
-        "locator": null
+        "locator": "Ziffern 1, 2 und 4"
       }
     }
   ],
@@ -270,7 +292,7 @@
       "text": "Beim Luzerner Innovationsbeitrag wird die Steuerersparnis aus Patentbox oder F&E-Zusatzabzug abgezogen, wenn dieselbe Tätigkeit und dasselbe Bemessungsjahr betroffen sind.",
       "source": {
         "source_id": "lib_handbuch",
-        "locator": "N 137-141"
+        "locator": "N 136-141"
       }
     }
   ],
@@ -278,22 +300,32 @@
   "contacts": [
     {
       "name": "Dienststelle Steuern Kanton Luzern, Juristische Personen",
-      "role": "Fragen zu Patentbox und F&E-Abzug",
+      "role": "Kontaktformular für allgemeine Anliegen. Steuerliche Fragen an die zuständige Einschätzungsexpertin oder den zuständigen Einschätzungsexperten. Telefon für dringende Fälle.",
       "email": null,
-      "phone": null,
+      "phone": "+41 41 228 57 10",
       "url": "https://steuern.lu.ch/juristischepersonen/kontaktformular_jp"
     }
   ],
   "legal_basis": [
     {
-      "title": "Steuergesetz Kanton Luzern (StG)",
-      "ref": "§§ 72a bis 72f",
-      "url": null
+      "title": "Steuergesetz Kanton Luzern (StG), SRL Nr. 620",
+      "ref": "§§ 72a bis 72c und 72f",
+      "url": "https://srl.lu.ch/app/de/texts_of_law/620"
     },
     {
-      "title": "Verordnung über die ermässigte Besteuerung von Gewinnen aus Patenten und vergleichbaren Rechten",
-      "ref": "SR 642.142.1, Art. 2 bis 9",
-      "url": null
+      "title": "Steuerverordnung Kanton Luzern (StV), SRL Nr. 621",
+      "ref": "§ 24a",
+      "url": "https://srl.lu.ch/app/de/texts_of_law/621"
+    },
+    {
+      "title": "Verordnung über die ermässigte Besteuerung von Gewinnen aus Patenten und vergleichbaren Rechten (Patentbox-Verordnung)",
+      "ref": "SR 642.142.1, Art. 1 bis 9",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2019/699/de"
+    },
+    {
+      "title": "Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (StHG)",
+      "ref": "SR 642.14, Art. 24a, 24b und 25a",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1991/1256_1256_1256/de"
     }
   ],
   "sources": [
@@ -304,7 +336,7 @@
       "url": "https://steuerbuch.lu.ch/band2/unternehmenssteuerrecht/bestimmungen_gemaess_steuerreform_staf",
       "version": null,
       "published": "2025-01-01",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -314,19 +346,50 @@
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
       "version": "1.0",
       "published": "2026-10-01",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": "sources/lib/Handbuch_LIB_2026_10_01.pdf"
+    },
+    {
+      "id": "stg",
+      "title": "Steuergesetz Kanton Luzern (StG), SRL Nr. 620",
+      "type": "gesetz",
+      "url": "https://srl.lu.ch/api/de/versions/4926/pdf_file",
+      "version": "Stand 1. Oktober 2026",
+      "published": "2026-10-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "stv",
+      "title": "Steuerverordnung Kanton Luzern (StV), SRL Nr. 621",
+      "type": "verordnung",
+      "url": "https://srl.lu.ch/api/de/versions/4586/pdf_file",
+      "version": "Stand 1. Januar 2026",
+      "published": "2026-01-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "patentbox_vo",
+      "title": "Patentbox-Verordnung (SR 642.142.1)",
+      "type": "verordnung",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2019/699/20200101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2019-699-20200101-de-pdf-a-1.pdf",
+      "version": "Stand am 1. Januar 2020",
+      "published": "2019-11-13",
+      "checked": "2026-10-24",
+      "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Nicht erfasst als Instrument: Zusätzlicher Abzug für F&E (§ 72f StG). Laut Steuerbuch (Stand 01.01.2025) beträgt der Satz derzeit 0%, der Regierungsrat kann ihn per Verordnung auf bis zu 50% festlegen. Prüfen, ob sich das seit 2025 geändert hat.",
-      "Zeitpunkt und Formular für den Antrag (Steuererklärung?) nicht belegt.",
-      "Steuerbuch-Seite datiert 01.01.2025, Aktualität für Steuerperiode 2026 prüfen.",
-      "Ob ein angemeldetes, noch nicht erteiltes Patent genügt, nennt die Quelle nicht."
+      "Nicht als Instrument erfasst: Zusätzlicher Abzug für F&E (§ 72f StG). § 24a StV setzt ihn auf 0,0 Prozent (Stand 1. Januar 2026). Bei Änderung der StV als Instrument ergänzen.",
+      "timing.deadline: Zeitpunkt und Formular für den Antrag (Steuererklärung?) nicht belegt.",
+      "patent_vorhanden: Abgeleitet aus Art. 1 Abs. 1 Patentbox-Verordnung, dass ein nur angemeldetes Patent noch keine Ermässigung gibt. Bitte bestätigen.",
+      "steuerpflichtig_luzern: Steuerpflicht in Luzern abgeleitet (kantonale Regel). Bitte bestätigen, z.B. für ausserkantonale Unternehmen mit Betriebsstätte in Luzern.",
+      "nexus_fe_aufwand: Frageoptionen aus den Aufwandkategorien von Art. 5 Patentbox-Verordnung gebildet. Prüfen."
     ]
   }
 }
