@@ -8,6 +8,7 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { ConfirmMissing } from "../components/ui/ConfirmMissing";
 import { fieldLabel, formatFieldValue } from "../lib/format";
+import { RUECKFRAGE } from "../lib/openCriteria";
 import { t } from "../text/de-CH";
 
 interface Props {
@@ -22,11 +23,14 @@ interface Props {
 
 const RECHTSFORM: Record<string, string> = { AG: "Aktiengesellschaft", GmbH: "Gesellschaft mit beschränkter Haftung", oeffentlich: "Öffentlich-rechtlich" };
 
-/** Fields grouped by meaning, not by status. Unknown fields go to "Weitere Angaben". */
+/**
+ * Fields grouped by meaning, not by status. Unknown fields go to "Weitere Angaben". Answers to criterion
+ * questions (rueckfrage_*) are part of the profile but belong to the Rückfragen, so they are not shown here.
+ */
 function groupFields(fields: ProjectProfile["fields"]) {
   const placed = new Set([...SECTIONS.flatMap(s => s.fields), ...HEADER_FIELDS]);
   const groups: { id: SectionId; names: string[] }[] = SECTIONS.map(s => ({ id: s.id, names: s.fields.filter(f => f in fields) }));
-  groups.push({ id: "weitere", names: Object.keys(fields).filter(f => !placed.has(f)) });
+  groups.push({ id: "weitere", names: Object.keys(fields).filter(f => !placed.has(f) && !f.startsWith(RUECKFRAGE)) });
   return groups.filter(g => g.names.length > 0);
 }
 
@@ -46,7 +50,9 @@ export function ProfileScreen({ profile, company, onChange, busy, onBack, onConf
     typeof f.mitarbeitende?.value === "number" && `${f.mitarbeitende.value} Mitarbeitende`,
     f.taetigkeit?.value && formatFieldValue("taetigkeit", f.taetigkeit),
   ].filter(Boolean);
-  const all = Object.values(f);
+  const all = Object.entries(f)
+    .filter(([n]) => !n.startsWith(RUECKFRAGE))
+    .map(([, x]) => x);
   const counts = t.profile.counts(
     all.filter(x => x.status === "angegeben").length,
     all.filter(x => x.status === "annahme").length,

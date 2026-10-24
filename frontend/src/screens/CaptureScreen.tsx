@@ -5,6 +5,7 @@ import { Page } from "../components/layout/Page";
 import { PageHeader } from "../components/layout/PageHeader";
 import { Alert } from "../components/ui/Alert";
 import { Button } from "../components/ui/Button";
+import { Spinner } from "../components/ui/Spinner";
 import { ConfirmMissing } from "../components/ui/ConfirmMissing";
 import { Card } from "../components/ui/Card";
 import { EXAMPLES } from "../content/examples";
@@ -164,9 +165,16 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
-          <span className="text-fg-2">{t.capture.duration}</span>
+          {busy ? (
+            <span role="status" aria-live="polite" className="flex items-center gap-2 font-semibold" data-testid="capture-busy">
+              <Spinner />
+              {t.capture.working}
+            </span>
+          ) : (
+            <span className="text-fg-2">{t.capture.duration}</span>
+          )}
           <Button onClick={submit} disabled={busy}>
-            {t.capture.submit} <span aria-hidden="true">→</span>
+            {busy ? t.capture.submitting : t.capture.submit} {!busy && <span aria-hidden="true">→</span>}
           </Button>
         </div>
       </Card>

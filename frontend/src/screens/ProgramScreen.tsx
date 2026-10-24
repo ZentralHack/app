@@ -1,13 +1,16 @@
-import type { CombinationWarning, InstrumentMatch, RunResult, TimelineEntry } from "../api/contract";
+import { useState } from "react";
+import type { CombinationWarning, InstrumentMatch, ProfileField, RunResult, TimelineEntry } from "../api/contract";
 import { Page } from "../components/layout/Page";
 import { FitBadge } from "../components/results/FitBadge";
 import { DeadlineFigure, Metric, SourceChip } from "../components/results/parts";
 import { matchTitle } from "../components/results/ResultCard";
 import { StatusSymbol } from "../components/ui/StatusSymbol";
 import { WarningNote } from "../components/plan/WarningNote";
+import { ProfileDrawer } from "../components/program/ProfileDrawer";
 import { host, sameStep, uniqueWarnings } from "../lib/plan";
 import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
 import { fieldLabel, formatDateShort } from "../lib/format";
+import { editorFields, openCriteria, shortText, type OpenCriterion } from "../lib/openCriteria";
 import { visibleCriteria } from "../lib/results";
 import { LEVEL_LABEL, PHASE_LABEL, t } from "../text/de-CH";
 
@@ -16,6 +19,8 @@ interface Props {
   result: RunResult;
   onBack: () => void;
   onEditProfile: () => void;
+  /** Saves fields from the inline editor; the analysis runs again in the background. */
+  onSaveFields: (changes: Record<string, ProfileField>) => void;
 }
 
 interface Step {
@@ -60,14 +65,15 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
 }
 
 /** Program page: hero with fit, funding rule and deadline; one timeline; criteria as a contributor list. */
-export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
+export function ProgramScreen({ match, result, onBack, onEditProfile, onSaveFields }: Props) {
+  const [editing, setEditing] = useState(false);
   const warnings = uniqueWarnings(
     (result.plan?.warnings ?? []).filter(w => w.items.some(i => i.program_id === match.program_id && (!i.instrument_id || i.instrument_id === match.instrument_id))),
   );
   const steps = buildSteps(match, result, warnings);
-  // Open criteria are listed with reasons below; here only their number and the profile fields that would decide them.
-  const open = match.criteria.filter(c => c.state === "unbekannt");
-  const openFields = [...new Set(open.flatMap(c => c.evidence).filter(f => !f.startsWith("rueckfrage_")).map(fieldLabel))];
+  // Judged against the profile of this run, so "Angabe fehlt" never names a field the user filled in.
+  const open = openCriteria(match, result.profile);
+  const fields = editorFields(open, result.profile);
   const contact = (result.plan?.contacts ?? []).find(c => host(c.url) && host(c.url) === host(match.links.info));
   const others = (w: CombinationWarning) =>
     w.items
@@ -123,16 +129,41 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
       </header>
 
       {open.length > 0 && (
-        <section className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 rounded-xl border border-line px-5 py-3">
-          <p>
+        <section className="flex flex-col gap-3 rounded-xl border border-line px-5 py-4" data-testid="open-criteria">
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
             <b className="font-semibold">{t.program.openCount(open.length)}</b>
-            {openFields.length > 0 && <span className="text-fg-2"> · {openFields.join(", ")}</span>}
-          </p>
-          <button type="button" onClick={onEditProfile} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
-            {t.program.completeProfile}
-          </button>
+            {fields.length > 0 && (
+              <button type="button" onClick={() => setEditing(true)} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+                {t.program.completeProfile}
+              </button>
+            )}
+          </div>
+          <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+            {open.map(o => (
+              <li key={o.criterion.criterion_id} className="flex flex-col">
+                <span>{shortText(o.criterion.text)}</span>
+                <span className="text-sm text-fg-2">{whyOpen(o)}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
+
+      <ProfileDrawer
+        isOpen={editing}
+        programName={matchTitle(match)}
+        fields={fields}
+        profile={result.profile}
+        onClose={() => setEditing(false)}
+        onSave={changes => {
+          setEditing(false);
+          onSaveFields(changes);
+        }}
+        onEditWholeProfile={() => {
+          setEditing(false);
+          onEditProfile();
+        }}
+      />
 
       {steps.length > 0 && (
         <section className="flex flex-col gap-4">
@@ -203,6 +234,27 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
           )}
         </p>
       )}
+    </Page>
+  );
+}
+
+function whyOpen({ why }: OpenCriterion): string {
+  if (why.kind === "fehlt") return t.program.whyMissing(why.fields.map(fieldLabel).join(", "));
+  if (why.kind === "reicht_nicht") return `${t.program.whyNotEnough}: ${why.reason}`;
+  return `${t.program.whyNotInProfile}: ${why.reason}`;
+}
+
+/** The open program is no longer in the result after a re-run: say so and why. */
+export function ProgramGone({ text, onBack }: { text: string; onBack: () => void }) {
+  return (
+    <Page>
+      <button type="button" onClick={onBack} className="-mb-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+        <ArrowLeft aria-hidden="true" className="size-4" />
+        {t.program.back}
+      </button>
+      <p className="text-lg" data-testid="program-gone">
+        {text}
+      </p>
     </Page>
   );
 }
