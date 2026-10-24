@@ -68,8 +68,14 @@ def score(
         for c in criteria
         if c.state == "unbekannt"
     ]
+    return Score(fit, gaps, muss_met_share(criteria))
+
+
+def muss_met_share(criteria: Sequence[CriterionResult]) -> Fraction:
+    """Share of applicable `muss` criteria that are `erfuellt`; 0 without any."""
+    muss = [c for c in criteria if c.kind == "muss" and c.state != "nicht_anwendbar"]
     met = sum(c.state == "erfuellt" for c in muss)
-    return Score(fit, gaps, Fraction(met, len(muss)) if muss else Fraction(0))
+    return Fraction(met, len(muss)) if muss else Fraction(0)
 
 
 @dataclass(frozen=True)

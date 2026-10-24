@@ -11,10 +11,9 @@ from app.agent.errors import InvalidInputError
 from app.knowledge_base.catalog import DONT_KNOW, CatalogEntry
 from app.knowledge_base.loader import KnowledgeBase
 from app.knowledge_base.profile_fields import FIELD_TYPES, MONTH
-from app.knowledge_base.questions import CriterionQuestion
+from app.knowledge_base.questions import RUECKFRAGE, CriterionQuestion
 from app.models.contract import Answer, ProfileField, ProjectProfile
 
-RUECKFRAGE = "rueckfrage_"
 _NUMBER = re.compile(r"^-?\d+([.,]\d+)?$")
 
 

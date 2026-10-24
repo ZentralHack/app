@@ -7,19 +7,31 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import health, programs
+from app.api import health, profile, programs, questions, runs
+from app.api.errors import register_error_handlers
 from app.config import KNOWLEDGE_BASE_DIR, Settings, get_settings
 from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
+from app.llm.client import LLMClient
+from app.llm.openai_client import OpenAIClient
+from app.runs import RunStore
 
 
-def create_app(settings: Settings | None = None, kb: KnowledgeBase | None = None) -> FastAPI:
+def create_app(
+    settings: Settings | None = None,
+    kb: KnowledgeBase | None = None,
+    llm: LLMClient | None = None,
+) -> FastAPI:
+    """`kb` and `llm` can be passed in for tests; by default they come from the settings."""
     settings = settings or get_settings()
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         app.state.settings = settings
         app.state.kb = kb or load_knowledge_base(KNOWLEDGE_BASE_DIR)
+        app.state.llm = llm or (OpenAIClient(settings) if settings.llm_configured else None)
+        app.state.runs = RunStore()
         yield
+        await app.state.runs.wait_idle()
 
     app = FastAPI(title="Fördermittel-Agent", lifespan=lifespan)
     app.add_middleware(
@@ -28,7 +40,8 @@ def create_app(settings: Settings | None = None, kb: KnowledgeBase | None = None
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    for module in (health, programs):
+    register_error_handlers(app)
+    for module in (health, programs, profile, questions, runs):
         app.include_router(module.router, prefix="/api")
     return app
 

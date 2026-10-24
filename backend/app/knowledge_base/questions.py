@@ -13,6 +13,8 @@ from app.models.program import Program
 
 log = logging.getLogger(__name__)
 
+RUECKFRAGE = "rueckfrage_"
+
 
 @dataclass(frozen=True)
 class CriterionQuestion:
@@ -22,7 +24,7 @@ class CriterionQuestion:
 
     @property
     def profile_field(self) -> str:
-        return f"rueckfrage_{self.criterion_id}"
+        return f"{RUECKFRAGE}{self.criterion_id}"
 
 
 def build_question_index(programs: Iterable[Program]) -> dict[str, CriterionQuestion]:

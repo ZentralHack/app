@@ -48,11 +48,13 @@ Optional, if time allows (shapes to be added to the contract when built): `POST 
 
 | HTTP | `code` | When |
 |---|---|---|
-| 400 | `ungueltige_eingabe` | request does not match the contract |
+| 400 | `ungueltige_eingabe` | request does not match the contract (strict: no type coercion, no unknown keys), a profile value the knowledge base does not know, or an answer that matches no option |
 | 404 | `run_nicht_gefunden` | unknown `run_id` |
 | 409 | `pruefung_laeuft` | retry on an instrument that is not in status `fehler` |
 | 502 | `ki_antwort_ungueltig` | LLM output failed validation twice |
 | 503 | `ki_nicht_verfuegbar` | no API key or provider down |
+| 404 | `nicht_gefunden` | unknown path |
+| 500 | `interner_fehler` | unexpected error (logged) |
 
 ## 3. Live trace (SSE)
 
@@ -86,37 +88,29 @@ Event types (all in `TraceEvent`, discriminated by `type`):
 
 ## 4. Python interface (API layer ↔ agent)
 
-Owned by Philipp in `backend/app/agent/__init__.py`, called by the API layer. All models are the Pydantic versions of the contract definitions with the same names.
+The API layer (`backend/app/api/`) calls these functions. All models are the Pydantic versions of the contract definitions with the same names (`backend/app/models/contract.py`, generated).
 
 ```python
-async def extract_profile(req: ProfileRequest, kb: KnowledgeBase, llm: LLMClient) -> ProfileResponse: ...
-
-def build_questions(profile: ProjectProfile, kb: KnowledgeBase) -> QuestionSet: ...  # pure code, no LLM
-
+# agent/profile.py, agent/questions.py, agent/answers.py
+async def extract_profile(req: ProfileRequest, llm: LLMClient) -> ProfileResponse: ...
+def build_questions(profile: ProjectProfile, kb: KnowledgeBase) -> QuestionSet: ...  # pure code
 def apply_answers(profile: ProjectProfile, answers: list[Answer], kb: KnowledgeBase) -> ProjectProfile: ...
 
+# agent/orchestrator.py
 async def run_analysis(
-    run_id: str,
-    profile: ProjectProfile,
-    kb: KnowledgeBase,
-    llm: LLMClient,
-    emit: Callable[[TraceEvent], None],
-    today: date,
+    profile: ProjectProfile, kb: KnowledgeBase, llm: LLMClient, recorder: RunRecorder, today: date
 ) -> RunResult: ...
-
+def claim_retry(recorder: RunRecorder, ref: InstrumentRef, kb: KnowledgeBase) -> FlatInstrument: ...
 async def retry_instrument(
-    result: RunResult,
-    ref: InstrumentRef,
-    kb: KnowledgeBase,
-    llm: LLMClient,
-    emit: Callable[[TraceEvent], None],
-    today: date,
+    item: FlatInstrument, kb: KnowledgeBase, llm: LLMClient, recorder: RunRecorder, today: date
 ) -> RunResult: ...
 ```
 
-- The API layer owns run ids, the run store, the SSE queue and `emit`. The agent only calls `emit` and returns results.
-- `KnowledgeBase` (from the loader) exposes `programs: list[Program]`, `get(program_id)`, `instruments()` yielding `(program, instrument)` pairs, `questions: QuestionCatalog` (the validated question catalog) and `invalid: list[InvalidFile]`.
-- `today` is passed in so that deadline logic is testable.
+- The API layer owns run ids and the run store (`app/runs.py`). Each run has a `RunRecorder` (`app/trace.py`): the agent calls `recorder.emit(type, message, data)` and `recorder.update(result)`; the recorder numbers the events, validates them against `TraceEvent` and feeds the SSE stream.
+- `claim_retry` checks synchronously that the instrument has status `fehler` and nothing else runs (else 409), and marks the run busy, so two retry requests cannot both start.
+- `KnowledgeBase` (from the loader) exposes `programs`, `get(program_id)`, `find(ref)`, `instruments()` yielding `FlatInstrument` (instrument plus its program), `catalog` (the checked question catalog), `criterion_questions` (fallback `criteria[].question`) and `invalid`.
+- `today` is passed in so that deadline logic is testable (`DEMO_TODAY` in the settings).
+- Profiles sent by a client are validated strictly before use: field types, knowledge base enums, `value` null exactly when `fehlt`, unknown fields rejected (400). Model output is normalised instead (unknown values dropped with a note).
 
 ## 5. Data definitions
 

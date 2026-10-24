@@ -16,6 +16,17 @@ TARGET = BACKEND_DIR / "app" / "models" / "contract.py"
 # parent-prefixed strategy. The common prefix of the root model is stripped afterwards.
 ROOT_NAME = "Contract"
 
+# Everything a client sends: validated strictly (no "18" → 18), unknown keys rejected.
+STRICT_MODELS = (
+    "ProfileField",
+    "ProjectProfile",
+    "ProfileRequest",
+    "QuestionsRequest",
+    "Answer",
+    "RunRequest",
+    "RetryRequest",
+)
+
 CODEGEN_ARGS = [
     "--input-file-type", "jsonschema",
     "--output-model-type", "pydantic_v2.BaseModel",
@@ -41,6 +52,15 @@ def main() -> None:
     )
     code = TARGET.read_text(encoding="utf-8")
     code = re.sub(rf"\b{ROOT_NAME}(?=[A-Z])", "", code)
+    for name in STRICT_MODELS:
+        code, count = re.subn(
+            rf"(class {name}\(BaseModel\):(?:\n.*?)*?model_config = ConfigDict\(\n)",
+            r"\1        strict=True,\n",
+            code,
+            count=1,
+        )
+        if count != 1:
+            raise SystemExit(f"{name}: model_config not found")
     TARGET.write_text(code, encoding="utf-8")
     print(f"{TARGET.relative_to(BACKEND_DIR)} written", file=sys.stderr)
 

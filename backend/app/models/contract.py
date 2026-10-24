@@ -51,6 +51,7 @@ class ProfileField(BaseModel):
     """
 
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     value: str | float | int | bool | list[Any] | None
@@ -62,6 +63,7 @@ class ProfileField(BaseModel):
 
 class ProjectProfile(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     input_text: str
@@ -76,6 +78,7 @@ class ProjectProfile(BaseModel):
 
 class ProfileRequest(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     text: Annotated[str, Field(max_length=5000, min_length=1)]
@@ -140,6 +143,7 @@ class Question(BaseModel):
 
 class QuestionsRequest(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     profile: ProjectProfile
@@ -155,6 +159,7 @@ class QuestionSet(BaseModel):
 
 class Answer(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     question_id: str
@@ -164,6 +169,7 @@ class Answer(BaseModel):
 
 class RunRequest(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     profile: ProjectProfile
@@ -179,6 +185,7 @@ class RunCreated(BaseModel):
 
 class RetryRequest(BaseModel):
     model_config = ConfigDict(
+        strict=True,
         extra="forbid",
     )
     program_id: str
