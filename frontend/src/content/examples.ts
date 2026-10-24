@@ -1,4 +1,7 @@
-/* Example projects for the "Beispiel laden" buttons on screen 1. Fictional companies only. Every field is filled. */
+/*
+ * Example projects for the "Beispiel laden" buttons on screen 1. Fictional companies only. Every field is filled.
+ * The texts are exactly those of tests/projects/*.json, so DEMO_REPLAY finds their stored results (backend/demo/).
+ */
 
 const SENSOR_TEXT =
   "Wir sind ein KMU aus Emmen mit 18 Mitarbeitenden. Wir entwickeln einen neuartigen optischen Sensor für die Qualitätskontrolle in der Industrie und wollen in den nächsten 18 Monaten einen Prototyp bauen und bei Pilotkunden testen. Budget rund CHF 400'000. Einen Forschungspartner haben wir noch nicht.";
@@ -22,7 +25,7 @@ export const EXAMPLES = [
     gemeinde: "Ruswil",
     mitarbeitende: "12",
     budget: "250'000",
-    text: "Unsere Schreinerei in Ruswil hat 12 Mitarbeitende. Wir wollen nächstes Jahr das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren. Das Gebäude ist von 1985 und gehört uns.",
+    text: "Unsere Schreinerei in Ruswil hat 12 Mitarbeitende. Wir wollen nächstes Jahr das Dach unserer Werkstatt sanieren und dämmen und danach eine Photovoltaikanlage mit etwa 100 kWp installieren. Das Gebäude ist von 1985 und gehört uns. Kosten insgesamt etwa CHF 250'000.",
   },
   {
     label: "Gemeinde-Projekt",
@@ -32,6 +35,6 @@ export const EXAMPLES = [
     gemeinde: "Musterwil",
     mitarbeitende: "35",
     budget: "2'800'000",
-    text: "Wir sind eine Landgemeinde im Kanton Luzern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking umbauen und die Ölheizung durch eine Wärmepumpe ersetzen.",
+    text: "Wir sind eine Landgemeinde im Kanton Luzern mit rund 4'000 Einwohnern. Wir wollen ein leerstehendes Schulhaus von 1962 zu einem Gewerbehaus mit Werkstätten und Coworking für junge Unternehmen umbauen. Dabei ersetzen wir die Ölheizung durch eine Luft/Wasser-Wärmepumpe von etwa 40 kW und dämmen die Fassade.",
   },
 ] as const;
