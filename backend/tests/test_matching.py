@@ -44,8 +44,11 @@ def _states(result) -> dict[str, str]:
 def test_input_has_criteria_ids_exclusions_and_levers(lib):
     data = json.loads(matching_input(lib, sensora_profile()))
     ids = [c["criterion_id"] for c in data["instrument"]["kriterien"]]
-    assert ids[0] == "unternehmerisch_taetig"
+    assert ids[:2] == ["foerdergegenstand", "unternehmerisch_taetig"]
     assert "fei_taetigkeit" in ids
+    purpose = data["instrument"]["kriterien"][0]
+    assert purpose["art"] == "muss"
+    assert purpose["text"].startswith("Das Vorhaben ist von der Art")
     assert "ausschluss_1" in data["instrument"]["ausschluesse"]
     assert data["instrument"]["hebel"]["hebel_1"].startswith("Kompakte Nachhaltigkeit")
     assert "revisionsart" in data["fehlende_felder"]

@@ -1,0 +1,60 @@
+{
+  "id": "werbekampagne-nichts",
+  "title": "Werbekampagne eines Modegeschäfts",
+  "category": "edge_case",
+  "input": {
+    "text": "Unser Modegeschäft in der Altstadt Luzern mit 5 Angestellten möchte eine Werbekampagne auf Social Media und Plakaten machen, um mehr junge Kundschaft zu gewinnen. Budget CHF 40'000.",
+    "gemeinde": "Luzern",
+    "mitarbeitende": 5,
+    "budget_chf": 40000
+  },
+  "answers": {
+    "rueckfrage_bankkredit": "Nein",
+    "rueckfrage_bankkredit_benoetigt": "Nein",
+    "rueckfrage_kreditwuerdigkeit": "Nein",
+    "rueckfrage_ein_antrag": "Nein",
+    "rueckfrage_frauenanteil_50": "Nein",
+    "rueckfrage_kmu_startup": "Start-up oder KMU"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "gemeinde-luzern",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "pronovo",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "Keine oder nur sehr schwache Treffer, klar gesagt",
+      "Keine Energieprogramme"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

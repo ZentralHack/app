@@ -1,0 +1,81 @@
+{
+  "id": "baeckerei-sursee-mundart",
+  "title": "Bäckerei in Mundart: neuer Ofen mit Abwärmenutzung",
+  "category": "edge_case",
+  "input": {
+    "text": "Mir sind e Bäckerei z Sursee mit 9 Lüt. Mir wänd en neue, sparsamere Holzofe und d Abwärmi vom Ofe zum Heize vom Lade bruuche. Choschtet öppe 180'000 Franke, mir wänd im Herbst 2027 aafange.",
+    "gemeinde": "Sursee",
+    "mitarbeitende": 9,
+    "budget_chf": 180000
+  },
+  "answers": {
+    "projektstart": "2027-09",
+    "rueckfrage_zustimmung_grundeigentuemer": "Ja",
+    "rueckfrage_privatwirtschaftliche_basis": "Nein",
+    "rueckfrage_bankkredit": "Ja",
+    "rueckfrage_kreditwuerdigkeit": "Nein",
+    "rueckfrage_rueckbuergschaft": "Ja"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "peik",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "bg-mitte",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "prokilowatt",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "gemeinde-luzern",
+        "instrument_id": null,
+        "reason": "Sursee ist nicht Stadt Luzern"
+      },
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Keine Innovation"
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "Mundart wird verstanden: Sursee, 9 Mitarbeitende, CHF 180'000",
+      "Stadt Luzern Abwärme nicht als Treffer"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

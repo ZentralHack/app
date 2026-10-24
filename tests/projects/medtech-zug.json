@@ -1,0 +1,70 @@
+{
+  "id": "medtech-zug",
+  "title": "Medtech-Startup aus Zug entwickelt Wearable",
+  "category": "edge_case",
+  "input": {
+    "text": "Wir sind ein Medtech-Startup aus Baar (Kanton Zug), 6 Personen, gegründet 2024. Wir entwickeln ein Wearable, das Herzrhythmusstörungen erkennt, und wollen mit der Hochschule Luzern eine klinische Vorstudie machen. Finanzbedarf CHF 900'000.",
+    "gemeinde": "Baar",
+    "mitarbeitende": 6,
+    "budget_chf": 900000
+  },
+  "answers": {
+    "handelsregister": "Nein, in einem anderen Kanton",
+    "rueckfrage_vor_markteintritt": "Nein, noch nicht",
+    "rueckfrage_kein_scheck_2_jahre": "Nein",
+    "rueckfrage_erstmals_mentoring": "Nein",
+    "rueckfrage_keine_parallele_beratung": "Nein"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "eic-accelerator",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Nur Kanton Luzern"
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": "Kein Energieprojekt, nicht Luzern"
+      },
+      {
+        "program_id": "nrp-luzern",
+        "instrument_id": null,
+        "reason": "Nicht Luzern"
+      }
+    ],
+    "behaviour": [
+      "LIB und Luzerner Programme abgelehnt wegen Kanton",
+      "Bundesprogramme bleiben"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

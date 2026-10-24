@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from app.knowledge_base.partners import partner_criteria
+from app.knowledge_base.purpose import purpose_criterion
 from app.models.contract import InstrumentRef, SourceLink
 from app.models.program import Criterion, Instrument, Lever, Program, SourceRef
 
@@ -33,9 +34,11 @@ class FlatInstrument:
         return f"{self.program.id}:{self.instrument.id}"
 
     def criteria(self) -> list[ScopedCriterion]:
-        """Program-wide criteria, the instrument's own, then generated partner criteria."""
+        """The generated purpose criterion, program-wide criteria, the instrument's own, then
+        generated partner criteria."""
         return (
-            [ScopedCriterion("programm", c) for c in self.program.general_criteria]
+            [ScopedCriterion("instrument", purpose_criterion(self.program, self.instrument))]
+            + [ScopedCriterion("programm", c) for c in self.program.general_criteria]
             + [ScopedCriterion("instrument", c) for c in self.instrument.criteria]
             + [ScopedCriterion("filter", c) for c in partner_criteria(self.instrument)]
         )

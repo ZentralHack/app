@@ -1,0 +1,76 @@
+{
+  "id": "app-startup-kurz",
+  "title": "Kurze, unordentliche Eingabe eines App-Startups",
+  "category": "edge_case",
+  "input": {
+    "text": "app für vereine, termine + mitgliederbeiträge. sind zu dritt, gmbh seit märz 2026 in kriens. brauchen geld für entwicklung, so 150k",
+    "gemeinde": "Kriens",
+    "mitarbeitende": 3,
+    "budget_chf": 150000
+  },
+  "answers": {
+    "partner": "Nein",
+    "handelsregister": "Ja",
+    "revisionsart": "Keine Revision (Opting-out)",
+    "rueckfrage_kosten_bemessungsjahr": "Laufend",
+    "rueckfrage_ein_antrag": "Nein",
+    "rueckfrage_vor_markteintritt": "Nein, noch nicht"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "itz",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": "initial-coaching",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": "Kein Energieprojekt"
+      },
+      {
+        "program_id": "sgh",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "Profil liest Startup, Kriens, 3 Personen, CHF 150'000 richtig",
+      "Keine Energie- oder Tourismusprogramme"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

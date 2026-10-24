@@ -23,6 +23,7 @@ from app.knowledge_base.enums import PROFILE_ENUMS
 from app.knowledge_base.flat import FlatInstrument
 from app.knowledge_base.partners import PREFIX as PARTNER_PREFIX
 from app.knowledge_base.profile_fields import FIELD_TYPES, MONTH
+from app.knowledge_base.purpose import PURPOSE_ID
 from app.models.program import Program
 
 MAX_TEXT = 120
@@ -202,6 +203,7 @@ def _coverage(
             ref
             for ref, occurrences in criteria_on_field(instruments, field).items()
             if any(s.criterion.question is None for _, s in occurrences)
+            and not ref.endswith(f":{PURPOSE_ID}")
         )
         if without:
             findings.append(Finding(field, "warnung", f"keine Frage für: {', '.join(without)}"))

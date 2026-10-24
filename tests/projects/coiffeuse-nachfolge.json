@@ -1,0 +1,74 @@
+{
+  "id": "coiffeuse-nachfolge",
+  "title": "Coiffeuse übernimmt einen Salon",
+  "category": "standard",
+  "input": {
+    "text": "Ich bin Coiffeuse und möchte Anfang 2027 den Salon meiner Chefin in Hochdorf übernehmen (4 Mitarbeitende). Der Kaufpreis ist CHF 220'000, die Bank will eine Sicherheit für den Kredit.",
+    "gemeinde": "Hochdorf",
+    "mitarbeitende": 4,
+    "budget_chf": 220000
+  },
+  "answers": {
+    "rueckfrage_kreditwuerdigkeit": "Nein",
+    "rueckfrage_rueckbuergschaft": "Ja",
+    "rueckfrage_frauenanteil_50": "Ja",
+    "rueckfrage_todesfallpolice": "Ja",
+    "rueckfrage_positives_eigenkapital": "Ja",
+    "rueckfrage_ein_antrag": "Nein",
+    "rueckfrage_subsidiaritaet": "Nein",
+    "handelsregister": "Weiss nicht",
+    "rueckfrage_kmu_startup": "Start-up oder KMU"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "saffa",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "bg-mitte",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "Bürgschaften oben",
+      "Keine Innovations- oder Energieprogramme"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

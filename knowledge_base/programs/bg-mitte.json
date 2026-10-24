@@ -274,7 +274,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Abgeleitet aus So geht's, Schritt 1: Keine Eingabefrist genannt. Gesuch mit Unterlagen und Kostenvorschuss einreichen.",
+          "rule": "Keine Eingabefrist genannt. Gesuch mit Unterlagen und Kostenvorschuss einreichen.",
           "next_dates": [],
           "relative": null,
           "source": {

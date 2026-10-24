@@ -3,14 +3,15 @@
 Rules run in RULES order; the first that applies gives `Rejected.rule`. Except for
 `verfuegbarkeit`, a rule only drops on a known profile value (`angegeben` or `annahme`).
 A missing value keeps the instrument. Required partners never drop an instrument
-(see knowledge_base/partners.py). Project types are compared with their implied types
-(see project_types.py).
+(see knowledge_base/partners.py). Project and applicant types are compared with their implied
+types (see project_types.py and applicant_types.py).
 """
 
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from typing import Literal
 
+from app.agent import applicant_types
 from app.agent.profile_values import known, known_set
 from app.agent.project_types import with_implied
 from app.knowledge_base.flat import FlatInstrument
@@ -90,6 +91,18 @@ def _overlap_check(
     return check
 
 
+def _applicant(profile: ProjectProfile, item: FlatInstrument) -> str | None:
+    allowed = item.instrument.filter.applicant_types
+    values = known_set(profile, "applicant_type")
+    if not allowed or values is None:
+        return None
+    count = known(profile, "mitarbeitende")
+    employees = count if isinstance(count, int) else None
+    if applicant_types.with_implied(values, employees) & set(allowed):
+        return None
+    return "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern."
+
+
 def _employees(profile: ProjectProfile, item: FlatInstrument) -> str | None:
     count = known(profile, "mitarbeitende")
     low, high = item.instrument.filter.employees_min, item.instrument.filter.employees_max
@@ -113,14 +126,7 @@ def _company_age(profile: ProjectProfile, item: FlatInstrument) -> str | None:
 RULES: tuple[tuple[RejectRule, Check], ...] = (
     ("verfuegbarkeit", _availability),
     ("kanton", _location),
-    (
-        "gesuchsteller",
-        _overlap_check(
-            "applicant_type",
-            "applicant_types",
-            "Ihre Organisationsform gehört nicht zu den zugelassenen Gesuchstellern.",
-        ),
-    ),
+    ("gesuchsteller", _applicant),
     (
         "vorhaben",
         _overlap_check(

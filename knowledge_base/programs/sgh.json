@@ -309,7 +309,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Abgeleitet aus SGH, Ihre Anfrage, «Der Gesuchsablauf»: Die Quelle nennt keine Eingabefrist.",
+          "rule": "Keine Eingabefrist genannt.",
           "next_dates": [],
           "relative": null,
           "source": {

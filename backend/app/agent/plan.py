@@ -182,7 +182,8 @@ def _targets(
 def _warnings(fitting: list[FlatInstrument]) -> list[CombinationWarning]:
     """One warning per rule between fitting instruments, every instrument listed once.
     Rules against any other program (`with: "*"`) name only the owner's instruments, and
-    those of the same type within one program are merged into one note."""
+    those of the same type within one program are merged into one note. When both programs
+    state the same rule about each other (same type, same instruments), it is shown once."""
     warnings: list[CombinationWarning] = []
     for program in _unique_programs(f.program for f in fitting):
         owners = [f for f in fitting if f.program.id == program.id]
@@ -201,7 +202,14 @@ def _warnings(fitting: list[FlatInstrument]) -> list[CombinationWarning]:
         warnings += [
             _warning(rule_type, owners, rules, owners[0]) for rule_type, rules in general.items()
         ]
-    return warnings
+    seen: set[tuple[str, frozenset[str]]] = set()
+    unique = []
+    for warning in warnings:
+        key = (warning.type, frozenset(f"{i.program_id}:{i.instrument_id}" for i in warning.items))
+        if key not in seen:
+            seen.add(key)
+            unique.append(warning)
+    return unique
 
 
 def _warning(

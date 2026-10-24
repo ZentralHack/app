@@ -100,6 +100,13 @@ def test_applicant_type(kb: KnowledgeBase):
     assert prefilter(profile, [_lib(kb)]).rejected == []
 
 
+def test_start_up_counts_as_company(kb: KnowledgeBase):
+    """A profile that only says "startup" keeps instruments for companies and KMU."""
+    only_companies = _lib(kb, applicant_types=["unternehmen", "kmu"])
+    profile = make_profile(applicant_type=["startup"])
+    assert prefilter(profile, [only_companies]).rejected == []
+
+
 def test_sector_only_when_restricted(kb: KnowledgeBase):
     profile = make_profile(branche=["handel"])
     assert prefilter(profile, [_lib(kb)]).rejected == []

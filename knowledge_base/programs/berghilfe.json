@@ -461,7 +461,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Abgeleitet aus Gesuch einreichen (Schritte, Hinweis Systemumstellung): Die Quelle nennt keine Eingabefrist, Gesuche gehen online ein. Ausnahme: vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche; neue oder eröffnete Gesuche bis 30.11.2026 definitiv einreichen.",
+          "rule": "Keine Eingabefrist genannt, Gesuche gehen online ein. Ausnahme: vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche; neue oder eröffnete Gesuche bis 30.11.2026 definitiv einreichen.",
           "next_dates": [],
           "relative": null,
           "source": {
@@ -839,7 +839,7 @@
       "timing": {
         "deadline": {
           "type": "nach_abschluss",
-          "rule": "Abgeleitet aus WLAN-Seite, Voraussetzungen («Es muss bereits eine Rechnung der WLAN-Investition vorliegen»): Gesuch nach der Investition stellen. Vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche.",
+          "rule": "Gesuch nach der Investition stellen («Es muss bereits eine Rechnung der WLAN-Investition vorliegen»). Vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche.",
           "next_dates": [],
           "relative": null,
           "source": {

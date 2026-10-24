@@ -31,3 +31,12 @@ Expectations for programs that are not yet in `knowledge_base/programs/` stay in
 | `zu-vage.json` | Edge case: input too vague |
 | `ausserhalb-luzern.json` | Edge case: company outside Kanton Luzern |
 | `kein-passendes-programm.json` | Edge case: nothing fits |
+| `maschinenbau-bildpruefung.json` | Industry: AI image inspection, no research partner yet (Innosuisse lever) |
+| `hotel-weggis-sanierung.json` | Hotel: oil heating to heat pump, facade, rooms, loan (SGH, energy programme) |
+| `app-startup-kurz.json` | Edge case: short, messy input from an app start-up |
+| `baeckerei-sursee-mundart.json` | Edge case: Swiss German input, bakery oven with waste heat |
+| `medtech-zug.json` | Edge case: start-up from Kanton Zug, Luzern programmes must drop |
+| `werbekampagne-nichts.json` | Edge case: advertising campaign, nothing fits |
+| `coiffeuse-nachfolge.json` | Succession: hairdresser takes over a salon, guarantee for the loan |
+| `export-brasilien.json` | Export: protection against non-payment (SERV) |
+| `stadt-luzern-mfh-heizung.json` | City of Luzern: gas heating to heat pump plus charging stations |

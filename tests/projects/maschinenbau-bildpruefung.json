@@ -1,0 +1,81 @@
+{
+  "id": "maschinenbau-bildpruefung",
+  "title": "Maschinenbauer automatisiert die Endkontrolle mit Bildverarbeitung",
+  "category": "standard",
+  "input": {
+    "text": "Wir sind ein Maschinenbauer in Emmen mit 65 Mitarbeitenden. Wir möchten eine KI-gestützte Bildverarbeitung für die Endkontrolle unserer Frästeile entwickeln, die Oberflächenfehler automatisch erkennt. Das gibt es so für unsere Teile noch nicht. Wir haben noch keinen Hochschulpartner. Budget etwa CHF 420'000, Start im Frühling 2027.",
+    "gemeinde": "Emmen",
+    "mitarbeitende": 65,
+    "budget_chf": 420000
+  },
+  "answers": {
+    "projektstart": "2027-04",
+    "revisionsart": "Ordentliche Revision",
+    "rueckfrage_kosten_bemessungsjahr": "Fallen erst an",
+    "rueckfrage_kmu_startup": "Start-up oder KMU",
+    "rueckfrage_ein_antrag": "Nein",
+    "rueckfrage_erstmals_mentoring": "Nein",
+    "rueckfrage_keine_parallele_beratung": "Nein",
+    "rueckfrage_keine_gruendungsphase": "Nein",
+    "rueckfrage_kein_grosskonzern": "Nein, weniger als die Hälfte",
+    "handelsregister": "Ja",
+    "partner": "Wir suchen noch einen Partner"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": "innovationsprojekt-umsetzungspartner",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Mit Forschungspartner als Hebel"
+      },
+      {
+        "program_id": "itz",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": "Kein Gebäude- oder Energieprojekt"
+      },
+      {
+        "program_id": "sgh",
+        "instrument_id": null,
+        "reason": "Kein Beherbergungsbetrieb"
+      }
+    ],
+    "behaviour": [
+      "Innosuisse ohne Partner: passt mit Anpassung, Hebel Forschungspartner",
+      "Kein Energieprogramm als Treffer"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

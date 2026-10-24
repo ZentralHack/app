@@ -320,7 +320,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe. next_dates bleibt leer: publiziert sind Sitzungsdaten, keine Einreichfristen.",
+          "rule": "Gesuch mindestens sechs Wochen vor einer Sitzung des Innovationsrates einreichen. Sitzungsdaten je Themengruppe.",
           "next_dates": [],
           "relative": null,
           "source": {
@@ -720,7 +720,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Gesuch mindestens acht Wochen vor einer Sitzung des Innovationsrats einreichen. Fristgerechte Einreichung garantiert keine Behandlung an der nächsten Sitzung. next_dates bleibt leer: publiziert sind Sitzungsdaten, keine Einreichfristen.",
+          "rule": "Gesuch mindestens acht Wochen vor einer Sitzung des Innovationsrats einreichen. Fristgerechte Einreichung garantiert keine Behandlung an der nächsten Sitzung.",
           "next_dates": [],
           "relative": null,
           "source": {

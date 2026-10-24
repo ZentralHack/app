@@ -1,0 +1,63 @@
+{
+  "id": "export-brasilien",
+  "title": "Anlagenbauer exportiert nach Brasilien",
+  "category": "standard",
+  "input": {
+    "text": "Wir bauen in Root mit 48 Mitarbeitenden Abfüllanlagen und haben einen Auftrag über CHF 2.4 Mio. von einem Kunden in Brasilien. Der Kunde will in Raten zahlen; wir möchten uns gegen einen Zahlungsausfall absichern.",
+    "gemeinde": "Root",
+    "mitarbeitende": 48,
+    "budget_chf": 2400000
+  },
+  "answers": {
+    "rueckfrage_bankkredit": "Nein",
+    "rueckfrage_bankkredit_benoetigt": "Nein",
+    "rueckfrage_kreditwuerdigkeit": "Nein",
+    "rueckfrage_frauenanteil_50": "Nein",
+    "rueckfrage_ein_antrag": "Nein",
+    "handelsregister": "Ja",
+    "rueckfrage_subsidiaritaet": "Weiss nicht",
+    "rueckfrage_kmu_startup": "Start-up oder KMU"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "serv",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "pronovo",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "SERV oben",
+      "Keine Energieprogramme"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

@@ -144,6 +144,14 @@ def test_general_rules_of_one_type_are_merged(kb: KnowledgeBase):
     assert warning.items == [InstrumentRef(program_id="lib", instrument_id="lib-beitrag")]
 
 
+def test_rule_stated_by_both_programs_is_shown_once(kb: KnowledgeBase):
+    lib = _with_rule(_item(kb, LIB), "abzug", PUMP)
+    pump = _with_rule(_item(kb, PUMP), "abzug", LIB)
+    (warning,) = build_plan([lib, pump], [], kb).warnings
+    assert warning.type == "abzug"
+    assert len(warning.items) == 2
+
+
 def test_warning_lists_each_instrument_once(kb: KnowledgeBase):
     for warning in build_plan([_item(kb, PUMP), _item(kb, GRID), _item(kb, LIB)], [], kb).warnings:
         keys = [(i.program_id, i.instrument_id) for i in warning.items]

@@ -1,0 +1,95 @@
+{
+  "id": "stadt-luzern-mfh-heizung",
+  "title": "Immobilienfirma ersetzt Gasheizung in der Stadt Luzern",
+  "category": "standard",
+  "input": {
+    "text": "Unsere Immobilienfirma (12 Mitarbeitende) besitzt ein Mehrfamilienhaus mit 14 Wohnungen in der Stadt Luzern, Baujahr 1972. Wir wollen 2027 die 9 Jahre alte Gasheizung durch eine Erdsonden-Wärmepumpe ersetzen und in der Tiefgarage Ladestationen einbauen. Kosten etwa CHF 480'000.",
+    "gemeinde": "Luzern",
+    "mitarbeitende": 12,
+    "budget_chf": 480000
+  },
+  "answers": {
+    "projektstart": "2027-05",
+    "rueckfrage_privatwirtschaftliche_basis": "Nein",
+    "rueckfrage_alle_ersetzt": "Ja",
+    "rueckfrage_mind_3_wohneinheiten": "3 oder mehr",
+    "rueckfrage_ueberwiegend_wohnen": "Ja",
+    "rueckfrage_lastmanagement": "Ja",
+    "rueckfrage_strom_erneuerbar": "Weiss nicht",
+    "rueckfrage_waermenetzgebiet": "Nicht in einem Wärmenetzgebiet",
+    "rueckfrage_heizung_unter_10_jahre": "Ja",
+    "rueckfrage_in_stadt_luzern": "Ja"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "gemeinde-luzern",
+        "instrument_id": "heizungsersatz",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "gemeinde-luzern",
+        "instrument_id": "e-mobilitaet",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "ladeinfrastruktur",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": false,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "innosuisse",
+        "instrument_id": null,
+        "reason": ""
+      },
+      {
+        "program_id": "sgh",
+        "instrument_id": null,
+        "reason": ""
+      }
+    ],
+    "behaviour": [
+      "Kombinationsregeln Stadt/Kanton korrekt",
+      "Desinvestitionsbeitrag bei 9 Jahre alter Gasheizung plausibel"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

@@ -395,7 +395,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Abgeleitet aus Webseite Vorgehen: keine Eingabefrist genannt, Bewerbung online über den Vorab-Check. Das Bürgschaftskomitee tagt in der Regel mindestens siebenmal jährlich (Bürgschaftsrichtlinie Ziff. 8 Abs. 3).",
+          "rule": "Keine Eingabefrist genannt, Bewerbung online über den Vorab-Check. Das Bürgschaftskomitee tagt in der Regel mindestens siebenmal jährlich (Bürgschaftsrichtlinie Ziff. 8 Abs. 3).",
           "next_dates": [],
           "relative": null,
           "source": {

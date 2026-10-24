@@ -35,7 +35,8 @@ def test_instruments_are_flat_and_carry_program_data(kb: KnowledgeBase):
     assert len(flat) == 7
     lib = flat["lib:lib-beitrag"]
     scopes = [(c.scope, c.criterion.id) for c in lib.criteria()]
-    assert scopes[0] == ("programm", "unternehmerisch_taetig")
+    assert scopes[0] == ("instrument", "foerdergegenstand")
+    assert scopes[1] == ("programm", "unternehmerisch_taetig")
     assert ("instrument", "fei_taetigkeit") in scopes
     assert lib.program.scope.cantons == ["LU"]
     assert [lever.text for lever in lib.levers_for("revision")] == [

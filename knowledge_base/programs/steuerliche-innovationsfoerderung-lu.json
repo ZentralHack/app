@@ -245,7 +245,7 @@
       "timing": {
         "deadline": {
           "type": "unbekannt",
-          "rule": "Gewährung auf Antrag. Zeitpunkt und Formular nennt die Quelle nicht.",
+          "rule": "Gewährung auf Antrag. Zeitpunkt und Formular sind nicht genannt.",
           "next_dates": [],
           "relative": null,
           "source": {

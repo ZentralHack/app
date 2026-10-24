@@ -1,0 +1,82 @@
+{
+  "id": "hotel-weggis-sanierung",
+  "title": "Seehotel ersetzt Ölheizung und erneuert Zimmer",
+  "category": "standard",
+  "input": {
+    "text": "Unser Familienhotel in Weggis (28 Zimmer, 22 Mitarbeitende) will 2027 die alte Ölheizung durch eine Wärmepumpe ersetzen, die Fassade dämmen und die Zimmer modernisieren. Gesamtkosten rund CHF 1.8 Mio. Wir brauchen dafür auch einen Kredit.",
+    "gemeinde": "Weggis",
+    "mitarbeitende": 22,
+    "budget_chf": 1800000
+  },
+  "answers": {
+    "projektstart": "2027-03",
+    "baujahr": "1968",
+    "rueckfrage_geak_plus": "Nein",
+    "rueckfrage_bonus_90_prozent": "Nein",
+    "rueckfrage_alle_ersetzt": "Ja",
+    "rueckfrage_keine_gruendungsphase": "Nein",
+    "rueckfrage_kein_grosskonzern": "Nein, weniger als die Hälfte",
+    "rueckfrage_kein_grossverbraucher": "Nein, weniger",
+    "rueckfrage_keine_co2_befreiung": "Nein",
+    "rueckfrage_keine_bundesberatung": "Nein",
+    "rueckfrage_bankkredit": "Ja",
+    "rueckfrage_min_15_zimmer": "15 Zimmer oder mehr"
+  },
+  "expected": {
+    "needs_clarification": false,
+    "profile": {},
+    "programs": [
+      {
+        "program_id": "sgh",
+        "instrument_id": null,
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": "Beherbergungsbetrieb, Darlehen"
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermepumpe",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      },
+      {
+        "program_id": "foerderprogramm-energie-lu",
+        "instrument_id": "waermedaemmung",
+        "fit": [
+          "passt_gut",
+          "passt_mit_anpassung"
+        ],
+        "required": true,
+        "note": null
+      }
+    ],
+    "rejected": [
+      {
+        "program_id": "lib",
+        "instrument_id": null,
+        "reason": "Keine Innovation"
+      },
+      {
+        "program_id": "gemeinde-luzern",
+        "instrument_id": null,
+        "reason": "Nicht in der Stadt Luzern"
+      }
+    ],
+    "behaviour": [
+      "Gesuche Energie vor Baubeginn im Fahrplan früh",
+      "Keine Stadt-Luzern-Programme"
+    ]
+  },
+  "meta": {
+    "status": "draft",
+    "verified_by": null,
+    "notes": "Battery 24.10.: fiktives Projekt, Erwartungen aus der Wissensbasis abgeleitet."
+  }
+}

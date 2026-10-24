@@ -164,7 +164,7 @@
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Abgeleitet aus Innovation Sparring, Ablauf Schritt 01 Anfrage: Anfrage über das Formular «Jetzt Innovieren». Die Quelle nennt keine Frist.",
+          "rule": "Anfrage über das Formular «Jetzt Innovieren». Keine Frist genannt.",
           "next_dates": [],
           "relative": null,
           "source": {
