@@ -18,10 +18,12 @@ def lib(kb: KnowledgeBase) -> FlatInstrument:
 
 @pytest.fixture
 def sensora_criteria() -> list[CriterionResult]:
-    """LIB criteria of the example run (design/examples/run_result.json)."""
+    """LIB criteria of the example run (design/examples/run_result.json), with
+    praesenz_raeume as before the follow-up question: unknown."""
     path = REPO_DIR / "design" / "examples" / "run_result.json"
     match = json.loads(path.read_text(encoding="utf-8"))["matches"][0]
-    return [CriterionResult.model_validate(c) for c in match["criteria"]]
+    criteria = [CriterionResult.model_validate(c) for c in match["criteria"]]
+    return _with(criteria, praesenz_raeume="unbekannt")
 
 
 def _with(criteria: list[CriterionResult], **states: str) -> list[CriterionResult]:

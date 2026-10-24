@@ -39,7 +39,7 @@ def _assert_defaults(plan, matches):
     assert plan.timeline == EXAMPLE.plan.timeline
     lever_gap, info_gap = matches[0].gaps
     assert lever_gap.hint == "Kompakte Nachhaltigkeitsübersicht (2-3 Seiten) erstellen."
-    assert info_gap.hint.startswith("Noch zu klären: Eigene Räumlichkeiten")
+    assert info_gap.hint.startswith("Noch zu klären: Keine fälligen")
 
 
 def test_wrong_ids_fall_back_to_defaults(kb: KnowledgeBase):

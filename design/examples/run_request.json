@@ -141,19 +141,24 @@
   },
   "answers": [
     {
-      "question_id": "q_revision",
+      "question_id": "q_revisionsart",
       "profile_field": "revisionsart",
       "answer": "Ordentliche Revision"
     },
     {
       "question_id": "q_nachhaltigkeit",
-      "profile_field": "nachhaltigkeitsbericht",
+      "profile_field": "rueckfrage_nachhaltigkeit",
       "answer": "Weiss nicht"
     },
     {
       "question_id": "q_kosten_bemessungsjahr",
-      "profile_field": "projektstart",
+      "profile_field": "rueckfrage_kosten_bemessungsjahr",
       "answer": "Fallen erst an"
+    },
+    {
+      "question_id": "q_raeumlichkeiten",
+      "profile_field": "raeumlichkeiten",
+      "answer": "Ja"
     }
   ]
 }

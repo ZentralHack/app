@@ -12,6 +12,7 @@ BACKEND_DIR = Path(__file__).resolve().parents[1]
 REPO_DIR = BACKEND_DIR.parent
 KNOWLEDGE_BASE_DIR = REPO_DIR / "knowledge_base"
 CONTRACT_SCHEMA = REPO_DIR / "design" / "contract.schema.json"
+DEMO_DIR = BACKEND_DIR / "demo"
 
 
 class Settings(BaseSettings):

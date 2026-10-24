@@ -72,11 +72,11 @@
         "note": "Abgeleitet aus Rechtsform AG und Sitz in Emmen."
       },
       "raeumlichkeiten": {
-        "value": null,
-        "status": "fehlt",
-        "origin": null,
+        "value": true,
+        "status": "angegeben",
+        "origin": "rueckfrage",
         "quote": null,
-        "note": null
+        "note": "Rückfrage «Hat Ihr Unternehmen eigene oder gemietete Räume im Kanton Luzern, die dauernd zur Verfügung stehen?»: Ja"
       },
       "mitarbeitende": {
         "value": 18,
@@ -105,15 +105,15 @@
         "value": "ordentlich",
         "status": "angegeben",
         "origin": "rueckfrage",
-        "quote": "Ordentliche Revision",
-        "note": null
+        "quote": null,
+        "note": "Rückfrage «Wie wird die Jahresrechnung Ihres Unternehmens geprüft?»: Ordentliche Revision"
       },
       "nachhaltigkeitsbericht": {
         "value": null,
         "status": "fehlt",
-        "origin": "rueckfrage",
+        "origin": null,
         "quote": null,
-        "note": "Antwort: Weiss nicht"
+        "note": null
       },
       "budget": {
         "value": 400000,
@@ -130,10 +130,10 @@
         "note": null
       },
       "projektstart": {
-        "value": "in Zukunft",
-        "status": "angegeben",
-        "origin": "rueckfrage",
-        "quote": "Fallen erst an",
+        "value": null,
+        "status": "fehlt",
+        "origin": null,
+        "quote": null,
         "note": null
       },
       "partner": {
@@ -142,6 +142,13 @@
         "origin": null,
         "quote": null,
         "note": "Kein Partner erwähnt."
+      },
+      "rueckfrage_kosten_bemessungsjahr": {
+        "value": "Fallen erst an",
+        "status": "angegeben",
+        "origin": "rueckfrage",
+        "quote": null,
+        "note": "Rückfrage «Sind die Projektkosten bereits angefallen, oder fallen sie erst an?»: Fallen erst an"
       }
     }
   },
@@ -168,7 +175,7 @@
       },
       "source_checked": "2026-10-23",
       "status": "fertig",
-      "fit": "passt_mit_anpassung",
+      "fit": "passt_gut",
       "rank": 1,
       "criteria": [
         {
@@ -210,9 +217,11 @@
           "scope": "programm",
           "text": "Eigene Räumlichkeiten im Kanton Luzern, dauerhaft verfügbar während des gesamten Bemessungsjahres. Eine c/o- oder Domiziladresse genügt nicht.",
           "kind": "muss",
-          "state": "unbekannt",
-          "reason": "Keine Angabe zu eigenen Räumlichkeiten im Kanton Luzern.",
-          "evidence": [],
+          "state": "erfuellt",
+          "reason": "Laut Rückfrage hat das Unternehmen dauernd verfügbare Räume im Kanton Luzern.",
+          "evidence": [
+            "raeumlichkeiten"
+          ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
@@ -385,7 +394,7 @@
           "state": "annahme",
           "reason": "Die Kosten fallen erst an und zählen im Geschäftsjahr, in dem sie anfallen.",
           "evidence": [
-            "projektstart"
+            "rueckfrage_kosten_bemessungsjahr"
           ],
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
@@ -411,14 +420,14 @@
         {
           "type": "infos_fehlen",
           "criterion_ids": [
-            "praesenz_raeume"
+            "keine_ausstaende"
           ],
           "lever": null,
-          "hint": "Bestätigen Sie, dass Sie eigene oder gemietete Räumlichkeiten im Kanton Luzern haben.",
+          "hint": "Noch zu klären: Keine fälligen, unbezahlten Forderungen von Behörden und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren.",
           "source": {
             "title": "Handbuch Luzerner Innovationsbeitrag (LIB)",
             "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
-            "locator": "N 21-23"
+            "locator": "N 26-29"
           }
         }
       ],

@@ -7,7 +7,16 @@ from fastapi.responses import StreamingResponse
 from app.agent.answers import apply_answers
 from app.agent.normalize import validate_profile
 from app.agent.orchestrator import claim_retry, retry_instrument, run_analysis
-from app.api.deps import KnowledgeBaseDep, LLMDep, RunsDep, SettingsDep
+from app.api.deps import (
+    DemoDep,
+    KnowledgeBaseDep,
+    LLMDep,
+    OptionalLLMDep,
+    RunsDep,
+    SettingsDep,
+    require_llm,
+)
+from app.demo import replay
 from app.models.contract import InstrumentRef, RetryRequest, RunCreated, RunRequest, RunResult
 from app.trace import RunRecorder
 
@@ -16,14 +25,25 @@ router = APIRouter(prefix="/runs")
 
 @router.post("", status_code=202)
 async def start_run(
-    req: RunRequest, kb: KnowledgeBaseDep, llm: LLMDep, runs: RunsDep, settings: SettingsDep
+    req: RunRequest,
+    kb: KnowledgeBaseDep,
+    llm: OptionalLLMDep,
+    runs: RunsDep,
+    settings: SettingsDep,
+    demo: DemoDep,
 ) -> RunCreated:
-    """Applies the answers and starts steps 3 to 6 in the background."""
+    """Applies the answers and starts steps 3 to 6 in the background (or a demo replay)."""
     validate_profile(req.profile, kb.criterion_questions)
     profile = apply_answers(req.profile, req.answers, kb)
     today = settings.today()
-    recorder = runs.create(profile, today)
-    runs.start(run_analysis(profile, kb, llm, recorder, today))
+    case = demo.find(profile.input_text)
+    if case is not None:
+        recorder = runs.create(profile, today)
+        runs.start(replay(case, recorder))
+    else:
+        live = require_llm(llm)
+        recorder = runs.create(profile, today)
+        runs.start(run_analysis(profile, kb, live, recorder, today))
     return RunCreated(run_id=recorder.run_id)
 
 

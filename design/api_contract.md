@@ -172,9 +172,9 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 | File | Definition |
 |---|---|
 | `profile_response.json` | `ProfileResponse` |
-| `question_set.json` | `QuestionSet` (3 questions taken from the LIB criteria) |
-| `run_request.json` | `RunRequest` with answers |
-| `run_result.json` | `RunResult`: LIB `passt_mit_anpassung`, all energy program instruments rejected by the pre-filter |
+| `question_set.json` | `QuestionSet`, built by the backend: 4 questions, two from the question catalog (`revisionsart`, `raeumlichkeiten`), two from `criteria[].question` (`rueckfrage_<criterion_id>`) |
+| `run_request.json` | `RunRequest` with answers to those questions |
+| `run_result.json` | `RunResult`: LIB `passt_gut` with two gaps `infos_fehlen` (scored by the backend), all energy program instruments rejected by the pre-filter |
 | `trace_events.json` | `TraceEvent[]` for the same run |
 
 The example only uses programs that are already in the knowledge base. It is a fixture for development, not a statement about the eligibility of any real company.

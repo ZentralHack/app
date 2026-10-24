@@ -9,7 +9,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import health, profile, programs, questions, runs
 from app.api.errors import register_error_handlers
-from app.config import KNOWLEDGE_BASE_DIR, Settings, get_settings
+from app.config import DEMO_DIR, KNOWLEDGE_BASE_DIR, Settings, get_settings
+from app.demo import DemoCases, load_demo_cases
 from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
 from app.llm.client import LLMClient
 from app.llm.openai_client import OpenAIClient
@@ -20,8 +21,10 @@ def create_app(
     settings: Settings | None = None,
     kb: KnowledgeBase | None = None,
     llm: LLMClient | None = None,
+    demo: DemoCases | None = None,
 ) -> FastAPI:
-    """`kb` and `llm` can be passed in for tests; by default they come from the settings."""
+    """`kb`, `llm` and `demo` can be passed in for tests; by default they come from the
+    settings."""
     settings = settings or get_settings()
 
     @asynccontextmanager
@@ -30,6 +33,10 @@ def create_app(
         app.state.kb = kb or load_knowledge_base(KNOWLEDGE_BASE_DIR)
         app.state.llm = llm or (OpenAIClient(settings) if settings.llm_configured else None)
         app.state.runs = RunStore()
+        if demo is not None:
+            app.state.demo = demo
+        else:
+            app.state.demo = load_demo_cases(DEMO_DIR) if settings.demo_replay else DemoCases()
         yield
         await app.state.runs.wait_idle()
 

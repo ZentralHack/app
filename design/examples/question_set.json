@@ -1,16 +1,17 @@
 {
   "questions": [
     {
-      "id": "q_revision",
+      "id": "q_revisionsart",
       "profile_field": "revisionsart",
-      "text": "Welche Revision hat Ihr Unternehmen?",
-      "why": "Der Luzerner Innovationsbeitrag setzt eine geprüfte Jahresrechnung voraus.",
+      "text": "Wie wird die Jahresrechnung Ihres Unternehmens geprüft?",
+      "why": "Einige Programme setzen eine geprüfte Jahresrechnung voraus. Entscheidet über: Luzerner Innovationsbeitrag.",
       "input": "auswahl",
       "unit": null,
       "options": [
         "Ordentliche Revision",
         "Eingeschränkte Revision",
-        "Keine (Opting-out)",
+        "Keine Revision (Opting-out)",
+        "Keine Revisionspflicht, z. B. Einzelunternehmen",
         "Weiss nicht"
       ],
       "affects": [
@@ -24,9 +25,9 @@
     },
     {
       "id": "q_nachhaltigkeit",
-      "profile_field": "nachhaltigkeitsbericht",
+      "profile_field": "rueckfrage_nachhaltigkeit",
       "text": "Hat Ihr Unternehmen einen Nachhaltigkeitsbericht oder eine Übersicht zu Nachhaltigkeitsthemen?",
-      "why": "Für den Luzerner Innovationsbeitrag braucht es einen Nachweis über nachhaltiges Wirtschaften.",
+      "why": "Entscheidet über: Luzerner Innovationsbeitrag.",
       "input": "auswahl",
       "unit": null,
       "options": [
@@ -45,21 +46,44 @@
     },
     {
       "id": "q_kosten_bemessungsjahr",
-      "profile_field": "projektstart",
+      "profile_field": "rueckfrage_kosten_bemessungsjahr",
       "text": "Sind die Projektkosten bereits angefallen, oder fallen sie erst an?",
-      "why": "Davon hängt ab, für welches Jahr ein Gesuch möglich ist.",
+      "why": "Entscheidet über: Luzerner Innovationsbeitrag.",
       "input": "auswahl",
       "unit": null,
       "options": [
         "Bereits angefallen",
         "Laufend",
-        "Fallen erst an"
+        "Fallen erst an",
+        "Weiss nicht"
       ],
       "affects": [
         {
           "program_id": "lib",
           "instrument_id": "lib-beitrag",
           "criterion_id": "kosten_bemessungsjahr"
+        }
+      ],
+      "prefill": null
+    },
+    {
+      "id": "q_raeumlichkeiten",
+      "profile_field": "raeumlichkeiten",
+      "text": "Hat Ihr Unternehmen eigene oder gemietete Räume im Kanton Luzern, die dauernd zur Verfügung stehen?",
+      "why": "Einige Programme verlangen eine tatsächliche Präsenz im Kanton, eine Domiziladresse genügt nicht. Entscheidet über: Luzerner Innovationsbeitrag.",
+      "input": "auswahl",
+      "unit": null,
+      "options": [
+        "Ja",
+        "Nein, nur eine Domiziladresse (c/o)",
+        "Nein",
+        "Weiss nicht"
+      ],
+      "affects": [
+        {
+          "program_id": "lib",
+          "instrument_id": null,
+          "criterion_id": "praesenz_raeume"
         }
       ],
       "prefill": null

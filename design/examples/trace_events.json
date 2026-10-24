@@ -136,15 +136,15 @@
     "seq": 7,
     "ts": "2026-10-23T21:40:15Z",
     "type": "instrument_completed",
-    "message": "Luzerner Innovationsbeitrag: passt mit Anpassung.",
+    "message": "Luzerner Innovationsbeitrag: passt gut.",
     "data": {
       "program_id": "lib",
       "instrument_id": "lib-beitrag",
-      "fit": "passt_mit_anpassung",
+      "fit": "passt_gut",
       "badges": {
-        "erfuellt": 6,
+        "erfuellt": 7,
         "annahme": 4,
-        "unbekannt": 3,
+        "unbekannt": 2,
         "nicht_erfuellt": 0
       },
       "duration_ms": 14200
@@ -223,8 +223,8 @@
     "data": {
       "duration_ms": 21100,
       "fits": {
-        "passt_gut": 0,
-        "passt_mit_anpassung": 1,
+        "passt_gut": 1,
+        "passt_mit_anpassung": 0,
         "passt_nicht": 6
       }
     }
