@@ -116,7 +116,7 @@ uv run uvicorn app.main:app --port 8000
 ```
 Ohne Schlüssel laufen Wissensbasis, Rückfragen und Tests; die KI-Schritte antworten mit einer Fehlermeldung.
 
-**Demo ohne Netz:** Die drei Beispiele auf der Startseite sind als echte Läufe gespeichert und werden mit realistischen Pausen abgespielt:
+**Demo ohne Netz:** Die Testprojekte in [`backend/demo/`](backend/demo/) sind als echte Läufe gespeichert. Wer genau ihren Vorhabenstext eingibt, sieht sie mit realistischen Pausen abgespielt:
 ```powershell
 $env:DEMO_REPLAY = "true"; uv run uvicorn app.main:app --port 8000
 ```

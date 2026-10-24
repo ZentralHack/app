@@ -34,7 +34,6 @@ export const t = {
   capture: {
     title: "Welche Förderprogramme passen zu Ihrem Vorhaben?",
     lead: "Beschreiben Sie Ihr Vorhaben in 1 bis 3 Sätzen. Der Agent prüft es gegen die Programme von Kanton, Region und Bund und zeigt, was passt und was noch fehlt.",
-    examples: "Beispiel laden",
     name: "Name des Unternehmens",
     rechtsform: "Rechtsform",
     founded: "Gründungsjahr",

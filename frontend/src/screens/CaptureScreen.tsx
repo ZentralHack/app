@@ -8,7 +8,6 @@ import { Button } from "../components/ui/Button";
 import { Spinner } from "../components/ui/Spinner";
 import { ConfirmMissing } from "../components/ui/ConfirmMissing";
 import { Card } from "../components/ui/Card";
-import { EXAMPLES } from "../content/examples";
 import { GEMEINDEN } from "../content/gemeinden";
 import { RECHTSFORMEN } from "../content/rechtsformen";
 import { groupDigits } from "../lib/format";
@@ -62,28 +61,7 @@ export function CaptureScreen({ draft, onDraftChange, clarification, busy, onSub
 
   return (
     <Page>
-      <div className="grid grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,1fr)_auto]">
-        <PageHeader title={t.capture.title} lead={t.capture.lead} />
-
-        <section aria-labelledby="examples-title" className="flex flex-col gap-2 justify-self-start rounded-xl border border-line bg-surface p-3 xl:justify-self-end">
-          <h2 id="examples-title" className="px-1 text-sm">
-            {t.capture.examples}
-          </h2>
-          <div className="flex flex-wrap gap-1.5 xl:flex-col">
-            {EXAMPLES.map(ex => (
-              <button
-                key={ex.label}
-                type="button"
-                aria-pressed={draft.text === ex.text}
-                onClick={() => set({ text: ex.text, name: ex.company, rechtsform: ex.rechtsform, gruendungsjahr: ex.gruendungsjahr, gemeinde: ex.gemeinde, mitarbeitende: ex.mitarbeitende, budget: ex.budget })}
-                className="rounded-md border border-line px-2.5 py-1 text-left text-sm transition-colors hover:border-line-strong hover:bg-bg aria-pressed:border-primary aria-pressed:bg-primary-soft aria-pressed:text-primary-ink"
-              >
-                {ex.label}
-              </button>
-            ))}
-          </div>
-        </section>
-      </div>
+      <PageHeader title={t.capture.title} lead={t.capture.lead} />
 
       <Card as="section" className="flex flex-col gap-6">
         {clarification && (

@@ -114,7 +114,7 @@ Key LIB facts: 30% personnel, 20% investment (depreciation), 10% contract resear
 
 ## User flow (7 screens)
 Running example: fictional Sensora AG, Emmen, 18 employees, optical sensor prototype, 18 months, CHF 400k.
-1. **Projekt erfassen**: one text box, optional Gemeinde, size, budget, 3 example buttons, "Analysieren".
+1. **Projekt erfassen**: one text box, optional Gemeinde, size, budget, "Analysieren". No example buttons in the UI; test projects live in `tests/projects/`.
 2. **Profil prüfen**: fields tagged Angegeben / Annahme / Fehlt, user can correct, "Stimmt so".
 3. **Rückfragen**: up to 10 cards (buttons, number or date input, always "Weiss nicht"), each with "Warum wir fragen"; every card skippable, plus "Restliche überspringen".
 4. **Agent arbeitet**: live trace: pre-filter → per-program checks → plan. Failed checks show "Nochmals".
