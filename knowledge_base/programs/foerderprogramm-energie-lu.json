@@ -22,17 +22,17 @@
     "note": "Beiträge werden gewährt, solange das jährliche Budget nicht ausgeschöpft ist.",
     "source": {
       "source_id": "foerderbedingungen",
-      "locator": "S. 3"
+      "locator": "S. 3, Kap. 2, Ziff. 2"
     }
   },
   "budget": {
     "annual_chf": 22300000,
     "year": 2026,
     "oversubscription": "bis_budget_ausgeschoepft",
-    "note": "Rund CHF 6 Mio. vom Kanton, mit Bundesmitteln aus dem Klima- und Innovationsgesetz voraussichtlich CHF 22.3 Mio.",
+    "note": "Kanton CHF 6 Mio. für das Gebäudeprogramm, mit zusätzlichen Bundesmitteln aus dem Klima- und Innovationsgesetz voraussichtlich CHF 22,3 Mio.",
     "source": {
       "source_id": "webseite",
-      "locator": "Überblick"
+      "locator": "Einleitung"
     }
   },
   "general_criteria": [
@@ -54,12 +54,10 @@
           "Weiss nicht"
         ]
       },
-      "evidence": [
-        "EGID des Gebäudes"
-      ],
+      "evidence": [],
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 3"
+        "locator": "S. 3, Kap. 2, Ziff. 1"
       },
       "notes": null
     },
@@ -85,11 +83,11 @@
         "source_id": "foerderbedingungen",
         "locator": "S. 3, Kap. 2, Ziff. 7"
       },
-      "notes": "Gilt ab Startjahr der Befreiung bis Ende der Verpflichtungsperiode. Andere Standorte desselben Unternehmens bleiben förderberechtigt (FAQ Abschn. 2)."
+      "notes": "Gilt ab Startjahr der Befreiung bis Ende der Verpflichtungsperiode. Andere Standorte desselben Unternehmens bleiben förderberechtigt (FAQ Abschn. 2, S. 5-6)."
     },
     {
       "id": "nicht_kantonal_bund",
-      "text": "Kein kantonales öffentliches Gebäude unter direktem Einfluss des Regierungsrates und kein Bundesgebäude.",
+      "text": "Keine öffentliche Baute oder Anlage des Kantons, deren Kredit der Regierungsrat oder das Kantonsparlament direkt beeinflussen kann, und keine Baute oder Anlage des Bundes.",
       "kind": "muss",
       "about": "objekt",
       "applies_if": null,
@@ -100,9 +98,9 @@
       "evidence": [],
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 3-4"
+        "locator": "S. 3, Kap. 2, Ziff. 13-14"
       },
-      "notes": null
+      "notes": "Institutionen, die der Kanton über einen Globalkredit (mit)finanziert, sind förderberechtigt (Ziff. 13)."
     }
   ],
   "general_exclusions": [
@@ -110,21 +108,21 @@
       "text": "Bereits begonnene oder abgeschlossene Projekte werden nicht rückwirkend gefördert (Ausnahmen nur Ladeinfrastruktur und GEAK Plus).",
       "source": {
         "source_id": "faq",
-        "locator": "Abschn. 2"
+        "locator": "Abschn. 2, S. 4, Frage «Werden bereits umgesetzte Projekte gefördert?»"
       }
     },
     {
       "text": "Für geförderte Massnahmen dürfen keine Kompensations- oder Übererfüllungsbescheinigungen generiert werden.",
       "source": {
         "source_id": "faq",
-        "locator": "Abschn. 2"
+        "locator": "Abschn. 2, S. 5, Frage «Sind alle Unternehmen förderberechtigt?»"
       }
     },
     {
-      "text": "Prozessenergie ist nicht förderberechtigt.",
+      "text": "Prozessenergie ist nicht förderberechtigt: keine Dämmung zur Einsparung von Prozessenergie und keine Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse.",
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 5"
+        "locator": "S. 4, Kap. 3, Ziff. 16; Kap. 4-12, jeweils Ziff. 3"
       }
     }
   ],
@@ -144,15 +142,15 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, solange das jährliche Budget nicht ausgeschöpft ist.",
+        "note": "Förderprogramm 2026. Die Webseite bietet das Instrument mit Gesuchsportal an. Beiträge, solange das jährliche Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "foerderbedingungen",
-          "locator": "S. 3"
+          "source_id": "webseite_waermedaemmung",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Bauherrschaft bzw. Gebäudeeigentümer"
+        "note": "Bauherrschaft (Förderbedingungen S. 4, Kap. 3, Ziff. 2)"
       },
       "filter": {
         "applicant_types": [
@@ -176,15 +174,18 @@
       "eligible_items": [
         {
           "id": "gedaemmtes_bauteil",
-          "name": "Gedämmte Bauteile gegen Aussenklima oder Erdreich",
-          "definition": "Dach, Fassade, Wand und Boden gegen aussen oder Erdreich mit U-Wert-Anforderung.",
+          "name": "Wärmedämmung von Fassade, Dach, Wand und Boden gegen Erdreich",
+          "definition": "Dämmung von Bauteilen, die an im Ausgangszustand beheizte Gebäudeteile grenzen. Bei unbeheiztem Estrich oder Keller ist die Dämmung gegen aussen (z. B. Dach, Giebel, Kniestock) förderberechtigt, wenn das angrenzende Geschoss beheizt ist.",
           "examples_positive": [],
           "examples_negative": [
-            "Dämmung von Anlagen und Räumen zur Einsparung von Prozessenergie"
+            "Fenster",
+            "Bauteile gegen unbeheizte Räume (z. B. Kellerdecke, Estrichboden)",
+            "Balkonüberdeckungen, Vordächer, Mauerscheiben zwischen Balkonen, Mauervorsprünge, Schottenwände",
+            "Dämmung von Anlagen und Räumen zur Einsparung von Prozessenergie (z. B. Silo, Geflügelstall, Gewächshaus, Kühlraum)"
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 4-5"
+            "locator": "S. 4, Kap. 3, Ziff. 5 und 16"
           }
         }
       ],
@@ -193,7 +194,28 @@
           "text": "Dämmung von Anlagen und Räumen zur Einsparung von Prozessenergie",
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 5"
+            "locator": "S. 4, Kap. 3, Ziff. 16"
+          }
+        },
+        {
+          "text": "Fenster, Bauteile gegen unbeheizte Räume, Balkonüberdeckungen, Vordächer, Mauerscheiben zwischen Balkonen, Mauervorsprünge, Schottenwände",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 4, Kap. 3, Ziff. 16"
+          }
+        },
+        {
+          "text": "Neue Anbauten oder Aufstockungen",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 4, Kap. 3, Ziff. 6"
+          }
+        },
+        {
+          "text": "Bauteile, die den geforderten U-Wert schon vor der Erneuerung erreichen",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 4, Kap. 3, Ziff. 8"
           }
         }
       ],
@@ -218,9 +240,9 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3"
+            "locator": "S. 4, Kap. 3, Ziff. 2"
           },
-          "notes": "Gerüstbau, Sondierungen oder Materialanlieferung gelten noch nicht als Baubeginn (FAQ Abschn. 3)."
+          "notes": "Definition Baubeginn aus FAQ Abschn. 3, S. 7. Gerüst, Abreissarbeiten für Sondagen oder Anlieferung von Dämmmaterial gelten noch nicht als Baubeginn."
         },
         {
           "id": "baubewilligung_vor_2000",
@@ -242,7 +264,7 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "Ziff. 3.3"
+            "locator": "S. 4, Kap. 3, Ziff. 3"
           },
           "notes": null
         },
@@ -259,9 +281,9 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 4"
+            "locator": "S. 4, Kap. 3, Ziff. 7"
           },
-          "notes": null
+          "notes": "Bei geschützten Bauten gilt gegen Nachweis nur die Verbesserung um 0.07 W/m2K (Ziff. 10)."
         },
         {
           "id": "u_wert_verbesserung",
@@ -276,7 +298,7 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 4"
+            "locator": "S. 4, Kap. 3, Ziff. 9"
           },
           "notes": null
         },
@@ -300,43 +322,57 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 4, Ziff. 12"
+            "locator": "S. 4, Kap. 3, Ziff. 12"
           },
-          "notes": "Die Umrechnung in m2 ergibt sich aus CHF 60/m2."
+          "notes": "Webseite Wärmedämmung (webseite_waermedaemmung): «Die gedämmte Fläche muss mindestens 50 m2 umfassen (Minimalförderbeitrag: 3000 Franken).»"
         },
         {
           "id": "geak_plus",
-          "text": "Ein GEAK Plus liegt vor.",
+          "text": "Ein aktueller GEAK Plus liegt vor. Kann für den Gebäudetyp kein GEAK Plus erstellt werden, eine Grobanalyse mit Vorgehensempfehlung gemäss Pflichtenheft BFE.",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": "Nur wenn die Fördersumme der Basismassnahme über CHF 10'000 liegt",
+          "applies_if": "Nur ab einem Förderbeitrag von CHF 10'000 pro Gesuch für die Basismassnahme Wärmedämmung",
           "profile_fields": [
             "eigentum_gebaeude"
           ],
-          "question": null,
+          "question": {
+            "text": "Liegt für das Gebäude ein aktueller GEAK Plus vor?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
             "GEAK Plus"
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 5"
+            "locator": "S. 4, Kap. 3, Ziff. 11"
           },
-          "notes": null
+          "notes": "FAQ Abschn. 3, S. 9: nur die Fördersumme der Basismassnahme zählt, nicht der Bonus. Die FAQ sagt «grösser als 10'000», die Förderbedingungen «ab 10'000»."
         },
         {
           "id": "bonus_90_prozent",
-          "text": "Für den Bonus: mindestens 90% der Flächen von Dach, Fassade und Boden gegen aussen werden gedämmt, Dach und Fassade gleichzeitig.",
+          "text": "Für den Bonus: Mindestens 90% aller Hauptflächen (Fassade und Dach, ohne Wand und Boden gegen Erdreich) werden gemäss den Anforderungen der Wärmedämmung gedämmt.",
           "kind": "soll",
           "about": "objekt",
           "applies_if": "Nur für den Bonus Gebäudehülleneffizienz",
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Werden mindestens 90% der Fassaden- und Dachflächen gleichzeitig gedämmt?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 3"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 28, Kap. 16, Ziff. 6"
           },
-          "notes": "Förderbedingungen S. 28 nennen 90% der Hauptflächen (Fassade und Dach). Bereits früher sanierte Bauteile zählen nicht."
+          "notes": "Für den Bonus zwingend, für die Basismassnahme kein Kriterium, daher soll. FAQ Abschn. 3, S. 8 zählt zu 100% Dach (B1), Fassade (B2) und Boden gegen aussen (B3). Früher sanierte Bauteile zählen nicht (FAQ S. 7-8). Beim Bonus darf nur ein Gesuch für die Basismassnahme vorliegen (FAQ S. 7)."
         }
       ],
       "funding": {
@@ -366,20 +402,20 @@
             "text": "Eine kleinere Ausführung als beantragt führt zur Kürzung, ausbezahlt wird höchstens der zugesicherte Betrag.",
             "source": {
               "source_id": "faq",
-              "locator": "Abschn. 2"
+              "locator": "Abschn. 2, S. 5, Frage «Besteht ein Rechtsanspruch auf Förderbeiträge?»"
             }
           }
         ],
         "payout_forms": [
           "Auszahlung nach Einreichung des Abschlussformulars"
         ],
-        "calculation_basis": "Gedämmte Fläche in m2. Förderbeitrag höchstens 50% der Gesamtinvestition, Basismassnahme zählt mit.",
+        "calculation_basis": "Gedämmte Fläche in m2. Förderung gesamthaft höchstens 50% der Gesamtinvestition, Basismassnahme zählt beim Bonus mit (Kap. 16, Ziff. 7).",
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 4-5 und S. 28-29"
+          "locator": "S. 5 (Kap. 3) und S. 28 (Kap. 16)"
         },
-        "note": "max_amount_chf ist die Summe aus Dämmung (CHF 100'000) und Bonus (CHF 100'000). Über CHF 100'000 pro Gebäude möglich bei getrennten Etappen mit eigenen Gesuchen (FAQ Abschn. 3). Der Beitrag ist steuerpflichtig."
+        "note": "max_amount_chf ist die Summe aus Dämmung (CHF 100'000) und Bonus (CHF 100'000), laut S. 28 «bis maximal CHF 200'000». Ein zweites Gesuch (z. B. Fassade nach Dach) ist möglich, wenn das erste abgeschlossen, ausbezahlt und abgenommen ist; dann mehr als CHF 100'000 pro Gebäude (FAQ Abschn. 3, S. 7). Der Beitrag ist steuerpflichtig (FAQ Abschn. 2, S. 5)."
       },
       "timing": {
         "deadline": {
@@ -393,14 +429,14 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3"
+            "locator": "S. 4, Kap. 3, Ziff. 2"
           }
         },
         "assessment_period": null,
         "decision_time": "Förderzusage innert vier Wochen, wenn die Bedingungen erfüllt sind",
-        "max_duration_months": null,
-        "repeat_limit": null,
-        "note": "Die Umsetzungsfrist steht in der Förderzusage. Fristverlängerung schriftlich und begründet (FAQ Abschn. 2)."
+        "max_duration_months": 24,
+        "repeat_limit": "Pro EGID ein Gesuch. Ein neues Gesuch für denselben Fördergegenstand erst nach Abschluss des bestehenden Gesuchs (Kap. 3, Ziff. 1 und 4).",
+        "note": "Webseite Wärmedämmung: «Nach der Förderzusage haben Sie zwei Jahre Zeit, um die Sanierung abzuschliessen.» Die Frist steht in der Förderzusage (FAQ S. 4). Fristverlängerung schriftlich und begründet (Kap. 3, Ziff. 17)."
       },
       "documents": {
         "application": [
@@ -409,7 +445,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 5"
+              "locator": "S. 5, Gesuchsbeilagen"
             }
           },
           {
@@ -417,7 +453,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 5"
+              "locator": "S. 5, Gesuchsbeilagen"
             }
           },
           {
@@ -425,7 +461,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 5"
+              "locator": "S. 5, Gesuchsbeilagen"
             }
           },
           {
@@ -433,15 +469,31 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 5"
+              "locator": "S. 5, Gesuchsbeilagen"
             }
           },
           {
             "name": "GEAK Plus",
-            "condition": "ab CHF 10'000 Förderbeitrag",
+            "condition": "ab CHF 10'000 voraussichtlichem Förderbeitrag",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 5"
+              "locator": "S. 5, Gesuchsbeilagen"
+            }
+          },
+          {
+            "name": "Farbige, aktuelle Baueingabepläne",
+            "condition": "bei Anbauten oder Aufstockungen",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 5, Gesuchsbeilagen Ziff. 4"
+            }
+          },
+          {
+            "name": "Von der kantonalen Denkmalpflege unterschriebene Bestätigung",
+            "condition": "bei U-Wert-Erleichterung für geschützte Bauten",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 5, Gesuchsbeilagen Ziff. 10"
             }
           }
         ],
@@ -451,7 +503,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 6"
+              "locator": "S. 5, Beilagen beim Abschluss"
             }
           },
           {
@@ -459,7 +511,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 6"
+              "locator": "S. 5, Beilagen beim Abschluss"
             }
           },
           {
@@ -467,29 +519,36 @@
             "condition": "bei Abweichungen",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 6"
+              "locator": "S. 5, Beilagen beim Abschluss"
             }
           }
         ]
       },
       "obligations": [
         {
-          "text": "Abschlussunterlagen vor Fristende einreichen. Stichprobenkontrollen möglich.",
+          "text": "Abschlussunterlagen spätestens vor Fristende einreichen. Fristverlängerung schriftlich und begründet beantragen.",
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 2"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 4, Kap. 3, Ziff. 17"
+          }
+        },
+        {
+          "text": "Ausführungskontrollen bei mindestens 4% der Gesuche (über CHF 100'000 mindestens 25%). Die Bauherrschaft gewährt den Prüfern Zugang und Einsicht.",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 3, Kap. 2, Ziff. 11"
           }
         }
       ],
       "levers": [
         {
-          "text": "Dach und Fassade gleichzeitig sanieren und mindestens 90% der Flächen dämmen, um den Bonus zu erhalten",
+          "text": "Dach und Fassade gleichzeitig sanieren und mindestens 90% der Hauptflächen dämmen, um den Bonus zu erhalten",
           "affects_criteria": [
             "bonus_90_prozent"
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 3"
+            "locator": "Abschn. 3, S. 7, Frage zu zwei Etappen"
           }
         },
         {
@@ -499,7 +558,7 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3"
+            "locator": "S. 4, Kap. 3, Ziff. 2"
           }
         }
       ],
@@ -510,7 +569,7 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 4-6"
+        "locator": "S. 4-5 (Kap. 3) und S. 28 (Kap. 16)"
       }
     },
     {
@@ -528,15 +587,15 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, solange das Budget reicht.",
+        "note": "Förderprogramm 2026. Die Webseite bietet das Instrument mit Gesuchsportal an. Beiträge, solange das jährliche Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "foerderbedingungen",
-          "locator": "S. 3"
+          "source_id": "webseite_waermepumpen",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Gebäudeeigentümer. Bei Contracting gehen die Gelder primär an die Eigentümer (FAQ Abschn. 4.1)."
+        "note": "Gebäudeeigentümer. Bei Contracting gehen die Gelder in erster Linie an die Gebäudeinhaber (FAQ Abschn. 4.1, S. 11)."
       },
       "filter": {
         "applicant_types": [
@@ -560,24 +619,31 @@
       "eligible_items": [],
       "exclusions": [
         {
-          "text": "Beheizung von Tierställen und Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse (Prozessenergie)",
+          "text": "Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse, z. B. Beheizung von Tierställen",
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 7-10, jeweils Ziff. 3; Tierställe: FAQ Abschn. 4.1, S. 11"
           }
         },
         {
-          "text": "Fossile Spitzenlast unter 100 kW",
+          "text": "Fossile Spitzenlast bis 100 kW. Ab 100 kW höchstens 10% des jährlichen Gesamtwärmebedarfs.",
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 7-10, jeweils Ziff. 5"
           }
         },
         {
-          "text": "Anergienetze als Quelle (Förderung allenfalls über Wasser/Wasser-Wärmepumpe)",
+          "text": "Gasbetriebene Wärmepumpen (nur Elektromotor-Wärmepumpen förderberechtigt)",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 7-10, jeweils Ziff. 8"
+          }
+        },
+        {
+          "text": "Wärmepumpe am Anergienetz, die als Energiezentrale ein eigenes Wärmenetz beliefert (dann Förderung der Bezüger über «Anschluss an ein Wärmenetz»)",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.4"
+            "locator": "Abschn. 4.4.1, S. 17"
           }
         }
       ],
@@ -602,9 +668,9 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 11 und S. 15"
+            "locator": "Kap. 7 Ziff. 11 (S. 11), Kap. 8 Ziff. 11 (S. 13), Kap. 9 Ziff. 13 (S. 15), Kap. 10 Ziff. 13 (S. 17)"
           },
-          "notes": "Installationsbeginn: Luft/Wasser = Demontage der alten Heizung; Sole/Wasser = Start der Erdsondenbohrung oder Demontage der alten Heizung (FAQ Abschn. 4.1)."
+          "notes": "Installationsbeginn: Luft/Wasser = Demontage der alten Heizung; Sole/Wasser = Start der Erdsondenbohrung oder Demontage der alten Heizung (FAQ Abschn. 4.1, S. 11)."
         },
         {
           "id": "ersetzt_oel_gas_elektro",
@@ -629,13 +695,13 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "Ziff. 7.1, 8.1, 9.1, 10.1"
+            "locator": "Kap. 7-10, jeweils Ziff. 1 (S. 11, 13, 15, 17)"
           },
-          "notes": "Der Ersatz von Wärmepumpen jeglicher Art wird nicht gefördert."
+          "notes": "Der Ersatz von Wärmepumpen jeglicher Art wird nicht gefördert. Ersatz eines Fernwärmeanschlusses aus 100% fossiler Zentrale ist förderberechtigt (FAQ Abschn. 4.1, S. 10)."
         },
         {
           "id": "kein_neubau",
-          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
+          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
@@ -652,17 +718,17 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.1 und 4.3"
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 7-10, jeweils Ziff. 2 (S. 11, 13, 15, 17)"
           },
           "notes": null
         },
         {
           "id": "wpsm",
-          "text": "Wärmepumpensystem-Modul (WPSM) mit Anlagenzertifikat FWS.",
+          "text": "Wärmepumpensystemmodul (WPSM) mit Anlagenzertifikat.",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": "Nur bei Anlagen bis 15 kW",
+          "applies_if": "Nur bei Anlagen bis 15 kWth thermische Nennleistung",
           "profile_fields": [],
           "question": null,
           "evidence": [
@@ -671,16 +737,16 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 11-18"
+            "locator": "S. 11, Kap. 7, Ziff. 9; S. 15, Kap. 9, Ziff. 10"
           },
-          "notes": null
+          "notes": "FAQ Abschn. 4.3, S. 16: Formular «Bestätigung Installateur/Bauherr zuhanden Förderstelle» zum Gesuch, Kopie des WPSM-Anlagenzertifikats der FWS zum Abschluss."
         },
         {
           "id": "guetesiegel_leistungsgarantie",
-          "text": "FWS-Gütesiegel oder gleichwertig und Leistungsgarantie EnergieSchweiz.",
+          "text": "Leistungsgarantie EnergieSchweiz (unterzeichnet von Fachperson und Bauherr) und Wärmepumpe mit national oder international gültigem Gütesiegel der FWS-Gütesiegelliste. Ab 100 kW wird kein Gütesiegel verlangt.",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": "Nur bei Anlagen über 15 kW ohne WPSM",
+          "applies_if": "Nur bei Anlagen über 15 kWth (ohne WPSM)",
           "profile_fields": [],
           "question": null,
           "evidence": [
@@ -689,31 +755,31 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 11-18"
+            "locator": "Kap. 7 Ziff. 10, Kap. 8 Ziff. 9, Kap. 9 Ziff. 11, Kap. 10 Ziff. 10"
           },
-          "notes": null
+          "notes": "Gleichwertige Gütesiegel: FAQ Abschn. 4.3, S. 16."
         },
         {
           "id": "zaehler",
-          "text": "Strom- und Wärmezähler sind installiert (müssen nicht geeicht sein).",
+          "text": "Eine fachgerechte Strom- und Wärmemessung ist vorhanden (Zähler müssen nicht geeicht sein).",
           "kind": "muss",
           "about": "objekt",
-          "applies_if": null,
+          "applies_if": "Nur bei Anlagen über 70 kW",
           "profile_fields": [],
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.3"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 13, Kap. 8, Ziff. 10; S. 17, Kap. 10, Ziff. 12"
           },
-          "notes": null
+          "notes": "«Nicht geeicht»: FAQ Abschn. 4.1, S. 12. Die Webseite Wärmepumpen nennt die Messung erst «ab 100 kWth» (Widerspruch, siehe offene Fragen)."
         },
         {
           "id": "bohrfirma_guetesiegel",
-          "text": "Die Bohrfirma hat ein FWS-Gütesiegel.",
+          "text": "Die Erdwärmesonden-Bohrfirma hat ein FWS-Gütesiegel.",
           "kind": "muss",
           "about": "partner",
-          "applies_if": "Nur bei Sole/Wasser-Wärmepumpen",
+          "applies_if": "Nur bei Erdwärmesonden",
           "profile_fields": [],
           "question": null,
           "evidence": [
@@ -721,14 +787,14 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 15-18"
+            "locator": "S. 15, Kap. 9, Ziff. 12; S. 17, Kap. 10, Ziff. 11"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "gestaffelt",
-        "summary": "Luft/Wasser ab CHF 4'000, Sole/Wasser ab CHF 8'500 pauschal bis 15 kW, darüber Grundbeitrag plus Beitrag pro kWth. Über 70 kW maximal CHF 150'000.",
+        "summary": "Bis 15 kW pauschal CHF 4'000 (Luft/Wasser) bzw. CHF 8'500 (Sole/Wasser, Wasser/Wasser). Darüber Grundbeitrag plus Beitrag pro kWth. Über 70 kW maximal CHF 150'000.",
         "cost_categories": [],
         "units": [
           {
@@ -751,19 +817,19 @@
           },
           {
             "unit": "Anlage (pauschal)",
-            "condition": "Sole/Wasser, bis 15 kWth",
+            "condition": "Sole/Wasser oder Wasser/Wasser, bis 15 kWth",
             "base_chf": 8500,
             "amount_chf": null
           },
           {
             "unit": "kWth",
-            "condition": "Sole/Wasser, über 15 bis 70 kWth",
+            "condition": "Sole/Wasser oder Wasser/Wasser, über 15 bis 70 kWth",
             "base_chf": 4000,
             "amount_chf": 300
           },
           {
             "unit": "kWth",
-            "condition": "Sole/Wasser, ab 70 kWth",
+            "condition": "Sole/Wasser oder Wasser/Wasser, über 70 kWth",
             "base_chf": 4800,
             "amount_chf": 360
           }
@@ -777,20 +843,20 @@
             "text": "Leistungsbeitrag auf 50 W pro m2 Energiebezugsfläche (EBF) begrenzt.",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Kap. 7-10, jeweils Ziff. 7"
             }
           }
         ],
         "payout_forms": [
           "Auszahlung nach Einreichung des Abschlussformulars"
         ],
-        "calculation_basis": "Thermische Nennleistung bei Normbetriebspunkten (A-7/W34, B0/W34, W10/W34), höchstens 50 W/m2 EBF.",
+        "calculation_basis": "Thermische Nennleistung bei Normbetriebspunkten (A-7/W34, B0/W34, W10/W34), höchstens 50 Wth pro m2 EBF (FAQ Abschn. 4.3, S. 15).",
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 11-18"
+          "locator": "Förderbeiträge S. 11, 13, 15, 17"
         },
-        "note": "Maximum CHF 150'000 gilt laut Förderbedingungen für Anlagen über 70 kW. Der Beitrag ist steuerpflichtig."
+        "note": "Maximum CHF 150'000 laut Förderbedingungen nur für Anlagen über 70 kW (Kap. 8 und 10). Der Beitrag ist steuerpflichtig (FAQ Abschn. 2, S. 5)."
       },
       "timing": {
         "deadline": {
@@ -804,14 +870,14 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 11"
+            "locator": "S. 11, Kap. 7, Ziff. 11"
           }
         },
         "assessment_period": null,
-        "decision_time": "Förderzusage innert vier Wochen",
-        "max_duration_months": null,
+        "decision_time": "Förderzusage innert vier Wochen, wenn die Bedingungen erfüllt sind",
+        "max_duration_months": 24,
         "repeat_limit": null,
-        "note": "Umsetzungsfrist gemäss Förderzusage."
+        "note": "Webseite Wärmepumpen: «Nach Erhalt der Förderzusage haben Sie zwei Jahre Zeit, das Projekt abzuschliessen.»"
       },
       "documents": {
         "application": [
@@ -820,7 +886,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Gesuchsbeilagen S. 12, 14, 16, 18"
             }
           },
           {
@@ -828,15 +894,39 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Gesuchsbeilagen S. 12, 14, 16, 18"
             }
           },
           {
-            "name": "Datenblätter der Wärmepumpe",
+            "name": "Technische Datenblätter der Wärmepumpe (thermische Nennleistung bei Normbedingungen)",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Gesuchsbeilagen S. 12, 14, 16, 18"
+            }
+          },
+          {
+            "name": "Nachweis WPSM oder Bestätigung Wärmepumpen-Anlage mit WPSM",
+            "condition": "bis 15 kW thermische Nennleistung",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 12 Ziff. 3; S. 16 Ziff. 3"
+            }
+          },
+          {
+            "name": "Nachweis Wärmepumpengütesiegel FWS und Leistungsgarantie EnergieSchweiz",
+            "condition": "ab 15 kW thermische Nennleistung (Gütesiegel nur bis 100 kW)",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 12 Ziff. 4-5; S. 14 Ziff. 3-4; S. 16 Ziff. 4 und 6; S. 18 Ziff. 3 und 5"
+            }
+          },
+          {
+            "name": "Nachweis FWS-Gütesiegel der Erdwärmesonden-Bohrfirma",
+            "condition": "bei Sole/Wasser und Wasser/Wasser",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 16 Ziff. 5; S. 18 Ziff. 4"
             }
           }
         ],
@@ -846,7 +936,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Beilagen beim Abschluss S. 12, 14, 16, 18"
             }
           },
           {
@@ -854,15 +944,15 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Beilagen beim Abschluss S. 12, 14, 16, 18"
             }
           },
           {
-            "name": "Fotos",
+            "name": "Fotos der neuen Heizung im Technikraum",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 11-18"
+              "locator": "Beilagen beim Abschluss S. 12, 14, 16, 18"
             }
           },
           {
@@ -870,7 +960,7 @@
             "condition": "bei Sole/Wasser",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 15-18"
+              "locator": "S. 16 Ziff. 5; S. 18 Ziff. 4"
             }
           }
         ]
@@ -884,7 +974,7 @@
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "locator": "Abschn. 4.1, S. 11, Frage «Wie ist der Baubeginn bzw. Installationsbeginn definiert?»"
           }
         }
       ],
@@ -895,7 +985,7 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 11-18"
+        "locator": "S. 11-18 (Kap. 7-10)"
       }
     },
     {
@@ -912,10 +1002,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, solange das Budget reicht.",
+        "note": "Förderprogramm 2026. Die Webseite bietet das Instrument mit Gesuchsportal an. Beiträge, solange das jährliche Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "foerderbedingungen",
-          "locator": "S. 3"
+          "source_id": "webseite_holzfeuerungen",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
@@ -944,10 +1034,24 @@
       "eligible_items": [],
       "exclusions": [
         {
-          "text": "Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse sowie Beheizung von Tierställen",
+          "text": "Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 4-6, jeweils Ziff. 3"
+          }
+        },
+        {
+          "text": "Beheizung von Tierställen (landwirtschaftliche Prozessenergie)",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "locator": "Abschn. 4.1, S. 11"
+          }
+        },
+        {
+          "text": "Fossile Spitzenlast bei automatischen Feuerungen bis 100 kW. Ab 100 kW höchstens 10% des jährlichen Gesamtwärmebedarfs.",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 7, Kap. 5, Ziff. 5; S. 9, Kap. 6, Ziff. 5"
           }
         }
       ],
@@ -972,9 +1076,9 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 7 und S. 9"
+            "locator": "S. 6 Kap. 4 Ziff. 5; S. 7 Kap. 5 Ziff. 9; S. 9 Kap. 6 Ziff. 12"
           },
-          "notes": "Installationsbeginn ist die Demontage der alten Heizung (FAQ Abschn. 4.1)."
+          "notes": "Installationsbeginn ist die Demontage der alten Heizung (FAQ Abschn. 4.1, S. 11)."
         },
         {
           "id": "ersetzt_oel_gas_elektro",
@@ -999,13 +1103,13 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "Ziff. 4.1, 5.1, 6.1"
+            "locator": "Kap. 4-6, jeweils Ziff. 1 (S. 6, 7, 9)"
           },
           "notes": "Der Ersatz von Holzfeuerungen jeglicher Art wird nicht gefördert."
         },
         {
           "id": "kein_neubau",
-          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
+          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
@@ -1022,62 +1126,63 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 4-6, jeweils Ziff. 2 (S. 6, 7, 9)"
           },
-          "notes": null
+          "notes": "Teil-Ersatzneubau mit Rückbau von weniger als 50% der Tragstruktur: Heizungsersatz durch Holzfeuerung förderbar (FAQ Abschn. 4.1, S. 10)."
         },
         {
           "id": "leistungsgarantie",
-          "text": "Leistungsgarantie EnergieSchweiz liegt vor.",
+          "text": "Leistungsgarantie EnergieSchweiz und Konformitätserklärung nach Energieeffizienzverordnung (EnEV) liegen vor. Bei Einzelraumfeuerung zusätzlich Leistungserklärung nach Bauprodukteverordnung.",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": null,
+          "applies_if": "Nur bis 70 kW Feuerungswärmeleistung",
           "profile_fields": [],
           "question": null,
           "evidence": [
             "Leistungsgarantie EnergieSchweiz",
-            "EnEV-Konformitätserklärung"
+            "EnEV-Konformitätserklärung",
+            "Leistungserklärung (nur Einzelraumfeuerung)"
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 7-10"
+            "locator": "S. 6, Kap. 4, Ziff. 4; S. 7, Kap. 5, Ziff. 8"
           },
-          "notes": null
+          "notes": "Über 70 kW verlangt Kap. 6 keine Leistungsgarantie, aber bis 500 kW eine Konformitätserklärung (Ziff. 9)."
         },
         {
           "id": "qm_holzheizwerke",
-          "text": "Nachweis QM Holzheizwerke (Stufe gemäss Zuordnungsliste).",
+          "text": "Die vollständige, termingerechte Anwendung von QM Holzheizwerke ist nachgewiesen (QM mini, vereinfacht oder Standard gemäss Zuordnung).",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": "Nur ab 70 kW Feuerungswärmeleistung",
+          "applies_if": "Nur über 70 kW Feuerungswärmeleistung",
           "profile_fields": [],
           "question": null,
           "evidence": [
             "QM Holzheizwerke"
           ],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.2"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 9, Kap. 6, Ziff. 8"
           },
-          "notes": null
+          "notes": "FAQ Abschn. 4.2, S. 14: «ist ab 70 kW nachzuweisen»."
         },
         {
           "id": "abnahmemessung",
-          "text": "Abnahmemessung (CO und Staub) frühestens 3 Monate vor und spätestens 12 Monate nach Inbetriebnahme.",
+          "text": "Amtliche Bestätigung der Erfüllung der LRV-Vorgaben aufgrund einer Abnahmemessung (CO und Staub), frühestens 3 Monate vor und spätestens 12 Monate nach Inbetriebnahme.",
           "kind": "muss",
           "about": "objekt",
-          "applies_if": "Nur ab 70 kW",
+          "applies_if": "Nur über 70 kW Feuerungswärmeleistung (Beilage beim Abschluss)",
           "profile_fields": [],
           "question": null,
           "evidence": [
             "Messprotokoll"
           ],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.2"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 10, Kap. 6, Beilagen beim Abschluss Ziff. 5"
           },
-          "notes": null
+          "notes": "Messzeitpunkt sowie CO und Staub: FAQ Abschn. 4.2, S. 14. Laut FAQ gilt die Abnahmemessung nach LRV für alle neu in Betrieb genommenen Holzfeuerungen."
         }
       ],
       "funding": {
@@ -1116,23 +1221,23 @@
         "cofinancing": null,
         "deductions": [
           {
-            "text": "Leistungsbeitrag auf 50 W pro m2 EBF begrenzt.",
+            "text": "Leistungsbeitrag auf 50 W Kessel-Nennleistung pro m2 EBF begrenzt (automatische Feuerungen).",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 6-10"
+              "locator": "S. 7, Kap. 5, Ziff. 7; S. 9, Kap. 6, Ziff. 7"
             }
           }
         ],
         "payout_forms": [
           "Auszahlung nach Einreichung des Abschlussformulars"
         ],
-        "calculation_basis": "Einstufung nach Feuerungswärmeleistung, Beitrag nach Kessel-Nennleistung (FAQ Abschn. 4.2).",
+        "calculation_basis": "Einstufung nach Feuerungswärmeleistung, Beitrag nach Kessel-Nennleistung (FAQ Abschn. 4.2, S. 14).",
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 6-10"
+          "locator": "Förderbeiträge S. 6, 7, 9"
         },
-        "note": "Maximum CHF 150'000 gilt laut Förderbedingungen für automatische Anlagen über 70 kW. Beitrag steuerpflichtig."
+        "note": "Maximum CHF 150'000 laut Förderbedingungen nur für automatische Anlagen über 70 kW (Kap. 6). Der Beitrag ist steuerpflichtig (FAQ Abschn. 2, S. 5)."
       },
       "timing": {
         "deadline": {
@@ -1146,14 +1251,14 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 7"
+            "locator": "S. 7, Kap. 5, Ziff. 9"
           }
         },
         "assessment_period": null,
-        "decision_time": "Förderzusage innert vier Wochen",
-        "max_duration_months": null,
+        "decision_time": "Förderzusage innert vier Wochen, wenn die Bedingungen erfüllt sind",
+        "max_duration_months": 24,
         "repeat_limit": null,
-        "note": null
+        "note": "Webseite Holzfeuerungen: «Nach Erhalt der Förderzusage haben Sie zwei Jahre Zeit, das Projekt abzuschliessen.»"
       },
       "documents": {
         "application": [
@@ -1162,41 +1267,49 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 7-10"
+              "locator": "Gesuchsbeilagen S. 6, 8, 10"
             }
           },
           {
-            "name": "Projektbeschrieb: Offerte, Pläne mit EBF-Nachweis, Schema, Fotos der alten Heizung",
+            "name": "Projektbeschrieb: Offerte, Anlagenschema, Fotos der alten Heizung, bei automatischen Feuerungen Pläne mit EBF-Nachweis",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 7-10"
+              "locator": "Gesuchsbeilagen S. 6, 8, 10, jeweils Ziff. 2"
             }
           },
           {
-            "name": "Leistungsgarantie EnergieSchweiz und EnEV-Konformitätserklärung",
-            "condition": null,
+            "name": "Leistungsgarantie EnergieSchweiz, EnEV-Konformitätserklärung, Leistungserklärung (nur Einzelraumfeuerung)",
+            "condition": "bis 70 kW",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 7-10"
+              "locator": "S. 6 Ziff. 3-5; S. 8 Ziff. 3-5"
+            }
+          },
+          {
+            "name": "Disposition Holzlager/Silo/Kesselhaus, Situationsplan Wärmenetz, Objektliste Wärmeverbund, Nachweis QM Holzheizwerke, Konformitätserklärung (bis 500 kW)",
+            "condition": "über 70 kW",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 10, Gesuchsbeilagen Ziff. 3-7"
             }
           }
         ],
         "completion": [
           {
-            "name": "Abschlussformular, Rechnungen, Inbetriebnahmeprotokoll, Fotos des Technikraums",
+            "name": "Abschlussformular, Rechnungen, Fotos der neuen Heizung im Technikraum, Inbetriebnahmeprotokoll (bis 70 kW)",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 7-10"
+              "locator": "Beilagen beim Abschluss S. 6, 8, 10"
             }
           },
           {
-            "name": "Nachweise QM Holzheizwerke und Messungen",
+            "name": "Abschlussunterlagen QM Holzheizwerke und amtliche Bestätigung LRV-Messung",
             "condition": "über 70 kW",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 9-10"
+              "locator": "S. 10, Beilagen beim Abschluss Ziff. 3 und 5"
             }
           }
         ]
@@ -1206,7 +1319,7 @@
           "text": "Die Förderung ersetzt die Anforderungen der Luftreinhalte-Verordnung nicht.",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.2"
+            "locator": "Abschn. 4.2, S. 14"
           }
         }
       ],
@@ -1218,7 +1331,7 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 6-10"
+        "locator": "S. 6-10 (Kap. 4-6)"
       }
     },
     {
@@ -1235,10 +1348,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, solange das Budget reicht.",
+        "note": "Förderprogramm 2026. Die Webseite bietet das Instrument mit Gesuchsportal an. Beiträge, solange das jährliche Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "foerderbedingungen",
-          "locator": "S. 3"
+          "source_id": "webseite_waermenetz",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
@@ -1270,14 +1383,28 @@
           "text": "Erstellen und Verzapfen der Hausanschlussleitung",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.4.1"
+            "locator": "Abschn. 4.4.1, S. 17"
           }
         },
         {
           "text": "Anergienetze als Quelle für eine Wärmepumpe",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 4.4.1"
+            "locator": "Abschn. 4.4.1, S. 17"
+          }
+        },
+        {
+          "text": "Wärme für industrielle, gewerbliche oder landwirtschaftliche Prozesse",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "Kap. 11-12, jeweils Ziff. 3"
+          }
+        },
+        {
+          "text": "Anschluss an ein Netz mit Kompensationsprojekt nach Monitoringmethode 2 ohne Vereinbarung zwischen Netzbetreiber und Kanton (Wirkung 100% beim Kanton). Doppelförderung ist in jedem Fall ausgeschlossen.",
+          "source": {
+            "source_id": "faq",
+            "locator": "Abschn. 4.4.2, S. 18"
           }
         }
       ],
@@ -1302,13 +1429,40 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 19-22"
+            "locator": "S. 19, Kap. 11, Ziff. 9; S. 21, Kap. 12, Ziff. 9"
           },
-          "notes": "Installationsbeginn ist die Installation der Übergabestation (FAQ Abschn. 4.1)."
+          "notes": "Installationsbeginn ist die Installation der Übergabestation (FAQ Abschn. 4.1, S. 11)."
+        },
+        {
+          "id": "ersetzt_oel_gas_elektro",
+          "text": "Der Anschluss ersetzt eine Öl-, Erdgas- oder Elektroheizung (zentral oder dezentral). Die ersetzte Heizung wird rückgebaut.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [
+            "bestehende_heizung"
+          ],
+          "question": {
+            "text": "Welche Heizung wird ersetzt?",
+            "options": [
+              "Öl",
+              "Erdgas",
+              "Elektro",
+              "Wärmepumpe",
+              "Holz",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 19, Kap. 11, Ziff. 1; S. 21, Kap. 12, Ziff. 1"
+          },
+          "notes": null
         },
         {
           "id": "kein_neubau",
-          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt.",
+          "text": "Es handelt sich um ein bestehendes Gebäude. Neubauten sind nicht förderberechtigt. Ein Ersatzneubau gilt als Neubau.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
@@ -1325,8 +1479,8 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 4.1"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 19, Kap. 11, Ziff. 2; S. 21, Kap. 12, Ziff. 2"
           },
           "notes": null
         },
@@ -1341,13 +1495,13 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 19-22"
+            "locator": "S. 19, Kap. 11, Ziff. 6; S. 21, Kap. 12, Ziff. 6"
           },
           "notes": null
         },
         {
           "id": "waermeliefervertrag",
-          "text": "Ein Wärmeliefervertrag mit dem Netzbetreiber liegt vor.",
+          "text": "Ein Wärmeliefervertrag liegt vor. Er enthält keine Bestimmungen, die eine nachträgliche Gebäudehüllensanierung erschweren oder verunmöglichen.",
           "kind": "muss",
           "about": "dokumente",
           "applies_if": null,
@@ -1358,7 +1512,7 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 20-22"
+            "locator": "Kap. 11-12, jeweils Ziff. 8 und Gesuchsbeilage Ziff. 3 (S. 19, 21)"
           },
           "notes": null
         }
@@ -1393,10 +1547,10 @@
         "cofinancing": null,
         "deductions": [
           {
-            "text": "Leistungsbeitrag auf 50 W pro m2 EBF begrenzt.",
+            "text": "Leistungsbeitrag auf 50 W Anschlussleistung pro m2 EBF begrenzt.",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 19-22"
+              "locator": "Kap. 11-12, jeweils Ziff. 5"
             }
           }
         ],
@@ -1407,9 +1561,9 @@
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 19-22"
+          "locator": "Förderbeiträge S. 19 und S. 21"
         },
-        "note": "Beitrag steuerpflichtig. Der verzapfte Anschluss ist erst förderbar, wenn die Übergabestation in Betrieb ist (FAQ Abschn. 4.4.1)."
+        "note": "Maximum CHF 150'000 laut Förderbedingungen nur für Anschlüsse über 70 kW (Kap. 12). Ein verzapfter Anschluss ist erst förderbar, wenn die Übergabestation installiert und in Betrieb ist (FAQ Abschn. 4.4.1, S. 17). Der Beitrag ist steuerpflichtig."
       },
       "timing": {
         "deadline": {
@@ -1423,14 +1577,14 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 19"
+            "locator": "S. 19, Kap. 11, Ziff. 9"
           }
         },
         "assessment_period": null,
-        "decision_time": "Förderzusage innert vier Wochen",
-        "max_duration_months": null,
+        "decision_time": "Förderzusage innert vier Wochen, wenn die Bedingungen erfüllt sind",
+        "max_duration_months": 24,
         "repeat_limit": null,
-        "note": null
+        "note": "Webseite Anschluss an ein Wärmenetz: «Nach Erhalt der Förderzusage haben Sie zwei Jahre Zeit, das Projekt abzuschliessen.»"
       },
       "documents": {
         "application": [
@@ -1439,7 +1593,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 20-22"
+              "locator": "Gesuchsbeilagen S. 19 und S. 21"
             }
           },
           {
@@ -1447,7 +1601,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 20-22"
+              "locator": "Gesuchsbeilagen S. 19 und S. 21"
             }
           },
           {
@@ -1455,17 +1609,17 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 20-22"
+              "locator": "Gesuchsbeilagen S. 19 und S. 21"
             }
           }
         ],
         "completion": [
           {
-            "name": "Abschlussformular, unterschriebener Wärmeliefervertrag, Rechnungen, Inbetriebnahmeprotokoll, Fotos",
+            "name": "Abschlussformular, unterschriebener Wärmeliefervertrag, Rechnungen, Inbetriebnahmeprotokoll, Fotos des Wärmetauschers bzw. Technikraums",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 20-22"
+              "locator": "Beilagen beim Abschluss S. 20 und S. 22"
             }
           }
         ]
@@ -1479,7 +1633,7 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 19-22"
+        "locator": "S. 19-22 (Kap. 11-12)"
       }
     },
     {
@@ -1495,10 +1649,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, Schwerpunkt laut Webseite.",
+        "note": "Förderprogramm 2026. Das Impulsprogramm fokussiert laut Übersichtsseite auf den Ersatz dezentraler Elektroheizungen. Beiträge, solange das Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "webseite",
-          "locator": "Überblick"
+          "source_id": "webseite_elektroheizung",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
@@ -1527,24 +1681,24 @@
       "eligible_items": [],
       "exclusions": [
         {
-          "text": "Zentrale Ölheizungen mit Luftverteilung",
+          "text": "Zentrale Heizkessel, z. B. Ölbrenner mit Luftverteilung ohne wasserführendes System",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 5"
+            "locator": "Abschn. 5, S. 20"
           }
         },
         {
           "text": "Handtuchradiatoren müssen nicht ersetzt werden",
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 5"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 29, Kap. 17, Ziff. 4"
           }
         }
       ],
       "criteria": [
         {
           "id": "dezentrale_heizung",
-          "text": "Ersetzt wird eine bestehende dezentrale elektrische Widerstandsheizung oder dezentrale fossile Heizung.",
+          "text": "Ersetzt wird eine bestehende dezentrale elektrische Widerstandsheizung oder dezentrale fossile Heizung ohne hydraulisches Wärmeverteilsystem, durch eine erneuerbare Hauptheizung mit hydraulischem Wärmeverteilsystem.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
@@ -1563,30 +1717,37 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 29, Ziff. 1"
+            "locator": "S. 29, Kap. 17, Ziff. 1"
           },
           "notes": null
         },
         {
           "id": "ueber_50_prozent",
-          "text": "Die bestehende Heizung deckte über 50% des jährlichen Heizwärmebedarfs des Gebäudes.",
+          "text": "Die ersetzte Heizung deckte über 50% des jährlichen Heizwärmebedarfs des Gebäudes (Hauptheizung).",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
           "profile_fields": [
             "bestehende_heizung"
           ],
-          "question": null,
+          "question": {
+            "text": "War die alte dezentrale Heizung die Hauptheizung (mehr als die Hälfte des Heizwärmebedarfs)?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 29, Ziff. 3"
+            "locator": "S. 29, Kap. 17, Ziff. 3"
           },
           "notes": null
         },
         {
           "id": "alle_ersetzt",
-          "text": "Alle dezentralen elektrischen Widerstandsheizungen oder fossilen Heizungen im Gebäude werden ersetzt.",
+          "text": "Alle dezentralen elektrischen Widerstandsheizungen oder fossilen Heizungen im Gebäude werden ersetzt, ausgenommen Handtuchradiatoren.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -1602,7 +1763,7 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 29, Ziff. 4"
+            "locator": "S. 29, Kap. 17, Ziff. 4"
           },
           "notes": null
         },
@@ -1615,11 +1776,18 @@
           "profile_fields": [
             "projektstart"
           ],
-          "question": null,
+          "question": {
+            "text": "Haben die Installationsarbeiten (z. B. Demontage der alten Heizung) schon begonnen?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 29, Ziff. 6"
+            "locator": "S. 29, Kap. 17, Ziff. 6"
           },
           "notes": null
         }
@@ -1654,9 +1822,9 @@
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 29-31"
+          "locator": "S. 29, Kap. 17, Förderbeiträge"
         },
-        "note": "Beitrag steuerpflichtig."
+        "note": "Förderung höchstens 50% der Gesamtinvestition (Kap. 2, Ziff. 2). Der Beitrag ist steuerpflichtig."
       },
       "timing": {
         "deadline": {
@@ -1670,14 +1838,14 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3"
+            "locator": "S. 29, Kap. 17, Ziff. 6"
           }
         },
         "assessment_period": null,
-        "decision_time": "Förderzusage innert vier Wochen",
-        "max_duration_months": null,
+        "decision_time": "Förderzusage innert vier Wochen, wenn die Bedingungen erfüllt sind",
+        "max_duration_months": 24,
         "repeat_limit": null,
-        "note": null
+        "note": "Webseite Bonus: «Nach Erhalt der Förderzusage haben Sie zwei Jahre Zeit, das Projekt abzuschliessen.»"
       },
       "documents": {
         "application": [
@@ -1686,15 +1854,23 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 30-31"
+              "locator": "S. 29, Gesuchsbeilagen Ziff. 1"
+            }
+          },
+          {
+            "name": "Vollständiges Gesuch der Heizungsersatz-Massnahme",
+            "condition": "falls die Heizungsersatz-Massnahme ebenfalls förderberechtigt ist",
+            "source": {
+              "source_id": "foerderbedingungen",
+              "locator": "S. 29, Gesuchsbeilagen Ziff. 2"
             }
           },
           {
             "name": "Fotos, Projektbeschrieb mit Plänen und EBF-Nachweis, Prinzipschema, detaillierte Offerte",
-            "condition": "falls keine geförderte Heizung beantragt wird",
+            "condition": "falls eine nicht geförderte erneuerbare Heizung mit neuer Wärmeverteilung eingebaut wird",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 30-31"
+              "locator": "S. 29, Gesuchsbeilagen Ziff. 3"
             }
           }
         ],
@@ -1704,7 +1880,7 @@
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 30-31"
+              "locator": "S. 30, Beilagen beim Abschluss"
             }
           }
         ]
@@ -1718,7 +1894,7 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 29-31"
+        "locator": "S. 29-30 (Kap. 17)"
       }
     },
     {
@@ -1736,15 +1912,15 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Förderprogramm 2026, solange das Budget reicht.",
+        "note": "Förderprogramm 2026. Die Webseite bietet das Instrument mit Gesuchsportal an. Beiträge, solange das jährliche Budget nicht ausgeschöpft ist (Förderbedingungen S. 3, Kap. 2, Ziff. 2).",
         "source": {
-          "source_id": "foerderbedingungen",
-          "locator": "S. 3"
+          "source_id": "webseite_ladeinfrastruktur",
+          "locator": "Abschnitte «Förderbeiträge» und «So reichen Sie ein Fördergesuch ein»"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Eigentümer der Parkplätze. Bei Contracting gehen die Gelder an die Gebäudeeigentümer (FAQ Abschn. 6)."
+        "note": "Eigentümerschaft der Parkplätze. Bei Contracting gehen die Gelder an die Gebäudeinhaber (FAQ Abschn. 6, S. 21-22)."
       },
       "filter": {
         "applicant_types": [
@@ -1768,7 +1944,7 @@
         {
           "id": "basisinfrastruktur",
           "name": "Basisinfrastruktur",
-          "definition": "Netzanschluss (auch Erhöhung), Unterverteilung, Stromverteilung und Kommunikation.",
+          "definition": "Fest mit dem Gebäude verbundene Elektroinfrastruktur: Netzanschluss (auch Erhöhung), Unterverteilung inkl. Sicherungen, Zähler und Lastmanagement, Stromverteilung (Flachbandkabel oder Stromschiene) und Kommunikation. Entspricht Ausbaustufe C1 nach SIA 2060.",
           "examples_positive": [
             "Statisches oder dynamisches Lastmanagement"
           ],
@@ -1776,24 +1952,45 @@
             "Ein einzelnes Kabel"
           ],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 6"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 4; FAQ Abschn. 6, S. 21-22"
           }
         }
       ],
       "exclusions": [
         {
-          "text": "Öffentlich zugängliche Parkplätze",
+          "text": "Öffentlich zugängliche Ladestationen",
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 6"
+            "locator": "Abschn. 6, S. 21"
+          }
+        },
+        {
+          "text": "Kosten für Ladestationen (für bidirektionale Ladestationen eigenes Gesuch)",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 6"
+          }
+        },
+        {
+          "text": "Basisinfrastruktur bei baubewilligungspflichtiger Erweiterung oder Änderung der Einstellhalle",
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 2"
+          }
+        },
+        {
+          "text": "Parkplätze in Bürogebäuden",
+          "source": {
+            "source_id": "faq",
+            "locator": "Abschn. 6, S. 21"
           }
         }
       ],
       "criteria": [
         {
           "id": "mind_3_wohneinheiten",
-          "text": "Mindestens drei Wohneinheiten nutzen eine gemeinsame Infrastruktur.",
+          "text": "Bestehendes Mehrparteiengebäude mit mindestens drei Wohneinheiten an einer gemeinsamen Infrastruktur.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": "Nur bei Ladeinfrastruktur in Mehrparteiengebäuden",
@@ -1808,46 +2005,60 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 6"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 1"
           },
-          "notes": null
+          "notes": "Auch mehrere Einfamilienhäuser mit gemeinsamer Infrastruktur (z. B. Einstellhalle) zählen (FAQ Abschn. 6, S. 21)."
         },
         {
           "id": "ueberwiegend_wohnen",
-          "text": "Gewerbeplätze sind nur förderbar, wenn sie nicht öffentlich zugänglich sind und das Gebäude überwiegend Wohnzwecken dient.",
+          "text": "Gewerbeparkplätze sind nur förderbar, wenn die Ladestationen nicht öffentlich zugänglich sind und der Grossteil der Parkplätze zum Wohngebäude gehört.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": "Nur bei Gewerbeparkplätzen",
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Gehört der Grossteil der Parkplätze zu einem Wohngebäude?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "faq",
-            "locator": "Abschn. 6"
+            "locator": "Abschn. 6, S. 21"
           },
           "notes": null
         },
         {
           "id": "kein_neubau_lade",
-          "text": "Das Gebäude gilt nicht als Neubau (Bauabnahme vor dem 31.12.2021).",
+          "text": "Bestehendes Gebäude, kein Neubau. Ein Ersatzneubau gilt als Neubau. Bei Bauabnahme vor dem 31.12.2021 gilt das Objekt nicht als Neubau.",
           "kind": "muss",
           "about": "objekt",
-          "applies_if": null,
+          "applies_if": "Nur bei Basisinfrastruktur in Mehrparteiengebäuden",
           "profile_fields": [
             "baujahr"
           ],
-          "question": null,
+          "question": {
+            "text": "Erfolgte die Bauabnahme des Gebäudes vor dem 31.12.2021?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Abschn. 6"
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 1"
           },
-          "notes": "Aus der FAQ abgeleitet, Wortlaut der Förderbedingungen prüfen."
+          "notes": "Stichtag 31.12.2021 aus FAQ Abschn. 6, S. 22. Die Webseite nennt «Neubauten sind nicht förderberechtigt» ohne Einschränkung, Kap. 23 (bidirektional) nennt keinen Neubau-Ausschluss."
         },
         {
           "id": "ausbaustufe_c1",
-          "text": "Bestätigung Ausbaustufe C1 bei Abschluss.",
+          "text": "Bestätigung des Installateurs, dass Ausbaustufe C1 nach SIA-Merkblatt 2060 (Stand 2020) ausgeführt wurde.",
           "kind": "muss",
           "about": "dokumente",
           "applies_if": "Nur bei Ladeinfrastruktur in Mehrparteiengebäuden",
@@ -1858,26 +2069,79 @@
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 36"
+            "locator": "S. 35, Kap. 22, Ziff. 4 und Beilagen beim Abschluss Ziff. 5"
           },
           "notes": null
         },
         {
           "id": "installation_ab_2026",
-          "text": "Installation der bidirektionalen DC-Ladestation nach dem 1. Januar 2026, Ausbaustufe D.",
+          "text": "Die bidirektionale DC-Ladestation wurde nach dem 1. Januar 2026 installiert und in Betrieb genommen. Ausbau nach Ausbaustandard D nach SIA-Merkblatt 2060.",
           "kind": "muss",
           "about": "zeit",
           "applies_if": "Nur bei bidirektionalen Ladestationen",
           "profile_fields": [
             "projektstart"
           ],
-          "question": null,
+          "question": {
+            "text": "Wurde die bidirektionale Ladestation nach dem 1. Januar 2026 installiert und in Betrieb genommen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
             "Bestätigung Ausbaustufe D"
           ],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 36-37"
+            "locator": "S. 36, Kap. 23, Ziff. 2-3"
+          },
+          "notes": null
+        },
+        {
+          "id": "lastmanagement",
+          "text": "Die Basisinfrastruktur verfügt über ein Lastmanagementsystem (statisch oder dynamisch).",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": "Nur bei Basisinfrastruktur in Mehrparteiengebäuden",
+          "profile_fields": [],
+          "question": {
+            "text": "Hat die Ladeinfrastruktur ein Lastmanagement?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 3"
+          },
+          "notes": "Statisch und dynamisch werden akzeptiert (FAQ Abschn. 6, S. 22)."
+        },
+        {
+          "id": "strom_erneuerbar",
+          "text": "Der Strom stammt ausschliesslich aus erneuerbaren Energien.",
+          "kind": "muss",
+          "about": "objekt",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Beziehen Sie für die Ladeinfrastruktur ausschliesslich Strom aus erneuerbaren Energien?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Letzte Stromrechnung als Herkunftsnachweis"
+          ],
+          "source": {
+            "source_id": "foerderbedingungen",
+            "locator": "S. 35, Kap. 22, Ziff. 3; S. 36, Kap. 23, Ziff. 4"
           },
           "notes": null
         }
@@ -1918,10 +2182,10 @@
         "cofinancing": null,
         "deductions": [
           {
-            "text": "Fixbeitrag wird gekürzt, wenn er 50% der Investition übersteigen würde.",
+            "text": "Der Fixbeitrag pro Parkplatz wird gekürzt, wenn er 50% der Gesamtinvestition übersteigen würde.",
             "source": {
               "source_id": "faq",
-              "locator": "Abschn. 6"
+              "locator": "Abschn. 6, S. 21"
             }
           }
         ],
@@ -1932,9 +2196,9 @@
         "example": null,
         "source": {
           "source_id": "foerderbedingungen",
-          "locator": "S. 35-37"
+          "locator": "S. 35, Kap. 22 und S. 36, Kap. 23, Förderbeiträge"
         },
-        "note": "max_amount_chf gilt pro gemeinsamer Infrastruktur."
+        "note": "max_amount_chf gilt pro gemeinsamer Infrastruktur (Basisinfrastruktur). Ab Parkplatz 51 CHF 100 laut Förderbedingungen V1.2 und Webseite. Die ältere FAQ V1.0 nennt CHF 150."
       },
       "timing": {
         "deadline": {
@@ -1948,40 +2212,40 @@
           },
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3 und S. 35-36"
+            "locator": "S. 35, Kap. 22, Ziff. 8; S. 36, Kap. 23, Ziff. 6"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": null,
-        "repeat_limit": null,
+        "repeat_limit": "Bidirektionale Ladestationen: mehrere Gesuche pro gemeinsamer Infrastruktur möglich, aber nur eines pro Parkfeld. Erweiterungsanträge zulässig (Kap. 23, Ziff. 5).",
         "note": null
       },
       "documents": {
         "application": [],
         "completion": [
           {
-            "name": "Abschlussformular, Rechnung, Inbetriebnahmeprotokoll",
+            "name": "Abschlussformular, Rechnung (Material und Installation), unterzeichnetes Inbetriebnahmeprotokoll",
             "condition": null,
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 36-37"
+              "locator": "S. 35 Beilagen beim Abschluss Ziff. 1-3; S. 36 Ziff. 1-3"
             }
           },
           {
-            "name": "Letzte Stromrechnung als Herkunftsnachweis",
-            "condition": "Mehrparteiengebäude",
+            "name": "Letzte Stromrechnung als Beleg für die Stromherkunft",
+            "condition": "Basisinfrastruktur",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 36"
+              "locator": "S. 35, Beilagen beim Abschluss Ziff. 4"
             }
           },
           {
             "name": "Bestätigung Ausbaustufe C1",
-            "condition": "Mehrparteiengebäude",
+            "condition": "Basisinfrastruktur",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 36"
+              "locator": "S. 35, Beilagen beim Abschluss Ziff. 5"
             }
           },
           {
@@ -1989,7 +2253,7 @@
             "condition": "bidirektionale Ladestation",
             "source": {
               "source_id": "foerderbedingungen",
-              "locator": "S. 37"
+              "locator": "S. 36, Beilagen beim Abschluss Ziff. 4"
             }
           }
         ]
@@ -2003,18 +2267,18 @@
       },
       "source": {
         "source_id": "foerderbedingungen",
-        "locator": "S. 35-37"
+        "locator": "S. 35-36 (Kap. 22-23)"
       }
     }
   ],
   "combination_rules": [
     {
-      "with": "foerderprogramm-energie-lu:waermenetz-anschluss",
-      "type": "bedingt",
-      "text": "Wärmenetzanschluss: Eine Doppelförderung ist ausgeschlossen. Bei Monitoringmethode 2 des Netzbetreibers ist die Anschlussförderung nur mit Vereinbarung mit dem Kanton möglich.",
+      "with": "foerderprogramm-energie-lu",
+      "type": "erlaubt",
+      "text": "Bonus Ersatz dezentrale Elektroheizung: Eine Zusatzförderung mit kantonalen Massnahmen im Rahmen des Gebäudeprogramms ist zulässig.",
       "source": {
-        "source_id": "faq",
-        "locator": "Abschn. 4.4.2"
+        "source_id": "foerderbedingungen",
+        "locator": "S. 29, Kap. 17, Ziff. 8"
       }
     }
   ],
@@ -2022,17 +2286,17 @@
     "channel": "mixed",
     "url": "https://portal.dasgebaeudeprogramm.ch/lu",
     "steps": [
-      "Gesuch vor Baubeginn im Online-Portal erfassen",
+      "Gesuch vor Baubeginn im Online-Portal erfassen (Ladeinfrastruktur und GEAK Plus erst nach Inbetriebnahme bzw. Publikation)",
       "Unterschriebenes Gesuch per Post an die Prüfstelle senden",
       "Förderzusage innert vier Wochen mit reservierter Summe und Umsetzungsfrist",
       "Massnahme umsetzen",
       "Abschlussformular mit Unterlagen einreichen",
       "Auszahlung innert weniger Wochen, Stichprobenkontrollen möglich"
     ],
-    "note": "Unvollständige Gesuche werden retourniert und gelten als nicht eingereicht. Der Förderbeitrag ist steuerpflichtig, uwe meldet die Beiträge der Steuerverwaltung. Baubeginn nach Gesuchseingang, aber vor Zusage, auf eigenes Risiko.",
+    "note": "Unvollständige Gesuche werden retourniert und gelten als nicht eingereicht. Der Förderbeitrag ist steuerpflichtig, uwe meldet die Beiträge der Steuerverwaltung. Baubeginn nach Gesuchseingang, aber vor Zusage, auf eigenes Risiko. Eingabedatum ist das Datum des Poststempels (Förderbedingungen S. 3, Ziff. 5).",
     "source": {
       "source_id": "faq",
-      "locator": "Abschn. 2"
+      "locator": "Abschn. 1-2, S. 2-5"
     }
   },
   "contacts": [
@@ -2041,7 +2305,7 @@
       "role": "Allgemeine Fragen und Status von Gesuchen",
       "email": "energie@umweltberatung-luzern.ch",
       "phone": "041 412 32 32",
-      "url": "https://umweltberatung-luzern.ch/"
+      "url": "https://umweltberatung-luzern.ch/kontakt"
     }
   ],
   "legal_basis": [],
@@ -2053,17 +2317,17 @@
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/Foerderbedingungen_Foerderbeitraege.pdf?rev=396129e20de74baf976671d98a672bca",
       "version": "1.2",
       "published": "2026-04-22",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": "sources/foerderprogramm-energie-lu/Foerderbedingungen_Foerderbeitraege.pdf"
     },
     {
       "id": "faq",
-      "title": "FAQ Förderprogramm Energie Kanton Luzern",
+      "title": "Förderprogramm Energie 2026: Fragen und Antworten",
       "type": "faq",
       "url": "https://uwe.lu.ch/-/media/UWE/Dokumente/Themen/Energie/Foerderprogramm/FAQ_Energie.pdf",
-      "version": null,
-      "published": null,
-      "checked": "2026-10-23",
+      "version": "1.0",
+      "published": "2026-03-01",
+      "checked": "2026-10-24",
       "local_path": "sources/foerderprogramm-energie-lu/FAQ_Energie.pdf"
     },
     {
@@ -2073,23 +2337,86 @@
       "url": "https://uwe.lu.ch/themen/energie/Foerderprogramme",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_waermedaemmung",
+      "title": "Wärmedämmung, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/Foerderprogramme/waermedaemmung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_waermepumpen",
+      "title": "Wärmepumpen, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/foerderprogramme/waermepumpen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_holzfeuerungen",
+      "title": "Holzfeuerungen, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/foerderprogramme/holzfeuerungen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_waermenetz",
+      "title": "Anschluss an ein Wärmenetz, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Anschluss_an_ein_Waermenetz",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_elektroheizung",
+      "title": "Bonus: Ersatz dezentraler Elektroheizung, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Ersatz_dezentraler_elektroheizung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_ladeinfrastruktur",
+      "title": "Basisinfrastruktur für E-Mobilität und bi-direktionale Ladestationen, Webseite uwe Kanton Luzern",
+      "type": "webseite",
+      "url": "https://uwe.lu.ch/themen/energie/Foerderprogramme/Ladeinfrastruktur_fuer_E_Mobilitaet",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
       "Nicht erfasst: Thermische Solaranlagen (CHF 4'000 plus CHF 1'000 pro kW), GEAK Plus, Minergie-Gesamtsanierung, Neubauten Minergie-ECO, SNBS, Machbarkeitsstudien Wärmenetze und Biogas, Energieberatung Landwirtschaft.",
-      "Widerspruch Ladeinfrastruktur ab Parkplatz 51: Förderbedingungen V1.2 (S. 35) nennen CHF 100, die FAQ (Abschn. 6) CHF 150. Erfasst ist der Wert der Förderbedingungen.",
-      "Bonus Gebäudehülleneffizienz: FAQ nennt 90% von Dach, Fassade und Boden, Förderbedingungen 90% der Hauptflächen Fassade und Dach. Wortlaut prüfen.",
-      "Ladeinfrastruktur: Ausschluss von Neubauten nur aus FAQ abgeleitet (Bauabnahme vor 31.12.2021 gilt nicht als Neubau).",
-      "Keine allgemeine Umsetzungsfrist, die Frist steht jeweils in der Förderzusage.",
-      "Budget CHF 22.3 Mio. ist laut Webseite voraussichtlich.",
-      "Minergie-Sanierungsbeiträge sind laut Webseite nicht mit Beiträgen an Gebäudehülle oder Haustechnik kombinierbar. Minergie ist nicht als Instrument erfasst, daher keine combination_rule.",
-      "Zahlen der Förderbedingungen wurden über eine Textauswertung des PDFs gelesen, Tabellen bitte im Original kontrollieren."
+      "waermedaemmung.bonus_90_prozent: Förderbedingungen S. 28 zählen nur Fassade und Dach als Hauptflächen, FAQ S. 8 zählt zusätzlich Boden gegen aussen (B3). Beim Kanton klären.",
+      "waermedaemmung.geak_plus: Förderbedingungen «ab 10'000 Franken», FAQ S. 9 «grösser als 10'000 CHF». Schwelle genau CHF 10'000 klären.",
+      "timing.max_duration_months = 24: Die zwei Jahre stehen nur auf den Webseiten der Instrumente, nicht in den Förderbedingungen. Massgebend ist die Frist in der Förderzusage.",
+      "waermepumpe.zaehler: Förderbedingungen verlangen die Strom- und Wärmemessung über 70 kW (Kap. 8 und 10), die Webseite erst ab 100 kWth. Erfasst ist der Wert der Förderbedingungen.",
+      "bonus-ersatz-elektroheizung: Die Webseite nennt ein Heizungsersatz-Gesuch als Voraussetzung, die Förderbedingungen S. 29 erlauben auch eine nicht geförderte erneuerbare Heizung mit Ersatzbeilagen. Nicht als Kriterium erfasst.",
+      "ladeinfrastruktur.kein_neubau_lade: Neubau-Ausschluss steht in den Förderbedingungen nur für die Basisinfrastruktur (Kap. 22). Gilt er auch für bidirektionale Ladestationen (Webseite ohne Einschränkung)?",
+      "holzfeuerung.abnahmemessung: Als Förderbeilage nur über 70 kW verlangt (S. 10). Laut FAQ gilt die LRV-Abnahmemessung für alle neuen Holzfeuerungen. Erfasst mit applies_if über 70 kW.",
+      "Budget CHF 22,3 Mio. ist laut Webseite voraussichtlich.",
+      "Minergie-Sanierungsbeiträge sind laut Webseite und Förderbedingungen S. 27 (Kap. 15, Ziff. 6) nicht mit Beiträgen an Gebäudehülle oder Haustechnik kombinierbar. Minergie ist nicht als Instrument erfasst, daher keine combination_rule.",
+      "Bisherige combination_rule zu waermenetz-anschluss (FAQ 4.4.2, Monitoringmethode 2) betraf Kompensationsprojekte des Netzbetreibers, kein kanonisches Programm. Jetzt als Ausschluss im Instrument erfasst."
     ]
   }
 }
