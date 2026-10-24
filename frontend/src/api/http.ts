@@ -88,6 +88,7 @@ export function createHttpApi(): Api {
   }
 
   return {
+    listPrograms: () => request("GET", "/programs"),
     createProfile: req => request("POST", "/profile", req),
     buildQuestions: profile => request("POST", "/questions", { profile }),
     startRun: req => request("POST", "/runs", req),

@@ -30,6 +30,12 @@ function groupFields(fields: ProjectProfile["fields"]) {
   return groups.filter(g => g.names.length > 0);
 }
 
+/** Long text and the field that decides which programs are checked take the full width. */
+function isWide(name: string) {
+  const spec = specFor(name);
+  return spec.kind === "textarea" || ("wide" in spec && spec.wide === true);
+}
+
 export function ProfileScreen({ profile, company, onChange, busy, onBack, onConfirm }: Props) {
   const [missing, setMissing] = useState<string[] | null>(null);
   const f = profile.fields;
@@ -92,7 +98,7 @@ export function ProfileScreen({ profile, company, onChange, busy, onBack, onConf
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
               {group.names.map(n => (
-                <div key={n} className={specFor(n).kind === "textarea" ? "md:col-span-2" : ""}>
+                <div key={n} className={isWide(n) ? "md:col-span-2" : ""}>
                   <ProfileInput name={n} field={f[n]} onChange={field => onChange(n, field)} />
                 </div>
               ))}

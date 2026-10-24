@@ -242,16 +242,6 @@ export const LEVEL_LABEL: Record<InstrumentMatch["level"], string> = {
 
 /** Labels for profile fields. Unknown field names fall back to the raw name. */
 export const FIELD_LABEL: Record<string, string> = {
-  unternehmensname: "Name des Unternehmens",
-  sitz_schweiz_uid: "Sitz Schweiz und UID-Nummer",
-  umsatz_mind_100k: "Umsatz mindestens CHF 100'000",
-  kreditwuerdig: "Kreditwürdig",
-  co2_befreit: "Von der CO2-Abgabe befreit",
-  flaeche_daemmung: "Zu dämmende Fläche",
-  pv_leistung: "Leistung Photovoltaik",
-  eigenverbrauch: "Eigenverbrauch",
-  traegerschaft: "Trägerschaft",
-  neue_arbeitsplaetze: "Neue Arbeitsplätze",
   standort_kanton: "Kanton",
   standort_gemeinde: "Gemeinde",
   applicant_type: "Gesuchsteller",
@@ -262,7 +252,7 @@ export const FIELD_LABEL: Record<string, string> = {
   taetigkeit: "Tätigkeit",
   rechtsform: "Rechtsform",
   handelsregister: "Handelsregister",
-  raeumlichkeiten: "Räumlichkeiten",
+  raeumlichkeiten: "Räume im Kanton Luzern",
   mitarbeitende: "Mitarbeitende",
   unternehmensalter: "Unternehmensalter",
   umsatz: "Umsatz",
@@ -274,5 +264,5 @@ export const FIELD_LABEL: Record<string, string> = {
   projektstart: "Projektstart",
   baujahr: "Baujahr Gebäude",
   bestehende_heizung: "Bestehende Heizung",
-  eigentum_gebaeude: "Eigentum Gebäude",
+  eigentum_gebaeude: "Gebäude im eigenen Eigentum",
 };

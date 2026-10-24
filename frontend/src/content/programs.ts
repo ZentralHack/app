@@ -1,17 +1,10 @@
-/* Display names for canonical program IDs (see the ID table in CLAUDE.md). */
-export const PROGRAM_NAMES: Record<string, string> = {
-  lib: "Luzerner Innovationsbeitrag",
-  "foerderprogramm-energie-lu": "Förderprogramm Energie",
-  innosuisse: "Innosuisse",
-  "nrp-luzern": "Neue Regionalpolitik Luzern",
-  "startup-luzern": "Startup Luzern",
-  itz: "ITZ",
-  "bg-mitte": "BG Mitte",
-  serv: "SERV",
-  "s-ge": "Switzerland Global Enterprise",
-  innotour: "Innotour",
-  pronovo: "Pronovo",
-  klimastiftung: "Klimastiftung Schweiz",
-};
+/* Display names of the programs, loaded once from GET /api/programs when the app starts. Until then, ids are shown. */
+import type { ProgramSummary } from "../api/contract";
 
-export const programName = (id: string) => PROGRAM_NAMES[id] ?? id;
+const names = new Map<string, string>();
+
+export function setProgramNames(programs: ProgramSummary[]) {
+  for (const p of programs) names.set(p.id, p.name);
+}
+
+export const programName = (id: string) => names.get(id) ?? id;

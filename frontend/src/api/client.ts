@@ -3,6 +3,7 @@
  * design/api_contract.md; the implementation is api/http.ts.
  */
 import type {
+  ProgramSummary,
   ProfileRequest,
   ProfileResponse,
   ProjectProfile,
@@ -15,6 +16,8 @@ import type {
 } from "./contract";
 
 export interface Api {
+  /** GET /api/programs */
+  listPrograms(): Promise<ProgramSummary[]>;
   /** POST /api/profile */
   createProfile(req: ProfileRequest): Promise<ProfileResponse>;
   /** POST /api/questions */

@@ -12,7 +12,7 @@ export type FieldSpec =
   | { kind: "textarea"; placeholder: string }
   | { kind: "number"; placeholder: string; prefix?: string; suffix?: string; maxDigits?: number }
   | { kind: "select"; options: Option[]; placeholder?: string }
-  | { kind: "multi"; options: Option[]; placeholder?: string }
+  | { kind: "multi"; options: Option[]; placeholder?: string; hint?: string; wide?: boolean }
   | { kind: "combo"; options: string[]; placeholder: string }
   | { kind: "yesno"; placeholder?: string }
   | { kind: "date"; placeholder?: string };
@@ -21,73 +21,93 @@ export type SectionId = "unternehmen" | "vorhaben" | "finanzen" | "gebaeude" | "
 
 const opts = (pairs: [string, string][]): Option[] => pairs.map(([id, label]) => ({ id, label }));
 
+/*
+ * Option ids are the knowledge base values the backend compares with (knowledge_base/schema/program.schema.json,
+ * filter.applicant_types, project_types, sectors, required_partners). A value that is not in the schema is
+ * rejected by the backend with 400, so these lists must not contain anything else.
+ */
+
 const KANTONE = opts([
-  ["LU", "Luzern"], ["ZG", "Zug"], ["NW", "Nidwalden"], ["OW", "Obwalden"], ["SZ", "Schwyz"], ["UR", "Uri"], ["AG", "Aargau"], ["BE", "Bern"], ["ZH", "Zürich"],
+  ["LU", "Luzern"], ["AG", "Aargau"], ["AI", "Appenzell Innerrhoden"], ["AR", "Appenzell Ausserrhoden"], ["BE", "Bern"], ["BL", "Basel-Landschaft"],
+  ["BS", "Basel-Stadt"], ["FR", "Freiburg"], ["GE", "Genf"], ["GL", "Glarus"], ["GR", "Graubünden"], ["JU", "Jura"], ["NE", "Neuenburg"],
+  ["NW", "Nidwalden"], ["OW", "Obwalden"], ["SG", "St. Gallen"], ["SH", "Schaffhausen"], ["SO", "Solothurn"], ["SZ", "Schwyz"],
+  ["TG", "Thurgau"], ["TI", "Tessin"], ["UR", "Uri"], ["VD", "Waadt"], ["VS", "Wallis"], ["ZG", "Zug"], ["ZH", "Zürich"],
 ]);
 
-/** Shown in the profile header (initial, name, Rechtsform), so not repeated as fields. */
-export const HEADER_FIELDS = ["unternehmensname", "rechtsform"];
+const APPLICANT_TYPES = opts([
+  ["unternehmen", "Unternehmen"], ["kmu", "KMU"], ["startup", "Startup"], ["grossunternehmen", "Grossunternehmen"], ["gemeinde", "Gemeinde"],
+  ["verein_stiftung", "Verein oder Stiftung"], ["forschungsinstitution", "Forschungsinstitution"], ["eigentuemer", "Gebäudeeigentümer"],
+  ["privatperson", "Privatperson"],
+]);
+
+const PROJECT_TYPES = opts([
+  ["forschung", "Forschung"], ["entwicklung", "Entwicklung"], ["prototyp", "Prototyp"], ["machbarkeitsstudie", "Machbarkeitsstudie"],
+  ["prozessinnovation", "Prozessinnovation"], ["organisationsinnovation", "Organisationsinnovation"], ["klinische_studie", "Klinische Studie"],
+  ["digitalisierung", "Digitalisierung"], ["gebaeudesanierung", "Gebäudesanierung"], ["heizungsersatz", "Heizungsersatz"],
+  ["erneuerbare_energie", "Erneuerbare Energie"], ["energieeffizienz", "Energieeffizienz"], ["e_mobilitaet", "E-Mobilität"],
+  ["nachhaltiges_bauen", "Nachhaltiges Bauen"], ["klimaschutz", "Klimaschutz"], ["investition", "Investition"], ["finanzierung", "Finanzierung"],
+  ["wachstum", "Wachstum"], ["gruendung", "Gründung"], ["nachfolge", "Nachfolge"], ["export", "Export"], ["tourismus", "Tourismus"],
+  ["regionalentwicklung", "Regionalentwicklung"], ["weiterbildung", "Weiterbildung"], ["kultur", "Kultur"], ["soziales", "Soziales"],
+  ["gesundheit", "Gesundheit"],
+]);
+
+const SECTORS = opts([
+  ["industrie", "Industrie"], ["gewerbe", "Gewerbe"], ["bau", "Bau"], ["handel", "Handel"], ["dienstleistung", "Dienstleistung"], ["ict", "ICT"],
+  ["energie", "Energie"], ["gesundheit", "Gesundheit"], ["bildung", "Bildung"], ["tourismus", "Tourismus"], ["hotellerie", "Hotellerie"],
+  ["gastronomie", "Gastronomie"], ["landwirtschaft", "Landwirtschaft"], ["kultur", "Kultur"],
+]);
+
+const PARTNERS = opts([
+  ["forschungspartner", "Forschungspartner (Hochschule, Forschungsinstitution)"], ["umsetzungspartner", "Umsetzungspartner"],
+  ["internationaler_partner", "Internationaler Partner"], ["mehrere_betriebe", "Mehrere Betriebe"], ["gemeinde", "Gemeinde"],
+]);
+
+/** Shown in the profile header (initial, company name from page 1, Rechtsform), so not repeated as a field. */
+export const HEADER_FIELDS = ["rechtsform"];
 
 export const SECTIONS: { id: SectionId; fields: string[] }[] = [
+  { id: "vorhaben", fields: ["art_des_vorhabens", "vorhaben_beschreibung", "budget", "laufzeit", "projektstart", "partner"] },
   {
     id: "unternehmen",
-    fields: ["standort_gemeinde", "standort_kanton", "handelsregister", "mitarbeitende", "unternehmensalter", "applicant_type", "branche", "taetigkeit", "raeumlichkeiten", "traegerschaft", "sitz_schweiz_uid"],
+    fields: ["standort_gemeinde", "standort_kanton", "handelsregister", "raeumlichkeiten", "mitarbeitende", "unternehmensalter", "applicant_type", "branche", "taetigkeit"],
   },
-  { id: "vorhaben", fields: ["vorhaben_beschreibung", "art_des_vorhabens", "budget", "laufzeit", "projektstart", "partner", "neue_arbeitsplaetze"] },
-  { id: "finanzen", fields: ["revisionsart", "nachhaltigkeitsbericht", "umsatz", "umsatz_mind_100k", "kreditwuerdig", "geschaeftsjahr"] },
-  { id: "gebaeude", fields: ["baujahr", "eigentum_gebaeude", "bestehende_heizung", "flaeche_daemmung", "pv_leistung", "eigenverbrauch", "co2_befreit"] },
+  { id: "finanzen", fields: ["revisionsart", "nachhaltigkeitsbericht", "umsatz", "geschaeftsjahr"] },
+  { id: "gebaeude", fields: ["baujahr", "eigentum_gebaeude", "bestehende_heizung"] },
 ];
 
 export const FIELD_SPEC: Record<string, FieldSpec> = {
-  unternehmensname: { kind: "text", placeholder: "z. B. Muster AG" },
   rechtsform: { kind: "combo", options: RECHTSFORMEN, placeholder: "z. B. AG" },
   standort_gemeinde: { kind: "combo", options: GEMEINDEN, placeholder: "Gemeinde suchen" },
   standort_kanton: { kind: "select", options: KANTONE },
-  handelsregister: { kind: "select", options: opts([["LU", "Kanton Luzern"], ["andere", "Anderer Kanton"], ["keiner", "Nicht eingetragen"]]) },
+  handelsregister: { kind: "select", options: opts([["LU", "Kanton Luzern"], ["anderer_kanton", "Anderer Kanton"], ["kein_eintrag", "Nicht eingetragen"]]) },
+  raeumlichkeiten: { kind: "yesno" },
   mitarbeitende: { kind: "number", suffix: "Personen", placeholder: "z. B. 18", maxDigits: 6 },
   unternehmensalter: { kind: "number", suffix: "Jahre", placeholder: "z. B. 5", maxDigits: 3 },
-  applicant_type: {
-    kind: "multi",
-    placeholder: "Art des Gesuchstellers wählen",
-    options: opts([["unternehmen", "Unternehmen"], ["kmu", "KMU"], ["startup", "Startup"], ["gemeinde", "Gemeinde"], ["verein", "Verein"], ["privatperson", "Privatperson"]]),
-  },
-  branche: {
-    kind: "multi",
-    placeholder: "Branchen wählen",
-    options: opts([["industrie", "Industrie"], ["handwerk", "Handwerk"], ["dienstleistung", "Dienstleistung"], ["ict", "ICT"], ["tourismus", "Tourismus"], ["landwirtschaft", "Landwirtschaft"], ["bau", "Bau"], ["gewerbe", "Gewerbe"], ["holzverarbeitung", "Holzverarbeitung"], ["oeffentlich", "Öffentliche Hand"]]),
-  },
+  applicant_type: { kind: "multi", placeholder: "Art des Gesuchstellers wählen", options: APPLICANT_TYPES },
+  branche: { kind: "multi", placeholder: "Branchen wählen", options: SECTORS },
   taetigkeit: { kind: "text", placeholder: "z. B. Entwicklung von Sensoren" },
-  raeumlichkeiten: { kind: "select", options: opts([["eigene", "Eigene Räume im Kanton"], ["gemietet", "Gemietete Räume im Kanton"], ["keine", "Keine Räume im Kanton"]]) },
-  traegerschaft: { kind: "text", placeholder: "z. B. Gemeinde oder Genossenschaft" },
-  vorhaben_beschreibung: { kind: "textarea", placeholder: "Was möchten Sie umsetzen?" },
   art_des_vorhabens: {
     kind: "multi",
     placeholder: "Art des Vorhabens wählen",
-    options: opts([
-      ["forschung", "Forschung"], ["entwicklung", "Entwicklung"], ["prototyp", "Prototyp"], ["markteintritt", "Markteintritt"], ["investition", "Investition"],
-      ["sanierung", "Sanierung"], ["gebaeudesanierung", "Gebäudesanierung"], ["daemmung", "Dämmung"], ["heizungsersatz", "Heizungsersatz"], ["photovoltaik", "Photovoltaik"],
-      ["umbau", "Umbau"], ["energie", "Energie"], ["regionalentwicklung", "Regionalentwicklung"],
-    ]),
+    options: PROJECT_TYPES,
+    hint: "Bestimmt, welche Programme geprüft werden. Bitte prüfen und ergänzen.",
+    wide: true,
   },
+  vorhaben_beschreibung: { kind: "textarea", placeholder: "Was möchten Sie umsetzen?" },
   budget: { kind: "number", prefix: "CHF", placeholder: "400'000" },
   laufzeit: { kind: "number", suffix: "Monate", placeholder: "z. B. 18", maxDigits: 3 },
   projektstart: { kind: "date" },
-  partner: { kind: "multi", placeholder: "Partner wählen", options: opts([["hochschule", "Hochschule"], ["forschungsinstitut", "Forschungsinstitut"], ["unternehmen", "Unternehmen"]]) },
-  neue_arbeitsplaetze: { kind: "text", placeholder: "z. B. 5 bis 10" },
-  revisionsart: { kind: "select", options: opts([["ordentlich", "Ordentliche Revision"], ["eingeschraenkt", "Eingeschränkte Revision"], ["keine", "Keine (Opting-out)"]]) },
+  partner: { kind: "multi", placeholder: "Keine Partner", options: PARTNERS },
+  revisionsart: {
+    kind: "select",
+    options: opts([["ordentlich", "Ordentliche Revision"], ["eingeschraenkt", "Eingeschränkte Revision"], ["opting_out", "Keine Revision (Opting-out)"], ["keine", "Keine Revisionspflicht"]]),
+  },
   nachhaltigkeitsbericht: { kind: "yesno" },
   umsatz: { kind: "number", prefix: "CHF", placeholder: "2'500'000" },
-  geschaeftsjahr: { kind: "number", placeholder: "z. B. 2025", maxDigits: 4 },
+  geschaeftsjahr: { kind: "text", placeholder: "z. B. 2025" },
   baujahr: { kind: "number", placeholder: "z. B. 1985", maxDigits: 4 },
-  eigentum_gebaeude: { kind: "select", options: opts([["Eigentum", "Eigentum"], ["Miete", "Miete"]]) },
+  eigentum_gebaeude: { kind: "yesno" },
   bestehende_heizung: { kind: "select", options: opts([["Öl", "Öl"], ["Gas", "Gas"], ["Elektro", "Elektroheizung"], ["Holz", "Holz"], ["Wärmepumpe", "Wärmepumpe"], ["Fernwärme", "Fernwärme"]]) },
-  pv_leistung: { kind: "number", suffix: "kWp", placeholder: "z. B. 100", maxDigits: 5 },
-  eigenverbrauch: { kind: "yesno" },
-  sitz_schweiz_uid: { kind: "yesno" },
-  umsatz_mind_100k: { kind: "yesno" },
-  kreditwuerdig: { kind: "yesno" },
-  co2_befreit: { kind: "yesno" },
-  flaeche_daemmung: { kind: "number", suffix: "m²", placeholder: "z. B. 120", maxDigits: 5 },
 };
 
 export function specFor(name: string): FieldSpec {

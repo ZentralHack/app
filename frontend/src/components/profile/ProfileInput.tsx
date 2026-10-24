@@ -15,7 +15,7 @@ interface Props {
 
 type Value = ProfileField["value"];
 
-const isEmpty = (v: Value) => v === null || v === "" || (Array.isArray(v) && v.length === 0);
+const isEmpty = (v: Value) => v === null || (typeof v === "string" && v.trim() === "") || (Array.isArray(v) && v.length === 0);
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 /**
@@ -34,6 +34,7 @@ export function ProfileInput({ name, field, onChange }: Props) {
       <span id={`${id}-label`} className="text-sm font-semibold">
         {fieldLabel(name)}
       </span>
+      {"hint" in spec && spec.hint && <span className="-mt-1 text-sm text-fg-2">{spec.hint}</span>}
       <div className="relative">
         <Control id={id} spec={spec} field={field} set={set} padRight={confirm !== null} />
         {confirm && (

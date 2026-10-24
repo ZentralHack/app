@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api, ApiRequestError } from "./api";
 import type { Clarification, InstrumentRef, ProfileField, ProjectProfile, QuestionSet } from "./api/contract";
 import { Sidebar } from "./components/layout/Sidebar";
 import { Alert } from "./components/ui/Alert";
+import { setProgramNames } from "./content/programs";
 import { useRun } from "./hooks/useRun";
 import { parseChf } from "./lib/format";
 import { CaptureScreen, type CaptureDraft } from "./screens/CaptureScreen";
@@ -45,6 +46,11 @@ export function App() {
   const [company, setCompany] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const run = useRun(runId);
+
+  // Program names for the Rückfragen; without them the ids are shown, so a failure here is not an error.
+  useEffect(() => {
+    api.listPrograms().then(setProgramNames, () => {});
+  }, []);
 
   function go(next: Step) {
     setError(null);
