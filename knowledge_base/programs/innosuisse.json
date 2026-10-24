@@ -1199,7 +1199,7 @@
             "mitarbeitende"
           ],
           "question": {
-            "text": "Wie viele Vollzeitbeschäftigte hat Ihr Unternehmen?",
+            "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen (inkl. Konzern)?",
             "options": [
               "Weniger als 250",
               "250 oder mehr",
