@@ -9,6 +9,7 @@ in the past, or the answer that work has already begun, leaves the matching resu
 """
 
 import re
+from collections.abc import Callable
 from datetime import date
 
 from app.agent.deadlines import project_start
@@ -40,8 +41,16 @@ def before_start_action(criterion: Criterion) -> str | None:
 
 
 def apply_timing(
-    criterion: Criterion, result: CriterionResult, profile: ProjectProfile, today: date
+    criterion: Criterion,
+    result: CriterionResult,
+    profile: ProjectProfile,
+    today: date,
+    cost_year_rule: Callable[[int], date] | None = None,
 ) -> CriterionResult:
+    """`cost_year_rule`: the instrument's claim deadline per cost year (deadlines.py), if its
+    costs are claimed after the year they arise in (LIB)."""
+    if cost_year_rule is not None and _is_cost_year(criterion):
+        return _apply_cost_year(criterion, result, profile, today, cost_year_rule)
     action = before_start_action(criterion)
     if action is None:
         return result
@@ -72,6 +81,49 @@ def _too_late(action: str) -> str:
     if match is None:
         return action
     return f"{match.group(1)} muss {match.group(2)} eingereicht werden."
+
+
+# Answers to the cost-year question that say: the costs are still to come.
+_COSTS_AHEAD = ("Fallen erst an", "Laufend")
+
+
+def _is_cost_year(criterion: Criterion) -> bool:
+    return criterion.about == "zeit" and "Bemessungsjahr" in criterion.text
+
+
+def _apply_cost_year(
+    criterion: Criterion,
+    result: CriterionResult,
+    profile: ProjectProfile,
+    today: date,
+    claim_deadline: Callable[[int], date],
+) -> CriterionResult:
+    """ "Costs are in the accounts of the assessment year" cannot hold for costs still to come,
+    but they will: they count in the year they arise and are claimed two years later
+    (LIB Handbuch N 35-39). That is fulfillable, not a failure."""
+    if result.state == "erfuellt":
+        return result
+    answer_field = f"{RUECKFRAGE}{criterion.id}"
+    answer = known(profile, answer_field)
+    start = project_start(profile)
+    if isinstance(answer, str) and answer.startswith(_COSTS_AHEAD):
+        evidence = [answer_field]
+    elif answer is None and start is not None and start > today:
+        evidence = ["projektstart"]
+    else:
+        return result
+    if start is not None and start > today:
+        due = claim_deadline(start.year)
+        reason = (
+            f"Die Kosten fallen ab {start:%m/%Y} an und zählen im Geschäftsjahr {start.year}. "
+            f"Gesuch für das Beitragsjahr {due.year} bis {due:%d.%m.%Y}."
+        )
+    else:
+        reason = (
+            "Die Kosten fallen erst an. Sie zählen im Geschäftsjahr, in dem sie anfallen, "
+            "und werden zwei Jahre später im Gesuch geltend gemacht."
+        )
+    return _update(result, "annahme", reason, evidence)
 
 
 def _update(

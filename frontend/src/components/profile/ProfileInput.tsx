@@ -287,7 +287,7 @@ function StatusLine({ field, original, onConfirm }: { field: ProfileField; origi
   if (field.status === "annahme") {
     return (
       <p className="text-sm text-warn">
-        {t.profile.assumed} · {field.note ?? t.profile.derived}. {t.profile.pleaseCheck}
+        {t.profile.assumed} · {(field.note ?? t.profile.derived).replace(/\.$/, "")}. {t.profile.pleaseCheck}
         {onConfirm && (
           <button type="button" onClick={onConfirm} className="ml-2 font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
             {t.profile.accept}

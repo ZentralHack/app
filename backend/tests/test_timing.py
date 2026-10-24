@@ -2,6 +2,7 @@ from datetime import date
 
 import pytest
 
+from app.agent.deadlines import lib_claim_deadline
 from app.agent.timing import apply_timing, before_start_action
 from app.config import KNOWLEDGE_BASE_DIR
 from app.knowledge_base.loader import KnowledgeBase, load_knowledge_base
@@ -123,3 +124,35 @@ def test_reached_start_is_open_with_the_problem_even_if_answer_says_not_started(
     assert apply_timing(_pump(full_kb), _result("unbekannt"), contradiction, TODAY).state == (
         "unbekannt"
     )
+
+
+def _cost_year(kb: KnowledgeBase) -> Criterion:
+    return _criteria(kb)["lib:lib-beitrag:kosten_bemessungsjahr"]
+
+
+def test_costs_still_to_come_are_fulfillable_not_failed(full_kb: KnowledgeBase):
+    """Sensora: «Fallen erst an». The costs count in the year they arise and are claimed
+    two years later (Handbuch N 35-39), so the LIB condition is erfüllbar, not ✗."""
+    criterion = _cost_year(full_kb)
+    answer = make_profile(rueckfrage_kosten_bemessungsjahr="Fallen erst an")
+    out = apply_timing(criterion, _result("nicht_erfuellt"), answer, TODAY, lib_claim_deadline)
+    assert out.state == "annahme"
+    assert out.reason.startswith("Die Kosten fallen erst an.")
+    assert out.evidence == ["rueckfrage_kosten_bemessungsjahr"]
+
+    start = make_profile(projektstart="2027-04")
+    out = apply_timing(criterion, _result("unbekannt"), start, TODAY, lib_claim_deadline)
+    assert out.reason == (
+        "Die Kosten fallen ab 04/2027 an und zählen im Geschäftsjahr 2027. "
+        "Gesuch für das Beitragsjahr 2029 bis 31.01.2029."
+    )
+
+
+def test_costs_already_incurred_keep_the_matching_result(full_kb: KnowledgeBase):
+    criterion = _cost_year(full_kb)
+    past = make_profile(rueckfrage_kosten_bemessungsjahr="Bereits angefallen")
+    out = apply_timing(criterion, _result("nicht_erfuellt"), past, TODAY, lib_claim_deadline)
+    assert out.state == "nicht_erfuellt"
+    # Without the instrument's cost-year rule the criterion is left alone.
+    future = make_profile(rueckfrage_kosten_bemessungsjahr="Fallen erst an")
+    assert apply_timing(criterion, _result("unbekannt"), future, TODAY).state == "unbekannt"

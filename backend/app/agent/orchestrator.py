@@ -13,7 +13,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 
-from app.agent.deadlines import deadline, next_deadline
+from app.agent.deadlines import COST_YEAR_DEADLINES, deadline, next_deadline
 from app.agent.matching import check_instrument
 from app.agent.plan import PlanItem, build_plan
 from app.agent.plan_texts import write_plan_texts
@@ -199,7 +199,7 @@ async def _check(ctx: _Context, item: FlatInstrument) -> None:
     recorder.downgrades += check.downgrades
     # Timing conditions the user can still meet are not open (see timing.py); scored after that.
     timed = [
-        apply_timing(scoped.criterion, c, ctx.profile, ctx.today)
+        apply_timing(scoped.criterion, c, ctx.profile, ctx.today, COST_YEAR_DEADLINES.get(item.key))
         for scoped, c in zip(item.criteria(), check.criteria, strict=True)
     ]
     scored = score(item, timed, bool(check.exclusion_hits), check.lever_texts)
