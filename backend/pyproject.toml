@@ -14,9 +14,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8.3",
-    "httpx>=0.27",
     "ruff>=0.8",
     "datamodel-code-generator>=0.26",
+    "httpx2>=2.16.0",
 ]
 
 [tool.uv]
