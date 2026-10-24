@@ -21,8 +21,10 @@ def test_sensora_questions_by_points(kb: KnowledgeBase):
     assert [q.id for q in result.questions] == [
         "q_revisionsart",
         "q_nachhaltigkeit",
+        "q_auftragsforschung_steuerung",
         "q_kosten_bemessungsjahr",
         "q_raeumlichkeiten",
+        "q_kosten_selbst_getragen",
     ]
     revision = result.questions[0]
     assert revision.profile_field == "revisionsart"
@@ -33,7 +35,7 @@ def test_sensora_questions_by_points(kb: KnowledgeBase):
         CriterionRef(program_id="lib", instrument_id=None, criterion_id="revision")
     ]
     # Criteria the catalog cannot decide keep their own question.
-    fallback = result.questions[2]
+    fallback = result.questions[3]
     assert fallback.profile_field == "rueckfrage_kosten_bemessungsjahr"
     assert fallback.affects[0].instrument_id == "lib-beitrag"
 
@@ -82,14 +84,16 @@ def test_points_add_up_across_instruments(kb: KnowledgeBase):
 
 def test_partner_question_decides_generated_partner_criterion(kb: KnowledgeBase):
     lib = next(i for i in kb.instruments() if i.program.id == "lib")
+    # Without LIB's own criteria, so its other open questions do not push q_partner out.
     needs_partner = lib.instrument.model_copy(
         update={
+            "criteria": [],
             "filter": lib.instrument.filter.model_copy(
                 update={"required_partners": ["forschungspartner"]}
-            )
+            ),
         }
     )
-    item = FlatInstrument(lib.program, needs_partner)
+    item = FlatInstrument(lib.program.model_copy(update={"general_criteria": []}), needs_partner)
     result = select_questions(
         make_profile(partner=None), [item], kb.catalog.entries, kb.criterion_questions
     )

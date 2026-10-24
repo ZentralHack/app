@@ -83,11 +83,14 @@ def test_lib_deducts_other_funding(kb: KnowledgeBase):
     assert warning.source.locator == "N 142"
 
 
-def test_rule_on_one_instrument(kb: KnowledgeBase):
-    assert build_plan([_item(kb, GRID)], [], kb).warnings == []
-    (warning,) = build_plan([_item(kb, PUMP), _item(kb, GRID)], [], kb).warnings
+def test_rule_on_one_instrument():
+    # Berghilfe: the WLAN contribution has a `bedingt` rule against the project contribution.
+    full = load_knowledge_base(KNOWLEDGE_BASE_DIR)
+    project, wlan = "berghilfe:projektbeitrag", "berghilfe:wlan-hotellerie-gastro"
+    assert build_plan([_item(full, project)], [], full).warnings == []
+    (warning,) = build_plan([_item(full, wlan), _item(full, project)], [], full).warnings
     assert warning.type == "bedingt"
-    assert {i.instrument_id for i in warning.items} == {"waermepumpe", "waermenetz-anschluss"}
+    assert {i.instrument_id for i in warning.items} == {"wlan-hotellerie-gastro", "projektbeitrag"}
 
 
 def test_nothing_fits_names_contacts(kb: KnowledgeBase):

@@ -45,7 +45,7 @@ def test_programs(client: TestClient):
     lib = programs["lib"]
     assert lib["valid"] is True
     assert lib["instruments"] == [{"id": "lib-beitrag", "name": "Luzerner Innovationsbeitrag"}]
-    assert lib["last_verified"] == "2026-10-23"
+    assert lib["last_verified"] == "2026-10-24"
     assert lib["errors"] == []
 
 

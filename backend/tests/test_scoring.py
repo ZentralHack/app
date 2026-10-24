@@ -41,7 +41,7 @@ def test_sensora_lib_fits_with_missing_infos(lib, sensora_criteria):
     ]
     nachhaltigkeit = result.gaps[1]
     assert nachhaltigkeit.lever == "Kompakte Nachhaltigkeitsübersicht (2-3 Seiten) erstellen"
-    assert nachhaltigkeit.source.locator == "N 17"
+    assert nachhaltigkeit.source.locator == "N 18"
     assert result.gaps[0].lever is None
     assert result.gaps[0].source.locator == "N 21-23"
     # 6 met and 4 assumed (counting half) of 12 applicable muss criteria.
