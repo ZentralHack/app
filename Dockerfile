@@ -5,7 +5,7 @@ RUN npm ci
 COPY frontend/ ./
 COPY design/ /src/design/
 COPY knowledge_base/ /src/knowledge_base/
-RUN npm run build
+RUN npx vite build
 
 FROM python:3.13-slim
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
