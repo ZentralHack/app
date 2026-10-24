@@ -12,7 +12,7 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "EU-Mitgliedstaaten und mit Horizon Europe assoziierte Länder, darunter die Schweiz seit 2025."
+    "note": "EU-Mitgliedstaaten und mit Horizon Europe assoziierte Länder. Die Schweiz ist für Budgetjahre ab 2025 dem ganzen Programm assoziiert."
   },
   "purpose": "Der EIC Accelerator finanziert Start-ups und KMU mit bahnbrechenden Innovationen bis zur Marktreife und Skalierung, mit Grant und Investition.",
   "entitlement": {
@@ -20,7 +20,7 @@
     "note": "Mehrstufige Auswahl mit Jury-Interview.",
     "source": {
       "source_id": "eic",
-      "locator": "Application steps"
+      "locator": "Streamlined application process; How to apply for the EIC Accelerator?"
     }
   },
   "budget": {
@@ -30,7 +30,7 @@
     "note": "2026: EUR 414 Mio. Accelerator Open, EUR 220 Mio. Challenges.",
     "source": {
       "source_id": "eic",
-      "locator": "Budgets for 2026"
+      "locator": "EIC Accelerator Open; EIC Accelerator Challenges"
     }
   },
   "general_criteria": [],
@@ -53,7 +53,7 @@
         "note": "Short Proposals laufend, Full Proposals an Stichtagen.",
         "source": {
           "source_id": "eic",
-          "locator": "2026 batching dates"
+          "locator": "How to apply for the EIC Accelerator?, Step 1 und Step 2"
         }
       },
       "recipient": {
@@ -92,17 +92,25 @@
             "mitarbeitende",
             "rechtsform"
           ],
-          "question": null,
+          "question": {
+            "text": "Welche Art von Unternehmen beantragt die Förderung?",
+            "options": [
+              "Start-up oder KMU",
+              "Small Mid-Cap (bis 499 Mitarbeitende)",
+              "Noch nicht gegründet, Gründung geplant",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "eic",
-            "locator": "Who can apply"
+            "locator": "Who can apply?"
           },
           "notes": null
         },
         {
           "id": "sitz_assoziiertes_land",
-          "text": "Sitz in einem EU-Mitgliedstaat oder einem mit Horizon Europe assoziierten Land. Die Schweiz ist seit 1. Januar 2025 assoziiert.",
+          "text": "Sitz in einem EU-Mitgliedstaat oder einem mit Horizon Europe assoziierten Land. Die Schweiz ist für Budgetjahre ab 2025 dem ganzen Programm assoziiert. Firmen aus Drittstaaten müssen vor dem Full Proposal verlegen.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -110,55 +118,70 @@
             "standort_kanton"
           ],
           "question": {
-            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz oder einem EU-Land?",
+            "text": "Hat Ihr Unternehmen den Sitz in der Schweiz, einem EU-Land oder einem anderen mit Horizon Europe assoziierten Land?",
             "options": [
               "Ja",
+              "Nein, Gründung oder Verlegung geplant",
               "Nein",
               "Weiss nicht"
             ]
           },
           "evidence": [],
           "source": {
-            "source_id": "euresearch",
-            "locator": "Associated since"
+            "source_id": "eu_laenderliste",
+            "locator": "S. 2, Third countries associated to Horizon Europe, Nr. 19 Switzerland"
           },
-          "notes": null
+          "notes": "SBFI bestätigt: Schweizer Start-ups und KMU können ab Programmjahr 2025 beim EIC Accelerator einreichen (SBFI Q&A, Q15, S. 8). Verlegung aus Drittstaaten: EIC-Seite, Who can apply?"
         },
         {
           "id": "trl_6_8",
-          "text": "Grant-Aktivitäten auf Technologiereifegrad TRL 6 bis 8, abgeschlossen innert 24 Monaten.",
+          "text": "Technologie im Labor und im relevanten Umfeld validiert (mindestens TRL 5 abgeschlossen). Der Grant finanziert Innovationsaktivitäten auf TRL 6 bis 8.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
+          "question": {
+            "text": "Ist Ihre Technologie bereits im relevanten Umfeld validiert (TRL 5 abgeschlossen)?",
+            "options": [
+              "Ja",
+              "Nein, erst im Labor",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
-            "source_id": "eic",
-            "locator": "Funding amounts"
+            "source_id": "wp2026",
+            "locator": "S. 72, V. EIC Accelerator; S. 76-77, EIC Accelerator grant component"
           },
           "notes": null
         },
         {
           "id": "ein_antrag",
-          "text": "Nur ein Antrag pro EIC-Accelerator-Call gleichzeitig.",
+          "text": "Nur ein Antrag gleichzeitig beim EIC Accelerator, auch nicht parallel zu EIC STEP Scale Up. Ein weiterer Antrag erst nach dem Resultat des ersten.",
           "kind": "muss",
           "about": "zeit",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Haben Sie zurzeit einen anderen Antrag beim EIC Accelerator oder EIC STEP Scale Up hängig?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "eic",
-            "locator": "Who can apply"
+            "locator": "Who can apply?, Concurrent applications"
           },
-          "notes": null
+          "notes": "Parallelität zu EIC STEP Scale Up: WP 2026, S. 74."
         },
         {
           "id": "auswahl_jury",
-          "text": "Auswahl über Short Proposal, Full Proposal und Interview vor einer EIC-Jury.",
+          "text": "Auswahl über Short Proposal, Full Proposal und Interview vor einer EIC-Jury. Mindestschwelle 13 von 15 Punkten in der Fernbewertung.",
           "kind": "bewertung",
           "about": "vorhaben",
           "applies_if": null,
@@ -169,52 +192,55 @@
           "evidence": [],
           "source": {
             "source_id": "eic",
-            "locator": "Application steps"
+            "locator": "Streamlined application process; How to apply, Step 4"
           },
           "notes": null
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "Grant als Pauschalbetrag unter EUR 2.5 Mio. und/oder Investition von EUR 1 bis 10 Mio. als Eigenkapital oder Quasi-Eigenkapital.",
+        "summary": "Grant als Pauschalbetrag unter EUR 2.5 Mio. und/oder Investition von EUR 1 bis 10 Mio. als Eigenkapital oder Quasi-Eigenkapital (z.B. Wandeldarlehen).",
         "cost_categories": [],
         "units": [],
-        "max_share_of_costs_pct": null,
+        "max_share_of_costs_pct": 70,
         "min_amount_chf": null,
         "max_amount_chf": null,
-        "cofinancing": null,
+        "cofinancing": {
+          "required": true,
+          "rule": "30 % der Arbeitspakete des Grants finanziert das Unternehmen aus eigenen Mitteln."
+        },
         "deductions": [],
         "payout_forms": [
-          "Grant (Pauschalbetrag)",
-          "Eigenkapital oder Quasi-Eigenkapital",
-          "Blended Finance"
+          "Grant only (Pauschalbetrag)",
+          "Blended Finance (Grant und Investition)",
+          "Investment only (Eigenkapital oder Quasi-Eigenkapital)"
         ],
         "calculation_basis": null,
         "example": null,
         "source": {
-          "source_id": "eic",
-          "locator": "Funding amounts"
+          "source_id": "wp2026",
+          "locator": "S. 75-76 (Grant max. EUR 2.5 Mio. bzw. EUR 2 499 999, 70 %, 30 % Eigenmittel, Investition EUR 1-10 Mio.); S. 81 (Flexibilität EUR 2 Mio.)"
         },
-        "note": "Beträge in EUR, daher nicht in den CHF-Feldern. Bei Blended Finance in Schritt 4 Erhöhung um bis zu EUR 2 Mio. verhandelbar. Projekte ab Programmjahr 2025 werden direkt von der EU-Kommission finanziert (Euresearch)."
+        "note": "Beträge in EUR, Quelle nennt keine CHF-Werte, daher CHF-Felder null. Grant maximal EUR 2 499 999; bei Blended Finance in Ausnahmefällen höher. Investition: Flexibilität bis EUR 2 Mio. über dem beantragten Betrag, nur falls Mittel vorhanden. Schweizer Projekte ab Programmjahr 2025 finanziert direkt die EU-Kommission (SBFI Q&A, Q15)."
       },
       "timing": {
         "deadline": {
           "type": "ausschreibung",
-          "rule": "Short Proposals werden am ersten Dienstag jedes Monats gebündelt. Full Proposals an Stichtagen, 17 Uhr Brüssel.",
+          "rule": "Short Proposals jederzeit, Bündelung am ersten Dienstag jedes Monats um 17 Uhr Brüssel. Full Proposals an Stichtagen, 17 Uhr Brüssel.",
           "next_dates": [
             "2026-11-04"
           ],
           "relative": null,
           "source": {
             "source_id": "eic",
-            "locator": "2026 batching dates"
+            "locator": "How to apply for the EIC Accelerator?, Step 1 und Step 2"
           }
         },
         "assessment_period": null,
         "decision_time": "Short Proposal 4 bis 6 Wochen, Full Proposal 8 bis 9 Wochen, Interview 2 bis 3 Wochen, Due Diligence 2 bis 6 Monate",
         "max_duration_months": 24,
-        "repeat_limit": null,
-        "note": "Stichtage 2027 noch nicht publiziert."
+        "repeat_limit": "Grant only nur einmal pro Rechtseinheit während Horizon Europe (2021-2027). Nach drei erfolglosen Einreichungen desselben Vorhabens keine weitere Einreichung.",
+        "note": "Stichtage 2027 noch nicht publiziert (folgen im EIC-Arbeitsprogramm 2027). Laufzeit normalerweise 24 Monate, in begründeten Fällen länger (WP 2026, S. 77). Wiederholungslimit: WP 2026, S. 75 und S. 87."
       },
       "documents": {
         "application": [
@@ -223,7 +249,7 @@
             "condition": null,
             "source": {
               "source_id": "eic",
-              "locator": "Application steps"
+              "locator": "How to apply for the EIC Accelerator?, Step 1"
             }
           },
           {
@@ -231,7 +257,7 @@
             "condition": null,
             "source": {
               "source_id": "eic",
-              "locator": "Application steps"
+              "locator": "How to apply for the EIC Accelerator?, Step 2"
             }
           }
         ],
@@ -241,38 +267,45 @@
       "levers": [],
       "links": {
         "info": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
-        "apply": null,
-        "form": "https://eic.ec.europa.eu/document/download/52598755-1351-4b54-b46b-e2682d0a3aec_en?filename=EIC-Work-Programme-2026.pdf"
+        "apply": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-ACCELERATOR-01",
+        "form": null
       },
       "source": {
         "source_id": "eic",
-        "locator": null
+        "locator": "ganze Seite"
       }
     }
   ],
   "combination_rules": [],
   "application": {
     "channel": "online_portal",
-    "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-ACCELERATOR-01",
     "steps": [
       "Short Proposal",
       "Full Proposal",
       "Interview mit EIC-Jury",
       "Grant-Vertrag bzw. Due Diligence für Investition"
     ],
-    "note": null,
+    "note": "Einreichung über das EU Funding & Tenders Portal.",
     "source": {
       "source_id": "eic",
-      "locator": "Application steps"
+      "locator": "How to apply for the EIC Accelerator?, Step 1-4"
     }
   },
   "contacts": [
     {
       "name": "Euresearch",
-      "role": "Status der Schweiz in Horizon Europe",
+      "role": "Informationen zum Status der Schweiz in Horizon Europe",
+      "email": "info@euresearch.ch",
+      "phone": "+41 31 380 60 00",
+      "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
+    },
+    {
+      "name": "National Contact Points (NCP)",
+      "role": "Beratung zur Teilnahme an Horizon Europe",
       "email": null,
       "phone": null,
-      "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html"
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/ncp"
     }
   ],
   "legal_basis": [],
@@ -284,7 +317,7 @@
       "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -294,19 +327,49 @@
       "url": "https://www.euresearch.ch/en/horizon-europe/more-horizon-europe/status-of-switzerland-in-horizon-europe-367.html",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "wp2026",
+      "title": "EIC Work Programme 2026",
+      "type": "ausschreibung",
+      "url": "https://eic.ec.europa.eu/document/download/52598755-1351-4b54-b46b-e2682d0a3aec_en?filename=EIC-Work-Programme-2026.pdf",
+      "version": "aktuelle Version gemäss EIC-Seite vom 17. Juni 2026",
+      "published": "2026-06-17",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "eu_laenderliste",
+      "title": "List of Participating Countries in Horizon Europe, EU Funding & Tenders Portal",
+      "type": "merkblatt",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/common/guidance/list-3rd-country-participation_horizon-euratom_en.pdf",
+      "version": "V4.2",
+      "published": "2026-10-07",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "sbfi_qa",
+      "title": "Swiss participation in the Horizon package 2021-2027, Q&A (SBFI)",
+      "type": "faq",
+      "url": "https://www.sbfi.admin.ch/dam/en/sd-web/pqanmhWO0-Fq/2025-11-10%20Q%26A%20on%20Horizon%20package.pdf",
+      "version": "Stand 12. Dezember 2025",
+      "published": "2025-12-12",
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Euresearch bestätigt die Assoziierung ab 2025 allgemein, erwähnt den EIC Accelerator (insbesondere die Investitionskomponente) aber nicht ausdrücklich. Beim SBFI oder Euresearch klären.",
-      "Stichtage 2027 nicht publiziert.",
-      "Beträge in EUR, Schema kennt nur CHF-Felder.",
-      "Contacts: Euresearch ist als Anlaufstelle für die Schweiz eingetragen, die Quelle nennt aber keine E-Mail.",
+      "Stichtage 2027 nicht publiziert (timing.deadline.next_dates).",
+      "Beträge in EUR, Schema kennt nur CHF-Felder (funding.min_amount_chf/max_amount_chf null).",
+      "sitz_assoziiertes_land: Die Länderliste im WP 2026 (Annex 2, S. 176) nennt die Schweiz nicht; massgebend ist laut Fussnote 284 die aktuelle EU-Länderliste (V4.2). Für die Investitionskomponente (EIC Fund) steht dort nur 'entire Programme', ohne Ausnahme wie bei UK. Bitte bestätigen.",
+      "funding.max_share_of_costs_pct 70 und cofinancing 30 %: gelten nur für die Grant-Komponente (WP 2026, S. 75-76), nicht für die Investition.",
       "Quellen nicht lokal abgelegt."
     ]
   }
