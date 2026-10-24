@@ -4,10 +4,13 @@ Used to check question catalog values and follow-up answers before they are writ
 into a profile.
 """
 
+import json
 import re
 from dataclasses import dataclass
+from functools import cache
 from typing import Any, Literal
 
+from app.config import CONTRACT_SCHEMA
 from app.knowledge_base.enums import PROFILE_ENUMS
 
 CANTONS = frozenset(
@@ -68,3 +71,10 @@ FIELD_TYPES: dict[str, FieldType] = {
     "bestehende_heizung": TEXT,
     "eigentum_gebaeude": FieldType("boolean"),
 }
+
+
+@cache
+def field_descriptions() -> dict[str, str]:
+    """`x-core-fields` from the contract: field name → German description."""
+    schema = json.loads(CONTRACT_SCHEMA.read_text(encoding="utf-8"))
+    return schema["$defs"]["ProjectProfile"]["properties"]["fields"]["x-core-fields"]
