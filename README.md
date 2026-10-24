@@ -30,12 +30,13 @@ Der Agent nimmt eine Beschreibung des Vorhabens in eigenen Worten entgegen, prü
 ```mermaid
 flowchart LR
     A["Vorhaben<br/>(Freitext)"] --> S1
-    S1["1 · Profil<br/>LLM"] --> S2["2 · Rückfragen<br/>LLM + Code"]
+    S1["1 · Profil<br/>LLM"] --> S2["2 · Rückfragen<br/>Code"]
     S2 --> S3["3 · Vorfilter<br/>Code"]
     S3 --> S4["4 · Matching pro Kriterium<br/>LLM"]
     S4 --> S5["5 · Bewertung<br/>Code"]
     S5 --> S6["6 · Förderfahrplan<br/>Code + LLM"]
     KB[("Wissensbasis<br/>JSON")] -.-> S2
+    FK[("Fragenkatalog<br/>JSON")] -.-> S2
     KB -.-> S3
     KB -.-> S4
     KB -.-> S6
@@ -44,14 +45,14 @@ flowchart LR
     classDef code fill:#dbeafe,stroke:#2563eb,color:#1f2937
     classDef mixed fill:#fef3c7,stroke:#d97706,color:#1f2937
     class S1,S4 llm
-    class S3,S5 code
-    class S2,S6 mixed
+    class S2,S3,S5 code
+    class S6 mixed
 ```
 
 | Schritt | Wer | Was passiert |
 |---|---|---|
 | 1 · Profil | LLM | Freitext wird zu einem strukturierten Projektprofil. Jedes Feld ist markiert als *angegeben*, *Annahme* oder *fehlt*. |
-| 2 · Rückfragen | LLM + Code | Höchstens 3 Fragen, und nur solche, deren Antwort eine Einstufung ändert. Die Fragen stammen aus der Wissensbasis. |
+| 2 · Rückfragen | Code | Bis zu 10 Fragen, und nur solche, deren Antwort eine Einstufung ändern kann. Pro Profilfeld gibt es genau eine vorab formulierte und geprüfte Frage im Fragenkatalog, darum braucht dieser Schritt kein Modell. |
 | 3 · Vorfilter | Code | Nur aktuell beantragbare Instrumente. Falscher Kanton, Gesuchstellertyp, Vorhabenstyp oder Branche fallen weg, mit Begründung. |
 | 4 · Matching | LLM | Jedes Kriterium jedes Instruments wird geprüft, mit einer Begründung und dem Beleg aus dem Profil. |
 | 5 · Bewertung | Code | Deterministisch: *passt gut*, *passt mit Anpassung / Infos fehlen* oder *passt nicht*. |
@@ -112,6 +113,7 @@ knowledge_base/
   schema/       JSON-Schema v2 für Programmdateien
   programs/     eine JSON-Datei pro Förderprogramm
   sources/      Original-PDFs und gesicherte Quellen pro Programm
+  question_catalog.json   eine geprüfte Rückfrage pro Profilfeld
 tests/
   projects/     fiktive Testprojekte mit erwarteten Ergebnissen
 design/         Entwürfe zu Architektur und Schnittstellen (Vorschlag)

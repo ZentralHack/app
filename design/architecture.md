@@ -36,8 +36,11 @@ design/
   api_contract.md               endpoints and JSON schemas
 knowledge_base/
   schema/program.schema.json
+  schema/question_catalog.schema.json
   programs/<id>.json
   sources/<id>/                 saved copies of the official sources
+  question_catalog.json         one follow-up question per profile field (generated once, reviewed)
+  question_catalog_review.md    review table written by the catalog script
 tests/
   projects/<name>.json          fictional test projects with expected results
 backend/
@@ -58,11 +61,11 @@ backend/
       trace.py
       program.py                typed view of a knowledge base file
     knowledge_base/
-      loader.py                 load, validate, index programs at startup
+      loader.py                 load, validate, index programs and the question catalog at startup
     agent/
       orchestrator.py           runs steps 3 to 6, emits trace events
       profile.py                step 1
-      questions.py              step 2
+      questions.py              step 2 (pure code, picks from the question catalog)
       prefilter.py              step 3 (pure code)
       matching.py               step 4
       scoring.py                step 5 (pure code)
@@ -73,8 +76,12 @@ backend/
       prompts/                  one Markdown prompt per step
     trace.py                    TraceEmitter (per-run event queue)
     querylog.py                 anonymised aggregate log
+  scripts/
+    build_question_catalog.py   generates and cross-checks the question catalog (offline)
   tests/
     test_prefilter.py
+    test_questions.py
+    test_question_catalog.py
     test_scoring.py
     test_plan.py
     test_kb_loader.py
@@ -101,8 +108,8 @@ POST /api/profile ──► Step 1 Profile (LLM, small model)
    ▼
 Screen 2 Profil prüfen (user corrects fields)
    ▼
-POST /api/questions ──► Step 3 Pre-filter (code) + Step 2 Questions (code + LLM)
-   │  QuestionSet: at most 3 questions, or empty
+POST /api/questions ──► Step 3 Pre-filter (code) + Step 2 Questions (code, question catalog)
+   │  QuestionSet: up to 10 questions, or empty
    ▼
 Screen 3 Rückfragen (skippable)
    ▼
@@ -125,7 +132,7 @@ The pre-filter runs before the questions step as well, so questions are only ask
 | # | Module | Kind | Input | Output | Model |
 |---|---|---|---|---|---|
 | 1 | `agent/profile.py` | LLM | free text, form fields | `ProjectProfile` | small |
-| 2 | `agent/questions.py` | code + LLM | profile, remaining instruments | `QuestionSet` (max 3) | small |
+| 2 | `agent/questions.py` | code | profile, remaining instruments, question catalog | `QuestionSet` (max 10) | none |
 | 3 | `agent/prefilter.py` | code | profile, all instruments | kept instruments + dropped with reason | none |
 | 4 | `agent/matching.py` | LLM | profile, one instrument (+ program `general_criteria`) | `InstrumentCheck` | main |
 | 5 | `agent/scoring.py` | code | `InstrumentCheck` list | `MatchResult` list with fit level and rank | none |
@@ -137,10 +144,29 @@ The pre-filter runs before the questions step as well, so questions are only ask
 - Each field has a `value`, a `status` (`angegeben`, `annahme`, `fehlt`) and, for `angegeben`, the quote from the user text.
 - If the text is too vague to say what the money is for, the step returns `needs_clarification` with one question instead of a profile.
 
-### Step 2: Questions
-- Code collects the `question` objects of all criteria whose `profile_fields` are `fehlt` or `annahme`, for instruments that survived the pre-filter.
-- Code ranks them by impact: a question on a `muss` criterion that decides between "passt" and "passt nicht" for several instruments comes first. Duplicates (same profile field) are merged.
-- The LLM only rewrites the top 3 into one short, plain question each and writes the "Warum wir fragen" line. If no question can change a fit level, the set is empty and the screen is skipped.
+### Step 2: Questions (pure code)
+No LLM call at runtime. Every question comes ready-made from the question catalog (see next section); code only decides which ones to ask.
+- Code collects all criteria of the instruments that survived the pre-filter whose `profile_fields` are `fehlt`, or `annahme` if the catalog entry lists `annahme` in `ask_if`.
+- One question per profile field, taken from the catalog, so duplicates cannot occur. Criteria that no field question can decide (or that have no `profile_fields`) bring their own `criteria[].question`; the answer is stored as profile field `rueckfrage_<criterion_id>`.
+- Points per question: +3 per instrument where it decides a `muss` criterion, +1 for a `soll` criterion, +2 if a lever targets that criterion. Half the points if the field is only `annahme`. "Decides" means the catalog's `decides` table gives at least two different states for that criterion.
+- All questions with at least 3 points are asked, highest first, **at most 10**. The cap protects the user, it is not a target. If no question reaches the threshold, the set is empty and Screen 3 is skipped. Questions below the threshold or above the cap show up later as missing information.
+- "Warum wir fragen" = the catalog's `why` plus "Entscheidet über: <instrument names>". For `annahme` fields the assumed answer is sent as `prefill`.
+- Answers: code maps the chosen label to the catalog `value` (number and date inputs are range-checked) and writes it with `origin: rueckfrage`. "Weiss nicht" leaves the field unchanged. Then the pre-filter runs again; there is only one question round.
+
+### Question catalog (offline, once)
+`knowledge_base/question_catalog.json` (schema `knowledge_base/schema/question_catalog.schema.json`) holds exactly one follow-up question per profile field, built so that its answer can decide **every** criterion that uses the field. It is a separate file; program schema v2 stays unchanged.
+
+Entry per field: `text`, `why`, `input` (`auswahl`, `zahl` with `unit`/`min`/`max`, `datum`), `options` (label shown to the user plus the `value` written into the profile, typed like the field; "Weiss nicht" with `value: null` is always present), `ask_if` (`fehlt`, optionally `annahme`), `decides` (per criterion: which option gives which state), `not_decidable` (criteria the question cannot decide, with reason), `kb_fingerprint` (hash of the criteria it was built for), `generated` (model, prompt version, date) and `review` (`draft`, `needs_review`, `verified`, with reviewer and date).
+
+**Generation** (`backend/scripts/build_question_catalog.py`, run by hand, never at runtime): for each profile field (core fields from `x-core-fields` in the contract plus all names in `criteria[].profile_fields`), the `main` model at high effort gets the field definition, the allowed enum values, every criterion that uses the field (text, `kind`, `applies_if`, source locator) and the existing `criteria[].question` as inspiration, and returns one entry as structured output. Prompt rules: one thing per question, plain language for a KMU manager, Sie-form, Swiss spelling, at most 120 characters, neutral, no program names, options mutually exclusive and complete, at most 7 options (otherwise number or date input), fine enough to decide every given criterion (e.g. the source's thresholds), one `decides` row per criterion. The script only regenerates entries whose `kb_fingerprint` no longer matches; verified entries with a matching fingerprint are kept.
+
+**Validation** (no entry reaches the demo without all four):
+1. **Code checks** (`validate_question_catalog`, run by the script, in `pytest` and at every server start): schema; coverage (every profile field in the knowledge base has an entry, or every criterion on it has `criteria[].question`); option values match the field type and existing enum values; "Weiss nicht" present, unique labels, 2 to 7 options for `auswahl`, `unit`/`min`/`max` for `zahl`; text ends with "?", at most 120 characters, no "ß", no Du-form, no program names, no internal field names, `why` at most 160 characters; every `muss` criterion on the field appears in `decides` or `not_decidable`, every `decides` row references an existing criterion and yields at least two different states; `kb_fingerprint` current, otherwise the entry is `veraltet` and its review falls back to `draft`.
+2. **Independent model cross-check** (in the script): a second call sees only question, options and criteria, not the generator's `decides` table, fills in the decision table itself and rates the question against a fixed checklist (understandable without prior knowledge, one thing per question, options complete and non-overlapping, not leading, consistent with the source). Any mismatch triggers one regeneration with that feedback; if it persists, the entry is marked `needs_review` with the reason.
+3. **Human review**: the script writes `knowledge_base/question_catalog_review.md` (question, options, decision table, criterion sources, all findings). Researchers check each row against the source and set `review.status` to `verified` with name and date.
+4. **Eval and runtime signals**: test project answers (`tests/projects/*.json`, keyed by profile field) must match a catalog option, and the expected fit levels must be reached through the catalog questions. At runtime, the share of "Weiss nicht" and skips per field, and mismatches between matching results and the `decides` table, are logged; high values send the entry back to review.
+
+At runtime all entries are used, but anything not `verified` is listed on the health endpoint. Before the demo that list must be empty.
 
 ### Step 3: Pre-filter (pure code)
 Drops instruments using `instrument.availability`, `instrument.filter` and `program.scope`. Rules run in this order, the first match gives the reject reason (`Rejected.rule`):
@@ -202,7 +228,8 @@ class LLMClient(Protocol):
 - **Implementation:** `AnthropicClient` wraps `AsyncAnthropic().messages.parse(..., output_format=output)` and returns `response.parsed_output`.
 - **Models** (in `config.py`, overridable by environment):
   - `main`: `claude-sonnet-5-5`, effort `low` to `medium` for matching and plan.
-  - `small`: `claude-haiku-5-5` for profile extraction and question wording.
+  - `small`: `claude-haiku-5-5` for profile extraction.
+  - Follow-up questions need no model at runtime. The offline catalog script uses `main` at high effort for generation and for the cross-check.
 - **Swapping:** a second implementation of the protocol (for example another provider) is selected by one config value. The eval runner can run the test projects against both and compare.
 - **Prompts:** one Markdown file per step in `llm/prompts/`. The system prompt holds the fixed rules (states, evidence rule, Swiss German, no binding statements). The instrument JSON and the profile go into the user message.
 - **Prompt caching:** the system prompt is identical across all matching calls of a run, so it is marked for caching.
@@ -219,6 +246,9 @@ class LLMClient(Protocol):
 | Profile step fails | 502 with a German message; the user can resubmit. |
 | No API key or provider down | 503 at request time with a German message. Health endpoint shows the LLM as unavailable. |
 | Input too vague | Not an error: `needs_clarification` with one question. |
+| Question catalog missing or invalid | The app still starts; questions fall back to `criteria[].question`. Logged and shown on the health endpoint. |
+| Profile field without catalog entry, or entry outdated (`kb_fingerprint`) | Fallback to `criteria[].question` if present, otherwise no question. Listed on the health endpoint. |
+| Answer matches no option or is out of range | 400 `ungueltige_eingabe`, field unchanged. |
 | Company outside Kanton Luzern | Not an error: cantonal programs are dropped by the pre-filter with a reason, national programs are still checked. |
 | No fitting program | Not an error: the result says so, shows the closest rejects with reasons, and names the contact points from the knowledge base. |
 
@@ -247,13 +277,14 @@ Every event has `run_id`, a sequence number, a timestamp, a German `message` for
 - **Fake LLM** (`llm/fake.py`) returns fixed outputs so the orchestrator and API can be tested end to end offline.
 - **Eval set:** `tests/projects/*.json` holds fictional projects with expected programs and fit levels. `backend/eval/run_eval.py` runs them against the real model and reports hits, misses and wrong fit levels.
 - **Knowledge base validation** runs in the test suite: every file in `knowledge_base/programs/` must validate.
+- **Question catalog validation** runs in the test suite and at startup (`validate_question_catalog`, see step 2). The eval checks that test project answers map to catalog options.
 - **Lint and format:** `ruff` (backend), `eslint` and `prettier` (frontend).
 
 ## 10. Performance and cost
 
 - Target: Screen 4 completes in under 40 seconds for 10 to 15 instruments.
 - Matching runs in parallel with low to medium effort; one call per instrument keeps prompts short and failures isolated.
-- The small model handles profile extraction and question wording.
+- The small model handles profile extraction. Follow-up questions cost no model call, however many are asked.
 - Token usage per run is logged so cost per run can be measured with the eval set.
 
 ## 11. Configuration, privacy and security

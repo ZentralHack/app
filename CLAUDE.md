@@ -45,7 +45,7 @@ Around it: eval set (fictional test projects), anonymised query log
 
 Agent steps:
 1. **Profile** (LLM): free text → structured project profile. Every field tagged `angegeben` (in the user's words), `annahme` (inferred) or `fehlt`.
-2. **Questions** (LLM + code): pick at most 3 questions whose answer changes a fit level. Questions come from `criteria[].question` in the knowledge base. Skip the screen if nothing would change.
+2. **Questions** (code only, no LLM at runtime): ask every question whose answer can change a fit level, up to 10. Questions come from the question catalog `knowledge_base/question_catalog.json`: one question per profile field, generated once by an LLM, then validated by code, an independent second model call and a human review. Criteria no field question can decide use `criteria[].question`. Skip the screen if nothing would change.
 3. **Pre-filter** (code only): drops instruments using `availability`, `scope` and `filter`. Reject reasons, checked in this order: `verfuegbarkeit` (status not `aktiv`), `kanton`, `gesuchsteller`, `vorhaben`, `branche` (only if `sectors` is not empty), `mitarbeitende`, `unternehmensalter`. Except for `verfuegbarkeit`, only a known profile value drops; a missing value keeps the instrument. **A missing required partner is never a reject:** each entry in `filter.required_partners` becomes a `muss` criterion (scope `filter`) that is fixable and feeds the "So wird es passend" lever (e.g. "Forschungspartner beiziehen").
 4. **Matching** (LLM, one call per instrument, in parallel): check every criterion → `erfuellt` ✓ / `annahme` ~ / `unbekannt` ? / `nicht_erfuellt` ✗, each with a one-line reason and the profile evidence. **Rule: no evidence, no ✓.** If the LLM can't point to profile data, the state is `unbekannt`.
 5. **Scoring** (code only, deterministic): any ✗ on a `muss` criterion → "passt nicht", unless a lever or a missing required partner explains it → "passt mit Anpassung". Many ? → "passt mit Anpassung / Infos fehlen". Otherwise "passt gut".
@@ -64,6 +64,7 @@ knowledge_base/
   schema/program.schema.json     ← JSON Schema (draft 2020-12), the contract
   programs/<id>.json             ← one file per program, validated on load
   sources/<id>/                  ← original PDFs and saved page copies
+  question_catalog.json          ← one reviewed follow-up question per profile field
 ```
 - One file per **program**, containing an `instruments` list. Matching runs per instrument.
 - Program level: provider, level, scope, entitlement, budget, general_criteria, general_exclusions, combination_rules, application, contacts, legal_basis, sources, meta.
@@ -72,7 +73,7 @@ knowledge_base/
 - `filter.required_partners`: empty = no partner needed; otherwise e.g. `forschungspartner`, `umsetzungspartner`, `mehrere_betriebe`. `filter.sectors`: empty = open to all sectors; filled only if the source restricts it.
 - `availability.status`: `aktiv`, `geplant`, `runde_geschlossen`, `eingestellt`. The pre-filter only matches `aktiv`.
 - Criterion `kind`: `muss` (knock-out), `soll` (advantage or case-by-case), `bewertung` (quality criterion in competitive selection, e.g. Innosuisse).
-- `criteria[].question` feeds the questions step. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` and `filter.required_partners` are the only allowed "what would make it fit" suggestions.
+- The question catalog feeds the questions step; `criteria[].question` is the fallback for criteria without a fitting profile field and input for generating the catalog. Regenerate catalog entries with `backend/scripts/build_question_catalog.py` when a new profile field appears or criteria on a field change; only `verified` entries go into the demo. `criteria[].source.locator` gives Randnummer/Ziffer for traceability. `levers` and `filter.required_partners` are the only allowed "what would make it fit" suggestions.
 - Unknown values are `null`, never guessed. `meta.open_questions` lists unresolved points.
 - Examples: `lib.json` (LIB, from the Handbuch), `foerderprogramm-energie-lu.json` (6 instruments).
 
@@ -105,7 +106,7 @@ Key LIB facts: 30% personnel, 20% investment (depreciation), 10% contract resear
 Running example: fictional Sensora AG, Emmen, 18 employees, optical sensor prototype, 18 months, CHF 400k.
 1. **Projekt erfassen**: one text box, optional Gemeinde, size, budget, 3 example buttons, "Analysieren".
 2. **Profil prüfen**: fields tagged Angegeben / Annahme / Fehlt, user can correct, "Stimmt so".
-3. **Rückfragen**: max 3 cards with button answers and "Warum wir fragen", "Überspringen" allowed.
+3. **Rückfragen**: up to 10 cards (buttons, number or date input, always "Weiss nicht"), each with "Warum wir fragen"; every card skippable, plus "Restliche überspringen".
 4. **Agent arbeitet**: live trace: pre-filter → per-program checks → plan. Failed checks show "Nochmals".
 5. **Ergebnisse**: ranked cards in three levels (passt gut / passt mit Anpassung / passt nicht). Each card: provider, purpose, funding, deadline, criteria checklist with badges, missing info, link, source date. Rejects collapsed but visible.
 6. **Förderfahrplan**: timeline (Jetzt / vor Projektstart / Gesuch) plus combination warning, next-steps checklist with links.

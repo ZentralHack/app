@@ -15,6 +15,22 @@ Eine JSON-Datei pro Förderprogramm in `programs/`, validiert gegen [`schema/pro
 9. **Kombinationsregeln mit kanonischen IDs.** `combination_rules[].with` verwendet nur IDs aus der Tabelle in `CLAUDE.md`.
 10. **Status.** `meta.status` bleibt `draft`, bis jemand jedes Feld gegen die Quelle geprüft hat. Dann `verified` mit `verified_by`.
 
+## Fragenkatalog
+
+[`question_catalog.json`](question_catalog.json) enthält pro Profilfeld genau eine Rückfrage. Ein LLM erzeugt sie einmalig, danach wird sie geprüft. Zur Laufzeit wählt nur Code aus, ohne Modellaufruf. Details: Abschnitt «Question catalog» in [`design/architecture.md`](../design/architecture.md).
+
+1. **Neu erzeugen**, wenn ein Programm ein neues Profilfeld bringt oder sich Kriterien auf einem Feld ändern: `backend/scripts/build_question_catalog.py`. Das Skript erzeugt nur die betroffenen Einträge neu (erkannt am `kb_fingerprint`), prüft sie automatisch und mit einem zweiten Modellaufruf und schreibt `question_catalog_review.md`.
+2. **Prüfen.** Jede Zeile in `question_catalog_review.md` gegen die Quelle prüfen und einmal laut lesen, als wäre man die Kundin:
+   - Versteht eine KMU-Geschäftsführerin die Frage ohne Förderwissen? Eine Sache pro Frage?
+   - Schliessen sich die Optionen aus und decken sie alle Fälle ab? Gibt es «Weiss nicht»?
+   - Treffen die Optionen die Schwellen der Quelle (z. B. «vor 2000», «50 m2»)?
+   - Stimmt die Entscheidungstabelle (`decides`): welche Antwort erfüllt welches Kriterium?
+3. **Freigeben.** `review.status` auf `verified`, mit Name und Datum.
+4. **Nicht ungeprüft umformulieren.** Wer Text oder Optionen von Hand ändert, setzt den Eintrag auf `draft` und lässt die Validierung erneut laufen.
+5. **`criteria[].question` bleibt** für Kriterien ohne Profilfeld oder solche, die die Feldfrage nicht entscheiden kann. Sonst dient sie dem Generator als Anregung.
+
+Vor der Demo darf kein Eintrag `draft`, `needs_review` oder `veraltet` sein (sichtbar auf `/health`).
+
 ## Vor dem Commit validieren
 
 Im Repo-Root den Validierungsbefehl aus dem [README](../README.md#setup-und-start) ausführen. Jede Datei muss `OK` melden.

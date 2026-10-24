@@ -267,7 +267,10 @@
         "text",
         "why",
         "options",
-        "affects"
+        "affects",
+        "input",
+        "unit",
+        "prefill"
       ],
       "additionalProperties": false,
       "properties": {
@@ -284,12 +287,28 @@
           "type": "string",
           "description": "Text für 'Warum wir fragen'"
         },
+        "input": {
+          "enum": [
+            "auswahl",
+            "zahl",
+            "datum"
+          ],
+          "description": "auswahl = Buttons aus options; zahl = Zahlenfeld mit unit; datum = Monat oder Datum"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Einheit bei input 'zahl', z. B. 'CHF' oder 'm2'"
+        },
         "options": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "minItems": 2
+          "minItems": 1,
+          "description": "Button-Labels; enthält immer 'Weiss nicht'. Bei zahl und datum ist 'Weiss nicht' die einzige Option."
         },
         "affects": {
           "type": "array",
@@ -297,8 +316,16 @@
             "$ref": "#/$defs/CriterionRef"
           },
           "minItems": 1
+        },
+        "prefill": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Angenommene Antwort, vorausgewählt, wenn das Profilfeld den Status 'annahme' hat"
         }
-      }
+      },
+      "description": "Rückfrage aus dem Fragenkatalog (eine Frage pro Profilfeld) oder aus criteria[].question. Wird ohne LLM-Aufruf ausgewählt."
     },
     "QuestionsRequest": {
       "type": "object",
@@ -325,7 +352,7 @@
           "items": {
             "$ref": "#/$defs/Question"
           },
-          "maxItems": 3
+          "maxItems": 10
         },
         "skip_reason": {
           "type": [

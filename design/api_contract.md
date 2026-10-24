@@ -12,6 +12,8 @@ This document fixes the interfaces between frontend, API layer and agent, so tha
 | API layer: FastAPI app, config, routes, SSE, run store, health, programs endpoint | Jasper | `backend/app/main.py`, `config.py`, `api/`, `trace.py` |
 | Knowledge base loader | Jasper | `backend/app/knowledge_base/` |
 | Agent: all 6 steps, prompts, orchestrator logic | Philipp | `backend/app/agent/`, `backend/app/llm/` |
+| Question catalog: generation script and validation | Jasper | `backend/scripts/`, `knowledge_base/question_catalog.json` |
+| Question catalog: human review | Research | `knowledge_base/question_catalog_review.md` |
 | Pydantic models mirroring this contract | Philipp | `backend/app/models/` |
 | Eval runner and test projects | Philipp | `backend/eval/`, `tests/projects/` |
 
@@ -33,7 +35,7 @@ Base path `/api`. JSON in and out, UTF-8. All user-facing texts in responses are
 | GET | `/api/health` | | `Health` | `llm_available: false` if no API key or provider unreachable |
 | GET | `/api/programs` | | `ProgramSummary[]` | includes invalid files with their validation errors |
 | POST | `/api/profile` | `ProfileRequest` | `ProfileResponse` | Step 1. `needs_clarification` if the input is too vague |
-| POST | `/api/questions` | `QuestionsRequest` | `QuestionSet` | Steps 3 and 2. Empty `questions` with `skip_reason` means: skip Screen 3 |
+| POST | `/api/questions` | `QuestionsRequest` | `QuestionSet` | Steps 3 and 2, code only, no LLM call. Empty `questions` with `skip_reason` means: skip Screen 3 |
 | POST | `/api/runs` | `RunRequest` | `RunCreated` (202) | Applies answers, starts steps 3 to 6 in the background |
 | GET | `/api/runs/{run_id}` | | `RunResult` | Partial while `status` is `laeuft` |
 | GET | `/api/runs/{run_id}/events` | | SSE stream of `TraceEvent` | See section 3 |
@@ -88,9 +90,9 @@ Owned by Philipp in `backend/app/agent/__init__.py`, called by the API layer. Al
 ```python
 async def extract_profile(req: ProfileRequest, kb: KnowledgeBase, llm: LLMClient) -> ProfileResponse: ...
 
-async def build_questions(profile: ProjectProfile, kb: KnowledgeBase, llm: LLMClient) -> QuestionSet: ...
+def build_questions(profile: ProjectProfile, kb: KnowledgeBase) -> QuestionSet: ...  # pure code, no LLM
 
-def apply_answers(profile: ProjectProfile, answers: list[Answer]) -> ProjectProfile: ...
+def apply_answers(profile: ProjectProfile, answers: list[Answer], kb: KnowledgeBase) -> ProjectProfile: ...
 
 async def run_analysis(
     run_id: str,
@@ -112,7 +114,7 @@ async def retry_instrument(
 ```
 
 - The API layer owns run ids, the run store, the SSE queue and `emit`. The agent only calls `emit` and returns results.
-- `KnowledgeBase` (from the loader) exposes `programs: list[Program]`, `get(program_id)`, `instruments()` yielding `(program, instrument)` pairs, and `invalid: list[InvalidFile]`.
+- `KnowledgeBase` (from the loader) exposes `programs: list[Program]`, `get(program_id)`, `instruments()` yielding `(program, instrument)` pairs, `questions: QuestionCatalog` (the validated question catalog) and `invalid: list[InvalidFile]`.
 - `today` is passed in so that deadline logic is testable.
 
 ## 5. Data definitions
@@ -127,8 +129,9 @@ All in [contract.schema.json](contract.schema.json). The essentials:
 - `applicant_type`, `art_des_vorhabens`, `branche` and `partner` hold arrays of the knowledge base enums (`filter.applicant_types`, `filter.project_types`, `filter.sectors`, `filter.required_partners`), so the pre-filter can compare directly.
 
 ### QuestionSet
-- At most 3 `Question`s. Each has the `profile_field` it fills, German `text`, `why` ("Warum wir fragen"), button `options`, and `affects`: the criteria whose state can change.
-- Answers come back in `RunRequest.answers` and are written into the profile with `origin: rueckfrage`. "Weiss nicht" leaves the field at `fehlt`.
+- Up to 10 `Question`s, most important first. They come from the question catalog (`knowledge_base/question_catalog.json`, one reviewed question per profile field) or, for criteria no field question can decide, from `criteria[].question`. No LLM call; see [architecture.md](architecture.md#step-2-questions-pure-code).
+- Each has the `profile_field` it fills (`rueckfrage_<criterion_id>` for criterion questions), German `text`, `why` ("Warum wir fragen"), `input` (`auswahl` = buttons, `zahl` = number field with `unit`, `datum` = month or date), `options` (button labels; always includes "Weiss nicht", which is the only option for `zahl` and `datum`), `prefill` (the assumed answer, preselected when the field is `annahme`, else `null`) and `affects`: the criteria whose state can change.
+- Answers come back in `RunRequest.answers`: the option label, or the entered number or date as text. The backend maps the label to the catalog value and writes it into the profile with `origin: rueckfrage`. "Weiss nicht" leaves the field unchanged. An answer that matches no option or is out of range gives 400 `ungueltige_eingabe`.
 
 ### RunResult
 - `matches`: one `InstrumentMatch` per instrument that passed the pre-filter.
