@@ -1,26 +1,26 @@
 {
   "schema_version": "2.0",
   "id": "bfe-pilot-demonstration",
-  "name": "Pilot-, Demonstrations- und Leuchtturmprogramm des BFE",
+  "name": "Pilot- und Demonstrationsprogramm des BFE (P+D)",
   "short_name": "BFE P+D",
   "provider": {
     "name": "Bundesamt für Energie (BFE)",
     "unit": null,
-    "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm"
+    "url": "https://www.bfe.admin.ch/de/pilotdemonstration"
   },
   "level": "bund",
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Ganze Schweiz."
+    "note": "Ganze Schweiz. P+D-Projekte im Ausland nur ausnahmsweise, wenn sie in der Schweiz Wertschöpfung generieren."
   },
-  "purpose": "Das BFE fördert Pilot-, Demonstrations- und Leuchtturmprojekte, die neue Energietechnologien im Sinne der Energiestrategie 2050 zur Marktreife bringen.",
+  "purpose": "Das BFE fördert mit dem P+D-Programm die Entwicklung und Erprobung neuer Technologien, Lösungen und Ansätze für sparsame und effiziente Energienutzung, Energieübertragung und -speicherung sowie erneuerbare Energien. Ziel ist, ihren Reifegrad zu erhöhen und sie zur Marktreife zu bringen. Zurzeit werden keine Finanzbeiträge gewährt.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Einordnung, keine ausdrückliche Aussage in der Quelle.",
+    "note": "«Es besteht kein Rechtsanspruch auf Finanzhilfen.»",
     "source": {
-      "source_id": "faq",
-      "locator": null
+      "source_id": "vollzugsweisung",
+      "locator": "Kap. 3.6.1 Förderentscheid, S. 16"
     }
   },
   "budget": null,
@@ -29,8 +29,8 @@
   "instruments": [
     {
       "id": "pd-finanzhilfe",
-      "name": "Finanzhilfe Pilot- und Demonstrationsprojekte (P+D)",
-      "description": "Finanzhilfe des BFE an innovative Pilot-, Demonstrations- und Leuchtturmprojekte, die Energie sparen, erneuerbare Energien nutzen oder dem Energiesystem nützen.",
+      "name": "Finanzhilfe für Pilot- und Demonstrationsprojekte (P+D)",
+      "description": "Finanzhilfe des BFE an Pilot- und Demonstrationsprojekte an der Schnittstelle zwischen Labor und Markt: Erprobung neuer Lösungen und Ansätze im realen Umfeld, im Bereich erneuerbare Energien und Energieeffizienz (inkl. Speicher und Netze). Demonstrationsprojekte kann das BFE als Leuchtturmprojekte anerkennen. Zurzeit ausgesetzt (Sparmassnahmen des Bundes).",
       "keywords": [
         "P+D",
         "Pilot und Demonstration",
@@ -40,12 +40,12 @@
       ],
       "instrument_type": "beitrag",
       "availability": {
-        "status": "aktiv",
+        "status": "eingestellt",
         "next_round": null,
-        "note": null,
+        "note": "Wegen der Sparmassnahmen des Bundesrates (Streichung der P+D-Unterstützung ab 2027, möglicherweise schon ab 2026) werden ab sofort keine Finanzbeiträge gewährt. Auf eingereichte Gesuche wird bis auf Weiteres nicht eingetreten. Auch Anfragen und Skizzen werden nicht beantwortet.",
         "source": {
-          "source_id": "faq",
-          "locator": null
+          "source_id": "pd_seite",
+          "locator": "Hinweis «Information über den Entscheid des Bundesrates zu den Sparmassnahmen»"
         }
       },
       "recipient": {
@@ -58,6 +58,7 @@
           "kmu",
           "grossunternehmen",
           "startup",
+          "verein_stiftung",
           "gemeinde",
           "forschungsinstitution"
         ],
@@ -73,20 +74,85 @@
         "required_partners": [],
         "sectors": []
       },
-      "eligible_items": [],
+      "eligible_items": [
+        {
+          "id": "nak",
+          "name": "Nicht amortisierbare Kosten (NAK)",
+          "definition": "Nach dem Subventionsentscheid anfallende, nicht amortisierbare Kostenanteile, die direkt mit Entwicklung und Erprobung der innovativen Aspekte des Projekts zusammenhängen. Massgebend sind die erwarteten Erträge und Einsparungen über die Nutzungsdauer.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Anhang II, Nicht-amortisierbare Kosten (NAK), S. 22"
+          }
+        },
+        {
+          "id": "overhead",
+          "name": "Overheadbeitrag 15 % der Personalkosten",
+          "definition": "Pauschal 15 % der Personalkosten für interne Kosten. Damit gedeckte Aufwände dürfen nicht als direkte Kosten deklariert werden.",
+          "examples_positive": [
+            "Interne Dienste, Administration, allgemeine Verwaltungskosten",
+            "Generelle Laboreinrichtungen, Messgeräte, technisches Verbrauchsmaterial"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Anhang II, Overheadbeitrag, S. 22"
+          }
+        },
+        {
+          "id": "sachkosten_infrastruktur",
+          "name": "Direkte Sachkosten für Infrastruktur",
+          "definition": "Sachkosten mit direktem Projektbezug, die nicht die Grundausstattung betreffen. Anrechenbarkeit wird im Einzelfall geprüft. Ausweis als Stundentarif mal Betriebsstunden.",
+          "examples_positive": [
+            "Nutzung bestehender Prüfstände oder spezieller Reinräume",
+            "Nutzung bestehender Produktions- und Fertigungsanlagen"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Anhang II, Direkte Sachkosten für Infrastruktur, S. 22"
+          }
+        },
+        {
+          "id": "softwareentwicklung",
+          "name": "Kosten für Softwareentwicklung",
+          "definition": "Grundsätzlich voll angerechnet, wenn die Arbeiten innovativ sind, die Software open-source wird, keine kommerzielle Nutzung absehbar ist und sie einen kleineren Teil der Gesamtkosten ausmacht. Sonst Reduktion nach Kosten/Nutzen.",
+          "examples_positive": [],
+          "examples_negative": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Anhang II, Kosten für Softwareentwicklung, S. 23"
+          }
+        }
+      ],
       "exclusions": [
         {
-          "text": "Vorhaben von Verwaltungseinheiten des Bundes",
+          "text": "Projekte von Verwaltungseinheiten der zentralen Bundesverwaltung.",
           "source": {
-            "source_id": "faq",
-            "locator": "Wer kann einreichen"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Rahmenbedingungen, Unterstützungsberechtigte, S. 7"
+          }
+        },
+        {
+          "text": "Rückwirkende Unterstützung. Vorleistungen sind nicht anrechenbar. Massgebend ist der im Vertrag vereinbarte Projektbeginn.",
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Rahmenbedingungen, Beitragshöhe, S. 9"
+          }
+        },
+        {
+          "text": "Doppelfinanzierung und unzulässige Kumulation von Finanzhilfen des Bundes.",
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Rahmenbedingungen, Doppelfinanzierung, S. 9"
           }
         }
       ],
       "criteria": [
         {
           "id": "innovativer_ansatz",
-          "text": "Innovativer Ansatz, der viel Energie spart, erneuerbare Energien stärker nutzt oder dem Energiesystem nützt.",
+          "text": "Das Vorhaben erprobt eine neue Lösung oder einen neuen Ansatz im realen Umfeld und dient der sparsamen und effizienten Energieverwendung oder der Nutzung erneuerbarer Energien.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -94,7 +160,7 @@
             "vorhaben_beschreibung"
           ],
           "question": {
-            "text": "Testen Sie eine neue Energietechnologie in einer Pilot- oder Demonstrationsanlage?",
+            "text": "Erproben Sie eine neue Energietechnologie oder einen neuen Ansatz im realen Umfeld (Energieeffizienz, erneuerbare Energie, Speicher oder Netze)?",
             "options": [
               "Ja",
               "Nein",
@@ -103,59 +169,173 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Was ist ein P+D-Projekt"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 1.3 Projektarten und Kap. 1.4 Ziele der Förderung (Art. 61 Abs. 1 EnV), S. 5-6"
           },
-          "notes": null
+          "notes": "Art. 61 Abs. 1 EnV: Förderung nur, «sofern» das Projekt der sparsamen und effizienten Energieverwendung oder der Nutzung erneuerbarer Energien dient."
         },
         {
           "id": "pilot_oder_demo",
-          "text": "Pilotprojekt (frühe Phase, Teilsysteme) oder Demonstrationsprojekt (ausgereift, meist Massstab 1:1).",
+          "text": "Pilotprojekt (TRS 4-7, technische Systemerprobung, noch nicht kommerziell) oder Demonstrationsprojekt (TRS 7-9, Massstab 1:1, Markterprobung). Teilprojekte (Vorstudien, Planung, Erfolgskontrolle) sind ebenfalls zugelassen.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "art_des_vorhabens"
           ],
+          "question": {
+            "text": "Wie weit ist Ihre Technologie entwickelt?",
+            "options": [
+              "Grundlagen oder Laborversuch (TRS 1-3)",
+              "Pilotanlage, Erprobung im realen Umfeld (TRS 4-7)",
+              "Anlage im Massstab 1:1 zur Markterprobung (TRS 7-9)",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Anhang I Technologiereifestufen, Tabelle 1, S. 19-21; Kap. 1.3, S. 5"
+          },
+          "notes": "Tabelle 1 nennt die «zugelassene[n] Segmente» für Pilotprojekte (P) und Demonstrationsprojekte (D)."
+        },
+        {
+          "id": "anwendungspotenzial",
+          "text": "Genügend grosses Anwendungspotenzial und genügend grosse Erfolgswahrscheinlichkeit. Das Projekt entspricht der Energiepolitik des Bundes (Energiestrategie 2050).",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Was ist ein P+D-Projekt"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 1.4 Ziele der Förderung (Art. 61 Abs. 1 EnV), S. 6"
+          },
+          "notes": "Beurteilt das BFE."
+        },
+        {
+          "id": "innovationsgehalt_markt",
+          "text": "Hoher Innovationsgehalt (Neuartigkeit gegenüber dem Stand der Technik), substantieller Nutzen für das Energiesystem, künftige Wirtschaftlichkeit und klarer Weg zur Umsetzung am Markt.",
+          "kind": "soll",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [
+            "vorhaben_beschreibung"
+          ],
+          "question": null,
+          "evidence": [],
+          "source": {
+            "source_id": "pd_seite",
+            "locator": "Förderkriterien"
+          },
+          "notes": "Die Seite nennt sie «wichtige Kriterien für die Förderwürdigkeit». Die volle Kriterienliste für P+D ist in der Vollzugsweisung 20.12.2024 nicht enthalten."
+        },
+        {
+          "id": "ergebnisse_oeffentlich",
+          "text": "Die Ergebnisse werden der Öffentlichkeit zugänglich gemacht. Zwischen- und Schlussberichte werden auf ARAMIS veröffentlicht.",
+          "kind": "muss",
+          "about": "vorhaben",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Sind Sie bereit, die Projektergebnisse und Berichte öffentlich zu machen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 1.4 Ziele der Förderung (Art. 61 Abs. 1 EnV), S. 6; Kap. 3.4, S. 15"
           },
           "notes": null
         },
         {
+          "id": "eigenleistung",
+          "text": "Angemessene Eigenleistung der Projektteilnehmenden. Übrige Finanzierungsmöglichkeiten sind auszuschöpfen (Art. 7 SuG).",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie und Ihre Partner einen angemessenen Eigenanteil an den Projektkosten tragen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Rahmenbedingungen, Projektfinanzierung, S. 8, und Beitragshöhe, S. 9"
+          },
+          "notes": "«Eine angemessene Eigenleistung der Projektteilnehmenden wird vorausgesetzt.»"
+        },
+        {
+          "id": "projektbeginn_nach_vertrag",
+          "text": "Gesuch vor Projektbeginn. Projektbeginn frühestens nach Abschluss des P+D-Vertrags (Ausnahmen in begründeten Fällen).",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": {
+            "text": "Hat Ihr Projekt schon begonnen?",
+            "options": [
+              "Nein, noch nicht begonnen",
+              "Ja, bereits begonnen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 3.4, S. 15; Kap. 4 Projektbeginn, S. 17; Kap. 2 Beitragshöhe, S. 9"
+          },
+          "notes": "«Die rückwirkende Unterstützung ist ausgeschlossen (Art. 53 Abs. 1 EnG und Art. 26, Abs. 1 SuG).»"
+        },
+        {
           "id": "finanzierungsnachweis",
-          "text": "Finanzierungsbestätigungen oder Jahresberichte.",
+          "text": "Jüngste Jahresrechnung und, falls zutreffend, jüngster Revisionsbericht zur Bonitätsprüfung einreichen.",
           "kind": "muss",
           "about": "dokumente",
-          "applies_if": "Bei Förderbeiträgen über CHF 1 Mio.",
-          "profile_fields": [],
+          "applies_if": "Beantragter Förderbeitrag über CHF 500 000. In Ausnahmefällen auch darunter.",
+          "profile_fields": [
+            "budget"
+          ],
           "question": null,
           "evidence": [
-            "Finanzierungsbestätigungen",
-            "Jahresberichte"
+            "Jüngste Jahresrechnung",
+            "Jüngster Revisionsbericht (falls zutreffend)"
           ],
           "source": {
-            "source_id": "faq",
-            "locator": "Skizze"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Rahmenbedingungen, Bonität der Projektpartner (P+D-Projekte), S. 8"
           },
-          "notes": null
+          "notes": "Die Bonität aller Projektpartner (ausser öffentliche Hand) wird geprüft."
         }
       ],
       "funding": {
         "model": "prozent_kosten",
-        "summary": "Höchstens 50% der nicht amortisierbaren Kosten, bei Pilotprojekten ausnahmsweise bis 70%.",
+        "summary": "Höchstens 50 % der anrechenbaren Projektkosten (nicht amortisierbare Kosten). In Ausnahmefällen bis 70 %, nur für Pilotprojekte ohne kommerzielle Nutzung mit Maximalnote bei M1 und M5. Zurzeit werden keine Beiträge gewährt.",
         "cost_categories": [
           {
             "id": "nicht_amortisierbar",
-            "name": "Nicht amortisierbare Kosten",
+            "name": "Nicht amortisierbare Kosten (NAK)",
             "rate_pct": 50,
-            "definition": "Pilotprojekte in Ausnahmefällen bis 70%.",
+            "definition": "Nicht amortisierbare Kostenanteile, die direkt mit Entwicklung und Erprobung der innovativen Aspekte zusammenhängen. Ausnahme bis 70 %: Pilotprojekt, Output nicht kommerziell genutzt und ohne relevante Erträge oder Einsparungen, Maximalnote bei M1 und M5.",
             "source": {
-              "source_id": "faq",
-              "locator": "Förderanteil"
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 2 Rahmenbedingungen, Beitragshöhe für Forschungsprojekte und P+D-Projekte, S. 9-10"
             }
           }
         ],
@@ -165,118 +345,226 @@
         "max_amount_chf": null,
         "cofinancing": {
           "required": true,
-          "rule": "Restliche nicht amortisierbare Kosten durch die Gesuchsteller."
+          "rule": "Angemessene Eigenleistung wird vorausgesetzt. Alle beantragten und verfügbaren Mittel (Eigenmittel, Finanzhilfe Bund, Drittmittel) sind im Gesuch zu deklarieren."
         },
         "deductions": [],
         "payout_forms": [
           "Finanzhilfe"
         ],
-        "calculation_basis": "Nicht amortisierbare Kosten",
+        "calculation_basis": "Anrechenbare Projektkosten = nicht amortisierbare Kosten. Personal nach Maximalstundenansätzen (Anhang VI) plus 15 % Overhead. Definitive Höhe nach Projektabschluss auf Basis der effektiven Kosten und der bewilligten Förderquote.",
         "example": null,
         "source": {
-          "source_id": "faq",
-          "locator": "Förderanteil"
+          "source_id": "vollzugsweisung",
+          "locator": "Kap. 2 Rahmenbedingungen, Beitragshöhe, S. 9-10; Anhang II, S. 22; Anhang VI, S. 30"
         },
-        "note": "70% nur in Ausnahmefällen für Pilotprojekte."
+        "note": "Obergrenze gemäss Art. 53 EnG. Bei Gewinn kann die Finanzhilfe nach Massgabe der Erträge zurückverlangt werden (Art. 53 Abs. 4 EnG)."
       },
       "timing": {
         "deadline": {
-          "type": "unbekannt",
-          "rule": "Eingabezeitpunkt in der FAQ nicht genannt.",
+          "type": "vor_projektstart",
+          "rule": "Gesuch grundsätzlich vor Projektbeginn einreichen. Offene Eingabe (bottom-up) grundsätzlich jederzeit oder im Rahmen von Ausschreibungen. Zurzeit tritt das BFE auf P+D-Gesuche nicht ein.",
           "next_dates": [],
-          "relative": null,
+          "relative": {
+            "event": "projektstart",
+            "direction": "vor",
+            "offset_days": null
+          },
           "source": {
-            "source_id": "faq",
-            "locator": null
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Projekteingabe, S. 7; Kap. 3.4 Einreichung der Gesuche, S. 15"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": null
+        "note": "Keine vordefinierte Projektdauer. Dauer wird im Gesuch dargelegt und vertraglich vereinbart (Vollzugsweisung, Kap. 2 Projektdauer, S. 8). Projektbeginn in der Regel spätestens sechs Monate nach dem Entscheid (Kap. 4, S. 17)."
       },
       "documents": {
         "application": [
           {
-            "name": "Gesuchsformular",
+            "name": "Gesuch um Finanzhilfe (offizielles BFE-Formular, als PDF, von allen durchführenden Gesuchstellenden unterschrieben)",
             "condition": null,
             "source": {
-              "source_id": "faq",
-              "locator": "Skizze"
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 3.4 Einreichung der Gesuche, S. 15"
             }
           },
           {
-            "name": "Finanzbeiblatt",
+            "name": "Absichtserklärung(en)",
+            "condition": "Für Parteien, die sich nur an der Finanzierung beteiligen",
+            "source": {
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 3.4 Einreichung der Gesuche, S. 15"
+            }
+          },
+          {
+            "name": "Finanzbeiblatt zu Projektkosten und Finanzierung (Excel)",
             "condition": null,
             "source": {
-              "source_id": "faq",
-              "locator": "Skizze"
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 3.4 Einreichung der Gesuche, S. 15"
+            }
+          },
+          {
+            "name": "Jüngste Jahresrechnung und, falls zutreffend, jüngster Revisionsbericht",
+            "condition": "Bei beantragtem Förderbeitrag über CHF 500 000",
+            "source": {
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 2 Bonität der Projektpartner (P+D-Projekte), S. 8"
             }
           }
         ],
         "completion": [
           {
-            "name": "Zwischen- und Schlussberichte nach BFE-Vorlagen, Berichtsentwurf und Finanzrapport rund zwei Monate vor Projektende",
+            "name": "Zwischenbericht mindestens einmal pro Jahr",
             "condition": null,
             "source": {
-              "source_id": "faq",
-              "locator": "Berichterstattung"
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 4 Monitoring und Reporting, S. 17"
+            }
+          },
+          {
+            "name": "Schlussbericht nach BFE-Vorlage",
+            "condition": null,
+            "source": {
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 4 Monitoring und Reporting, S. 17"
+            }
+          },
+          {
+            "name": "Detaillierter Finanzrapport (auf Basis des Finanzbeiblatts)",
+            "condition": "Falls eine Finanzhilfe gewährt wird, auch bei Abbruch oder Kündigung",
+            "source": {
+              "source_id": "vollzugsweisung",
+              "locator": "Kap. 4 Monitoring und Reporting, S. 17"
             }
           }
         ]
       },
       "obligations": [
         {
-          "text": "Projektberichte werden grundsätzlich auf der Plattform ARAMIS veröffentlicht.",
+          "text": "Zwischen- und Schlussberichte sowie wesentliche Projektinformationen werden auf ARAMIS veröffentlicht.",
           "source": {
-            "source_id": "faq",
-            "locator": "Berichterstattung"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 3.4, S. 15; Kap. 3.7, S. 16; Kap. 4, S. 17"
           }
         },
         {
-          "text": "Projektänderungen der zuständigen Projektbegleitung melden.",
+          "text": "Alle Finanzierungsquellen offenlegen und alle betroffenen Behörden informieren, wenn Finanzhilfen aus mehreren Bundesinstrumenten beantragt werden.",
           "source": {
-            "source_id": "faq",
-            "locator": "Kontakt"
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Doppelfinanzierung, S. 9"
+          }
+        },
+        {
+          "text": "Bei Gewinn kann die Finanzhilfe nach Massgabe der erzielten Erträge zurückverlangt werden.",
+          "source": {
+            "source_id": "vollzugsweisung",
+            "locator": "Kap. 2 Beitragshöhe, S. 9"
           }
         }
       ],
       "levers": [],
       "links": {
-        "info": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+        "info": "https://www.bfe.admin.ch/de/pilotdemonstration",
         "apply": null,
         "form": null
       },
       "source": {
-        "source_id": "faq",
+        "source_id": "pd_seite",
         "locator": null
       }
     }
   ],
-  "combination_rules": [],
-  "application": null,
-  "contacts": [],
-  "legal_basis": [],
+  "combination_rules": [
+    {
+      "with": "innosuisse",
+      "type": "bedingt",
+      "text": "Kumulation mit anderen Bundesfinanzhilfen (z. B. Innosuisse) nur, wenn die Regeln beider Instrumente eingehalten und die maximale Förderquote nicht überschritten wird. Alle Finanzierungsquellen offenlegen.",
+      "source": {
+        "source_id": "vollzugsweisung",
+        "locator": "Kap. 2 Doppelfinanzierung, S. 9; Kap. 2 Projektfinanzierung, S. 8"
+      }
+    }
+  ],
+  "application": {
+    "channel": "other",
+    "url": null,
+    "steps": [
+      "Vorab mit der Programmleitung Kontakt aufnehmen, gegebenenfalls Skizze einreichen (empfohlen)",
+      "Gesuch mit den offiziellen BFE-Formularen erarbeiten",
+      "Gesuchsdossier einreichen (PDF, Finanzbeiblatt als Excel)",
+      "Formelle Prüfung, bei Bedarf Nachfrist",
+      "Materielle Prüfung",
+      "Förderentscheid: Vertrag oder beschwerdefähige Verfügung"
+    ],
+    "note": "Zurzeit ausgesetzt: Das BFE gewährt keine P+D-Beiträge, tritt auf Gesuche nicht ein und beantwortet keine Anfragen oder Skizzen. Die Vollzugsweisung nennt keine Einreichadresse für P+D-Gesuche.",
+    "source": {
+      "source_id": "vollzugsweisung",
+      "locator": "Kap. 3.2 Offene Projekteingabe, S. 13; Kap. 3.4, S. 15; Kap. 3.5-3.6, S. 15-16"
+    }
+  },
+  "contacts": [
+    {
+      "name": "BFE, Programmleitung Pilot- und Demonstrationsprogramm",
+      "role": "Programmleitung P+D. Zurzeit keine Rückmeldungen auf Anfragen und Skizzen zu P+D-Projekten.",
+      "email": "pilot-demo@bfe.admin.ch",
+      "phone": "058 462 55 97",
+      "url": "https://www.bfe.admin.ch/de/pilotdemonstration"
+    }
+  ],
+  "legal_basis": [
+    {
+      "title": "Energiegesetz (EnG)",
+      "ref": "SR 730.0, Art. 49 Abs. 2-4 und Art. 53",
+      "url": null
+    },
+    {
+      "title": "Energieverordnung (EnV)",
+      "ref": "SR 730.01, Art. 54, 61, 63, 64, 66 und 67",
+      "url": null
+    },
+    {
+      "title": "Subventionsgesetz (SuG)",
+      "ref": "SR 616.1",
+      "url": null
+    }
+  ],
   "sources": [
     {
-      "id": "faq",
-      "title": "Fragen und Antworten P+D-Programm, BFE",
-      "type": "faq",
-      "url": "https://www.bfe.admin.ch/de/fragen-und-antworten-p-und-d-programm",
+      "id": "pd_seite",
+      "title": "Pilot- und Demonstrationsprogramm, BFE",
+      "type": "webseite",
+      "url": "https://www.bfe.admin.ch/de/pilotdemonstration",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "vollzugsweisung",
+      "title": "Vollzugsweisung zur Einreichung und Evaluation von Gesuchen um Finanzhilfe für Energieforschungs-, Pilot- und Demonstrationsprojekte sowie Bewilligung für Sandbox-Projekte, BFE",
+      "type": "reglement",
+      "url": "https://pubdb.bfe.admin.ch/de/publication/download/9952",
+      "version": "Version vom 20.12.2024",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "WICHTIG: Nur die FAQ gesichtet. Eingabeweg, Fristen, Projektdauer, Entscheiddauer, Kumulation, Rückzahlung und Kontakt fehlen. Hauptseite des P+D-Programms beschaffen.",
-      "Rechtsgrundlage (Energiegesetz) nicht aus Quelle belegt.",
+      "availability: P+D-Förderung ist ausgesetzt (Sparmassnahmen Bundesrat). Status «eingestellt» gewählt. Prüfen, ob «runde_geschlossen» besser passt und ob das Programm ab 2027 endgültig gestrichen ist.",
+      "funding: Ausnahme bis 70 % verlangt Maximalnote bei M1 und M5. Die P+D-Evaluationskriterien M1-M5 fehlen in der Vollzugsweisung 20.12.2024 (Anhang III gilt nur für Forschungsprojekte). Aktuelle P+D-Kriterienliste beschaffen.",
+      "documents/links.form: Aktuelles P+D-Gesuchsformular nicht gefunden. pubdb 9953 ist das Formular für Energieforschungsprogramme.",
+      "application: Vollzugsweisung Kap. 3.4 nennt keine Einreichadresse für P+D-Gesuche (nur Forschung und Sandbox).",
+      "sources: Alte FAQ-Seite (fragen-und-antworten-p-und-d-programm) ist 404 nach Website-Relaunch. Keine Nachfolgeseite gefunden.",
+      "legal_basis: Artikel nur aus der Vollzugsweisung (Kap. 1.2) übernommen, Gesetzestexte auf Fedlex nicht geöffnet.",
+      "combination_rules: Regel mit innosuisse aus der allgemeinen Kumulationsregel der Vollzugsweisung (Innosuisse dort genannt). Bestätigen.",
       "Quellen nicht lokal abgelegt."
     ]
   }
