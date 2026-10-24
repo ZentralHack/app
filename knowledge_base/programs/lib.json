@@ -22,23 +22,23 @@
     "note": "Anspruchssubvention: Bei erfüllten Voraussetzungen besteht ein Rechtsanspruch im Rahmen der verfügbaren Mittel.",
     "source": {
       "source_id": "handbuch",
-      "locator": "N 163"
+      "locator": "N 164"
     }
   },
   "budget": {
     "annual_chf": 110000000,
     "year": 2026,
     "oversubscription": "anteilige_kuerzung",
-    "note": "Betrag aus dem Rechenbeispiel im Handbuch. Übersteigen die Gesuche die Mittel, werden alle Gesuche prozentual gleich gekürzt. Nicht beanspruchte Mittel werden aufs Folgejahr übertragen.",
+    "note": "Budget gemäss Voranschlag 2026: 110 Mio. für den LIB. Ab 2027 legt der Kantonsrat die Mittel jährlich mit dem Voranschlag fest. Übersteigen die Gesuche die Mittel, werden alle Gesuche anteilig gekürzt (Handbuch N 144; die 110 Mio. dort sind nur ein Rechenbeispiel). Nicht beanspruchte Mittel werden aufs nächste Jahr übertragen (§ 16a Abs. 2 StaReG, Handbuch N 145).",
     "source": {
-      "source_id": "handbuch",
-      "locator": "N 144-145"
+      "source_id": "massnahmenpaket",
+      "locator": "Tabelle «Massnahmen zugunsten der Luzerner Unternehmen», Zeile LIB, Fussnote 1"
     }
   },
   "general_criteria": [
     {
       "id": "unternehmerisch_taetig",
-      "text": "Das Unternehmen ist unternehmerisch tätig, d. h. erbringt mit eigenem oder beauftragtem Personal Leistungen am Markt (oder beabsichtigt dies, z. B. Startups). Rechtsform egal.",
+      "text": "Das Unternehmen ist unternehmerisch tätig, d. h. erbringt mit eigenem oder beauftragtem Personal Leistungen am Markt oder für verbundene Unternehmen (oder beabsichtigt dies, z. B. Startups). Rechtsform egal.",
       "kind": "muss",
       "about": "unternehmen",
       "applies_if": null,
@@ -46,7 +46,14 @@
         "rechtsform",
         "taetigkeit"
       ],
-      "question": null,
+      "question": {
+        "text": "Erbringt Ihr Unternehmen Leistungen am Markt oder für verbundene Unternehmen, oder plant es dies?",
+        "options": [
+          "Ja",
+          "Nein",
+          "Weiss nicht"
+        ]
+      },
       "evidence": [],
       "source": {
         "source_id": "handbuch",
@@ -102,7 +109,7 @@
       "evidence": [],
       "source": {
         "source_id": "handbuch",
-        "locator": "N 21-23"
+        "locator": "N 21-23, N 30"
       },
       "notes": "Shared Working Spaces zählen nur bei dauerhafter Verfügbarkeit."
     },
@@ -115,13 +122,21 @@
       "profile_fields": [
         "mitarbeitende"
       ],
-      "question": null,
+      "question": {
+        "text": "Beschäftigt Ihr Unternehmen eigenes oder ausgeliehenes Personal in Räumlichkeiten im Kanton Luzern?",
+        "options": [
+          "Ja, während des ganzen Geschäftsjahres",
+          "Nur während eines Teils des Geschäftsjahres",
+          "Nein",
+          "Weiss nicht"
+        ]
+      },
       "evidence": [
         "Anzahl Vollzeitäquivalente (FTE)"
       ],
       "source": {
         "source_id": "handbuch",
-        "locator": "N 24-25"
+        "locator": "N 24, N 30"
       },
       "notes": "Eine Treuhandgesellschaft, die nur Administration erledigt, gilt nicht als Personal."
     },
@@ -180,12 +195,19 @@
     },
     {
       "id": "keine_ausstaende",
-      "text": "Keine fälligen, unbezahlten Forderungen von Behörden und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren.",
+      "text": "Keine fälligen, unbezahlten Forderungen von Schweizer Behörden (Bund, Kanton, Gemeinde) und kein gerichtlich eröffnetes Konkurs- oder Liquidationsverfahren (Konkurs oder gerichtlich gewährtes Nachlassverfahren).",
       "kind": "soll",
       "about": "unternehmen",
       "applies_if": null,
       "profile_fields": [],
-      "question": null,
+      "question": {
+        "text": "Hat Ihr Unternehmen fällige, unbezahlte Forderungen von Behörden, oder läuft ein Konkurs- oder Nachlassverfahren?",
+        "options": [
+          "Nein",
+          "Ja",
+          "Weiss nicht"
+        ]
+      },
       "evidence": [],
       "source": {
         "source_id": "handbuch",
@@ -213,7 +235,7 @@
         "note": "Gesuche seit 1. Oktober 2026 möglich. Beitragsjahre 2026 und 2027 bis 31. Januar 2027.",
         "source": {
           "source_id": "webseite",
-          "locator": null
+          "locator": "FAQ «Für welchen Zeitraum kann ein LIB ersucht werden?»"
         }
       },
       "recipient": {
@@ -408,7 +430,16 @@
             "vorhaben_beschreibung",
             "art_des_vorhabens"
           ],
-          "question": null,
+          "question": {
+            "text": "Welche Art von Arbeiten umfasst Ihr Vorhaben?",
+            "options": [
+              "Forschung oder experimentelle Entwicklung",
+              "Selbst entwickelte Prozess- oder Organisationsinnovation",
+              "Klinische Studie",
+              "Keine davon (z. B. Marketing, Einkauf bestehender Software)",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
             "Beschreibung pro Tätigkeit nach Ziel, Inhalt, Methode und Neuheit"
           ],
@@ -453,7 +484,14 @@
             "budget",
             "laufzeit"
           ],
-          "question": null,
+          "question": {
+            "text": "Gehen Sie systematisch vor, z. B. mit Budget, Zeitplan und Dokumentation?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "handbuch",
@@ -470,7 +508,15 @@
           "profile_fields": [
             "standort_kanton"
           ],
-          "question": null,
+          "question": {
+            "text": "Wo werden die Arbeiten ausgeführt?",
+            "options": [
+              "Im Kanton Luzern mit eigenem Personal",
+              "Ausserhalb des Kantons, als Auftrag an Dritte",
+              "Ausserhalb des Kantons, mit eigenem Personal",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "handbuch",
@@ -487,7 +533,14 @@
           "profile_fields": [
             "partner"
           ],
-          "question": null,
+          "question": {
+            "text": "Steuert eine Person Ihres Unternehmens den Forschungsauftrag (instruieren, überwachen, entscheiden), und trägt Ihr Unternehmen Finanzierung und Risiken?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [
             "Forschungsverträge",
             "Rechnungen"
@@ -505,7 +558,15 @@
           "about": "kosten",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Verrechnen Sie die F&E-Kosten an Dritte weiter, z. B. an Kunden oder Konzerngesellschaften?",
+            "options": [
+              "Nein",
+              "Ja, teilweise",
+              "Ja, vollständig",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "handbuch",
@@ -528,7 +589,8 @@
             "options": [
               "Bereits angefallen",
               "Laufend",
-              "Fallen erst an"
+              "Fallen erst an",
+              "Weiss nicht"
             ]
           },
           "evidence": [],
@@ -570,7 +632,7 @@
             "definition": "An Dritte ausgelagerte förderberechtigte Tätigkeiten, auch an Hochschulen.",
             "source": {
               "source_id": "handbuch",
-              "locator": "N 106-107"
+              "locator": "N 79, N 106-107"
             }
           },
           {
@@ -626,7 +688,7 @@
           "source_id": "handbuch",
           "locator": "N 126-135"
         },
-        "note": null
+        "note": "Formen: direkte Auszahlung, erstattungsfähige oder nicht erstattungsfähige Steuergutschrift (N 148-158). Eine Kombination verschiedener Formen ist nicht möglich (N 148). Über die Form entscheidet rawi abschliessend (N 160)."
       },
       "timing": {
         "deadline": {
@@ -642,8 +704,8 @@
             "locator": "N 33-38, N 165"
           }
         },
-        "assessment_period": "Geschäftsjahr N-2. Beitragsjahr 2026: GJ 2024. 2027: GJ 2025. 2028: GJ 2026.",
-        "decision_time": "Verfügung in der Regel im Herbst des Beitragsjahres",
+        "assessment_period": "Geschäftsjahr, das im Kalenderjahr N-2 endet (§ 9 Abs. 2 StaReV). Beitragsjahr 2026: GJ 2024. 2027: GJ 2025. 2028: GJ 2026.",
+        "decision_time": "Verfügung in der Regel im Herbst des Beitragsjahres (Handbuch N 171). Beitragsjahre 2026 und 2027: Prüfung und Sprechung bis spätestens Ende 2027 (FAQ Webseite).",
         "max_duration_months": null,
         "repeat_limit": "Ein Gesuch pro Unternehmen (Rechtsträger) und Beitragsjahr, keine Gruppengesuche",
         "note": "Neu gegründete Unternehmen können erstmals zwei Jahre nach Abschluss ihres ersten Geschäftsjahres ein Gesuch stellen (N 42)."
@@ -655,7 +717,7 @@
             "condition": null,
             "source": {
               "source_id": "handbuch",
-              "locator": "N 164"
+              "locator": "N 165"
             }
           },
           {
@@ -713,6 +775,22 @@
               "source_id": "handbuch",
               "locator": "N 161"
             }
+          },
+          {
+            "name": "Rechtsverbindlich unterzeichnete Bestätigung des Gesuchs (Richtigkeit und Vollständigkeit), Vorlage auf der Webseite",
+            "condition": null,
+            "source": {
+              "source_id": "webseite_gesuch",
+              "locator": "Schritt 1 «Voraussetzungen prüfen»"
+            }
+          },
+          {
+            "name": "Rechtsverbindlich unterzeichnete Vertretungsvollmacht, Vorlage auf der Webseite",
+            "condition": "falls ein Vertretungsverhältnis vorliegt",
+            "source": {
+              "source_id": "webseite_gesuch",
+              "locator": "Schritt 1 «Voraussetzungen prüfen»"
+            }
           }
         ],
         "completion": []
@@ -741,7 +819,7 @@
           ],
           "source": {
             "source_id": "handbuch",
-            "locator": "N 17"
+            "locator": "N 18"
           }
         },
         {
@@ -789,7 +867,7 @@
       "links": {
         "info": "https://standortfoerderung.lu.ch/LIB",
         "apply": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
-        "form": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB_Webinar_Muster.xlsx?rev=bc13c41e2283437e9f687ab8b8cf958a"
+        "form": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Berechnungsformular_LIB.xlsx?rev=b491c2d59be343fc843876941231412f"
       },
       "source": {
         "source_id": "handbuch",
@@ -838,7 +916,7 @@
   "contacts": [
     {
       "name": "Dienststelle Raum und Wirtschaft (rawi)",
-      "role": "Fragen zum LIB",
+      "role": "Fragen zum LIB. Auskünfte per E-Mail (Handbuch N 176). Telefon: Hauptnummer rawi (Handbuch, Titelseite).",
       "email": "innovationsbeitrag@lu.ch",
       "phone": "+41 41 228 51 83",
       "url": "https://standortfoerderung.lu.ch/LIB"
@@ -864,7 +942,7 @@
       "url": "https://standortfoerderung.lu.ch/-/media/Standortfoerderung/Dokumente/Handbuch_LIB_2026_10_01.pdf?rev=12a0082f68b34a04a3375117401185d0",
       "version": "1.0",
       "published": "2026-10-01",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": "sources/lib/Handbuch_LIB_2026_10_01.pdf"
     },
     {
@@ -874,16 +952,58 @@
       "url": "https://standortfoerderung.lu.ch/LIB",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "webseite_gesuch",
+      "title": "LIB-Gesuch einreichen, Webseite Kanton Luzern",
+      "type": "webseite",
+      "url": "https://standortfoerderung.lu.ch/LIB/Gesuch_einreichen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "massnahmenpaket",
+      "title": "Breites Massnahmenpaket, Fokusprogramm Standortförderung, Webseite Kanton Luzern",
+      "type": "webseite",
+      "url": "https://standortfoerderung.lu.ch/Massnahmenpaket",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "stareg",
+      "title": "Gesetz über die Standortförderung und die Regionalpolitik (StaReG), SRL 900",
+      "type": "gesetz",
+      "url": "https://srl.lu.ch/app/de/texts_of_law/900",
+      "version": "Änderung vom 23.03.2026, in Kraft 01.10.2026",
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "starev",
+      "title": "Verordnung zum Gesetz über die Standortförderung und die Regionalpolitik (StaReV), SRL 900a",
+      "type": "verordnung",
+      "url": "https://srl.lu.ch/app/de/texts_of_law/900a",
+      "version": "Erstfassung vom 01.09.2026, in Kraft 01.10.2026",
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Die FAQ der Webseite sagt, F&E-Abzug und LIB können nicht gleichzeitig genutzt werden. Das Handbuch (N 136-141) beschreibt stattdessen einen Abzug der Steuerersparnis. Beim Kanton klären."
+      "Die FAQ der Webseite sagt, F&E-Abzug und LIB können nicht gleichzeitig genutzt werden. Das Handbuch (N 136-141) beschreibt stattdessen einen Abzug der Steuerersparnis. Beim Kanton klären.",
+      "budget.annual_chf: 110 Mio. gilt nur für 2026 (Voranschlag 2026). Ab 2027 legt der Kantonsrat die Mittel jährlich fest. Betrag 2027 noch nicht publiziert.",
+      "contacts.phone: +41 41 228 51 83 ist die Hauptnummer rawi (Titelseite Handbuch). Laut N 176 gibt rawi Auskünfte per E-Mail. Klären, ob das Telefon für LIB-Fragen angezeigt werden soll."
     ]
   }
 }
