@@ -5,51 +5,60 @@
   "short_name": "ProKilowatt",
   "provider": {
     "name": "Bundesamt für Energie (BFE)",
-    "unit": "Geschäftsstelle ProKilowatt c/o CimArk",
-    "url": "https://www.prokw.ch/"
+    "unit": "Geschäftsstelle ProKilowatt c/o CimArk SA",
+    "url": "https://www.prokw.ch/de/"
   },
   "level": "bund",
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Ganze Schweiz."
+    "note": "Ganze Schweiz. Umsetzung und Stromeinsparung müssen in der Schweiz erfolgen (Bedingungen 2026, Pj-1d)."
   },
-  "purpose": "ProKilowatt fördert Massnahmen, die den Stromverbrauch in Industrie, Gewerbe, Dienstleistungen, Haushalten und Landwirtschaft senken.",
+  "purpose": "ProKilowatt fördert Stromeffizienzmassnahmen bei Geräten, Anlagen, Fahrzeugen und Gebäuden in Industrie, Gewerbe, Dienstleistungen, Haushalt und Landwirtschaft.",
   "entitlement": {
     "type": "wettbewerb",
-    "note": "Projekte werden im kompetitiven Verfahren nach Kosten-Nutzen ausgewählt.",
+    "note": "Auswahl nach Kostenwirksamkeit (Rp./kWh) in wöchentlichen Wettbewerbsrunden. Höchstens 85 % der Gesuche einer Runde erhalten einen Zuschlag.",
     "source": {
-      "source_id": "faq",
-      "locator": "Projekt vs. Programm"
+      "source_id": "bedingungen_projekte_2026",
+      "locator": "Kap. 2.1 Bewertung der Projekte; Kap. 1.2"
     }
   },
-  "budget": null,
+  "budget": {
+    "annual_chf": 40000000,
+    "year": 2026,
+    "oversubscription": "auswahl",
+    "note": "Budget 2026 für Projekte. Je CHF 20 Mio. für Projekte mit Förderbeitrag bis CHF 2 Mio. und für Projekte mit Förderbeitrag über CHF 2 Mio. bis CHF 6 Mio. Programme sind separat ausgeschrieben.",
+    "source": {
+      "source_id": "bedingungen_projekte_2026",
+      "locator": "Kap. 1.3 Budget und maximaler Förderbeitrag"
+    }
+  },
   "general_criteria": [],
   "general_exclusions": [],
   "instruments": [
     {
       "id": "projekte",
       "name": "ProKilowatt Projekte (Stromeffizienz)",
-      "description": "Förderbeitrag an Massnahmen, die den Stromverbrauch bestehender Anlagen senken, vergeben in einem wettbewerblichen Verfahren nach Kosten-Nutzen.",
+      "description": "Förderbeitrag an Massnahmen, die den Stromverbrauch bestehender Anlagen senken. Vergabe im wettbewerblichen Verfahren nach Kostenwirksamkeit.",
       "keywords": [
         "ProKilowatt",
         "Stromeffizienz",
-        "wettbewerbliche Ausschreibungen",
+        "Wettbewerbliche Ausschreibungen",
         "BFE"
       ],
       "instrument_type": "beitrag",
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Ausschreibung 2026 am 3. November 2025 lanciert. Einreichung laut FAQ laufend über das Online-Tool.",
+        "note": "Ausschreibung 2026: Projektgesuche vom 3.11.2025 bis 1.11.2026 jederzeit im Webtool. Ausschreibung 2027 noch nicht publiziert (Stand 24.10.2026).",
         "source": {
-          "source_id": "startseite",
-          "locator": "Ablauf"
+          "source_id": "bedingungen_projekte_2026",
+          "locator": "Kap. 1.2 und Kap. 1.5 Wichtige Termine (Tabelle 2)"
         }
       },
       "recipient": {
         "type": "gesuchsteller",
-        "note": "Projektträger"
+        "note": "Projekteigentümerschaft, d.h. Eigentümerschaft der Anlage."
       },
       "filter": {
         "applicant_types": [
@@ -57,7 +66,8 @@
           "kmu",
           "grossunternehmen",
           "gemeinde",
-          "eigentuemer"
+          "eigentuemer",
+          "privatperson"
         ],
         "employees_min": null,
         "employees_max": null,
@@ -71,32 +81,141 @@
       "eligible_items": [
         {
           "id": "bereiche",
-          "name": "Ersatz oder Optimierung",
-          "definition": "Beleuchtung, Kälte, Motoren, Pumpen, Lüftung, industrielle Prozesse, Gemeinden und weitere.",
+          "name": "Ersatz oder Optimierung bestehender Anlagen",
+          "definition": "Vor allem Beleuchtung, Kälte, Motoren, Pumpen, Lüftung, Industrietechnik, Gemeinden und andere.",
           "examples_positive": [],
-          "examples_negative": [
-            "Erneuerbare Energieproduktion",
-            "Reine CO2-Einsparung"
-          ],
+          "examples_negative": [],
           "source": {
             "source_id": "startseite",
-            "locator": null
+            "locator": "Abschnitt «Gefördert wird vor allem die Umrüstung von Anlagen in folgenden Bereichen»"
+          }
+        },
+        {
+          "id": "zusatzinvestition",
+          "name": "Zusatzinvestition an bestehender Anlage",
+          "definition": "Erweiterung eines bestehenden Geräts oder einer Anlage um eine Zusatzkomponente, die den Energieverbrauch deutlich senkt.",
+          "examples_positive": [
+            "Nachrüstung eines Frequenzumrichters an einem Elektromotor",
+            "Nachrüstung eines Gebäudeleitsystems zur bedarfsabhängigen Steuerung von Lüftung oder Beleuchtung"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 6 Glossar, «Zusatzinvestition»"
           }
         }
       ],
       "exclusions": [
         {
-          "text": "Massnahmen, die bereits umgesetzt sind oder sich mit einer Amortisation unter 4 Jahren selbst rechnen",
+          "text": "Massnahmen, die bereits umgesetzt sind oder wirtschaftlich sind (Payback unter 4 Jahren)",
           "source": {
             "source_id": "faq",
-            "locator": "Ausschlüsse"
+            "locator": "Generelle Fragen: «Welche Massnahmen werden nicht gefördert?»"
           }
         },
         {
-          "text": "Massnahmen ohne Stromeffizienz, etwa erneuerbare Energieproduktion",
+          "text": "Massnahmen, die keine Stromeffizienzmassnahmen sind, z.B. Produktion von erneuerbarer Energie oder CO2-Einsparung",
           "source": {
             "source_id": "faq",
-            "locator": "Ausschlüsse"
+            "locator": "Generelle Fragen: «Welche Massnahmen werden nicht gefördert?»"
+          }
+        },
+        {
+          "text": "Massnahmen im direkten Zusammenhang mit dem Neubau von Anlagen, Fahrzeugen und Gebäuden, auch Ersatzneubauten",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2d"
+          }
+        },
+        {
+          "text": "Einführung von Energie- oder Prozessmanagementsystemen inkl. Studien und Modellentwicklungen",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2f"
+          }
+        },
+        {
+          "text": "Ersatz von Elektrizität durch einen nicht erneuerbaren Energieträger; Neubau oder Erweiterung von Fernwärme-, Fernkälte- oder Anergienetzen",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2g"
+          }
+        },
+        {
+          "text": "Effizienzmassnahmen im Bereich der Messung (u.a. Smart Meter) sowie Spannungsabsenkung oder -stabilisierung",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2h und Pj-2i"
+          }
+        },
+        {
+          "text": "Massnahmen, die nur den Nutzen reduzieren, z.B. Verzicht oder tieferes Produktionsvolumen",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2n"
+          }
+        },
+        {
+          "text": "Bauliche Massnahmen an Gebäuden (u.a. Fensterersatz) oder Zusatzgeräte, die den Raumwärme- oder Kältebedarf senken",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2o"
+          }
+        },
+        {
+          "text": "Fördergegenstände des harmonisierten Fördermodells der Kantone (HFM), inkl. Elektroheizungen und Wohnungslüftung mit Wärmerückgewinnung",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2p"
+          }
+        },
+        {
+          "text": "Massnahmen an Wärmeerzeugungsanlagen für Raumheizung (z.B. Wärmepumpen)",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2q"
+          }
+        },
+        {
+          "text": "Ersatz von Haushaltsgeräten; Ersatz von Elektroboilern in Wohngebäuden",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2r"
+          }
+        },
+        {
+          "text": "Vorhaben von Einheiten der zentralen Bundesverwaltung",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2s"
+          }
+        },
+        {
+          "text": "Massnahmen, für die eine gesetzliche Pflicht besteht oder die nicht über die gesetzlichen Bestimmungen hinausgehen",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2u"
+          }
+        },
+        {
+          "text": "Ersatz von Anlagen, deren verbrauchsrelevante Komponenten in der Schweiz weiterbetrieben werden",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2v"
+          }
+        },
+        {
+          "text": "Massnahmen, deren Einsparungen unter «Effizienzsteigerungen durch Elektrizitätslieferanten» angerechnet werden",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2x"
+          }
+        },
+        {
+          "text": "Erhöhung von Produktionskapazitäten (Mehrkosten sind herauszurechnen)",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 3.1.1.1 Kapazitätserhöhung"
           }
         }
       ],
@@ -111,7 +230,7 @@
             "vorhaben_beschreibung"
           ],
           "question": {
-            "text": "Senkt Ihr Vorhaben den Stromverbrauch bestehender Anlagen?",
+            "text": "Senkt Ihr Vorhaben den Stromverbrauch von Geräten, Anlagen, Fahrzeugen oder Gebäuden?",
             "options": [
               "Ja",
               "Nein",
@@ -121,13 +240,13 @@
           "evidence": [],
           "source": {
             "source_id": "startseite",
-            "locator": "Voraussetzungen"
+            "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
           },
-          "notes": null
+          "notes": "Gleich in Bedingungen 2026, Pj-1a."
         },
         {
           "id": "umsetzung_schweiz",
-          "text": "Umsetzung in der Schweiz.",
+          "text": "Die Massnahme wird in der Schweiz umgesetzt.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -138,28 +257,59 @@
           "evidence": [],
           "source": {
             "source_id": "startseite",
-            "locator": "Voraussetzungen"
+            "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
           },
-          "notes": null
+          "notes": "Bedingungen 2026, Pj-1d: Umsetzung und Reduktion des Elektrizitätsverbrauchs erfolgen in der Schweiz."
         },
         {
           "id": "bestehende_anlage",
-          "text": "Bestehende Anlagen werden ersetzt oder optimiert.",
+          "text": "Die Massnahme ersetzt oder optimiert eine oder mehrere bestehende Installationen.",
           "kind": "muss",
           "about": "objekt",
           "applies_if": null,
           "profile_fields": [],
-          "question": null,
+          "question": {
+            "text": "Ersetzt oder optimiert Ihre Massnahme eine bestehende Anlage?",
+            "options": [
+              "Ja, bestehende Anlage",
+              "Nein, Neubau oder neue Anlage",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "startseite",
-            "locator": "Voraussetzungen"
+            "locator": "Abschnitt «Damit meine Stromsparmassnahme als Projekt förderfähig ist, muss sie …»"
           },
-          "notes": null
+          "notes": "Bedingungen 2026, Pj-2d: Massnahmen im direkten Zusammenhang mit Neubau sind nicht zugelassen."
+        },
+        {
+          "id": "eigentum_anlage",
+          "text": "Die Massnahme betrifft Anlagen im Eigentum der Projekteigentümerschaft. Die Eigentümerschaft bestätigt das Gesuch.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Gehört die Anlage, die Sie ersetzen oder optimieren, Ihrem Unternehmen?",
+            "options": [
+              "Ja",
+              "Nein, sie gehört einem Dritten",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Bestätigung der Anlageneigentümerschaft, falls ein Dritter das Gesuch einreicht"
+          ],
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2 (Einleitung) und Kap. 1.4"
+          },
+          "notes": "Kap. 2: «Geräten, Anlagen, Fahrzeugen und Gebäuden, die im Eigentum der Projekteigentümerschaft sind». Kap. 1.4: Reicht ein Dritter ein, ist eine Bestätigung der Anlageneigentümerschaft hochzuladen."
         },
         {
           "id": "nicht_begonnen",
-          "text": "Die Massnahme ist noch nicht begonnen: Material erst nach dem Zuschlag bestellen und Verträge erst danach unterzeichnen.",
+          "text": "Mit der Umsetzung wurde vor dem Zuschlagsentscheid nicht begonnen. Schon ein vorbehaltloser Ausführungsbeschluss, eine Auftragserteilung oder eine Materialbestellung gilt als Beginn.",
           "kind": "muss",
           "about": "zeit",
           "applies_if": null,
@@ -167,7 +317,7 @@
             "projektstart"
           ],
           "question": {
-            "text": "Haben Sie schon Material bestellt oder Verträge für die Massnahme unterschrieben?",
+            "text": "Haben Sie für die Massnahme schon einen Auftrag erteilt, Material bestellt oder Verträge unterschrieben?",
             "options": [
               "Nein",
               "Ja",
@@ -176,14 +326,40 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "startseite",
-            "locator": "Voraussetzungen"
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2t"
           },
-          "notes": null
+          "notes": "Gleich in FAQ «Ich habe bereits mit der Umsetzung angefangen (z.B. Materialbestellung), erhalte ich noch einen Förderbeitrag?»."
         },
         {
           "id": "amortisation_ueber_4",
-          "text": "Die Amortisationsdauer liegt über 4 Jahren.",
+          "text": "Die Paybackzeit (Investition geteilt durch jährliche Stromkosteneinsparung) beträgt mindestens 4 Jahre.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Wie lange dauert es, bis sich die Investition über die eingesparten Stromkosten bezahlt macht?",
+            "options": [
+              "Weniger als 4 Jahre",
+              "4 Jahre oder länger",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Stromrechnungen, falls ein individueller Strompreis verwendet wird"
+          ],
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2b; Kap. 3.4 Amortisationszeit / Paybackzeit"
+          },
+          "notes": "Kap. 3.4: «Alle Massnahmen mit einer Amortisationszeit < 4 Jahren werden vom BFE nicht gefördert.» Standard-Strompreis 0.15 CHF/kWh (vorsteuerabzugsberechtigt) bzw. 0.20 CHF/kWh (nicht vorsteuerabzugsberechtigt). Startseite sagt «mehr als 4 Jahren»."
+        },
+        {
+          "id": "kosten_nutzen_8_rp",
+          "text": "Die Kostenwirksamkeit (beantragter Förderbeitrag geteilt durch anrechenbare kumulierte Stromeinsparung) liegt bei höchstens 8 Rp./kWh.",
           "kind": "muss",
           "about": "kosten",
           "applies_if": null,
@@ -193,14 +369,14 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "startseite",
-            "locator": "Voraussetzungen"
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2b; Kap. 3.5 Kostenwirksamkeit"
           },
-          "notes": null
+          "notes": "Pj-2b: «Nicht zugelassen sind Projekte, die eine Kostenwirksamkeit grösser als 8 Rp./kWh haben.» Anrechenbare Einsparung = 0.75 × Standardnutzungsdauer × jährliche Einsparung (Kap. 3.3)."
         },
         {
-          "id": "kosten_nutzen_8_rp",
-          "text": "Kosten-Nutzen-Verhältnis höchstens 8 Rappen Förderbeitrag pro eingesparte kWh. Je tiefer, desto besser die Chancen.",
+          "id": "kostenwirksamkeit_wettbewerb",
+          "text": "Rangierung nach Kostenwirksamkeit: Je tiefer der Förderbeitrag pro eingesparte kWh, desto besser. Die besten 85 % einer Wettbewerbsrunde erhalten einen Zuschlag.",
           "kind": "bewertung",
           "about": "kosten",
           "applies_if": null,
@@ -210,14 +386,14 @@
           "question": null,
           "evidence": [],
           "source": {
-            "source_id": "faq",
-            "locator": "Payback und Kosten-Nutzen"
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 1.2 und Kap. 2.1 Bewertung der Projekte"
           },
           "notes": null
         },
         {
           "id": "investition_ueber_70000",
-          "text": "Einreichung als Projekt bei Investitionssummen über CHF 70'000. Darunter kann ein Programm mit garantierter Förderung passender sein.",
+          "text": "Ein Projektgesuch ist bei Investitionskosten über CHF 70'000 möglich. Bei Investitionskosten unter CHF 300'000 ist auch die Anmeldung bei einem ProKilowatt-Programm möglich (Beitrag garantiert, kein Wettbewerb).",
           "kind": "soll",
           "about": "kosten",
           "applies_if": null,
@@ -225,7 +401,7 @@
             "budget"
           ],
           "question": {
-            "text": "Wie hoch ist die geplante Investition?",
+            "text": "Wie hoch sind die geplanten Investitionskosten?",
             "options": [
               "Unter CHF 70'000",
               "CHF 70'000 bis 300'000",
@@ -236,114 +412,233 @@
           "evidence": [],
           "source": {
             "source_id": "faq",
-            "locator": "Projekt vs. Programm"
+            "locator": "Generelle Fragen: «Soll ich ein Projekt einreichen oder soll ich mich lieber bei einem laufenden ProKilowatt Programm anmelden?»"
           },
-          "notes": null
+          "notes": "Gleich auf Seite «Förderbeitrag erhalten», Abschnitt «Ein Projektgesuch einreichen»."
         }
       ],
       "funding": {
         "model": "prozent_kosten",
-        "summary": "Bis 30% der Investitionskosten, mindestens CHF 20'000 und höchstens CHF 2 Mio. Förderbeitrag.",
+        "summary": "Selbst festgelegter Förderbeitrag, höchstens 30 % der Investitionskosten. Mindestens CHF 20'000, höchstens CHF 6 Mio.",
         "cost_categories": [
           {
             "id": "investition",
             "name": "Investitionskosten",
             "rate_pct": 30,
-            "definition": null,
+            "definition": "Gesamtkosten inkl. Nebenkosten: Planungs- und Projektierungskosten, Personal- und Materialkosten für die stromrelevante Installation, Monitoringkosten. Interne Arbeit zu einem betriebsinternen Ansatz.",
             "source": {
-              "source_id": "faq",
-              "locator": "Förderhöhe"
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 2.2.1, Pj-1f; Kap. 3.1 Grundsätzliches zu den Investitionskosten"
             }
           }
         ],
         "units": [],
         "max_share_of_costs_pct": 30,
         "min_amount_chf": 20000,
-        "max_amount_chf": 2000000,
+        "max_amount_chf": 6000000,
         "cofinancing": null,
         "deductions": [
           {
-            "text": "Bleiben die Einsparungen unter der Prognose, wird anteilig gekürzt. Tiefere effektive Kosten führen zur Kürzung bei gleichem Förderprozentsatz.",
+            "text": "Werden die geplanten Stromeinsparungen nicht erreicht, wird der Beitrag anteilig gekürzt. Tiefere effektive Kosten senken den Beitrag bei gleicher Förderquote.",
             "source": {
-              "source_id": "faq",
-              "locator": "Berichterstattung und Auszahlung"
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 3.6 Fördervorbehalt; Kap. 5.3"
+            }
+          },
+          {
+            "text": "Sinkt die Paybackzeit wegen tieferer Kosten oder höherer Einsparungen unter 4 Jahre, kann der ganze Beitrag gestrichen werden.",
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 5.3 Mögliche Kürzungen der Förderbeiträge"
+            }
+          },
+          {
+            "text": "Fördermittel von Dritten gelten als nicht anrechenbare Investitionskosten und werden abgezogen.",
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 3.1.1.2 Fördermittel von Dritten"
             }
           }
         ],
         "payout_forms": [
-          "Auszahlung nach Projektende und Abnahme des Schlussberichts"
+          "Auszahlung bei Projektabschluss nach Freigabe des Schlussberichts"
         ],
-        "calculation_basis": "Förderbeitrag geteilt durch eingesparte kWh (Rp./kWh)",
+        "calculation_basis": "Anrechenbare Investitionskosten; Förderbeitrag vom Gesuchsteller selbst festgelegt",
         "example": null,
         "source": {
-          "source_id": "faq",
-          "locator": "Förderhöhe"
+          "source_id": "bedingungen_projekte_2026",
+          "locator": "Kap. 2.2.1, Pj-1f; Kap. 2.1"
         },
-        "note": null
+        "note": "Der Förderbeitrag unterliegt nicht der Mehrwertsteuer (Kap. 1.3). Vorsteuerabzug ist verhältnismässig zu kürzen (Kap. 5.7)."
       },
       "timing": {
         "deadline": {
-          "type": "vor_projektstart",
-          "rule": "Einreichung über das Online-Tool vor Bestellung und Vertragsabschluss. Umsetzung erst nach dem Zuschlagsentscheid.",
-          "next_dates": [],
+          "type": "ausschreibung",
+          "rule": "Projektgesuche jederzeit bis 1.11.2026 im Webtool. Umsetzung (Auftrag, Bestellung) erst nach dem Zuschlagsentscheid.",
+          "next_dates": [
+            "2026-11-01"
+          ],
           "relative": {
             "event": "projektstart",
             "direction": "vor",
             "offset_days": null
           },
           "source": {
-            "source_id": "faq",
-            "locator": "Umsetzungsfrist"
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 1.2; Kap. 1.5 Wichtige Termine (Tabelle 2); Kap. 2.2.2, Pj-2t"
           }
         },
         "assessment_period": null,
-        "decision_time": "Rund 3 bis 4 Wochen bei vollständigem Gesuch",
+        "decision_time": "Ca. 4 Wochen bei vollständigem Gesuch. Bei Rückfragen 2 Wochen länger plus Antwortzeit.",
         "max_duration_months": 36,
-        "repeat_limit": null,
-        "note": "Umsetzung innert 3 Jahren nach Entscheid. Abgelehnte Projekte erst in der nächsten Ausschreibung neu einreichbar."
+        "repeat_limit": "Das gleiche Projekt darf pro Ausschreibungsjahr nur einmal eingereicht werden.",
+        "note": "Projektbeginn spätestens 9 Monate nach Erhalt der Verfügung. Schlussbericht spätestens 6 Monate nach Abschluss der Umsetzung. Abgelehnte Projekte erst im folgenden Ausschreibungsjahr neu einreichbar."
       },
       "documents": {
         "application": [
           {
-            "name": "Antragsformular online",
+            "name": "Gesuchsformular im Webtool (webtool.prokw.ch)",
             "condition": null,
             "source": {
-              "source_id": "startseite",
-              "locator": "Ablauf"
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 1.4 Hinweise für die Einreichung eines Gesuchs"
+            }
+          },
+          {
+            "name": "Detaillierte Projektbeschreibung mit Zeit- und Kostenplan sowie Angaben zum Ist-Zustand",
+            "condition": null,
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 2.2.1, Pj-1h"
+            }
+          },
+          {
+            "name": "Beilagen: Bestandsaufnahme, Offerten, Berechnungen vom Stromverbrauch",
+            "condition": null,
+            "source": {
+              "source_id": "faq",
+              "locator": "Fragen zu Projekten: «Welche Informationen brauche ich, um ein Projektgesuch auszufüllen?»"
+            }
+          },
+          {
+            "name": "Nachweis der Additionalität",
+            "condition": null,
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 2.2.1, Pj-1l"
+            }
+          },
+          {
+            "name": "Bestätigung der Anlageneigentümerschaft",
+            "condition": "Falls ein Dritter das Gesuch abschliessend einreicht",
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 1.4 Hinweise für die Einreichung eines Gesuchs"
+            }
+          },
+          {
+            "name": "Feinanalyse nach Pflichtenheft von EnergieSchweiz",
+            "condition": "Beim Ersatz elektrischer Antriebssysteme über 200 kW pro Antrieb",
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 2.2.1, Pj-1r"
+            }
+          },
+          {
+            "name": "Stromrechnungen",
+            "condition": "Falls für die Paybackzeit der individuelle Strompreis verwendet wird",
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 3.4 Amortisationszeit / Paybackzeit"
             }
           }
         ],
         "completion": [
           {
-            "name": "Schlussbericht mit Nachweis der eingesparten Strommengen und Investitionskosten",
+            "name": "Schlussbericht mit Beschreibung der Umsetzung und Nachweis der Einsparungen und Investitionskosten",
             "condition": null,
             "source": {
               "source_id": "faq",
-              "locator": "Berichterstattung und Auszahlung"
+              "locator": "Fragen zu Projekten: «Wann wird der Förderbeitrag ausbezahlt?»"
+            }
+          },
+          {
+            "name": "Sämtliche Rechnungen für alle förderbaren Investitionen",
+            "condition": null,
+            "source": {
+              "source_id": "bedingungen_projekte_2026",
+              "locator": "Kap. 5.5 Anforderungen an den Kostennachweis"
             }
           }
         ]
       },
-      "obligations": [],
+      "obligations": [
+        {
+          "text": "Projektbeginn spätestens 9 Monate nach Erhalt der Verfügung, Laufzeit bis 36 Monate.",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.1, Pj-1e"
+          }
+        },
+        {
+          "text": "Schlussbericht spätestens 6 Monate nach Abschluss der Projektumsetzung einreichen.",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.1, Pj-1e"
+          }
+        },
+        {
+          "text": "Daten zu Alt- und Neuanlage und Nachweise der Stromeinsparung digital bereitstellen. Das BFE kann Projekte überprüfen.",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 5.4 Überprüfung und dazu benötigte Dokumentation"
+          }
+        },
+        {
+          "text": "Zustimmung zur Publikation von Empfänger, Projekt, Förderbeitrag und Kostenwirksamkeit sowie Teilnahme an Evaluationen.",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 1.6 Kommunikation"
+          }
+        },
+        {
+          "text": "Ersetzte Anlagen fachgerecht entsorgen oder ausführen; Nachweis auf Anfrage.",
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2.2.2, Pj-2v"
+          }
+        }
+      ],
       "levers": [
         {
-          "text": "Tieferen Förderbetrag pro eingesparte kWh beantragen, um die Zuschlagschance zu erhöhen",
+          "text": "Tieferen Förderbeitrag beantragen, um die Kostenwirksamkeit zu verbessern und die Zuschlagschance zu erhöhen",
           "affects_criteria": [
-            "kosten_nutzen_8_rp"
+            "kosten_nutzen_8_rp",
+            "kostenwirksamkeit_wettbewerb"
           ],
           "source": {
             "source_id": "faq",
-            "locator": "Payback und Kosten-Nutzen"
+            "locator": "Generelle Fragen: «Wie funktioniert das wettbewerbliche Ausschreibungsverfahren und was ist die Kostenwirksamkeit?»"
+          }
+        },
+        {
+          "text": "Mehrere gleichartige oder verschiedene Massnahmen an einem oder mehreren Standorten in einem Gesuch bündeln, um die minimale Projektgrösse zu erreichen",
+          "affects_criteria": [
+            "investition_ueber_70000"
+          ],
+          "source": {
+            "source_id": "bedingungen_projekte_2026",
+            "locator": "Kap. 2 Anforderungen und Bewertung der Projekte (Einleitung)"
           }
         }
       ],
       "links": {
-        "info": "https://www.prokw.ch/",
-        "apply": "https://www.prokw.ch/subvention/",
-        "form": "https://www.prokw.ch/informations-pratiques/"
+        "info": "https://www.prokw.ch/de/foerderbeitrag-erhalten/",
+        "apply": "https://webtool.prokw.ch/",
+        "form": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf"
       },
       "source": {
-        "source_id": "startseite",
+        "source_id": "bedingungen_projekte_2026",
         "locator": null
       }
     }
@@ -352,71 +647,117 @@
     {
       "with": "*",
       "type": "ausgeschlossen",
-      "text": "Beiträge Dritter (Kantone, Gemeinden, Energieversorger, Stiftungen) für dieselben Energiesparmassnahmen sind nicht zulässig. Zulässig sind Drittbeiträge für Massnahmen ohne Energieeinsparung.",
+      "text": "Für von ProKilowatt unterstützte Massnahmen keine Fördermittel Dritter (Kantone, Gemeinden, Elektrizitätswerke, Stiftungen). Ausnahme: Beiträge, die keine Energie- oder CO2-Einsparung bedingen (z.B. Sportförderung, Tourismusinfrastruktur). Keine Registrierung als CO2-Kompensationsprojekt.",
       "source": {
-        "source_id": "faq",
-        "locator": "Kumulation mit anderen Förderungen"
+        "source_id": "bedingungen_projekte_2026",
+        "locator": "Kap. 3.1.1.2 Fördermittel von Dritten"
       }
     }
   ],
   "application": {
     "channel": "online_portal",
-    "url": "https://www.prokw.ch/subvention/",
+    "url": "https://webtool.prokw.ch/",
     "steps": [
-      "Schnellberechnung der Förderung",
-      "Antrag online einreichen",
-      "Zuschlagsentscheid",
-      "Umsetzung innert 3 Jahren",
-      "Schlussbericht",
-      "Auszahlung"
+      "Gesuch jederzeit im Webtool einreichen",
+      "Nach 1 Woche allfällige Rückfragen",
+      "Nach rund 3 Wochen Zuschlagsentscheid je nach Rang",
+      "Projekt innert drei Jahren umsetzen und Einsparungen ausweisen",
+      "Schlussbericht einreichen, nach Prüfung Auszahlung"
     ],
-    "note": null,
+    "note": "Einreichung nur online, nicht per Post oder E-Mail. Sprache Deutsch, Französisch oder Italienisch.",
     "source": {
-      "source_id": "faq",
-      "locator": null
+      "source_id": "foerderbeitrag_erhalten",
+      "locator": "Abschnitt «Welches sind die wichtigsten Etappen, um Ihr Projekt einzureichen?»"
     }
   },
   "contacts": [
     {
-      "name": "ProKilowatt c/o CimArk",
-      "role": "Rue de l'Industrie 23, 1950 Sion",
+      "name": "Geschäftsstelle ProKilowatt c/o CimArk SA",
+      "role": "Fragen zur Ausschreibung und Beratung zur Projektidee. Rue de l'Industrie 23, 1950 Sion",
       "email": "prokilowatt@cimark.ch",
       "phone": "+41 58 332 21 42",
-      "url": "https://www.prokw.ch/"
+      "url": "https://www.prokw.ch/de/kontakt/"
     }
   ],
-  "legal_basis": [],
+  "legal_basis": [
+    {
+      "title": "Energieverordnung (EnV), Art. 19–22",
+      "ref": "SR 730.01",
+      "url": null
+    }
+  ],
   "sources": [
     {
       "id": "startseite",
-      "title": "ProKilowatt, Startseite",
+      "title": "ProKilowatt, Homepage (DE)",
       "type": "webseite",
-      "url": "https://www.prokw.ch/",
+      "url": "https://www.prokw.ch/de/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
       "id": "faq",
-      "title": "ProKilowatt, Häufige Fragen (FR)",
+      "title": "ProKilowatt, FAQ (DE)",
       "type": "faq",
-      "url": "https://www.prokw.ch/faq/",
+      "url": "https://www.prokw.ch/de/faq/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "bedingungen_projekte_2026",
+      "title": "BFE, Bedingungen für die Einreichung von Projekten 2026 (17. Wettbewerbliche Ausschreibungen)",
+      "type": "ausschreibung",
+      "url": "https://www.prokw.ch/wp-content/uploads/2025/10/ProKilowatt_Bedingungen_2026_Projekte.pdf",
+      "version": "2026",
+      "published": "2025-11-03",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "foerderbeitrag_erhalten",
+      "title": "ProKilowatt, Förderbeitrag erhalten (DE)",
+      "type": "webseite",
+      "url": "https://www.prokw.ch/de/foerderbeitrag-erhalten/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "news_ausschreibung_2026",
+      "title": "ProKilowatt, News «Ausschreibung 2026 gestartet»",
+      "type": "webseite",
+      "url": "https://www.prokw.ch/de/ausschreibung-2026-gestartet/",
+      "version": null,
+      "published": "2025-11-21",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "programm_einreichen",
+      "title": "ProKilowatt, Ein Programm einreichen (DE)",
+      "type": "webseite",
+      "url": "https://www.prokw.ch/de/ein-programm-einreichen/",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Ausschreibungsbedingungen 2026 (Seite informations-pratiques) konnten nicht gelesen werden.",
-      "Eingabetermine widersprüchlich: FAQ sagt laufend, nennt aber auch einen alten Zeitraum 2022/2023. Ob die Ausschreibung 2027 bereits läuft, ist offen.",
-      "Nicht erfasst: ProKilowatt-Programme (Einreichung über Programmträger mit garantierter Förderung).",
-      "Quellen auf Französisch, sinngemäss übersetzt.",
+      "availability/timing.deadline: Eingabefrist Projekte 2026 endet am 1.11.2026. Danach Status auf runde_geschlossen setzen, bis die Ausschreibung 2027 publiziert ist (Stand 24.10.2026 nicht angekündigt).",
+      "Nicht erfasst: Anmeldung bei laufenden ProKilowatt-Programmen (Investition unter CHF 300'000, Beitrag durch Programm festgelegt). Programmgesuche für Programmträger 2026 waren bis 1.5.2026 möglich (abgelaufen).",
+      "amortisation_ueber_4: Startseite sagt «mehr als 4 Jahren», Bedingungen Kap. 3.4 «minimal zulässige Amortisationszeit von 4 Jahren». Ob genau 4 Jahre zulässig sind, bestätigen.",
+      "timing.decision_time: Seite «Förderbeitrag erhalten» nennt 3 Wochen, FAQ ca. 4 Wochen, Bedingungen Kap. 1.2 «im besten Fall vier Wochen». Übernommen: ca. 4 Wochen.",
+      "legal_basis: URL der EnV auf Fedlex nicht roh prüfbar (nur JavaScript). Titel und Artikel aus Bedingungen 2026, Kap. 1.",
       "Quellen nicht lokal abgelegt."
     ]
   }
