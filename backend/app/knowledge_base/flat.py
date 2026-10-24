@@ -50,3 +50,11 @@ class FlatInstrument:
         if ref is None or source is None:
             return None
         return SourceLink(title=source.title, url=source.url, locator=ref.locator)
+
+    def criterion_source(self, ref: SourceRef | None) -> SourceLink:
+        """Like `source_link`, but never empty: falls back to the program's first source."""
+        link = self.source_link(ref)
+        if link is not None:
+            return link
+        first = self.program.sources[0]
+        return SourceLink(title=first.title, url=first.url, locator=None)

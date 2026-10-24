@@ -40,11 +40,17 @@ class Score:
     muss_met_share: Fraction
 
 
-def score(item: FlatInstrument, criteria: list[CriterionResult], exclusion_hit: bool) -> Score:
+def score(
+    item: FlatInstrument,
+    criteria: list[CriterionResult],
+    exclusion_hit: bool,
+    preferred_levers: Sequence[str] = (),
+) -> Score:
+    """`preferred_levers`: lever texts the matching step picked, used first if they apply."""
     muss = [c for c in criteria if c.kind == "muss" and c.state != "nicht_anwendbar"]
     failed = [c for c in muss if c.state == "nicht_erfuellt"]
     unknown_muss = [c for c in muss if c.state == "unbekannt"]
-    levers = {c.criterion_id: _lever(item, c) for c in criteria}
+    levers = {c.criterion_id: _lever(item, c, preferred_levers) for c in criteria}
 
     if any(levers[c.criterion_id] is None for c in failed) or exclusion_hit:
         fit: Fit = "passt_nicht"
@@ -72,13 +78,17 @@ class _Lever:
     source: SourceLink | None
 
 
-def _lever(item: FlatInstrument, criterion: CriterionResult) -> _Lever | None:
+def _lever(
+    item: FlatInstrument, criterion: CriterionResult, preferred: Sequence[str]
+) -> _Lever | None:
     """The lever text that could change this criterion: fixed for partner criteria,
     otherwise the first lever in the knowledge base. Never invented."""
     if criterion.scope == "filter":
         text = partner_lever(criterion.criterion_id)
         return _Lever(text, criterion.source) if text else None
-    levers = item.levers_for(criterion.criterion_id)
+    levers = sorted(
+        item.levers_for(criterion.criterion_id), key=lambda lever: lever.text not in preferred
+    )
     if not levers:
         return None
     return _Lever(levers[0].text, item.source_link(levers[0].source) or criterion.source)

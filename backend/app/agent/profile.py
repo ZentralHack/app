@@ -3,12 +3,12 @@ code checks: quotes must occur in the text, values must fit the field types and 
 knowledge base enums. Too vague input asks what the money is for."""
 
 import logging
-import re
 from typing import Any, Literal
 
 from pydantic import create_model
 
 from app.agent.normalize import CLARIFICATION, is_too_vague, normalize_profile
+from app.agent.text import occurs, squash
 from app.knowledge_base.profile_fields import FIELD_TYPES, field_descriptions
 from app.llm.client import LLMClient
 from app.llm.prompts import render
@@ -104,7 +104,7 @@ def _checked(name: str, field: ExtractedField, text: str) -> ProfileField:
         log.warning("Profilfeld %s: Wert passt nicht zum Feldtyp, verworfen", name)
         return _missing("Wert passte nicht zum Feldtyp und wurde verworfen.")
     status, quote, note = field.status, field.quote, field.note
-    if quote is not None and not _occurs(quote, text):
+    if quote is not None and not occurs(quote, squash(text)):
         quote = None
     if status == "angegeben" and quote is None:
         log.info("Profilfeld %s: Zitat nicht im Text, herabgestuft auf annahme", name)
@@ -127,14 +127,6 @@ def _coerce(name: str, value: Any) -> Any | None:
 
 def _missing(note: str) -> ProfileField:
     return ProfileField(value=None, status="fehlt", origin=None, quote=None, note=note)
-
-
-def _squash(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip().casefold()
-
-
-def _occurs(quote: str, text: str) -> bool:
-    return bool(quote.strip()) and _squash(quote) in _squash(text)
 
 
 def _join(*notes: str | None) -> str:
