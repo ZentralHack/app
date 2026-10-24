@@ -14,23 +14,23 @@
     "municipalities": [],
     "note": "Ganze Schweiz."
   },
-  "purpose": "Der Bund unterstützt Technologien, Anlagen, Verfahren und Produkte, welche die Umweltbelastung vermindern, damit Forschungsresultate schneller marktfähig werden.",
+  "purpose": "Der Bund unterstützt Pilot- und Demonstrationsprojekte in der Phase vor dem Markteintritt für Technologien, Anlagen, Verfahren und Produkte, welche die Umweltbelastung vermindern. So sollen Forschungsresultate rascher in marktfähige Technologien und Produkte umgesetzt werden.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Es besteht kein Rechtsanspruch auf Förderung.",
+    "note": "Es besteht kein Rechtsanspruch auf Fördermittel.",
     "source": {
       "source_id": "gesuch",
-      "locator": "Kriterien"
+      "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
     }
   },
   "budget": {
     "annual_chf": 1700000,
     "year": null,
     "oversubscription": "auswahl",
-    "note": "Rund CHF 1.7 Mio. pro Jahr, jährlich vom Parlament bewilligt.",
+    "note": "Rund CHF 1.7 Mio. pro Jahr. Der Kredit wird alljährlich durch die Eidgenössischen Räte bewilligt.",
     "source": {
       "source_id": "utf",
-      "locator": "Mittel"
+      "locator": "Einleitung (Absatz «Die zur Verfügung stehenden Mittel …»)"
     }
   },
   "general_criteria": [],
@@ -50,10 +50,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Expertenkommission tagt in der Regel zweimal pro Jahr.",
+        "note": "Sitzungen der Expertenkommission in der Regel 2 mal jährlich.",
         "source": {
           "source_id": "gesuch",
-          "locator": "Fristen"
+          "locator": "Genehmigungs-Verfahren"
         }
       },
       "recipient": {
@@ -84,23 +84,58 @@
         {
           "id": "themen",
           "name": "Themenbereiche",
-          "definition": "Abfall, Recycling und Rohstoffe, Biodiversität, Boden und Altlasten, Klima, Lärm, Luftreinhaltung, Gefahrenprävention, Ressourceneffizienz, Wasser.",
+          "definition": "Abfall, Recycling und Rohstoffe, Biodiversität (Natur- und Landschaftsschutz, Walderhaltung), Boden und Altlasten, Klima, Lärmbekämpfung, Luftreinhaltung, Gefahrenprävention (Schutz vor Naturgefahren und Sicherheit), Ressourceneffizienz und Wasser.",
           "examples_positive": [
-            "Pilot- und Demonstrationsprojekte vor Markteintritt",
-            "Machbarkeitsstudien"
+            "Pilot- und Demonstrationsprojekte (P&D)",
+            "Projekte zur Verbesserung der Ressourceneffizienz und Stärkung der Wettbewerbsfähigkeit der Schweizer Wirtschaft"
           ],
           "examples_negative": [],
           "source": {
             "source_id": "utf",
-            "locator": "Was wird gefördert"
+            "locator": "Welche Projekte werden unterstützt?"
+          }
+        },
+        {
+          "id": "machbarkeitsstudien",
+          "name": "Machbarkeitsstudien",
+          "definition": "Machbarkeitsstudien als Kleinprojekte. Unter CHF 50'000 beantragter UTF-Finanzhilfe kann das BAFU ausnahmsweise mehr als 50% der Kosten übernehmen.",
+          "examples_positive": [
+            "Machbarkeitsstudie"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend) und Genehmigungs-Verfahren («Kleinprojekt (Machbarkeitsstudie)»)"
           }
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "text": "Keine UTF-Finanzhilfen an Verwaltungseinheiten der zentralen Bundesverwaltung (z.B. BFE, swisstopo, BLW, Agroscope).",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Sonderregelung für Verwaltungseinheiten der zentralen Bundesverwaltung"
+          }
+        },
+        {
+          "text": "Keine Projekte, bei denen eine Verwaltungseinheit der zentralen oder dezentralen Bundesverwaltung (z.B. ETHZ, EPFL, PSI, WSL, Empa, Eawag) Initiantin, Hauptgesuchstellerin oder Hauptprojektträgerin ist.",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Für beide Typen von Verwaltungseinheiten gilt"
+          }
+        },
+        {
+          "text": "An Verwaltungseinheiten der dezentralen Bundesverwaltung nur, wenn das Projekt nicht in ihren Kernauftrag fällt und die Gesamtkosten mindestens CHF 50'000 betragen.",
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Sonderregelung für Verwaltungseinheiten der dezentralen Bundesverwaltung"
+          }
+        }
+      ],
       "criteria": [
         {
           "id": "umweltentlastung",
-          "text": "Das Vorhaben vermindert die Umweltbelastung im öffentlichen Interesse.",
+          "text": "Das Vorhaben entwickelt Anlagen oder Verfahren, welche die Umwelt im öffentlichen Interesse entlasten.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
@@ -117,56 +152,47 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "utf",
-            "locator": "Rechtsgrundlage"
+            "source_id": "formular",
+            "locator": "S. 7, Ziff. 3 «UTF-Kriterium Umweltnutzen»"
           },
-          "notes": null
+          "notes": "Formular: «Die UTF beschränkt sich auf die Entwicklung von Anlagen und Verfahren welche die Umwelt im öffentlichen Interesse entlasten.» Gesetzlich: Art. 49 Abs. 3 USG."
         },
         {
           "id": "vor_markteintritt",
-          "text": "Pilot- oder Demonstrationsprojekt vor dem Markteintritt oder Machbarkeitsstudie.",
-          "kind": "muss",
+          "text": "Das Vorhaben ist ein Pilot- und Demonstrationsprojekt in der Phase vor dem Markteintritt, ein Projekt zur Verbesserung der Ressourceneffizienz oder eine Machbarkeitsstudie.",
+          "kind": "soll",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "art_des_vorhabens"
           ],
-          "question": null,
+          "question": {
+            "text": "In welcher Phase ist Ihr Vorhaben?",
+            "options": [
+              "Pilot- oder Demonstrationsprojekt vor dem Markteintritt",
+              "Machbarkeitsstudie",
+              "Produkt ist bereits auf dem Markt",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "utf",
-            "locator": "Was wird gefördert"
+            "locator": "Einleitung und «Welche Projekte werden unterstützt?»"
           },
-          "notes": null
+          "notes": "Kein «nur» oder Ausschluss in der Quelle. Art. 49 Abs. 3 USG nennt auch Zertifizierung, Verifizierung und Markteinführung. Machbarkeitsstudien: Seite «Eingabe eines Gesuchs», Genehmigungs-Verfahren."
         },
         {
           "id": "kommerzielle_nutzung",
-          "text": "Eine glaubhafte kommerzielle Nutzung der Resultate ist dargelegt.",
+          "text": "Die spätere kommerzielle Verwertung der Resultate ist glaubhaft dargestellt.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
-          "evidence": [],
-          "source": {
-            "source_id": "gesuch",
-            "locator": "Kriterien"
-          },
-          "notes": null
-        },
-        {
-          "id": "eigenanteil_50",
-          "text": "Die Gesuchsteller tragen mindestens 50% der Projektkosten.",
-          "kind": "muss",
-          "about": "kosten",
-          "applies_if": null,
-          "profile_fields": [
-            "budget"
-          ],
           "question": {
-            "text": "Können Sie mindestens die Hälfte der Projektkosten selbst tragen?",
+            "text": "Wollen Sie die Resultate später kommerziell verwerten (Verkauf, Lizenzen, Dienstleistungen)?",
             "options": [
               "Ja",
               "Nein",
@@ -176,30 +202,61 @@
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Förderanteil"
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
           },
-          "notes": null
+          "notes": "Formular S. 9, Ziff. 8: Bei kostenloser Veröffentlichung der Ergebnisse ist eine Befreiung von der Rückzahlungspflicht möglich."
+        },
+        {
+          "id": "eigenanteil_50",
+          "text": "Die Gesuchsteller tragen mindestens 50% der förderungsberechtigten Gesamtprojektkosten. Bundesmittel zusammen in der Regel höchstens 50%.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Können Sie mit Ihren Projektpartnern mindestens die Hälfte der Projektkosten ohne Bundesgelder tragen?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
+          },
+          "notes": "Ausnahme: Bei Machbarkeitsstudien unter CHF 50'000 beantragter UTF-Finanzhilfe kann das BAFU ausnahmsweise mehr als 50% der Kosten übernehmen."
         },
         {
           "id": "dauer_4_jahre",
-          "text": "Projektdauer höchstens 4 Jahre.",
+          "text": "Die Projektdauer beträgt höchstens 4 Jahre.",
           "kind": "muss",
           "about": "zeit",
           "applies_if": null,
           "profile_fields": [
             "laufzeit"
           ],
-          "question": null,
+          "question": {
+            "text": "Wie lange dauert Ihr Projekt?",
+            "options": [
+              "Höchstens 4 Jahre",
+              "Länger als 4 Jahre",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Dauer"
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
           },
-          "notes": null
+          "notes": "Auch im Formular S. 1: «Projektdauer(max. 4 Jahre)»."
         },
         {
           "id": "bewertung_utf",
-          "text": "Umweltnutzen, Innovation, wirtschaftliche und technische Machbarkeit inkl. Marktaussichten, Wertschöpfung in der Schweiz, weitere Nachhaltigkeitsaspekte.",
+          "text": "Umweltnutzen, Innovation, wirtschaftliche und technische Machbarkeit inkl. Marktchancen, Wertschöpfung in der Schweiz sowie weitere Aspekte der Nachhaltigkeit.",
           "kind": "bewertung",
           "about": "vorhaben",
           "applies_if": null,
@@ -210,9 +267,9 @@
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Kriterien"
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
           },
-          "notes": null
+          "notes": "Das BAFU muss die Kriterien als erfüllt betrachten. Über CHF 50'000 entscheidet die Expertenkommission."
         }
       ],
       "funding": {
@@ -223,10 +280,10 @@
             "id": "projektkosten",
             "name": "Projektkosten",
             "rate_pct": 50,
-            "definition": "Machbarkeitsstudien unter CHF 50'000 ausnahmsweise mehr als 50%.",
+            "definition": "Bundesmittel in der Regel höchstens 50% der förderungsberechtigten Gesamtprojektkosten. Machbarkeitsstudien unter CHF 50'000 beantragter UTF-Finanzhilfe ausnahmsweise mehr als 50%.",
             "source": {
               "source_id": "gesuch",
-              "locator": "Förderanteil"
+              "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
             }
           }
         ],
@@ -236,69 +293,100 @@
         "max_amount_chf": 500000,
         "cofinancing": {
           "required": true,
-          "rule": "Mindestens 50% der Projektkosten durch die Gesuchsteller."
+          "rule": "Mindestens 50% der förderungsberechtigten Gesamtprojektkosten durch die Gesuchsteller."
         },
         "deductions": [
           {
-            "text": "Andere Bundesbeiträge zählen zur 50%-Grenze.",
+            "text": "UTF-Finanzhilfe und weitere Bundesbeiträge werden für die 50%-Grenze zusammengezählt.",
             "source": {
               "source_id": "gesuch",
-              "locator": "Förderanteil"
+              "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
+            }
+          },
+          {
+            "text": "Eigenleistungen von Verwaltungseinheiten der zentralen Bundesverwaltung zählen als Bundesbeiträge.",
+            "source": {
+              "source_id": "gesuch",
+              "locator": "Sonderregelung für Verwaltungseinheiten der zentralen Bundesverwaltung"
             }
           }
         ],
         "payout_forms": [
           "Finanzhilfe"
         ],
-        "calculation_basis": "Projektkosten mit UTF-Saläransätzen",
+        "calculation_basis": "Projektkosten. Personalkosten höchstens zu den UTF-Saläransätzen (CHF 28 bis 128 pro Stunde je Kategorie, inkl. 20% Sozialabgaben und 15% Overhead).",
         "example": null,
         "source": {
           "source_id": "gesuch",
-          "locator": "Förderanteil"
+          "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
         },
-        "note": "max_amount_chf gilt für Pilot- und Demonstrationsprojekte. Rückzahlung aus kommerziellen Erträgen bis zur Höhe des Beitrags."
+        "note": "max_amount_chf gilt für Pilot- und Demonstrationsprojekte. Saläransätze: Quelle «salaer» (Maximale Saläransätze für UTF-Projekte ab dem 1. Januar 2021)."
       },
       "timing": {
         "deadline": {
           "type": "unbekannt",
-          "rule": "Keine Eingabefristen genannt. Vorher Projektskizze (1 bis 2 Seiten) und Telefonat mit der Sektion Innovation.",
+          "rule": "Keine Eingabefristen genannt. Die Expertenkommission tagt je nach angekündigten Gesuchen und offenem Budget, in der Regel 2 mal jährlich.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "gesuch",
-            "locator": "Projektskizze"
+            "locator": "Genehmigungs-Verfahren"
           }
         },
         "assessment_period": null,
         "decision_time": null,
         "max_duration_months": 48,
         "repeat_limit": null,
-        "note": null
+        "note": "Maximale Projektdauer 4 Jahre (Seite «Eingabe eines Gesuchs», Kriterien)."
       },
       "documents": {
         "application": [
           {
-            "name": "Beitragsgesuch (Word), vollständig ausgefüllt",
+            "name": "Beitragsgesuch (Formular), vollständig ausgefüllt",
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Vorgehen Beitragsgesuch"
             }
           },
           {
-            "name": "Finanzteil (Excel)",
+            "name": "Beitragsgesuch Finanzteil (Excel)",
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Unterlagen"
+              "locator": "Vorgehen Beitragsgesuch"
             }
           },
           {
-            "name": "Projektskizze 1 bis 2 Seiten für die Vorabklärung",
+            "name": "Unterschriften aller aktiv beteiligten Gesuchsteller",
             "condition": null,
             "source": {
+              "source_id": "formular",
+              "locator": "S. 15, Ziff. 14 «Selbstdeklaration und Unterschriften»"
+            }
+          },
+          {
+            "name": "Projektskizze 1 bis 2 Seiten",
+            "condition": "Empfohlen für die Vorabklärung mit der Sektion Innovation",
+            "source": {
               "source_id": "gesuch",
-              "locator": "Projektskizze"
+              "locator": "Vorgehen Beitragsgesuch"
+            }
+          },
+          {
+            "name": "Businessplan",
+            "condition": "Wenn vorhanden",
+            "source": {
+              "source_id": "formular",
+              "locator": "S. 7, Ziff. 5"
+            }
+          },
+          {
+            "name": "Vergleichende Ökobilanz (LCA)",
+            "condition": "Wenn vorhanden (evtl.)",
+            "source": {
+              "source_id": "formular",
+              "locator": "S. 7, Ziff. 3"
             }
           }
         ],
@@ -306,44 +394,75 @@
       },
       "obligations": [
         {
-          "text": "Bei Kommerzialisierung Rückzahlung der Finanzhilfe aus den Erträgen bis zur Höhe des Beitrags.",
+          "text": "Bei kommerzieller Verwertung der Resultate ist die UTF-Finanzhilfe nach Massgabe der Erträge bis zur Höhe des Förderbeitrags zurückzuzahlen.",
           "source": {
             "source_id": "gesuch",
-            "locator": "Kriterien"
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
+          }
+        },
+        {
+          "text": "Die Rückerstattungspflicht gilt 10 Jahre nach Projektabschluss. Standard: 2 bis 6% des Umsatzes aus Verkauf oder Vermietung (je nach Beitragshöhe), 5% bei Engineeringleistungen, 10% bei Lizenzeinnahmen, 20% beim Verkauf von Patenten. Keine Verzinsung.",
+          "source": {
+            "source_id": "formular",
+            "locator": "S. 9, Ziff. 8 «Rückzahlungen»"
+          }
+        },
+        {
+          "text": "Patentrechtliche Fragen und die kommerzielle Verwertung müssen die Projektpartner spätestens bis zum Vertragsabschluss mit dem BAFU schriftlich geregelt haben.",
+          "source": {
+            "source_id": "formular",
+            "locator": "S. 10, Ziff. 9 «Patente/Lizenzen»"
+          }
+        },
+        {
+          "text": "Finanzhilfevertrag mit dem BAFU, inkl. Publikation auf www.aramis.admin.ch und Berichterstattungspflichten.",
+          "source": {
+            "source_id": "formular",
+            "locator": "S. 15, Ziff. 13"
           }
         }
       ],
       "levers": [
         {
-          "text": "Vor dem Gesuch Projektskizze einreichen und mit der Sektion Innovation telefonieren",
+          "text": "Vor dem Gesuch eine Projektskizze (1 bis 2 Seiten) einreichen und mit der Sektion Innovation telefonieren, um die Förderungswürdigkeit abzuklären",
           "affects_criteria": [
             "vor_markteintritt",
             "umweltentlastung"
           ],
           "source": {
             "source_id": "gesuch",
-            "locator": "Projektskizze"
+            "locator": "Vorgehen Beitragsgesuch"
           }
         },
         {
-          "text": "Gemischtes Team aus Unternehmen und Forschung bilden, ausdrücklich erwünscht",
+          "text": "Gemischtes Projektteam aus Unternehmen und Forschung bilden, darauf wird Wert gelegt",
           "affects_criteria": [
             "bewertung_utf"
           ],
           "source": {
             "source_id": "utf",
-            "locator": "Wer kann Gesuche stellen"
+            "locator": "Wer wird unterstützt?"
+          }
+        },
+        {
+          "text": "Als Machbarkeitsstudie unter CHF 50'000 beantragter UTF-Finanzhilfe einreichen, dann kann das BAFU ausnahmsweise mehr als 50% übernehmen",
+          "affects_criteria": [
+            "eigenanteil_50"
+          ],
+          "source": {
+            "source_id": "gesuch",
+            "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
           }
         }
       ],
       "links": {
         "info": "https://www.bafu.admin.ch/de/utf",
         "apply": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
-        "form": null
+        "form": "https://www.bafu.admin.ch/dam/de/sd-web/vAj0z6WRPEIu/UTF%20Beitragsgesuchformular%20Word%20deutsch.pdf"
       },
       "source": {
         "source_id": "utf",
-        "locator": null
+        "locator": "Welche Projekte werden unterstützt?"
       }
     }
   ],
@@ -351,31 +470,32 @@
     {
       "with": "*",
       "type": "abzug",
-      "text": "UTF-Finanzhilfe und andere Bundesbeiträge zusammen in der Regel höchstens 50% der Projektkosten.",
+      "text": "UTF-Finanzhilfe und weitere Bundesbeiträge zusammengezählt in der Regel höchstens 50% der Projektkosten.",
       "source": {
         "source_id": "gesuch",
-        "locator": "Förderanteil"
+        "locator": "Kriterien für die Vergabe von Fördermitteln (nicht abschliessend)"
       }
     }
   ],
   "application": {
-    "channel": "email",
+    "channel": "other",
     "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
     "steps": [
-      "Projektskizze und Telefonat mit der Sektion Innovation",
-      "Vollständiges Beitragsgesuch mit Finanzteil",
-      "Entscheid durch Sektion Innovation bzw. Expertenkommission"
+      "Empfohlen: Projektskizze (1 bis 2 Seiten) und Telefonat mit der Sektion Innovation",
+      "Schriftliches Beitragsgesuch mit Finanzteil einreichen (Deutsch, Französisch, Italienisch oder Englisch)",
+      "Bis CHF 50'000: Entscheid der Sektion Innovation mit der betroffenen Fachabteilung des BAFU",
+      "Über CHF 50'000: Prüfung auf Vollständigkeit, Präsentation an der Sitzung der Expertenkommission, Entscheid der Expertenkommission"
     ],
-    "note": null,
+    "note": "Die Quelle verlangt ein schriftliches Gesuch, nennt aber keinen Einreichungsweg.",
     "source": {
       "source_id": "gesuch",
-      "locator": null
+      "locator": "Vorgehen Beitragsgesuch und Genehmigungs-Verfahren"
     }
   },
   "contacts": [
     {
-      "name": "BAFU, Sektion Innovation",
-      "role": "3003 Bern",
+      "name": "BAFU, Abteilung Ökonomie und Innovation, Sektion Innovation",
+      "role": "Anlaufstelle Umwelttechnologieförderung, 3003 Bern",
       "email": "innovation@bafu.admin.ch",
       "phone": "+41 58 469 69 10",
       "url": "https://www.bafu.admin.ch/de/utf"
@@ -383,9 +503,9 @@
   ],
   "legal_basis": [
     {
-      "title": "Umweltschutzgesetz (USG)",
+      "title": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG), SR 814.01",
       "ref": "Art. 49 Abs. 3",
-      "url": null
+      "url": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_49"
     }
   ],
   "sources": [
@@ -395,8 +515,8 @@
       "type": "webseite",
       "url": "https://www.bafu.admin.ch/de/utf",
       "version": null,
-      "published": null,
-      "checked": "2026-10-23",
+      "published": "2025-09-05",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -405,21 +525,55 @@
       "type": "webseite",
       "url": "https://www.bafu.admin.ch/de/eingabe-eines-gesuchs",
       "version": null,
+      "published": "2025-07-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "formular",
+      "title": "Umwelttechnologieförderung – Beitragsgesuch (Formular), BAFU",
+      "type": "formular",
+      "url": "https://www.bafu.admin.ch/dam/de/sd-web/vAj0z6WRPEIu/UTF%20Beitragsgesuchformular%20Word%20deutsch.pdf",
+      "version": null,
+      "published": "2026-08-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "salaer",
+      "title": "Maximale Saläransätze für UTF-Projekte ab dem 1. Januar 2021, BAFU",
+      "type": "merkblatt",
+      "url": "https://www.bafu.admin.ch/dam/de/sd-web/vM-ZSwWmN-VK/salaeransaetze-projekteutf-ab010121.pdf",
+      "version": "26.01.2021",
+      "published": "2021-02-01",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "usg",
+      "title": "Bundesgesetz über den Umweltschutz (USG), SR 814.01, Stand 1. August 2026",
+      "type": "gesetz",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1984/1122_1122_1122/20260801/de/html/fedlex-data-admin-ch-eli-cc-1984-1122_1122_1122-20260801-de-html-3.html",
+      "version": "2026-08-01",
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Einreichungsweg (E-Mail?) nicht ausdrücklich genannt, channel email ist eine Annahme.",
+      "application.channel: Einreichungsweg (E-Mail, Post?) nicht genannt, nur «schriftliches Gesuch». Beim BAFU klären.",
       "Zusatzangebot: kostenlose begleitete Patentrecherche des IGE für geförderte Projekte, nicht als Instrument erfasst.",
-      "Entscheiddauer nicht genannt.",
-      "Quellen teilweise in englischer Zusammenfassung gelesen.",
-      "Quellen nicht lokal abgelegt."
+      "timing.decision_time: Entscheiddauer nicht genannt.",
+      "Quellen nicht lokal abgelegt.",
+      "funding.max_amount_chf: Seite «Eingabe eines Gesuchs» nennt max. CHF 0.5 Mio. für P&D, das Formular (1.8.2026) nennt «Anbegehrter Beitrag der UTF (max. 1 Million)». Beim BAFU klären.",
+      "application.steps: Seite «Eingabe eines Gesuchs» widersprüchlich. Kleinprojekt: Sektion Innovation entscheidet unter CHF 150'000. Projekt und Kriterien: Expertenkommission über CHF 50'000. Schwelle klären.",
+      "criteria.kommerzielle_nutzung: Seite sagt «muss glaubhaft dargestellt werden», Formular erlaubt Befreiung von der Rückzahlung bei kostenloser Veröffentlichung. Klären, ob nicht-kommerzielle Projekte möglich sind.",
+      "criteria.vor_markteintritt: auf soll gesetzt, da kein Ausschluss genannt und Art. 49 Abs. 3 USG auch die Markteinführung nennt. Prüfen.",
+      "budget.year: Jahr des Betrags CHF 1.7 Mio. nicht genannt (Seite vom 5.9.2025)."
     ]
   }
 }
