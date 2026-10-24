@@ -12,15 +12,15 @@
   "scope": {
     "cantons": [],
     "municipalities": [],
-    "note": "Schweizer Berggebiete. Welche Luzerner Gemeinden dazugehören, nennt die Quelle nicht."
+    "note": "Schweizer Berggebiet: vier Bergzonen und Sömmerungsgebiet, Richtlinie sind die Zonengrenzen des BLW. Prüfung per Adresse auf berghilfe.ch/gesuche/berggebiet. Ob und welche Luzerner Gemeinden dazugehören, nennt die Quelle nicht."
   },
   "purpose": "Die spendenfinanzierte Schweizer Berghilfe unterstützt Projekte, die Arbeitsplätze und Wertschöpfung im Berggebiet schaffen, wenn das Geld nicht ausreicht.",
   "entitlement": {
     "type": "kein_rechtsanspruch",
-    "note": "Der Projektausschuss ist in seiner Entscheidung frei.",
+    "note": "Der Projektausschuss ist in der Entscheidung frei.",
     "source": {
       "source_id": "gesuch",
-      "locator": "Ablauf"
+      "locator": "FAQ «Wie läuft der Prüfungsprozess bei der Schweizer Berghilfe ab?»"
     }
   },
   "budget": null,
@@ -30,7 +30,7 @@
     {
       "id": "projektbeitrag",
       "name": "Projektbeitrag der Schweizer Berghilfe",
-      "description": "À-fonds-perdu-Beitrag an zukunftsweisende Projekte im Berggebiet, wenn nach Eigenleistung und tragbarer Fremdfinanzierung eine Lücke bleibt.",
+      "description": "À-fonds-perdu-Beitrag an zukunftsweisende Projekte im Berggebiet, wenn nach Eigenmitteln, öffentlichen Fördergeldern und tragbaren Krediten eine Finanzierungslücke bleibt.",
       "keywords": [
         "Berghilfe",
         "Schweizer Berghilfe",
@@ -41,10 +41,10 @@
       "availability": {
         "status": "aktiv",
         "next_round": null,
-        "note": "Vom 1. Dezember 2026 bis 11. Januar 2027 keine neuen Gesuche wegen Systemumstellung. Neue Gesuche bis 30. November 2026 definitiv einreichen.",
+        "note": "Vom 1. Dezember 2026 bis 11. Januar 2027 keine neuen Gesuche wegen Systemumstellung. Neue oder eröffnete Gesuche bis 30. November 2026 definitiv einreichen.",
         "source": {
           "source_id": "gesuch",
-          "locator": "Dauer"
+          "locator": "Hinweis oben (Systemumstellung)"
         }
       },
       "recipient": {
@@ -59,7 +59,7 @@
           "verein_stiftung"
         ],
         "employees_min": null,
-        "employees_max": null,
+        "employees_max": 49,
         "company_age_years_max": null,
         "project_types": [
           "investition",
@@ -74,36 +74,181 @@
       "eligible_items": [
         {
           "id": "kategorien",
-          "name": "Gesuchskategorien",
-          "definition": "Landwirtschaft, Tourismus, Gewerbe, Wald und Holz, Energie, Bildung, Nothilfe.",
+          "name": "Gesuchsbereiche",
+          "definition": "Landwirtschaft, Gewerbe, Tourismus, Energie, Wald und Holz, Bildung, Nothilfe.",
           "examples_positive": [],
           "examples_negative": [],
           "source": {
-            "source_id": "startseite",
-            "locator": null
+            "source_id": "gesuch",
+            "locator": "«Wählen Sie Ihren Bereich»"
+          }
+        },
+        {
+          "id": "landwirtschaft",
+          "name": "Landwirtschaft",
+          "definition": "Landwirtschaftsprojekte von Einzelpersonen, Familien oder Gemeinschaften. Sie tragen zu hoher regionaler Wertschöpfung bei, fördern die Nutzung und Verarbeitung von Rohstoffen aus dem Berggebiet und schaffen oder erhalten Arbeitsplätze.",
+          "examples_positive": [],
+          "examples_negative": [
+            "Liegenschafts- oder Landkäufe ohne vorherige Pacht",
+            "Hofübernahmen innerhalb der Familie",
+            "Betriebe, die nicht direktzahlungsberechtigt sind",
+            "Nicht betriebsnotwendiger Wohnraum (z. B. für Vermietung an Dritte)",
+            "Vorsorgliche Maschinen-Ersatzanschaffungen",
+            "Ausschliesslich Installation von Batteriespeichern oder Solaranlagen",
+            "Laufende Betriebskosten oder Schulden"
+          ],
+          "source": {
+            "source_id": "landwirtschaft",
+            "locator": "«Landwirtschaftsprojekte mit Chance auf Unterstützung» und «Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "id": "gewerbe",
+          "name": "Gewerbe",
+          "definition": "Familienbetriebe, KMU und Genossenschaften. Die Projekte ermöglichen mindestens einer Person eine Existenzgrundlage im Berggebiet, schaffen Wertschöpfung in der Region und schliessen eine Marktlücke.",
+          "examples_positive": [
+            "Dorfläden"
+          ],
+          "examples_negative": [
+            "Reine Handelsbetriebe (ausser Dorfläden)",
+            "Bauhaupt- und Baunebengewerbe (ausser Holzwertschöpfungskette)",
+            "Firmen- oder Immobilienkäufe (ausser Dorfläden)",
+            "Schaffung von Wohnraum",
+            "Ausschliesslich Installation von Batteriespeichern oder Solaranlagen",
+            "Projekte der öffentlichen Hand oder Aufgaben der öffentlichen Hand",
+            "Freizeitangebote (z. B. Hallenbäder, Kletterhallen)",
+            "Marketingaktivitäten (z. B. Werbung)",
+            "Erarbeitung von Konzepten"
+          ],
+          "source": {
+            "source_id": "gewerbe",
+            "locator": "Einleitung und «Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "id": "tourismus",
+          "name": "Tourismus",
+          "definition": "Touristische Projekte, die Arbeitsplätze und Wertschöpfung im Berggebiet schaffen. Sie liegen abseits von touristischen Zentren und fördern den naturnahen Tourismus.",
+          "examples_positive": [
+            "Berghotel",
+            "Ferien auf dem Bauernhof",
+            "Schlafen im Stroh",
+            "Erlebniswege"
+          ],
+          "examples_negative": [
+            "Beherbergungsbetriebe mit 4- oder 5-Sterne-Klassifikation oder mit mehr als 50 Zimmern",
+            "Gruppenunterkünfte für Selbstversorger, Ferienwohnungen und -häuser",
+            "Berghütten im Eigentum einer national tätigen Organisation oder deren Sektionen",
+            "Umsatz hauptsächlich mit Gästen des alpinen Wintersports",
+            "Sport- und Freizeitangebote (z. B. Hallenbäder, Kletterhallen, Sportzentren)",
+            "Anlässe, Ausstellungen oder Festivals",
+            "Ausschliesslich Installation von Batteriespeichern oder Solaranlagen",
+            "Firmen- oder Immobilienkäufe",
+            "Marketingaktivitäten (z. B. Werbung und Websites)",
+            "Erarbeitung von Konzepten"
+          ],
+          "source": {
+            "source_id": "tourismus",
+            "locator": "Einleitung und «Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "id": "wald_holz",
+          "name": "Wald und Holz",
+          "definition": "Projekte, die mit der Nutzung und Verarbeitung des einheimischen Holzes Arbeitsplätze und Wertschöpfung im Berggebiet schaffen.",
+          "examples_positive": [
+            "Forstseilbahn",
+            "Sägereiausbau",
+            "Schreinermaschine"
+          ],
+          "examples_negative": [
+            "Ausschliesslich Pflege des Schutzwaldes",
+            "Firmen- oder Immobilienkäufe",
+            "Projekte der öffentlichen Hand oder Aufgaben der öffentlichen Hand"
+          ],
+          "source": {
+            "source_id": "wald_holz",
+            "locator": "Einleitung und «Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "id": "energie",
+          "name": "Energie",
+          "definition": "Investitionen von Betrieben im Berggebiet in Energieanlagen auf Basis erneuerbarer Ressourcen sowie Investitionen von Energiebetrieben zum Verkauf von Energie. Energie für den eigenen Betrieb: Gesuch im Bereich der Haupttätigkeit einreichen.",
+          "examples_positive": [
+            "Holzschnitzelheizung",
+            "Biogasanlage",
+            "Wasserkraftwerk",
+            "Fernwärmeverbund",
+            "Holzvergasungsanlage"
+          ],
+          "examples_negative": [],
+          "source": {
+            "source_id": "energie",
+            "locator": "«Unterstützung von Energie-Projekten», «Energie für den eigenen Betrieb», «Energie für den Verkauf gewinnen»"
+          }
+        },
+        {
+          "id": "bildung",
+          "name": "Bildung",
+          "definition": "Investitionen von privatwirtschaftlichen Bildungsinstitutionen, Kindertagesstätten und Spielgruppen sowie Beiträge an Unternehmen für die Aus- und Weiterbildung ihrer Mitarbeitenden.",
+          "examples_positive": [
+            "Ausstattung von Schulungsräumen",
+            "IT-Infrastruktur",
+            "Aus- und Weiterbildung von Mitarbeitenden"
+          ],
+          "examples_negative": [
+            "Bildungsangebote mit staatlichem Gesetzesauftrag (z. B. öffentliche Schule)",
+            "Staatliche Trägerschaft",
+            "Weiterbildungen im Rahmen der obligatorischen Schulzeit oder einer Erstausbildung",
+            "Fähigkeiten, die im Berggebiet keine Anwendung finden",
+            "Marketingaktivitäten (z. B. Werbung und Websites)",
+            "Erarbeitung von Konzepten"
+          ],
+          "source": {
+            "source_id": "bildung",
+            "locator": "Einleitung, «Unterstützung für Bildungsinstitutionen», «Beiträge an Aus- und Weiterbildungskosten»"
+          }
+        },
+        {
+          "id": "nothilfe",
+          "name": "Nothilfe",
+          "definition": "Hilfe nach Schadenereignissen nur, um Härtefälle zu vermeiden, und für wertvermehrende Investitionen über die reine Wiederinstandstellung hinaus.",
+          "examples_positive": [
+            "Breitere Brücke, um die Erschliessung zu verbessern"
+          ],
+          "examples_negative": [
+            "Über Versicherungsleistungen gedeckte Projekte",
+            "Reiner Wiederaufbau zerstörter Infrastruktur",
+            "Präventions- und Schutzbauten (z. B. Lawinenverbauungen, Strassengalerien)",
+            "Projekte der öffentlichen Hand"
+          ],
+          "source": {
+            "source_id": "nothilfe",
+            "locator": "Einleitung und «Projekte ohne Chancen auf Unterstützung»"
           }
         }
       ],
       "exclusions": [
         {
-          "text": "Darlehen (die Berghilfe vergibt nur A-fonds-perdu-Beiträge)",
+          "text": "Keine Darlehen. Die Berghilfe leistet nur A-fonds-perdu-Beiträge.",
           "source": {
             "source_id": "gesuch",
-            "locator": "Förderform"
+            "locator": "FAQ «Leistet die Schweizer Berghilfe auch eine Unterstützung in Form eines Darlehens?»"
           }
         },
         {
-          "text": "Parallele Gesuche bei mehreren Hilfswerken (Patenschaft für Berggemeinden, Coop Patenschaft) für dasselbe Projekt",
+          "text": "Keine laufenden Kosten oder Betriebsdefizite.",
           "source": {
-            "source_id": "gesuch",
-            "locator": "Nicht unterstützt"
+            "source_id": "gesuche",
+            "locator": "Voraussetzungen, «1. Restfinanzierung»"
           }
         }
       ],
       "criteria": [
         {
           "id": "berggebiet",
-          "text": "Das Projekt schafft Arbeitsplätze und Wertschöpfung im Schweizer Berggebiet. Die Region wird geprüft.",
+          "text": "Der Betrieb liegt in einer der vier Bergzonen oder im Sömmerungsgebiet oder bezieht einen wesentlichen Teil seiner Rohstoffe aus diesem Gebiet. Richtlinie sind die landwirtschaftlichen Zonengrenzen des BLW.",
           "kind": "muss",
           "about": "ort",
           "applies_if": null,
@@ -111,7 +256,32 @@
             "standort_gemeinde"
           ],
           "question": {
-            "text": "Liegt Ihr Betrieb in einem Berggebiet?",
+            "text": "Liegt Ihr Betrieb in einer Bergzone (I bis IV) oder im Sömmerungsgebiet?",
+            "options": [
+              "Ja",
+              "Nein, aber ein wesentlicher Teil der Rohstoffe stammt von dort",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuche",
+            "locator": "Voraussetzungen, «3. Berggebiet»"
+          },
+          "notes": "Prüfung per Adresse auf der Karte (Quelle BLW): berghilfe.ch/gesuche/berggebiet. Ob und welche Luzerner Gemeinden im Berggebiet liegen, nennt die Quelle nicht."
+        },
+        {
+          "id": "finanzielles_engagement",
+          "text": "Das finanzielle Engagement der Projektträgerschaft ist zwingend. Die Höhe der Eigenmittel hängt vom Projekt, der betrieblichen Situation und der finanziellen Ausgangslage ab.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Bringen Sie eigene Mittel ins Projekt ein?",
             "options": [
               "Ja",
               "Nein",
@@ -121,30 +291,13 @@
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Wer kann ein Gesuch stellen"
-          },
-          "notes": "Die Quelle definiert das Berggebiet nicht."
-        },
-        {
-          "id": "finanzielles_engagement",
-          "text": "Die Trägerschaft engagiert sich finanziell mit Eigenmitteln, Arbeit oder Material.",
-          "kind": "muss",
-          "about": "kosten",
-          "applies_if": null,
-          "profile_fields": [
-            "budget"
-          ],
-          "question": null,
-          "evidence": [],
-          "source": {
-            "source_id": "gesuch",
-            "locator": "Voraussetzungen"
+            "locator": "FAQ «Wie hoch müssen die vom Gesuchsteller eingesetzten Eigenmittel sein?»"
           },
           "notes": null
         },
         {
           "id": "finanzierungsluecke",
-          "text": "Nach Eigenleistungen und tragbaren Fremdfinanzierungen (öffentliche Investitionshilfen, Darlehen) bleibt ein Fehlbetrag.",
+          "text": "Die Berghilfe übernimmt nur eine Restfinanzierung. Zuerst sind eigene Mittel, öffentliche Fördergelder und alle anderen Finanzierungsquellen wie tragbare Bankkredite auszuschöpfen. Bleibt dann eine Finanzierungslücke, ist ein Gesuch möglich.",
           "kind": "muss",
           "about": "kosten",
           "applies_if": null,
@@ -161,31 +314,38 @@
           },
           "evidence": [],
           "source": {
-            "source_id": "gesuch",
-            "locator": "Voraussetzungen"
+            "source_id": "gesuche",
+            "locator": "Voraussetzungen, «1. Restfinanzierung»"
           },
           "notes": null
         },
         {
           "id": "projekt_konkret",
-          "text": "Das Projekt ist konkret und die Planung fortgeschritten.",
+          "text": "Die Projektplanung ist fortgeschritten und alle nötigen Informationen und Unterlagen liegen vor. Erst dann folgen Besuch vor Ort und Entscheid.",
           "kind": "muss",
           "about": "vorhaben",
           "applies_if": null,
           "profile_fields": [
             "vorhaben_beschreibung"
           ],
-          "question": null,
+          "question": {
+            "text": "Wie weit ist die Planung Ihres Projekts?",
+            "options": [
+              "Planung fortgeschritten",
+              "Erst Idee oder Konzept",
+              "Weiss nicht"
+            ]
+          },
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Voraussetzungen"
+            "locator": "FAQ «Wie lange dauert es, bis ein Entscheid der Schweizer Berghilfe vorliegt?»"
           },
-          "notes": null
+          "notes": "Die Quelle nennt dies «Voraussetzungen» für Besuch und Entscheid. In Gewerbe, Tourismus und Bildung wird die Erarbeitung von Konzepten nicht unterstützt."
         },
         {
           "id": "finanzielle_notwendigkeit",
-          "text": "Es besteht eine finanzielle Notwendigkeit. Die gesamte finanzielle Situation wird geprüft, ohne feste Grenzen.",
+          "text": "Die Berghilfe unterstützt nur Projekte, bei denen die finanzielle Notwendigkeit gegeben ist. Es gibt keine fixen Einkommens- oder Vermögenslimiten; die gesamte finanzielle und betriebliche Situation wird geprüft.",
           "kind": "muss",
           "about": "unternehmen",
           "applies_if": null,
@@ -196,14 +356,87 @@
           "evidence": [],
           "source": {
             "source_id": "gesuch",
-            "locator": "Voraussetzungen"
+            "locator": "FAQ «Besteht eine Einkommens- und Vermögenslimite für Gesuchsteller?»"
           },
           "notes": null
+        },
+        {
+          "id": "privatwirtschaftliche_basis",
+          "text": "Projekte von politischen Gemeinden und Kirchgemeinden sind ausgeschlossen, ebenso Organisationen, die mehrheitlich in deren Besitz sind.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "rechtsform"
+          ],
+          "question": {
+            "text": "Ist Ihre Organisation eine politische Gemeinde oder Kirchgemeinde oder mehrheitlich in deren Besitz?",
+            "options": [
+              "Nein",
+              "Ja",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuche",
+            "locator": "Voraussetzungen, «2. Privatwirtschaftliche Basis»"
+          },
+          "notes": null
+        },
+        {
+          "id": "nicht_abgeschlossen",
+          "text": "Das Projekt ist noch nicht abgeschlossen. Bereits abgeschlossene Projekte werden nicht unterstützt.",
+          "kind": "muss",
+          "about": "zeit",
+          "applies_if": null,
+          "profile_fields": [
+            "projektstart"
+          ],
+          "question": {
+            "text": "Ist Ihr Projekt bereits abgeschlossen?",
+            "options": [
+              "Nein, noch nicht begonnen",
+              "Begonnen, aber nicht abgeschlossen",
+              "Ja, bereits abgeschlossen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gesuche",
+            "locator": "Voraussetzungen, «1. Restfinanzierung»"
+          },
+          "notes": "Ob ein begonnenes, aber nicht abgeschlossenes Projekt unterstützt wird, nennt die Quelle nicht."
+        },
+        {
+          "id": "weniger_50_vollzeitstellen",
+          "text": "Projekte von Unternehmen mit 50 oder mehr Vollzeitangestellten werden nicht unterstützt.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Wie viele Vollzeitstellen hat Ihr Unternehmen?",
+            "options": [
+              "Weniger als 50 Vollzeitstellen",
+              "50 oder mehr Vollzeitstellen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "gewerbe",
+            "locator": "«Projekte ohne Chancen auf Unterstützung»"
+          },
+          "notes": "Gleich auf den Seiten Tourismus, Wald und Holz und Bildung. Die WLAN-Seite nennt für alle Projekte «mindestens einer und maximal 49 Vollzeitstellen». Die Seite Landwirtschaft nennt keine Grenze."
         }
       ],
       "funding": {
         "model": "individuell",
-        "summary": "À-fonds-perdu-Beitrag, Höhe nach Bedarf zur Schliessung der Finanzierungslücke.",
+        "summary": "À-fonds-perdu-Beitrag. Keine allgemein gültige Regel zur Höhe: Die Berghilfe prüft die Übernahme des Fehlbetrags nach Eigenleistung und tragbarer Fremdfinanzierung.",
         "cost_categories": [],
         "units": [],
         "max_share_of_costs_pct": null,
@@ -211,36 +444,36 @@
         "max_amount_chf": null,
         "cofinancing": {
           "required": true,
-          "rule": "Eigenleistung je nach Projekt und betrieblicher Situation."
+          "rule": "Das finanzielle Engagement der Projektträgerschaft ist zwingend. Die Höhe hängt vom Projekt, der betrieblichen Situation und der finanziellen Ausgangslage ab."
         },
         "deductions": [],
         "payout_forms": [
           "À-fonds-perdu-Beitrag"
         ],
-        "calculation_basis": "Verbleibender Fehlbetrag",
+        "calculation_basis": "Fehlbetrag (Restkosten) nach Eigenleistung (Eigenmittel, Arbeit, Material) und tragbarer Fremdfinanzierung (öffentliche Investitionshilfen, Bank- und weitere Darlehen).",
         "example": null,
         "source": {
           "source_id": "gesuch",
-          "locator": "Förderform und Höhe"
+          "locator": "FAQ «Wie hoch fällt der Berghilfe-Beitrag aus?»"
         },
-        "note": null
+        "note": "Keine laufenden Kosten oder Betriebsdefizite."
       },
       "timing": {
         "deadline": {
           "type": "laufend",
-          "rule": "Online-Gesuch jederzeit, ausser vom 1.12.2026 bis 11.1.2027.",
+          "rule": "Abgeleitet aus Gesuch einreichen (Schritte, Hinweis Systemumstellung): Die Quelle nennt keine Eingabefrist, Gesuche gehen online ein. Ausnahme: vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche; neue oder eröffnete Gesuche bis 30.11.2026 definitiv einreichen.",
           "next_dates": [],
           "relative": null,
           "source": {
             "source_id": "gesuch",
-            "locator": "Dauer"
+            "locator": "Hinweis oben (Systemumstellung); «In drei Schritten zum Gesuch»"
           }
         },
         "assessment_period": null,
-        "decision_time": "In der Regel sechs bis acht Wochen nach vollständigem Dossier, Projektausschuss tagt monatlich",
+        "decision_time": "Innert sechs bis acht Wochen nach vollständigem Dossier. Der Projektausschuss tagt einmal im Monat.",
         "max_duration_months": null,
         "repeat_limit": null,
-        "note": "Folgeinvestitionen und Kostenüberschreitungen bei derselben Organisation einreichen."
+        "note": "Bei Folgeinvestitionen oder Kostenüberschreitungen wieder an dieselbe Organisation gelangen."
       },
       "documents": {
         "application": [
@@ -249,7 +482,79 @@
             "condition": null,
             "source": {
               "source_id": "gesuch",
-              "locator": "Ablauf"
+              "locator": "«In drei Schritten zum Gesuch», Zweiter Schritt"
+            }
+          },
+          {
+            "name": "Projektbeschrieb oder Businessplan",
+            "condition": "Landwirtschaft: Projektbeschrieb",
+            "source": {
+              "source_id": "gewerbe",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Kosten des Projekts",
+            "condition": null,
+            "source": {
+              "source_id": "gewerbe",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Finanzierung des Projekts",
+            "condition": null,
+            "source": {
+              "source_id": "gewerbe",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Jahresrechnung",
+            "condition": "Gewerbe, Tourismus, Wald und Holz, Bildungsinstitutionen",
+            "source": {
+              "source_id": "gewerbe",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Fragebogen Dorfläden",
+            "condition": "Nur Dorfläden",
+            "source": {
+              "source_id": "gewerbe",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Steuererklärung, Steuerveranlagung und betriebswirtschaftliche Buchhaltung",
+            "condition": "Landwirtschaft",
+            "source": {
+              "source_id": "landwirtschaft",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Betriebswirtschaftlicher Bericht der kantonalen Betriebsberatung",
+            "condition": "Landwirtschaft",
+            "source": {
+              "source_id": "landwirtschaft",
+              "locator": "«Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Projekt- oder Kursbeschrieb, Kosten und Finanzierung des Kurses, private Steuerveranlagung",
+            "condition": "Beiträge an Aus- und Weiterbildungskosten",
+            "source": {
+              "source_id": "bildung",
+              "locator": "«Gesuch vorbereiten», Aus- und Weiterbildungen"
+            }
+          },
+          {
+            "name": "Begründung, weshalb die Weiterbildung betriebsnotwendig ist, und Angabe der teilnehmenden Mitarbeitenden",
+            "condition": "Beiträge an Aus- und Weiterbildungskosten; Gesuch durch das Unternehmen",
+            "source": {
+              "source_id": "bildung",
+              "locator": "«Beiträge an Aus- und Weiterbildungskosten»"
             }
           }
         ],
@@ -258,12 +563,326 @@
       "obligations": [],
       "levers": [],
       "links": {
-        "info": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
+        "info": "https://www.berghilfe.ch/gesuche",
         "apply": "https://gesuch.berghilfe.ch/?locale=de",
         "form": null
       },
       "source": {
-        "source_id": "gesuch",
+        "source_id": "gesuche",
+        "locator": null
+      }
+    },
+    {
+      "id": "wlan-hotellerie-gastro",
+      "name": "WLAN für Hotels und Gastrobetriebe",
+      "description": "Beitrag an Anschaffung, Erneuerung oder Erweiterung eines WLANs für Gäste in Gasthäusern, Hotels, Campings und Restaurants im Berggebiet.",
+      "keywords": [
+        "WLAN",
+        "Berghilfe WLAN",
+        "WLAN-Programm",
+        "WLAN für Hotels"
+      ],
+      "instrument_type": "beitrag",
+      "availability": {
+        "status": "aktiv",
+        "next_round": null,
+        "note": "Vom 1. Dezember 2026 bis 11. Januar 2027 keine neuen Gesuche wegen Systemumstellung. Neue oder eröffnete Gesuche bis 30. November 2026 definitiv einreichen.",
+        "source": {
+          "source_id": "wlan",
+          "locator": "Hinweis oben (Systemumstellung)"
+        }
+      },
+      "recipient": {
+        "type": "gesuchsteller",
+        "note": null
+      },
+      "filter": {
+        "applicant_types": [
+          "kmu",
+          "unternehmen"
+        ],
+        "employees_min": 1,
+        "employees_max": 49,
+        "company_age_years_max": null,
+        "project_types": [
+          "digitalisierung",
+          "investition"
+        ],
+        "required_partners": [],
+        "sectors": [
+          "hotellerie",
+          "gastronomie"
+        ]
+      },
+      "eligible_items": [
+        {
+          "id": "wlan_investition",
+          "name": "WLAN-Investition",
+          "definition": "Anschaffung eines neuen WLANs sowie Optimierung oder Erweiterung eines bestehenden WLANs in oder am Betriebsgebäude. Nur einmalige Investitionen.",
+          "examples_positive": [
+            "Neuanschaffung",
+            "Erneuerung",
+            "Erweiterung des WLANs"
+          ],
+          "examples_negative": [
+            "Laufende Kosten wie Support, Serviceverträge oder Lizenzen",
+            "Öffentliches WLAN für die breite Öffentlichkeit",
+            "Anschlüsse, die die Grundversorgung im Fernmeldebereich betreffen"
+          ],
+          "source": {
+            "source_id": "wlan",
+            "locator": "Einleitung; FAQ «Leistet die Schweizer Berghilfe auch Unterstützung an laufende WLAN-Kosten?», «Wird auch ein öffentliches WLAN unterstützt?»"
+          }
+        }
+      ],
+      "exclusions": [
+        {
+          "text": "Betriebe, die nur im Winter geöffnet sind",
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Betriebe oder Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "text": "Gruppenunterkünfte, Ferienwohnungen oder Ferienhäuser",
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Betriebe oder Projekte ohne Chancen auf Unterstützung»"
+          }
+        },
+        {
+          "text": "Berghütten im Eigentum einer national tätigen Organisation",
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Betriebe oder Projekte ohne Chancen auf Unterstützung»"
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "wlan_bergzone",
+          "text": "Der Betrieb liegt in der Bergzone 2, 3, 4 oder im Sömmerungsgebiet.",
+          "kind": "muss",
+          "about": "ort",
+          "applies_if": null,
+          "profile_fields": [
+            "standort_gemeinde"
+          ],
+          "question": {
+            "text": "Liegt Ihr Betrieb in der Bergzone II, III, IV oder im Sömmerungsgebiet?",
+            "options": [
+              "Ja",
+              "Nein, in Bergzone I",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Unsere drei grundlegenden Kriterien für eine Unterstützung»"
+          },
+          "notes": "Die Seiten Gesuche und Berggebiet nennen sonst alle vier Bergzonen."
+        },
+        {
+          "id": "wlan_privatwirtschaftlich",
+          "text": "Der Betrieb ist privatwirtschaftlich geführt und nicht im Aufgabenbereich der öffentlichen Hand tätig.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "rechtsform"
+          ],
+          "question": {
+            "text": "Ist Ihr Betrieb privatwirtschaftlich geführt?",
+            "options": [
+              "Ja",
+              "Nein, öffentliche Hand",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Unsere drei grundlegenden Kriterien für eine Unterstützung»"
+          },
+          "notes": null
+        },
+        {
+          "id": "wlan_vollzeitstellen",
+          "text": "Der Betrieb ist ein Klein- oder Kleinstunternehmen mit mindestens einer und höchstens 49 Vollzeitstellen.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "mitarbeitende"
+          ],
+          "question": {
+            "text": "Wie viele Vollzeitstellen hat Ihr Betrieb?",
+            "options": [
+              "Weniger als eine Vollzeitstelle",
+              "1 bis 49 Vollzeitstellen",
+              "50 oder mehr Vollzeitstellen",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Unsere drei grundlegenden Kriterien für eine Unterstützung»"
+          },
+          "notes": null
+        },
+        {
+          "id": "wlan_klassifikation",
+          "text": "Der Betrieb hat höchstens eine 3-Sterne-Superior-Klassifikation. Übernachtungsbetriebe haben höchstens 49 Zimmer.",
+          "kind": "muss",
+          "about": "unternehmen",
+          "applies_if": null,
+          "profile_fields": [
+            "zimmer_betten"
+          ],
+          "question": {
+            "text": "Hat Ihr Betrieb höchstens 3 Sterne Superior und, falls Übernachtungsbetrieb, höchstens 49 Zimmer?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Voraussetzungen für eine Unterstützung»"
+          },
+          "notes": null
+        },
+        {
+          "id": "wlan_rechnung",
+          "text": "Es liegt bereits eine Rechnung der WLAN-Investition vor.",
+          "kind": "muss",
+          "about": "dokumente",
+          "applies_if": null,
+          "profile_fields": [],
+          "question": {
+            "text": "Liegt die Rechnung für die WLAN-Investition schon vor?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [
+            "Rechnung der WLAN-Investition"
+          ],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Voraussetzungen für eine Unterstützung»"
+          },
+          "notes": null
+        },
+        {
+          "id": "wlan_mindestkosten",
+          "text": "Die Investitionskosten betragen mindestens CHF 1000 exkl. MwSt.",
+          "kind": "muss",
+          "about": "kosten",
+          "applies_if": null,
+          "profile_fields": [
+            "budget"
+          ],
+          "question": {
+            "text": "Kostet die WLAN-Investition mindestens CHF 1000 ohne MwSt.?",
+            "options": [
+              "Ja",
+              "Nein",
+              "Weiss nicht"
+            ]
+          },
+          "evidence": [],
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Voraussetzungen für eine Unterstützung»"
+          },
+          "notes": null
+        }
+      ],
+      "funding": {
+        "model": "prozent_kosten",
+        "summary": "50 % der WLAN-Investitionskosten, höchstens CHF 10 000.",
+        "cost_categories": [
+          {
+            "id": "wlan",
+            "name": "WLAN-Investition",
+            "rate_pct": 50,
+            "definition": "Einmalige Investitionskosten für WLAN-Infrastruktur, mindestens CHF 1000 exkl. MwSt.",
+            "source": {
+              "source_id": "wlan",
+              "locator": "Einleitung; «Voraussetzungen für eine Unterstützung»"
+            }
+          }
+        ],
+        "units": [],
+        "max_share_of_costs_pct": 50,
+        "min_amount_chf": null,
+        "max_amount_chf": 10000,
+        "cofinancing": null,
+        "deductions": [],
+        "payout_forms": [],
+        "calculation_basis": "WLAN-Investitionskosten gemäss Rechnung",
+        "example": null,
+        "source": {
+          "source_id": "wlan",
+          "locator": "Einleitung («übernimmt die Schweizer Berghilfe 50 Prozent der Kosten bis maximal CHF 10 000.–»)"
+        },
+        "note": "Auch bei Investitionen über CHF 20 000 bleibt der Beitrag auf CHF 10 000 begrenzt."
+      },
+      "timing": {
+        "deadline": {
+          "type": "nach_abschluss",
+          "rule": "Abgeleitet aus WLAN-Seite, Voraussetzungen («Es muss bereits eine Rechnung der WLAN-Investition vorliegen»): Gesuch nach der Investition stellen. Vom 1.12.2026 bis 11.1.2027 keine neuen Gesuche.",
+          "next_dates": [],
+          "relative": null,
+          "source": {
+            "source_id": "wlan",
+            "locator": "«Voraussetzungen für eine Unterstützung»; Hinweis oben (Systemumstellung)"
+          }
+        },
+        "assessment_period": null,
+        "decision_time": null,
+        "max_duration_months": null,
+        "repeat_limit": null,
+        "note": "Prüfung durch die Geschäftsstelle zusammen mit GastroSuisse. Entscheid per Post."
+      },
+      "documents": {
+        "application": [
+          {
+            "name": "Rechnung der WLAN-Investition",
+            "condition": null,
+            "source": {
+              "source_id": "wlan",
+              "locator": "«Dokumente für das Gesuch vorbereiten»"
+            }
+          },
+          {
+            "name": "Jahresrechnung oder Buchhaltungsabschluss des Betriebs",
+            "condition": null,
+            "source": {
+              "source_id": "wlan",
+              "locator": "«Dokumente für das Gesuch vorbereiten»"
+            }
+          }
+        ],
+        "completion": []
+      },
+      "obligations": [],
+      "levers": [],
+      "links": {
+        "info": "https://www.berghilfe.ch/gesuche/wlan-unterstuetzung",
+        "apply": "https://gesuch.berghilfe.ch/?locale=de",
+        "form": null
+      },
+      "source": {
+        "source_id": "wlan",
         "locator": null
       }
     }
@@ -272,10 +891,19 @@
     {
       "with": "bg-mitte",
       "type": "empfohlen_vorher",
-      "text": "Gewerbliche Betriebe beantragen verzinsliche Darlehen bzw. Bürgschaften bei den gewerblichen Bürgschaftsgenossenschaften. Die Berghilfe prüft nur den verbleibenden Fehlbetrag.",
+      "text": "Abgeleitet aus Gesuch einreichen, FAQ Darlehen (betrifft den Projektbeitrag): Die Berghilfe vergibt keine Darlehen; gewerbliche Betriebe kontaktieren die zuständigen gewerblichen Bürgschaftsgenossenschaften (für Luzern laut bg-mitte.json die BG Mitte). Die Berghilfe prüft danach den verbleibenden Fehlbetrag.",
       "source": {
         "source_id": "gesuch",
-        "locator": "Förderform und Höhe"
+        "locator": "FAQ «Leistet die Schweizer Berghilfe auch eine Unterstützung in Form eines Darlehens?»"
+      }
+    },
+    {
+      "with": "berghilfe:projektbeitrag",
+      "type": "bedingt",
+      "text": "WLAN-Beitrag trotz kürzlicher Berghilfe-Unterstützung möglich, wenn die WLAN-Investition nicht Teil des bereits unterstützten Projekts war.",
+      "source": {
+        "source_id": "wlan",
+        "locator": "FAQ «Ich habe vor kurzem Unterstützung von der Berghilfe erhalten. Bin ich dennoch beitragsberechtigt?»"
       }
     }
   ],
@@ -289,10 +917,10 @@
       "Antrag an den Projektausschuss",
       "Entscheid und Mitfinanzierung"
     ],
-    "note": null,
+    "note": "Nothilfe-Gesuche per E-Mail an gewerbe@berghilfe.ch anmelden. Keine Mehrfachgesuche: Patenschaft für Berggemeinden, Coop Patenschaft für Berggebiete und Berghilfe sprechen sich ab, welche Organisation prüft.",
     "source": {
       "source_id": "gesuch",
-      "locator": "Ablauf"
+      "locator": "«In drei Schritten zum Gesuch»; FAQ «Wie läuft der Prüfungsprozess bei der Schweizer Berghilfe ab?»"
     }
   },
   "contacts": [
@@ -302,6 +930,20 @@
       "email": "info@berghilfe.ch",
       "phone": "044 712 60 60",
       "url": "https://www.berghilfe.ch/kontakt"
+    },
+    {
+      "name": "Support Gesuchsportal",
+      "role": "Technische Fragen zum Online-Gesuch",
+      "email": "support@berghilfe.ch",
+      "phone": null,
+      "url": "https://gesuch.berghilfe.ch/?locale=de"
+    },
+    {
+      "name": "Nothilfe-Gesuche",
+      "role": "Kontakt für Nothilfe-Gesuche",
+      "email": "gewerbe@berghilfe.ch",
+      "phone": null,
+      "url": "https://www.berghilfe.ch/gesuche/nothilfe"
     }
   ],
   "legal_basis": [],
@@ -313,7 +955,7 @@
       "url": "https://www.berghilfe.ch/",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "local_path": null
     },
     {
@@ -323,18 +965,155 @@
       "url": "https://www.berghilfe.ch/gesuche/gesuch-einreichen",
       "version": null,
       "published": null,
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "gesuche",
+      "title": "Gesuche (grundlegende Voraussetzungen), Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "berggebiet",
+      "title": "Das Berggebiet (Karte Unterstützungsgebiet), Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/berggebiet",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "landwirtschaft",
+      "title": "Gesuche Landwirtschaft, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/landwirtschaft",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "gewerbe",
+      "title": "Gesuche Gewerbe, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/gewerbe",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "tourismus",
+      "title": "Gesuche Tourismus, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/tourismus",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "wald_holz",
+      "title": "Gesuche Wald und Holz, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/wald-holz",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "energie",
+      "title": "Gesuche Energie, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/energie",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "bildung",
+      "title": "Gesuche Bildung, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/bildung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "nothilfe",
+      "title": "Gesuche Nothilfe, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/nothilfe",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "wlan",
+      "title": "WLAN für Hotels und Gastrobetriebe, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/gesuche/wlan-unterstuetzung",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt, Schweizer Berghilfe",
+      "type": "webseite",
+      "url": "https://www.berghilfe.ch/kontakt",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "portal",
+      "title": "Gesuchsportal (Login), Schweizer Berghilfe",
+      "type": "formular",
+      "url": "https://gesuch.berghilfe.ch/?locale=de",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
+      "local_path": null
+    },
+    {
+      "id": "blw_zonen",
+      "title": "Landwirtschaftliche Zonen, Bundesamt für Landwirtschaft",
+      "type": "webseite",
+      "url": "https://www.blw.admin.ch/de/landwirtschaftliche-zonen",
+      "version": null,
+      "published": null,
+      "checked": "2026-10-24",
       "local_path": null
     }
   ],
   "meta": {
-    "last_verified": "2026-10-23",
+    "last_verified": "2026-10-24",
     "verified_by": null,
     "status": "draft",
     "open_questions": [
-      "Welche Luzerner Gemeinden (z. B. Entlebuch) zum Berggebiet gehören, ist nicht belegt.",
-      "Ob das Projekt bei Gesuchseingabe noch nicht begonnen sein darf, nennt die Quelle nicht.",
-      "sectors leer gelassen, obwohl die Gesuchskategorien Landwirtschaft, Tourismus, Gewerbe, Wald und Holz, Energie und Bildung umfassen.",
+      "scope / berggebiet: Welche Luzerner Gemeinden in Bergzone I bis IV liegen, ist nicht zitiert. Karte auf berghilfe.ch/gesuche/berggebiet bzw. map.geo.admin.ch (BLW) prüfen.",
+      "nicht_abgeschlossen: Ob ein begonnenes, aber nicht abgeschlossenes Projekt unterstützt wird, nennt die Quelle nicht.",
+      "projekt_konkret: Die Quelle nennt fortgeschrittene Planung als «Voraussetzung» für Besuch und Entscheid. Kind muss bestätigen.",
+      "filter.employees_max 49 (projektbeitrag): Seite Landwirtschaft nennt keine Grenze, die WLAN-Seite sagt «wie bei allen unseren unterstützten Projekten». Bestätigen.",
+      "filter.employees_min (projektbeitrag): WLAN-Seite nennt «mindestens einer» Vollzeitstelle für alle Projekte. Nicht übernommen, bestätigen.",
+      "filter.sectors (projektbeitrag) leer gelassen: Bereiche Landwirtschaft, Gewerbe, Tourismus, Energie, Wald und Holz, Bildung, Nothilfe; Handel und Bau nur teilweise ausgeschlossen.",
+      "timing.deadline (projektbeitrag): Typ laufend abgeleitet, die Quelle nennt keine Frist.",
+      "wlan-hotellerie-gastro: Bergzone 2 bis 4 laut WLAN-Seite, sonst vier Bergzonen. Widerspruch klären.",
+      "wlan-hotellerie-gastro timing.deadline: nach_abschluss abgeleitet aus «Rechnung muss bereits vorliegen».",
+      "combination_rules bg-mitte: abgeleitet. Die Berghilfe nennt nur «zuständige gewerbliche Bürgschaftsgenossenschaften». Ihr Link auf die SECO-Seite ist tot (404).",
       "Quellen nicht lokal abgelegt."
     ]
   }
