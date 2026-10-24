@@ -196,7 +196,6 @@ export const t = {
     contact: "Ansprechstelle",
     criteria: "Kriterien",
     ask: "Frage dazu",
-    askSoon: "Folgt mit dem Rückfrage-Chat",
     programPage: "Programmseite",
     apply: "Zum Gesuch",
     lever: "So wird es passend",

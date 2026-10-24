@@ -41,8 +41,10 @@ Base path `/api`. JSON in and out, UTF-8. All user-facing texts in responses are
 | GET | `/api/runs/{run_id}` | | `RunResult` | Partial while `status` is `laeuft` |
 | GET | `/api/runs/{run_id}/events` | | SSE stream of `TraceEvent` | See section 3 |
 | POST | `/api/runs/{run_id}/retry` | `RetryRequest` | 202, empty body | Re-checks one instrument with status `fehler` |
+| GET | `/api/runs/{run_id}/chat/{program_id}/{instrument_id}/suggestions` | | `ChatSuggestions` | Up to 3 questions from the result, code only, each with a `topic` |
+| POST | `/api/runs/{run_id}/chat/{program_id}/{instrument_id}` | `ChatRequest` | `ChatResponse` | Follow-up chat about one checked instrument. Context: its result and the program file only. Code post-check: citations must exist in the program file, figures must occur in the context, no binding wording; `allgemein` (general term explanation) carries no figures and no citations |
 
-Optional, if time allows (shapes to be added to the contract when built): `POST /api/runs/{run_id}/chat` for the follow-up chat, `GET /api/runs/{run_id}/export.pdf`.
+Optional, if time allows (shapes to be added to the contract when built): `GET /api/runs/{run_id}/export.pdf`.
 
 **Errors:** every non-2xx response has the body `ApiError` (`code`, German `message`).
 
@@ -50,6 +52,7 @@ Optional, if time allows (shapes to be added to the contract when built): `POST 
 |---|---|---|
 | 400 | `ungueltige_eingabe` | request does not match the contract (strict: no type coercion, no unknown keys), a profile value the knowledge base does not know, or an answer that matches no option |
 | 404 | `run_nicht_gefunden` | unknown `run_id` |
+| 404 | `angebot_nicht_gefunden` | chat about an instrument that is not a checked match of this run |
 | 409 | `pruefung_laeuft` | retry on an instrument that is not in status `fehler` |
 | 502 | `ki_antwort_ungueltig` | LLM output failed validation twice |
 | 503 | `ki_nicht_verfuegbar` | no API key or provider down |

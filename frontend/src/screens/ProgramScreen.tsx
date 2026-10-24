@@ -121,9 +121,9 @@ export function ProgramScreen({ match, result, extracted, onBack, onEditProfile,
                 {t.program.apply} <External aria-hidden="true" className="size-3.5" />
               </a>
             )}
-            <span title={t.program.askSoon} className="cursor-not-allowed text-fg-muted">
+            <button type="button" onClick={() => setChatting(true)} className="inline-flex items-center gap-1 font-semibold text-primary-ink" data-testid="ask">
               {t.program.ask}
-            </span>
+            </button>
           </div>
         </div>
         <div className="flex flex-wrap gap-x-14 gap-y-5">
