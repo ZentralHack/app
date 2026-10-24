@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     llm_timeout_s: float = 30
     demo_today: date | None = None
     demo_replay: bool = False
+    # Development only: keep finished runs across backend restarts, in a file outside the repo.
+    dev_persist_runs: bool = False
+    dev_runs_file: Path = Path.home() / ".fundpilot" / "runs.json"
     cors_origins: str = "http://localhost:5173"
     # Anonymised chat questions (JSONL, gitignored); None turns the log off.
     chat_log: Path | None = CHAT_LOG

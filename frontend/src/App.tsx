@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { api, ApiRequestError } from "./api";
 import type { Clarification, InstrumentMatch, InstrumentRef, ProfileField, ProjectProfile, QuestionSet } from "./api/contract";
 import { RunUpdated, RunUpdating } from "./components/layout/RunUpdating";
@@ -20,6 +20,9 @@ import { TraceScreen } from "./screens/TraceScreen";
 import { FIT_LABEL, t } from "./text/de-CH";
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
+
+// Developer menu: only in a build with VITE_DEV_TOOLS=true. Otherwise the import is dropped from the bundle.
+const DevMenu = import.meta.env.VITE_DEV_TOOLS === "true" ? lazy(() => import("./dev/DevMenu")) : null;
 
 /** Where the user was when they started editing the profile after a result was there. */
 interface ReturnTo {
@@ -336,6 +339,21 @@ export function App() {
     go(1);
   }
 
+  /** Developer menu only: show a step of a stored run, with what that step needs loaded. */
+  const devJump = (target: number, program: InstrumentRef | null, id: string) =>
+    withBusy(async () => {
+      const r = await api.getRun(id);
+      setRunId(id);
+      setProfile(r.profile);
+      setExtracted(r.profile);
+      if (target === 3) setQuestions(await api.buildQuestions(r.profile));
+      setReachable(6);
+      setReturnTo(null);
+      setStep(target as Step);
+      setOpenProgram(target === 5 ? program : null);
+      window.scrollTo({ top: 0 });
+    });
+
   const found = openProgram && run.result ? findProgram(run.result, openProgram) : null;
   const match = found?.kind === "match" ? found.match : null;
   const backToResults = () => {
@@ -347,6 +365,11 @@ export function App() {
   return (
     <div className="flex min-h-screen flex-col lg:flex-row">
       <Sidebar step={step} reachable={reachable} onNavigate={n => navigate(n as Step)} />
+      {DevMenu && (
+        <Suspense fallback={null}>
+          <DevMenu runId={runId} finished={run.result?.status === "fertig"} onJump={devJump} />
+        </Suspense>
+      )}
       <div className="flex min-w-0 flex-1 flex-col">
         {step >= 5 && (nextRunId ? <RunUpdating view={next.view} /> : notice && <RunUpdated text={notice} onClose={() => setNotice(null)} />)}
         {(error ?? run.error) && (

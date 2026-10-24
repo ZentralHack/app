@@ -39,11 +39,11 @@ async def start_run(
     case = demo.find(profile.input_text)
     if case is not None:
         recorder = runs.create(profile, today)
-        runs.start(replay(case, recorder))
+        runs.start(replay(case, recorder), recorder)
     else:
         live = require_llm(llm)
         recorder = runs.create(profile, today)
-        runs.start(run_analysis(profile, kb, live, recorder, today))
+        runs.start(run_analysis(profile, kb, live, recorder, today), recorder)
     return RunCreated(run_id=recorder.run_id)
 
 
@@ -87,5 +87,5 @@ async def retry(
     recorder = runs.get(run_id)
     ref = InstrumentRef(program_id=req.program_id, instrument_id=req.instrument_id)
     item = claim_retry(recorder, ref, kb)
-    runs.start(retry_instrument(item, kb, llm, recorder, settings.today()))
+    runs.start(retry_instrument(item, kb, llm, recorder, settings.today()), recorder)
     return Response(status_code=202)

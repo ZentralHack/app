@@ -32,7 +32,9 @@ def create_app(
         app.state.settings = settings
         app.state.kb = kb or load_knowledge_base(KNOWLEDGE_BASE_DIR)
         app.state.llm = llm or (OpenAIClient(settings) if settings.llm_configured else None)
-        app.state.runs = RunStore()
+        app.state.runs = RunStore(
+            persist=settings.dev_runs_file if settings.dev_persist_runs else None
+        )
         if demo is not None:
             app.state.demo = demo
         else:
