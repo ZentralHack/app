@@ -8,23 +8,24 @@ This document fixes the interfaces between frontend, API layer and agent, so tha
 
 | Area | Owner | Paths |
 |---|---|---|
-| Frontend, all 7 screens, live panel, export | Jasper | `frontend/` |
-| API layer: FastAPI app, config, routes, SSE, run store, health, programs endpoint | Jasper | `backend/app/main.py`, `config.py`, `api/`, `trace.py` |
+| Frontend, all 7 screens, live panel, export | Philipp | `frontend/` |
+| Backend, complete: FastAPI app, config, routes, SSE, run store, health, programs endpoint | Jasper | `backend/app/main.py`, `config.py`, `api/`, `trace.py` |
 | Knowledge base loader | Jasper | `backend/app/knowledge_base/` |
-| Agent: all 6 steps, prompts, orchestrator logic | Philipp | `backend/app/agent/`, `backend/app/llm/` |
+| Agent: all 6 steps, prompts, orchestrator logic | Jasper | `backend/app/agent/` |
+| LLM interface and clients | Jasper | `backend/app/llm/` |
+| Pydantic models mirroring this contract | Jasper | `backend/app/models/` (`contract.py` is generated, see `backend/scripts/generate_contract_models.py`) |
 | Question catalog: generation script and validation | Jasper | `backend/scripts/`, `knowledge_base/question_catalog.json` |
 | Question catalog: human review | Research | `knowledge_base/question_catalog_review.md` |
-| Pydantic models mirroring this contract | Philipp | `backend/app/models/` |
-| Eval runner and test projects | Philipp | `backend/eval/`, `tests/projects/` |
+| Eval runner and test projects | Jasper | `backend/eval/`, `tests/projects/` |
 
-The seam between the two halves of the backend is the Python interface in section 4. The seam between frontend and backend is the HTTP API in section 2.
+The seam between frontend and backend is the HTTP API in section 2. Inside the backend, the API layer calls the agent through the Python interface in section 4.
 
 **How to stay unblocked:**
-- Jasper builds the frontend against the files in `design/examples/` (mock mode that serves them, including replaying `trace_events.json` with delays). The real backend can be switched on later with one setting.
-- Philipp builds the agent against the Python interface and tests it with the fake LLM and the examples, without the HTTP layer.
+- Philipp builds the frontend against the files in `design/examples/` (mock mode that serves them, including replaying `trace_events.json` with delays). The real backend can be switched on later with one setting.
+- Jasper builds the agent against the Python interface and tests it with the fake LLM and the examples, without the HTTP layer.
 - First integration: the API layer calls the real agent functions instead of returning examples.
 
-**Changing the contract:** edit `contract.schema.json` and the affected examples in the same commit, make sure the examples still validate, and tell the other dev before pushing. No silent shape changes.
+**Changing the contract:** edit `contract.schema.json` and the affected examples in the same commit, make sure the examples still validate, regenerate `backend/app/models/contract.py`, and tell the other dev before pushing. No silent shape changes.
 
 ## 2. HTTP endpoints
 

@@ -225,11 +225,11 @@ class LLMClient(Protocol):
     ) -> T: ...
 ```
 
-- **Implementation:** `AnthropicClient` wraps `AsyncAnthropic().messages.parse(..., output_format=output)` and returns `response.parsed_output`.
-- **Models** (in `config.py`, overridable by environment):
-  - `main`: `claude-sonnet-5-5`, effort `low` to `medium` for matching and plan.
-  - `small`: `claude-haiku-5-5` for profile extraction.
+- **Provider:** OpenAI (`LLM_PROVIDER=openai`). The OpenAI client implements the protocol with Structured Outputs in strict mode. Fallback: Anthropic (Claude Sonnet 5.5) behind the same interface, selected by one config value.
+- **Models:** the model ids live only in `backend/.env`, never in code. `small` maps to `MODEL_EXTRACT` (profile extraction), `main` to `MODEL_REASON` (matching, plan texts, offline catalog script).
   - Follow-up questions need no model at runtime. The offline catalog script uses `main` at high effort for generation and for the cross-check.
+- **Output models** derive from `LLMOutput` and must be valid for strict structured outputs: every field required (no defaults), `null` instead of leaving a field out, `additionalProperties: false`. `strict_json_schema` (in `llm/schema.py`) checks this before every call, also in the fake client.
+- **Concurrency and timeout:** `MAX_CONCURRENCY` (default 4) parallel calls, `LLM_TIMEOUT_S` (default 30) per call.
 - **Swapping:** a second implementation of the protocol (for example another provider) is selected by one config value. The eval runner can run the test projects against both and compare.
 - **Prompts:** one Markdown file per step in `llm/prompts/`. The system prompt holds the fixed rules (states, evidence rule, Swiss German, no binding statements). The instrument JSON and the profile go into the user message.
 - **Prompt caching:** the system prompt is identical across all matching calls of a run, so it is marked for caching.

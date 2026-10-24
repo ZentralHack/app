@@ -128,8 +128,25 @@ pip install jsonschema
 python -c "import json,glob,jsonschema;s=json.load(open('knowledge_base/schema/program.schema.json'));v=jsonschema.Draft202012Validator(s,format_checker=jsonschema.FormatChecker());[print(f,'OK' if not (e:=list(v.iter_errors(json.load(open(f,encoding='utf-8'))))) else [(list(x.path),x.message) for x in e[:5]]) for f in glob.glob('knowledge_base/programs/*.json')]"
 ```
 
-<!-- TODO: nach Stack-Entscheid -->
-> Installation und Start des Prototyps folgen nach dem Stack-Entscheid.
+### Backend
+
+Voraussetzung: [uv](https://docs.astral.sh/uv/). uv installiert Python 3.13 bei Bedarf selbst.
+
+```
+cd backend
+uv sync                       # installieren
+cp ../.env.example .env       # Werte eintragen, die Datei wird nie committet
+uv run pytest                 # testen, läuft ohne API-Schlüssel
+uv run ruff check . && uv run ruff format --check .
+uv run uvicorn app.main:app --reload   # starten, http://localhost:8000/api/health
+```
+
+Die Contract-Modelle in `backend/app/models/contract.py` werden aus `design/contract.schema.json` erzeugt: `uv run python scripts/generate_contract_models.py`.
+
+### Frontend
+
+<!-- TODO: Frontend-Setup -->
+> Folgt mit dem Frontend.
 
 ## Testprojekte
 

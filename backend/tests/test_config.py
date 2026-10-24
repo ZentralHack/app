@@ -31,3 +31,11 @@ def test_llm_configured_needs_key_and_both_models():
 def test_cors_origins_comma_separated():
     settings = Settings(_env_file=None, cors_origins="http://a.test, http://b.test")
     assert settings.cors_origin_list == ["http://a.test", "http://b.test"]
+
+
+def test_empty_values_from_the_template_fall_back_to_defaults(monkeypatch):
+    monkeypatch.setenv("MAX_CONCURRENCY", "")
+    monkeypatch.setenv("DEMO_TODAY", "")
+    settings = Settings(_env_file=None)
+    assert settings.max_concurrency == 4
+    assert settings.demo_today is None

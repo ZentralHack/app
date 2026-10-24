@@ -15,7 +15,9 @@ CONTRACT_SCHEMA = REPO_DIR / "design" / "contract.schema.json"
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=BACKEND_DIR / ".env", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=BACKEND_DIR / ".env", env_ignore_empty=True, extra="ignore"
+    )
 
     openai_api_key: SecretStr | None = None
     llm_provider: Literal["openai"] = "openai"
