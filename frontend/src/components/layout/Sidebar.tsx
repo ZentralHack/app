@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.svg";
 import { t } from "../../text/de-CH";
+import { KantonLogo } from "./KantonLogo";
 import { Roadmap, RoadmapCompact } from "./Roadmap";
 
 interface Props {
@@ -9,7 +10,12 @@ interface Props {
 }
 
 function Brand() {
-  return <img src={logo} alt={t.app.name} className="h-11 w-auto self-start" />;
+  return (
+    <div className="flex flex-col items-start gap-4">
+      <img src={logo} alt={t.app.name} className="h-11 w-auto" />
+      <KantonLogo className="h-6" />
+    </div>
+  );
 }
 
 /** Left column on wide screens (brand, roadmap); a slim top block on narrow screens. */

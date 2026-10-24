@@ -54,7 +54,7 @@ export default function DevMenu({ runId, finished, onJump }: Props) {
   const ranked = (run?.matches ?? []).filter(m => m.rank).sort((a, b) => a.rank! - b.rank!);
 
   return (
-    <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-2 text-sm" data-testid="dev-menu">
+    <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-2 text-sm print:hidden" data-testid="dev-menu">
       {open && (
         <div className="flex max-h-[70vh] w-72 flex-col gap-2 overflow-auto rounded-xl border border-line bg-surface p-3 shadow-lg">
           <span className="text-xs text-fg-2">{last ? `Letzter Lauf: ${last}` : "Noch kein fertiger Lauf"}</span>
