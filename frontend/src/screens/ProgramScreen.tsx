@@ -5,7 +5,8 @@ import { DeadlineFigure, Metric, SourceChip } from "../components/results/parts"
 import { matchTitle } from "../components/results/ResultCard";
 import { StatusSymbol } from "../components/ui/StatusSymbol";
 import { WarningNote } from "../components/plan/WarningNote";
-import { host, sameStep } from "../lib/plan";
+import { host, sameStep, uniqueWarnings } from "../lib/plan";
+import { ArrowLeft, External, Mail, Phone } from "../components/ui/icons";
 import { fieldLabel, formatDateShort } from "../lib/format";
 import { visibleCriteria } from "../lib/results";
 import { LEVEL_LABEL, PHASE_LABEL, t } from "../text/de-CH";
@@ -60,22 +61,27 @@ function buildSteps(match: InstrumentMatch, result: RunResult, warnings: Combina
 
 /** Program page: hero with fit, funding rule and deadline; one timeline; criteria as a contributor list. */
 export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
-  const warnings = (result.plan?.warnings ?? []).filter(w => w.items.some(i => i.program_id === match.program_id && (!i.instrument_id || i.instrument_id === match.instrument_id)));
+  const warnings = uniqueWarnings(
+    (result.plan?.warnings ?? []).filter(w => w.items.some(i => i.program_id === match.program_id && (!i.instrument_id || i.instrument_id === match.instrument_id))),
+  );
   const steps = buildSteps(match, result, warnings);
-  const missing = [...new Set(match.criteria.filter(c => c.state === "unbekannt").flatMap(c => (c.evidence.length ? c.evidence.map(fieldLabel) : [c.text])))];
+  // Open criteria are listed with reasons below; here only their number and the profile fields that would decide them.
+  const open = match.criteria.filter(c => c.state === "unbekannt");
+  const openFields = [...new Set(open.flatMap(c => c.evidence).filter(f => !f.startsWith("rueckfrage_")).map(fieldLabel))];
   const contact = (result.plan?.contacts ?? []).find(c => host(c.url) && host(c.url) === host(match.links.info));
   const others = (w: CombinationWarning) =>
     w.items
       .filter(i => i.program_id !== match.program_id || i.instrument_id !== match.instrument_id)
       .map(i => {
         const m = result.matches.find(x => x.program_id === i.program_id && (!i.instrument_id || x.instrument_id === i.instrument_id));
-        return m ? matchTitle(m) : i.program_id;
+        return m ? m.instrument_name : i.program_id;
       });
 
   return (
     <Page>
-      <button type="button" onClick={onBack} className="-mb-4 self-start text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
-        ← {t.program.back}
+      <button type="button" onClick={onBack} className="-mb-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+        <ArrowLeft aria-hidden="true" className="size-4" />
+        {t.program.back}
       </button>
 
       <header className="flex animate-rise flex-col gap-6">
@@ -90,13 +96,13 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
           <p className="max-w-[52em]">{match.purpose}</p>
           <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
             {match.links.info && (
-              <a href={match.links.info} target="_blank" rel="noopener">
-                {t.program.programPage} ↗
+              <a href={match.links.info} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
+                {t.program.programPage} <External aria-hidden="true" className="size-3.5" />
               </a>
             )}
             {match.links.apply && (
-              <a href={match.links.apply} target="_blank" rel="noopener">
-                {t.program.apply} ↗
+              <a href={match.links.apply} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
+                {t.program.apply} <External aria-hidden="true" className="size-3.5" />
               </a>
             )}
             <span title={t.program.askSoon} className="cursor-not-allowed text-fg-muted">
@@ -108,19 +114,23 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
           <Metric label={t.program.deadline}>
             <DeadlineFigure deadline={match.deadline} today={result.today} size="hero" />
           </Metric>
+          {match.funding_summary && (
+            <Metric label={t.results.funding} className="max-w-[36em] flex-1">
+              <span className="pt-1 text-lg">{match.funding_summary}</span>
+            </Metric>
+          )}
         </div>
-        <p className="max-w-[52em] text-sm text-fg-2">{match.funding_summary}</p>
       </header>
 
-      {missing.length > 0 && (
-        <section className="flex flex-col gap-2 rounded-xl border border-error/25 bg-error-soft px-5 py-4">
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 className="text-base text-error">{t.program.missing}</h2>
-            <button type="button" onClick={onEditProfile} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
-              {t.program.completeProfile} →
-            </button>
-          </div>
-          <p>{missing.join(", ")}</p>
+      {open.length > 0 && (
+        <section className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 rounded-xl border border-line px-5 py-3">
+          <p>
+            <b className="font-semibold">{t.program.openCount(open.length)}</b>
+            {openFields.length > 0 && <span className="text-fg-2"> · {openFields.join(", ")}</span>}
+          </p>
+          <button type="button" onClick={onEditProfile} className="text-sm font-semibold text-primary-ink underline decoration-primary-ink/30 underline-offset-4 hover:decoration-primary-ink">
+            {t.program.completeProfile}
+          </button>
         </section>
       )}
 
@@ -142,8 +152,8 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
                   </b>
                   {s.text && <p className="text-fg-2">{s.text}</p>}
                   {s.link && (
-                    <a href={s.link} target="_blank" rel="noopener" className="self-start text-sm font-semibold">
-                      {t.plan.link} ↗
+                    <a href={s.link} target="_blank" rel="noopener" className="inline-flex items-center gap-1 self-start text-sm font-semibold">
+                      {t.plan.link} <External aria-hidden="true" className="size-3.5" />
                     </a>
                   )}
                   {s.warnings.map(w => (
@@ -179,8 +189,18 @@ export function ProgramScreen({ match, result, onBack, onEditProfile }: Props) {
           <b className="font-semibold">{t.program.contact}:</b>
           <span>{contact.name}</span>
           {contact.role && <span className="text-fg-2">{contact.role}</span>}
-          {contact.email && <a href={`mailto:${contact.email}`}>{contact.email}</a>}
-          {contact.phone && <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>}
+          {contact.email && (
+            <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-1">
+              <Mail aria-hidden="true" className="size-3.5" />
+              {contact.email}
+            </a>
+          )}
+          {contact.phone && (
+            <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1">
+              <Phone aria-hidden="true" className="size-3.5" />
+              {contact.phone}
+            </a>
+          )}
         </p>
       )}
     </Page>

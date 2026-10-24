@@ -13,3 +13,23 @@ export function host(url: string | null): string | null {
     return null;
   }
 }
+
+interface Warning {
+  type: string;
+  text: string;
+  items: { program_id: string; instrument_id?: string | null }[];
+}
+
+/**
+ * Drops warnings that say the same thing twice: the same type between the same instruments
+ * (two programs often state the same deduction, each from its own side). The first one stays.
+ */
+export function uniqueWarnings<W extends Warning>(warnings: W[]): W[] {
+  const seen = new Set<string>();
+  return warnings.filter(w => {
+    const key = `${w.type}|${w.items.map(i => `${i.program_id}:${i.instrument_id ?? ""}`).sort().join(",")}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}

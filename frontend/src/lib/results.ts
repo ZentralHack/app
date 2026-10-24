@@ -41,3 +41,6 @@ export function groupRejected(rejected: Rejected[]): RejectedGroup[] {
   }
   return [...groups.values()];
 }
+
+/** Advice and coaching instead of money: shown as "Begleitende Angebote" below the funding. */
+export const isAdvisory = (m: Pick<InstrumentMatch, "instrument_type">) => m.instrument_type === "beratung" || m.instrument_type === "coaching";
