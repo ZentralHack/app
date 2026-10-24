@@ -1608,7 +1608,7 @@
         },
         {
           "id": "gesuch_vor_baubeginn",
-          "text": "Das Gesuch ist vor Baubeginn eingereicht.",
+          "text": "Das Gesuch ist vor Installationsbeginn eingereicht.",
           "kind": "muss",
           "about": "zeit",
           "applies_if": null,
@@ -1619,7 +1619,7 @@
           "evidence": [],
           "source": {
             "source_id": "foerderbedingungen",
-            "locator": "S. 3"
+            "locator": "S. 29, Ziff. 6"
           },
           "notes": null
         }
@@ -1664,7 +1664,7 @@
           "rule": null,
           "next_dates": [],
           "relative": {
-            "event": "baubeginn",
+            "event": "installationsbeginn",
             "direction": "vor",
             "offset_days": null
           },

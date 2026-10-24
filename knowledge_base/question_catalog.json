@@ -301,7 +301,7 @@
         "reason": "Hängt vom Datum der Zusicherung ab, nicht nur vom Projektstart."
       }
     ],
-    "kb_fingerprint": "sha256:04ab2c4037ae8c1e7ba8daf2048890aa7e1e67c21cb0b9b672e0512c45193b60",
+    "kb_fingerprint": "sha256:c91dacf7e2b6553303dd86c07a94f61510871dd530dbe27028f3186f66a3e4a0",
     "generated": null,
     "review": {
       "status": "needs_review",
