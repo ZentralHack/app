@@ -20,7 +20,8 @@ def _questions(kb: KnowledgeBase, profile, **kwargs):
 def test_sensora_questions_by_points(kb: KnowledgeBase):
     result = build_questions(sensora_profile(), kb)
     assert_contract("QuestionSet", result)
-    # muss + lever = 5 points each, praesenz_raeume is muss without lever = 3.
+    # LIB is Luzern money (times 2 times 1.5): muss + lever = 15, muss alone = 9; the assumed
+    # handelsregister counts half (4.5) and comes after the questions on missing fields.
     assert [q.id for q in result.questions] == [
         "q_revisionsart",
         "q_nachhaltigkeit",
@@ -28,6 +29,8 @@ def test_sensora_questions_by_points(kb: KnowledgeBase):
         "q_kosten_bemessungsjahr",
         "q_raeumlichkeiten",
         "q_kosten_selbst_getragen",
+        "q_handelsregister",
+        "q_keine_ausstaende",
     ]
     revision = result.questions[0]
     assert revision.profile_field == "revisionsart"
@@ -44,14 +47,15 @@ def test_sensora_questions_by_points(kb: KnowledgeBase):
 
 
 def test_assumed_field_counts_half_and_is_prefilled(kb: KnowledgeBase):
-    # handelsregister is `annahme` for Sensora: muss without lever = 3, halved = 1.5.
-    assert "q_handelsregister" not in [
-        q.id for q in build_questions(sensora_profile(), kb).questions
-    ]
-    # revisionsart as `annahme`: muss with lever = 5, halved = 2.5, still below 3.
+    # handelsregister is `annahme` for Sensora: 3 x 2 x 1.5 = 9, halved = 4.5, after every
+    # LIB question on a missing field.
+    ids = [q.id for q in build_questions(sensora_profile(), kb).questions]
+    assert ids.index("q_handelsregister") > ids.index("q_raeumlichkeiten")
+    # revisionsart as `annahme`: 15 halved = 7.5, behind the missing fields with 9 or more.
     fields = sensora_profile().fields | {"revisionsart": field("ordentlich", "annahme")}
     profile = sensora_profile().model_copy(update={"fields": fields})
-    assert "q_revisionsart" not in [q.id for q in build_questions(profile, kb).questions]
+    ids = [q.id for q in build_questions(profile, kb).questions]
+    assert ids.index("q_revisionsart") > ids.index("q_kosten_selbst_getragen")
     # Over the threshold with several instruments: prefill is the assumed answer's label.
     profile = make_profile(art_des_vorhabens=["heizungsersatz"], baujahr=field(1985, "annahme"))
     baujahr = next(q for q in build_questions(profile, kb).questions if q.id == "q_baujahr")
@@ -176,3 +180,27 @@ def test_a_given_field_is_never_asked_again(full_kb: KnowledgeBase):
     given = criterion_question(item, scoped, full_kb, make_profile(projektstart="2026-12"))
     assert given is not None
     assert given.profile_field == "rueckfrage_gesuch_vor_installationsbeginn"
+
+
+def test_sensora_asks_what_decides_lib_first(full_kb: KnowledgeBase):
+    """Luzern money first: the LIB questions come before anything only EIC or advice needs."""
+    questions = build_questions(sensora_profile(), full_kb).questions
+    ids = [q.id for q in questions]
+    flat = {i.key: i for i in full_kb.instruments()}
+
+    def only_competition_or_advice(q) -> bool:
+        items = [
+            flat[f"{a.program_id}:{a.instrument_id}"]
+            if a.instrument_id
+            else next(i for i in flat.values() if i.program.id == a.program_id)
+            for a in q.affects
+        ]
+        return all(
+            i.program.id == "eic-accelerator" or i.instrument.instrument_type == "beratung"
+            for i in items
+        )
+
+    lib = ["q_revisionsart", "q_handelsregister", "q_raeumlichkeiten"]
+    assert set(lib) <= set(ids)
+    later = [i for i, q in enumerate(questions) if only_competition_or_advice(q)]
+    assert max(ids.index(q) for q in lib) < min(later, default=len(ids))

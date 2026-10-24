@@ -6,8 +6,9 @@ criterion; otherwise the criterion's own `criteria[].question`.
 
 Points per question: +3 per instrument where it decides a `muss` criterion, +1 for `soll`,
 +2 if the instrument has a lever on that criterion; half the points if the field is only
-`annahme`. Questions with at least MIN_POINTS are asked, highest first, at most
-`max_questions`.
+`annahme`. Then weighted by what is known before matching: money (not advice) times 2,
+a competition or call times 0.4, a Luzern cantonal program for a Luzern profile times 1.5.
+Questions with at least MIN_POINTS are asked, highest first, at most `max_questions`.
 """
 
 from collections import defaultdict
@@ -17,6 +18,7 @@ from typing import Any
 
 from app.agent.prefilter import prefilter
 from app.agent.profile_values import known
+from app.agent.scoring import is_advisory, is_competitive
 from app.knowledge_base.catalog import CatalogEntry, criterion_ref
 from app.knowledge_base.flat import FlatInstrument, ScopedCriterion
 from app.knowledge_base.loader import KnowledgeBase
@@ -28,6 +30,10 @@ MIN_POINTS = 3
 KIND_POINTS = {"muss": 3, "soll": 1, "bewertung": 0}
 LEVER_POINTS = 2
 ASSUMED_WEIGHT = 0.5
+MONEY_WEIGHT = 2
+COMPETITION_WEIGHT = 0.4
+OWN_CANTON_WEIGHT = 1.5
+CANTON = "LU"
 
 SKIP_REASON = "Keine Rückfrage würde die Einstufung eines Programms ändern."
 
@@ -83,12 +89,12 @@ def select_questions(
                     key = f"q_{name}"
                     if key not in scored:
                         scored[key] = _Candidate(_catalog_question(profile, name, catalog[name]))
-                    scored[key].add(item, scoped, weight)
+                    scored[key].add(item, scoped, weight * _priority(profile, item))
             question = fallback.get(scoped.criterion.id)
             if not fields and question and _fallback_open(profile, scoped, question):
                 key = f"q_{question.criterion_id}"
                 scored.setdefault(key, _Candidate(_fallback_question(question)))
-                scored[key].add(item, scoped, 1)
+                scored[key].add(item, scoped, _priority(profile, item))
 
     ranked = sorted(
         (c for c in scored.values() if c.points >= MIN_POINTS), key=lambda c: -c.points
@@ -97,6 +103,23 @@ def select_questions(
         questions=[_finish(c) for c in ranked],
         skip_reason=None if ranked else SKIP_REASON,
     )
+
+
+def _priority(profile: ProjectProfile, item: FlatInstrument) -> float:
+    """How much a question for this instrument matters, from what is known before matching."""
+    weight = 1.0
+    if not is_advisory(item.instrument.instrument_type):
+        weight *= MONEY_WEIGHT
+    if is_competitive(item):
+        weight *= COMPETITION_WEIGHT
+    program = item.program
+    if (
+        program.level == "kanton"
+        and CANTON in program.scope.cantons
+        and known(profile, "standort_kanton") == CANTON
+    ):
+        weight *= OWN_CANTON_WEIGHT
+    return weight
 
 
 def _decided_by(catalog: dict[str, CatalogEntry]) -> dict[str, list[str]]:
